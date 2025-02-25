@@ -9,16 +9,18 @@ event(turn_light_off).
 initiates(turn_light_on,  light_on, T).
 terminates(turn_light_off, light_on, T).
 
+epsilon(1/1000000).             % arbitrarily small epsilon
 happens(turn_light_off, T) :-
-    !spy,                   % prints resolution tree for making the trace
-    holdsAt(light_on, T).
+    !spy,                       % prints resolution tree for making the trace
+    epsilon(EPS),
+    holdsAt(light_on, T, EPS).  % holdsAt/3, min duration
 
 % narrative & queries
 initiallyN(light_on).
 happens(turn_light_on, 10).
 
-?- holdsAt(light_on, T).        % non-terminating
-?- happens(turn_light_off, T).  % non-terminating
+?- holdsAt(light_on, T).        % T #> 10,T #=< 10.0
+?- happens(turn_light_off, T).  % 10.0
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
 
 
