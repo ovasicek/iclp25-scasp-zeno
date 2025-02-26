@@ -1,4 +1,9 @@
 #include './model-preprocessed.pl'. % include the can_* rules
+#show happens/2, holdsAt/2.
+#show stoppedIn/3.
+#show initiates/3, terminates/3, releases/3.
+#show trajectory/4.
+
 max_time(100).                      % it is useful to have an upper bound on time for the full axioms
 
 % domain model

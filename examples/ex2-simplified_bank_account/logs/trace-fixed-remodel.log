@@ -1,0 +1,60 @@
+$ oscasp -s0 ../axioms/bec_scasp-small.pl ./model-fixed-remodel.pl --tree 
+
+
+% QUERY:?- happens(serviceFee,T).
+
+	ANSWER:	1 (in 6.009 ms)
+
+JUSTIFICATION_TREE:
+happens(serviceFee,20) :-
+    happens(withdraw(1500),20),
+    holdsAt(noServiceFeeYet,20) :-
+        max_time(100),
+        initiallyP(noServiceFeeYet),
+        not_stoppedIn(0,noServiceFeeYet,20) :-
+            findall(Var3,can_terminates(Var3,noServiceFeeYet),[serviceFee]) :-
+                can_terminates(serviceFee,noServiceFeeYet).
+            not_terminated(noServiceFeeYet,[serviceFee],0,20) :-
+                findall(Var4,terminated(serviceFee,noServiceFeeYet,Var4,0,20),[]),
+                all_entirely_outside_of_interval([],0,20),
+                not_terminated(noServiceFeeYet,[],0,20).
+    holdsAt(balance(2000),20) :-
+        max_time(100),
+        can_initiates(withdraw(8000),balance(2000)),
+        happens(withdraw(8000),10),
+        initiates(withdraw(8000),balance(2000),10) :-
+            not_happens(serviceFee,10) :-
+                not_happensInInc(serviceFee,10,10) :-
+                    findall(Var5,not_happensInIncFindall(serviceFee,Var5,10,10),[]),
+                    outsideInc([],10,10).
+            holdsAt(balance(10000),10) :-
+                max_time(100),
+                initiallyP(balance(10000)),
+                not_stoppedIn(0,balance(10000),10) :-
+                    findall(Var6,can_terminates(Var6,balance(10000)),[withdraw(Var1)]) :-
+                        can_terminates(withdraw(Var1),balance(10000)).
+                    not_terminated(balance(10000),[withdraw(Var1)],0,10) :-
+                        findall(Var7,terminated(withdraw(Var1),balance(10000),Var7,0,10),[]),
+                        all_entirely_outside_of_interval([],0,10),
+                        not_terminated(balance(10000),[],0,10).
+        not_stoppedIn(10,balance(2000),20) :-
+            findall(Var8,can_terminates(Var8,balance(2000)),[withdraw(Var2)]) :-
+                can_terminates(withdraw(Var2),balance(2000)).
+            not_terminated(balance(2000),[withdraw(Var2)],10,20) :-
+                findall(Var9,terminated(withdraw(Var2),balance(2000),Var9,10,20),[]),
+                all_entirely_outside_of_interval([],10,20),
+                not_terminated(balance(2000),[],10,20).
+global_constraint.
+
+MODEL:
+{ happens(serviceFee,20),  happens(withdraw(1500),20),  holdsAt(noServiceFeeYet,20),  holdsAt(balance(2000),20),  happens(withdraw(8000),10),  initiates(withdraw(8000),balance(2000),10),  holdsAt(balance(10000),10) }
+BINDINGS: 
+T = 20
+
+
+  real      0:00.33
+  real [s]  0.33
+  user [s]  0.17
+  sys  [s]  0.01
+  mem  [KB] 28612
+  avgm [KB] 0

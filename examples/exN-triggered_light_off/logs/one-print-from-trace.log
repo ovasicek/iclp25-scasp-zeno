@@ -1,4 +1,4 @@
-Below is the simplified and the full version of the 4th output of !spy produced by this non-terminating example.
+Below is the simplified and the full version of the 3rd output of !spy produced by this non-terminating example.
 The simplified version omits most predicates to highlight the chain of events.
 
 ========================================================================================================================
@@ -9,6 +9,7 @@ Simplified !spy output: (removed most predicates to highlight the chain of event
 happens(turn_light_off, {T1~[T1 > 10, T1 =< 100]} )                     % T1
   holdsAt(light_on, {T1~[T1 > 10, T1 =< 100]} )
     10.<. {T1~[T1 > 10, T1 =< 100]} 
+    max_time(100)
     {T1~[T1 > 10, T1 =< 100]} .=<.100
     happens(turn_light_on,10)
     not_stoppedIn(10,light_on, {T1~[T1 > 10, T1 =< 100]} )
@@ -22,13 +23,6 @@ happens(turn_light_off, {T1~[T1 > 10, T1 =< 100]} )                     % T1
             {T3~[T3 > 10, T3 < 100]} .>.10
             {T3~[T3 > 10, T3 < 100]} .<. {T2~[T2 > 10, T2 < 100]}       % T3 < T2
             happens(turn_light_off, {T3~[T3 > 10, T3 < 100]} )          % T3
-              holdsAt(light_on, {T3~[T3 > 10, T3 < 100]} )
-                10.<. {T3~[T3 > 10, T3 < 100]} 
-                {T3~[T3 > 10, T3 < 100]} .=<.100
-                not_stoppedIn(10,light_on, {T3~[T3 > 10, T3 < 100]} )
-                  {T4~[T4 > 10, T4 < 100]} .>.10
-                  {T4~[T4 > 10, T4 < 100]} .<. {T3~[T3 > 10, T3 < 100]} % T4 < T3
-                  happens(turn_light_off, {T4~[T4 > 10, T4 < 100]} )    % T4
 
 
 ========================================================================================================================
@@ -74,21 +68,3 @@ Full !spy output:
                                              {_44284~[_44284 > 10, _44284 < 100]} .<. {_41472~[_41472 > 10, _41472 < 100]} 
                                             happens(turn_light_off, {_44284~[_44284 > 10, _44284 < 100]} )
                                                 builtin(!spy)
-                                                holdsAt(light_on, {_44284~[_44284 > 10, _44284 < 100]} )
-                                                    10.<. {_44284~[_44284 > 10, _44284 < 100]} 
-                                                    max_time(100)
-                                                     {_44284~[_44284 > 10, _44284 < 100]} .=<.100
-                                                    can_initiates(turn_light_on,light_on)
-                                                    happens(turn_light_on,10)
-                                                    proved(initiates(turn_light_on,light_on,10))
-                                                    not_stoppedIn(10,light_on, {_44284~[_44284 > 10, _44284 < 100]} )
-                                                        10.=<. {_44284~[_44284 > 10, _44284 < 100]} 
-                                                        findall(_47508,can_terminates(_47508,light_on),[turn_light_off])
-                                                            can_terminates(turn_light_off,light_on)
-                                                        not_terminated(light_on,[turn_light_off],10, {_44284~[_44284 > 10, _44284 < 100]} )
-                                                            term(turn_light_off,light_on, {_48546~[_48546 > 10, _48546 < 100]} ,10, {_44284~[_44284 > 10, _44284 < 100]} )
-                                                                proved(can_terminates(turn_light_off,light_on))
-                                                                 {_48546~[_48546 > 10, _48546 < 100]} .>.10
-                                                                 {_48546~[_48546 > 10, _48546 < 100]} .<. {_44284~[_44284 > 10, _44284 < 100]} 
-                                                                happens(turn_light_off, {_48546~[_48546 > 10, _48546 < 100]} )
-                                                                    builtin(!spy)

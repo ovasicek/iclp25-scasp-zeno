@@ -1,0 +1,607 @@
+$ oscasp -s0 ../axioms/bec_scasp-small.pl ./model.pl -v6 --timeout=3000
+
+
+% QUERY:?- happens(serviceFee,T).
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee,_31282)
+        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee, {_32040~[_32040 > 0, _32040 =< 100]} )
+        builtin(!spy)
+        holdsAt(noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+             {_32040~[_32040 > 0, _32040 =< 100]} .>=.0
+            max_time(100)
+             {_32040~[_32040 > 0, _32040 =< 100]} .=<.100
+            initiallyP(noServiceFeeYet)
+            not_stoppedIn(0,noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+                0.=<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                findall(_32533,can_terminates(_32533,noServiceFeeYet),[serviceFee])
+                    can_terminates(serviceFee,noServiceFeeYet)
+                not_terminated(noServiceFeeYet,[serviceFee],0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                    terminated(serviceFee,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} ,0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                         {_33346~[_33346 > 0, _33346 < 100]} .>.0
+                         {_33346~[_33346 > 0, _33346 < 100]} .<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                        happens(serviceFee, {_33346~[_33346 > 0, _33346 < 100]} )
+                            builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee, {_32040~[_32040 > 0, _32040 =< 100]} )
+        builtin(!spy)
+        holdsAt(noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+             {_32040~[_32040 > 0, _32040 =< 100]} .>=.0
+            max_time(100)
+             {_32040~[_32040 > 0, _32040 =< 100]} .=<.100
+            initiallyP(noServiceFeeYet)
+            not_stoppedIn(0,noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+                0.=<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                findall(_32533,can_terminates(_32533,noServiceFeeYet),[serviceFee])
+                    can_terminates(serviceFee,noServiceFeeYet)
+                not_terminated(noServiceFeeYet,[serviceFee],0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                    terminated(serviceFee,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} ,0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                         {_33346~[_33346 > 0, _33346 < 100]} .>.0
+                         {_33346~[_33346 > 0, _33346 < 100]} .<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                        happens(serviceFee, {_33346~[_33346 > 0, _33346 < 100]} )
+                            builtin(!spy)
+                            holdsAt(noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                 {_33346~[_33346 > 0, _33346 < 100]} .>=.0
+                                max_time(100)
+                                 {_33346~[_33346 > 0, _33346 < 100]} .=<.100
+                                proved(initiallyP(noServiceFeeYet))
+                                not_stoppedIn(0,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                    0.=<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                    findall(_35445,can_terminates(_35445,noServiceFeeYet),[serviceFee])
+                                        can_terminates(serviceFee,noServiceFeeYet)
+                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                        terminated(serviceFee,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} ,0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                             {_36367~[_36367 > 0, _36367 < 100]} .>.0
+                                             {_36367~[_36367 > 0, _36367 < 100]} .<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                            happens(serviceFee, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee, {_32040~[_32040 > 0, _32040 =< 100]} )
+        builtin(!spy)
+        holdsAt(noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+             {_32040~[_32040 > 0, _32040 =< 100]} .>=.0
+            max_time(100)
+             {_32040~[_32040 > 0, _32040 =< 100]} .=<.100
+            initiallyP(noServiceFeeYet)
+            not_stoppedIn(0,noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+                0.=<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                findall(_32533,can_terminates(_32533,noServiceFeeYet),[serviceFee])
+                    can_terminates(serviceFee,noServiceFeeYet)
+                not_terminated(noServiceFeeYet,[serviceFee],0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                    terminated(serviceFee,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} ,0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                         {_33346~[_33346 > 0, _33346 < 100]} .>.0
+                         {_33346~[_33346 > 0, _33346 < 100]} .<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                        happens(serviceFee, {_33346~[_33346 > 0, _33346 < 100]} )
+                            builtin(!spy)
+                            holdsAt(noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                 {_33346~[_33346 > 0, _33346 < 100]} .>=.0
+                                max_time(100)
+                                 {_33346~[_33346 > 0, _33346 < 100]} .=<.100
+                                proved(initiallyP(noServiceFeeYet))
+                                not_stoppedIn(0,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                    0.=<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                    findall(_35445,can_terminates(_35445,noServiceFeeYet),[serviceFee])
+                                        can_terminates(serviceFee,noServiceFeeYet)
+                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                        terminated(serviceFee,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} ,0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                             {_36367~[_36367 > 0, _36367 < 100]} .>.0
+                                             {_36367~[_36367 > 0, _36367 < 100]} .<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                            happens(serviceFee, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                builtin(!spy)
+                                                holdsAt(noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .>=.0
+                                                    max_time(100)
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .=<.100
+                                                    proved(initiallyP(noServiceFeeYet))
+                                                    not_stoppedIn(0,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                        0.=<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                        findall(_38916,can_terminates(_38916,noServiceFeeYet),[serviceFee])
+                                                            can_terminates(serviceFee,noServiceFeeYet)
+                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                            terminated(serviceFee,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} ,0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                                proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .>.0
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                                happens(serviceFee, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                    builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee, {_32040~[_32040 > 0, _32040 =< 100]} )
+        builtin(!spy)
+        holdsAt(noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+             {_32040~[_32040 > 0, _32040 =< 100]} .>=.0
+            max_time(100)
+             {_32040~[_32040 > 0, _32040 =< 100]} .=<.100
+            initiallyP(noServiceFeeYet)
+            not_stoppedIn(0,noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+                0.=<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                findall(_32533,can_terminates(_32533,noServiceFeeYet),[serviceFee])
+                    can_terminates(serviceFee,noServiceFeeYet)
+                not_terminated(noServiceFeeYet,[serviceFee],0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                    terminated(serviceFee,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} ,0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                         {_33346~[_33346 > 0, _33346 < 100]} .>.0
+                         {_33346~[_33346 > 0, _33346 < 100]} .<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                        happens(serviceFee, {_33346~[_33346 > 0, _33346 < 100]} )
+                            builtin(!spy)
+                            holdsAt(noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                 {_33346~[_33346 > 0, _33346 < 100]} .>=.0
+                                max_time(100)
+                                 {_33346~[_33346 > 0, _33346 < 100]} .=<.100
+                                proved(initiallyP(noServiceFeeYet))
+                                not_stoppedIn(0,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                    0.=<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                    findall(_35445,can_terminates(_35445,noServiceFeeYet),[serviceFee])
+                                        can_terminates(serviceFee,noServiceFeeYet)
+                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                        terminated(serviceFee,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} ,0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                             {_36367~[_36367 > 0, _36367 < 100]} .>.0
+                                             {_36367~[_36367 > 0, _36367 < 100]} .<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                            happens(serviceFee, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                builtin(!spy)
+                                                holdsAt(noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .>=.0
+                                                    max_time(100)
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .=<.100
+                                                    proved(initiallyP(noServiceFeeYet))
+                                                    not_stoppedIn(0,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                        0.=<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                        findall(_38916,can_terminates(_38916,noServiceFeeYet),[serviceFee])
+                                                            can_terminates(serviceFee,noServiceFeeYet)
+                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                            terminated(serviceFee,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} ,0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                                proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .>.0
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                                happens(serviceFee, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .>=.0
+                                                                        max_time(100)
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .=<.100
+                                                                        proved(initiallyP(noServiceFeeYet))
+                                                                        not_stoppedIn(0,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                            0.=<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                            findall(_42880,can_terminates(_42880,noServiceFeeYet),[serviceFee])
+                                                                                can_terminates(serviceFee,noServiceFeeYet)
+                                                                            not_terminated(noServiceFeeYet,[serviceFee],0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                terminated(serviceFee,noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} ,0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                    proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .>.0
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                                    happens(serviceFee, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee, {_32040~[_32040 > 0, _32040 =< 100]} )
+        builtin(!spy)
+        holdsAt(noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+             {_32040~[_32040 > 0, _32040 =< 100]} .>=.0
+            max_time(100)
+             {_32040~[_32040 > 0, _32040 =< 100]} .=<.100
+            initiallyP(noServiceFeeYet)
+            not_stoppedIn(0,noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+                0.=<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                findall(_32533,can_terminates(_32533,noServiceFeeYet),[serviceFee])
+                    can_terminates(serviceFee,noServiceFeeYet)
+                not_terminated(noServiceFeeYet,[serviceFee],0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                    terminated(serviceFee,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} ,0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                         {_33346~[_33346 > 0, _33346 < 100]} .>.0
+                         {_33346~[_33346 > 0, _33346 < 100]} .<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                        happens(serviceFee, {_33346~[_33346 > 0, _33346 < 100]} )
+                            builtin(!spy)
+                            holdsAt(noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                 {_33346~[_33346 > 0, _33346 < 100]} .>=.0
+                                max_time(100)
+                                 {_33346~[_33346 > 0, _33346 < 100]} .=<.100
+                                proved(initiallyP(noServiceFeeYet))
+                                not_stoppedIn(0,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                    0.=<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                    findall(_35445,can_terminates(_35445,noServiceFeeYet),[serviceFee])
+                                        can_terminates(serviceFee,noServiceFeeYet)
+                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                        terminated(serviceFee,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} ,0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                             {_36367~[_36367 > 0, _36367 < 100]} .>.0
+                                             {_36367~[_36367 > 0, _36367 < 100]} .<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                            happens(serviceFee, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                builtin(!spy)
+                                                holdsAt(noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .>=.0
+                                                    max_time(100)
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .=<.100
+                                                    proved(initiallyP(noServiceFeeYet))
+                                                    not_stoppedIn(0,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                        0.=<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                        findall(_38916,can_terminates(_38916,noServiceFeeYet),[serviceFee])
+                                                            can_terminates(serviceFee,noServiceFeeYet)
+                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                            terminated(serviceFee,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} ,0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                                proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .>.0
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                                happens(serviceFee, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .>=.0
+                                                                        max_time(100)
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .=<.100
+                                                                        proved(initiallyP(noServiceFeeYet))
+                                                                        not_stoppedIn(0,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                            0.=<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                            findall(_42880,can_terminates(_42880,noServiceFeeYet),[serviceFee])
+                                                                                can_terminates(serviceFee,noServiceFeeYet)
+                                                                            not_terminated(noServiceFeeYet,[serviceFee],0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                terminated(serviceFee,noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} ,0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                    proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .>.0
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                                    happens(serviceFee, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                        builtin(!spy)
+                                                                                        holdsAt(noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                             {_43888~[_43888 > 0, _43888 < 100]} .>=.0
+                                                                                            max_time(100)
+                                                                                             {_43888~[_43888 > 0, _43888 < 100]} .=<.100
+                                                                                            proved(initiallyP(noServiceFeeYet))
+                                                                                            not_stoppedIn(0,noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                0.=<. {_43888~[_43888 > 0, _43888 < 100]} 
+                                                                                                findall(_47337,can_terminates(_47337,noServiceFeeYet),[serviceFee])
+                                                                                                    can_terminates(serviceFee,noServiceFeeYet)
+                                                                                                not_terminated(noServiceFeeYet,[serviceFee],0, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                    terminated(serviceFee,noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} ,0, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                                         {_48388~[_48388 > 0, _48388 < 100]} .>.0
+                                                                                                         {_48388~[_48388 > 0, _48388 < 100]} .<. {_43888~[_43888 > 0, _43888 < 100]} 
+                                                                                                        happens(serviceFee, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                            builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee, {_32040~[_32040 > 0, _32040 =< 100]} )
+        builtin(!spy)
+        holdsAt(noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+             {_32040~[_32040 > 0, _32040 =< 100]} .>=.0
+            max_time(100)
+             {_32040~[_32040 > 0, _32040 =< 100]} .=<.100
+            initiallyP(noServiceFeeYet)
+            not_stoppedIn(0,noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+                0.=<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                findall(_32533,can_terminates(_32533,noServiceFeeYet),[serviceFee])
+                    can_terminates(serviceFee,noServiceFeeYet)
+                not_terminated(noServiceFeeYet,[serviceFee],0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                    terminated(serviceFee,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} ,0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                         {_33346~[_33346 > 0, _33346 < 100]} .>.0
+                         {_33346~[_33346 > 0, _33346 < 100]} .<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                        happens(serviceFee, {_33346~[_33346 > 0, _33346 < 100]} )
+                            builtin(!spy)
+                            holdsAt(noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                 {_33346~[_33346 > 0, _33346 < 100]} .>=.0
+                                max_time(100)
+                                 {_33346~[_33346 > 0, _33346 < 100]} .=<.100
+                                proved(initiallyP(noServiceFeeYet))
+                                not_stoppedIn(0,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                    0.=<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                    findall(_35445,can_terminates(_35445,noServiceFeeYet),[serviceFee])
+                                        can_terminates(serviceFee,noServiceFeeYet)
+                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                        terminated(serviceFee,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} ,0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                             {_36367~[_36367 > 0, _36367 < 100]} .>.0
+                                             {_36367~[_36367 > 0, _36367 < 100]} .<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                            happens(serviceFee, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                builtin(!spy)
+                                                holdsAt(noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .>=.0
+                                                    max_time(100)
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .=<.100
+                                                    proved(initiallyP(noServiceFeeYet))
+                                                    not_stoppedIn(0,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                        0.=<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                        findall(_38916,can_terminates(_38916,noServiceFeeYet),[serviceFee])
+                                                            can_terminates(serviceFee,noServiceFeeYet)
+                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                            terminated(serviceFee,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} ,0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                                proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .>.0
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                                happens(serviceFee, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .>=.0
+                                                                        max_time(100)
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .=<.100
+                                                                        proved(initiallyP(noServiceFeeYet))
+                                                                        not_stoppedIn(0,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                            0.=<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                            findall(_42880,can_terminates(_42880,noServiceFeeYet),[serviceFee])
+                                                                                can_terminates(serviceFee,noServiceFeeYet)
+                                                                            not_terminated(noServiceFeeYet,[serviceFee],0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                terminated(serviceFee,noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} ,0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                    proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .>.0
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                                    happens(serviceFee, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                        builtin(!spy)
+                                                                                        holdsAt(noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                             {_43888~[_43888 > 0, _43888 < 100]} .>=.0
+                                                                                            max_time(100)
+                                                                                             {_43888~[_43888 > 0, _43888 < 100]} .=<.100
+                                                                                            proved(initiallyP(noServiceFeeYet))
+                                                                                            not_stoppedIn(0,noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                0.=<. {_43888~[_43888 > 0, _43888 < 100]} 
+                                                                                                findall(_47337,can_terminates(_47337,noServiceFeeYet),[serviceFee])
+                                                                                                    can_terminates(serviceFee,noServiceFeeYet)
+                                                                                                not_terminated(noServiceFeeYet,[serviceFee],0, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                    terminated(serviceFee,noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} ,0, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                                         {_48388~[_48388 > 0, _48388 < 100]} .>.0
+                                                                                                         {_48388~[_48388 > 0, _48388 < 100]} .<. {_43888~[_43888 > 0, _43888 < 100]} 
+                                                                                                        happens(serviceFee, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                            builtin(!spy)
+                                                                                                            holdsAt(noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                 {_48388~[_48388 > 0, _48388 < 100]} .>=.0
+                                                                                                                max_time(100)
+                                                                                                                 {_48388~[_48388 > 0, _48388 < 100]} .=<.100
+                                                                                                                proved(initiallyP(noServiceFeeYet))
+                                                                                                                not_stoppedIn(0,noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                    0.=<. {_48388~[_48388 > 0, _48388 < 100]} 
+                                                                                                                    findall(_52287,can_terminates(_52287,noServiceFeeYet),[serviceFee])
+                                                                                                                        can_terminates(serviceFee,noServiceFeeYet)
+                                                                                                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                        terminated(serviceFee,noServiceFeeYet, {_53381~[_53381 > 0, _53381 < 100]} ,0, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                                                             {_53381~[_53381 > 0, _53381 < 100]} .>.0
+                                                                                                                             {_53381~[_53381 > 0, _53381 < 100]} .<. {_48388~[_48388 > 0, _48388 < 100]} 
+                                                                                                                            happens(serviceFee, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee, {_32040~[_32040 > 0, _32040 =< 100]} )
+        builtin(!spy)
+        holdsAt(noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+             {_32040~[_32040 > 0, _32040 =< 100]} .>=.0
+            max_time(100)
+             {_32040~[_32040 > 0, _32040 =< 100]} .=<.100
+            initiallyP(noServiceFeeYet)
+            not_stoppedIn(0,noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+                0.=<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                findall(_32533,can_terminates(_32533,noServiceFeeYet),[serviceFee])
+                    can_terminates(serviceFee,noServiceFeeYet)
+                not_terminated(noServiceFeeYet,[serviceFee],0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                    terminated(serviceFee,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} ,0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                         {_33346~[_33346 > 0, _33346 < 100]} .>.0
+                         {_33346~[_33346 > 0, _33346 < 100]} .<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                        happens(serviceFee, {_33346~[_33346 > 0, _33346 < 100]} )
+                            builtin(!spy)
+                            holdsAt(noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                 {_33346~[_33346 > 0, _33346 < 100]} .>=.0
+                                max_time(100)
+                                 {_33346~[_33346 > 0, _33346 < 100]} .=<.100
+                                proved(initiallyP(noServiceFeeYet))
+                                not_stoppedIn(0,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                    0.=<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                    findall(_35445,can_terminates(_35445,noServiceFeeYet),[serviceFee])
+                                        can_terminates(serviceFee,noServiceFeeYet)
+                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                        terminated(serviceFee,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} ,0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                             {_36367~[_36367 > 0, _36367 < 100]} .>.0
+                                             {_36367~[_36367 > 0, _36367 < 100]} .<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                            happens(serviceFee, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                builtin(!spy)
+                                                holdsAt(noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .>=.0
+                                                    max_time(100)
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .=<.100
+                                                    proved(initiallyP(noServiceFeeYet))
+                                                    not_stoppedIn(0,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                        0.=<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                        findall(_38916,can_terminates(_38916,noServiceFeeYet),[serviceFee])
+                                                            can_terminates(serviceFee,noServiceFeeYet)
+                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                            terminated(serviceFee,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} ,0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                                proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .>.0
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                                happens(serviceFee, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .>=.0
+                                                                        max_time(100)
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .=<.100
+                                                                        proved(initiallyP(noServiceFeeYet))
+                                                                        not_stoppedIn(0,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                            0.=<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                            findall(_42880,can_terminates(_42880,noServiceFeeYet),[serviceFee])
+                                                                                can_terminates(serviceFee,noServiceFeeYet)
+                                                                            not_terminated(noServiceFeeYet,[serviceFee],0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                terminated(serviceFee,noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} ,0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                    proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .>.0
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                                    happens(serviceFee, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                        builtin(!spy)
+                                                                                        holdsAt(noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                             {_43888~[_43888 > 0, _43888 < 100]} .>=.0
+                                                                                            max_time(100)
+                                                                                             {_43888~[_43888 > 0, _43888 < 100]} .=<.100
+                                                                                            proved(initiallyP(noServiceFeeYet))
+                                                                                            not_stoppedIn(0,noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                0.=<. {_43888~[_43888 > 0, _43888 < 100]} 
+                                                                                                findall(_47337,can_terminates(_47337,noServiceFeeYet),[serviceFee])
+                                                                                                    can_terminates(serviceFee,noServiceFeeYet)
+                                                                                                not_terminated(noServiceFeeYet,[serviceFee],0, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                    terminated(serviceFee,noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} ,0, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                                         {_48388~[_48388 > 0, _48388 < 100]} .>.0
+                                                                                                         {_48388~[_48388 > 0, _48388 < 100]} .<. {_43888~[_43888 > 0, _43888 < 100]} 
+                                                                                                        happens(serviceFee, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                            builtin(!spy)
+                                                                                                            holdsAt(noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                 {_48388~[_48388 > 0, _48388 < 100]} .>=.0
+                                                                                                                max_time(100)
+                                                                                                                 {_48388~[_48388 > 0, _48388 < 100]} .=<.100
+                                                                                                                proved(initiallyP(noServiceFeeYet))
+                                                                                                                not_stoppedIn(0,noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                    0.=<. {_48388~[_48388 > 0, _48388 < 100]} 
+                                                                                                                    findall(_52287,can_terminates(_52287,noServiceFeeYet),[serviceFee])
+                                                                                                                        can_terminates(serviceFee,noServiceFeeYet)
+                                                                                                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                        terminated(serviceFee,noServiceFeeYet, {_53381~[_53381 > 0, _53381 < 100]} ,0, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                                                             {_53381~[_53381 > 0, _53381 < 100]} .>.0
+                                                                                                                             {_53381~[_53381 > 0, _53381 < 100]} .<. {_48388~[_48388 > 0, _48388 < 100]} 
+                                                                                                                            happens(serviceFee, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                builtin(!spy)
+                                                                                                                                holdsAt(noServiceFeeYet, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                     {_53381~[_53381 > 0, _53381 < 100]} .>=.0
+                                                                                                                                    max_time(100)
+                                                                                                                                     {_53381~[_53381 > 0, _53381 < 100]} .=<.100
+                                                                                                                                    proved(initiallyP(noServiceFeeYet))
+                                                                                                                                    not_stoppedIn(0,noServiceFeeYet, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                        0.=<. {_53381~[_53381 > 0, _53381 < 100]} 
+                                                                                                                                        findall(_57730,can_terminates(_57730,noServiceFeeYet),[serviceFee])
+                                                                                                                                            can_terminates(serviceFee,noServiceFeeYet)
+                                                                                                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                            terminated(serviceFee,noServiceFeeYet, {_58867~[_58867 > 0, _58867 < 100]} ,0, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                                proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                                                                                 {_58867~[_58867 > 0, _58867 < 100]} .>.0
+                                                                                                                                                 {_58867~[_58867 > 0, _58867 < 100]} .<. {_53381~[_53381 > 0, _53381 < 100]} 
+                                                                                                                                                happens(serviceFee, {_58867~[_58867 > 0, _58867 < 100]} )
+                                                                                                                                                    builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee, {_32040~[_32040 > 0, _32040 =< 100]} )
+        builtin(!spy)
+        holdsAt(noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+             {_32040~[_32040 > 0, _32040 =< 100]} .>=.0
+            max_time(100)
+             {_32040~[_32040 > 0, _32040 =< 100]} .=<.100
+            initiallyP(noServiceFeeYet)
+            not_stoppedIn(0,noServiceFeeYet, {_32040~[_32040 > 0, _32040 =< 100]} )
+                0.=<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                findall(_32533,can_terminates(_32533,noServiceFeeYet),[serviceFee])
+                    can_terminates(serviceFee,noServiceFeeYet)
+                not_terminated(noServiceFeeYet,[serviceFee],0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                    terminated(serviceFee,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} ,0, {_32040~[_32040 > 0, _32040 =< 100]} )
+                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                         {_33346~[_33346 > 0, _33346 < 100]} .>.0
+                         {_33346~[_33346 > 0, _33346 < 100]} .<. {_32040~[_32040 > 0, _32040 =< 100]} 
+                        happens(serviceFee, {_33346~[_33346 > 0, _33346 < 100]} )
+                            builtin(!spy)
+                            holdsAt(noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                 {_33346~[_33346 > 0, _33346 < 100]} .>=.0
+                                max_time(100)
+                                 {_33346~[_33346 > 0, _33346 < 100]} .=<.100
+                                proved(initiallyP(noServiceFeeYet))
+                                not_stoppedIn(0,noServiceFeeYet, {_33346~[_33346 > 0, _33346 < 100]} )
+                                    0.=<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                    findall(_35445,can_terminates(_35445,noServiceFeeYet),[serviceFee])
+                                        can_terminates(serviceFee,noServiceFeeYet)
+                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                        terminated(serviceFee,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} ,0, {_33346~[_33346 > 0, _33346 < 100]} )
+                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                             {_36367~[_36367 > 0, _36367 < 100]} .>.0
+                                             {_36367~[_36367 > 0, _36367 < 100]} .<. {_33346~[_33346 > 0, _33346 < 100]} 
+                                            happens(serviceFee, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                builtin(!spy)
+                                                holdsAt(noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .>=.0
+                                                    max_time(100)
+                                                     {_36367~[_36367 > 0, _36367 < 100]} .=<.100
+                                                    proved(initiallyP(noServiceFeeYet))
+                                                    not_stoppedIn(0,noServiceFeeYet, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                        0.=<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                        findall(_38916,can_terminates(_38916,noServiceFeeYet),[serviceFee])
+                                                            can_terminates(serviceFee,noServiceFeeYet)
+                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                            terminated(serviceFee,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} ,0, {_36367~[_36367 > 0, _36367 < 100]} )
+                                                                proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .>.0
+                                                                 {_39881~[_39881 > 0, _39881 < 100]} .<. {_36367~[_36367 > 0, _36367 < 100]} 
+                                                                happens(serviceFee, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .>=.0
+                                                                        max_time(100)
+                                                                         {_39881~[_39881 > 0, _39881 < 100]} .=<.100
+                                                                        proved(initiallyP(noServiceFeeYet))
+                                                                        not_stoppedIn(0,noServiceFeeYet, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                            0.=<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                            findall(_42880,can_terminates(_42880,noServiceFeeYet),[serviceFee])
+                                                                                can_terminates(serviceFee,noServiceFeeYet)
+                                                                            not_terminated(noServiceFeeYet,[serviceFee],0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                terminated(serviceFee,noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} ,0, {_39881~[_39881 > 0, _39881 < 100]} )
+                                                                                    proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .>.0
+                                                                                     {_43888~[_43888 > 0, _43888 < 100]} .<. {_39881~[_39881 > 0, _39881 < 100]} 
+                                                                                    happens(serviceFee, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                        builtin(!spy)
+                                                                                        holdsAt(noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                             {_43888~[_43888 > 0, _43888 < 100]} .>=.0
+                                                                                            max_time(100)
+                                                                                             {_43888~[_43888 > 0, _43888 < 100]} .=<.100
+                                                                                            proved(initiallyP(noServiceFeeYet))
+                                                                                            not_stoppedIn(0,noServiceFeeYet, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                0.=<. {_43888~[_43888 > 0, _43888 < 100]} 
+                                                                                                findall(_47337,can_terminates(_47337,noServiceFeeYet),[serviceFee])
+                                                                                                    can_terminates(serviceFee,noServiceFeeYet)
+                                                                                                not_terminated(noServiceFeeYet,[serviceFee],0, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                    terminated(serviceFee,noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} ,0, {_43888~[_43888 > 0, _43888 < 100]} )
+                                                                                                        proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                                         {_48388~[_48388 > 0, _48388 < 100]} .>.0
+                                                                                                         {_48388~[_48388 > 0, _48388 < 100]} .<. {_43888~[_43888 > 0, _43888 < 100]} 
+                                                                                                        happens(serviceFee, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                            builtin(!spy)
+                                                                                                            holdsAt(noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                 {_48388~[_48388 > 0, _48388 < 100]} .>=.0
+                                                                                                                max_time(100)
+                                                                                                                 {_48388~[_48388 > 0, _48388 < 100]} .=<.100
+                                                                                                                proved(initiallyP(noServiceFeeYet))
+                                                                                                                not_stoppedIn(0,noServiceFeeYet, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                    0.=<. {_48388~[_48388 > 0, _48388 < 100]} 
+                                                                                                                    findall(_52287,can_terminates(_52287,noServiceFeeYet),[serviceFee])
+                                                                                                                        can_terminates(serviceFee,noServiceFeeYet)
+                                                                                                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                        terminated(serviceFee,noServiceFeeYet, {_53381~[_53381 > 0, _53381 < 100]} ,0, {_48388~[_48388 > 0, _48388 < 100]} )
+                                                                                                                            proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                                                             {_53381~[_53381 > 0, _53381 < 100]} .>.0
+                                                                                                                             {_53381~[_53381 > 0, _53381 < 100]} .<. {_48388~[_48388 > 0, _48388 < 100]} 
+                                                                                                                            happens(serviceFee, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                builtin(!spy)
+                                                                                                                                holdsAt(noServiceFeeYet, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                     {_53381~[_53381 > 0, _53381 < 100]} .>=.0
+                                                                                                                                    max_time(100)
+                                                                                                                                     {_53381~[_53381 > 0, _53381 < 100]} .=<.100
+                                                                                                                                    proved(initiallyP(noServiceFeeYet))
+                                                                                                                                    not_stoppedIn(0,noServiceFeeYet, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                        0.=<. {_53381~[_53381 > 0, _53381 < 100]} 
+                                                                                                                                        findall(_57730,can_terminates(_57730,noServiceFeeYet),[serviceFee])
+                                                                                                                                            can_terminates(serviceFee,noServiceFeeYet)
+                                                                                                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                            terminated(serviceFee,noServiceFeeYet, {_58867~[_58867 > 0, _58867 < 100]} ,0, {_53381~[_53381 > 0, _53381 < 100]} )
+                                                                                                                                                proved(can_terminates(serviceFee,noServiceFeeYet))
+                                                                                                                                                 {_58867~[_58867 > 0, _58867 < 100]} .>.0
+                                                                                                                                                
+timeout
+
+
+  real      0:03.22
+  real [s]  3.22
+  user [s]  1.97
+  sys  [s]  0.09
+  mem  [KB] 26880
+  avgm [KB] 0

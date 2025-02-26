@@ -28,16 +28,16 @@ not_stoppedIn(T1, Fluent, T2) :-
 
 not_terminated(_, [], _, _).
 not_terminated(Fluent, [H|X], T1, T2) :-
-    findall(T, term(H, Fluent, T, T1, T2),List),
-    no_terminate(List, T1, T2),
+    findall(T, terminated(H, Fluent, T, T1, T2),List),
+    all_entirely_outside_of_interval(List, T1, T2),
     not_terminated(Fluent, X, T1, T2).
 
-term(E, F, T, T1, T2) :-
+terminated(E, F, T, T1, T2) :-
     can_terminates(E, F),
     T .>. T1, T .<. T2,
     happens(E, T),
     terminates(E, F, T).
 
-no_terminate([], _, _).
-no_terminate([H|T], T1, T2) :- sup(H, Hsup), Hsup .=<. T1, no_terminate(T, T1, T2).
-no_terminate([H|T], T1, T2) :- inf(H, Hinf), Hinf .>=. T2, no_terminate(T, T1, T2).
+all_entirely_outside_of_interval([], _, _).
+all_entirely_outside_of_interval([H|T], T1, T2) :- sup(H, Hsup), Hsup .=<. T1, all_entirely_outside_of_interval(T, T1, T2).
+all_entirely_outside_of_interval([H|T], T1, T2) :- inf(H, Hinf), Hinf .>=. T2, all_entirely_outside_of_interval(T, T1, T2).
