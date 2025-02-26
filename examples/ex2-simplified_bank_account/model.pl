@@ -31,8 +31,8 @@ terminates(serviceFee, balance(OldB), T) :-
 
 happens(serviceFee, T) :- !spy,
     holdsAt(noServiceFeeYet, T),
-    Balance .<. 1000,
-    holdsAt(balance(Balance), T).
+    B .<. 1000,
+    holdsAt(balance(B), T).
 
 
 % ----- narrative & queries  -----

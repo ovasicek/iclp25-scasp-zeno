@@ -34,8 +34,8 @@ happens(serviceFee, T2) :- !spy,
     epsilon(EPS), T2 .=. T1 + EPS,
     happens(withdraw(_), T1),
     holdsAt(noServiceFeeYet, T2),
-    Balance .<. 1000,
-    holdsAt(balance(Balance), T2).
+    B .<. 1000,
+    holdsAt(balance(B), T2).
 
 
 % ----- narrative & queries  -----

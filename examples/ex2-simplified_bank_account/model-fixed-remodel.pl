@@ -48,10 +48,10 @@ initiallyN(F) :- not initiallyP(F).
 happens(withdraw(8000), 10).
 happens(withdraw(1500), 20).
 
-?- holdsAt(balance(X),  5).   % non-term., should be 10000
-?- holdsAt(balance(X),  15).  % non-term., should be 2000
-?- holdsAt(balance(X),  25).  % non-term., should be 490
-?- happens(serviceFee,  T).   % non-term., should be smallest T > 20
+?- holdsAt(balance(X),  5).   % 10000
+?- holdsAt(balance(X),  15).  % 2000
+?- holdsAt(balance(X),  25).  % 490
+?- happens(serviceFee,  T).   % 20
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
