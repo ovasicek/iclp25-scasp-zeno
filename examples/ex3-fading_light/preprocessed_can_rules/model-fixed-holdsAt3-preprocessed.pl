@@ -1,7 +1,7 @@
 
-can_initiates(full_brightness_reached, light_intensity(10)).
+can_initiates(fade_in_end, brightness(10)).
 can_initiates(turn_light_on, fading_in).
-can_releases(turn_light_on, light_intensity(X)).
-can_terminates(full_brightness_reached, fading_in).
-can_terminates(full_brightness_reached, light_intensity(X)).
-can_trajectory(fading_in, T1, light_intensity(NewI), T2).
+can_releases(turn_light_on, brightness(X)).
+can_terminates(fade_in_end, brightness(X)).
+can_terminates(fade_in_end, fading_in).
+can_trajectory(fading_in, T1, brightness(NewI), T2).

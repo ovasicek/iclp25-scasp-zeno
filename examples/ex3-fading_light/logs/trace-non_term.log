@@ -1,564 +1,570 @@
 $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
 
 
-% QUERY:?- happens(full_brightness_reached,T).
+% QUERY:?- happens(fade_in_end,T).
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,_5733)
+    happens(fade_in_end,_112534)
         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,20)
+    happens(fade_in_end,20)
         builtin(!spy)
-        holdsAt(light_intensity(10),20)
+        holdsAt(brightness(10),20)
             10.>.0
             10.<.20
             max_time(100)
             20.=<.100
-            can_trajectory(fading_in,10,light_intensity(10),20)
+            can_trajectory(fading_in,10,brightness(10),20)
             can_initiates(turn_light_on,fading_in)
             happens(turn_light_on,10)
             initiates(turn_light_on,fading_in,10)
-            trajectory(fading_in,10,light_intensity(10),20)
+            trajectory(fading_in,10,brightness(10),20)
                 10.=.0+(20-10)*1
-                holdsAt(light_intensity(0),10)
+                holdsAt(brightness(0),10)
                     10.>=.0
                     max_time(100)
                     10.=<.100
-                    initiallyP(light_intensity(0))
-                    not_stoppedIn(0,light_intensity(0),10)
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
                         0.=<.10
-                        not_interrupted(terminates,light_intensity(0),0,10)
-                            findall(_8875,can_interrupt(terminates,_8875,light_intensity(0)),[full_brightness_reached])
-                                can_interrupt(terminates,full_brightness_reached,light_intensity(0))
-                                    can_terminates(full_brightness_reached,light_intensity(0))
-                            not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10)
-                                interrupt(terminates,full_brightness_reached,light_intensity(0), {_9359~[_9359 > 0, _9359 < 10]} ,0,10)
-                                     {_9359~[_9359 > 0, _9359 < 10]} .>.0
-                                     {_9359~[_9359 > 0, _9359 < 10]} .<.10
-                                    happens(full_brightness_reached, {_9359~[_9359 > 0, _9359 < 10]} )
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_115676,can_interrupt(terminates,_115676,brightness(0)),[fade_in_end])
+                                can_interrupt(terminates,fade_in_end,brightness(0))
+                                    can_terminates(fade_in_end,brightness(0))
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupt(terminates,fade_in_end,brightness(0), {_116160~[_116160 > 0, _116160 < 10]} ,0,10)
+                                     {_116160~[_116160 > 0, _116160 < 10]} .>.0
+                                     {_116160~[_116160 > 0, _116160 < 10]} .<.10
+                                    happens(fade_in_end, {_116160~[_116160 > 0, _116160 < 10]} )
                                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,20)
+    happens(fade_in_end,20)
         builtin(!spy)
-        holdsAt(light_intensity(10),20)
+        holdsAt(brightness(10),20)
             10.>.0
             10.<.20
             max_time(100)
             20.=<.100
-            can_trajectory(fading_in,10,light_intensity(10),20)
+            can_trajectory(fading_in,10,brightness(10),20)
             can_initiates(turn_light_on,fading_in)
             happens(turn_light_on,10)
             initiates(turn_light_on,fading_in,10)
-            trajectory(fading_in,10,light_intensity(10),20)
+            trajectory(fading_in,10,brightness(10),20)
                 10.=.0+(20-10)*1
-                holdsAt(light_intensity(0),10)
+                holdsAt(brightness(0),10)
                     10.>=.0
                     max_time(100)
                     10.=<.100
-                    initiallyP(light_intensity(0))
-                    not_stoppedIn(0,light_intensity(0),10)
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
                         0.=<.10
-                        not_interrupted(terminates,light_intensity(0),0,10)
-                            findall(_8875,can_interrupt(terminates,_8875,light_intensity(0)),[full_brightness_reached])
-                                can_interrupt(terminates,full_brightness_reached,light_intensity(0))
-                                    can_terminates(full_brightness_reached,light_intensity(0))
-                            not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10)
-                                interrupt(terminates,full_brightness_reached,light_intensity(0), {_9359~[_9359 > 0, _9359 < 10]} ,0,10)
-                                     {_9359~[_9359 > 0, _9359 < 10]} .>.0
-                                     {_9359~[_9359 > 0, _9359 < 10]} .<.10
-                                    happens(full_brightness_reached, {_9359~[_9359 > 0, _9359 < 10]} )
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_115676,can_interrupt(terminates,_115676,brightness(0)),[fade_in_end])
+                                can_interrupt(terminates,fade_in_end,brightness(0))
+                                    can_terminates(fade_in_end,brightness(0))
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupt(terminates,fade_in_end,brightness(0), {_116160~[_116160 > 0, _116160 < 10]} ,0,10)
+                                     {_116160~[_116160 > 0, _116160 < 10]} .>.0
+                                     {_116160~[_116160 > 0, _116160 < 10]} .<.10
+                                    happens(fade_in_end, {_116160~[_116160 > 0, _116160 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(light_intensity(10), {_9359~[_9359 > 0, _9359 < 10]} )
-                                             {_10814~[_10814 > 0, _10814 < 10]} .>.0
-                                             {_10814~[_10814 > 0, _10814 < 10]} .<. {_9359~[_9359 > 0, _9359 < 10]} 
+                                        holdsAt(brightness(10), {_116160~[_116160 > 0, _116160 < 10]} )
+                                             {_117615~[_117615 > 0, _117615 < 10]} .>.0
+                                             {_117615~[_117615 > 0, _117615 < 10]} .<. {_116160~[_116160 > 0, _116160 < 10]} 
                                             max_time(100)
-                                             {_9359~[_9359 > 0, _9359 < 10]} .=<.100
-                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                            happens(full_brightness_reached, {_10814~[_10814 > 0, _10814 < 10]} )
+                                             {_116160~[_116160 > 0, _116160 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10))
+                                            happens(fade_in_end, {_117615~[_117615 > 0, _117615 < 10]} )
                                                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,20)
+    happens(fade_in_end,20)
         builtin(!spy)
-        holdsAt(light_intensity(10),20)
+        holdsAt(brightness(10),20)
             10.>.0
             10.<.20
             max_time(100)
             20.=<.100
-            can_trajectory(fading_in,10,light_intensity(10),20)
+            can_trajectory(fading_in,10,brightness(10),20)
             can_initiates(turn_light_on,fading_in)
             happens(turn_light_on,10)
             initiates(turn_light_on,fading_in,10)
-            trajectory(fading_in,10,light_intensity(10),20)
+            trajectory(fading_in,10,brightness(10),20)
                 10.=.0+(20-10)*1
-                holdsAt(light_intensity(0),10)
+                holdsAt(brightness(0),10)
                     10.>=.0
                     max_time(100)
                     10.=<.100
-                    initiallyP(light_intensity(0))
-                    not_stoppedIn(0,light_intensity(0),10)
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
                         0.=<.10
-                        not_interrupted(terminates,light_intensity(0),0,10)
-                            findall(_8875,can_interrupt(terminates,_8875,light_intensity(0)),[full_brightness_reached])
-                                can_interrupt(terminates,full_brightness_reached,light_intensity(0))
-                                    can_terminates(full_brightness_reached,light_intensity(0))
-                            not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10)
-                                interrupt(terminates,full_brightness_reached,light_intensity(0), {_9359~[_9359 > 0, _9359 < 10]} ,0,10)
-                                     {_9359~[_9359 > 0, _9359 < 10]} .>.0
-                                     {_9359~[_9359 > 0, _9359 < 10]} .<.10
-                                    happens(full_brightness_reached, {_9359~[_9359 > 0, _9359 < 10]} )
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_115676,can_interrupt(terminates,_115676,brightness(0)),[fade_in_end])
+                                can_interrupt(terminates,fade_in_end,brightness(0))
+                                    can_terminates(fade_in_end,brightness(0))
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupt(terminates,fade_in_end,brightness(0), {_116160~[_116160 > 0, _116160 < 10]} ,0,10)
+                                     {_116160~[_116160 > 0, _116160 < 10]} .>.0
+                                     {_116160~[_116160 > 0, _116160 < 10]} .<.10
+                                    happens(fade_in_end, {_116160~[_116160 > 0, _116160 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(light_intensity(10), {_9359~[_9359 > 0, _9359 < 10]} )
-                                             {_10814~[_10814 > 0, _10814 < 10]} .>.0
-                                             {_10814~[_10814 > 0, _10814 < 10]} .<. {_9359~[_9359 > 0, _9359 < 10]} 
+                                        holdsAt(brightness(10), {_116160~[_116160 > 0, _116160 < 10]} )
+                                             {_117615~[_117615 > 0, _117615 < 10]} .>.0
+                                             {_117615~[_117615 > 0, _117615 < 10]} .<. {_116160~[_116160 > 0, _116160 < 10]} 
                                             max_time(100)
-                                             {_9359~[_9359 > 0, _9359 < 10]} .=<.100
-                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                            happens(full_brightness_reached, {_10814~[_10814 > 0, _10814 < 10]} )
+                                             {_116160~[_116160 > 0, _116160 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10))
+                                            happens(fade_in_end, {_117615~[_117615 > 0, _117615 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(light_intensity(10), {_10814~[_10814 > 0, _10814 < 10]} )
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .>.0
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .<. {_10814~[_10814 > 0, _10814 < 10]} 
+                                                holdsAt(brightness(10), {_117615~[_117615 > 0, _117615 < 10]} )
+                                                     {_119859~[_119859 > 0, _119859 < 10]} .>.0
+                                                     {_119859~[_119859 > 0, _119859 < 10]} .<. {_117615~[_117615 > 0, _117615 < 10]} 
                                                     max_time(100)
-                                                     {_10814~[_10814 > 0, _10814 < 10]} .=<.100
-                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                    happens(full_brightness_reached, {_13058~[_13058 > 0, _13058 < 10]} )
+                                                     {_117615~[_117615 > 0, _117615 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10))
+                                                    happens(fade_in_end, {_119859~[_119859 > 0, _119859 < 10]} )
                                                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,20)
+    happens(fade_in_end,20)
         builtin(!spy)
-        holdsAt(light_intensity(10),20)
+        holdsAt(brightness(10),20)
             10.>.0
             10.<.20
             max_time(100)
             20.=<.100
-            can_trajectory(fading_in,10,light_intensity(10),20)
+            can_trajectory(fading_in,10,brightness(10),20)
             can_initiates(turn_light_on,fading_in)
             happens(turn_light_on,10)
             initiates(turn_light_on,fading_in,10)
-            trajectory(fading_in,10,light_intensity(10),20)
+            trajectory(fading_in,10,brightness(10),20)
                 10.=.0+(20-10)*1
-                holdsAt(light_intensity(0),10)
+                holdsAt(brightness(0),10)
                     10.>=.0
                     max_time(100)
                     10.=<.100
-                    initiallyP(light_intensity(0))
-                    not_stoppedIn(0,light_intensity(0),10)
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
                         0.=<.10
-                        not_interrupted(terminates,light_intensity(0),0,10)
-                            findall(_8875,can_interrupt(terminates,_8875,light_intensity(0)),[full_brightness_reached])
-                                can_interrupt(terminates,full_brightness_reached,light_intensity(0))
-                                    can_terminates(full_brightness_reached,light_intensity(0))
-                            not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10)
-                                interrupt(terminates,full_brightness_reached,light_intensity(0), {_9359~[_9359 > 0, _9359 < 10]} ,0,10)
-                                     {_9359~[_9359 > 0, _9359 < 10]} .>.0
-                                     {_9359~[_9359 > 0, _9359 < 10]} .<.10
-                                    happens(full_brightness_reached, {_9359~[_9359 > 0, _9359 < 10]} )
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_115676,can_interrupt(terminates,_115676,brightness(0)),[fade_in_end])
+                                can_interrupt(terminates,fade_in_end,brightness(0))
+                                    can_terminates(fade_in_end,brightness(0))
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupt(terminates,fade_in_end,brightness(0), {_1339~[_1339 > 0, _1339 < 10]} ,0,10)
+                                     {_1339~[_1339 > 0, _1339 < 10]} .>.0
+                                     {_1339~[_1339 > 0, _1339 < 10]} .<.10
+                                    happens(fade_in_end, {_1339~[_1339 > 0, _1339 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(light_intensity(10), {_9359~[_9359 > 0, _9359 < 10]} )
-                                             {_10814~[_10814 > 0, _10814 < 10]} .>.0
-                                             {_10814~[_10814 > 0, _10814 < 10]} .<. {_9359~[_9359 > 0, _9359 < 10]} 
+                                        holdsAt(brightness(10), {_1339~[_1339 > 0, _1339 < 10]} )
+                                             {_1507~[_1507 > 0, _1507 < 10]} .>.0
+                                             {_1507~[_1507 > 0, _1507 < 10]} .<. {_1339~[_1339 > 0, _1339 < 10]} 
                                             max_time(100)
-                                             {_9359~[_9359 > 0, _9359 < 10]} .=<.100
-                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                            happens(full_brightness_reached, {_10814~[_10814 > 0, _10814 < 10]} )
+                                             {_1339~[_1339 > 0, _1339 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10))
+                                            happens(fade_in_end, {_1507~[_1507 > 0, _1507 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(light_intensity(10), {_10814~[_10814 > 0, _10814 < 10]} )
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .>.0
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .<. {_10814~[_10814 > 0, _10814 < 10]} 
+                                                holdsAt(brightness(10), {_1507~[_1507 > 0, _1507 < 10]} )
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .>.0
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .<. {_1507~[_1507 > 0, _1507 < 10]} 
                                                     max_time(100)
-                                                     {_10814~[_10814 > 0, _10814 < 10]} .=<.100
-                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                    happens(full_brightness_reached, {_13058~[_13058 > 0, _13058 < 10]} )
+                                                     {_1507~[_1507 > 0, _1507 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10))
+                                                    happens(fade_in_end, {_1798~[_1798 > 0, _1798 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(light_intensity(10), {_13058~[_13058 > 0, _13058 < 10]} )
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .>.0
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .<. {_13058~[_13058 > 0, _13058 < 10]} 
+                                                        holdsAt(brightness(10), {_1798~[_1798 > 0, _1798 < 10]} )
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .>.0
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .<. {_1798~[_1798 > 0, _1798 < 10]} 
                                                             max_time(100)
-                                                             {_13058~[_13058 > 0, _13058 < 10]} .=<.100
-                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                            happens(full_brightness_reached, {_15497~[_15497 > 0, _15497 < 10]} )
+                                                             {_1798~[_1798 > 0, _1798 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10))
+                                                            happens(fade_in_end, {_2105~[_2105 > 0, _2105 < 10]} )
                                                                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,20)
+    happens(fade_in_end,20)
         builtin(!spy)
-        holdsAt(light_intensity(10),20)
+        holdsAt(brightness(10),20)
             10.>.0
             10.<.20
             max_time(100)
             20.=<.100
-            can_trajectory(fading_in,10,light_intensity(10),20)
+            can_trajectory(fading_in,10,brightness(10),20)
             can_initiates(turn_light_on,fading_in)
             happens(turn_light_on,10)
             initiates(turn_light_on,fading_in,10)
-            trajectory(fading_in,10,light_intensity(10),20)
+            trajectory(fading_in,10,brightness(10),20)
                 10.=.0+(20-10)*1
-                holdsAt(light_intensity(0),10)
+                holdsAt(brightness(0),10)
                     10.>=.0
                     max_time(100)
                     10.=<.100
-                    initiallyP(light_intensity(0))
-                    not_stoppedIn(0,light_intensity(0),10)
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
                         0.=<.10
-                        not_interrupted(terminates,light_intensity(0),0,10)
-                            findall(_8875,can_interrupt(terminates,_8875,light_intensity(0)),[full_brightness_reached])
-                                can_interrupt(terminates,full_brightness_reached,light_intensity(0))
-                                    can_terminates(full_brightness_reached,light_intensity(0))
-                            not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10)
-                                interrupt(terminates,full_brightness_reached,light_intensity(0), {_9359~[_9359 > 0, _9359 < 10]} ,0,10)
-                                     {_9359~[_9359 > 0, _9359 < 10]} .>.0
-                                     {_9359~[_9359 > 0, _9359 < 10]} .<.10
-                                    happens(full_brightness_reached, {_9359~[_9359 > 0, _9359 < 10]} )
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_1182,can_interrupt(terminates,_1182,brightness(0)),[fade_in_end])
+                                can_interrupt(terminates,fade_in_end,brightness(0))
+                                    can_terminates(fade_in_end,brightness(0))
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupt(terminates,fade_in_end,brightness(0), {_1339~[_1339 > 0, _1339 < 10]} ,0,10)
+                                     {_1339~[_1339 > 0, _1339 < 10]} .>.0
+                                     {_1339~[_1339 > 0, _1339 < 10]} .<.10
+                                    happens(fade_in_end, {_1339~[_1339 > 0, _1339 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(light_intensity(10), {_9359~[_9359 > 0, _9359 < 10]} )
-                                             {_10814~[_10814 > 0, _10814 < 10]} .>.0
-                                             {_10814~[_10814 > 0, _10814 < 10]} .<. {_9359~[_9359 > 0, _9359 < 10]} 
+                                        holdsAt(brightness(10), {_1339~[_1339 > 0, _1339 < 10]} )
+                                             {_1507~[_1507 > 0, _1507 < 10]} .>.0
+                                             {_1507~[_1507 > 0, _1507 < 10]} .<. {_1339~[_1339 > 0, _1339 < 10]} 
                                             max_time(100)
-                                             {_9359~[_9359 > 0, _9359 < 10]} .=<.100
-                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                            happens(full_brightness_reached, {_10814~[_10814 > 0, _10814 < 10]} )
+                                             {_1339~[_1339 > 0, _1339 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10))
+                                            happens(fade_in_end, {_1507~[_1507 > 0, _1507 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(light_intensity(10), {_10814~[_10814 > 0, _10814 < 10]} )
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .>.0
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .<. {_10814~[_10814 > 0, _10814 < 10]} 
+                                                holdsAt(brightness(10), {_1507~[_1507 > 0, _1507 < 10]} )
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .>.0
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .<. {_1507~[_1507 > 0, _1507 < 10]} 
                                                     max_time(100)
-                                                     {_10814~[_10814 > 0, _10814 < 10]} .=<.100
-                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                    happens(full_brightness_reached, {_13058~[_13058 > 0, _13058 < 10]} )
+                                                     {_1507~[_1507 > 0, _1507 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10))
+                                                    happens(fade_in_end, {_1798~[_1798 > 0, _1798 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(light_intensity(10), {_13058~[_13058 > 0, _13058 < 10]} )
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .>.0
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .<. {_13058~[_13058 > 0, _13058 < 10]} 
+                                                        holdsAt(brightness(10), {_1798~[_1798 > 0, _1798 < 10]} )
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .>.0
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .<. {_1798~[_1798 > 0, _1798 < 10]} 
                                                             max_time(100)
-                                                             {_13058~[_13058 > 0, _13058 < 10]} .=<.100
-                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                            happens(full_brightness_reached, {_15497~[_15497 > 0, _15497 < 10]} )
+                                                             {_1798~[_1798 > 0, _1798 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10))
+                                                            happens(fade_in_end, {_2105~[_2105 > 0, _2105 < 10]} )
                                                                 builtin(!spy)
-                                                                holdsAt(light_intensity(10), {_15497~[_15497 > 0, _15497 < 10]} )
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .>.0
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .<. {_15497~[_15497 > 0, _15497 < 10]} 
+                                                                holdsAt(brightness(10), {_2105~[_2105 > 0, _2105 < 10]} )
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .>.0
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .<. {_2105~[_2105 > 0, _2105 < 10]} 
                                                                     max_time(100)
-                                                                     {_15497~[_15497 > 0, _15497 < 10]} .=<.100
-                                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                                    happens(full_brightness_reached, {_18118~[_18118 > 0, _18118 < 10]} )
+                                                                     {_2105~[_2105 > 0, _2105 < 10]} .=<.100
+                                                                    can_initiates(fade_in_end,brightness(10))
+                                                                    happens(fade_in_end, {_3106~[_3106 > 0, _3106 < 10]} )
                                                                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,20)
+    happens(fade_in_end,20)
         builtin(!spy)
-        holdsAt(light_intensity(10),20)
+        holdsAt(brightness(10),20)
             10.>.0
             10.<.20
             max_time(100)
             20.=<.100
-            can_trajectory(fading_in,10,light_intensity(10),20)
+            can_trajectory(fading_in,10,brightness(10),20)
             can_initiates(turn_light_on,fading_in)
             happens(turn_light_on,10)
             initiates(turn_light_on,fading_in,10)
-            trajectory(fading_in,10,light_intensity(10),20)
+            trajectory(fading_in,10,brightness(10),20)
                 10.=.0+(20-10)*1
-                holdsAt(light_intensity(0),10)
+                holdsAt(brightness(0),10)
                     10.>=.0
                     max_time(100)
                     10.=<.100
-                    initiallyP(light_intensity(0))
-                    not_stoppedIn(0,light_intensity(0),10)
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
                         0.=<.10
-                        not_interrupted(terminates,light_intensity(0),0,10)
-                            findall(_8875,can_interrupt(terminates,_8875,light_intensity(0)),[full_brightness_reached])
-                                can_interrupt(terminates,full_brightness_reached,light_intensity(0))
-                                    can_terminates(full_brightness_reached,light_intensity(0))
-                            not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10)
-                                interrupt(terminates,full_brightness_reached,light_intensity(0), {_9359~[_9359 > 0, _9359 < 10]} ,0,10)
-                                     {_9359~[_9359 > 0, _9359 < 10]} .>.0
-                                     {_9359~[_9359 > 0, _9359 < 10]} .<.10
-                                    happens(full_brightness_reached, {_9359~[_9359 > 0, _9359 < 10]} )
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_1182,can_interrupt(terminates,_1182,brightness(0)),[fade_in_end])
+                                can_interrupt(terminates,fade_in_end,brightness(0))
+                                    can_terminates(fade_in_end,brightness(0))
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupt(terminates,fade_in_end,brightness(0), {_1339~[_1339 > 0, _1339 < 10]} ,0,10)
+                                     {_1339~[_1339 > 0, _1339 < 10]} .>.0
+                                     {_1339~[_1339 > 0, _1339 < 10]} .<.10
+                                    happens(fade_in_end, {_1339~[_1339 > 0, _1339 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(light_intensity(10), {_9359~[_9359 > 0, _9359 < 10]} )
-                                             {_10814~[_10814 > 0, _10814 < 10]} .>.0
-                                             {_10814~[_10814 > 0, _10814 < 10]} .<. {_9359~[_9359 > 0, _9359 < 10]} 
+                                        holdsAt(brightness(10), {_1339~[_1339 > 0, _1339 < 10]} )
+                                             {_1507~[_1507 > 0, _1507 < 10]} .>.0
+                                             {_1507~[_1507 > 0, _1507 < 10]} .<. {_1339~[_1339 > 0, _1339 < 10]} 
                                             max_time(100)
-                                             {_9359~[_9359 > 0, _9359 < 10]} .=<.100
-                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                            happens(full_brightness_reached, {_10814~[_10814 > 0, _10814 < 10]} )
+                                             {_1339~[_1339 > 0, _1339 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10))
+                                            happens(fade_in_end, {_1507~[_1507 > 0, _1507 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(light_intensity(10), {_10814~[_10814 > 0, _10814 < 10]} )
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .>.0
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .<. {_10814~[_10814 > 0, _10814 < 10]} 
+                                                holdsAt(brightness(10), {_1507~[_1507 > 0, _1507 < 10]} )
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .>.0
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .<. {_1507~[_1507 > 0, _1507 < 10]} 
                                                     max_time(100)
-                                                     {_10814~[_10814 > 0, _10814 < 10]} .=<.100
-                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                    happens(full_brightness_reached, {_13058~[_13058 > 0, _13058 < 10]} )
+                                                     {_1507~[_1507 > 0, _1507 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10))
+                                                    happens(fade_in_end, {_1798~[_1798 > 0, _1798 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(light_intensity(10), {_13058~[_13058 > 0, _13058 < 10]} )
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .>.0
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .<. {_13058~[_13058 > 0, _13058 < 10]} 
+                                                        holdsAt(brightness(10), {_1798~[_1798 > 0, _1798 < 10]} )
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .>.0
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .<. {_1798~[_1798 > 0, _1798 < 10]} 
                                                             max_time(100)
-                                                             {_13058~[_13058 > 0, _13058 < 10]} .=<.100
-                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                            happens(full_brightness_reached, {_15497~[_15497 > 0, _15497 < 10]} )
+                                                             {_1798~[_1798 > 0, _1798 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10))
+                                                            happens(fade_in_end, {_2105~[_2105 > 0, _2105 < 10]} )
                                                                 builtin(!spy)
-                                                                holdsAt(light_intensity(10), {_15497~[_15497 > 0, _15497 < 10]} )
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .>.0
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .<. {_15497~[_15497 > 0, _15497 < 10]} 
+                                                                holdsAt(brightness(10), {_2105~[_2105 > 0, _2105 < 10]} )
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .>.0
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .<. {_2105~[_2105 > 0, _2105 < 10]} 
                                                                     max_time(100)
-                                                                     {_15497~[_15497 > 0, _15497 < 10]} .=<.100
-                                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                                    happens(full_brightness_reached, {_18118~[_18118 > 0, _18118 < 10]} )
+                                                                     {_2105~[_2105 > 0, _2105 < 10]} .=<.100
+                                                                    can_initiates(fade_in_end,brightness(10))
+                                                                    happens(fade_in_end, {_3106~[_3106 > 0, _3106 < 10]} )
                                                                         builtin(!spy)
-                                                                        holdsAt(light_intensity(10), {_18118~[_18118 > 0, _18118 < 10]} )
-                                                                             {_20921~[_20921 > 0, _20921 < 10]} .>.0
-                                                                             {_20921~[_20921 > 0, _20921 < 10]} .<. {_18118~[_18118 > 0, _18118 < 10]} 
+                                                                        holdsAt(brightness(10), {_3106~[_3106 > 0, _3106 < 10]} )
+                                                                             {_5909~[_5909 > 0, _5909 < 10]} .>.0
+                                                                             {_5909~[_5909 > 0, _5909 < 10]} .<. {_3106~[_3106 > 0, _3106 < 10]} 
                                                                             max_time(100)
-                                                                             {_18118~[_18118 > 0, _18118 < 10]} .=<.100
-                                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                                            happens(full_brightness_reached, {_20921~[_20921 > 0, _20921 < 10]} )
+                                                                             {_3106~[_3106 > 0, _3106 < 10]} .=<.100
+                                                                            can_initiates(fade_in_end,brightness(10))
+                                                                            happens(fade_in_end, {_5909~[_5909 > 0, _5909 < 10]} )
                                                                                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,20)
+    happens(fade_in_end,20)
         builtin(!spy)
-        holdsAt(light_intensity(10),20)
+        holdsAt(brightness(10),20)
             10.>.0
             10.<.20
             max_time(100)
             20.=<.100
-            can_trajectory(fading_in,10,light_intensity(10),20)
+            can_trajectory(fading_in,10,brightness(10),20)
             can_initiates(turn_light_on,fading_in)
             happens(turn_light_on,10)
             initiates(turn_light_on,fading_in,10)
-            trajectory(fading_in,10,light_intensity(10),20)
+            trajectory(fading_in,10,brightness(10),20)
                 10.=.0+(20-10)*1
-                holdsAt(light_intensity(0),10)
+                holdsAt(brightness(0),10)
                     10.>=.0
                     max_time(100)
                     10.=<.100
-                    initiallyP(light_intensity(0))
-                    not_stoppedIn(0,light_intensity(0),10)
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
                         0.=<.10
-                        not_interrupted(terminates,light_intensity(0),0,10)
-                            findall(_8875,can_interrupt(terminates,_8875,light_intensity(0)),[full_brightness_reached])
-                                can_interrupt(terminates,full_brightness_reached,light_intensity(0))
-                                    can_terminates(full_brightness_reached,light_intensity(0))
-                            not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10)
-                                interrupt(terminates,full_brightness_reached,light_intensity(0), {_9359~[_9359 > 0, _9359 < 10]} ,0,10)
-                                     {_9359~[_9359 > 0, _9359 < 10]} .>.0
-                                     {_9359~[_9359 > 0, _9359 < 10]} .<.10
-                                    happens(full_brightness_reached, {_9359~[_9359 > 0, _9359 < 10]} )
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_1182,can_interrupt(terminates,_1182,brightness(0)),[fade_in_end])
+                                can_interrupt(terminates,fade_in_end,brightness(0))
+                                    can_terminates(fade_in_end,brightness(0))
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupt(terminates,fade_in_end,brightness(0), {_1339~[_1339 > 0, _1339 < 10]} ,0,10)
+                                     {_1339~[_1339 > 0, _1339 < 10]} .>.0
+                                     {_1339~[_1339 > 0, _1339 < 10]} .<.10
+                                    happens(fade_in_end, {_1339~[_1339 > 0, _1339 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(light_intensity(10), {_9359~[_9359 > 0, _9359 < 10]} )
-                                             {_10814~[_10814 > 0, _10814 < 10]} .>.0
-                                             {_10814~[_10814 > 0, _10814 < 10]} .<. {_9359~[_9359 > 0, _9359 < 10]} 
+                                        holdsAt(brightness(10), {_1339~[_1339 > 0, _1339 < 10]} )
+                                             {_1507~[_1507 > 0, _1507 < 10]} .>.0
+                                             {_1507~[_1507 > 0, _1507 < 10]} .<. {_1339~[_1339 > 0, _1339 < 10]} 
                                             max_time(100)
-                                             {_9359~[_9359 > 0, _9359 < 10]} .=<.100
-                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                            happens(full_brightness_reached, {_10814~[_10814 > 0, _10814 < 10]} )
+                                             {_1339~[_1339 > 0, _1339 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10))
+                                            happens(fade_in_end, {_1507~[_1507 > 0, _1507 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(light_intensity(10), {_10814~[_10814 > 0, _10814 < 10]} )
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .>.0
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .<. {_10814~[_10814 > 0, _10814 < 10]} 
+                                                holdsAt(brightness(10), {_1507~[_1507 > 0, _1507 < 10]} )
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .>.0
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .<. {_1507~[_1507 > 0, _1507 < 10]} 
                                                     max_time(100)
-                                                     {_10814~[_10814 > 0, _10814 < 10]} .=<.100
-                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                    happens(full_brightness_reached, {_13058~[_13058 > 0, _13058 < 10]} )
+                                                     {_1507~[_1507 > 0, _1507 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10))
+                                                    happens(fade_in_end, {_1798~[_1798 > 0, _1798 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(light_intensity(10), {_13058~[_13058 > 0, _13058 < 10]} )
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .>.0
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .<. {_13058~[_13058 > 0, _13058 < 10]} 
+                                                        holdsAt(brightness(10), {_1798~[_1798 > 0, _1798 < 10]} )
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .>.0
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .<. {_1798~[_1798 > 0, _1798 < 10]} 
                                                             max_time(100)
-                                                             {_13058~[_13058 > 0, _13058 < 10]} .=<.100
-                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                            happens(full_brightness_reached, {_15497~[_15497 > 0, _15497 < 10]} )
+                                                             {_1798~[_1798 > 0, _1798 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10))
+                                                            happens(fade_in_end, {_2105~[_2105 > 0, _2105 < 10]} )
                                                                 builtin(!spy)
-                                                                holdsAt(light_intensity(10), {_15497~[_15497 > 0, _15497 < 10]} )
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .>.0
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .<. {_15497~[_15497 > 0, _15497 < 10]} 
+                                                                holdsAt(brightness(10), {_2105~[_2105 > 0, _2105 < 10]} )
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .>.0
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .<. {_2105~[_2105 > 0, _2105 < 10]} 
                                                                     max_time(100)
-                                                                     {_15497~[_15497 > 0, _15497 < 10]} .=<.100
-                                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                                    happens(full_brightness_reached, {_18118~[_18118 > 0, _18118 < 10]} )
+                                                                     {_2105~[_2105 > 0, _2105 < 10]} .=<.100
+                                                                    can_initiates(fade_in_end,brightness(10))
+                                                                    happens(fade_in_end, {_3106~[_3106 > 0, _3106 < 10]} )
                                                                         builtin(!spy)
-                                                                        holdsAt(light_intensity(10), {_18118~[_18118 > 0, _18118 < 10]} )
-                                                                             {_20921~[_20921 > 0, _20921 < 10]} .>.0
-                                                                             {_20921~[_20921 > 0, _20921 < 10]} .<. {_18118~[_18118 > 0, _18118 < 10]} 
+                                                                        holdsAt(brightness(10), {_3106~[_3106 > 0, _3106 < 10]} )
+                                                                             {_5909~[_5909 > 0, _5909 < 10]} .>.0
+                                                                             {_5909~[_5909 > 0, _5909 < 10]} .<. {_3106~[_3106 > 0, _3106 < 10]} 
                                                                             max_time(100)
-                                                                             {_18118~[_18118 > 0, _18118 < 10]} .=<.100
-                                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                                            happens(full_brightness_reached, {_20921~[_20921 > 0, _20921 < 10]} )
+                                                                             {_3106~[_3106 > 0, _3106 < 10]} .=<.100
+                                                                            can_initiates(fade_in_end,brightness(10))
+                                                                            happens(fade_in_end, {_5909~[_5909 > 0, _5909 < 10]} )
                                                                                 builtin(!spy)
-                                                                                holdsAt(light_intensity(10), {_20921~[_20921 > 0, _20921 < 10]} )
-                                                                                     {_23906~[_23906 > 0, _23906 < 10]} .>.0
-                                                                                     {_23906~[_23906 > 0, _23906 < 10]} .<. {_20921~[_20921 > 0, _20921 < 10]} 
+                                                                                holdsAt(brightness(10), {_5909~[_5909 > 0, _5909 < 10]} )
+                                                                                     {_8894~[_8894 > 0, _8894 < 10]} .>.0
+                                                                                     {_8894~[_8894 > 0, _8894 < 10]} .<. {_5909~[_5909 > 0, _5909 < 10]} 
                                                                                     max_time(100)
-                                                                                     {_20921~[_20921 > 0, _20921 < 10]} .=<.100
-                                                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                                                    happens(full_brightness_reached, {_23906~[_23906 > 0, _23906 < 10]} )
+                                                                                     {_5909~[_5909 > 0, _5909 < 10]} .=<.100
+                                                                                    can_initiates(fade_in_end,brightness(10))
+                                                                                    happens(fade_in_end, {_8894~[_8894 > 0, _8894 < 10]} )
                                                                                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,20)
+    happens(fade_in_end,20)
         builtin(!spy)
-        holdsAt(light_intensity(10),20)
+        holdsAt(brightness(10),20)
             10.>.0
             10.<.20
             max_time(100)
             20.=<.100
-            can_trajectory(fading_in,10,light_intensity(10),20)
+            can_trajectory(fading_in,10,brightness(10),20)
             can_initiates(turn_light_on,fading_in)
             happens(turn_light_on,10)
             initiates(turn_light_on,fading_in,10)
-            trajectory(fading_in,10,light_intensity(10),20)
+            trajectory(fading_in,10,brightness(10),20)
                 10.=.0+(20-10)*1
-                holdsAt(light_intensity(0),10)
+                holdsAt(brightness(0),10)
                     10.>=.0
                     max_time(100)
                     10.=<.100
-                    initiallyP(light_intensity(0))
-                    not_stoppedIn(0,light_intensity(0),10)
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
                         0.=<.10
-                        not_interrupted(terminates,light_intensity(0),0,10)
-                            findall(_8875,can_interrupt(terminates,_8875,light_intensity(0)),[full_brightness_reached])
-                                can_interrupt(terminates,full_brightness_reached,light_intensity(0))
-                                    can_terminates(full_brightness_reached,light_intensity(0))
-                            not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10)
-                                interrupt(terminates,full_brightness_reached,light_intensity(0), {_9359~[_9359 > 0, _9359 < 10]} ,0,10)
-                                     {_9359~[_9359 > 0, _9359 < 10]} .>.0
-                                     {_9359~[_9359 > 0, _9359 < 10]} .<.10
-                                    happens(full_brightness_reached, {_9359~[_9359 > 0, _9359 < 10]} )
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_1182,can_interrupt(terminates,_1182,brightness(0)),[fade_in_end])
+                                can_interrupt(terminates,fade_in_end,brightness(0))
+                                    can_terminates(fade_in_end,brightness(0))
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupt(terminates,fade_in_end,brightness(0), {_1339~[_1339 > 0, _1339 < 10]} ,0,10)
+                                     {_1339~[_1339 > 0, _1339 < 10]} .>.0
+                                     {_1339~[_1339 > 0, _1339 < 10]} .<.10
+                                    happens(fade_in_end, {_1339~[_1339 > 0, _1339 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(light_intensity(10), {_9359~[_9359 > 0, _9359 < 10]} )
-                                             {_10814~[_10814 > 0, _10814 < 10]} .>.0
-                                             {_10814~[_10814 > 0, _10814 < 10]} .<. {_9359~[_9359 > 0, _9359 < 10]} 
+                                        holdsAt(brightness(10), {_1339~[_1339 > 0, _1339 < 10]} )
+                                             {_1507~[_1507 > 0, _1507 < 10]} .>.0
+                                             {_1507~[_1507 > 0, _1507 < 10]} .<. {_1339~[_1339 > 0, _1339 < 10]} 
                                             max_time(100)
-                                             {_9359~[_9359 > 0, _9359 < 10]} .=<.100
-                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                            happens(full_brightness_reached, {_10814~[_10814 > 0, _10814 < 10]} )
+                                             {_1339~[_1339 > 0, _1339 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10))
+                                            happens(fade_in_end, {_1507~[_1507 > 0, _1507 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(light_intensity(10), {_10814~[_10814 > 0, _10814 < 10]} )
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .>.0
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .<. {_10814~[_10814 > 0, _10814 < 10]} 
+                                                holdsAt(brightness(10), {_1507~[_1507 > 0, _1507 < 10]} )
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .>.0
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .<. {_1507~[_1507 > 0, _1507 < 10]} 
                                                     max_time(100)
-                                                     {_10814~[_10814 > 0, _10814 < 10]} .=<.100
-                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                    happens(full_brightness_reached, {_13058~[_13058 > 0, _13058 < 10]} )
+                                                     {_1507~[_1507 > 0, _1507 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10))
+                                                    happens(fade_in_end, {_1798~[_1798 > 0, _1798 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(light_intensity(10), {_13058~[_13058 > 0, _13058 < 10]} )
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .>.0
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .<. {_13058~[_13058 > 0, _13058 < 10]} 
+                                                        holdsAt(brightness(10), {_1798~[_1798 > 0, _1798 < 10]} )
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .>.0
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .<. {_1798~[_1798 > 0, _1798 < 10]} 
                                                             max_time(100)
-                                                             {_13058~[_13058 > 0, _13058 < 10]} .=<.100
-                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                            happens(full_brightness_reached, {_15497~[_15497 > 0, _15497 < 10]} )
+                                                             {_1798~[_1798 > 0, _1798 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10))
+                                                            happens(fade_in_end, {_2105~[_2105 > 0, _2105 < 10]} )
                                                                 builtin(!spy)
-                                                                holdsAt(light_intensity(10), {_15497~[_15497 > 0, _15497 < 10]} )
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .>.0
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .<. {_15497~[_15497 > 0, _15497 < 10]} 
+                                                                holdsAt(brightness(10), {_2105~[_2105 > 0, _2105 < 10]} )
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .>.0
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .<. {_2105~[_2105 > 0, _2105 < 10]} 
                                                                     max_time(100)
-                                                                     {_15497~[_15497 > 0, _15497 < 10]} .=<.100
-                                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                                    happens(full_brightness_reached, {_18118~[_18118 > 0, _18118 < 10]} )
+                                                                     {_2105~[_2105 > 0, _2105 < 10]} .=<.100
+                                                                    can_initiates(fade_in_end,brightness(10))
+                                                                    happens(fade_in_end, {_3106~[_3106 > 0, _3106 < 10]} )
                                                                         builtin(!spy)
-                                                                        holdsAt(light_intensity(10), {_18118~[_18118 > 0, _18118 < 10]} )
-                                                                             {_20921~[_20921 > 0, _20921 < 10]} .>.0
-                                                                             {_20921~[_20921 > 0, _20921 < 10]} .<. {_18118~[_18118 > 0, _18118 < 10]} 
+                                                                        holdsAt(brightness(10), {_3106~[_3106 > 0, _3106 < 10]} )
+                                                                             {_5909~[_5909 > 0, _5909 < 10]} .>.0
+                                                                             {_5909~[_5909 > 0, _5909 < 10]} .<. {_3106~[_3106 > 0, _3106 < 10]} 
                                                                             max_time(100)
-                                                                             {_18118~[_18118 > 0, _18118 < 10]} .=<.100
-                                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                                            happens(full_brightness_reached, {_20921~[_20921 > 0, _20921 < 10]} )
+                                                                             {_3106~[_3106 > 0, _3106 < 10]} .=<.100
+                                                                            can_initiates(fade_in_end,brightness(10))
+                                                                            happens(fade_in_end, {_5909~[_5909 > 0, _5909 < 10]} )
                                                                                 builtin(!spy)
-                                                                                holdsAt(light_intensity(10), {_20921~[_20921 > 0, _20921 < 10]} )
-                                                                                     {_23906~[_23906 > 0, _23906 < 10]} .>.0
-                                                                                     {_23906~[_23906 > 0, _23906 < 10]} .<. {_20921~[_20921 > 0, _20921 < 10]} 
+                                                                                holdsAt(brightness(10), {_5909~[_5909 > 0, _5909 < 10]} )
+                                                                                     {_8894~[_8894 > 0, _8894 < 10]} .>.0
+                                                                                     {_8894~[_8894 > 0, _8894 < 10]} .<. {_5909~[_5909 > 0, _5909 < 10]} 
                                                                                     max_time(100)
-                                                                                     {_20921~[_20921 > 0, _20921 < 10]} .=<.100
-                                                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                                                    happens(full_brightness_reached, {_23906~[_23906 > 0, _23906 < 10]} )
+                                                                                     {_5909~[_5909 > 0, _5909 < 10]} .=<.100
+                                                                                    can_initiates(fade_in_end,brightness(10))
+                                                                                    happens(fade_in_end, {_8894~[_8894 > 0, _8894 < 10]} )
                                                                                         builtin(!spy)
-                                                                                        holdsAt(light_intensity(10), {_23906~[_23906 > 0, _23906 < 10]} )
-                                                                                             {_27073~[_27073 > 0, _27073 < 10]} .>.0
-                                                                                             {_27073~[_27073 > 0, _27073 < 10]} .<. {_23906~[_23906 > 0, _23906 < 10]} 
+                                                                                        holdsAt(brightness(10), {_8894~[_8894 > 0, _8894 < 10]} )
+                                                                                             {_12061~[_12061 > 0, _12061 < 10]} .>.0
+                                                                                             {_12061~[_12061 > 0, _12061 < 10]} .<. {_8894~[_8894 > 0, _8894 < 10]} 
                                                                                             max_time(100)
-                                                                                             {_23906~[_23906 > 0, _23906 < 10]} .=<.100
-                                                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                                                            happens(full_brightness_reached, {_27073~[_27073 > 0, _27073 < 10]} )
+                                                                                             {_8894~[_8894 > 0, _8894 < 10]} .=<.100
+                                                                                            can_initiates(fade_in_end,brightness(10))
+                                                                                            happens(fade_in_end, {_12061~[_12061 > 0, _12061 < 10]} )
                                                                                                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(full_brightness_reached,20)
+    happens(fade_in_end,20)
         builtin(!spy)
-        holdsAt(light_intensity(10),20)
+        holdsAt(brightness(10),20)
             10.>.0
             10.<.20
             max_time(100)
             20.=<.100
-            can_trajectory(fading_in,10,light_intensity(10),20)
+            can_trajectory(fading_in,10,brightness(10),20)
             can_initiates(turn_light_on,fading_in)
             happens(turn_light_on,10)
             initiates(turn_light_on,fading_in,10)
-            trajectory(fading_in,10,light_intensity(10),20)
+            trajectory(fading_in,10,brightness(10),20)
                 10.=.0+(20-10)*1
-                holdsAt(light_intensity(0),10)
+                holdsAt(brightness(0),10)
                     10.>=.0
                     max_time(100)
                     10.=<.100
-                    initiallyP(light_intensity(0))
-                    not_stoppedIn(0,light_intensity(0),10)
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
                         0.=<.10
-                        not_interrupted(terminates,light_intensity(0),0,10)
-                            findall(_8875,can_interrupt(terminates,_8875,light_intensity(0)),[full_brightness_reached])
-                                can_interrupt(terminates,full_brightness_reached,light_intensity(0))
-                                    can_terminates(full_brightness_reached,light_intensity(0))
-                            not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10)
-                                interrupt(terminates,full_brightness_reached,light_intensity(0), {_9359~[_9359 > 0, _9359 < 10]} ,0,10)
-                                     {_9359~[_9359 > 0, _9359 < 10]} .>.0
-                                     {_9359~[_9359 > 0, _9359 < 10]} .<.10
-                                    happens(full_brightness_reached, {_9359~[_9359 > 0, _9359 < 10]} )
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_1182,can_interrupt(terminates,_1182,brightness(0)),[fade_in_end])
+                                can_interrupt(terminates,fade_in_end,brightness(0))
+                                    can_terminates(fade_in_end,brightness(0))
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupt(terminates,fade_in_end,brightness(0), {_1339~[_1339 > 0, _1339 < 10]} ,0,10)
+                                     {_1339~[_1339 > 0, _1339 < 10]} .>.0
+                                     {_1339~[_1339 > 0, _1339 < 10]} .<.10
+                                    happens(fade_in_end, {_1339~[_1339 > 0, _1339 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(light_intensity(10), {_9359~[_9359 > 0, _9359 < 10]} )
-                                             {_10814~[_10814 > 0, _10814 < 10]} .>.0
-                                             {_10814~[_10814 > 0, _10814 < 10]} .<. {_9359~[_9359 > 0, _9359 < 10]} 
+                                        holdsAt(brightness(10), {_1339~[_1339 > 0, _1339 < 10]} )
+                                             {_1507~[_1507 > 0, _1507 < 10]} .>.0
+                                             {_1507~[_1507 > 0, _1507 < 10]} .<. {_1339~[_1339 > 0, _1339 < 10]} 
                                             max_time(100)
-                                             {_9359~[_9359 > 0, _9359 < 10]} .=<.100
-                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                            happens(full_brightness_reached, {_10814~[_10814 > 0, _10814 < 10]} )
+                                             {_1339~[_1339 > 0, _1339 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10))
+                                            happens(fade_in_end, {_1507~[_1507 > 0, _1507 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(light_intensity(10), {_10814~[_10814 > 0, _10814 < 10]} )
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .>.0
-                                                     {_13058~[_13058 > 0, _13058 < 10]} .<. {_10814~[_10814 > 0, _10814 < 10]} 
+                                                holdsAt(brightness(10), {_1507~[_1507 > 0, _1507 < 10]} )
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .>.0
+                                                     {_1798~[_1798 > 0, _1798 < 10]} .<. {_1507~[_1507 > 0, _1507 < 10]} 
                                                     max_time(100)
-                                                     {_10814~[_10814 > 0, _10814 < 10]} .=<.100
-                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                    happens(full_brightness_reached, {_13058~[_13058 > 0, _13058 < 10]} )
+                                                     {_1507~[_1507 > 0, _1507 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10))
+                                                    happens(fade_in_end, {_1798~[_1798 > 0, _1798 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(light_intensity(10), {_13058~[_13058 > 0, _13058 < 10]} )
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .>.0
-                                                             {_15497~[_15497 > 0, _15497 < 10]} .<. {_13058~[_13058 > 0, _13058 < 10]} 
+                                                        holdsAt(brightness(10), {_1798~[_1798 > 0, _1798 < 10]} )
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .>.0
+                                                             {_2105~[_2105 > 0, _2105 < 10]} .<. {_1798~[_1798 > 0, _1798 < 10]} 
                                                             max_time(100)
-                                                             {_13058~[_13058 > 0, _13058 < 10]} .=<.100
-                                                            can_initiates(full_brightness_reached,light_intensity(10))
-                                                            happens(full_brightness_reached, {_15497~[_15497 > 0, _15497 < 10]} )
+                                                             {_1798~[_1798 > 0, _1798 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10))
+                                                            happens(fade_in_end, {_2105~[_2105 > 0, _2105 < 10]} )
                                                                 builtin(!spy)
-                                                                holdsAt(light_intensity(10), {_15497~[_15497 > 0, _15497 < 10]} )
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .>.0
-                                                                     {_18118~[_18118 > 0, _18118 < 10]} .<. {_15497~[_15497 > 0, _15497 < 10]} 
+                                                                holdsAt(brightness(10), {_2105~[_2105 > 0, _2105 < 10]} )
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .>.0
+                                                                     {_3106~[_3106 > 0, _3106 < 10]} .<. {_2105~[_2105 > 0, _2105 < 10]} 
                                                                     max_time(100)
-                                                                     {_15497~[_15497 > 0, _15497 < 10]} .=<.100
-                                                                    can_initiates(full_brightness_reached,light_intensity(10))
-                                                                    happens(full_brightness_reached, {_18118~[_18118 > 0, _18118 < 10]} )
+                                                                     {_2105~[_2105 > 0, _2105 < 10]} .=<.100
+                                                                    can_initiates(fade_in_end,brightness(10))
+                                                                    happens(fade_in_end, {_3106~[_3106 > 0, _3106 < 10]} )
                                                                         builtin(!spy)
-                                                                        holdsAt(light_intensity(10), {_18118~[_18118 > 0, _18118 < 10]} )
-                                                                             {_20921~[_20921 > 0, _20921 < 10]} .>.0
-                                                                             {_20921~[_20921 > 0, _20921 < 10]} .<.
+                                                                        holdsAt(brightness(10), {_3106~[_3106 > 0, _3106 < 10]} )
+                                                                             {_5909~[_5909 > 0, _5909 < 10]} .>.0
+                                                                             {_5909~[_5909 > 0, _5909 < 10]} .<. {_3106~[_3106 > 0, _3106 < 10]} 
+                                                                            max_time(100)
+                                                                             {_3106~[_3106 > 0, _3106 < 10]} .=<.100
+                                                                            can_initiates(fade_in_end,brightness(10))
+                                                                            happens(fade_in_end, {_5909~[_5909 > 0, _5909 < 10]} )
+                                                                                builtin(!spy)
+                                                                                holdsAt(brightness(10),
 timeout
 
 
-  real      0:01.27
-  real [s]  1.27
-  user [s]  0.52
-  sys  [s]  0.04
-  mem  [KB] 27028
+  real      0:01.26
+  real [s]  1.26
+  user [s]  0.55
+  sys  [s]  0.03
+  mem  [KB] 27072
   avgm [KB] 0

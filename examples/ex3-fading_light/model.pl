@@ -9,36 +9,36 @@ max_time(100).                      % it is useful to have an upper bound on tim
 
 % ----- domain model -----
 
-event(turn_light_on).           % start brightening from zero to max
-event(full_brightness_reached). % stop brightening at max
+event(turn_light_on).   % start brightening from zero to max
+event(fade_in_end).     % stop brightening at max
 
 fluent(fading_in).
-fluent(light_intensity(X)).     % range 0-10
+fluent(brightness(X)).  % range 0-10
 
 initiates(turn_light_on, fading_in, T).
-releases(turn_light_on, light_intensity(X), T).
+releases(turn_light_on, brightness(X), T).
 
-terminates(full_brightness_reached, fading_in, T).
-initiates(full_brightness_reached, light_intensity(10), T).
-terminates(full_brightness_reached, light_intensity(X), T) :- X .<>. 10.
+terminates(fade_in_end, fading_in, T).
+initiates(fade_in_end, brightness(10), T).
+terminates(fade_in_end, brightness(X), T) :- X .<>. 10.
 
-trajectory(fading_in, T1, light_intensity(NewI), T2) :-
+trajectory(fading_in, T1, brightness(NewI), T2) :-
     NewI .=. OldI + ((T2-T1) * 1),
-    holdsAt(light_intensity(OldI), T1).
+    holdsAt(brightness(OldI), T1).
 
-happens(full_brightness_reached, T) :- !spy,
-    holdsAt(light_intensity(10), T).
+happens(fade_in_end, T) :- !spy,
+    holdsAt(brightness(10), T).
 
 
 % ----- narrative & queries  -----
 
-initiallyP(light_intensity(0)).
+initiallyP(brightness(0)).
 initiallyN(F) :- not initiallyP(F).
 
 happens(turn_light_on, 10).
 
-?- happens(light_intensity(X),      25). % non-term., should be 10
-?- happens(full_brightness_reached, T).  % non-term., should be 20
+?- holdsAt(brightness(X),   25). % non-term., should be 10
+?- happens(fade_in_end,     T).  % non-term., should be 20
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
