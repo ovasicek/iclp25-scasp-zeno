@@ -1,0 +1,62 @@
+$ oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt3.pl --tree
+
+
+% QUERY:?- happens(full_brightness_reached,T).
+
+	ANSWER:	1 (in 3.428 ms)
+
+JUSTIFICATION_TREE:
+happens(full_brightness_reached,20) :-
+    holdsAt(light_intensity(10),20,fading_in) :-
+        max_time(100),
+        can_trajectory(fading_in,10,light_intensity(10),20),
+        can_initiates(turn_light_on,fading_in),
+        happens(turn_light_on,10),
+        initiates(turn_light_on,fading_in,10),
+        trajectory(fading_in,10,light_intensity(10),20) :-
+            holdsAt(light_intensity(0),10) :-
+                max_time(100),
+                initiallyP(light_intensity(0)),
+                not_stoppedIn(0,light_intensity(0),10) :-
+                    not_interrupted(terminates,light_intensity(0),0,10) :-
+                        findall(Var1,can_interrupt(terminates,Var1,light_intensity(0)),[full_brightness_reached]) :-
+                            can_interrupt(terminates,full_brightness_reached,light_intensity(0)) :-
+                                can_terminates(full_brightness_reached,light_intensity(0)).
+                        not_interrupted_(terminates,light_intensity(0),[full_brightness_reached],0,10) :-
+                            findall(Var2,interrupt(terminates,full_brightness_reached,light_intensity(0),Var2,0,10),[]),
+                            all_entirely_outside_of_interval([],0,10),
+                            not_interrupted_(terminates,light_intensity(0),[],0,10).
+                    not_interrupted(releases,light_intensity(0),0,10) :-
+                        findall(Var3,can_interrupt(releases,Var3,light_intensity(0)),[turn_light_on]) :-
+                            can_interrupt(releases,turn_light_on,light_intensity(0)) :-
+                                can_releases(turn_light_on,light_intensity(0)).
+                        not_interrupted_(releases,light_intensity(0),[turn_light_on],0,10) :-
+                            findall(Var4,interrupt(releases,turn_light_on,light_intensity(0),Var4,0,10),[]),
+                            proved(all_entirely_outside_of_interval([],0,10)),
+                            not_interrupted_(releases,light_intensity(0),[],0,10).
+        not_stoppedIn(10,fading_in,20) :-
+            not_interrupted(terminates,fading_in,10,20) :-
+                findall(Var5,can_interrupt(terminates,Var5,fading_in),[full_brightness_reached]) :-
+                    can_interrupt(terminates,full_brightness_reached,fading_in) :-
+                        can_terminates(full_brightness_reached,fading_in).
+                not_interrupted_(terminates,fading_in,[full_brightness_reached],10,20) :-
+                    findall(Var6,interrupt(terminates,full_brightness_reached,fading_in,Var6,10,20),[]),
+                    all_entirely_outside_of_interval([],10,20),
+                    not_interrupted_(terminates,fading_in,[],10,20).
+            not_interrupted(releases,fading_in,10,20) :-
+                findall(Var7,can_interrupt(releases,Var7,fading_in),[]),
+                not_interrupted_(releases,fading_in,[],10,20).
+global_constraint.
+
+MODEL:
+{ happens(full_brightness_reached,20),  happens(turn_light_on,10),  initiates(turn_light_on,fading_in,10),  trajectory(fading_in,10,light_intensity(10),20),  holdsAt(light_intensity(0),10) }
+BINDINGS: 
+T = 20
+
+
+  real      0:00.31
+  real [s]  0.31
+  user [s]  0.16
+  sys  [s]  0.01
+  mem  [KB] 26832
+  avgm [KB] 0
