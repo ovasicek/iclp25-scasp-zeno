@@ -1,4 +1,4 @@
-#include './model-fixed-epsilon-preprocessed.pl'. % include the can_* rules
+#include './preprocessed_can_rules/model-fixed-epsilon-preprocessed.pl'. % include the can_* rules
 #show happens/2, holdsAt/2.
 #show stoppedIn/3.
 #show initiates/3, terminates/3, releases/3.

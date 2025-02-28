@@ -1,4 +1,4 @@
-#include './model-fixed-remodel-preprocessed.pl'. % include the can_* rules
+#include './preprocessed_can_rules/model-fixed-remodel-preprocessed.pl'. % include the can_* rules
 #include '../axioms/general_utils.pl'.             % include not_happens
 #show happens/2, holdsAt/2.
 #show stoppedIn/3.
