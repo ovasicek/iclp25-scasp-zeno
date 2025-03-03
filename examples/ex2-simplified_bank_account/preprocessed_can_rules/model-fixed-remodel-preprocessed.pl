@@ -1,4 +1,4 @@
 
-can_initiates(withdraw(X), balance(NewB)).
-can_terminates(serviceFee, noServiceFeeYet).
-can_terminates(withdraw(_), balance(OldB)).
+can_initiates(withdraw(X), balance(NewB), T).
+can_terminates(serviceFee, noServiceFeeYet, T).
+can_terminates(withdraw(_), balance(OldB), T).
