@@ -2,14 +2,14 @@
 stoppedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
     max_time(T3), T2 .=<. T3,
-    can_terminates(Event, Fluent),
+    can_terminates(Event, Fluent, T),
     happens(Event, T),
     terminates(Event, Fluent, T).
 
 stoppedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
     max_time(T3), T2 .=<. T3,
-    can_releases(Event, Fluent),
+    can_releases(Event, Fluent, T),
     happens(Event, T),
     releases(Event, Fluent, T).
 
@@ -18,14 +18,14 @@ stoppedIn(T1, Fluent, T2) :-
 startedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
     max_time(T3), T2 .=<. T3,
-    can_initiates(Event, Fluent),
+    can_initiates(Event, Fluent, T),
     happens(Event, T),
     initiates(Event, Fluent, T).
     
 startedIn(T1, Fluent, T2) :-
     max_time(T3), T2 .=<. T3,
     T1 .<. T, T .<. T2,
-    can_releases(Event, Fluent),
+    can_releases(Event, Fluent, T),
     happens(Event, T),
     releases(Event, Fluent, T).
 
@@ -43,7 +43,7 @@ holdsAt(Fluent2, T2) :-
     T1 .>. 0, T1 .<. T2,
     max_time(T3), T2 .=<. T3,
     can_trajectory(Fluent1, T1, Fluent2, T2),
-    can_initiates(Event, Fluent1),
+    can_initiates(Event, Fluent1, T1),
     happens(Event, T1),
     initiates(Event, Fluent1, T1),
     trajectory(Fluent1, T1, Fluent2, T2),
@@ -56,7 +56,7 @@ holdsAt(Fluent2, T2, Fluent1) :-
     T1 .>. 0, T1 .<. T2,
     max_time(T3), T2 .=<. T3,
     can_trajectory(Fluent1, T1, Fluent2, T2),
-    can_initiates(Event, Fluent1),
+    can_initiates(Event, Fluent1, T1),
     happens(Event, T1),
     initiates(Event, Fluent1, T1),
     trajectory(Fluent1, T1, Fluent2, T2),
@@ -72,7 +72,7 @@ holdsAt(Fluent2, T2, Fluent1, Duration) :-
     max_time(T3), T2 .=<. T3,
     T2 .=. T1 + Duration,
     can_trajectory(Fluent1, T1, Fluent2, T2),
-    can_initiates(Event, Fluent1),
+    can_initiates(Event, Fluent1, T1),
     happens(Event, T1),
     initiates(Event, Fluent1, T1),
     trajectory(Fluent1, T1, Fluent2, T2),
@@ -93,7 +93,7 @@ holdsAt(Fluent, T2, Duration) :-
     T1 .>. 0, T1 .<. T2,
     max_time(T3), T2 .=<. T3,
     T2 .=. T1 + Duration,
-    can_initiates(Event, Fluent),
+    can_initiates(Event, Fluent, T1),
     happens(Event, T1),
     initiates(Event, Fluent, T1),
     not_stoppedIn(T1, Fluent, T2).
@@ -113,7 +113,7 @@ not_holdsAt(Fluent, T2, Duration) :-
     T1 .>. 0, T1 .<. T2,
     max_time(T3), T2 .=<. T3,
     T2 .=. T1 + Duration,
-    can_terminates(Event, Fluent),
+    can_terminates(Event, Fluent, T1),
     happens(Event, T1),
     terminates(Event, Fluent, T1),
     not_startedIn(T1, Fluent, T2).
@@ -123,7 +123,7 @@ not_holdsAt(Fluent, T2, Duration) :-
 holdsAt(Fluent, T2) :-
     T1 .>. 0, T1 .<. T2,
     max_time(T3), T2 .=<. T3,
-    can_initiates(Event, Fluent),
+    can_initiates(Event, Fluent, T1),
     happens(Event, T1),
     initiates(Event, Fluent, T1),
     not_stoppedIn(T1, Fluent, T2).
@@ -142,7 +142,7 @@ not_holdsAt(Fluent, T2) :-
     T1 .>. 0,
     T1 .<. T2,
     max_time(T3), T2 .=<. T3,
-    can_terminates(Event, Fluent),
+    can_terminates(Event, Fluent, T1),
     happens(Event, T1),
     terminates(Event, Fluent, T1),
     not_startedIn(T1, Fluent, T2).
@@ -164,18 +164,18 @@ not_startedIn(T1, Fluent, T2) :-
 
 % TODO "becomes"
 initiatedAt(Fluent, T) :- 
-    can_initiates(Event, Fluent),
+    can_initiates(Event, Fluent, T),
     happens(Event, T),
     initiates(Event, Fluent, T).
 terminatedAt(Fluent, T) :- 
-    can_terminates(Event, Fluent),
+    can_terminates(Event, Fluent, T),
     happens(Event, T),
     terminates(Event, Fluent, T).
 
 
-can_interrupt(initiates, E, Fluent) :- can_initiates(E, Fluent).
-can_interrupt(terminates, E, Fluent) :- can_terminates(E, Fluent).
-can_interrupt(releases, E, Fluent) :- can_releases(E, Fluent).
+can_interrupts(initiates, E, Fluent, T) :- can_initiates(E, Fluent, T).
+can_interrupts(terminates, E, Fluent, T) :- can_terminates(E, Fluent, T).
+can_interrupts(releases, E, Fluent, T) :- can_releases(E, Fluent, T).
 
 interrupts(initiates, E, F, T) :- initiates(E, F, T).
 interrupts(terminates, E, F, T) :- terminates(E, F, T).
@@ -185,18 +185,22 @@ interrupts(releases, E, F, T) :- releases(E, F, T).
 % configurable rule that can handle all three types of fluent interruptions (to avoid duplicit code)
 % Type_TermInitRel = initiates / terminates / releases
 not_interrupted(Type_TermInitRel, Fluent, T1, T2) :- 
-    findall(E, can_interrupt(Type_TermInitRel, E, Fluent), EventList),
+    findall(E, findall_can_interrupts(Type_TermInitRel, E, Fluent, T1, T2), EventList),
     not_interrupted_(Type_TermInitRel, Fluent, EventList, T1, T2).
+
+findall_can_interrupts(Type_TermInitRel, E, F, T1, T2) :-
+    T .>. T1, T .<. T2,
+    can_interrupts(Type_TermInitRel, E, F, T).
 
 not_interrupted_(Type_TermInitRel, _, [], _, _).
 not_interrupted_(Type_TermInitRel, Fluent, [H|Tail], T1, T2) :-
-    findall(T, interrupt(Type_TermInitRel, H, Fluent, T, T1, T2),List),
+    findall(T, interrupted(Type_TermInitRel, H, Fluent, T, T1, T2),List),
     all_entirely_outside_of_interval(List, T1, T2),
     not_interrupted_(Type_TermInitRel, Fluent, Tail, T1, T2).
 
-interrupt(Type_TermInitRel, E, F, T, T1, T2) :-
-    T .>. T1,
-    T .<. T2,
+interrupted(Type_TermInitRel, E, F, T, T1, T2) :-
+    T .>. T1, T .<. T2,
+    can_interrupts(Type_TermInitRel, E, F, T),
     happens(E, T),
     interrupts(Type_TermInitRel, E, F, T).
 

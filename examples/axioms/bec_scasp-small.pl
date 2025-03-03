@@ -1,7 +1,7 @@
 %% BEC1 - StoppedIn(t1,f,t2)
 stoppedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
-    can_terminates(Event, Fluent),
+    can_terminates(Event, Fluent, T),
     happens(Event, T),
     terminates(Event, Fluent, T).
 
@@ -14,7 +14,7 @@ holdsAt(Fluent, T) :-
 %% BEC6 - HoldsAt(f,t)
 holdsAt(Fluent, T) :-
     T1 .<. T, max_time(TMax), T .=<. TMax,
-    can_initiates(Event, Fluent),
+    can_initiates(Event, Fluent, T1),
     happens(Event, T1),
     initiates(Event, Fluent, T1),
     not_stoppedIn(T1, Fluent, T).
@@ -23,8 +23,12 @@ holdsAt(Fluent, T) :-
 %% Helper for BEC1
 not_stoppedIn(T1, Fluent, T2) :-
     T1 .=<. T2,
-    findall(E, can_terminates(E, Fluent), EventList),
+    findall(E, findall_can_terminates(E, Fluent, T1, T2), EventList),
     not_terminated(Fluent, EventList, T1, T2).
+
+findall_can_terminates(E, F, T1, T2) :- 
+    T .>. T1, T .<. T2,
+    can_terminates(E, F, T).
 
 not_terminated(_, [], _, _).
 not_terminated(Fluent, [H|X], T1, T2) :-
@@ -33,8 +37,8 @@ not_terminated(Fluent, [H|X], T1, T2) :-
     not_terminated(Fluent, X, T1, T2).
 
 terminated(E, F, T, T1, T2) :-
-    can_terminates(E, F),
     T .>. T1, T .<. T2,
+    can_terminates(E, F, T),
     happens(E, T),
     terminates(E, F, T).
 
