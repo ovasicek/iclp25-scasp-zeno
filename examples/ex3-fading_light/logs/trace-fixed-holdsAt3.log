@@ -3,7 +3,7 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt3.pl --tree
 
 % QUERY:?- happens(fade_in_end,T).
 
-	ANSWER:	1 (in 5.124 ms)
+	ANSWER:	1 (in 5.198 ms)
 
 JUSTIFICATION_TREE:
 happens(fade_in_end,20) :-
@@ -52,14 +52,14 @@ happens(fade_in_end,20) :-
 global_constraint.
 
 MODEL:
-{ happens(fade_in_end,20),  happens(turn_light_on,10),  initiates(turn_light_on,fading_in,10),  trajectory(fading_in,10,brightness(10),20),  holdsAt(brightness(0),10) }
+{ happens(fade_in_end,20),  happens(turn_light_on,10),  initiates(turn_light_on,fading_in,10),  trajectory(fading_in,10,brightness(10),20),  holdsAt(brightness(0),10),  initiallyP(brightness(0)),  not_stoppedIn(0,brightness(0),10),  not_stoppedIn(10,fading_in,20) }
 BINDINGS: 
 T = 20
 
 
-  real      0:00.40
-  real [s]  0.40
-  user [s]  0.20
-  sys  [s]  0.00
-  mem  [KB] 28604
+  real      0:00.36
+  real [s]  0.36
+  user [s]  0.17
+  sys  [s]  0.03
+  mem  [KB] 28608
   avgm [KB] 0

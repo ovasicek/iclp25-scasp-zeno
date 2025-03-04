@@ -3,7 +3,7 @@ $ oscasp -s0 ../axioms/bec_scasp-small.pl ./model-fixed-remodel.pl --tree
 
 % QUERY:?- happens(serviceFee,T).
 
-	ANSWER:	1 (in 6.605 ms)
+	ANSWER:	1 (in 8.661 ms)
 
 JUSTIFICATION_TREE:
 happens(serviceFee,20) :-
@@ -50,14 +50,14 @@ happens(serviceFee,20) :-
 global_constraint.
 
 MODEL:
-{ happens(serviceFee,20),  happens(withdraw(1500),20),  holdsAt(noServiceFeeYet,20),  holdsAt(balance(2000),20),  happens(withdraw(8000),10),  initiates(withdraw(8000),balance(2000),10),  holdsAt(balance(10000),10) }
+{ happens(serviceFee,20),  happens(withdraw(1500),20),  holdsAt(noServiceFeeYet,20),  initiallyP(noServiceFeeYet),  not_stoppedIn(0,noServiceFeeYet,20),  holdsAt(balance(2000),20),  happens(withdraw(8000),10),  initiates(withdraw(8000),balance(2000),10),  not_happens(serviceFee,10),  holdsAt(balance(10000),10),  initiallyP(balance(10000)),  not_stoppedIn(0,balance(10000),10),  not_stoppedIn(10,balance(2000),20) }
 BINDINGS: 
 T = 20
 
 
   real      0:00.36
   real [s]  0.36
-  user [s]  0.15
-  sys  [s]  0.04
-  mem  [KB] 28604
+  user [s]  0.16
+  sys  [s]  0.02
+  mem  [KB] 26792
   avgm [KB] 0
