@@ -4,794 +4,559 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=3000
 % QUERY:?- happens(switch_fade_in,T).
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(switch_fade_in,_110302)
+    happens(switch_fade_in,_113350)
         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(switch_fade_in, {_111291~[_111291 > 10, _111291 =< 45]} )
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
         builtin(!spy)
-        holdsAt(light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-            10.>.0
-            10.<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_initiates(turn_light_on,light_on,10)
-            happens(turn_light_on,10)
-            initiates(turn_light_on,light_on,10)
-            not_stoppedIn(10,light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-                10.=<. {_111291~[_111291 > 10, _111291 =< 45]} 
-                not_interrupted(terminates,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_112514,findall_can_interrupts(terminates,_112514,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[turn_light_off])
-                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_112659~[_112659 > 10, _112659 =< 100]} )
-                             {_112817~[_112817 > 10, _112817 < 100]} .>.10
-                             {_112817~[_112817 > 10, _112817 < 100]} .<. {_112659~[_112659 > 10, _112659 =< 100]} 
-                            can_interrupts(terminates,turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                                can_terminates(turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        findall(_112948,interrupted(terminates,turn_light_off,light_on,_112948,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[45])
-                            interrupted(terminates,turn_light_off,light_on,45,10, {_113150~[_113150 > 45, _113150 =< 100]} )
-                                45.>.10
-                                45.<. {_113150~[_113150 > 45, _113150 =< 100]} 
-                                can_interrupts(terminates,turn_light_off,light_on,45)
-                                    can_terminates(turn_light_off,light_on,45)
-                                happens(turn_light_off,45)
-                                interrupts(terminates,turn_light_off,light_on,45)
-                                    terminates(turn_light_off,light_on,45)
-                        all_entirely_outside_of_interval([45],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                            inf(45,45)
-                            45.>=. {_111291~[_111291 > 10, _111291 =< 45]} 
-                            all_entirely_outside_of_interval([],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        not_interrupted_(terminates,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                not_interrupted(releases,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_114406,findall_can_interrupts(releases,_114406,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[])
-                    not_interrupted_(releases,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-        holdsAt(brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} ,fading_out)
-             {_115003~[_115003 > 0, _115003 < 45]} .>.0
-             {_115003~[_115003 > 0, _115003 < 45]} .<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_trajectory(fading_out, {_115003~[_115003 > 0, _115003 < 45]} ,brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} )
-            can_initiates(switch_fade_out,fading_out, {_115003~[_115003 > 0, _115003 < 45]} )
-            happens(switch_fade_out, {_115003~[_115003 > 0, _115003 < 45]} )
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(switch_fade_in, {_111291~[_111291 > 10, _111291 =< 45]} )
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
         builtin(!spy)
-        holdsAt(light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-            10.>.0
-            10.<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_initiates(turn_light_on,light_on,10)
-            happens(turn_light_on,10)
-            initiates(turn_light_on,light_on,10)
-            not_stoppedIn(10,light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-                10.=<. {_111291~[_111291 > 10, _111291 =< 45]} 
-                not_interrupted(terminates,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_112514,findall_can_interrupts(terminates,_112514,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[turn_light_off])
-                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_112659~[_112659 > 10, _112659 =< 100]} )
-                             {_112817~[_112817 > 10, _112817 < 100]} .>.10
-                             {_112817~[_112817 > 10, _112817 < 100]} .<. {_112659~[_112659 > 10, _112659 =< 100]} 
-                            can_interrupts(terminates,turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                                can_terminates(turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        findall(_112948,interrupted(terminates,turn_light_off,light_on,_112948,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[45])
-                            interrupted(terminates,turn_light_off,light_on,45,10, {_113150~[_113150 > 45, _113150 =< 100]} )
-                                45.>.10
-                                45.<. {_113150~[_113150 > 45, _113150 =< 100]} 
-                                can_interrupts(terminates,turn_light_off,light_on,45)
-                                    can_terminates(turn_light_off,light_on,45)
-                                happens(turn_light_off,45)
-                                interrupts(terminates,turn_light_off,light_on,45)
-                                    terminates(turn_light_off,light_on,45)
-                        all_entirely_outside_of_interval([45],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                            inf(45,45)
-                            45.>=. {_111291~[_111291 > 10, _111291 =< 45]} 
-                            all_entirely_outside_of_interval([],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        not_interrupted_(terminates,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                not_interrupted(releases,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_114406,findall_can_interrupts(releases,_114406,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[])
-                    not_interrupted_(releases,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-        holdsAt(brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} ,fading_out)
-             {_115003~[_115003 > 10, _115003 < 45]} .>.0
-             {_115003~[_115003 > 10, _115003 < 45]} .<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_trajectory(fading_out, {_115003~[_115003 > 10, _115003 < 45]} ,brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} )
-            can_initiates(switch_fade_out,fading_out, {_115003~[_115003 > 10, _115003 < 45]} )
-            happens(switch_fade_out, {_115003~[_115003 > 10, _115003 < 45]} )
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
                 builtin(!spy)
-                holdsAt(light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                    10.>.0
-                    10.<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_initiates(turn_light_on,light_on,10)
-                    happens(turn_light_on,10)
-                    proved(initiates(turn_light_on,light_on,10))
-                    not_stoppedIn(10,light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                        10.=<. {_115003~[_115003 > 10, _115003 < 45]} 
-                        not_interrupted(terminates,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_119022,findall_can_interrupts(terminates,_119022,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[turn_light_off])
-                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_119167~[_119167 > 10, _119167 < 45]} )
-                                     {_119545~[_119545 > 10, _119545 < 45]} .>.10
-                                     {_119545~[_119545 > 10, _119545 < 45]} .<. {_119167~[_119167 > 10, _119167 < 45]} 
-                                    can_interrupts(terminates,turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                                        can_terminates(turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                findall(_119676,interrupted(terminates,turn_light_off,light_on,_119676,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                                all_entirely_outside_of_interval([],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                not_interrupted_(terminates,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                        not_interrupted(releases,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_120069,findall_can_interrupts(releases,_120069,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                            not_interrupted_(releases,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                holdsAt(brightness(10), {_115003~[_115003 > 10, _115003 < 45]} ,fading_in)
-                     {_120666~[_120666 > 0, _120666 < 45]} .>.0
-                     {_120666~[_120666 > 0, _120666 < 45]} .<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_trajectory(fading_in, {_120666~[_120666 > 0, _120666 < 45]} ,brightness(10), {_115003~[_115003 > 10, _115003 < 45]} )
-                    can_initiates(switch_fade_in,fading_in, {_120666~[_120666 > 0, _120666 < 45]} )
-                    happens(switch_fade_in, {_120666~[_120666 > 0, _120666 < 45]} )
+                holdsAt(brightness(10), {_114133~[_114133 > 0, _114133 < 45]} ,fading_in)
+                     {_115616~[_115616 > 0, _115616 < 45]} .>.0
+                     {_115616~[_115616 > 0, _115616 < 45]} .<. {_114133~[_114133 > 0, _114133 < 45]} 
+                    max_time(45)
+                     {_114133~[_114133 > 0, _114133 < 45]} .=<.45
+                    can_trajectory(fading_in, {_115616~[_115616 > 0, _115616 < 45]} ,brightness(10), {_114133~[_114133 > 0, _114133 < 45]} )
+                    can_initiates(switch_fade_in,fading_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                    happens(switch_fade_in, {_115616~[_115616 > 0, _115616 < 45]} )
                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(switch_fade_in, {_111291~[_111291 > 10, _111291 =< 45]} )
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
         builtin(!spy)
-        holdsAt(light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-            10.>.0
-            10.<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_initiates(turn_light_on,light_on,10)
-            happens(turn_light_on,10)
-            initiates(turn_light_on,light_on,10)
-            not_stoppedIn(10,light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-                10.=<. {_111291~[_111291 > 10, _111291 =< 45]} 
-                not_interrupted(terminates,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_112514,findall_can_interrupts(terminates,_112514,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[turn_light_off])
-                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_112659~[_112659 > 10, _112659 =< 100]} )
-                             {_112817~[_112817 > 10, _112817 < 100]} .>.10
-                             {_112817~[_112817 > 10, _112817 < 100]} .<. {_112659~[_112659 > 10, _112659 =< 100]} 
-                            can_interrupts(terminates,turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                                can_terminates(turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        findall(_112948,interrupted(terminates,turn_light_off,light_on,_112948,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[45])
-                            interrupted(terminates,turn_light_off,light_on,45,10, {_113150~[_113150 > 45, _113150 =< 100]} )
-                                45.>.10
-                                45.<. {_113150~[_113150 > 45, _113150 =< 100]} 
-                                can_interrupts(terminates,turn_light_off,light_on,45)
-                                    can_terminates(turn_light_off,light_on,45)
-                                happens(turn_light_off,45)
-                                interrupts(terminates,turn_light_off,light_on,45)
-                                    terminates(turn_light_off,light_on,45)
-                        all_entirely_outside_of_interval([45],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                            inf(45,45)
-                            45.>=. {_111291~[_111291 > 10, _111291 =< 45]} 
-                            all_entirely_outside_of_interval([],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        not_interrupted_(terminates,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                not_interrupted(releases,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_114406,findall_can_interrupts(releases,_114406,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[])
-                    not_interrupted_(releases,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-        holdsAt(brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} ,fading_out)
-             {_115003~[_115003 > 10, _115003 < 45]} .>.0
-             {_115003~[_115003 > 10, _115003 < 45]} .<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_trajectory(fading_out, {_115003~[_115003 > 10, _115003 < 45]} ,brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} )
-            can_initiates(switch_fade_out,fading_out, {_115003~[_115003 > 10, _115003 < 45]} )
-            happens(switch_fade_out, {_115003~[_115003 > 10, _115003 < 45]} )
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
                 builtin(!spy)
-                holdsAt(light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                    10.>.0
-                    10.<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_initiates(turn_light_on,light_on,10)
-                    happens(turn_light_on,10)
-                    proved(initiates(turn_light_on,light_on,10))
-                    not_stoppedIn(10,light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                        10.=<. {_115003~[_115003 > 10, _115003 < 45]} 
-                        not_interrupted(terminates,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_119022,findall_can_interrupts(terminates,_119022,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[turn_light_off])
-                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_119167~[_119167 > 10, _119167 < 45]} )
-                                     {_119545~[_119545 > 10, _119545 < 45]} .>.10
-                                     {_119545~[_119545 > 10, _119545 < 45]} .<. {_119167~[_119167 > 10, _119167 < 45]} 
-                                    can_interrupts(terminates,turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                                        can_terminates(turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                findall(_119676,interrupted(terminates,turn_light_off,light_on,_119676,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                                all_entirely_outside_of_interval([],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                not_interrupted_(terminates,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                        not_interrupted(releases,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_120069,findall_can_interrupts(releases,_120069,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                            not_interrupted_(releases,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                holdsAt(brightness(10), {_115003~[_115003 > 10, _115003 < 45]} ,fading_in)
-                     {_120666~[_120666 > 10, _120666 < 45]} .>.0
-                     {_120666~[_120666 > 10, _120666 < 45]} .<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_trajectory(fading_in, {_120666~[_120666 > 10, _120666 < 45]} ,brightness(10), {_115003~[_115003 > 10, _115003 < 45]} )
-                    can_initiates(switch_fade_in,fading_in, {_120666~[_120666 > 10, _120666 < 45]} )
-                    happens(switch_fade_in, {_120666~[_120666 > 10, _120666 < 45]} )
+                holdsAt(brightness(10), {_114133~[_114133 > 0, _114133 < 45]} ,fading_in)
+                     {_115616~[_115616 > 0, _115616 < 45]} .>.0
+                     {_115616~[_115616 > 0, _115616 < 45]} .<. {_114133~[_114133 > 0, _114133 < 45]} 
+                    max_time(45)
+                     {_114133~[_114133 > 0, _114133 < 45]} .=<.45
+                    can_trajectory(fading_in, {_115616~[_115616 > 0, _115616 < 45]} ,brightness(10), {_114133~[_114133 > 0, _114133 < 45]} )
+                    can_initiates(switch_fade_in,fading_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                    happens(switch_fade_in, {_115616~[_115616 > 0, _115616 < 45]} )
                         builtin(!spy)
-                        holdsAt(light_on, {_120666~[_120666 > 10, _120666 < 45]} )
-                            10.>.0
-                            10.<. {_120666~[_120666 > 10, _120666 < 45]} 
-                            max_time(100)
-                             {_120666~[_120666 > 10, _120666 < 45]} .=<.100
-                            can_initiates(turn_light_on,light_on,10)
-                            happens(turn_light_on,10)
-                            proved(initiates(turn_light_on,light_on,10))
-                            not_stoppedIn(10,light_on, {_120666~[_120666 > 10, _120666 < 45]} )
-                                10.=<. {_120666~[_120666 > 10, _120666 < 45]} 
-                                not_interrupted(terminates,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                    findall(_125033,findall_can_interrupts(terminates,_125033,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} ),[turn_light_off])
-                                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_125178~[_125178 > 10, _125178 < 45]} )
-                                             {_125782~[_125782 > 10, _125782 < 45]} .>.10
-                                             {_125782~[_125782 > 10, _125782 < 45]} .<. {_125178~[_125178 > 10, _125178 < 45]} 
-                                            can_interrupts(terminates,turn_light_off,light_on, {_125782~[_125782 > 10, _125782 < 45]} )
-                                                can_terminates(turn_light_off,light_on, {_125782~[_125782 > 10, _125782 < 45]} )
-                                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                        findall(_125913,interrupted(terminates,turn_light_off,light_on,_125913,10, {_120666~[_120666 > 10, _120666 < 45]} ),[])
-                                        all_entirely_outside_of_interval([],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                        not_interrupted_(terminates,light_on,[],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                not_interrupted(releases,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                    findall(_126306,findall_can_interrupts(releases,_126306,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} ),[])
-                                    not_interrupted_(releases,light_on,[],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                        holdsAt(brightness(0), {_120666~[_120666 > 10, _120666 < 45]} ,fading_out)
-                             {_126903~[_126903 > 0, _126903 < 45]} .>.0
-                             {_126903~[_126903 > 0, _126903 < 45]} .<. {_120666~[_120666 > 10, _120666 < 45]} 
-                            max_time(100)
-                             {_120666~[_120666 > 10, _120666 < 45]} .=<.100
-                            can_trajectory(fading_out, {_126903~[_126903 > 0, _126903 < 45]} ,brightness(0), {_120666~[_120666 > 10, _120666 < 45]} )
-                            can_initiates(switch_fade_out,fading_out, {_126903~[_126903 > 0, _126903 < 45]} )
-                            happens(switch_fade_out, {_126903~[_126903 > 0, _126903 < 45]} )
+                        holdsAt(brightness(0), {_115616~[_115616 > 0, _115616 < 45]} ,fading_out)
+                             {_118238~[_118238 > 0, _118238 < 45]} .>.0
+                             {_118238~[_118238 > 0, _118238 < 45]} .<. {_115616~[_115616 > 0, _115616 < 45]} 
+                            max_time(45)
+                             {_115616~[_115616 > 0, _115616 < 45]} .=<.45
+                            can_trajectory(fading_out, {_118238~[_118238 > 0, _118238 < 45]} ,brightness(0), {_115616~[_115616 > 0, _115616 < 45]} )
+                            can_initiates(switch_fade_out,fading_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                            happens(switch_fade_out, {_118238~[_118238 > 0, _118238 < 45]} )
                                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(switch_fade_in, {_111291~[_111291 > 10, _111291 =< 45]} )
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
         builtin(!spy)
-        holdsAt(light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-            10.>.0
-            10.<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_initiates(turn_light_on,light_on,10)
-            happens(turn_light_on,10)
-            initiates(turn_light_on,light_on,10)
-            not_stoppedIn(10,light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-                10.=<. {_111291~[_111291 > 10, _111291 =< 45]} 
-                not_interrupted(terminates,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_112514,findall_can_interrupts(terminates,_112514,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[turn_light_off])
-                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_112659~[_112659 > 10, _112659 =< 100]} )
-                             {_112817~[_112817 > 10, _112817 < 100]} .>.10
-                             {_112817~[_112817 > 10, _112817 < 100]} .<. {_112659~[_112659 > 10, _112659 =< 100]} 
-                            can_interrupts(terminates,turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                                can_terminates(turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        findall(_112948,interrupted(terminates,turn_light_off,light_on,_112948,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[45])
-                            interrupted(terminates,turn_light_off,light_on,45,10, {_113150~[_113150 > 45, _113150 =< 100]} )
-                                45.>.10
-                                45.<. {_113150~[_113150 > 45, _113150 =< 100]} 
-                                can_interrupts(terminates,turn_light_off,light_on,45)
-                                    can_terminates(turn_light_off,light_on,45)
-                                happens(turn_light_off,45)
-                                interrupts(terminates,turn_light_off,light_on,45)
-                                    terminates(turn_light_off,light_on,45)
-                        all_entirely_outside_of_interval([45],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                            inf(45,45)
-                            45.>=. {_111291~[_111291 > 10, _111291 =< 45]} 
-                            all_entirely_outside_of_interval([],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        not_interrupted_(terminates,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                not_interrupted(releases,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_114406,findall_can_interrupts(releases,_114406,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[])
-                    not_interrupted_(releases,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-        holdsAt(brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} ,fading_out)
-             {_115003~[_115003 > 10, _115003 < 45]} .>.0
-             {_115003~[_115003 > 10, _115003 < 45]} .<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_trajectory(fading_out, {_115003~[_115003 > 10, _115003 < 45]} ,brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} )
-            can_initiates(switch_fade_out,fading_out, {_115003~[_115003 > 10, _115003 < 45]} )
-            happens(switch_fade_out, {_115003~[_115003 > 10, _115003 < 45]} )
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
                 builtin(!spy)
-                holdsAt(light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                    10.>.0
-                    10.<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_initiates(turn_light_on,light_on,10)
-                    happens(turn_light_on,10)
-                    proved(initiates(turn_light_on,light_on,10))
-                    not_stoppedIn(10,light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                        10.=<. {_115003~[_115003 > 10, _115003 < 45]} 
-                        not_interrupted(terminates,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_119022,findall_can_interrupts(terminates,_119022,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[turn_light_off])
-                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_119167~[_119167 > 10, _119167 < 45]} )
-                                     {_119545~[_119545 > 10, _119545 < 45]} .>.10
-                                     {_119545~[_119545 > 10, _119545 < 45]} .<. {_119167~[_119167 > 10, _119167 < 45]} 
-                                    can_interrupts(terminates,turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                                        can_terminates(turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                findall(_119676,interrupted(terminates,turn_light_off,light_on,_119676,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                                all_entirely_outside_of_interval([],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                not_interrupted_(terminates,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                        not_interrupted(releases,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_120069,findall_can_interrupts(releases,_120069,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                            not_interrupted_(releases,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                holdsAt(brightness(10), {_115003~[_115003 > 10, _115003 < 45]} ,fading_in)
-                     {_120666~[_120666 > 10, _120666 < 45]} .>.0
-                     {_120666~[_120666 > 10, _120666 < 45]} .<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_trajectory(fading_in, {_120666~[_120666 > 10, _120666 < 45]} ,brightness(10), {_115003~[_115003 > 10, _115003 < 45]} )
-                    can_initiates(switch_fade_in,fading_in, {_120666~[_120666 > 10, _120666 < 45]} )
-                    happens(switch_fade_in, {_120666~[_120666 > 10, _120666 < 45]} )
+                holdsAt(brightness(10), {_114133~[_114133 > 0, _114133 < 45]} ,fading_in)
+                     {_115616~[_115616 > 0, _115616 < 45]} .>.0
+                     {_115616~[_115616 > 0, _115616 < 45]} .<. {_114133~[_114133 > 0, _114133 < 45]} 
+                    max_time(45)
+                     {_114133~[_114133 > 0, _114133 < 45]} .=<.45
+                    can_trajectory(fading_in, {_115616~[_115616 > 0, _115616 < 45]} ,brightness(10), {_114133~[_114133 > 0, _114133 < 45]} )
+                    can_initiates(switch_fade_in,fading_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                    happens(switch_fade_in, {_115616~[_115616 > 0, _115616 < 45]} )
                         builtin(!spy)
-                        holdsAt(light_on, {_120666~[_120666 > 10, _120666 < 45]} )
-                            10.>.0
-                            10.<. {_120666~[_120666 > 10, _120666 < 45]} 
-                            max_time(100)
-                             {_120666~[_120666 > 10, _120666 < 45]} .=<.100
-                            can_initiates(turn_light_on,light_on,10)
-                            happens(turn_light_on,10)
-                            proved(initiates(turn_light_on,light_on,10))
-                            not_stoppedIn(10,light_on, {_120666~[_120666 > 10, _120666 < 45]} )
-                                10.=<. {_120666~[_120666 > 10, _120666 < 45]} 
-                                not_interrupted(terminates,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                    findall(_125033,findall_can_interrupts(terminates,_125033,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} ),[turn_light_off])
-                                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_125178~[_125178 > 10, _125178 < 45]} )
-                                             {_125782~[_125782 > 10, _125782 < 45]} .>.10
-                                             {_125782~[_125782 > 10, _125782 < 45]} .<. {_125178~[_125178 > 10, _125178 < 45]} 
-                                            can_interrupts(terminates,turn_light_off,light_on, {_125782~[_125782 > 10, _125782 < 45]} )
-                                                can_terminates(turn_light_off,light_on, {_125782~[_125782 > 10, _125782 < 45]} )
-                                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                        findall(_125913,interrupted(terminates,turn_light_off,light_on,_125913,10, {_120666~[_120666 > 10, _120666 < 45]} ),[])
-                                        all_entirely_outside_of_interval([],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                        not_interrupted_(terminates,light_on,[],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                not_interrupted(releases,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                    findall(_126306,findall_can_interrupts(releases,_126306,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} ),[])
-                                    not_interrupted_(releases,light_on,[],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                        holdsAt(brightness(0), {_120666~[_120666 > 10, _120666 < 45]} ,fading_out)
-                             {_126903~[_126903 > 10, _126903 < 45]} .>.0
-                             {_126903~[_126903 > 10, _126903 < 45]} .<. {_120666~[_120666 > 10, _120666 < 45]} 
-                            max_time(100)
-                             {_120666~[_120666 > 10, _120666 < 45]} .=<.100
-                            can_trajectory(fading_out, {_126903~[_126903 > 10, _126903 < 45]} ,brightness(0), {_120666~[_120666 > 10, _120666 < 45]} )
-                            can_initiates(switch_fade_out,fading_out, {_126903~[_126903 > 10, _126903 < 45]} )
-                            happens(switch_fade_out, {_126903~[_126903 > 10, _126903 < 45]} )
+                        holdsAt(brightness(0), {_115616~[_115616 > 0, _115616 < 45]} ,fading_out)
+                             {_118238~[_118238 > 0, _118238 < 45]} .>.0
+                             {_118238~[_118238 > 0, _118238 < 45]} .<. {_115616~[_115616 > 0, _115616 < 45]} 
+                            max_time(45)
+                             {_115616~[_115616 > 0, _115616 < 45]} .=<.45
+                            can_trajectory(fading_out, {_118238~[_118238 > 0, _118238 < 45]} ,brightness(0), {_115616~[_115616 > 0, _115616 < 45]} )
+                            can_initiates(switch_fade_out,fading_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                            happens(switch_fade_out, {_118238~[_118238 > 0, _118238 < 45]} )
                                 builtin(!spy)
-                                holdsAt(light_on, {_126903~[_126903 > 10, _126903 < 45]} )
-                                    10.>.0
-                                    10.<. {_126903~[_126903 > 10, _126903 < 45]} 
-                                    max_time(100)
-                                     {_126903~[_126903 > 10, _126903 < 45]} .=<.100
-                                    can_initiates(turn_light_on,light_on,10)
-                                    happens(turn_light_on,10)
-                                    proved(initiates(turn_light_on,light_on,10))
-                                    not_stoppedIn(10,light_on, {_126903~[_126903 > 10, _126903 < 45]} )
-                                        10.=<. {_126903~[_126903 > 10, _126903 < 45]} 
-                                        not_interrupted(terminates,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                            findall(_132017,findall_can_interrupts(terminates,_132017,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} ),[turn_light_off])
-                                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_132162~[_132162 > 10, _132162 < 45]} )
-                                                     {_133022~[_133022 > 10, _133022 < 45]} .>.10
-                                                     {_133022~[_133022 > 10, _133022 < 45]} .<. {_132162~[_132162 > 10, _132162 < 45]} 
-                                                    can_interrupts(terminates,turn_light_off,light_on, {_133022~[_133022 > 10, _133022 < 45]} )
-                                                        can_terminates(turn_light_off,light_on, {_133022~[_133022 > 10, _133022 < 45]} )
-                                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                                findall(_133153,interrupted(terminates,turn_light_off,light_on,_133153,10, {_126903~[_126903 > 10, _126903 < 45]} ),[])
-                                                all_entirely_outside_of_interval([],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                                not_interrupted_(terminates,light_on,[],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                        not_interrupted(releases,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                            findall(_133546,findall_can_interrupts(releases,_133546,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} ),[])
-                                            not_interrupted_(releases,light_on,[],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                holdsAt(brightness(10), {_126903~[_126903 > 10, _126903 < 45]} ,fading_in)
-                                     {_134143~[_134143 > 0, _134143 < 45]} .>.0
-                                     {_134143~[_134143 > 0, _134143 < 45]} .<. {_126903~[_126903 > 10, _126903 < 45]} 
-                                    max_time(100)
-                                     {_126903~[_126903 > 10, _126903 < 45]} .=<.100
-                                    can_trajectory(fading_in, {_134143~[_134143 > 0, _134143 < 45]} ,brightness(10), {_126903~[_126903 > 10, _126903 < 45]} )
-                                    can_initiates(switch_fade_in,fading_in, {_134143~[_134143 > 0, _134143 < 45]} )
-                                    happens(switch_fade_in, {_134143~[_134143 > 0, _134143 < 45]} )
+                                holdsAt(brightness(10), {_118238~[_118238 > 0, _118238 < 45]} ,fading_in)
+                                     {_121078~[_121078 > 0, _121078 < 45]} .>.0
+                                     {_121078~[_121078 > 0, _121078 < 45]} .<. {_118238~[_118238 > 0, _118238 < 45]} 
+                                    max_time(45)
+                                     {_118238~[_118238 > 0, _118238 < 45]} .=<.45
+                                    can_trajectory(fading_in, {_121078~[_121078 > 0, _121078 < 45]} ,brightness(10), {_118238~[_118238 > 0, _118238 < 45]} )
+                                    can_initiates(switch_fade_in,fading_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                    happens(switch_fade_in, {_121078~[_121078 > 0, _121078 < 45]} )
                                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(switch_fade_in, {_111291~[_111291 > 10, _111291 =< 45]} )
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
         builtin(!spy)
-        holdsAt(light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-            10.>.0
-            10.<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_initiates(turn_light_on,light_on,10)
-            happens(turn_light_on,10)
-            initiates(turn_light_on,light_on,10)
-            not_stoppedIn(10,light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-                10.=<. {_111291~[_111291 > 10, _111291 =< 45]} 
-                not_interrupted(terminates,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_112514,findall_can_interrupts(terminates,_112514,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[turn_light_off])
-                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_112659~[_112659 > 10, _112659 =< 100]} )
-                             {_112817~[_112817 > 10, _112817 < 100]} .>.10
-                             {_112817~[_112817 > 10, _112817 < 100]} .<. {_112659~[_112659 > 10, _112659 =< 100]} 
-                            can_interrupts(terminates,turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                                can_terminates(turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        findall(_112948,interrupted(terminates,turn_light_off,light_on,_112948,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[45])
-                            interrupted(terminates,turn_light_off,light_on,45,10, {_113150~[_113150 > 45, _113150 =< 100]} )
-                                45.>.10
-                                45.<. {_113150~[_113150 > 45, _113150 =< 100]} 
-                                can_interrupts(terminates,turn_light_off,light_on,45)
-                                    can_terminates(turn_light_off,light_on,45)
-                                happens(turn_light_off,45)
-                                interrupts(terminates,turn_light_off,light_on,45)
-                                    terminates(turn_light_off,light_on,45)
-                        all_entirely_outside_of_interval([45],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                            inf(45,45)
-                            45.>=. {_111291~[_111291 > 10, _111291 =< 45]} 
-                            all_entirely_outside_of_interval([],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        not_interrupted_(terminates,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                not_interrupted(releases,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_114406,findall_can_interrupts(releases,_114406,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[])
-                    not_interrupted_(releases,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-        holdsAt(brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} ,fading_out)
-             {_115003~[_115003 > 10, _115003 < 45]} .>.0
-             {_115003~[_115003 > 10, _115003 < 45]} .<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_trajectory(fading_out, {_115003~[_115003 > 10, _115003 < 45]} ,brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} )
-            can_initiates(switch_fade_out,fading_out, {_115003~[_115003 > 10, _115003 < 45]} )
-            happens(switch_fade_out, {_115003~[_115003 > 10, _115003 < 45]} )
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
                 builtin(!spy)
-                holdsAt(light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                    10.>.0
-                    10.<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_initiates(turn_light_on,light_on,10)
-                    happens(turn_light_on,10)
-                    proved(initiates(turn_light_on,light_on,10))
-                    not_stoppedIn(10,light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                        10.=<. {_115003~[_115003 > 10, _115003 < 45]} 
-                        not_interrupted(terminates,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_119022,findall_can_interrupts(terminates,_119022,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[turn_light_off])
-                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_119167~[_119167 > 10, _119167 < 45]} )
-                                     {_119545~[_119545 > 10, _119545 < 45]} .>.10
-                                     {_119545~[_119545 > 10, _119545 < 45]} .<. {_119167~[_119167 > 10, _119167 < 45]} 
-                                    can_interrupts(terminates,turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                                        can_terminates(turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                findall(_119676,interrupted(terminates,turn_light_off,light_on,_119676,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                                all_entirely_outside_of_interval([],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                not_interrupted_(terminates,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                        not_interrupted(releases,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_120069,findall_can_interrupts(releases,_120069,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                            not_interrupted_(releases,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                holdsAt(brightness(10), {_115003~[_115003 > 10, _115003 < 45]} ,fading_in)
-                     {_120666~[_120666 > 10, _120666 < 45]} .>.0
-                     {_120666~[_120666 > 10, _120666 < 45]} .<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_trajectory(fading_in, {_120666~[_120666 > 10, _120666 < 45]} ,brightness(10), {_115003~[_115003 > 10, _115003 < 45]} )
-                    can_initiates(switch_fade_in,fading_in, {_120666~[_120666 > 10, _120666 < 45]} )
-                    happens(switch_fade_in, {_120666~[_120666 > 10, _120666 < 45]} )
+                holdsAt(brightness(10), {_114133~[_114133 > 0, _114133 < 45]} ,fading_in)
+                     {_115616~[_115616 > 0, _115616 < 45]} .>.0
+                     {_115616~[_115616 > 0, _115616 < 45]} .<. {_114133~[_114133 > 0, _114133 < 45]} 
+                    max_time(45)
+                     {_114133~[_114133 > 0, _114133 < 45]} .=<.45
+                    can_trajectory(fading_in, {_115616~[_115616 > 0, _115616 < 45]} ,brightness(10), {_114133~[_114133 > 0, _114133 < 45]} )
+                    can_initiates(switch_fade_in,fading_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                    happens(switch_fade_in, {_115616~[_115616 > 0, _115616 < 45]} )
                         builtin(!spy)
-                        holdsAt(light_on, {_120666~[_120666 > 10, _120666 < 45]} )
-                            10.>.0
-                            10.<. {_120666~[_120666 > 10, _120666 < 45]} 
-                            max_time(100)
-                             {_120666~[_120666 > 10, _120666 < 45]} .=<.100
-                            can_initiates(turn_light_on,light_on,10)
-                            happens(turn_light_on,10)
-                            proved(initiates(turn_light_on,light_on,10))
-                            not_stoppedIn(10,light_on, {_120666~[_120666 > 10, _120666 < 45]} )
-                                10.=<. {_120666~[_120666 > 10, _120666 < 45]} 
-                                not_interrupted(terminates,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                    findall(_125033,findall_can_interrupts(terminates,_125033,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} ),[turn_light_off])
-                                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_125178~[_125178 > 10, _125178 < 45]} )
-                                             {_125782~[_125782 > 10, _125782 < 45]} .>.10
-                                             {_125782~[_125782 > 10, _125782 < 45]} .<. {_125178~[_125178 > 10, _125178 < 45]} 
-                                            can_interrupts(terminates,turn_light_off,light_on, {_125782~[_125782 > 10, _125782 < 45]} )
-                                                can_terminates(turn_light_off,light_on, {_125782~[_125782 > 10, _125782 < 45]} )
-                                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                        findall(_125913,interrupted(terminates,turn_light_off,light_on,_125913,10, {_120666~[_120666 > 10, _120666 < 45]} ),[])
-                                        all_entirely_outside_of_interval([],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                        not_interrupted_(terminates,light_on,[],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                not_interrupted(releases,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                    findall(_126306,findall_can_interrupts(releases,_126306,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} ),[])
-                                    not_interrupted_(releases,light_on,[],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                        holdsAt(brightness(0), {_120666~[_120666 > 10, _120666 < 45]} ,fading_out)
-                             {_126903~[_126903 > 10, _126903 < 45]} .>.0
-                             {_126903~[_126903 > 10, _126903 < 45]} .<. {_120666~[_120666 > 10, _120666 < 45]} 
-                            max_time(100)
-                             {_120666~[_120666 > 10, _120666 < 45]} .=<.100
-                            can_trajectory(fading_out, {_126903~[_126903 > 10, _126903 < 45]} ,brightness(0), {_120666~[_120666 > 10, _120666 < 45]} )
-                            can_initiates(switch_fade_out,fading_out, {_126903~[_126903 > 10, _126903 < 45]} )
-                            happens(switch_fade_out, {_126903~[_126903 > 10, _126903 < 45]} )
+                        holdsAt(brightness(0), {_115616~[_115616 > 0, _115616 < 45]} ,fading_out)
+                             {_118238~[_118238 > 0, _118238 < 45]} .>.0
+                             {_118238~[_118238 > 0, _118238 < 45]} .<. {_115616~[_115616 > 0, _115616 < 45]} 
+                            max_time(45)
+                             {_115616~[_115616 > 0, _115616 < 45]} .=<.45
+                            can_trajectory(fading_out, {_118238~[_118238 > 0, _118238 < 45]} ,brightness(0), {_115616~[_115616 > 0, _115616 < 45]} )
+                            can_initiates(switch_fade_out,fading_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                            happens(switch_fade_out, {_118238~[_118238 > 0, _118238 < 45]} )
                                 builtin(!spy)
-                                holdsAt(light_on, {_126903~[_126903 > 10, _126903 < 45]} )
-                                    10.>.0
-                                    10.<. {_126903~[_126903 > 10, _126903 < 45]} 
-                                    max_time(100)
-                                     {_126903~[_126903 > 10, _126903 < 45]} .=<.100
-                                    can_initiates(turn_light_on,light_on,10)
-                                    happens(turn_light_on,10)
-                                    proved(initiates(turn_light_on,light_on,10))
-                                    not_stoppedIn(10,light_on, {_126903~[_126903 > 10, _126903 < 45]} )
-                                        10.=<. {_126903~[_126903 > 10, _126903 < 45]} 
-                                        not_interrupted(terminates,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                            findall(_132017,findall_can_interrupts(terminates,_132017,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} ),[turn_light_off])
-                                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_132162~[_132162 > 10, _132162 < 45]} )
-                                                     {_133022~[_133022 > 10, _133022 < 45]} .>.10
-                                                     {_133022~[_133022 > 10, _133022 < 45]} .<. {_132162~[_132162 > 10, _132162 < 45]} 
-                                                    can_interrupts(terminates,turn_light_off,light_on, {_133022~[_133022 > 10, _133022 < 45]} )
-                                                        can_terminates(turn_light_off,light_on, {_133022~[_133022 > 10, _133022 < 45]} )
-                                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                                findall(_133153,interrupted(terminates,turn_light_off,light_on,_133153,10, {_126903~[_126903 > 10, _126903 < 45]} ),[])
-                                                all_entirely_outside_of_interval([],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                                not_interrupted_(terminates,light_on,[],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                        not_interrupted(releases,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                            findall(_133546,findall_can_interrupts(releases,_133546,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} ),[])
-                                            not_interrupted_(releases,light_on,[],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                holdsAt(brightness(10), {_126903~[_126903 > 10, _126903 < 45]} ,fading_in)
-                                     {_134143~[_134143 > 10, _134143 < 45]} .>.0
-                                     {_134143~[_134143 > 10, _134143 < 45]} .<. {_126903~[_126903 > 10, _126903 < 45]} 
-                                    max_time(100)
-                                     {_126903~[_126903 > 10, _126903 < 45]} .=<.100
-                                    can_trajectory(fading_in, {_134143~[_134143 > 10, _134143 < 45]} ,brightness(10), {_126903~[_126903 > 10, _126903 < 45]} )
-                                    can_initiates(switch_fade_in,fading_in, {_134143~[_134143 > 10, _134143 < 45]} )
-                                    happens(switch_fade_in, {_134143~[_134143 > 10, _134143 < 45]} )
+                                holdsAt(brightness(10), {_118238~[_118238 > 0, _118238 < 45]} ,fading_in)
+                                     {_121078~[_121078 > 0, _121078 < 45]} .>.0
+                                     {_121078~[_121078 > 0, _121078 < 45]} .<. {_118238~[_118238 > 0, _118238 < 45]} 
+                                    max_time(45)
+                                     {_118238~[_118238 > 0, _118238 < 45]} .=<.45
+                                    can_trajectory(fading_in, {_121078~[_121078 > 0, _121078 < 45]} ,brightness(10), {_118238~[_118238 > 0, _118238 < 45]} )
+                                    can_initiates(switch_fade_in,fading_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                    happens(switch_fade_in, {_121078~[_121078 > 0, _121078 < 45]} )
                                         builtin(!spy)
-                                        holdsAt(light_on, {_134143~[_134143 > 10, _134143 < 45]} )
-                                            10.>.0
-                                            10.<. {_134143~[_134143 > 10, _134143 < 45]} 
-                                            max_time(100)
-                                             {_134143~[_134143 > 10, _134143 < 45]} .=<.100
-                                            can_initiates(turn_light_on,light_on,10)
-                                            happens(turn_light_on,10)
-                                            proved(initiates(turn_light_on,light_on,10))
-                                            not_stoppedIn(10,light_on, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                10.=<. {_134143~[_134143 > 10, _134143 < 45]} 
-                                                not_interrupted(terminates,light_on,10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                    findall(_140004,findall_can_interrupts(terminates,_140004,light_on,10, {_134143~[_134143 > 10, _134143 < 45]} ),[turn_light_off])
-                                                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_140149~[_140149 > 10, _140149 < 45]} )
-                                                             {_141295~[_141295 > 10, _141295 < 45]} .>.10
-                                                             {_141295~[_141295 > 10, _141295 < 45]} .<. {_140149~[_140149 > 10, _140149 < 45]} 
-                                                            can_interrupts(terminates,turn_light_off,light_on, {_141295~[_141295 > 10, _141295 < 45]} )
-                                                                can_terminates(turn_light_off,light_on, {_141295~[_141295 > 10, _141295 < 45]} )
-                                                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                        findall(_141426,interrupted(terminates,turn_light_off,light_on,_141426,10, {_134143~[_134143 > 10, _134143 < 45]} ),[])
-                                                        all_entirely_outside_of_interval([],10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                        not_interrupted_(terminates,light_on,[],10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                not_interrupted(releases,light_on,10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                    findall(_141819,findall_can_interrupts(releases,_141819,light_on,10, {_134143~[_134143 > 10, _134143 < 45]} ),[])
-                                                    not_interrupted_(releases,light_on,[],10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                        holdsAt(brightness(0), {_134143~[_134143 > 10, _134143 < 45]} ,fading_out)
-                                             {_142416~[_142416 > 0, _142416 < 45]} .>.0
-                                             {_142416~[_142416 > 0, _142416 < 45]} .<. {_134143~[_134143 > 10, _134143 < 45]} 
-                                            max_time(100)
-                                             {_134143~[_134143 > 10, _134143 < 45]} .=<.100
-                                            can_trajectory(fading_out, {_142416~[_142416 > 0, _142416 < 45]} ,brightness(0), {_134143~[_134143 > 10, _134143 < 45]} )
-                                            can_initiates(switch_fade_out,fading_out, {_142416~[_142416 > 0, _142416 < 45]} )
-                                            happens(switch_fade_out, {_142416~[_142416 > 0, _142416 < 45]} )
+                                        holdsAt(brightness(0), {_121078~[_121078 > 0, _121078 < 45]} ,fading_out)
+                                             {_124290~[_124290 > 0, _124290 < 45]} .>.0
+                                             {_124290~[_124290 > 0, _124290 < 45]} .<. {_121078~[_121078 > 0, _121078 < 45]} 
+                                            max_time(45)
+                                             {_121078~[_121078 > 0, _121078 < 45]} .=<.45
+                                            can_trajectory(fading_out, {_124290~[_124290 > 0, _124290 < 45]} ,brightness(0), {_121078~[_121078 > 0, _121078 < 45]} )
+                                            can_initiates(switch_fade_out,fading_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                            happens(switch_fade_out, {_124290~[_124290 > 0, _124290 < 45]} )
                                                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(switch_fade_in, {_111291~[_111291 > 10, _111291 =< 45]} )
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
         builtin(!spy)
-        holdsAt(light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-            10.>.0
-            10.<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_initiates(turn_light_on,light_on,10)
-            happens(turn_light_on,10)
-            initiates(turn_light_on,light_on,10)
-            not_stoppedIn(10,light_on, {_111291~[_111291 > 10, _111291 =< 45]} )
-                10.=<. {_111291~[_111291 > 10, _111291 =< 45]} 
-                not_interrupted(terminates,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_112514,findall_can_interrupts(terminates,_112514,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[turn_light_off])
-                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_112659~[_112659 > 10, _112659 =< 100]} )
-                             {_112817~[_112817 > 10, _112817 < 100]} .>.10
-                             {_112817~[_112817 > 10, _112817 < 100]} .<. {_112659~[_112659 > 10, _112659 =< 100]} 
-                            can_interrupts(terminates,turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                                can_terminates(turn_light_off,light_on, {_112817~[_112817 > 10, _112817 < 100]} )
-                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        findall(_112948,interrupted(terminates,turn_light_off,light_on,_112948,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[45])
-                            interrupted(terminates,turn_light_off,light_on,45,10, {_113150~[_113150 > 45, _113150 =< 100]} )
-                                45.>.10
-                                45.<. {_113150~[_113150 > 45, _113150 =< 100]} 
-                                can_interrupts(terminates,turn_light_off,light_on,45)
-                                    can_terminates(turn_light_off,light_on,45)
-                                happens(turn_light_off,45)
-                                interrupts(terminates,turn_light_off,light_on,45)
-                                    terminates(turn_light_off,light_on,45)
-                        all_entirely_outside_of_interval([45],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                            inf(45,45)
-                            45.>=. {_111291~[_111291 > 10, _111291 =< 45]} 
-                            all_entirely_outside_of_interval([],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                        not_interrupted_(terminates,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                not_interrupted(releases,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} )
-                    findall(_114406,findall_can_interrupts(releases,_114406,light_on,10, {_111291~[_111291 > 10, _111291 =< 45]} ),[])
-                    not_interrupted_(releases,light_on,[],10, {_111291~[_111291 > 10, _111291 =< 45]} )
-        holdsAt(brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} ,fading_out)
-             {_115003~[_115003 > 10, _115003 < 45]} .>.0
-             {_115003~[_115003 > 10, _115003 < 45]} .<. {_111291~[_111291 > 10, _111291 =< 45]} 
-            max_time(100)
-             {_111291~[_111291 > 10, _111291 =< 45]} .=<.100
-            can_trajectory(fading_out, {_115003~[_115003 > 10, _115003 < 45]} ,brightness(0), {_111291~[_111291 > 10, _111291 =< 45]} )
-            can_initiates(switch_fade_out,fading_out, {_115003~[_115003 > 10, _115003 < 45]} )
-            happens(switch_fade_out, {_115003~[_115003 > 10, _115003 < 45]} )
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
                 builtin(!spy)
-                holdsAt(light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                    10.>.0
-                    10.<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_initiates(turn_light_on,light_on,10)
-                    happens(turn_light_on,10)
-                    proved(initiates(turn_light_on,light_on,10))
-                    not_stoppedIn(10,light_on, {_115003~[_115003 > 10, _115003 < 45]} )
-                        10.=<. {_115003~[_115003 > 10, _115003 < 45]} 
-                        not_interrupted(terminates,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_119022,findall_can_interrupts(terminates,_119022,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[turn_light_off])
-                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_119167~[_119167 > 10, _119167 < 45]} )
-                                     {_119545~[_119545 > 10, _119545 < 45]} .>.10
-                                     {_119545~[_119545 > 10, _119545 < 45]} .<. {_119167~[_119167 > 10, _119167 < 45]} 
-                                    can_interrupts(terminates,turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                                        can_terminates(turn_light_off,light_on, {_119545~[_119545 > 10, _119545 < 45]} )
-                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                findall(_119676,interrupted(terminates,turn_light_off,light_on,_119676,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                                all_entirely_outside_of_interval([],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                                not_interrupted_(terminates,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                        not_interrupted(releases,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} )
-                            findall(_120069,findall_can_interrupts(releases,_120069,light_on,10, {_115003~[_115003 > 10, _115003 < 45]} ),[])
-                            not_interrupted_(releases,light_on,[],10, {_115003~[_115003 > 10, _115003 < 45]} )
-                holdsAt(brightness(10), {_115003~[_115003 > 10, _115003 < 45]} ,fading_in)
-                     {_120666~[_120666 > 10, _120666 < 45]} .>.0
-                     {_120666~[_120666 > 10, _120666 < 45]} .<. {_115003~[_115003 > 10, _115003 < 45]} 
-                    max_time(100)
-                     {_115003~[_115003 > 10, _115003 < 45]} .=<.100
-                    can_trajectory(fading_in, {_120666~[_120666 > 10, _120666 < 45]} ,brightness(10), {_115003~[_115003 > 10, _115003 < 45]} )
-                    can_initiates(switch_fade_in,fading_in, {_120666~[_120666 > 10, _120666 < 45]} )
-                    happens(switch_fade_in, {_120666~[_120666 > 10, _120666 < 45]} )
+                holdsAt(brightness(10), {_114133~[_114133 > 0, _114133 < 45]} ,fading_in)
+                     {_115616~[_115616 > 0, _115616 < 45]} .>.0
+                     {_115616~[_115616 > 0, _115616 < 45]} .<. {_114133~[_114133 > 0, _114133 < 45]} 
+                    max_time(45)
+                     {_114133~[_114133 > 0, _114133 < 45]} .=<.45
+                    can_trajectory(fading_in, {_115616~[_115616 > 0, _115616 < 45]} ,brightness(10), {_114133~[_114133 > 0, _114133 < 45]} )
+                    can_initiates(switch_fade_in,fading_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                    happens(switch_fade_in, {_115616~[_115616 > 0, _115616 < 45]} )
                         builtin(!spy)
-                        holdsAt(light_on, {_120666~[_120666 > 10, _120666 < 45]} )
-                            10.>.0
-                            10.<. {_120666~[_120666 > 10, _120666 < 45]} 
-                            max_time(100)
-                             {_120666~[_120666 > 10, _120666 < 45]} .=<.100
-                            can_initiates(turn_light_on,light_on,10)
-                            happens(turn_light_on,10)
-                            proved(initiates(turn_light_on,light_on,10))
-                            not_stoppedIn(10,light_on, {_120666~[_120666 > 10, _120666 < 45]} )
-                                10.=<. {_120666~[_120666 > 10, _120666 < 45]} 
-                                not_interrupted(terminates,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                    findall(_125033,findall_can_interrupts(terminates,_125033,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} ),[turn_light_off])
-                                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_125178~[_125178 > 10, _125178 < 45]} )
-                                             {_125782~[_125782 > 10, _125782 < 45]} .>.10
-                                             {_125782~[_125782 > 10, _125782 < 45]} .<. {_125178~[_125178 > 10, _125178 < 45]} 
-                                            can_interrupts(terminates,turn_light_off,light_on, {_125782~[_125782 > 10, _125782 < 45]} )
-                                                can_terminates(turn_light_off,light_on, {_125782~[_125782 > 10, _125782 < 45]} )
-                                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                        findall(_125913,interrupted(terminates,turn_light_off,light_on,_125913,10, {_120666~[_120666 > 10, _120666 < 45]} ),[])
-                                        all_entirely_outside_of_interval([],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                        not_interrupted_(terminates,light_on,[],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                not_interrupted(releases,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} )
-                                    findall(_126306,findall_can_interrupts(releases,_126306,light_on,10, {_120666~[_120666 > 10, _120666 < 45]} ),[])
-                                    not_interrupted_(releases,light_on,[],10, {_120666~[_120666 > 10, _120666 < 45]} )
-                        holdsAt(brightness(0), {_120666~[_120666 > 10, _120666 < 45]} ,fading_out)
-                             {_126903~[_126903 > 10, _126903 < 45]} .>.0
-                             {_126903~[_126903 > 10, _126903 < 45]} .<. {_120666~[_120666 > 10, _120666 < 45]} 
-                            max_time(100)
-                             {_120666~[_120666 > 10, _120666 < 45]} .=<.100
-                            can_trajectory(fading_out, {_126903~[_126903 > 10, _126903 < 45]} ,brightness(0), {_120666~[_120666 > 10, _120666 < 45]} )
-                            can_initiates(switch_fade_out,fading_out, {_126903~[_126903 > 10, _126903 < 45]} )
-                            happens(switch_fade_out, {_126903~[_126903 > 10, _126903 < 45]} )
+                        holdsAt(brightness(0), {_115616~[_115616 > 0, _115616 < 45]} ,fading_out)
+                             {_118238~[_118238 > 0, _118238 < 45]} .>.0
+                             {_118238~[_118238 > 0, _118238 < 45]} .<. {_115616~[_115616 > 0, _115616 < 45]} 
+                            max_time(45)
+                             {_115616~[_115616 > 0, _115616 < 45]} .=<.45
+                            can_trajectory(fading_out, {_118238~[_118238 > 0, _118238 < 45]} ,brightness(0), {_115616~[_115616 > 0, _115616 < 45]} )
+                            can_initiates(switch_fade_out,fading_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                            happens(switch_fade_out, {_118238~[_118238 > 0, _118238 < 45]} )
                                 builtin(!spy)
-                                holdsAt(light_on, {_126903~[_126903 > 10, _126903 < 45]} )
-                                    10.>.0
-                                    10.<. {_126903~[_126903 > 10, _126903 < 45]} 
-                                    max_time(100)
-                                     {_126903~[_126903 > 10, _126903 < 45]} .=<.100
-                                    can_initiates(turn_light_on,light_on,10)
-                                    happens(turn_light_on,10)
-                                    proved(initiates(turn_light_on,light_on,10))
-                                    not_stoppedIn(10,light_on, {_126903~[_126903 > 10, _126903 < 45]} )
-                                        10.=<. {_126903~[_126903 > 10, _126903 < 45]} 
-                                        not_interrupted(terminates,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                            findall(_132017,findall_can_interrupts(terminates,_132017,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} ),[turn_light_off])
-                                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_132162~[_132162 > 10, _132162 < 45]} )
-                                                     {_133022~[_133022 > 10, _133022 < 45]} .>.10
-                                                     {_133022~[_133022 > 10, _133022 < 45]} .<. {_132162~[_132162 > 10, _132162 < 45]} 
-                                                    can_interrupts(terminates,turn_light_off,light_on, {_133022~[_133022 > 10, _133022 < 45]} )
-                                                        can_terminates(turn_light_off,light_on, {_133022~[_133022 > 10, _133022 < 45]} )
-                                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                                findall(_133153,interrupted(terminates,turn_light_off,light_on,_133153,10, {_126903~[_126903 > 10, _126903 < 45]} ),[])
-                                                all_entirely_outside_of_interval([],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                                not_interrupted_(terminates,light_on,[],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                        not_interrupted(releases,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                            findall(_133546,findall_can_interrupts(releases,_133546,light_on,10, {_126903~[_126903 > 10, _126903 < 45]} ),[])
-                                            not_interrupted_(releases,light_on,[],10, {_126903~[_126903 > 10, _126903 < 45]} )
-                                holdsAt(brightness(10), {_126903~[_126903 > 10, _126903 < 45]} ,fading_in)
-                                     {_134143~[_134143 > 10, _134143 < 45]} .>.0
-                                     {_134143~[_134143 > 10, _134143 < 45]} .<. {_126903~[_126903 > 10, _126903 < 45]} 
-                                    max_time(100)
-                                     {_126903~[_126903 > 10, _126903 < 45]} .=<.100
-                                    can_trajectory(fading_in, {_134143~[_134143 > 10, _134143 < 45]} ,brightness(10), {_126903~[_126903 > 10, _126903 < 45]} )
-                                    can_initiates(switch_fade_in,fading_in, {_134143~[_134143 > 10, _134143 < 45]} )
-                                    happens(switch_fade_in, {_134143~[_134143 > 10, _134143 < 45]} )
+                                holdsAt(brightness(10), {_118238~[_118238 > 0, _118238 < 45]} ,fading_in)
+                                     {_121078~[_121078 > 0, _121078 < 45]} .>.0
+                                     {_121078~[_121078 > 0, _121078 < 45]} .<. {_118238~[_118238 > 0, _118238 < 45]} 
+                                    max_time(45)
+                                     {_118238~[_118238 > 0, _118238 < 45]} .=<.45
+                                    can_trajectory(fading_in, {_121078~[_121078 > 0, _121078 < 45]} ,brightness(10), {_118238~[_118238 > 0, _118238 < 45]} )
+                                    can_initiates(switch_fade_in,fading_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                    happens(switch_fade_in, {_121078~[_121078 > 0, _121078 < 45]} )
                                         builtin(!spy)
-                                        holdsAt(light_on, {_134143~[_134143 > 10, _134143 < 45]} )
-                                            10.>.0
-                                            10.<. {_134143~[_134143 > 10, _134143 < 45]} 
-                                            max_time(100)
-                                             {_134143~[_134143 > 10, _134143 < 45]} .=<.100
-                                            can_initiates(turn_light_on,light_on,10)
-                                            happens(turn_light_on,10)
-                                            proved(initiates(turn_light_on,light_on,10))
-                                            not_stoppedIn(10,light_on, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                10.=<. {_134143~[_134143 > 10, _134143 < 45]} 
-                                                not_interrupted(terminates,light_on,10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                    findall(_140004,findall_can_interrupts(terminates,_140004,light_on,10, {_134143~[_134143 > 10, _134143 < 45]} ),[turn_light_off])
-                                                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_140149~[_140149 > 10, _140149 < 45]} )
-                                                             {_141295~[_141295 > 10, _141295 < 45]} .>.10
-                                                             {_141295~[_141295 > 10, _141295 < 45]} .<. {_140149~[_140149 > 10, _140149 < 45]} 
-                                                            can_interrupts(terminates,turn_light_off,light_on, {_141295~[_141295 > 10, _141295 < 45]} )
-                                                                can_terminates(turn_light_off,light_on, {_141295~[_141295 > 10, _141295 < 45]} )
-                                                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                        findall(_141426,interrupted(terminates,turn_light_off,light_on,_141426,10, {_134143~[_134143 > 10, _134143 < 45]} ),[])
-                                                        all_entirely_outside_of_interval([],10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                        not_interrupted_(terminates,light_on,[],10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                not_interrupted(releases,light_on,10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                                    findall(_141819,findall_can_interrupts(releases,_141819,light_on,10, {_134143~[_134143 > 10, _134143 < 45]} ),[])
-                                                    not_interrupted_(releases,light_on,[],10, {_134143~[_134143 > 10, _134143 < 45]} )
-                                        holdsAt(brightness(0), {_134143~[_134143 > 10, _134143 < 45]} ,fading_out)
-                                             {_142416~[_142416 > 10, _142416 < 45]} .>.0
-                                             {_142416~[_142416 > 10, _142416 < 45]} .<. {_134143~[_134143 > 10, _134143 < 45]} 
-                                            max_time(100)
-                                             {_134143~[_134143 > 10, _134143 < 45]} .=<.100
-                                            can_trajectory(fading_out, {_142416~[_142416 > 10, _142416 < 45]} ,brightness(0), {_134143~[_134143 > 10, _134143 < 45]} )
-                                            can_initiates(switch_fade_out,fading_out, {_142416~[_142416 > 10, _142416 < 45]} )
-                                            happens(switch_fade_out, {_142416~[_142416 > 10, _142416 < 45]} )
+                                        holdsAt(brightness(0), {_121078~[_121078 > 0, _121078 < 45]} ,fading_out)
+                                             {_124290~[_124290 > 0, _124290 < 45]} .>.0
+                                             {_124290~[_124290 > 0, _124290 < 45]} .<. {_121078~[_121078 > 0, _121078 < 45]} 
+                                            max_time(45)
+                                             {_121078~[_121078 > 0, _121078 < 45]} .=<.45
+                                            can_trajectory(fading_out, {_124290~[_124290 > 0, _124290 < 45]} ,brightness(0), {_121078~[_121078 > 0, _121078 < 45]} )
+                                            can_initiates(switch_fade_out,fading_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                            happens(switch_fade_out, {_124290~[_124290 > 0, _124290 < 45]} )
                                                 builtin(!spy)
-                                                holdsAt(light_on, {_142416~[_142416 > 10, _142416 < 45]} )
-                                                    10.>.0
-                                                    10.<. {_142416~[_142416 > 10, _142416 < 45]} 
-                                                    max_time(100)
-                                                     {_142416~[_142416 > 10, _142416 < 45]} .=<.100
-                                                    can_initiates(turn_light_on,light_on,10)
-                                                    happens(turn_light_on,10)
-                                                    proved(initiates(turn_light_on,light_on,10))
-                                                    not_stoppedIn(10,light_on, {_142416~[_142416 > 10, _142416 < 45]} )
-                                                        10.=<. {_142416~[_142416 > 10, _142416 < 45]} 
-                                                        not_interrupted(terminates,light_on,10, {_142416~[_142416 > 10, _142416 < 45]} )
-                                                            findall(_149024,findall_can_interrupts(terminates,_149024,light_on,10, {_142416~[_142416 > 10, _142416 < 45]} ),[turn_light_off])
-                                                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_149169~[_149169 > 10, _149169 < 45]} )
-                                                                     {_150631~[_150631 > 10, _150631 < 45]} .>.10
-                                                                     {_150631~[_150631 > 10, _150631 < 45]} .<. {_149169~[_149169 > 10, _149169 < 45]} 
-                                                                    can_interrupts(terminates,turn_light_off,light_on, {_150631~[_150631 > 10, _150631 < 45]} )
-                                                                        can_terminates(turn_light_off,light_on, {_150631~[_150631 > 10, _150631 < 45]} )
-                                                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_142416~[_142416 > 10, _142416 < 45]} )
-                                                                findall(_150762,interrupted(terminates,turn_light_off,light_on,_150762,10, {_142416~[_142416 > 10, _142416 < 45]} ),[])
-                                                                all_entirely_outside_of_interval([],10, {_142416~[_142416 > 10, _142416 < 45]} )
-                                                                not_interrupted_(terminates,light_on,[],10, {_142416~[_142416 > 10, _142416 < 45]} )
-                                                        not_interrupted(releases,light_on,10, {_142416~[_142416 > 10, _142416 < 45]} )
-                                                            findall(_151155,findall_can_interrupts(releases,_151155,light_on,10, {_142416~[_142416 > 10, _142416 < 45]} ),[])
-                                                            not_interrupted_(releases,light_on,[],10, {_142416~[_142416 > 10, _142416 < 45]} )
-                                                holdsAt(brightness(10), {_142416~[_142416 > 10, _142416 < 45]} ,fading_in)
-                                                     {_151752~[_151752 > 0, _151752 < 45]} .>.0
-                                                     {_151752~[_151752 > 0, _151752 < 45]} .<. {_142416~[_142416 > 10, _142416 < 45]} 
-                                                    max_time(100)
-                                                     {_142416~[_142416 > 10, _142416 < 45]} .=<.100
-                                                    can_trajectory(fading_in,
+                                                holdsAt(brightness(10), {_124290~[_124290 > 0, _124290 < 45]} ,fading_in)
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .>.0
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .<. {_124290~[_124290 > 0, _124290 < 45]} 
+                                                    max_time(45)
+                                                     {_124290~[_124290 > 0, _124290 < 45]} .=<.45
+                                                    can_trajectory(fading_in, {_127813~[_127813 > 0, _127813 < 45]} ,brightness(10), {_124290~[_124290 > 0, _124290 < 45]} )
+                                                    can_initiates(switch_fade_in,fading_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                    happens(switch_fade_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
+        builtin(!spy)
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
+                builtin(!spy)
+                holdsAt(brightness(10), {_114133~[_114133 > 0, _114133 < 45]} ,fading_in)
+                     {_115616~[_115616 > 0, _115616 < 45]} .>.0
+                     {_115616~[_115616 > 0, _115616 < 45]} .<. {_114133~[_114133 > 0, _114133 < 45]} 
+                    max_time(45)
+                     {_114133~[_114133 > 0, _114133 < 45]} .=<.45
+                    can_trajectory(fading_in, {_115616~[_115616 > 0, _115616 < 45]} ,brightness(10), {_114133~[_114133 > 0, _114133 < 45]} )
+                    can_initiates(switch_fade_in,fading_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                    happens(switch_fade_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                        builtin(!spy)
+                        holdsAt(brightness(0), {_115616~[_115616 > 0, _115616 < 45]} ,fading_out)
+                             {_118238~[_118238 > 0, _118238 < 45]} .>.0
+                             {_118238~[_118238 > 0, _118238 < 45]} .<. {_115616~[_115616 > 0, _115616 < 45]} 
+                            max_time(45)
+                             {_115616~[_115616 > 0, _115616 < 45]} .=<.45
+                            can_trajectory(fading_out, {_118238~[_118238 > 0, _118238 < 45]} ,brightness(0), {_115616~[_115616 > 0, _115616 < 45]} )
+                            can_initiates(switch_fade_out,fading_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                            happens(switch_fade_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                                builtin(!spy)
+                                holdsAt(brightness(10), {_118238~[_118238 > 0, _118238 < 45]} ,fading_in)
+                                     {_121078~[_121078 > 0, _121078 < 45]} .>.0
+                                     {_121078~[_121078 > 0, _121078 < 45]} .<. {_118238~[_118238 > 0, _118238 < 45]} 
+                                    max_time(45)
+                                     {_118238~[_118238 > 0, _118238 < 45]} .=<.45
+                                    can_trajectory(fading_in, {_121078~[_121078 > 0, _121078 < 45]} ,brightness(10), {_118238~[_118238 > 0, _118238 < 45]} )
+                                    can_initiates(switch_fade_in,fading_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                    happens(switch_fade_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                        builtin(!spy)
+                                        holdsAt(brightness(0), {_121078~[_121078 > 0, _121078 < 45]} ,fading_out)
+                                             {_124290~[_124290 > 0, _124290 < 45]} .>.0
+                                             {_124290~[_124290 > 0, _124290 < 45]} .<. {_121078~[_121078 > 0, _121078 < 45]} 
+                                            max_time(45)
+                                             {_121078~[_121078 > 0, _121078 < 45]} .=<.45
+                                            can_trajectory(fading_out, {_124290~[_124290 > 0, _124290 < 45]} ,brightness(0), {_121078~[_121078 > 0, _121078 < 45]} )
+                                            can_initiates(switch_fade_out,fading_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                            happens(switch_fade_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                                builtin(!spy)
+                                                holdsAt(brightness(10), {_124290~[_124290 > 0, _124290 < 45]} ,fading_in)
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .>.0
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .<. {_124290~[_124290 > 0, _124290 < 45]} 
+                                                    max_time(45)
+                                                     {_124290~[_124290 > 0, _124290 < 45]} .=<.45
+                                                    can_trajectory(fading_in, {_127813~[_127813 > 0, _127813 < 45]} ,brightness(10), {_124290~[_124290 > 0, _124290 < 45]} )
+                                                    can_initiates(switch_fade_in,fading_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                    happens(switch_fade_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                        builtin(!spy)
+                                                        holdsAt(brightness(0), {_127813~[_127813 > 0, _127813 < 45]} ,fading_out)
+                                                             {_131645~[_131645 > 0, _131645 < 45]} .>.0
+                                                             {_131645~[_131645 > 0, _131645 < 45]} .<. {_127813~[_127813 > 0, _127813 < 45]} 
+                                                            max_time(45)
+                                                             {_127813~[_127813 > 0, _127813 < 45]} .=<.45
+                                                            can_trajectory(fading_out, {_131645~[_131645 > 0, _131645 < 45]} ,brightness(0), {_127813~[_127813 > 0, _127813 < 45]} )
+                                                            can_initiates(switch_fade_out,fading_out, {_131645~[_131645 > 0, _131645 < 45]} )
+                                                            happens(switch_fade_out, {_131645~[_131645 > 0, _131645 < 45]} )
+                                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
+        builtin(!spy)
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
+                builtin(!spy)
+                holdsAt(brightness(10), {_114133~[_114133 > 0, _114133 < 45]} ,fading_in)
+                     {_115616~[_115616 > 0, _115616 < 45]} .>.0
+                     {_115616~[_115616 > 0, _115616 < 45]} .<. {_114133~[_114133 > 0, _114133 < 45]} 
+                    max_time(45)
+                     {_114133~[_114133 > 0, _114133 < 45]} .=<.45
+                    can_trajectory(fading_in, {_115616~[_115616 > 0, _115616 < 45]} ,brightness(10), {_114133~[_114133 > 0, _114133 < 45]} )
+                    can_initiates(switch_fade_in,fading_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                    happens(switch_fade_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                        builtin(!spy)
+                        holdsAt(brightness(0), {_115616~[_115616 > 0, _115616 < 45]} ,fading_out)
+                             {_118238~[_118238 > 0, _118238 < 45]} .>.0
+                             {_118238~[_118238 > 0, _118238 < 45]} .<. {_115616~[_115616 > 0, _115616 < 45]} 
+                            max_time(45)
+                             {_115616~[_115616 > 0, _115616 < 45]} .=<.45
+                            can_trajectory(fading_out, {_118238~[_118238 > 0, _118238 < 45]} ,brightness(0), {_115616~[_115616 > 0, _115616 < 45]} )
+                            can_initiates(switch_fade_out,fading_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                            happens(switch_fade_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                                builtin(!spy)
+                                holdsAt(brightness(10), {_118238~[_118238 > 0, _118238 < 45]} ,fading_in)
+                                     {_121078~[_121078 > 0, _121078 < 45]} .>.0
+                                     {_121078~[_121078 > 0, _121078 < 45]} .<. {_118238~[_118238 > 0, _118238 < 45]} 
+                                    max_time(45)
+                                     {_118238~[_118238 > 0, _118238 < 45]} .=<.45
+                                    can_trajectory(fading_in, {_121078~[_121078 > 0, _121078 < 45]} ,brightness(10), {_118238~[_118238 > 0, _118238 < 45]} )
+                                    can_initiates(switch_fade_in,fading_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                    happens(switch_fade_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                        builtin(!spy)
+                                        holdsAt(brightness(0), {_121078~[_121078 > 0, _121078 < 45]} ,fading_out)
+                                             {_124290~[_124290 > 0, _124290 < 45]} .>.0
+                                             {_124290~[_124290 > 0, _124290 < 45]} .<. {_121078~[_121078 > 0, _121078 < 45]} 
+                                            max_time(45)
+                                             {_121078~[_121078 > 0, _121078 < 45]} .=<.45
+                                            can_trajectory(fading_out, {_124290~[_124290 > 0, _124290 < 45]} ,brightness(0), {_121078~[_121078 > 0, _121078 < 45]} )
+                                            can_initiates(switch_fade_out,fading_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                            happens(switch_fade_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                                builtin(!spy)
+                                                holdsAt(brightness(10), {_124290~[_124290 > 0, _124290 < 45]} ,fading_in)
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .>.0
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .<. {_124290~[_124290 > 0, _124290 < 45]} 
+                                                    max_time(45)
+                                                     {_124290~[_124290 > 0, _124290 < 45]} .=<.45
+                                                    can_trajectory(fading_in, {_127813~[_127813 > 0, _127813 < 45]} ,brightness(10), {_124290~[_124290 > 0, _124290 < 45]} )
+                                                    can_initiates(switch_fade_in,fading_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                    happens(switch_fade_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                        builtin(!spy)
+                                                        holdsAt(brightness(0), {_127813~[_127813 > 0, _127813 < 45]} ,fading_out)
+                                                             {_131645~[_131645 > 0, _131645 < 45]} .>.0
+                                                             {_131645~[_131645 > 0, _131645 < 45]} .<. {_127813~[_127813 > 0, _127813 < 45]} 
+                                                            max_time(45)
+                                                             {_127813~[_127813 > 0, _127813 < 45]} .=<.45
+                                                            can_trajectory(fading_out, {_131645~[_131645 > 0, _131645 < 45]} ,brightness(0), {_127813~[_127813 > 0, _127813 < 45]} )
+                                                            can_initiates(switch_fade_out,fading_out, {_131645~[_131645 > 0, _131645 < 45]} )
+                                                            happens(switch_fade_out, {_131645~[_131645 > 0, _131645 < 45]} )
+                                                                builtin(!spy)
+                                                                holdsAt(brightness(10), {_131645~[_131645 > 0, _131645 < 45]} ,fading_in)
+                                                                     {_135786~[_135786 > 0, _135786 < 45]} .>.0
+                                                                     {_135786~[_135786 > 0, _135786 < 45]} .<. {_131645~[_131645 > 0, _131645 < 45]} 
+                                                                    max_time(45)
+                                                                     {_131645~[_131645 > 0, _131645 < 45]} .=<.45
+                                                                    can_trajectory(fading_in, {_135786~[_135786 > 0, _135786 < 45]} ,brightness(10), {_131645~[_131645 > 0, _131645 < 45]} )
+                                                                    can_initiates(switch_fade_in,fading_in, {_135786~[_135786 > 0, _135786 < 45]} )
+                                                                    happens(switch_fade_in, {_135786~[_135786 > 0, _135786 < 45]} )
+                                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
+        builtin(!spy)
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
+                builtin(!spy)
+                holdsAt(brightness(10), {_114133~[_114133 > 0, _114133 < 45]} ,fading_in)
+                     {_115616~[_115616 > 0, _115616 < 45]} .>.0
+                     {_115616~[_115616 > 0, _115616 < 45]} .<. {_114133~[_114133 > 0, _114133 < 45]} 
+                    max_time(45)
+                     {_114133~[_114133 > 0, _114133 < 45]} .=<.45
+                    can_trajectory(fading_in, {_115616~[_115616 > 0, _115616 < 45]} ,brightness(10), {_114133~[_114133 > 0, _114133 < 45]} )
+                    can_initiates(switch_fade_in,fading_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                    happens(switch_fade_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                        builtin(!spy)
+                        holdsAt(brightness(0), {_115616~[_115616 > 0, _115616 < 45]} ,fading_out)
+                             {_118238~[_118238 > 0, _118238 < 45]} .>.0
+                             {_118238~[_118238 > 0, _118238 < 45]} .<. {_115616~[_115616 > 0, _115616 < 45]} 
+                            max_time(45)
+                             {_115616~[_115616 > 0, _115616 < 45]} .=<.45
+                            can_trajectory(fading_out, {_118238~[_118238 > 0, _118238 < 45]} ,brightness(0), {_115616~[_115616 > 0, _115616 < 45]} )
+                            can_initiates(switch_fade_out,fading_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                            happens(switch_fade_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                                builtin(!spy)
+                                holdsAt(brightness(10), {_118238~[_118238 > 0, _118238 < 45]} ,fading_in)
+                                     {_121078~[_121078 > 0, _121078 < 45]} .>.0
+                                     {_121078~[_121078 > 0, _121078 < 45]} .<. {_118238~[_118238 > 0, _118238 < 45]} 
+                                    max_time(45)
+                                     {_118238~[_118238 > 0, _118238 < 45]} .=<.45
+                                    can_trajectory(fading_in, {_121078~[_121078 > 0, _121078 < 45]} ,brightness(10), {_118238~[_118238 > 0, _118238 < 45]} )
+                                    can_initiates(switch_fade_in,fading_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                    happens(switch_fade_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                        builtin(!spy)
+                                        holdsAt(brightness(0), {_121078~[_121078 > 0, _121078 < 45]} ,fading_out)
+                                             {_124290~[_124290 > 0, _124290 < 45]} .>.0
+                                             {_124290~[_124290 > 0, _124290 < 45]} .<. {_121078~[_121078 > 0, _121078 < 45]} 
+                                            max_time(45)
+                                             {_121078~[_121078 > 0, _121078 < 45]} .=<.45
+                                            can_trajectory(fading_out, {_124290~[_124290 > 0, _124290 < 45]} ,brightness(0), {_121078~[_121078 > 0, _121078 < 45]} )
+                                            can_initiates(switch_fade_out,fading_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                            happens(switch_fade_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                                builtin(!spy)
+                                                holdsAt(brightness(10), {_124290~[_124290 > 0, _124290 < 45]} ,fading_in)
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .>.0
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .<. {_124290~[_124290 > 0, _124290 < 45]} 
+                                                    max_time(45)
+                                                     {_124290~[_124290 > 0, _124290 < 45]} .=<.45
+                                                    can_trajectory(fading_in, {_127813~[_127813 > 0, _127813 < 45]} ,brightness(10), {_124290~[_124290 > 0, _124290 < 45]} )
+                                                    can_initiates(switch_fade_in,fading_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                    happens(switch_fade_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                        builtin(!spy)
+                                                        holdsAt(brightness(0), {_127813~[_127813 > 0, _127813 < 45]} ,fading_out)
+                                                             {_131645~[_131645 > 0, _131645 < 45]} .>.0
+                                                             {_131645~[_131645 > 0, _131645 < 45]} .<. {_127813~[_127813 > 0, _127813 < 45]} 
+                                                            max_time(45)
+                                                             {_127813~[_127813 > 0, _127813 < 45]} .=<.45
+                                                            can_trajectory(fading_out, {_131645~[_131645 > 0, _131645 < 45]} ,brightness(0), {_127813~[_127813 > 0, _127813 < 45]} )
+                                                            can_initiates(switch_fade_out,fading_out, {_131645~[_131645 > 0, _131645 < 45]} )
+                                                            happens(switch_fade_out, {_131645~[_131645 > 0, _131645 < 45]} )
+                                                                builtin(!spy)
+                                                                holdsAt(brightness(10), {_131645~[_131645 > 0, _131645 < 45]} ,fading_in)
+                                                                     {_135786~[_135786 > 0, _135786 < 45]} .>.0
+                                                                     {_135786~[_135786 > 0, _135786 < 45]} .<. {_131645~[_131645 > 0, _131645 < 45]} 
+                                                                    max_time(45)
+                                                                     {_131645~[_131645 > 0, _131645 < 45]} .=<.45
+                                                                    can_trajectory(fading_in, {_135786~[_135786 > 0, _135786 < 45]} ,brightness(10), {_131645~[_131645 > 0, _131645 < 45]} )
+                                                                    can_initiates(switch_fade_in,fading_in, {_135786~[_135786 > 0, _135786 < 45]} )
+                                                                    happens(switch_fade_in, {_135786~[_135786 > 0, _135786 < 45]} )
+                                                                        builtin(!spy)
+                                                                        holdsAt(brightness(0), {_135786~[_135786 > 0, _135786 < 45]} ,fading_out)
+                                                                             {_140236~[_140236 > 0, _140236 < 45]} .>.0
+                                                                             {_140236~[_140236 > 0, _140236 < 45]} .<. {_135786~[_135786 > 0, _135786 < 45]} 
+                                                                            max_time(45)
+                                                                             {_135786~[_135786 > 0, _135786 < 45]} .=<.45
+                                                                            can_trajectory(fading_out, {_140236~[_140236 > 0, _140236 < 45]} ,brightness(0), {_135786~[_135786 > 0, _135786 < 45]} )
+                                                                            can_initiates(switch_fade_out,fading_out, {_140236~[_140236 > 0, _140236 < 45]} )
+                                                                            happens(switch_fade_out, {_140236~[_140236 > 0, _140236 < 45]} )
+                                                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
+        builtin(!spy)
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} )
+            can_initiates(switch_fade_out,fading_out, {_114133~[_114133 > 0, _114133 < 45]} )
+            happens(switch_fade_out, {_114133~[_114133 > 0, _114133 < 45]} )
+                builtin(!spy)
+                holdsAt(brightness(10), {_114133~[_114133 > 0, _114133 < 45]} ,fading_in)
+                     {_115616~[_115616 > 0, _115616 < 45]} .>.0
+                     {_115616~[_115616 > 0, _115616 < 45]} .<. {_114133~[_114133 > 0, _114133 < 45]} 
+                    max_time(45)
+                     {_114133~[_114133 > 0, _114133 < 45]} .=<.45
+                    can_trajectory(fading_in, {_115616~[_115616 > 0, _115616 < 45]} ,brightness(10), {_114133~[_114133 > 0, _114133 < 45]} )
+                    can_initiates(switch_fade_in,fading_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                    happens(switch_fade_in, {_115616~[_115616 > 0, _115616 < 45]} )
+                        builtin(!spy)
+                        holdsAt(brightness(0), {_115616~[_115616 > 0, _115616 < 45]} ,fading_out)
+                             {_118238~[_118238 > 0, _118238 < 45]} .>.0
+                             {_118238~[_118238 > 0, _118238 < 45]} .<. {_115616~[_115616 > 0, _115616 < 45]} 
+                            max_time(45)
+                             {_115616~[_115616 > 0, _115616 < 45]} .=<.45
+                            can_trajectory(fading_out, {_118238~[_118238 > 0, _118238 < 45]} ,brightness(0), {_115616~[_115616 > 0, _115616 < 45]} )
+                            can_initiates(switch_fade_out,fading_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                            happens(switch_fade_out, {_118238~[_118238 > 0, _118238 < 45]} )
+                                builtin(!spy)
+                                holdsAt(brightness(10), {_118238~[_118238 > 0, _118238 < 45]} ,fading_in)
+                                     {_121078~[_121078 > 0, _121078 < 45]} .>.0
+                                     {_121078~[_121078 > 0, _121078 < 45]} .<. {_118238~[_118238 > 0, _118238 < 45]} 
+                                    max_time(45)
+                                     {_118238~[_118238 > 0, _118238 < 45]} .=<.45
+                                    can_trajectory(fading_in, {_121078~[_121078 > 0, _121078 < 45]} ,brightness(10), {_118238~[_118238 > 0, _118238 < 45]} )
+                                    can_initiates(switch_fade_in,fading_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                    happens(switch_fade_in, {_121078~[_121078 > 0, _121078 < 45]} )
+                                        builtin(!spy)
+                                        holdsAt(brightness(0), {_121078~[_121078 > 0, _121078 < 45]} ,fading_out)
+                                             {_124290~[_124290 > 0, _124290 < 45]} .>.0
+                                             {_124290~[_124290 > 0, _124290 < 45]} .<. {_121078~[_121078 > 0, _121078 < 45]} 
+                                            max_time(45)
+                                             {_121078~[_121078 > 0, _121078 < 45]} .=<.45
+                                            can_trajectory(fading_out, {_124290~[_124290 > 0, _124290 < 45]} ,brightness(0), {_121078~[_121078 > 0, _121078 < 45]} )
+                                            can_initiates(switch_fade_out,fading_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                            happens(switch_fade_out, {_124290~[_124290 > 0, _124290 < 45]} )
+                                                builtin(!spy)
+                                                holdsAt(brightness(10), {_124290~[_124290 > 0, _124290 < 45]} ,fading_in)
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .>.0
+                                                     {_127813~[_127813 > 0, _127813 < 45]} .<. {_124290~[_124290 > 0, _124290 < 45]} 
+                                                    max_time(45)
+                                                     {_124290~[_124290 > 0, _124290 < 45]} .=<.45
+                                                    can_trajectory(fading_in, {_127813~[_127813 > 0, _127813 < 45]} ,brightness(10), {_124290~[_124290 > 0, _124290 < 45]} )
+                                                    can_initiates(switch_fade_in,fading_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                    happens(switch_fade_in, {_127813~[_127813 > 0, _127813 < 45]} )
+                                                        builtin(!spy)
+                                                        holdsAt(brightness(0), {_127813~[_127813 > 0, _127813 < 45]} ,fading_out)
+                                                             {_131645~[_131645 > 0, _131645 < 45]} .>.0
+                                                             {_131645~[_131645 > 0, _131645 < 45]} .<. {_127813~[_127813 > 0, _127813 < 45]} 
+                                                            max_time(45)
+                                                             {_127813~[_127813 > 0, _127813 < 45]} .=<.45
+                                                            can_trajectory(fading_out, {_131645~[_131645 > 0, _131645 < 45]} ,brightness(0), {_127813~[_127813 > 0, _127813 < 45]} )
+                                                            can_initiates(switch_fade_out,fading_out, {_131645~[_131645 > 0, _131645 < 45]} )
+                                                            happens(switch_fade_out, {_131645~[_131645 > 0, _131645 < 45]} )
+                                                                builtin(!spy)
+                                                                holdsAt(brightness(10), {_131645~[_131645 > 0, _131645 < 45]} ,fading_in)
+                                                                     {_135786~[_135786 > 0, _135786 < 45]} .>.0
+                                                                     {_135786~[_135786 > 0, _135786 < 45]} .<. {_131645~[_131645 > 0, _131645 < 45]} 
+                                                                    max_time(45)
+                                                                     {_131645~[_131645 > 0, _131645 < 45]} .=<.45
+                                                                    can_trajectory(fading_in, {_135786~[_135786 > 0, _135786 < 45]} ,brightness(10), {_131645~[_131645 > 0, _131645 < 45]} )
+                                                                    can_initiates(switch_fade_in,fading_in, {_135786~[_135786 > 0, _135786 < 45]} )
+                                                                    happens(switch_fade_in, {_135786~[_135786 > 0, _135786 < 45]} )
+                                                                        builtin(!spy)
+                                                                        holdsAt(brightness(0), {_135786~[_135786 > 0, _135786 < 45]} ,fading_out)
+                                                                             {_140236~[_140236 > 0, _140236 < 45]} .>.0
+                                                                             {_140236~[_140236 > 0, _140236 < 45]} .<. {_135786~[_135786 > 0, _135786 < 45]} 
+                                                                            max_time(45)
+                                                                             {_135786~[_135786 > 0, _135786 < 45]} .=<.45
+                                                                            can_trajectory(fading_out, {_140236~[_140236 > 0, _140236 < 45]} ,brightness(0), {_135786~[_135786 > 0, _135786 < 45]} )
+                                                                            can_initiates(switch_fade_out,fading_out, {_140236~[_140236 > 0, _140236 < 45]} )
+                                                                            happens(switch_fade_out, {_140236~[_140236 > 0, _140236 < 45]} )
+                                                                                builtin(!spy)
+                                                                                holdsAt(brightness(10), {_140236~[_140236 > 0, _140236 < 45]} ,fading_in)
+                                                                                     {_144995~[_144995 > 0, _144995 < 45]} .>.0
+                                                                                     {_144995~[_144995 > 0, _144995 < 45]} .<. {_140236~[_140236 > 0, _140236 < 45]} 
+                                                                                    max_time(45)
+                                                                                     {_140236~[_140236 > 0, _140236 < 45]} .=<.45
+                                                                                    can_trajectory(fading_in, {_144995~[_144995 > 0, _144995 < 45]} ,brightness(10), {_140236~[_140236 > 0, _140236 < 45]} )
+                                                                                    can_initiates(switch_fade_in,fading_in, {_144995~[_144995 > 0, _144995 < 45]} )
+                                                                                    happens(switch_fade_in, {_144995~[_144995 > 0, _144995 < 45]} )
+                                                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(switch_fade_in, {_114350~[_114350 > 0, _114350 =< 45]} )
+        builtin(!spy)
+        holdsAt(brightness(0), {_114350~[_114350 > 0, _114350 =< 45]} ,fading_out)
+             {_114133~[_114133 > 0, _114133 < 45]} .>.0
+             {_114133~[_114133 > 0, _114133 < 45]} .<. {_114350~[_114350 > 0, _114350 =< 45]} 
+            max_time(45)
+             {_114350~[_114350 > 0, _114350 =< 45]} .=<.45
+            can_trajectory(fading_out, {_114133~[_114133 > 0, _114133 < 45]} ,brightness(0),
 timeout
 
 
-  real      0:03.30
-  real [s]  3.30
-  user [s]  1.46
-  sys  [s]  0.09
-  mem  [KB] 28756
+  real      0:03.27
+  real [s]  3.27
+  user [s]  1.78
+  sys  [s]  0.10
+  mem  [KB] 28784
   avgm [KB] 0
