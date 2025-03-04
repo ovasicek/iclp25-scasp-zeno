@@ -1,6 +1,7 @@
 #include './preprocessed_can_rules/model-fixed-context_free-preprocessed.pl'. % include the can_* rules
-#show happens/2, holdsAt/2.
-#show stoppedIn/3.
+#show happens/2, holdsAt/2, not_holdsAt/2.
+#show initiallyP/1, initiallyN/1.
+#show stoppedIn/3, not_stoppedIn/3.
 #show initiates/3, terminates/3, releases/3.
 #show trajectory/4.
 
