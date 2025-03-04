@@ -26,7 +26,7 @@ happens(fade_in_end,20)
               happens(fade_in_end, {T2~[T2 > 0, T2 < 10]} )                         % T2
                 holdsAt(brightness(10), {T2~[T2 > 0, T2 < 10]} )
                   {T3~[T3 > 0, T3 < 10]} .>.0
-                  {T3~[T3 > 0, T3 < 10]} .<. {T2~[T2 > 0, T2 < 10]} % T3 < T2
+                  {T3~[T3 > 0, T3 < 10]} .<. {T2~[T2 > 0, T2 < 10]}                 % T3 < T2
                   can_initiates(fade_in_end,brightness(10), {T3~[T3 > 0, T3 < 10]})
                   happens(fade_in_end, {T3~[T3 > 0, T3 < 10]} )                     % T3
 
