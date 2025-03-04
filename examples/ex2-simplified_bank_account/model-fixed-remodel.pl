@@ -1,6 +1,6 @@
 #include './preprocessed_can_rules/model-fixed-remodel-preprocessed.pl'. % include the can_* rules
 #include '../axioms/general_utils.pl'.             % include not_happens
-#show happens/2, not_happens/2, 
+#show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.
 #show stoppedIn/3, not_stoppedIn/3.
