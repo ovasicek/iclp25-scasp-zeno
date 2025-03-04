@@ -1,14 +1,12 @@
 %% BEC1 - StoppedIn(t1,f,t2)
 stoppedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
-    max_time(T3), T2 .=<. T3,
     can_terminates(Event, Fluent, T),
     happens(Event, T),
     terminates(Event, Fluent, T).
 
 stoppedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
-    max_time(T3), T2 .=<. T3,
     can_releases(Event, Fluent, T),
     happens(Event, T),
     releases(Event, Fluent, T).
@@ -17,13 +15,11 @@ stoppedIn(T1, Fluent, T2) :-
 %% BEC2 - StartedIn(t1,f,t2)
 startedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
-    max_time(T3), T2 .=<. T3,
     can_initiates(Event, Fluent, T),
     happens(Event, T),
     initiates(Event, Fluent, T).
     
 startedIn(T1, Fluent, T2) :-
-    max_time(T3), T2 .=<. T3,
     T1 .<. T, T .<. T2,
     can_releases(Event, Fluent, T),
     happens(Event, T),
