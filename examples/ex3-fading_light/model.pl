@@ -15,8 +15,8 @@ max_time(100).                      % it is useful to have an upper bound on tim
 event(turn_light_on).   % start brightening from zero to max
 event(fade_in_end).     % stop brightening at max
 
-fluent(fading_in).
 fluent(brightness(X)).  % range 0-10
+fluent(fading_in).
 
 initiates(turn_light_on, fading_in, T).
 releases(turn_light_on, brightness(X), T).
@@ -25,9 +25,9 @@ terminates(fade_in_end, fading_in, T).
 initiates(fade_in_end, brightness(10), T).
 terminates(fade_in_end, brightness(X), T) :- X .<>. 10.
 
-trajectory(fading_in, T1, brightness(NewI), T2) :-
-    NewI .=. OldI + ((T2-T1) * 1),
-    holdsAt(brightness(OldI), T1).
+trajectory(fading_in, T1, brightness(NewB), T2) :-
+    NewB .=. OldB + ((T2-T1) * 1),
+    holdsAt(brightness(OldB), T1).
 
 happens(fade_in_end, T) :- !spy,
     holdsAt(brightness(10), T).
