@@ -12,8 +12,8 @@
 % ----- domain model -----
 
 event(turn_light_on).       % start the fading process
-event(switch_fade_out).     % stop fading in and start fading out (dimming)
-event(switch_fade_in).      % stop fading out (dimming) and starting fading in
+event(fade_in_end).         % stop fading in and start fading out (dimming)
+event(fade_out_end).        % stop fading out (dimming) and starting fading in
 
 fluent(brightness(X)).      % range 0-10
 fluent(fading_in).
@@ -22,12 +22,11 @@ fluent(fading_out).
 initiates(turn_light_on, fading_in, T).
 releases(turn_light_on, brightness(X), T).
 
-terminates(switch_fade_out, fading_in, T).
-initiates(switch_fade_out, fading_out, T).
+terminates(fade_in_end, fading_in, T).
+initiates(fade_in_end, fading_out, T).
 
-terminates(switch_fade_in, fading_out, T).
-initiates(switch_fade_in, fading_in, T).
-
+terminates(fade_out_end, fading_out, T).
+initiates(fade_out_end, fading_in, T).
 
 can_trajectory(fading_in, T1, brightness(NewB), T2) :-
     NewB .=. 0 + ((T2-T1) * 1).
@@ -41,11 +40,10 @@ trajectory(fading_out, T1, brightness(NewB), T2) :- %//NO_PREPROCESS
     NewB .=. OldB - ((T2-T1) * 1),
     holdsAt(brightness(OldB), T1).
 
-
-happens(switch_fade_out, T) :- !spy,
+happens(fade_in_end, T) :- !spy,
     holdsAt(brightness(10), T, fading_in).
 
-happens(switch_fade_in, T) :- !spy,
+happens(fade_out_end, T) :- !spy,
     holdsAt(brightness(0), T, fading_out).
 
 
@@ -55,21 +53,21 @@ max_time(45). % set lower due to the cyclic behavior
 initiallyP(brightness(0)).
 initiallyN(F) :- not initiallyP(F).
 
-happens(turn_light_on, 10).
+happens(turn_light_on,      10).
 
 ?- holdsAt(brightness(X),   10).    % 0
 
-?- happens(switch_fade_out, 20).
+?- happens(fade_in_end,     20).
 ?- holdsAt(brightness(X),   20).    % 10
 
-?- happens(switch_fade_in,  30).
+?- happens(fade_out_end,    30).
 ?- holdsAt(brightness(X),   30).    % 0
 
-?- happens(switch_fade_out, 40).
+?- happens(fade_in_end,     40).
 ?- holdsAt(brightness(X),   40).    % 10
 
-?- happens(switch_fade_out, T).     % 20, 40
-?- happens(switch_fade_in,  T).     % 30
+?- happens(fade_in_end,     T).     % 20, 40
+?- happens(fade_out_end,    T).     % 30
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
