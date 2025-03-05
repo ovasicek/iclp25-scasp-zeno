@@ -7,13 +7,13 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt4.pl --tree
 
 JUSTIFICATION_TREE:
 happens(fade_out_end,30) :-
-    epsilon(10),
+    duration(10),
     holdsAt(brightness(0),30,fading_out,10) :-
         max_time(45),
         can_trajectory(fading_out,20,brightness(0),30),
         can_initiates(fade_in_end,fading_out,20),
         happens(fade_in_end,20) :-
-            epsilon(10),
+            duration(10),
             holdsAt(brightness(10),20,fading_in,10) :-
                 max_time(45),
                 can_trajectory(fading_in,10,brightness(10),20),

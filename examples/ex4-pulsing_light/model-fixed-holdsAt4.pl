@@ -36,14 +36,14 @@ trajectory(fading_out, T1, brightness(NewB), T2) :-
     NewB .=. OldB - ((T2-T1) * 1),
     holdsAt(brightness(OldB), T1).
 
-epsilon(10).
+duration(10).
 happens(fade_in_end, T) :- !spy,
-    epsilon(EPS),
-    holdsAt(brightness(10), T, fading_in, EPS).
+    duration(Dur),
+    holdsAt(brightness(10), T, fading_in, Dur).
 
 happens(fade_out_end, T) :- !spy,
-    epsilon(EPS),
-    holdsAt(brightness(0), T, fading_out, EPS).
+    duration(Dur),
+    holdsAt(brightness(0), T, fading_out, Dur).
 
 
 % ----- narrative & queries  -----
