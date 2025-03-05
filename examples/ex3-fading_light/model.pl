@@ -38,7 +38,7 @@ happens(fade_in_end, T) :- !spy,
 initiallyP(brightness(0)).
 initiallyN(F) :- not initiallyP(F).
 
-happens(turn_light_on, 10).
+happens(turn_light_on,      10).
 
 ?- holdsAt(brightness(X),   25). % non-term., should be 10
 ?- happens(fade_in_end,     T).  % non-term., should be 20
