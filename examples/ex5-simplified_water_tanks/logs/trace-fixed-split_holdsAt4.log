@@ -1,0 +1,151 @@
+$ oscasp -s0 ../axioms/bec_scasp-interval_not.pl ./model-fixed-split_holdsAt4.pl --tree
+
+
+% QUERY:?- holdsAt(water_left(X),15).
+
+	ANSWER:	1 (in 102.932 ms)
+
+JUSTIFICATION_TREE:
+holdsAt(water_left(30),15) :-
+    max_time(100),
+    can_trajectory(left_filling,14,water_left(30),15),
+    can_initiates(switch_left,left_filling,14),
+    happens(switch_left,14) :-
+        duration(1),
+        holdsAt(water_left(20),14,left_draining,1) :-
+            max_time(100),
+            can_trajectory(left_draining,13,water_left(20),14),
+            can_initiates(switch_right,left_draining,13),
+            happens(switch_right,13),
+            initiates(switch_right,left_draining,13),
+            trajectory(left_draining,13,water_left(20),14) :-
+                holdsAt(water_left(30),13) :-
+                    max_time(100),
+                    can_trajectory(left_filling,10,water_left(30),13),
+                    can_initiates(start(left),left_filling,10),
+                    happens(start(left),10),
+                    initiates(start(left),left_filling,10),
+                    trajectory(left_filling,10,water_left(30),13) :-
+                        holdsAt(water_left(0),10) :-
+                            max_time(100),
+                            initiallyP(water_left(0)),
+                            not_stoppedIn(0,water_left(0),10) :-
+                                not_interrupted(terminates,water_left(0),0,10) :-
+                                    findall(Var6,findall_can_interrupts(terminates,Var6,water_left(0),0,10),[]),
+                                    not_interrupted_N(terminates,water_left(0),[],0,10) :-
+                                        not_interrupted_1(terminates,water_left(0),[],0,10) :-
+                                            is_not_interval(0,0),
+                                            is_not_interval(10,10),
+                                            not_interrupted_1_fail(terminates,water_left(0),[],0,10).
+                                not_interrupted(releases,water_left(0),0,10) :-
+                                    findall(Var7,findall_can_interrupts(releases,Var7,water_left(0),0,10),[start(Var1)]) :-
+                                        findall_can_interrupts(releases,start(Var1),water_left(0),0,10) :-
+                                            can_interrupts(releases,start(Var1),water_left(0),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                                can_releases(start(Var1),water_left(0),Var2 | {Var2 #> 0,Var2 #< 10}).
+                                    not_interrupted_N(releases,water_left(0),[start(Var1)],0,10) :-
+                                        not_interrupted_1(releases,water_left(0),[start(Var1)],0,10) :-
+                                            proved(is_not_interval(0,0)),
+                                            proved(is_not_interval(10,10)),
+                                            not_interrupted_1_fail(releases,water_left(0),[start(Var1)],0,10) :-
+                                                findall(Var8,interrupt_1_fail(releases,start(Var1),water_left(0),Var8,0,10),[]),
+                                                all_entirely_outside_of_interval([],0,10),
+                                                not_interrupted_1_fail(releases,water_left(0),[],0,10).
+                    not_stoppedIn(10,left_filling,13) :-
+                        not_interrupted(terminates,left_filling,10,13) :-
+                            findall(Var9,findall_can_interrupts(terminates,Var9,left_filling,10,13),[switch_right]) :-
+                                findall_can_interrupts(terminates,switch_right,left_filling,10,13) :-
+                                    can_interrupts(terminates,switch_right,left_filling,Var3 | {Var3 #> 10,Var3 #< 13}) :-
+                                        can_terminates(switch_right,left_filling,Var3 | {Var3 #> 10,Var3 #< 13}).
+                            not_interrupted_N(terminates,left_filling,[switch_right],10,13) :-
+                                not_interrupted_1(terminates,left_filling,[switch_right],10,13) :-
+                                    proved(is_not_interval(10,10)),
+                                    is_not_interval(13,13),
+                                    not_interrupted_1_fail(terminates,left_filling,[switch_right],10,13) :-
+                                        findall(Var10,interrupt_1_fail(terminates,switch_right,left_filling,Var10,10,13),[]),
+                                        all_entirely_outside_of_interval([],10,13),
+                                        not_interrupted_1_fail(terminates,left_filling,[],10,13).
+                        not_interrupted(releases,left_filling,10,13) :-
+                            findall(Var11,findall_can_interrupts(releases,Var11,left_filling,10,13),[]),
+                            not_interrupted_N(releases,left_filling,[],10,13) :-
+                                not_interrupted_1(releases,left_filling,[],10,13) :-
+                                    proved(is_not_interval(10,10)),
+                                    proved(is_not_interval(13,13)),
+                                    not_interrupted_1_fail(releases,left_filling,[],10,13).
+            not_stoppedIn(13,left_draining,14) :-
+                not_interrupted(terminates,left_draining,13,14) :-
+                    findall(Var12,findall_can_interrupts(terminates,Var12,left_draining,13,14),[switch_left]) :-
+                        findall_can_interrupts(terminates,switch_left,left_draining,13,14) :-
+                            can_interrupts(terminates,switch_left,left_draining,Var4 | {Var4 #> 13,Var4 #< 14}) :-
+                                can_terminates(switch_left,left_draining,Var4 | {Var4 #> 13,Var4 #< 14}).
+                    not_interrupted_N(terminates,left_draining,[switch_left],13,14) :-
+                        not_interrupted_1(terminates,left_draining,[switch_left],13,14) :-
+                            proved(is_not_interval(13,13)),
+                            is_not_interval(14,14),
+                            not_interrupted_1_fail(terminates,left_draining,[switch_left],13,14) :-
+                                findall(Var13,interrupt_1_fail(terminates,switch_left,left_draining,Var13,13,14),[]),
+                                all_entirely_outside_of_interval([],13,14),
+                                not_interrupted_1_fail(terminates,left_draining,[],13,14).
+                not_interrupted(releases,left_draining,13,14) :-
+                    findall(Var14,findall_can_interrupts(releases,Var14,left_draining,13,14),[]),
+                    not_interrupted_N(releases,left_draining,[],13,14) :-
+                        not_interrupted_1(releases,left_draining,[],13,14) :-
+                            proved(is_not_interval(13,13)),
+                            proved(is_not_interval(14,14)),
+                            not_interrupted_1_fail(releases,left_draining,[],13,14).
+    initiates(switch_left,left_filling,14),
+    trajectory(left_filling,14,water_left(30),15) :-
+        holdsAt(water_left(20),14) :-
+            max_time(100),
+            can_trajectory(left_draining,13,water_left(20),14),
+            can_initiates(switch_right,left_draining,13),
+            happens(switch_right,13),
+            proved(initiates(switch_right,left_draining,13)),
+            trajectory(left_draining,13,water_left(20),14) :-
+                holdsAt(water_left(30),13) :-
+                    max_time(100),
+                    can_trajectory(left_filling,10,water_left(30),13),
+                    can_initiates(start(left),left_filling,10),
+                    happens(start(left),10),
+                    proved(initiates(start(left),left_filling,10)),
+                    trajectory(left_filling,10,water_left(30),13) :-
+                        holdsAt(water_left(0),10) :-
+                            max_time(100),
+                            initiallyP(water_left(0)),
+                            proved(not_stoppedIn(0,water_left(0),10)).
+                    proved(not_stoppedIn(10,left_filling,13)).
+            proved(not_stoppedIn(13,left_draining,14)).
+    not_stoppedIn(14,left_filling,15) :-
+        not_interrupted(terminates,left_filling,14,15) :-
+            findall(Var15,findall_can_interrupts(terminates,Var15,left_filling,14,15),[switch_right]) :-
+                findall_can_interrupts(terminates,switch_right,left_filling,14,15) :-
+                    can_interrupts(terminates,switch_right,left_filling,Var5 | {Var5 #> 14,Var5 #< 15}) :-
+                        can_terminates(switch_right,left_filling,Var5 | {Var5 #> 14,Var5 #< 15}).
+            not_interrupted_N(terminates,left_filling,[switch_right],14,15) :-
+                not_interrupted_1(terminates,left_filling,[switch_right],14,15) :-
+                    proved(is_not_interval(14,14)),
+                    is_not_interval(15,15),
+                    not_interrupted_1_fail(terminates,left_filling,[switch_right],14,15) :-
+                        findall(Var16,interrupt_1_fail(terminates,switch_right,left_filling,Var16,14,15),[]),
+                        all_entirely_outside_of_interval([],14,15),
+                        not_interrupted_1_fail(terminates,left_filling,[],14,15).
+        not_interrupted(releases,left_filling,14,15) :-
+            findall(Var17,findall_can_interrupts(releases,Var17,left_filling,14,15),[]),
+            not_interrupted_N(releases,left_filling,[],14,15) :-
+                not_interrupted_1(releases,left_filling,[],14,15) :-
+                    proved(is_not_interval(14,14)),
+                    proved(is_not_interval(15,15)),
+                    not_interrupted_1_fail(releases,left_filling,[],14,15).
+global_constraint.
+
+MODEL:
+{ holdsAt(water_left(30),15),  happens(switch_left,14),  happens(switch_right,13),  initiates(switch_right,left_draining,13),  trajectory(left_draining,13,water_left(20),14),  holdsAt(water_left(30),13),  happens(start(left),10),  initiates(start(left),left_filling,10),  trajectory(left_filling,10,water_left(30),13),  holdsAt(water_left(0),10),  initiallyP(water_left(0)),  not_stoppedIn(0,water_left(0),10),  not_stoppedIn(10,left_filling,13),  not_stoppedIn(13,left_draining,14),  initiates(switch_left,left_filling,14),  trajectory(left_filling,14,water_left(30),15),  holdsAt(water_left(20),14),  not_stoppedIn(14,left_filling,15) }
+BINDINGS: 
+X = 30
+
+
+  real      0:00.63
+  real [s]  0.63
+  user [s]  0.37
+  sys  [s]  0.03
+  mem  [KB] 32692
+  avgm [KB] 0
