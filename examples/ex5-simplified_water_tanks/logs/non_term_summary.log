@@ -7,29 +7,29 @@ Simplified !spy output: (removed most predicates to highlight the chain of event
 
 --------------------- Calling:  builtin(!spy) -------------
     holdsAt(water_left(10),15)
-        13.>.0
-        13.<.15
-        max_time(100)
-        15.=<.100
-        happens(switch_right,13)
-        initiates(switch_right,left_draining,13)
-        trajectory(left_draining,13,water_left(10),15)
-          ...
-        not_stoppedIn(13,left_draining,15)
-          {T1~[T1 > 13, T1 < 15]} .>.13
-          {T1~[T1 > 13, T1 < 15]} .<.15
-          happens(switch_left, {T1~[T1 > 13, T1 < 15]} )                                                  % T1
-              {X~[X < 30, X > 10]} .=<.50
-              holdsAt(water_left( {X~[X < 30, X > 10]} ), {T1~[T1 > 13, T1 < 15]} ,left_draining)
-                  happens(switch_right,13)
-                  initiates(switch_right,left_draining,13)
-                  trajectory(left_draining,13,water_left( {X~[X < 30, X > 10]} ), {T1~[T1 > 13, T1 < 15]} )
-                    ...
-                  not_stoppedIn(13,left_draining, {T1~[T1 > 13, T1 < 15]} )
-                    interrupt_2b_adjust_gt(terminates,switch_left,left_draining, {T2~[T2 < 15, T2 > 13]} ,13, {T1~[T1 > 13, T1 < 15]} )
-                      sup( {T1~[T1 > 13, T1 < 15]} ,15)
-                      {T2~[T2 < 15, T2 > 13]} .<.15                                                       % T2 < sup(T1)
-                      happens(switch_left, {T2~[T2 < 15, T2 > 13]} )                                      % T2
+      13.>.0
+      13.<.15
+      max_time(100)
+      15.=<.100
+      happens(switch_right,13)
+      initiates(switch_right,left_draining,13)
+      trajectory(left_draining,13,water_left(10),15)
+        ...
+      not_stoppedIn(13,left_draining,15)
+        {T1~[T1 > 13, T1 < 15]} .>.13
+        {T1~[T1 > 13, T1 < 15]} .<.15
+        happens(switch_left, {T1~[T1 > 13, T1 < 15]} )                                              % T1
+          {X~[X < 30, X > 10]} .=<.50
+          holdsAt(water_left( {X~[X < 30, X > 10]} ), {T1~[T1 > 13, T1 < 15]} ,left_draining)
+            happens(switch_right,13)
+            initiates(switch_right,left_draining,13)
+            trajectory(left_draining,13,water_left( {X~[X < 30, X > 10]} ), {T1~[T1 > 13, T1 < 15]} )
+              ...
+            not_stoppedIn(13,left_draining, {T1~[T1 > 13, T1 < 15]} )
+              interrupt_2b_adjust_gt(terminates,switch_left,left_draining, {T2~[T2 < 15, T2 > 13]} ,13, {T1~[T1 > 13, T1 < 15]} )
+                sup( {T1~[T1 > 13, T1 < 15]} ,15)
+                {T2~[T2 < 15, T2 > 13]} .<.15                                                       % T2 < sup(T1)
+                happens(switch_left, {T2~[T2 < 15, T2 > 13]} )                                      % T2
 
 
 ========================================================================================================================

@@ -30,18 +30,18 @@ terminates(switch_left, left_draining, T).
 terminates(switch_right, left_filling, T).
 initiates(switch_right, left_draining, T).
 
-trajectory(left_filling, T1, water_left(NewLevel), T2) :-
-    TotalFlow .=. 20 - 10,    % in minus out
-    NewLevel .=. OldLevel + ((T2-T1) * TotalFlow),
-    holdsAt(water_left(OldLevel), T1).
+trajectory(left_filling, T1, water_left(NewW), T2) :-
+    TotalFlow .=. 20 - 10, % in rate 20, out rate 10
+    NewW .=. OldW + ((T2-T1) * TotalFlow),
+    holdsAt(water_left(OldW), T1).
 
-trajectory(left_draining, T1, water_left(NewLevel), T2) :-
-    NewLevel .=. OldLevel - ((T2-T1) * 10),
-    holdsAt(water_left(OldLevel), T1).
+trajectory(left_draining, T1, water_left(NewW), T2) :-
+    NewW .=. OldW - ((T2-T1) * 10), % out rate 10
+    holdsAt(water_left(OldW), T1).
 
 happens(switch_left, T) :- !spy,
-    CurrLevel .=<. 50,   % target level
-    holdsAt(water_left(CurrLevel), T, left_draining).
+    CurrW .=<. 50,   % target level
+    holdsAt(water_left(CurrW), T, left_draining).
     
 
 % ----- narrative & queries  -----
