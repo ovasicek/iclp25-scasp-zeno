@@ -30,7 +30,7 @@ happens(turn_light_on, T) :- !spy,
 % ----- narrative & queries  -----
 
 % initiallyN(light_on). % no initial value means no triggers until the first event
-happens(turn_light_on, 10).
+happens(turn_light_on,      10).
 
 ?-     holdsAt(light_on,    5).    % non-term., should be no models
 ?- not_holdsAt(light_on,    5).    % non-term., should be no models
