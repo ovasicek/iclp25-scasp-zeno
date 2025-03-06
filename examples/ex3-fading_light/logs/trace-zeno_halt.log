@@ -1,0 +1,68 @@
+$ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
+
+
+% QUERY:?- happens(fade_in_end,T).
+
+WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
+	happens(fade_in_end, {_3665~[_3665 > 0, _3665 < 10]} )
+	happens(fade_in_end, {_4418~[_4418 > 0, _4418 < 10]} )
+
+
+--------------------- Calling:  happens(fade_in_end,_5650) -------------
+    happens(fade_in_end,20)
+        builtin(!spy)
+        holdsAt(brightness(10),20)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(fading_in,10,brightness(10),20)
+            can_initiates(turn_light_on,fading_in,10)
+            happens(turn_light_on,10)
+            initiates(turn_light_on,fading_in,10)
+            trajectory(fading_in,10,brightness(10),20)
+                10.=.0+(20-10)*1
+                holdsAt(brightness(0),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
+                        0.=<.10
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_3035,findall_can_interrupts(terminates,_3035,brightness(0),0,10),[fade_in_end])
+                                findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
+                                     {_3192~[_3192 > 0, _3192 < 10]} .>.0
+                                     {_3192~[_3192 > 0, _3192 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_3192~[_3192 > 0, _3192 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_3192~[_3192 > 0, _3192 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_3665~[_3665 > 0, _3665 < 10]} ,0,10)
+                                     {_3665~[_3665 > 0, _3665 < 10]} .>.0
+                                     {_3665~[_3665 > 0, _3665 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_3665~[_3665 > 0, _3665 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_3665~[_3665 > 0, _3665 < 10]} )
+                                    happens(fade_in_end, {_3665~[_3665 > 0, _3665 < 10]} )
+                                        builtin(!spy)
+                                        holdsAt(brightness(10), {_3665~[_3665 > 0, _3665 < 10]} )
+                                             {_4418~[_4418 > 0, _4418 < 10]} .>.0
+                                             {_4418~[_4418 > 0, _4418 < 10]} .<. {_3665~[_3665 > 0, _3665 < 10]} 
+                                            max_time(100)
+                                             {_3665~[_3665 > 0, _3665 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10), {_4418~[_4418 > 0, _4418 < 10]} )
+                                            happens(fade_in_end, {_4418~[_4418 > 0, _4418 < 10]} )
+                                                builtin(!spy)
+                                                holdsAt(brightness(10), {_4418~[_4418 > 0, _4418 < 10]} )
+                                                     {_5650~[_5650 > 0, _5650 < 10]} .>.0
+                                                     {_5650~[_5650 > 0, _5650 < 10]} .<. {_4418~[_4418 > 0, _4418 < 10]} 
+                                                    max_time(100)
+                                                     {_4418~[_4418 > 0, _4418 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10), {_5650~[_5650 > 0, _5650 < 10]} )
+                                                    happens(fade_in_end, {_5650~[_5650 > 0, _5650 < 10]} )
+
+  real      0:00.34
+  real [s]  0.34
+  user [s]  0.14
+  sys  [s]  0.02
+  mem  [KB] 28552
+  avgm [KB] 0

@@ -8,6 +8,13 @@ run-non_term:
 
 
 #-----------------------------------------------------------------------------------------------------------------------
+# auto detect and halt
+
+run-zeno_halt:
+	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt
+
+
+#-----------------------------------------------------------------------------------------------------------------------
 # fixed
 
 run-fixed-holdsAt3:
@@ -21,6 +28,7 @@ run-fixed-holdsAt3:
 
 trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000" ./logs/trace-non_term.log
+	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt3.pl --tree" ./logs/trace-fixed-holdsAt3.log
 
 

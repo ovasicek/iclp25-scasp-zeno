@@ -8,6 +8,13 @@ run-non_term:
 
 
 #-----------------------------------------------------------------------------------------------------------------------
+# auto detect and halt
+
+run-zeno_halt:
+	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt
+
+
+#-----------------------------------------------------------------------------------------------------------------------
 # fixed
 
 run-fixed-context_free:
@@ -27,6 +34,7 @@ run-fixed-incremental:
 
 trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=3000" ./logs/trace-non_term.log
+	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-context_free.pl --tree" ./logs/trace-fixed-context_free.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log
 	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh ./model-fixed-incremental.pl ../axioms/bec_scasp.pl --tree" ./logs/trace-fixed-incremental.log

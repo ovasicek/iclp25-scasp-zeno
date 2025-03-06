@@ -9,6 +9,13 @@ run-non_term:
 
 
 #-----------------------------------------------------------------------------------------------------------------------
+# auto detect and halt
+
+run-zeno_halt:
+	${TIME} oscasp -s0 ../axioms/bec_scasp-small.pl ./model.pl --zeno_halt
+
+
+#-----------------------------------------------------------------------------------------------------------------------
 # fixed
 
 run-fixed-epsilon:
@@ -25,6 +32,7 @@ run-fixed-remodel:
 
 trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-small.pl ./model.pl -v6 --timeout=3000" ./logs/trace-non_term.log
+	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-small.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-small.pl ./model-fixed-epsilon.pl --tree -r" ./logs/trace-fixed-epsilon.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-small.pl ./model-fixed-remodel.pl --tree " ./logs/trace-fixed-remodel.log
 
