@@ -1,0 +1,59 @@
+Below is the simplified and the full version of the 4th output of !spy produced by this non-terminating example.
+The simplified version omits most predicates to highlight the chain of events.
+
+========================================================================================================================
+Simplified !spy output: (removed most predicates to highlight the chain of events)
+========================================================================================================================
+
+--------------------- Calling:  builtin(!spy) -------------
+  happens(turn_light_on, {T1~[T1 > 0, T1 =< 100]} )                             % T1
+    not_holdsAt(light_on, {T1~[T1 > 0, T1 =< 100]} )
+      {T2~[T2 > 0, T2 < 100]} .>.0
+      {T2~[T2 > 0, T2 < 100]} .<. {T1~[T1 > 0, T1 =< 100]}                      % T2 < T1
+      max_time(100)
+      {T1~[T1 > 0, T1 =< 100]} .=<.100
+      can_terminates(turn_light_off,light_on, {T2~[T2 > 0, T2 < 100]} )
+      happens(turn_light_off, {T2~[T2 > 0, T2 < 100]} )                         % T2
+        holdsAt(light_on, {T2~[T2 > 0, T2 < 100]} )
+          {T3~[T3 > 0, T3 < 100]} .>.0
+          {T3~[T3 > 0, T3 < 100]} .<. {T2~[T2 > 0, T2 < 100]}                   % T3 < T2
+          can_initiates(turn_light_on,light_on, {T3~[T3 > 0, T3 < 100]} )
+          happens(turn_light_on, {T3~[T3 > 0, T3 < 100]} )                      % T3
+            not_holdsAt(light_on, {T3~[T3 > 0, T3 < 100]} )
+              {T4~[T4 > 0, T4 < 100]} .>.0
+              {T4~[T4 > 0, T4 < 100]} .<. {T3~[T3 > 0, T3 < 100]}               % T4 < T3
+              can_terminates(turn_light_off,light_on, {T4~[T4 > 0, T4 < 100]} )
+              happens(turn_light_off, {T4~[T4 > 0, T4 < 100]} )                 % T4
+
+
+========================================================================================================================
+Full !spy output:
+========================================================================================================================
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(turn_light_on, {_128311~[_128311 > 0, _128311 =< 100]} )
+        builtin(!spy)
+        not_holdsAt(light_on, {_128311~[_128311 > 0, _128311 =< 100]} )
+             {_128094~[_128094 > 0, _128094 < 100]} .>.0
+             {_128094~[_128094 > 0, _128094 < 100]} .<. {_128311~[_128311 > 0, _128311 =< 100]} 
+            max_time(100)
+             {_128311~[_128311 > 0, _128311 =< 100]} .=<.100
+            can_terminates(turn_light_off,light_on, {_128094~[_128094 > 0, _128094 < 100]} )
+            happens(turn_light_off, {_128094~[_128094 > 0, _128094 < 100]} )
+                builtin(!spy)
+                holdsAt(light_on, {_128094~[_128094 > 0, _128094 < 100]} )
+                     {_129462~[_129462 > 0, _129462 < 100]} .>.0
+                     {_129462~[_129462 > 0, _129462 < 100]} .<. {_128094~[_128094 > 0, _128094 < 100]} 
+                    max_time(100)
+                     {_128094~[_128094 > 0, _128094 < 100]} .=<.100
+                    can_initiates(turn_light_on,light_on, {_129462~[_129462 > 0, _129462 < 100]} )
+                    happens(turn_light_on, {_129462~[_129462 > 0, _129462 < 100]} )
+                        builtin(!spy)
+                        not_holdsAt(light_on, {_129462~[_129462 > 0, _129462 < 100]} )
+                             {_131941~[_131941 > 0, _131941 < 100]} .>.0
+                             {_131941~[_131941 > 0, _131941 < 100]} .<. {_129462~[_129462 > 0, _129462 < 100]} 
+                            max_time(100)
+                             {_129462~[_129462 > 0, _129462 < 100]} .=<.100
+                            can_terminates(turn_light_off,light_on, {_131941~[_131941 > 0, _131941 < 100]} )
+                            happens(turn_light_off, {_131941~[_131941 > 0, _131941 < 100]} )
+                                builtin(!spy)
