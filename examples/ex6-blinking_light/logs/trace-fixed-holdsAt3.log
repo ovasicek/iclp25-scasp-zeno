@@ -1,0 +1,653 @@
+$ oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt3.pl --tree
+
+
+% QUERY:?- happens(turn_light_on,T).
+
+	ANSWER:	1 (in 205.252 ms)
+
+JUSTIFICATION_TREE:
+happens(turn_light_on,20) :-
+    delay(1),
+    not_holdsAt(light_on,20,1) :-
+        max_time(20),
+        can_terminates(turn_light_off,light_on,19),
+        happens(turn_light_off,19) :-
+            delay(1),
+            holdsAt(light_on,19,1) :-
+                max_time(20),
+                can_initiates(turn_light_on,light_on,18),
+                happens(turn_light_on,18) :-
+                    delay(1),
+                    not_holdsAt(light_on,18,1) :-
+                        max_time(20),
+                        can_terminates(turn_light_off,light_on,17),
+                        happens(turn_light_off,17) :-
+                            delay(1),
+                            holdsAt(light_on,17,1) :-
+                                max_time(20),
+                                can_initiates(turn_light_on,light_on,16),
+                                happens(turn_light_on,16) :-
+                                    delay(1),
+                                    not_holdsAt(light_on,16,1) :-
+                                        max_time(20),
+                                        can_terminates(turn_light_off,light_on,15),
+                                        happens(turn_light_off,15) :-
+                                            delay(1),
+                                            holdsAt(light_on,15,1) :-
+                                                max_time(20),
+                                                can_initiates(turn_light_on,light_on,14),
+                                                happens(turn_light_on,14) :-
+                                                    delay(1),
+                                                    not_holdsAt(light_on,14,1) :-
+                                                        max_time(20),
+                                                        can_terminates(turn_light_off,light_on,13),
+                                                        happens(turn_light_off,13) :-
+                                                            delay(1),
+                                                            holdsAt(light_on,13,1) :-
+                                                                max_time(20),
+                                                                can_initiates(turn_light_on,light_on,12),
+                                                                happens(turn_light_on,12) :-
+                                                                    delay(1),
+                                                                    not_holdsAt(light_on,12,1) :-
+                                                                        max_time(20),
+                                                                        can_terminates(turn_light_off,light_on,11),
+                                                                        happens(turn_light_off,11) :-
+                                                                            delay(1),
+                                                                            holdsAt(light_on,11,1) :-
+                                                                                max_time(20),
+                                                                                can_initiates(turn_light_on,light_on,10),
+                                                                                happens(turn_light_on,10),
+                                                                                initiates(turn_light_on,light_on,10),
+                                                                                not_stoppedIn(10,light_on,11) :-
+                                                                                    not_interrupted(terminates,light_on,10,11) :-
+                                                                                        findall(Var11,findall_can_interrupts(terminates,Var11,light_on,10,11),[turn_light_off]) :-
+                                                                                            findall_can_interrupts(terminates,turn_light_off,light_on,10,11) :-
+                                                                                                can_interrupts(terminates,turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}) :-
+                                                                                                    can_terminates(turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}).
+                                                                                        not_interrupted_(terminates,light_on,[turn_light_off],10,11) :-
+                                                                                            findall(Var12,interrupted(terminates,turn_light_off,light_on,Var12,10,11),[]),
+                                                                                            all_entirely_outside_of_interval([],10,11),
+                                                                                            not_interrupted_(terminates,light_on,[],10,11).
+                                                                                    not_interrupted(releases,light_on,10,11) :-
+                                                                                        findall(Var13,findall_can_interrupts(releases,Var13,light_on,10,11),[]),
+                                                                                        not_interrupted_(releases,light_on,[],10,11).
+                                                                        terminates(turn_light_off,light_on,11),
+                                                                        not_startedIn(11,light_on,12) :-
+                                                                            not_interrupted(initiates,light_on,11,12) :-
+                                                                                findall(Var14,findall_can_interrupts(initiates,Var14,light_on,11,12),[turn_light_on]) :-
+                                                                                    findall_can_interrupts(initiates,turn_light_on,light_on,11,12) :-
+                                                                                        can_interrupts(initiates,turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}) :-
+                                                                                            can_initiates(turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}).
+                                                                                not_interrupted_(initiates,light_on,[turn_light_on],11,12) :-
+                                                                                    findall(Var15,interrupted(initiates,turn_light_on,light_on,Var15,11,12),[]),
+                                                                                    all_entirely_outside_of_interval([],11,12),
+                                                                                    not_interrupted_(initiates,light_on,[],11,12).
+                                                                            not_interrupted(releases,light_on,11,12) :-
+                                                                                findall(Var16,findall_can_interrupts(releases,Var16,light_on,11,12),[]),
+                                                                                not_interrupted_(releases,light_on,[],11,12).
+                                                                initiates(turn_light_on,light_on,12),
+                                                                not_stoppedIn(12,light_on,13) :-
+                                                                    not_interrupted(terminates,light_on,12,13) :-
+                                                                        findall(Var17,findall_can_interrupts(terminates,Var17,light_on,12,13),[turn_light_off]) :-
+                                                                            findall_can_interrupts(terminates,turn_light_off,light_on,12,13) :-
+                                                                                can_interrupts(terminates,turn_light_off,light_on,Var3 | {Var3 #> 12,Var3 #< 13}) :-
+                                                                                    can_terminates(turn_light_off,light_on,Var3 | {Var3 #> 12,Var3 #< 13}).
+                                                                        not_interrupted_(terminates,light_on,[turn_light_off],12,13) :-
+                                                                            findall(Var18,interrupted(terminates,turn_light_off,light_on,Var18,12,13),[]),
+                                                                            all_entirely_outside_of_interval([],12,13),
+                                                                            not_interrupted_(terminates,light_on,[],12,13).
+                                                                    not_interrupted(releases,light_on,12,13) :-
+                                                                        findall(Var19,findall_can_interrupts(releases,Var19,light_on,12,13),[]),
+                                                                        not_interrupted_(releases,light_on,[],12,13).
+                                                        terminates(turn_light_off,light_on,13),
+                                                        not_startedIn(13,light_on,14) :-
+                                                            not_interrupted(initiates,light_on,13,14) :-
+                                                                findall(Var20,findall_can_interrupts(initiates,Var20,light_on,13,14),[turn_light_on]) :-
+                                                                    findall_can_interrupts(initiates,turn_light_on,light_on,13,14) :-
+                                                                        can_interrupts(initiates,turn_light_on,light_on,Var4 | {Var4 #> 13,Var4 #< 14}) :-
+                                                                            can_initiates(turn_light_on,light_on,Var4 | {Var4 #> 13,Var4 #< 14}).
+                                                                not_interrupted_(initiates,light_on,[turn_light_on],13,14) :-
+                                                                    findall(Var21,interrupted(initiates,turn_light_on,light_on,Var21,13,14),[]),
+                                                                    all_entirely_outside_of_interval([],13,14),
+                                                                    not_interrupted_(initiates,light_on,[],13,14).
+                                                            not_interrupted(releases,light_on,13,14) :-
+                                                                findall(Var22,findall_can_interrupts(releases,Var22,light_on,13,14),[]),
+                                                                not_interrupted_(releases,light_on,[],13,14).
+                                                initiates(turn_light_on,light_on,14),
+                                                not_stoppedIn(14,light_on,15) :-
+                                                    not_interrupted(terminates,light_on,14,15) :-
+                                                        findall(Var23,findall_can_interrupts(terminates,Var23,light_on,14,15),[turn_light_off]) :-
+                                                            findall_can_interrupts(terminates,turn_light_off,light_on,14,15) :-
+                                                                can_interrupts(terminates,turn_light_off,light_on,Var5 | {Var5 #> 14,Var5 #< 15}) :-
+                                                                    can_terminates(turn_light_off,light_on,Var5 | {Var5 #> 14,Var5 #< 15}).
+                                                        not_interrupted_(terminates,light_on,[turn_light_off],14,15) :-
+                                                            findall(Var24,interrupted(terminates,turn_light_off,light_on,Var24,14,15),[]),
+                                                            all_entirely_outside_of_interval([],14,15),
+                                                            not_interrupted_(terminates,light_on,[],14,15).
+                                                    not_interrupted(releases,light_on,14,15) :-
+                                                        findall(Var25,findall_can_interrupts(releases,Var25,light_on,14,15),[]),
+                                                        not_interrupted_(releases,light_on,[],14,15).
+                                        terminates(turn_light_off,light_on,15),
+                                        not_startedIn(15,light_on,16) :-
+                                            not_interrupted(initiates,light_on,15,16) :-
+                                                findall(Var26,findall_can_interrupts(initiates,Var26,light_on,15,16),[turn_light_on]) :-
+                                                    findall_can_interrupts(initiates,turn_light_on,light_on,15,16) :-
+                                                        can_interrupts(initiates,turn_light_on,light_on,Var6 | {Var6 #> 15,Var6 #< 16}) :-
+                                                            can_initiates(turn_light_on,light_on,Var6 | {Var6 #> 15,Var6 #< 16}).
+                                                not_interrupted_(initiates,light_on,[turn_light_on],15,16) :-
+                                                    findall(Var27,interrupted(initiates,turn_light_on,light_on,Var27,15,16),[]),
+                                                    all_entirely_outside_of_interval([],15,16),
+                                                    not_interrupted_(initiates,light_on,[],15,16).
+                                            not_interrupted(releases,light_on,15,16) :-
+                                                findall(Var28,findall_can_interrupts(releases,Var28,light_on,15,16),[]),
+                                                not_interrupted_(releases,light_on,[],15,16).
+                                initiates(turn_light_on,light_on,16),
+                                not_stoppedIn(16,light_on,17) :-
+                                    not_interrupted(terminates,light_on,16,17) :-
+                                        findall(Var29,findall_can_interrupts(terminates,Var29,light_on,16,17),[turn_light_off]) :-
+                                            findall_can_interrupts(terminates,turn_light_off,light_on,16,17) :-
+                                                can_interrupts(terminates,turn_light_off,light_on,Var7 | {Var7 #> 16,Var7 #< 17}) :-
+                                                    can_terminates(turn_light_off,light_on,Var7 | {Var7 #> 16,Var7 #< 17}).
+                                        not_interrupted_(terminates,light_on,[turn_light_off],16,17) :-
+                                            findall(Var30,interrupted(terminates,turn_light_off,light_on,Var30,16,17),[]),
+                                            all_entirely_outside_of_interval([],16,17),
+                                            not_interrupted_(terminates,light_on,[],16,17).
+                                    not_interrupted(releases,light_on,16,17) :-
+                                        findall(Var31,findall_can_interrupts(releases,Var31,light_on,16,17),[]),
+                                        not_interrupted_(releases,light_on,[],16,17).
+                        terminates(turn_light_off,light_on,17),
+                        not_startedIn(17,light_on,18) :-
+                            not_interrupted(initiates,light_on,17,18) :-
+                                findall(Var32,findall_can_interrupts(initiates,Var32,light_on,17,18),[turn_light_on]) :-
+                                    findall_can_interrupts(initiates,turn_light_on,light_on,17,18) :-
+                                        can_interrupts(initiates,turn_light_on,light_on,Var8 | {Var8 #> 17,Var8 #< 18}) :-
+                                            can_initiates(turn_light_on,light_on,Var8 | {Var8 #> 17,Var8 #< 18}).
+                                not_interrupted_(initiates,light_on,[turn_light_on],17,18) :-
+                                    findall(Var33,interrupted(initiates,turn_light_on,light_on,Var33,17,18),[]),
+                                    all_entirely_outside_of_interval([],17,18),
+                                    not_interrupted_(initiates,light_on,[],17,18).
+                            not_interrupted(releases,light_on,17,18) :-
+                                findall(Var34,findall_can_interrupts(releases,Var34,light_on,17,18),[]),
+                                not_interrupted_(releases,light_on,[],17,18).
+                initiates(turn_light_on,light_on,18),
+                not_stoppedIn(18,light_on,19) :-
+                    not_interrupted(terminates,light_on,18,19) :-
+                        findall(Var35,findall_can_interrupts(terminates,Var35,light_on,18,19),[turn_light_off]) :-
+                            findall_can_interrupts(terminates,turn_light_off,light_on,18,19) :-
+                                can_interrupts(terminates,turn_light_off,light_on,Var9 | {Var9 #> 18,Var9 #< 19}) :-
+                                    can_terminates(turn_light_off,light_on,Var9 | {Var9 #> 18,Var9 #< 19}).
+                        not_interrupted_(terminates,light_on,[turn_light_off],18,19) :-
+                            findall(Var36,interrupted(terminates,turn_light_off,light_on,Var36,18,19),[]),
+                            all_entirely_outside_of_interval([],18,19),
+                            not_interrupted_(terminates,light_on,[],18,19).
+                    not_interrupted(releases,light_on,18,19) :-
+                        findall(Var37,findall_can_interrupts(releases,Var37,light_on,18,19),[]),
+                        not_interrupted_(releases,light_on,[],18,19).
+        terminates(turn_light_off,light_on,19),
+        not_startedIn(19,light_on,20) :-
+            not_interrupted(initiates,light_on,19,20) :-
+                findall(Var38,findall_can_interrupts(initiates,Var38,light_on,19,20),[turn_light_on]) :-
+                    findall_can_interrupts(initiates,turn_light_on,light_on,19,20) :-
+                        can_interrupts(initiates,turn_light_on,light_on,Var10 | {Var10 #> 19,Var10 #< 20}) :-
+                            can_initiates(turn_light_on,light_on,Var10 | {Var10 #> 19,Var10 #< 20}).
+                not_interrupted_(initiates,light_on,[turn_light_on],19,20) :-
+                    findall(Var39,interrupted(initiates,turn_light_on,light_on,Var39,19,20),[]),
+                    all_entirely_outside_of_interval([],19,20),
+                    not_interrupted_(initiates,light_on,[],19,20).
+            not_interrupted(releases,light_on,19,20) :-
+                findall(Var40,findall_can_interrupts(releases,Var40,light_on,19,20),[]),
+                not_interrupted_(releases,light_on,[],19,20).
+global_constraint.
+
+MODEL:
+{ happens(turn_light_on,20),  happens(turn_light_off,19),  happens(turn_light_on,18),  happens(turn_light_off,17),  happens(turn_light_on,16),  happens(turn_light_off,15),  happens(turn_light_on,14),  happens(turn_light_off,13),  happens(turn_light_on,12),  happens(turn_light_off,11),  happens(turn_light_on,10),  initiates(turn_light_on,light_on,10),  not_stoppedIn(10,light_on,11),  terminates(turn_light_off,light_on,11),  not_startedIn(11,light_on,12),  initiates(turn_light_on,light_on,12),  not_stoppedIn(12,light_on,13),  terminates(turn_light_off,light_on,13),  not_startedIn(13,light_on,14),  initiates(turn_light_on,light_on,14),  not_stoppedIn(14,light_on,15),  terminates(turn_light_off,light_on,15),  not_startedIn(15,light_on,16),  initiates(turn_light_on,light_on,16),  not_stoppedIn(16,light_on,17),  terminates(turn_light_off,light_on,17),  not_startedIn(17,light_on,18),  initiates(turn_light_on,light_on,18),  not_stoppedIn(18,light_on,19),  terminates(turn_light_off,light_on,19),  not_startedIn(19,light_on,20) }
+BINDINGS: 
+T = 20
+
+
+	ANSWER:	2 (in 135.479 ms)
+
+JUSTIFICATION_TREE:
+happens(turn_light_on,18) :-
+    delay(1),
+    not_holdsAt(light_on,18,1) :-
+        max_time(20),
+        can_terminates(turn_light_off,light_on,17),
+        happens(turn_light_off,17) :-
+            delay(1),
+            holdsAt(light_on,17,1) :-
+                max_time(20),
+                can_initiates(turn_light_on,light_on,16),
+                happens(turn_light_on,16) :-
+                    delay(1),
+                    not_holdsAt(light_on,16,1) :-
+                        max_time(20),
+                        can_terminates(turn_light_off,light_on,15),
+                        happens(turn_light_off,15) :-
+                            delay(1),
+                            holdsAt(light_on,15,1) :-
+                                max_time(20),
+                                can_initiates(turn_light_on,light_on,14),
+                                happens(turn_light_on,14) :-
+                                    delay(1),
+                                    not_holdsAt(light_on,14,1) :-
+                                        max_time(20),
+                                        can_terminates(turn_light_off,light_on,13),
+                                        happens(turn_light_off,13) :-
+                                            delay(1),
+                                            holdsAt(light_on,13,1) :-
+                                                max_time(20),
+                                                can_initiates(turn_light_on,light_on,12),
+                                                happens(turn_light_on,12) :-
+                                                    delay(1),
+                                                    not_holdsAt(light_on,12,1) :-
+                                                        max_time(20),
+                                                        can_terminates(turn_light_off,light_on,11),
+                                                        happens(turn_light_off,11) :-
+                                                            delay(1),
+                                                            holdsAt(light_on,11,1) :-
+                                                                max_time(20),
+                                                                can_initiates(turn_light_on,light_on,10),
+                                                                happens(turn_light_on,10),
+                                                                initiates(turn_light_on,light_on,10),
+                                                                not_stoppedIn(10,light_on,11) :-
+                                                                    not_interrupted(terminates,light_on,10,11) :-
+                                                                        findall(Var9,findall_can_interrupts(terminates,Var9,light_on,10,11),[turn_light_off]) :-
+                                                                            findall_can_interrupts(terminates,turn_light_off,light_on,10,11) :-
+                                                                                can_interrupts(terminates,turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}) :-
+                                                                                    can_terminates(turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}).
+                                                                        not_interrupted_(terminates,light_on,[turn_light_off],10,11) :-
+                                                                            findall(Var10,interrupted(terminates,turn_light_off,light_on,Var10,10,11),[]),
+                                                                            all_entirely_outside_of_interval([],10,11),
+                                                                            not_interrupted_(terminates,light_on,[],10,11).
+                                                                    not_interrupted(releases,light_on,10,11) :-
+                                                                        findall(Var11,findall_can_interrupts(releases,Var11,light_on,10,11),[]),
+                                                                        not_interrupted_(releases,light_on,[],10,11).
+                                                        terminates(turn_light_off,light_on,11),
+                                                        not_startedIn(11,light_on,12) :-
+                                                            not_interrupted(initiates,light_on,11,12) :-
+                                                                findall(Var12,findall_can_interrupts(initiates,Var12,light_on,11,12),[turn_light_on]) :-
+                                                                    findall_can_interrupts(initiates,turn_light_on,light_on,11,12) :-
+                                                                        can_interrupts(initiates,turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}) :-
+                                                                            can_initiates(turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}).
+                                                                not_interrupted_(initiates,light_on,[turn_light_on],11,12) :-
+                                                                    findall(Var13,interrupted(initiates,turn_light_on,light_on,Var13,11,12),[]),
+                                                                    all_entirely_outside_of_interval([],11,12),
+                                                                    not_interrupted_(initiates,light_on,[],11,12).
+                                                            not_interrupted(releases,light_on,11,12) :-
+                                                                findall(Var14,findall_can_interrupts(releases,Var14,light_on,11,12),[]),
+                                                                not_interrupted_(releases,light_on,[],11,12).
+                                                initiates(turn_light_on,light_on,12),
+                                                not_stoppedIn(12,light_on,13) :-
+                                                    not_interrupted(terminates,light_on,12,13) :-
+                                                        findall(Var15,findall_can_interrupts(terminates,Var15,light_on,12,13),[turn_light_off]) :-
+                                                            findall_can_interrupts(terminates,turn_light_off,light_on,12,13) :-
+                                                                can_interrupts(terminates,turn_light_off,light_on,Var3 | {Var3 #> 12,Var3 #< 13}) :-
+                                                                    can_terminates(turn_light_off,light_on,Var3 | {Var3 #> 12,Var3 #< 13}).
+                                                        not_interrupted_(terminates,light_on,[turn_light_off],12,13) :-
+                                                            findall(Var16,interrupted(terminates,turn_light_off,light_on,Var16,12,13),[]),
+                                                            all_entirely_outside_of_interval([],12,13),
+                                                            not_interrupted_(terminates,light_on,[],12,13).
+                                                    not_interrupted(releases,light_on,12,13) :-
+                                                        findall(Var17,findall_can_interrupts(releases,Var17,light_on,12,13),[]),
+                                                        not_interrupted_(releases,light_on,[],12,13).
+                                        terminates(turn_light_off,light_on,13),
+                                        not_startedIn(13,light_on,14) :-
+                                            not_interrupted(initiates,light_on,13,14) :-
+                                                findall(Var18,findall_can_interrupts(initiates,Var18,light_on,13,14),[turn_light_on]) :-
+                                                    findall_can_interrupts(initiates,turn_light_on,light_on,13,14) :-
+                                                        can_interrupts(initiates,turn_light_on,light_on,Var4 | {Var4 #> 13,Var4 #< 14}) :-
+                                                            can_initiates(turn_light_on,light_on,Var4 | {Var4 #> 13,Var4 #< 14}).
+                                                not_interrupted_(initiates,light_on,[turn_light_on],13,14) :-
+                                                    findall(Var19,interrupted(initiates,turn_light_on,light_on,Var19,13,14),[]),
+                                                    all_entirely_outside_of_interval([],13,14),
+                                                    not_interrupted_(initiates,light_on,[],13,14).
+                                            not_interrupted(releases,light_on,13,14) :-
+                                                findall(Var20,findall_can_interrupts(releases,Var20,light_on,13,14),[]),
+                                                not_interrupted_(releases,light_on,[],13,14).
+                                initiates(turn_light_on,light_on,14),
+                                not_stoppedIn(14,light_on,15) :-
+                                    not_interrupted(terminates,light_on,14,15) :-
+                                        findall(Var21,findall_can_interrupts(terminates,Var21,light_on,14,15),[turn_light_off]) :-
+                                            findall_can_interrupts(terminates,turn_light_off,light_on,14,15) :-
+                                                can_interrupts(terminates,turn_light_off,light_on,Var5 | {Var5 #> 14,Var5 #< 15}) :-
+                                                    can_terminates(turn_light_off,light_on,Var5 | {Var5 #> 14,Var5 #< 15}).
+                                        not_interrupted_(terminates,light_on,[turn_light_off],14,15) :-
+                                            findall(Var22,interrupted(terminates,turn_light_off,light_on,Var22,14,15),[]),
+                                            all_entirely_outside_of_interval([],14,15),
+                                            not_interrupted_(terminates,light_on,[],14,15).
+                                    not_interrupted(releases,light_on,14,15) :-
+                                        findall(Var23,findall_can_interrupts(releases,Var23,light_on,14,15),[]),
+                                        not_interrupted_(releases,light_on,[],14,15).
+                        terminates(turn_light_off,light_on,15),
+                        not_startedIn(15,light_on,16) :-
+                            not_interrupted(initiates,light_on,15,16) :-
+                                findall(Var24,findall_can_interrupts(initiates,Var24,light_on,15,16),[turn_light_on]) :-
+                                    findall_can_interrupts(initiates,turn_light_on,light_on,15,16) :-
+                                        can_interrupts(initiates,turn_light_on,light_on,Var6 | {Var6 #> 15,Var6 #< 16}) :-
+                                            can_initiates(turn_light_on,light_on,Var6 | {Var6 #> 15,Var6 #< 16}).
+                                not_interrupted_(initiates,light_on,[turn_light_on],15,16) :-
+                                    findall(Var25,interrupted(initiates,turn_light_on,light_on,Var25,15,16),[]),
+                                    all_entirely_outside_of_interval([],15,16),
+                                    not_interrupted_(initiates,light_on,[],15,16).
+                            not_interrupted(releases,light_on,15,16) :-
+                                findall(Var26,findall_can_interrupts(releases,Var26,light_on,15,16),[]),
+                                not_interrupted_(releases,light_on,[],15,16).
+                initiates(turn_light_on,light_on,16),
+                not_stoppedIn(16,light_on,17) :-
+                    not_interrupted(terminates,light_on,16,17) :-
+                        findall(Var27,findall_can_interrupts(terminates,Var27,light_on,16,17),[turn_light_off]) :-
+                            findall_can_interrupts(terminates,turn_light_off,light_on,16,17) :-
+                                can_interrupts(terminates,turn_light_off,light_on,Var7 | {Var7 #> 16,Var7 #< 17}) :-
+                                    can_terminates(turn_light_off,light_on,Var7 | {Var7 #> 16,Var7 #< 17}).
+                        not_interrupted_(terminates,light_on,[turn_light_off],16,17) :-
+                            findall(Var28,interrupted(terminates,turn_light_off,light_on,Var28,16,17),[]),
+                            all_entirely_outside_of_interval([],16,17),
+                            not_interrupted_(terminates,light_on,[],16,17).
+                    not_interrupted(releases,light_on,16,17) :-
+                        findall(Var29,findall_can_interrupts(releases,Var29,light_on,16,17),[]),
+                        not_interrupted_(releases,light_on,[],16,17).
+        terminates(turn_light_off,light_on,17),
+        not_startedIn(17,light_on,18) :-
+            not_interrupted(initiates,light_on,17,18) :-
+                findall(Var30,findall_can_interrupts(initiates,Var30,light_on,17,18),[turn_light_on]) :-
+                    findall_can_interrupts(initiates,turn_light_on,light_on,17,18) :-
+                        can_interrupts(initiates,turn_light_on,light_on,Var8 | {Var8 #> 17,Var8 #< 18}) :-
+                            can_initiates(turn_light_on,light_on,Var8 | {Var8 #> 17,Var8 #< 18}).
+                not_interrupted_(initiates,light_on,[turn_light_on],17,18) :-
+                    findall(Var31,interrupted(initiates,turn_light_on,light_on,Var31,17,18),[]),
+                    all_entirely_outside_of_interval([],17,18),
+                    not_interrupted_(initiates,light_on,[],17,18).
+            not_interrupted(releases,light_on,17,18) :-
+                findall(Var32,findall_can_interrupts(releases,Var32,light_on,17,18),[]),
+                not_interrupted_(releases,light_on,[],17,18).
+global_constraint.
+
+MODEL:
+{ happens(turn_light_on,18),  happens(turn_light_off,17),  happens(turn_light_on,16),  happens(turn_light_off,15),  happens(turn_light_on,14),  happens(turn_light_off,13),  happens(turn_light_on,12),  happens(turn_light_off,11),  happens(turn_light_on,10),  initiates(turn_light_on,light_on,10),  not_stoppedIn(10,light_on,11),  terminates(turn_light_off,light_on,11),  not_startedIn(11,light_on,12),  initiates(turn_light_on,light_on,12),  not_stoppedIn(12,light_on,13),  terminates(turn_light_off,light_on,13),  not_startedIn(13,light_on,14),  initiates(turn_light_on,light_on,14),  not_stoppedIn(14,light_on,15),  terminates(turn_light_off,light_on,15),  not_startedIn(15,light_on,16),  initiates(turn_light_on,light_on,16),  not_stoppedIn(16,light_on,17),  terminates(turn_light_off,light_on,17),  not_startedIn(17,light_on,18) }
+BINDINGS: 
+T = 18
+
+
+	ANSWER:	3 (in 85.087 ms)
+
+JUSTIFICATION_TREE:
+happens(turn_light_on,16) :-
+    delay(1),
+    not_holdsAt(light_on,16,1) :-
+        max_time(20),
+        can_terminates(turn_light_off,light_on,15),
+        happens(turn_light_off,15) :-
+            delay(1),
+            holdsAt(light_on,15,1) :-
+                max_time(20),
+                can_initiates(turn_light_on,light_on,14),
+                happens(turn_light_on,14) :-
+                    delay(1),
+                    not_holdsAt(light_on,14,1) :-
+                        max_time(20),
+                        can_terminates(turn_light_off,light_on,13),
+                        happens(turn_light_off,13) :-
+                            delay(1),
+                            holdsAt(light_on,13,1) :-
+                                max_time(20),
+                                can_initiates(turn_light_on,light_on,12),
+                                happens(turn_light_on,12) :-
+                                    delay(1),
+                                    not_holdsAt(light_on,12,1) :-
+                                        max_time(20),
+                                        can_terminates(turn_light_off,light_on,11),
+                                        happens(turn_light_off,11) :-
+                                            delay(1),
+                                            holdsAt(light_on,11,1) :-
+                                                max_time(20),
+                                                can_initiates(turn_light_on,light_on,10),
+                                                happens(turn_light_on,10),
+                                                initiates(turn_light_on,light_on,10),
+                                                not_stoppedIn(10,light_on,11) :-
+                                                    not_interrupted(terminates,light_on,10,11) :-
+                                                        findall(Var7,findall_can_interrupts(terminates,Var7,light_on,10,11),[turn_light_off]) :-
+                                                            findall_can_interrupts(terminates,turn_light_off,light_on,10,11) :-
+                                                                can_interrupts(terminates,turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}) :-
+                                                                    can_terminates(turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}).
+                                                        not_interrupted_(terminates,light_on,[turn_light_off],10,11) :-
+                                                            findall(Var8,interrupted(terminates,turn_light_off,light_on,Var8,10,11),[]),
+                                                            all_entirely_outside_of_interval([],10,11),
+                                                            not_interrupted_(terminates,light_on,[],10,11).
+                                                    not_interrupted(releases,light_on,10,11) :-
+                                                        findall(Var9,findall_can_interrupts(releases,Var9,light_on,10,11),[]),
+                                                        not_interrupted_(releases,light_on,[],10,11).
+                                        terminates(turn_light_off,light_on,11),
+                                        not_startedIn(11,light_on,12) :-
+                                            not_interrupted(initiates,light_on,11,12) :-
+                                                findall(Var10,findall_can_interrupts(initiates,Var10,light_on,11,12),[turn_light_on]) :-
+                                                    findall_can_interrupts(initiates,turn_light_on,light_on,11,12) :-
+                                                        can_interrupts(initiates,turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}) :-
+                                                            can_initiates(turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}).
+                                                not_interrupted_(initiates,light_on,[turn_light_on],11,12) :-
+                                                    findall(Var11,interrupted(initiates,turn_light_on,light_on,Var11,11,12),[]),
+                                                    all_entirely_outside_of_interval([],11,12),
+                                                    not_interrupted_(initiates,light_on,[],11,12).
+                                            not_interrupted(releases,light_on,11,12) :-
+                                                findall(Var12,findall_can_interrupts(releases,Var12,light_on,11,12),[]),
+                                                not_interrupted_(releases,light_on,[],11,12).
+                                initiates(turn_light_on,light_on,12),
+                                not_stoppedIn(12,light_on,13) :-
+                                    not_interrupted(terminates,light_on,12,13) :-
+                                        findall(Var13,findall_can_interrupts(terminates,Var13,light_on,12,13),[turn_light_off]) :-
+                                            findall_can_interrupts(terminates,turn_light_off,light_on,12,13) :-
+                                                can_interrupts(terminates,turn_light_off,light_on,Var3 | {Var3 #> 12,Var3 #< 13}) :-
+                                                    can_terminates(turn_light_off,light_on,Var3 | {Var3 #> 12,Var3 #< 13}).
+                                        not_interrupted_(terminates,light_on,[turn_light_off],12,13) :-
+                                            findall(Var14,interrupted(terminates,turn_light_off,light_on,Var14,12,13),[]),
+                                            all_entirely_outside_of_interval([],12,13),
+                                            not_interrupted_(terminates,light_on,[],12,13).
+                                    not_interrupted(releases,light_on,12,13) :-
+                                        findall(Var15,findall_can_interrupts(releases,Var15,light_on,12,13),[]),
+                                        not_interrupted_(releases,light_on,[],12,13).
+                        terminates(turn_light_off,light_on,13),
+                        not_startedIn(13,light_on,14) :-
+                            not_interrupted(initiates,light_on,13,14) :-
+                                findall(Var16,findall_can_interrupts(initiates,Var16,light_on,13,14),[turn_light_on]) :-
+                                    findall_can_interrupts(initiates,turn_light_on,light_on,13,14) :-
+                                        can_interrupts(initiates,turn_light_on,light_on,Var4 | {Var4 #> 13,Var4 #< 14}) :-
+                                            can_initiates(turn_light_on,light_on,Var4 | {Var4 #> 13,Var4 #< 14}).
+                                not_interrupted_(initiates,light_on,[turn_light_on],13,14) :-
+                                    findall(Var17,interrupted(initiates,turn_light_on,light_on,Var17,13,14),[]),
+                                    all_entirely_outside_of_interval([],13,14),
+                                    not_interrupted_(initiates,light_on,[],13,14).
+                            not_interrupted(releases,light_on,13,14) :-
+                                findall(Var18,findall_can_interrupts(releases,Var18,light_on,13,14),[]),
+                                not_interrupted_(releases,light_on,[],13,14).
+                initiates(turn_light_on,light_on,14),
+                not_stoppedIn(14,light_on,15) :-
+                    not_interrupted(terminates,light_on,14,15) :-
+                        findall(Var19,findall_can_interrupts(terminates,Var19,light_on,14,15),[turn_light_off]) :-
+                            findall_can_interrupts(terminates,turn_light_off,light_on,14,15) :-
+                                can_interrupts(terminates,turn_light_off,light_on,Var5 | {Var5 #> 14,Var5 #< 15}) :-
+                                    can_terminates(turn_light_off,light_on,Var5 | {Var5 #> 14,Var5 #< 15}).
+                        not_interrupted_(terminates,light_on,[turn_light_off],14,15) :-
+                            findall(Var20,interrupted(terminates,turn_light_off,light_on,Var20,14,15),[]),
+                            all_entirely_outside_of_interval([],14,15),
+                            not_interrupted_(terminates,light_on,[],14,15).
+                    not_interrupted(releases,light_on,14,15) :-
+                        findall(Var21,findall_can_interrupts(releases,Var21,light_on,14,15),[]),
+                        not_interrupted_(releases,light_on,[],14,15).
+        terminates(turn_light_off,light_on,15),
+        not_startedIn(15,light_on,16) :-
+            not_interrupted(initiates,light_on,15,16) :-
+                findall(Var22,findall_can_interrupts(initiates,Var22,light_on,15,16),[turn_light_on]) :-
+                    findall_can_interrupts(initiates,turn_light_on,light_on,15,16) :-
+                        can_interrupts(initiates,turn_light_on,light_on,Var6 | {Var6 #> 15,Var6 #< 16}) :-
+                            can_initiates(turn_light_on,light_on,Var6 | {Var6 #> 15,Var6 #< 16}).
+                not_interrupted_(initiates,light_on,[turn_light_on],15,16) :-
+                    findall(Var23,interrupted(initiates,turn_light_on,light_on,Var23,15,16),[]),
+                    all_entirely_outside_of_interval([],15,16),
+                    not_interrupted_(initiates,light_on,[],15,16).
+            not_interrupted(releases,light_on,15,16) :-
+                findall(Var24,findall_can_interrupts(releases,Var24,light_on,15,16),[]),
+                not_interrupted_(releases,light_on,[],15,16).
+global_constraint.
+
+MODEL:
+{ happens(turn_light_on,16),  happens(turn_light_off,15),  happens(turn_light_on,14),  happens(turn_light_off,13),  happens(turn_light_on,12),  happens(turn_light_off,11),  happens(turn_light_on,10),  initiates(turn_light_on,light_on,10),  not_stoppedIn(10,light_on,11),  terminates(turn_light_off,light_on,11),  not_startedIn(11,light_on,12),  initiates(turn_light_on,light_on,12),  not_stoppedIn(12,light_on,13),  terminates(turn_light_off,light_on,13),  not_startedIn(13,light_on,14),  initiates(turn_light_on,light_on,14),  not_stoppedIn(14,light_on,15),  terminates(turn_light_off,light_on,15),  not_startedIn(15,light_on,16) }
+BINDINGS: 
+T = 16
+
+
+	ANSWER:	4 (in 44.263 ms)
+
+JUSTIFICATION_TREE:
+happens(turn_light_on,14) :-
+    delay(1),
+    not_holdsAt(light_on,14,1) :-
+        max_time(20),
+        can_terminates(turn_light_off,light_on,13),
+        happens(turn_light_off,13) :-
+            delay(1),
+            holdsAt(light_on,13,1) :-
+                max_time(20),
+                can_initiates(turn_light_on,light_on,12),
+                happens(turn_light_on,12) :-
+                    delay(1),
+                    not_holdsAt(light_on,12,1) :-
+                        max_time(20),
+                        can_terminates(turn_light_off,light_on,11),
+                        happens(turn_light_off,11) :-
+                            delay(1),
+                            holdsAt(light_on,11,1) :-
+                                max_time(20),
+                                can_initiates(turn_light_on,light_on,10),
+                                happens(turn_light_on,10),
+                                initiates(turn_light_on,light_on,10),
+                                not_stoppedIn(10,light_on,11) :-
+                                    not_interrupted(terminates,light_on,10,11) :-
+                                        findall(Var5,findall_can_interrupts(terminates,Var5,light_on,10,11),[turn_light_off]) :-
+                                            findall_can_interrupts(terminates,turn_light_off,light_on,10,11) :-
+                                                can_interrupts(terminates,turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}) :-
+                                                    can_terminates(turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}).
+                                        not_interrupted_(terminates,light_on,[turn_light_off],10,11) :-
+                                            findall(Var6,interrupted(terminates,turn_light_off,light_on,Var6,10,11),[]),
+                                            all_entirely_outside_of_interval([],10,11),
+                                            not_interrupted_(terminates,light_on,[],10,11).
+                                    not_interrupted(releases,light_on,10,11) :-
+                                        findall(Var7,findall_can_interrupts(releases,Var7,light_on,10,11),[]),
+                                        not_interrupted_(releases,light_on,[],10,11).
+                        terminates(turn_light_off,light_on,11),
+                        not_startedIn(11,light_on,12) :-
+                            not_interrupted(initiates,light_on,11,12) :-
+                                findall(Var8,findall_can_interrupts(initiates,Var8,light_on,11,12),[turn_light_on]) :-
+                                    findall_can_interrupts(initiates,turn_light_on,light_on,11,12) :-
+                                        can_interrupts(initiates,turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}) :-
+                                            can_initiates(turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}).
+                                not_interrupted_(initiates,light_on,[turn_light_on],11,12) :-
+                                    findall(Var9,interrupted(initiates,turn_light_on,light_on,Var9,11,12),[]),
+                                    all_entirely_outside_of_interval([],11,12),
+                                    not_interrupted_(initiates,light_on,[],11,12).
+                            not_interrupted(releases,light_on,11,12) :-
+                                findall(Var10,findall_can_interrupts(releases,Var10,light_on,11,12),[]),
+                                not_interrupted_(releases,light_on,[],11,12).
+                initiates(turn_light_on,light_on,12),
+                not_stoppedIn(12,light_on,13) :-
+                    not_interrupted(terminates,light_on,12,13) :-
+                        findall(Var11,findall_can_interrupts(terminates,Var11,light_on,12,13),[turn_light_off]) :-
+                            findall_can_interrupts(terminates,turn_light_off,light_on,12,13) :-
+                                can_interrupts(terminates,turn_light_off,light_on,Var3 | {Var3 #> 12,Var3 #< 13}) :-
+                                    can_terminates(turn_light_off,light_on,Var3 | {Var3 #> 12,Var3 #< 13}).
+                        not_interrupted_(terminates,light_on,[turn_light_off],12,13) :-
+                            findall(Var12,interrupted(terminates,turn_light_off,light_on,Var12,12,13),[]),
+                            all_entirely_outside_of_interval([],12,13),
+                            not_interrupted_(terminates,light_on,[],12,13).
+                    not_interrupted(releases,light_on,12,13) :-
+                        findall(Var13,findall_can_interrupts(releases,Var13,light_on,12,13),[]),
+                        not_interrupted_(releases,light_on,[],12,13).
+        terminates(turn_light_off,light_on,13),
+        not_startedIn(13,light_on,14) :-
+            not_interrupted(initiates,light_on,13,14) :-
+                findall(Var14,findall_can_interrupts(initiates,Var14,light_on,13,14),[turn_light_on]) :-
+                    findall_can_interrupts(initiates,turn_light_on,light_on,13,14) :-
+                        can_interrupts(initiates,turn_light_on,light_on,Var4 | {Var4 #> 13,Var4 #< 14}) :-
+                            can_initiates(turn_light_on,light_on,Var4 | {Var4 #> 13,Var4 #< 14}).
+                not_interrupted_(initiates,light_on,[turn_light_on],13,14) :-
+                    findall(Var15,interrupted(initiates,turn_light_on,light_on,Var15,13,14),[]),
+                    all_entirely_outside_of_interval([],13,14),
+                    not_interrupted_(initiates,light_on,[],13,14).
+            not_interrupted(releases,light_on,13,14) :-
+                findall(Var16,findall_can_interrupts(releases,Var16,light_on,13,14),[]),
+                not_interrupted_(releases,light_on,[],13,14).
+global_constraint.
+
+MODEL:
+{ happens(turn_light_on,14),  happens(turn_light_off,13),  happens(turn_light_on,12),  happens(turn_light_off,11),  happens(turn_light_on,10),  initiates(turn_light_on,light_on,10),  not_stoppedIn(10,light_on,11),  terminates(turn_light_off,light_on,11),  not_startedIn(11,light_on,12),  initiates(turn_light_on,light_on,12),  not_stoppedIn(12,light_on,13),  terminates(turn_light_off,light_on,13),  not_startedIn(13,light_on,14) }
+BINDINGS: 
+T = 14
+
+
+	ANSWER:	5 (in 16.518 ms)
+
+JUSTIFICATION_TREE:
+happens(turn_light_on,12) :-
+    delay(1),
+    not_holdsAt(light_on,12,1) :-
+        max_time(20),
+        can_terminates(turn_light_off,light_on,11),
+        happens(turn_light_off,11) :-
+            delay(1),
+            holdsAt(light_on,11,1) :-
+                max_time(20),
+                can_initiates(turn_light_on,light_on,10),
+                happens(turn_light_on,10),
+                initiates(turn_light_on,light_on,10),
+                not_stoppedIn(10,light_on,11) :-
+                    not_interrupted(terminates,light_on,10,11) :-
+                        findall(Var3,findall_can_interrupts(terminates,Var3,light_on,10,11),[turn_light_off]) :-
+                            findall_can_interrupts(terminates,turn_light_off,light_on,10,11) :-
+                                can_interrupts(terminates,turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}) :-
+                                    can_terminates(turn_light_off,light_on,Var1 | {Var1 #> 10,Var1 #< 11}).
+                        not_interrupted_(terminates,light_on,[turn_light_off],10,11) :-
+                            findall(Var4,interrupted(terminates,turn_light_off,light_on,Var4,10,11),[]),
+                            all_entirely_outside_of_interval([],10,11),
+                            not_interrupted_(terminates,light_on,[],10,11).
+                    not_interrupted(releases,light_on,10,11) :-
+                        findall(Var5,findall_can_interrupts(releases,Var5,light_on,10,11),[]),
+                        not_interrupted_(releases,light_on,[],10,11).
+        terminates(turn_light_off,light_on,11),
+        not_startedIn(11,light_on,12) :-
+            not_interrupted(initiates,light_on,11,12) :-
+                findall(Var6,findall_can_interrupts(initiates,Var6,light_on,11,12),[turn_light_on]) :-
+                    findall_can_interrupts(initiates,turn_light_on,light_on,11,12) :-
+                        can_interrupts(initiates,turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}) :-
+                            can_initiates(turn_light_on,light_on,Var2 | {Var2 #> 11,Var2 #< 12}).
+                not_interrupted_(initiates,light_on,[turn_light_on],11,12) :-
+                    findall(Var7,interrupted(initiates,turn_light_on,light_on,Var7,11,12),[]),
+                    all_entirely_outside_of_interval([],11,12),
+                    not_interrupted_(initiates,light_on,[],11,12).
+            not_interrupted(releases,light_on,11,12) :-
+                findall(Var8,findall_can_interrupts(releases,Var8,light_on,11,12),[]),
+                not_interrupted_(releases,light_on,[],11,12).
+global_constraint.
+
+MODEL:
+{ happens(turn_light_on,12),  happens(turn_light_off,11),  happens(turn_light_on,10),  initiates(turn_light_on,light_on,10),  not_stoppedIn(10,light_on,11),  terminates(turn_light_off,light_on,11),  not_startedIn(11,light_on,12) }
+BINDINGS: 
+T = 12
+
+
+	ANSWER:	6 (in 0.06 ms)
+
+JUSTIFICATION_TREE:
+happens(turn_light_on,10),
+global_constraint.
+
+MODEL:
+{ happens(turn_light_on,10) }
+BINDINGS: 
+T = 10
+
+
+  real      0:01.31
+  real [s]  1.31
+  user [s]  0.68
+  sys  [s]  0.04
+  mem  [KB] 28556
+  avgm [KB] 0
