@@ -1,60 +1,60 @@
 $ oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt3.pl --tree
 
 
-% QUERY:?- happens(turn_light_on,T).
+% QUERY:?- T #=< 20,happens(turn_light_on,T).
 
-	ANSWER:	1 (in 205.252 ms)
+	ANSWER:	1 (in 266.226 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,20) :-
     delay(1),
     not_holdsAt(light_on,20,1) :-
-        max_time(20),
+        max_time(100),
         can_terminates(turn_light_off,light_on,19),
         happens(turn_light_off,19) :-
             delay(1),
             holdsAt(light_on,19,1) :-
-                max_time(20),
+                max_time(100),
                 can_initiates(turn_light_on,light_on,18),
                 happens(turn_light_on,18) :-
                     delay(1),
                     not_holdsAt(light_on,18,1) :-
-                        max_time(20),
+                        max_time(100),
                         can_terminates(turn_light_off,light_on,17),
                         happens(turn_light_off,17) :-
                             delay(1),
                             holdsAt(light_on,17,1) :-
-                                max_time(20),
+                                max_time(100),
                                 can_initiates(turn_light_on,light_on,16),
                                 happens(turn_light_on,16) :-
                                     delay(1),
                                     not_holdsAt(light_on,16,1) :-
-                                        max_time(20),
+                                        max_time(100),
                                         can_terminates(turn_light_off,light_on,15),
                                         happens(turn_light_off,15) :-
                                             delay(1),
                                             holdsAt(light_on,15,1) :-
-                                                max_time(20),
+                                                max_time(100),
                                                 can_initiates(turn_light_on,light_on,14),
                                                 happens(turn_light_on,14) :-
                                                     delay(1),
                                                     not_holdsAt(light_on,14,1) :-
-                                                        max_time(20),
+                                                        max_time(100),
                                                         can_terminates(turn_light_off,light_on,13),
                                                         happens(turn_light_off,13) :-
                                                             delay(1),
                                                             holdsAt(light_on,13,1) :-
-                                                                max_time(20),
+                                                                max_time(100),
                                                                 can_initiates(turn_light_on,light_on,12),
                                                                 happens(turn_light_on,12) :-
                                                                     delay(1),
                                                                     not_holdsAt(light_on,12,1) :-
-                                                                        max_time(20),
+                                                                        max_time(100),
                                                                         can_terminates(turn_light_off,light_on,11),
                                                                         happens(turn_light_off,11) :-
                                                                             delay(1),
                                                                             holdsAt(light_on,11,1) :-
-                                                                                max_time(20),
+                                                                                max_time(100),
                                                                                 can_initiates(turn_light_on,light_on,10),
                                                                                 happens(turn_light_on,10),
                                                                                 initiates(turn_light_on,light_on,10),
@@ -205,48 +205,48 @@ BINDINGS:
 T = 20
 
 
-	ANSWER:	2 (in 135.479 ms)
+	ANSWER:	2 (in 159.473 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,18) :-
     delay(1),
     not_holdsAt(light_on,18,1) :-
-        max_time(20),
+        max_time(100),
         can_terminates(turn_light_off,light_on,17),
         happens(turn_light_off,17) :-
             delay(1),
             holdsAt(light_on,17,1) :-
-                max_time(20),
+                max_time(100),
                 can_initiates(turn_light_on,light_on,16),
                 happens(turn_light_on,16) :-
                     delay(1),
                     not_holdsAt(light_on,16,1) :-
-                        max_time(20),
+                        max_time(100),
                         can_terminates(turn_light_off,light_on,15),
                         happens(turn_light_off,15) :-
                             delay(1),
                             holdsAt(light_on,15,1) :-
-                                max_time(20),
+                                max_time(100),
                                 can_initiates(turn_light_on,light_on,14),
                                 happens(turn_light_on,14) :-
                                     delay(1),
                                     not_holdsAt(light_on,14,1) :-
-                                        max_time(20),
+                                        max_time(100),
                                         can_terminates(turn_light_off,light_on,13),
                                         happens(turn_light_off,13) :-
                                             delay(1),
                                             holdsAt(light_on,13,1) :-
-                                                max_time(20),
+                                                max_time(100),
                                                 can_initiates(turn_light_on,light_on,12),
                                                 happens(turn_light_on,12) :-
                                                     delay(1),
                                                     not_holdsAt(light_on,12,1) :-
-                                                        max_time(20),
+                                                        max_time(100),
                                                         can_terminates(turn_light_off,light_on,11),
                                                         happens(turn_light_off,11) :-
                                                             delay(1),
                                                             holdsAt(light_on,11,1) :-
-                                                                max_time(20),
+                                                                max_time(100),
                                                                 can_initiates(turn_light_on,light_on,10),
                                                                 happens(turn_light_on,10),
                                                                 initiates(turn_light_on,light_on,10),
@@ -369,38 +369,38 @@ BINDINGS:
 T = 18
 
 
-	ANSWER:	3 (in 85.087 ms)
+	ANSWER:	3 (in 92.339 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,16) :-
     delay(1),
     not_holdsAt(light_on,16,1) :-
-        max_time(20),
+        max_time(100),
         can_terminates(turn_light_off,light_on,15),
         happens(turn_light_off,15) :-
             delay(1),
             holdsAt(light_on,15,1) :-
-                max_time(20),
+                max_time(100),
                 can_initiates(turn_light_on,light_on,14),
                 happens(turn_light_on,14) :-
                     delay(1),
                     not_holdsAt(light_on,14,1) :-
-                        max_time(20),
+                        max_time(100),
                         can_terminates(turn_light_off,light_on,13),
                         happens(turn_light_off,13) :-
                             delay(1),
                             holdsAt(light_on,13,1) :-
-                                max_time(20),
+                                max_time(100),
                                 can_initiates(turn_light_on,light_on,12),
                                 happens(turn_light_on,12) :-
                                     delay(1),
                                     not_holdsAt(light_on,12,1) :-
-                                        max_time(20),
+                                        max_time(100),
                                         can_terminates(turn_light_off,light_on,11),
                                         happens(turn_light_off,11) :-
                                             delay(1),
                                             holdsAt(light_on,11,1) :-
-                                                max_time(20),
+                                                max_time(100),
                                                 can_initiates(turn_light_on,light_on,10),
                                                 happens(turn_light_on,10),
                                                 initiates(turn_light_on,light_on,10),
@@ -495,28 +495,28 @@ BINDINGS:
 T = 16
 
 
-	ANSWER:	4 (in 44.263 ms)
+	ANSWER:	4 (in 53.019 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,14) :-
     delay(1),
     not_holdsAt(light_on,14,1) :-
-        max_time(20),
+        max_time(100),
         can_terminates(turn_light_off,light_on,13),
         happens(turn_light_off,13) :-
             delay(1),
             holdsAt(light_on,13,1) :-
-                max_time(20),
+                max_time(100),
                 can_initiates(turn_light_on,light_on,12),
                 happens(turn_light_on,12) :-
                     delay(1),
                     not_holdsAt(light_on,12,1) :-
-                        max_time(20),
+                        max_time(100),
                         can_terminates(turn_light_off,light_on,11),
                         happens(turn_light_off,11) :-
                             delay(1),
                             holdsAt(light_on,11,1) :-
-                                max_time(20),
+                                max_time(100),
                                 can_initiates(turn_light_on,light_on,10),
                                 happens(turn_light_on,10),
                                 initiates(turn_light_on,light_on,10),
@@ -583,18 +583,18 @@ BINDINGS:
 T = 14
 
 
-	ANSWER:	5 (in 16.518 ms)
+	ANSWER:	5 (in 11.86 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,12) :-
     delay(1),
     not_holdsAt(light_on,12,1) :-
-        max_time(20),
+        max_time(100),
         can_terminates(turn_light_off,light_on,11),
         happens(turn_light_off,11) :-
             delay(1),
             holdsAt(light_on,11,1) :-
-                max_time(20),
+                max_time(100),
                 can_initiates(turn_light_on,light_on,10),
                 happens(turn_light_on,10),
                 initiates(turn_light_on,light_on,10),
@@ -633,7 +633,7 @@ BINDINGS:
 T = 12
 
 
-	ANSWER:	6 (in 0.06 ms)
+	ANSWER:	6 (in 0.115 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,10),
@@ -645,9 +645,9 @@ BINDINGS:
 T = 10
 
 
-  real      0:01.31
-  real [s]  1.31
-  user [s]  0.68
-  sys  [s]  0.04
-  mem  [KB] 28556
+  real      0:01.48
+  real [s]  1.48
+  user [s]  0.78
+  sys  [s]  0.08
+  mem  [KB] 28552
   avgm [KB] 0

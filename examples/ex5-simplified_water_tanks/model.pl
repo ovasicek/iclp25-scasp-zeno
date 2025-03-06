@@ -9,6 +9,7 @@
 
 max_time(100).                      % it is useful to have an upper bound on time for the full axioms
 
+
 % ----- domain model -----
 
 fluent(water_left(X)).

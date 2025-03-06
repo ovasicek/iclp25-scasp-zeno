@@ -7,7 +7,7 @@
 #show initiates/3, terminates/3, releases/3.
 #show trajectory/4.
 
-
+max_time(100).                      % it is useful to have an upper bound on time for the full axioms
 
 
 % ----- domain model -----
@@ -34,7 +34,6 @@ happens(turn_light_on, T2) :- !spy,
 
 % ----- narrative & queries  -----
 
-max_time(20). % set lower due to the cyclic behavior
 % initiallyN(light_on). % no initial value means no triggers until the first event
 happens(turn_light_on, 10).
 
@@ -46,10 +45,10 @@ happens(turn_light_on, 10).
 ?-     holdsAt(light_on,    16).   % no models
 ?- not_holdsAt(light_on,    16).   % yes
 
-?-     holdsAt(light_on,    T).    % (10,11], (12,13], (14,15], (16,17], (18,19]
-?- not_holdsAt(light_on,    T).    % (11,12], (13,14], (15,16], (17,18], (19,20]
-?- happens(turn_light_off,  T).    % 11, 13, 15, 17, 19
-?- happens(turn_light_on,   T).    % 10, 12, 14, 16, 18, 20
+?- T .=<. 20,     holdsAt(light_on,   T). % (10,11], (12,13], (14,15], (16,17], (18,19]
+?- T .=<. 20, not_holdsAt(light_on,   T). % (11,12], (13,14], (15,16], (17,18], (19,20]
+?- T .=<. 20, happens(turn_light_off, T). % 11, 13, 15, 17, 19
+?- T .=<. 20, happens(turn_light_on,  T). % 10, 12, 14, 16, 18, 20
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/

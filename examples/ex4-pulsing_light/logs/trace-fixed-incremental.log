@@ -1,27 +1,27 @@
 $ ../scripts/incremental_circular_trajectories.sh ./model-fixed-incremental.pl ../axioms/bec_scasp.pl --tree
 
 
-% QUERY:?- happens(fade_out_end,T).
+% QUERY:?- T #=< 45,happens(fade_out_end,T).
 
-	ANSWER:	1 (in 11.125 ms)
+	ANSWER:	1 (in 12.102 ms)
 
 JUSTIFICATION_TREE:
 happens(fade_out_end,30) :-
     holdsAt(brightness(0),30,fading_out) :-
-        max_time(45),
+        max_time(100),
         can_trajectory(fading_out,20,brightness(0),30),
         can_initiates(fade_in_end,fading_out,20) :-
             incr_happens(fade_in_end,20).
         happens(fade_in_end,20) :-
             holdsAt(brightness(10),20,fading_in) :-
-                max_time(45),
+                max_time(100),
                 can_trajectory(fading_in,10,brightness(10),20),
                 can_initiates(turn_light_on,fading_in,10),
                 happens(turn_light_on,10),
                 initiates(turn_light_on,fading_in,10),
                 trajectory(fading_in,10,brightness(10),20) :-
                     holdsAt(brightness(0),10) :-
-                        max_time(45),
+                        max_time(100),
                         initiallyP(brightness(0)),
                         not_stoppedIn(0,brightness(0),10) :-
                             not_interrupted(terminates,brightness(0),0,10) :-
@@ -52,14 +52,14 @@ happens(fade_out_end,30) :-
         initiates(fade_in_end,fading_out,20),
         trajectory(fading_out,20,brightness(0),30) :-
             holdsAt(brightness(10),20) :-
-                max_time(45),
+                max_time(100),
                 can_trajectory(fading_in,10,brightness(10),20),
                 can_initiates(turn_light_on,fading_in,10),
                 happens(turn_light_on,10),
                 proved(initiates(turn_light_on,fading_in,10)),
                 trajectory(fading_in,10,brightness(10),20) :-
                     holdsAt(brightness(0),10) :-
-                        max_time(45),
+                        max_time(100),
                         initiallyP(brightness(0)),
                         proved(not_stoppedIn(0,brightness(0),10)).
                 proved(not_stoppedIn(10,fading_in,20)).
@@ -85,9 +85,9 @@ T = 30
 
 
 
-  real      0:02.49
-  real [s]  2.49
-  user [s]  1.35
-  sys  [s]  0.18
-  mem  [KB] 28636
+  real      0:02.36
+  real [s]  2.36
+  user [s]  1.31
+  sys  [s]  0.15
+  mem  [KB] 28624
   avgm [KB] 0

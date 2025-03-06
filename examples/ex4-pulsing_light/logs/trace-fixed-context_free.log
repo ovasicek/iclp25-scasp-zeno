@@ -1,26 +1,26 @@
 $ oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-context_free.pl --tree
 
 
-% QUERY:?- happens(fade_out_end,T).
+% QUERY:?- T #=< 45,happens(fade_out_end,T).
 
-	ANSWER:	1 (in 11.673 ms)
+	ANSWER:	1 (in 10.315 ms)
 
 JUSTIFICATION_TREE:
 happens(fade_out_end,30) :-
     holdsAt(brightness(0),30,fading_out) :-
-        max_time(45),
+        max_time(100),
         can_trajectory(fading_out,20,brightness(0),30),
         can_initiates(fade_in_end,fading_out,20),
         happens(fade_in_end,20) :-
             holdsAt(brightness(10),20,fading_in) :-
-                max_time(45),
+                max_time(100),
                 can_trajectory(fading_in,10,brightness(10),20),
                 can_initiates(turn_light_on,fading_in,10),
                 happens(turn_light_on,10),
                 initiates(turn_light_on,fading_in,10),
                 trajectory(fading_in,10,brightness(10),20) :-
                     holdsAt(brightness(0),10) :-
-                        max_time(45),
+                        max_time(100),
                         initiallyP(brightness(0)),
                         not_stoppedIn(0,brightness(0),10) :-
                             not_interrupted(terminates,brightness(0),0,10) :-
@@ -51,7 +51,7 @@ happens(fade_out_end,30) :-
         initiates(fade_in_end,fading_out,20),
         trajectory(fading_out,20,brightness(0),30) :-
             holdsAt(brightness(10),20) :-
-                max_time(45),
+                max_time(100),
                 can_trajectory(fading_in,10,brightness(10),20),
                 can_initiates(turn_light_on,fading_in,10),
                 proved(happens(turn_light_on,10)),
@@ -79,9 +79,9 @@ BINDINGS:
 T = 30
 
 
-  real      0:00.43
-  real [s]  0.43
-  user [s]  0.19
+  real      0:00.46
+  real [s]  0.46
+  user [s]  0.21
   sys  [s]  0.04
-  mem  [KB] 28592
+  mem  [KB] 28568
   avgm [KB] 0

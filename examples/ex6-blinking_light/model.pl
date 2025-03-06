@@ -38,8 +38,8 @@ happens(turn_light_on,      10).
 ?-     holdsAt(light_on,    15).   % non-term., should be ??
 ?- not_holdsAt(light_on,    15).   % non-term., should be ??
 
-?- happens(turn_light_off,  T).    % non-term., should be ??
-?- happens(turn_light_on,   T).    % non-term., should be 10 and ??
+?- T .=<. 20, happens(turn_light_off, T). % non-term., should be ??
+?- T .=<. 20, happens(turn_light_on,  T). % non-term., should be 10 and ??
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/

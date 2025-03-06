@@ -1,40 +1,40 @@
 $ oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-event_delay.pl --tree
 
 
-% QUERY:?- happens(turn_light_on,T).
+% QUERY:?- T #=< 20,happens(turn_light_on,T).
 
-	ANSWER:	1 (in 5.097 ms)
+	ANSWER:	1 (in 6.39 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,20) :-
-    max_time(20),
+    max_time(100),
     delay(1),
     happens(turn_light_off,19) :-
-        max_time(20),
+        max_time(100),
         delay(1),
         happens(turn_light_on,18) :-
-            max_time(20),
+            max_time(100),
             delay(1),
             happens(turn_light_off,17) :-
-                max_time(20),
+                max_time(100),
                 delay(1),
                 happens(turn_light_on,16) :-
-                    max_time(20),
+                    max_time(100),
                     delay(1),
                     happens(turn_light_off,15) :-
-                        max_time(20),
+                        max_time(100),
                         delay(1),
                         happens(turn_light_on,14) :-
-                            max_time(20),
+                            max_time(100),
                             delay(1),
                             happens(turn_light_off,13) :-
-                                max_time(20),
+                                max_time(100),
                                 delay(1),
                                 happens(turn_light_on,12) :-
-                                    max_time(20),
+                                    max_time(100),
                                     delay(1),
                                     happens(turn_light_off,11) :-
-                                        max_time(20),
+                                        max_time(100),
                                         delay(1),
                                         happens(turn_light_on,10).
 global_constraint.
@@ -45,32 +45,32 @@ BINDINGS:
 T = 20
 
 
-	ANSWER:	2 (in 0.14 ms)
+	ANSWER:	2 (in 0.244 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,18) :-
-    max_time(20),
+    max_time(100),
     delay(1),
     happens(turn_light_off,17) :-
-        max_time(20),
+        max_time(100),
         delay(1),
         happens(turn_light_on,16) :-
-            max_time(20),
+            max_time(100),
             delay(1),
             happens(turn_light_off,15) :-
-                max_time(20),
+                max_time(100),
                 delay(1),
                 happens(turn_light_on,14) :-
-                    max_time(20),
+                    max_time(100),
                     delay(1),
                     happens(turn_light_off,13) :-
-                        max_time(20),
+                        max_time(100),
                         delay(1),
                         happens(turn_light_on,12) :-
-                            max_time(20),
+                            max_time(100),
                             delay(1),
                             happens(turn_light_off,11) :-
-                                max_time(20),
+                                max_time(100),
                                 delay(1),
                                 happens(turn_light_on,10).
 global_constraint.
@@ -81,26 +81,26 @@ BINDINGS:
 T = 18
 
 
-	ANSWER:	3 (in 0.118 ms)
+	ANSWER:	3 (in 0.212 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,16) :-
-    max_time(20),
+    max_time(100),
     delay(1),
     happens(turn_light_off,15) :-
-        max_time(20),
+        max_time(100),
         delay(1),
         happens(turn_light_on,14) :-
-            max_time(20),
+            max_time(100),
             delay(1),
             happens(turn_light_off,13) :-
-                max_time(20),
+                max_time(100),
                 delay(1),
                 happens(turn_light_on,12) :-
-                    max_time(20),
+                    max_time(100),
                     delay(1),
                     happens(turn_light_off,11) :-
-                        max_time(20),
+                        max_time(100),
                         delay(1),
                         happens(turn_light_on,10).
 global_constraint.
@@ -111,20 +111,20 @@ BINDINGS:
 T = 16
 
 
-	ANSWER:	4 (in 0.113 ms)
+	ANSWER:	4 (in 0.214 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,14) :-
-    max_time(20),
+    max_time(100),
     delay(1),
     happens(turn_light_off,13) :-
-        max_time(20),
+        max_time(100),
         delay(1),
         happens(turn_light_on,12) :-
-            max_time(20),
+            max_time(100),
             delay(1),
             happens(turn_light_off,11) :-
-                max_time(20),
+                max_time(100),
                 delay(1),
                 happens(turn_light_on,10).
 global_constraint.
@@ -135,14 +135,14 @@ BINDINGS:
 T = 14
 
 
-	ANSWER:	5 (in 0.059 ms)
+	ANSWER:	5 (in 0.158 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,12) :-
-    max_time(20),
+    max_time(100),
     delay(1),
     happens(turn_light_off,11) :-
-        max_time(20),
+        max_time(100),
         delay(1),
         happens(turn_light_on,10).
 global_constraint.
@@ -153,7 +153,7 @@ BINDINGS:
 T = 12
 
 
-	ANSWER:	6 (in 0.024 ms)
+	ANSWER:	6 (in 0.125 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,10),
@@ -165,9 +165,9 @@ BINDINGS:
 T = 10
 
 
-  real      0:00.33
-  real [s]  0.33
-  user [s]  0.11
-  sys  [s]  0.05
-  mem  [KB] 28452
+  real      0:00.40
+  real [s]  0.40
+  user [s]  0.20
+  sys  [s]  0.01
+  mem  [KB] 28620
   avgm [KB] 0

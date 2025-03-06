@@ -7,6 +7,7 @@
 #show initiates/3, terminates/3, releases/3.
 #show trajectory/4.
 
+max_time(100).                      % it is useful to have an upper bound on time for the full axioms
 
 
 % ----- domain model -----
@@ -45,7 +46,6 @@ happens(fade_out_end, T) :- !spy,
 
 % ----- narrative & queries  -----
 
-max_time(45). % set lower due to the cyclic behavior
 initiallyP(brightness(0)).
 initiallyN(F) :- not initiallyP(F).
 
@@ -62,8 +62,8 @@ happens(turn_light_on,      10).
 ?- happens(fade_in_end,     40).    % non-term.
 ?- holdsAt(brightness(X),   40).    % non-term., 10
 
-?- happens(fade_in_end,     T).     % 20, 40
-?- happens(fade_out_end,    T).     % 30
+?- T .=<. 45, happens(fade_in_end,  T). % 20, 40
+?- T .=<. 45, happens(fade_out_end, T). % 30
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
