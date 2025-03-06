@@ -21,7 +21,6 @@ initiates(turn_light_on,  light_on, T).
 terminates(turn_light_off, light_on, T).
 
 happens(turn_light_off, T) :- !spy,
-
     holdsAt(light_on, T).
 
 happens(turn_light_on, T) :- !spy,
