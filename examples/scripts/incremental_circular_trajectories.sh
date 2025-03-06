@@ -9,9 +9,14 @@ ROOTDIR="$(dirname "$(realpath "$0")")"
 
 # arguments
 DEBUG=false
-HELP_MESSAGE="Usage: $0 [-d] model axioms [args_for_final_run]"
+CONTINUE=false
+HELP_MESSAGE="Usage: $0 [-d|-c] model axioms [args_for_final_run]"
 if [ $# -eq 2 ]; then
     if [ "$1" == "-d" ]; then
+        echo "$HELP_MESSAGE"
+        exit 1
+    fi
+    if [ "$1" == "-c" ]; then
         echo "$HELP_MESSAGE"
         exit 1
     fi
@@ -22,6 +27,10 @@ if [ $# -eq 2 ]; then
 elif [ $# -eq 3 ]; then
     if [ "$1" == "-d" ]; then
         DEBUG=true
+        model="$2"
+        axioms="$3"
+    elif [ "$1" == "-c" ]; then
+        CONTINUE=true
         model="$2"
         axioms="$3"
     else
@@ -35,6 +44,8 @@ elif [ $# -eq 4 ]; then
     argsLastRun="$4"
     if [ "$1" == "-d" ]; then
         DEBUG=true
+    elif [ "$1" == "-c" ]; then
+        CONTINUE=true
     else
         echo "$HELP_MESSAGE"
         exit 1
@@ -46,6 +57,13 @@ fi
 
 # get non-path version of narrative and model
 modelName=$(echo "$model" | sed "s|^.*/\([^/]*\)$|\1|")
+
+# if the CONTINUE argument is set and we have the *-model-increments.pl file, then just rerun the final query and exit
+if $CONTINUE && test -f ./tmp-$modelName-model-increments.pl; then
+    outputFinal=$({ /usr/bin/time -f "\n  real      %E\n  real [s]  %e\n  user [s]  %U\n  sys  [s]  %S\n  mem  [KB] %M\n  avgm [KB] %K" oscasp -s0 --dcc $argsLastRun $axioms $model ./tmp-$modelName-model-increments.pl ; } 2>&1)
+    echo "$outputFinal" | head -n -6
+    exit
+fi
 
 # clear previous run just in case
 rm -f ./tmp-$modelName-model-increments.pl && touch ./tmp-$modelName-model-increments.pl
@@ -125,4 +143,4 @@ if $DEBUG; then echo "$outputFinal" > ./tmp-$modelName-query-$FinalQueryN.out; f
 echo "$outputFinal" | head -n -6
 
 # clean tmp files
-if ! $DEBUG; then rm -f ./tmp-$modelName-model-increments*.pl; fi
+if ! $DEBUG && ! $CONTINUE; then rm -f ./tmp-$modelName-model-increments*.pl; fi
