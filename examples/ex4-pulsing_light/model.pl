@@ -1,3 +1,7 @@
+% problems
+%   self-end trajectory - fixed via holdsAt/3 (or holdsAt/4)
+%   circular trajectory - needs to be fixed
+
 #include './preprocessed_can_rules/model-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.

@@ -1,3 +1,6 @@
+% problems
+%   repeated trigger - fixed by remodeling (merge with event at trigger bound)
+
 #include './preprocessed_can_rules/model-fixed-remodel-preprocessed.pl'. % include the can_* rules
 #include '../axioms/general_utils.pl'.             % include not_happens
 #show happens/2, not_happens/2.

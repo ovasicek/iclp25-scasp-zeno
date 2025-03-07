@@ -1,3 +1,7 @@
+% problems:
+%   repeated trigger           - no longer present (one exact timepoint for triggering)
+%   zero delay circular events - fixed by adding a delay via holdsAt/3
+
 #include './preprocessed_can_rules/model-fixed-holdsAt3-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.

@@ -1,3 +1,10 @@
+% problems:
+%   repeated trigger          - fixed by adding minimum duration via holdsAt/4
+%   self-end trajectory       - fixed via holdsAt/3 (or holdsAt/4)
+%   circular trajectories     - fixed via incremental reasoning
+%   trajectory end at ineq.   - fixed by adding minimum duration via holdsAt/4
+%   traditional zeno behavior - fixed by adding minimum duration via holdsAt/4
+
 #include './preprocessed_can_rules/model-fixed-incremental_holdsAt4-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.

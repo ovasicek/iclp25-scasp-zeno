@@ -1,3 +1,8 @@
+% problems:
+%   repeated trigger          - manifests in the "trajectory end at ineq." problem
+%   self-end trajectory       - fixed via holdsAt/3 (or holdsAt/4)
+%   trajectory end at ineq.   - needs to be fixed in narrative 2
+
 #include './preprocessed_can_rules/model-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.

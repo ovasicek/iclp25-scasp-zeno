@@ -1,3 +1,6 @@
+% problems
+%   self-end trajectory - fixed by restricting rule choice via holdsAt/3
+
 #include './preprocessed_can_rules/model-fixed-holdsAt3-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.

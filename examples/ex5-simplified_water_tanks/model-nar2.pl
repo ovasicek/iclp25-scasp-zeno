@@ -1,3 +1,8 @@
+% problems:
+%   repeated trigger          - manifests in the "trajectory end at ineq." problem
+%   self-end trajectory       - fixed via holdsAt/3 (or holdsAt/4)
+%   trajectory end at ineq.   - needs to be fixed
+
 % ----- narrative & queries  -----
 
 initiallyP(water_left(0)).

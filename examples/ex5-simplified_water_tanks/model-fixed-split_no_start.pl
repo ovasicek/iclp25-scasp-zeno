@@ -1,3 +1,8 @@
+% problems:
+%   repeated trigger          - no longer present (trajectory does not start)
+%   self-end trajectory       - fixed via holdsAt/3 (or holdsAt/4)
+%   trajectory end at ineq.   - fixed via remodelling (trajectory does not start)
+
 #include './preprocessed_can_rules/model-fixed-split_no_start-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.

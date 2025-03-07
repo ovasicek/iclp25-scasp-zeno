@@ -1,3 +1,8 @@
+% problems:
+%   repeated trigger          - fixed by minimum duration via holdsAt/4
+%   self-end trajectory       - fixed via holdsAt/3 (or holdsAt/4)
+%   trajectory end at ineq.   - fixed by minimum duration via holdsAt/4
+
 #include './preprocessed_can_rules/model-fixed-split_holdsAt4-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
