@@ -3,7 +3,6 @@ TIME=/usr/bin/time -f "\n  real      %E\n  real [s]  %e\n  user [s]  %U\n  sys  
 #-----------------------------------------------------------------------------------------------------------------------
 # non-terminating
 
-# uses smaller simplified axioms to make the trace simpler 
 run-non_term:
 	${TIME} oscasp -s0 ../axioms/bec_scasp-small.pl ./model.pl
 

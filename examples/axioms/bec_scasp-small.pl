@@ -1,6 +1,7 @@
 % small version:
 %   no trajectory related axioms and no releases
 %   no new axioms
+%   duplicit code for not_stoppedIn/startedIn (but easier to read/understand)
 
 %% BEC1 - StoppedIn(t1,f,t2)
 stoppedIn(T1, Fluent, T2) :-
