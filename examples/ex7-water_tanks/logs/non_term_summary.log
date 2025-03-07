@@ -6,25 +6,25 @@ Simplified !spy output: (removed most predicates to highlight the chain of event
 ========================================================================================================================
 
 --------------------- Calling:  builtin(!spy) -------------
-    holdsAt(water_left(T1),19.5)
-        ...
-        holdsAt(water_left( {T2~[T2 < 100]} ),10)
-            {T3~[T3 > 0, T3 < 10]} .<.10
-            can_trajectory(left_filling, {T3~[T3 > 0, T3 < 10]} ,water_left( {T2~[T2 < 100]} ),10)
-            can_initiates(switch_left,left_filling, {T3~[T3 > 0, T3 < 10]} )
-            happens(switch_left, {T3~[T3 > 0, T3 < 10]} )                                                   % T3
-                {X1~[X1 =< 50]} .=<.50
-                holdsAt(water_left( {X1~[X1 =< 50]} ), {T3~[T3 > 0, T3 < 10]} ,right_filling)
-                    {T4~[T4 > 0, T4 < 10]} .<. {T3~[T3 > 0, T3 < 10]}                                       % T4 < T3
-                    can_trajectory(right_filling, {T4~[T4 > 0, T4 < 10]} ,water_left( {X1~[X1 =< 50]} ), {T3~[T3 > 0, T3 < 10]} )
-                    can_initiates(switch_right,right_filling, {T4~[T4 > 0, T4 < 10]} )
-                    happens(switch_right, {T4~[T4 > 0, T4 < 10]} )                                          % T4
-                        {X2~[X2 =< 50]} .=<.50
-                        holdsAt(water_right( {X2~[X2 =< 50]} ), {T4~[T4 > 0, T4 < 10]} ,left_filling)
-                            {T5~[T5 > 0, T5 < 10]} .<. {T4~[T4 > 0, T4 < 10]}                               % T5 < T4
-                            can_trajectory(left_filling, {T5~[T5 > 0, T5 < 10]} ,water_right( {X2~[X2 =< 50]} ), {T4~[T4 > 0, T4 < 10]} )
-                            can_initiates(switch_left,left_filling, {T5~[T5 > 0, T5 < 10]} )
-                            happens(switch_left, {T5~[T5 > 0, T5 < 10]} )                                   % T5
+  holdsAt(water_left(T1),19.5)
+    ...
+    holdsAt(water_left( {T2~[T2 < 100]} ),10)
+      {T3~[T3 > 0, T3 < 10]} .<.10
+      can_trajectory(left_filling, {T3~[T3 > 0, T3 < 10]} ,water_left( {T2~[T2 < 100]} ),10)
+      can_initiates(switch_left,left_filling, {T3~[T3 > 0, T3 < 10]} )
+      happens(switch_left, {T3~[T3 > 0, T3 < 10]} )                                         % T3
+        {X1~[X1 =< 50]} .=<.50
+        holdsAt(water_left( {X1~[X1 =< 50]} ), {T3~[T3 > 0, T3 < 10]} ,right_filling)
+          {T4~[T4 > 0, T4 < 10]} .<. {T3~[T3 > 0, T3 < 10]}                                 % T4 < T3
+          can_trajectory(right_filling, {T4~[T4 > 0, T4 < 10]} ,water_left( {X1~[X1 =< 50]} ), {T3~[T3 > 0, T3 < 10]} )
+          can_initiates(switch_right,right_filling, {T4~[T4 > 0, T4 < 10]} )
+          happens(switch_right, {T4~[T4 > 0, T4 < 10]} )                                    % T4
+            {X2~[X2 =< 50]} .=<.50
+            holdsAt(water_right( {X2~[X2 =< 50]} ), {T4~[T4 > 0, T4 < 10]} ,left_filling)
+              {T5~[T5 > 0, T5 < 10]} .<. {T4~[T4 > 0, T4 < 10]}                             % T5 < T4
+              can_trajectory(left_filling, {T5~[T5 > 0, T5 < 10]} ,water_right( {X2~[X2 =< 50]} ), {T4~[T4 > 0, T4 < 10]} )
+              can_initiates(switch_left,left_filling, {T5~[T5 > 0, T5 < 10]} )
+              happens(switch_left, {T5~[T5 > 0, T5 < 10]} )                                 % T5
 
 
 ========================================================================================================================
