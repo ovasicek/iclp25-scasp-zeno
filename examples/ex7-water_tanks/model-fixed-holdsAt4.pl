@@ -53,25 +53,15 @@ trajectory(left_filling, T1, water_right(NewW), T2) :-
     NewW .=. OldW - ((T2-T1) * 20), % out rate 20
     holdsAt(water_right(OldW), T1).
 
-delay(1).
+duration(1).
 happens(switch_left, T) :- !spy,
-    delay(MinD), D .>=. MinD,
-    CurrW .=. 50,   % target level
+    duration(MinD), D .>=. MinD,
+    CurrW .=<. 50,   % target level
     holdsAt(water_left(CurrW), T, right_filling, D).
 
 happens(switch_right, T) :- !spy,
-    delay(MinD), D .>=. MinD,
-    CurrW .=. 50,   % target level
-    holdsAt(water_right(CurrW), T, left_filling, D).
-
-happens(switch_left, T) :- !spy,
-    delay(D),
-    CurrW .<. 50,   % target level
-    holdsAt(water_left(CurrW), T, right_filling, D).
-
-happens(switch_right, T) :- !spy,
-    delay(D), 
-    CurrW .<. 50,   % target level
+    duration(MinD), D .>=. MinD,
+    CurrW .=<. 50,   % target level
     holdsAt(water_right(CurrW), T, left_filling, D).
 
 
@@ -103,9 +93,9 @@ happens(start(right),           10).
 ?- holdsAt(water_left(X),       161/8).%(20.125)    % 40    
 ?- holdsAt(water_right(X),      161/8).%(20.125)    % 58.75 (235/4)
 
+?- T .=<. 19.5, happens(switch_left,  T).           % 25/2 (12.5), 145/8 (18.125)
 ?- T .=<. 19.5, happens(switch_right, T).           % 65/4, 153/8
-?- T .=<. 19.5, happens(switch_left,  T).           % 25/2, 145/8
-?- holdsAt(water_left(X),       19.5).              % non-term.
+?- holdsAt(water_left(X),       19.5).              % 105/2 (52.5)
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/

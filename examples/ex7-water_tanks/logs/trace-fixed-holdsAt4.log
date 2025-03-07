@@ -1,0 +1,1363 @@
+$ oscasp -s0 ../axioms/bec_scasp-interval_not.pl ./model-fixed-holdsAt4.pl --tree
+
+
+% QUERY:?- holdsAt(water_left(X),19.5).
+
+	ANSWER:	1 (in 766284.759 ms)
+
+JUSTIFICATION_TREE:
+holdsAt(water_left(105/2),19.5) :-
+    max_time(100),
+    can_trajectory(right_filling,153/8,water_left(105/2),19.5),
+    can_initiates(switch_right,right_filling,153/8),
+    happens(switch_right,153/8) :-
+        duration(1),
+        holdsAt(water_right(195/4),153/8,left_filling,1) :-
+            max_time(100),
+            can_trajectory(left_filling,145/8,water_right(195/4),153/8),
+            can_initiates(switch_left,left_filling,145/8),
+            happens(switch_left,145/8) :-
+                duration(1),
+                holdsAt(water_left(50),145/8,right_filling,15/8) :-
+                    max_time(100),
+                    can_trajectory(right_filling,65/4,water_left(50),145/8),
+                    can_initiates(switch_right,right_filling,65/4),
+                    happens(switch_right,65/4) :-
+                        duration(1),
+                        holdsAt(water_right(50),65/4,left_filling,15/4) :-
+                            max_time(100),
+                            can_trajectory(left_filling,25/2,water_right(50),65/4),
+                            can_initiates(switch_left,left_filling,25/2),
+                            happens(switch_left,25/2) :-
+                                duration(1),
+                                holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    initiates(start(right),right_filling,10),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            not_stoppedIn(0,water_left(100),10) :-
+                                                not_interrupted(terminates,water_left(100),0,10) :-
+                                                    findall(Var85,findall_can_interrupts(terminates,Var85,water_left(100),0,10),[]),
+                                                    not_interrupted_N(terminates,water_left(100),[],0,10) :-
+                                                        not_interrupted_1(terminates,water_left(100),[],0,10) :-
+                                                            is_not_interval(0,0),
+                                                            is_not_interval(10,10),
+                                                            not_interrupted_1_fail(terminates,water_left(100),[],0,10).
+                                                not_interrupted(releases,water_left(100),0,10) :-
+                                                    findall(Var86,findall_can_interrupts(releases,Var86,water_left(100),0,10),[start(Var1)]) :-
+                                                        findall_can_interrupts(releases,start(Var1),water_left(100),0,10) :-
+                                                            can_interrupts(releases,start(Var1),water_left(100),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                                                can_releases(start(Var1),water_left(100),Var2 | {Var2 #> 0,Var2 #< 10}).
+                                                    not_interrupted_N(releases,water_left(100),[start(Var1)],0,10) :-
+                                                        not_interrupted_1(releases,water_left(100),[start(Var1)],0,10) :-
+                                                            proved(is_not_interval(0,0)),
+                                                            proved(is_not_interval(10,10)),
+                                                            not_interrupted_1_fail(releases,water_left(100),[start(Var1)],0,10) :-
+                                                                findall(Var87,interrupt_1_fail(releases,start(Var1),water_left(100),Var87,0,10),[]),
+                                                                all_entirely_outside_of_interval([],0,10),
+                                                                not_interrupted_1_fail(releases,water_left(100),[],0,10).
+                                    not_stoppedIn(10,right_filling,25/2) :-
+                                        not_interrupted(terminates,right_filling,10,25/2) :-
+                                            findall(Var88,findall_can_interrupts(terminates,Var88,right_filling,10,25/2),[switch_left]) :-
+                                                findall_can_interrupts(terminates,switch_left,right_filling,10,Var3 | {Var3 #>= 25/2,Var3 #< 33/2}) :-
+                                                    can_interrupts(terminates,switch_left,right_filling,Var4 | {Var4 #> 10,Var4 #< 33/2}) :-
+                                                        can_terminates(switch_left,right_filling,Var4 | {Var4 #> 10,Var4 #< 33/2}).
+                                            not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                    proved(is_not_interval(10,10)),
+                                                    is_interval(25/2,33/2),
+                                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var89,interrupt_2b_fail(terminates,switch_left,right_filling,Var89,10,25/2),[]),
+                                                        all_entirely_outside_of_interval([],10,25/2),
+                                                        not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var90,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var90,10,25/2),[25/2]) :-
+                                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var5 | {Var5 #>= 25/2,Var5 #< 33/2}) :-
+                                                                happens(switch_left,25/2) :-
+                                                                    duration(1),
+                                                                    holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        not_stoppedIn(10,right_filling,25/2) :-
+                                                                            not_interrupted(terminates,right_filling,10,25/2) :-
+                                                                                findall(Var91,findall_can_interrupts(terminates,Var91,right_filling,10,25/2),[switch_left]) :-
+                                                                                    findall_can_interrupts(terminates,switch_left,right_filling,10,25/2) :-
+                                                                                        can_interrupts(terminates,switch_left,right_filling,Var6 | {Var6 #> 10,Var6 #< 25/2}) :-
+                                                                                            can_terminates(switch_left,right_filling,Var6 | {Var6 #> 10,Var6 #< 25/2}).
+                                                                                not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                    not_interrupted_1(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                        proved(is_not_interval(10,10)),
+                                                                                        is_not_interval(25/2,25/2),
+                                                                                        not_interrupted_1_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var92,interrupt_1_fail(terminates,switch_left,right_filling,Var92,10,25/2),[]),
+                                                                                            all_entirely_outside_of_interval([],10,25/2),
+                                                                                            not_interrupted_1_fail(terminates,right_filling,[],10,25/2).
+                                                                            not_interrupted(releases,right_filling,10,25/2) :-
+                                                                                findall(Var93,findall_can_interrupts(releases,Var93,right_filling,10,25/2),[]),
+                                                                                not_interrupted_N(releases,right_filling,[],10,25/2) :-
+                                                                                    not_interrupted_1(releases,right_filling,[],10,25/2) :-
+                                                                                        proved(is_not_interval(10,10)),
+                                                                                        proved(is_not_interval(25/2,25/2)),
+                                                                                        not_interrupted_1_fail(releases,right_filling,[],10,25/2).
+                                                                interrupts(terminates,switch_left,right_filling,25/2) :-
+                                                                    terminates(switch_left,right_filling,25/2).
+                                                        all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                            proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                        not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2).
+                                                    not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var94,interrupt_2b_adjust_gt(terminates,switch_left,right_filling,Var94,10,25/2),[]),
+                                                        proved(all_entirely_outside_of_interval([],10,25/2)),
+                                                        not_interrupted_2b_adjust_gt(terminates,right_filling,[],10,25/2).
+                                        proved(not_interrupted(releases,right_filling,10,25/2)).
+                            initiates(switch_left,left_filling,25/2),
+                            trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                holdsAt(water_right(125),25/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_right(125),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_right(125),25/2) :-
+                                        holdsAt(water_right(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_right(100)),
+                                            not_stoppedIn(0,water_right(100),10) :-
+                                                not_interrupted(terminates,water_right(100),0,10) :-
+                                                    findall(Var95,findall_can_interrupts(terminates,Var95,water_right(100),0,10),[]),
+                                                    not_interrupted_N(terminates,water_right(100),[],0,10) :-
+                                                        not_interrupted_1(terminates,water_right(100),[],0,10) :-
+                                                            proved(is_not_interval(0,0)),
+                                                            proved(is_not_interval(10,10)),
+                                                            not_interrupted_1_fail(terminates,water_right(100),[],0,10).
+                                                not_interrupted(releases,water_right(100),0,10) :-
+                                                    findall(Var96,findall_can_interrupts(releases,Var96,water_right(100),0,10),[start(Var7)]) :-
+                                                        findall_can_interrupts(releases,start(Var7),water_right(100),0,10) :-
+                                                            can_interrupts(releases,start(Var7),water_right(100),Var8 | {Var8 #> 0,Var8 #< 10}) :-
+                                                                can_releases(start(Var7),water_right(100),Var8 | {Var8 #> 0,Var8 #< 10}).
+                                                    not_interrupted_N(releases,water_right(100),[start(Var7)],0,10) :-
+                                                        not_interrupted_1(releases,water_right(100),[start(Var7)],0,10) :-
+                                                            proved(is_not_interval(0,0)),
+                                                            proved(is_not_interval(10,10)),
+                                                            not_interrupted_1_fail(releases,water_right(100),[start(Var7)],0,10) :-
+                                                                findall(Var97,interrupt_1_fail(releases,start(Var7),water_right(100),Var97,0,10),[]),
+                                                                proved(all_entirely_outside_of_interval([],0,10)),
+                                                                not_interrupted_1_fail(releases,water_right(100),[],0,10).
+                                    proved(not_stoppedIn(10,right_filling,25/2)).
+                            not_stoppedIn(25/2,left_filling,65/4) :-
+                                not_interrupted(terminates,left_filling,25/2,65/4) :-
+                                    findall(Var98,findall_can_interrupts(terminates,Var98,left_filling,25/2,65/4),[switch_right]) :-
+                                        findall_can_interrupts(terminates,switch_right,left_filling,25/2,Var9 | {Var9 #>= 65/4,Var9 #< 35/2}) :-
+                                            can_interrupts(terminates,switch_right,left_filling,Var10 | {Var10 #> 25/2,Var10 #< 35/2}) :-
+                                                can_terminates(switch_right,left_filling,Var10 | {Var10 #> 25/2,Var10 #< 35/2}).
+                                    not_interrupted_N(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                        not_interrupted_2b(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                            proved(is_not_interval(25/2,25/2)),
+                                            is_interval(65/4,35/2),
+                                            not_interrupted_2b_fail(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                findall(Var99,interrupt_2b_fail(terminates,switch_right,left_filling,Var99,25/2,65/4),[]),
+                                                all_entirely_outside_of_interval([],25/2,65/4),
+                                                not_interrupted_2b_fail(terminates,left_filling,[],25/2,65/4).
+                                            not_interrupted_2b_adjust_eq(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                findall(Var100,interrupt_2b_adjust_eq(terminates,switch_right,left_filling,Var100,25/2,65/4),[65/4]) :-
+                                                    interrupt_2b_adjust_eq(terminates,switch_right,left_filling,65/4,25/2,Var11 | {Var11 #>= 65/4,Var11 #< 35/2}) :-
+                                                        happens(switch_right,65/4) :-
+                                                            duration(1),
+                                                            holdsAt(water_right(50),65/4,left_filling,15/4) :-
+                                                                max_time(100),
+                                                                can_trajectory(left_filling,25/2,water_right(50),65/4),
+                                                                can_initiates(switch_left,left_filling,25/2),
+                                                                happens(switch_left,25/2) :-
+                                                                    duration(1),
+                                                                    holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        not_stoppedIn(10,right_filling,25/2) :-
+                                                                            not_interrupted(terminates,right_filling,10,25/2) :-
+                                                                                findall(Var101,findall_can_interrupts(terminates,Var101,right_filling,10,25/2),[switch_left]) :-
+                                                                                    findall_can_interrupts(terminates,switch_left,right_filling,10,Var12 | {Var12 #>= 25/2,Var12 #=< 61/4}) :-
+                                                                                        can_interrupts(terminates,switch_left,right_filling,Var13 | {Var13 #> 10,Var13 #< 61/4}) :-
+                                                                                            can_terminates(switch_left,right_filling,Var13 | {Var13 #> 10,Var13 #< 61/4}).
+                                                                                not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                    not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                        proved(is_not_interval(10,10)),
+                                                                                        is_interval(25/2,61/4),
+                                                                                        not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var102,interrupt_2b_fail(terminates,switch_left,right_filling,Var102,10,25/2),[]),
+                                                                                            all_entirely_outside_of_interval([],10,25/2),
+                                                                                            not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                                                        not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var103,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var103,10,25/2),[25/2]) :-
+                                                                                                interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var14 | {Var14 #>= 25/2,Var14 #=< 61/4}) :-
+                                                                                                    proved(happens(switch_left,25/2)),
+                                                                                                    proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                                                            all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                                                                proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                                                            proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                                                        proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                                                            proved(not_interrupted(releases,right_filling,10,25/2)).
+                                                                proved(initiates(switch_left,left_filling,25/2)),
+                                                                trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                                                    holdsAt(water_right(125),25/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_right(125),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_right(125),25/2) :-
+                                                                            holdsAt(water_right(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_right(100)),
+                                                                                proved(not_stoppedIn(0,water_right(100),10)).
+                                                                        proved(not_stoppedIn(10,right_filling,25/2)).
+                                                                not_stoppedIn(25/2,left_filling,65/4) :-
+                                                                    not_interrupted(terminates,left_filling,25/2,65/4) :-
+                                                                        findall(Var104,findall_can_interrupts(terminates,Var104,left_filling,25/2,65/4),[switch_right]) :-
+                                                                            findall_can_interrupts(terminates,switch_right,left_filling,25/2,65/4) :-
+                                                                                can_interrupts(terminates,switch_right,left_filling,Var15 | {Var15 #> 25/2,Var15 #< 65/4}) :-
+                                                                                    can_terminates(switch_right,left_filling,Var15 | {Var15 #> 25/2,Var15 #< 65/4}).
+                                                                        not_interrupted_N(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                            not_interrupted_1(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                proved(is_not_interval(25/2,25/2)),
+                                                                                is_not_interval(65/4,65/4),
+                                                                                not_interrupted_1_fail(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                    findall(Var105,interrupt_1_fail(terminates,switch_right,left_filling,Var105,25/2,65/4),[]),
+                                                                                    all_entirely_outside_of_interval([],25/2,65/4),
+                                                                                    not_interrupted_1_fail(terminates,left_filling,[],25/2,65/4).
+                                                                    not_interrupted(releases,left_filling,25/2,65/4) :-
+                                                                        findall(Var106,findall_can_interrupts(releases,Var106,left_filling,25/2,65/4),[]),
+                                                                        not_interrupted_N(releases,left_filling,[],25/2,65/4) :-
+                                                                            not_interrupted_1(releases,left_filling,[],25/2,65/4) :-
+                                                                                proved(is_not_interval(25/2,25/2)),
+                                                                                proved(is_not_interval(65/4,65/4)),
+                                                                                not_interrupted_1_fail(releases,left_filling,[],25/2,65/4).
+                                                        interrupts(terminates,switch_right,left_filling,65/4) :-
+                                                            terminates(switch_right,left_filling,65/4).
+                                                all_entirely_outside_of_interval([65/4],25/2,65/4) :-
+                                                    proved(all_entirely_outside_of_interval([],25/2,65/4)).
+                                                not_interrupted_2b_adjust_eq(terminates,left_filling,[],25/2,65/4).
+                                            not_interrupted_2b_adjust_gt(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                findall(Var107,interrupt_2b_adjust_gt(terminates,switch_right,left_filling,Var107,25/2,65/4),[]),
+                                                proved(all_entirely_outside_of_interval([],25/2,65/4)),
+                                                not_interrupted_2b_adjust_gt(terminates,left_filling,[],25/2,65/4).
+                                proved(not_interrupted(releases,left_filling,25/2,65/4)).
+                    initiates(switch_right,right_filling,65/4),
+                    trajectory(right_filling,65/4,water_left(50),145/8) :-
+                        holdsAt(water_left(175/2),65/4) :-
+                            max_time(100),
+                            can_trajectory(left_filling,25/2,water_left(175/2),65/4),
+                            can_initiates(switch_left,left_filling,25/2),
+                            happens(switch_left,25/2) :-
+                                duration(1),
+                                holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    not_stoppedIn(10,right_filling,25/2) :-
+                                        not_interrupted(terminates,right_filling,10,25/2) :-
+                                            findall(Var108,findall_can_interrupts(terminates,Var108,right_filling,10,25/2),[switch_left]) :-
+                                                findall_can_interrupts(terminates,switch_left,right_filling,10,Var16 | {Var16 #>= 25/2,Var16 #< 65/4}) :-
+                                                    can_interrupts(terminates,switch_left,right_filling,Var17 | {Var17 #> 10,Var17 #< 65/4}) :-
+                                                        can_terminates(switch_left,right_filling,Var17 | {Var17 #> 10,Var17 #< 65/4}).
+                                            not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                    proved(is_not_interval(10,10)),
+                                                    is_interval(25/2,65/4),
+                                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var109,interrupt_2b_fail(terminates,switch_left,right_filling,Var109,10,25/2),[]),
+                                                        all_entirely_outside_of_interval([],10,25/2),
+                                                        not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var110,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var110,10,25/2),[25/2]) :-
+                                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var18 | {Var18 #>= 25/2,Var18 #< 65/4}) :-
+                                                                proved(happens(switch_left,25/2)),
+                                                                proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                        all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                            proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                        proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                    proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                        proved(not_interrupted(releases,right_filling,10,25/2)).
+                            proved(initiates(switch_left,left_filling,25/2)),
+                            trajectory(left_filling,25/2,water_left(175/2),65/4) :-
+                                holdsAt(water_left(50),25/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    proved(not_stoppedIn(10,right_filling,25/2)).
+                            proved(not_stoppedIn(25/2,left_filling,65/4)).
+                    not_stoppedIn(65/4,right_filling,145/8) :-
+                        not_interrupted(terminates,right_filling,65/4,145/8) :-
+                            findall(Var111,findall_can_interrupts(terminates,Var111,right_filling,65/4,145/8),[switch_left]) :-
+                                findall_can_interrupts(terminates,switch_left,right_filling,65/4,Var19 | {Var19 #>= 145/8,Var19 #< 37/2}) :-
+                                    can_interrupts(terminates,switch_left,right_filling,Var20 | {Var20 #> 65/4,Var20 #< 37/2}) :-
+                                        can_terminates(switch_left,right_filling,Var20 | {Var20 #> 65/4,Var20 #< 37/2}).
+                            not_interrupted_N(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                not_interrupted_2b(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                    proved(is_not_interval(65/4,65/4)),
+                                    is_interval(145/8,37/2),
+                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                        findall(Var112,interrupt_2b_fail(terminates,switch_left,right_filling,Var112,65/4,145/8),[]),
+                                        all_entirely_outside_of_interval([],65/4,145/8),
+                                        not_interrupted_2b_fail(terminates,right_filling,[],65/4,145/8).
+                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                        findall(Var113,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var113,65/4,145/8),[145/8]) :-
+                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,145/8,65/4,Var21 | {Var21 #>= 145/8,Var21 #< 37/2}) :-
+                                                happens(switch_left,145/8) :-
+                                                    duration(1),
+                                                    holdsAt(water_left(50),145/8,right_filling,15/8) :-
+                                                        max_time(100),
+                                                        can_trajectory(right_filling,65/4,water_left(50),145/8),
+                                                        can_initiates(switch_right,right_filling,65/4),
+                                                        happens(switch_right,65/4) :-
+                                                            duration(1),
+                                                            holdsAt(water_right(50),65/4,left_filling,15/4) :-
+                                                                max_time(100),
+                                                                can_trajectory(left_filling,25/2,water_right(50),65/4),
+                                                                can_initiates(switch_left,left_filling,25/2),
+                                                                happens(switch_left,25/2) :-
+                                                                    duration(1),
+                                                                    holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        not_stoppedIn(10,right_filling,25/2) :-
+                                                                            not_interrupted(terminates,right_filling,10,25/2) :-
+                                                                                findall(Var114,findall_can_interrupts(terminates,Var114,right_filling,10,25/2),[switch_left]) :-
+                                                                                    findall_can_interrupts(terminates,switch_left,right_filling,10,Var22 | {Var22 #>= 25/2,Var22 #=< 129/8}) :-
+                                                                                        can_interrupts(terminates,switch_left,right_filling,Var23 | {Var23 #> 10,Var23 #< 129/8}) :-
+                                                                                            can_terminates(switch_left,right_filling,Var23 | {Var23 #> 10,Var23 #< 129/8}).
+                                                                                not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                    not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                        proved(is_not_interval(10,10)),
+                                                                                        is_interval(25/2,129/8),
+                                                                                        not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var115,interrupt_2b_fail(terminates,switch_left,right_filling,Var115,10,25/2),[]),
+                                                                                            all_entirely_outside_of_interval([],10,25/2),
+                                                                                            not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                                                        not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var116,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var116,10,25/2),[25/2]) :-
+                                                                                                interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var24 | {Var24 #>= 25/2,Var24 #=< 129/8}) :-
+                                                                                                    proved(happens(switch_left,25/2)),
+                                                                                                    proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                                                            all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                                                                proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                                                            proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                                                        proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                                                            proved(not_interrupted(releases,right_filling,10,25/2)).
+                                                                proved(initiates(switch_left,left_filling,25/2)),
+                                                                trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                                                    holdsAt(water_right(125),25/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_right(125),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_right(125),25/2) :-
+                                                                            holdsAt(water_right(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_right(100)),
+                                                                                proved(not_stoppedIn(0,water_right(100),10)).
+                                                                        proved(not_stoppedIn(10,right_filling,25/2)).
+                                                                not_stoppedIn(25/2,left_filling,65/4) :-
+                                                                    not_interrupted(terminates,left_filling,25/2,65/4) :-
+                                                                        findall(Var117,findall_can_interrupts(terminates,Var117,left_filling,25/2,65/4),[switch_right]) :-
+                                                                            findall_can_interrupts(terminates,switch_right,left_filling,25/2,Var25 | {Var25 #>= 65/4,Var25 #=< 137/8}) :-
+                                                                                can_interrupts(terminates,switch_right,left_filling,Var26 | {Var26 #> 25/2,Var26 #< 137/8}) :-
+                                                                                    can_terminates(switch_right,left_filling,Var26 | {Var26 #> 25/2,Var26 #< 137/8}).
+                                                                        not_interrupted_N(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                            not_interrupted_2b(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                proved(is_not_interval(25/2,25/2)),
+                                                                                is_interval(65/4,137/8),
+                                                                                not_interrupted_2b_fail(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                    findall(Var118,interrupt_2b_fail(terminates,switch_right,left_filling,Var118,25/2,65/4),[]),
+                                                                                    all_entirely_outside_of_interval([],25/2,65/4),
+                                                                                    not_interrupted_2b_fail(terminates,left_filling,[],25/2,65/4).
+                                                                                not_interrupted_2b_adjust_eq(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                    findall(Var119,interrupt_2b_adjust_eq(terminates,switch_right,left_filling,Var119,25/2,65/4),[65/4]) :-
+                                                                                        interrupt_2b_adjust_eq(terminates,switch_right,left_filling,65/4,25/2,Var27 | {Var27 #>= 65/4,Var27 #=< 137/8}) :-
+                                                                                            proved(happens(switch_right,65/4)),
+                                                                                            proved(interrupts(terminates,switch_right,left_filling,65/4)).
+                                                                                    all_entirely_outside_of_interval([65/4],25/2,65/4) :-
+                                                                                        proved(all_entirely_outside_of_interval([],25/2,65/4)).
+                                                                                    proved(not_interrupted_2b_adjust_eq(terminates,left_filling,[],25/2,65/4)).
+                                                                                proved(not_interrupted_2b_adjust_gt(terminates,left_filling,[switch_right],25/2,65/4)).
+                                                                    proved(not_interrupted(releases,left_filling,25/2,65/4)).
+                                                        proved(initiates(switch_right,right_filling,65/4)),
+                                                        trajectory(right_filling,65/4,water_left(50),145/8) :-
+                                                            holdsAt(water_left(175/2),65/4) :-
+                                                                max_time(100),
+                                                                can_trajectory(left_filling,25/2,water_left(175/2),65/4),
+                                                                can_initiates(switch_left,left_filling,25/2),
+                                                                happens(switch_left,25/2) :-
+                                                                    duration(1),
+                                                                    holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        not_stoppedIn(10,right_filling,25/2) :-
+                                                                            not_interrupted(terminates,right_filling,10,25/2) :-
+                                                                                findall(Var120,findall_can_interrupts(terminates,Var120,right_filling,10,25/2),[switch_left]) :-
+                                                                                    findall_can_interrupts(terminates,switch_left,right_filling,10,Var28 | {Var28 #>= 25/2,Var28 #< 65/4}) :-
+                                                                                        can_interrupts(terminates,switch_left,right_filling,Var29 | {Var29 #> 10,Var29 #< 65/4}) :-
+                                                                                            can_terminates(switch_left,right_filling,Var29 | {Var29 #> 10,Var29 #< 65/4}).
+                                                                                not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                    not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                        proved(is_not_interval(10,10)),
+                                                                                        proved(is_interval(25/2,65/4)),
+                                                                                        not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var121,interrupt_2b_fail(terminates,switch_left,right_filling,Var121,10,25/2),[]),
+                                                                                            all_entirely_outside_of_interval([],10,25/2),
+                                                                                            not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                                                        not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var122,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var122,10,25/2),[25/2]) :-
+                                                                                                interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var30 | {Var30 #>= 25/2,Var30 #< 65/4}) :-
+                                                                                                    proved(happens(switch_left,25/2)),
+                                                                                                    proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                                                            all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                                                                proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                                                            proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                                                        proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                                                            proved(not_interrupted(releases,right_filling,10,25/2)).
+                                                                proved(initiates(switch_left,left_filling,25/2)),
+                                                                trajectory(left_filling,25/2,water_left(175/2),65/4) :-
+                                                                    holdsAt(water_left(50),25/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        proved(not_stoppedIn(10,right_filling,25/2)).
+                                                                proved(not_stoppedIn(25/2,left_filling,65/4)).
+                                                        not_stoppedIn(65/4,right_filling,145/8) :-
+                                                            not_interrupted(terminates,right_filling,65/4,145/8) :-
+                                                                findall(Var123,findall_can_interrupts(terminates,Var123,right_filling,65/4,145/8),[switch_left]) :-
+                                                                    findall_can_interrupts(terminates,switch_left,right_filling,65/4,145/8) :-
+                                                                        can_interrupts(terminates,switch_left,right_filling,Var31 | {Var31 #> 65/4,Var31 #< 145/8}) :-
+                                                                            can_terminates(switch_left,right_filling,Var31 | {Var31 #> 65/4,Var31 #< 145/8}).
+                                                                not_interrupted_N(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                                                    not_interrupted_1(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                                                        proved(is_not_interval(65/4,65/4)),
+                                                                        is_not_interval(145/8,145/8),
+                                                                        not_interrupted_1_fail(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                                                            findall(Var124,interrupt_1_fail(terminates,switch_left,right_filling,Var124,65/4,145/8),[]),
+                                                                            all_entirely_outside_of_interval([],65/4,145/8),
+                                                                            not_interrupted_1_fail(terminates,right_filling,[],65/4,145/8).
+                                                            not_interrupted(releases,right_filling,65/4,145/8) :-
+                                                                findall(Var125,findall_can_interrupts(releases,Var125,right_filling,65/4,145/8),[]),
+                                                                not_interrupted_N(releases,right_filling,[],65/4,145/8) :-
+                                                                    not_interrupted_1(releases,right_filling,[],65/4,145/8) :-
+                                                                        proved(is_not_interval(65/4,65/4)),
+                                                                        proved(is_not_interval(145/8,145/8)),
+                                                                        not_interrupted_1_fail(releases,right_filling,[],65/4,145/8).
+                                                interrupts(terminates,switch_left,right_filling,145/8) :-
+                                                    terminates(switch_left,right_filling,145/8).
+                                        all_entirely_outside_of_interval([145/8],65/4,145/8) :-
+                                            proved(all_entirely_outside_of_interval([],65/4,145/8)).
+                                        not_interrupted_2b_adjust_eq(terminates,right_filling,[],65/4,145/8).
+                                    not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                        findall(Var126,interrupt_2b_adjust_gt(terminates,switch_left,right_filling,Var126,65/4,145/8),[]),
+                                        proved(all_entirely_outside_of_interval([],65/4,145/8)),
+                                        not_interrupted_2b_adjust_gt(terminates,right_filling,[],65/4,145/8).
+                        proved(not_interrupted(releases,right_filling,65/4,145/8)).
+            initiates(switch_left,left_filling,145/8),
+            trajectory(left_filling,145/8,water_right(195/4),153/8) :-
+                holdsAt(water_right(275/4),145/8) :-
+                    max_time(100),
+                    can_trajectory(right_filling,65/4,water_right(275/4),145/8),
+                    can_initiates(switch_right,right_filling,65/4),
+                    happens(switch_right,65/4) :-
+                        duration(1),
+                        holdsAt(water_right(50),65/4,left_filling,15/4) :-
+                            max_time(100),
+                            can_trajectory(left_filling,25/2,water_right(50),65/4),
+                            can_initiates(switch_left,left_filling,25/2),
+                            happens(switch_left,25/2) :-
+                                duration(1),
+                                holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    not_stoppedIn(10,right_filling,25/2) :-
+                                        not_interrupted(terminates,right_filling,10,25/2) :-
+                                            findall(Var127,findall_can_interrupts(terminates,Var127,right_filling,10,25/2),[switch_left]) :-
+                                                findall_can_interrupts(terminates,switch_left,right_filling,10,Var32 | {Var32 #>= 25/2,Var32 #< 137/8}) :-
+                                                    can_interrupts(terminates,switch_left,right_filling,Var33 | {Var33 #> 10,Var33 #< 137/8}) :-
+                                                        can_terminates(switch_left,right_filling,Var33 | {Var33 #> 10,Var33 #< 137/8}).
+                                            not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                    proved(is_not_interval(10,10)),
+                                                    is_interval(25/2,137/8),
+                                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var128,interrupt_2b_fail(terminates,switch_left,right_filling,Var128,10,25/2),[]),
+                                                        all_entirely_outside_of_interval([],10,25/2),
+                                                        not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var129,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var129,10,25/2),[25/2]) :-
+                                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var34 | {Var34 #>= 25/2,Var34 #< 137/8}) :-
+                                                                proved(happens(switch_left,25/2)),
+                                                                proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                        all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                            proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                        proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                    proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                        proved(not_interrupted(releases,right_filling,10,25/2)).
+                            proved(initiates(switch_left,left_filling,25/2)),
+                            trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                holdsAt(water_right(125),25/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_right(125),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_right(125),25/2) :-
+                                        holdsAt(water_right(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_right(100)),
+                                            proved(not_stoppedIn(0,water_right(100),10)).
+                                    proved(not_stoppedIn(10,right_filling,25/2)).
+                            not_stoppedIn(25/2,left_filling,65/4) :-
+                                not_interrupted(terminates,left_filling,25/2,65/4) :-
+                                    findall(Var130,findall_can_interrupts(terminates,Var130,left_filling,25/2,65/4),[switch_right]) :-
+                                        findall_can_interrupts(terminates,switch_right,left_filling,25/2,Var35 | {Var35 #>= 65/4,Var35 #< 145/8}) :-
+                                            can_interrupts(terminates,switch_right,left_filling,Var36 | {Var36 #> 25/2,Var36 #< 145/8}) :-
+                                                can_terminates(switch_right,left_filling,Var36 | {Var36 #> 25/2,Var36 #< 145/8}).
+                                    not_interrupted_N(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                        not_interrupted_2b(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                            proved(is_not_interval(25/2,25/2)),
+                                            is_interval(65/4,145/8),
+                                            not_interrupted_2b_fail(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                findall(Var131,interrupt_2b_fail(terminates,switch_right,left_filling,Var131,25/2,65/4),[]),
+                                                all_entirely_outside_of_interval([],25/2,65/4),
+                                                not_interrupted_2b_fail(terminates,left_filling,[],25/2,65/4).
+                                            not_interrupted_2b_adjust_eq(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                findall(Var132,interrupt_2b_adjust_eq(terminates,switch_right,left_filling,Var132,25/2,65/4),[65/4]) :-
+                                                    interrupt_2b_adjust_eq(terminates,switch_right,left_filling,65/4,25/2,Var37 | {Var37 #>= 65/4,Var37 #< 145/8}) :-
+                                                        proved(happens(switch_right,65/4)),
+                                                        proved(interrupts(terminates,switch_right,left_filling,65/4)).
+                                                all_entirely_outside_of_interval([65/4],25/2,65/4) :-
+                                                    proved(all_entirely_outside_of_interval([],25/2,65/4)).
+                                                proved(not_interrupted_2b_adjust_eq(terminates,left_filling,[],25/2,65/4)).
+                                            proved(not_interrupted_2b_adjust_gt(terminates,left_filling,[switch_right],25/2,65/4)).
+                                proved(not_interrupted(releases,left_filling,25/2,65/4)).
+                    proved(initiates(switch_right,right_filling,65/4)),
+                    trajectory(right_filling,65/4,water_right(275/4),145/8) :-
+                        holdsAt(water_right(50),65/4) :-
+                            max_time(100),
+                            can_trajectory(left_filling,25/2,water_right(50),65/4),
+                            can_initiates(switch_left,left_filling,25/2),
+                            happens(switch_left,25/2) :-
+                                duration(1),
+                                holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    not_stoppedIn(10,right_filling,25/2) :-
+                                        not_interrupted(terminates,right_filling,10,25/2) :-
+                                            findall(Var133,findall_can_interrupts(terminates,Var133,right_filling,10,25/2),[switch_left]) :-
+                                                findall_can_interrupts(terminates,switch_left,right_filling,10,Var38 | {Var38 #>= 25/2,Var38 #< 65/4}) :-
+                                                    can_interrupts(terminates,switch_left,right_filling,Var39 | {Var39 #> 10,Var39 #< 65/4}) :-
+                                                        can_terminates(switch_left,right_filling,Var39 | {Var39 #> 10,Var39 #< 65/4}).
+                                            not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                    proved(is_not_interval(10,10)),
+                                                    proved(is_interval(25/2,65/4)),
+                                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var134,interrupt_2b_fail(terminates,switch_left,right_filling,Var134,10,25/2),[]),
+                                                        all_entirely_outside_of_interval([],10,25/2),
+                                                        not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var135,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var135,10,25/2),[25/2]) :-
+                                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var40 | {Var40 #>= 25/2,Var40 #< 65/4}) :-
+                                                                proved(happens(switch_left,25/2)),
+                                                                proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                        all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                            proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                        proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                    proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                        proved(not_interrupted(releases,right_filling,10,25/2)).
+                            proved(initiates(switch_left,left_filling,25/2)),
+                            trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                holdsAt(water_right(125),25/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_right(125),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_right(125),25/2) :-
+                                        holdsAt(water_right(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_right(100)),
+                                            proved(not_stoppedIn(0,water_right(100),10)).
+                                    proved(not_stoppedIn(10,right_filling,25/2)).
+                            proved(not_stoppedIn(25/2,left_filling,65/4)).
+                    proved(not_stoppedIn(65/4,right_filling,145/8)).
+            not_stoppedIn(145/8,left_filling,153/8) :-
+                not_interrupted(terminates,left_filling,145/8,153/8) :-
+                    findall(Var136,findall_can_interrupts(terminates,Var136,left_filling,145/8,153/8),[switch_right]) :-
+                        findall_can_interrupts(terminates,switch_right,left_filling,145/8,Var41 | {Var41 #>= 153/8,Var41 #< 39/2}) :-
+                            can_interrupts(terminates,switch_right,left_filling,Var42 | {Var42 #> 145/8,Var42 #< 39/2}) :-
+                                can_terminates(switch_right,left_filling,Var42 | {Var42 #> 145/8,Var42 #< 39/2}).
+                    not_interrupted_N(terminates,left_filling,[switch_right],145/8,153/8) :-
+                        not_interrupted_2b(terminates,left_filling,[switch_right],145/8,153/8) :-
+                            proved(is_not_interval(145/8,145/8)),
+                            is_interval(153/8,39/2),
+                            not_interrupted_2b_fail(terminates,left_filling,[switch_right],145/8,153/8) :-
+                                findall(Var137,interrupt_2b_fail(terminates,switch_right,left_filling,Var137,145/8,153/8),[]),
+                                all_entirely_outside_of_interval([],145/8,153/8),
+                                not_interrupted_2b_fail(terminates,left_filling,[],145/8,153/8).
+                            not_interrupted_2b_adjust_eq(terminates,left_filling,[switch_right],145/8,153/8) :-
+                                findall(Var138,interrupt_2b_adjust_eq(terminates,switch_right,left_filling,Var138,145/8,153/8),[153/8]) :-
+                                    interrupt_2b_adjust_eq(terminates,switch_right,left_filling,153/8,145/8,Var43 | {Var43 #>= 153/8,Var43 #< 39/2}) :-
+                                        happens(switch_right,153/8) :-
+                                            duration(1),
+                                            holdsAt(water_right(195/4),153/8,left_filling,1) :-
+                                                max_time(100),
+                                                can_trajectory(left_filling,145/8,water_right(195/4),153/8),
+                                                can_initiates(switch_left,left_filling,145/8),
+                                                happens(switch_left,145/8) :-
+                                                    duration(1),
+                                                    holdsAt(water_left(50),145/8,right_filling,15/8) :-
+                                                        max_time(100),
+                                                        can_trajectory(right_filling,65/4,water_left(50),145/8),
+                                                        can_initiates(switch_right,right_filling,65/4),
+                                                        happens(switch_right,65/4) :-
+                                                            duration(1),
+                                                            holdsAt(water_right(50),65/4,left_filling,15/4) :-
+                                                                max_time(100),
+                                                                can_trajectory(left_filling,25/2,water_right(50),65/4),
+                                                                can_initiates(switch_left,left_filling,25/2),
+                                                                happens(switch_left,25/2) :-
+                                                                    duration(1),
+                                                                    holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        not_stoppedIn(10,right_filling,25/2) :-
+                                                                            not_interrupted(terminates,right_filling,10,25/2) :-
+                                                                                findall(Var139,findall_can_interrupts(terminates,Var139,right_filling,10,25/2),[switch_left]) :-
+                                                                                    findall_can_interrupts(terminates,switch_left,right_filling,10,Var44 | {Var44 #>= 25/2,Var44 #=< 129/8}) :-
+                                                                                        can_interrupts(terminates,switch_left,right_filling,Var45 | {Var45 #> 10,Var45 #< 129/8}) :-
+                                                                                            can_terminates(switch_left,right_filling,Var45 | {Var45 #> 10,Var45 #< 129/8}).
+                                                                                not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                    not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                        proved(is_not_interval(10,10)),
+                                                                                        proved(is_interval(25/2,129/8)),
+                                                                                        not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var140,interrupt_2b_fail(terminates,switch_left,right_filling,Var140,10,25/2),[]),
+                                                                                            all_entirely_outside_of_interval([],10,25/2),
+                                                                                            not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                                                        not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var141,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var141,10,25/2),[25/2]) :-
+                                                                                                interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var46 | {Var46 #>= 25/2,Var46 #=< 129/8}) :-
+                                                                                                    proved(happens(switch_left,25/2)),
+                                                                                                    proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                                                            all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                                                                proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                                                            proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                                                        proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                                                            proved(not_interrupted(releases,right_filling,10,25/2)).
+                                                                proved(initiates(switch_left,left_filling,25/2)),
+                                                                trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                                                    holdsAt(water_right(125),25/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_right(125),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_right(125),25/2) :-
+                                                                            holdsAt(water_right(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_right(100)),
+                                                                                proved(not_stoppedIn(0,water_right(100),10)).
+                                                                        proved(not_stoppedIn(10,right_filling,25/2)).
+                                                                not_stoppedIn(25/2,left_filling,65/4) :-
+                                                                    not_interrupted(terminates,left_filling,25/2,65/4) :-
+                                                                        findall(Var142,findall_can_interrupts(terminates,Var142,left_filling,25/2,65/4),[switch_right]) :-
+                                                                            findall_can_interrupts(terminates,switch_right,left_filling,25/2,Var47 | {Var47 #>= 65/4,Var47 #=< 137/8}) :-
+                                                                                can_interrupts(terminates,switch_right,left_filling,Var48 | {Var48 #> 25/2,Var48 #< 137/8}) :-
+                                                                                    can_terminates(switch_right,left_filling,Var48 | {Var48 #> 25/2,Var48 #< 137/8}).
+                                                                        not_interrupted_N(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                            not_interrupted_2b(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                proved(is_not_interval(25/2,25/2)),
+                                                                                proved(is_interval(65/4,137/8)),
+                                                                                not_interrupted_2b_fail(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                    findall(Var143,interrupt_2b_fail(terminates,switch_right,left_filling,Var143,25/2,65/4),[]),
+                                                                                    all_entirely_outside_of_interval([],25/2,65/4),
+                                                                                    not_interrupted_2b_fail(terminates,left_filling,[],25/2,65/4).
+                                                                                not_interrupted_2b_adjust_eq(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                    findall(Var144,interrupt_2b_adjust_eq(terminates,switch_right,left_filling,Var144,25/2,65/4),[65/4]) :-
+                                                                                        interrupt_2b_adjust_eq(terminates,switch_right,left_filling,65/4,25/2,Var49 | {Var49 #>= 65/4,Var49 #=< 137/8}) :-
+                                                                                            proved(happens(switch_right,65/4)),
+                                                                                            proved(interrupts(terminates,switch_right,left_filling,65/4)).
+                                                                                    all_entirely_outside_of_interval([65/4],25/2,65/4) :-
+                                                                                        proved(all_entirely_outside_of_interval([],25/2,65/4)).
+                                                                                    proved(not_interrupted_2b_adjust_eq(terminates,left_filling,[],25/2,65/4)).
+                                                                                proved(not_interrupted_2b_adjust_gt(terminates,left_filling,[switch_right],25/2,65/4)).
+                                                                    proved(not_interrupted(releases,left_filling,25/2,65/4)).
+                                                        proved(initiates(switch_right,right_filling,65/4)),
+                                                        trajectory(right_filling,65/4,water_left(50),145/8) :-
+                                                            holdsAt(water_left(175/2),65/4) :-
+                                                                max_time(100),
+                                                                can_trajectory(left_filling,25/2,water_left(175/2),65/4),
+                                                                can_initiates(switch_left,left_filling,25/2),
+                                                                happens(switch_left,25/2) :-
+                                                                    duration(1),
+                                                                    holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        not_stoppedIn(10,right_filling,25/2) :-
+                                                                            not_interrupted(terminates,right_filling,10,25/2) :-
+                                                                                findall(Var145,findall_can_interrupts(terminates,Var145,right_filling,10,25/2),[switch_left]) :-
+                                                                                    findall_can_interrupts(terminates,switch_left,right_filling,10,Var50 | {Var50 #>= 25/2,Var50 #< 65/4}) :-
+                                                                                        can_interrupts(terminates,switch_left,right_filling,Var51 | {Var51 #> 10,Var51 #< 65/4}) :-
+                                                                                            can_terminates(switch_left,right_filling,Var51 | {Var51 #> 10,Var51 #< 65/4}).
+                                                                                not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                    not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                        proved(is_not_interval(10,10)),
+                                                                                        proved(is_interval(25/2,65/4)),
+                                                                                        not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var146,interrupt_2b_fail(terminates,switch_left,right_filling,Var146,10,25/2),[]),
+                                                                                            all_entirely_outside_of_interval([],10,25/2),
+                                                                                            not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                                                        not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var147,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var147,10,25/2),[25/2]) :-
+                                                                                                interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var52 | {Var52 #>= 25/2,Var52 #< 65/4}) :-
+                                                                                                    proved(happens(switch_left,25/2)),
+                                                                                                    proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                                                            all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                                                                proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                                                            proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                                                        proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                                                            proved(not_interrupted(releases,right_filling,10,25/2)).
+                                                                proved(initiates(switch_left,left_filling,25/2)),
+                                                                trajectory(left_filling,25/2,water_left(175/2),65/4) :-
+                                                                    holdsAt(water_left(50),25/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        proved(not_stoppedIn(10,right_filling,25/2)).
+                                                                proved(not_stoppedIn(25/2,left_filling,65/4)).
+                                                        proved(not_stoppedIn(65/4,right_filling,145/8)).
+                                                proved(initiates(switch_left,left_filling,145/8)),
+                                                trajectory(left_filling,145/8,water_right(195/4),153/8) :-
+                                                    holdsAt(water_right(275/4),145/8) :-
+                                                        max_time(100),
+                                                        can_trajectory(right_filling,65/4,water_right(275/4),145/8),
+                                                        can_initiates(switch_right,right_filling,65/4),
+                                                        happens(switch_right,65/4) :-
+                                                            duration(1),
+                                                            holdsAt(water_right(50),65/4,left_filling,15/4) :-
+                                                                max_time(100),
+                                                                can_trajectory(left_filling,25/2,water_right(50),65/4),
+                                                                can_initiates(switch_left,left_filling,25/2),
+                                                                happens(switch_left,25/2) :-
+                                                                    duration(1),
+                                                                    holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        not_stoppedIn(10,right_filling,25/2) :-
+                                                                            not_interrupted(terminates,right_filling,10,25/2) :-
+                                                                                findall(Var148,findall_can_interrupts(terminates,Var148,right_filling,10,25/2),[switch_left]) :-
+                                                                                    findall_can_interrupts(terminates,switch_left,right_filling,10,Var53 | {Var53 #>= 25/2,Var53 #< 137/8}) :-
+                                                                                        can_interrupts(terminates,switch_left,right_filling,Var54 | {Var54 #> 10,Var54 #< 137/8}) :-
+                                                                                            can_terminates(switch_left,right_filling,Var54 | {Var54 #> 10,Var54 #< 137/8}).
+                                                                                not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                    not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                        proved(is_not_interval(10,10)),
+                                                                                        proved(is_interval(25/2,137/8)),
+                                                                                        not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var149,interrupt_2b_fail(terminates,switch_left,right_filling,Var149,10,25/2),[]),
+                                                                                            all_entirely_outside_of_interval([],10,25/2),
+                                                                                            not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                                                        not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var150,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var150,10,25/2),[25/2]) :-
+                                                                                                interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var55 | {Var55 #>= 25/2,Var55 #< 137/8}) :-
+                                                                                                    proved(happens(switch_left,25/2)),
+                                                                                                    proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                                                            all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                                                                proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                                                            proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                                                        proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                                                            proved(not_interrupted(releases,right_filling,10,25/2)).
+                                                                proved(initiates(switch_left,left_filling,25/2)),
+                                                                trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                                                    holdsAt(water_right(125),25/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_right(125),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_right(125),25/2) :-
+                                                                            holdsAt(water_right(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_right(100)),
+                                                                                proved(not_stoppedIn(0,water_right(100),10)).
+                                                                        proved(not_stoppedIn(10,right_filling,25/2)).
+                                                                not_stoppedIn(25/2,left_filling,65/4) :-
+                                                                    not_interrupted(terminates,left_filling,25/2,65/4) :-
+                                                                        findall(Var151,findall_can_interrupts(terminates,Var151,left_filling,25/2,65/4),[switch_right]) :-
+                                                                            findall_can_interrupts(terminates,switch_right,left_filling,25/2,Var56 | {Var56 #>= 65/4,Var56 #< 145/8}) :-
+                                                                                can_interrupts(terminates,switch_right,left_filling,Var57 | {Var57 #> 25/2,Var57 #< 145/8}) :-
+                                                                                    can_terminates(switch_right,left_filling,Var57 | {Var57 #> 25/2,Var57 #< 145/8}).
+                                                                        not_interrupted_N(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                            not_interrupted_2b(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                proved(is_not_interval(25/2,25/2)),
+                                                                                proved(is_interval(65/4,145/8)),
+                                                                                not_interrupted_2b_fail(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                    findall(Var152,interrupt_2b_fail(terminates,switch_right,left_filling,Var152,25/2,65/4),[]),
+                                                                                    all_entirely_outside_of_interval([],25/2,65/4),
+                                                                                    not_interrupted_2b_fail(terminates,left_filling,[],25/2,65/4).
+                                                                                not_interrupted_2b_adjust_eq(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                                                    findall(Var153,interrupt_2b_adjust_eq(terminates,switch_right,left_filling,Var153,25/2,65/4),[65/4]) :-
+                                                                                        interrupt_2b_adjust_eq(terminates,switch_right,left_filling,65/4,25/2,Var58 | {Var58 #>= 65/4,Var58 #< 145/8}) :-
+                                                                                            proved(happens(switch_right,65/4)),
+                                                                                            proved(interrupts(terminates,switch_right,left_filling,65/4)).
+                                                                                    all_entirely_outside_of_interval([65/4],25/2,65/4) :-
+                                                                                        proved(all_entirely_outside_of_interval([],25/2,65/4)).
+                                                                                    proved(not_interrupted_2b_adjust_eq(terminates,left_filling,[],25/2,65/4)).
+                                                                                proved(not_interrupted_2b_adjust_gt(terminates,left_filling,[switch_right],25/2,65/4)).
+                                                                    proved(not_interrupted(releases,left_filling,25/2,65/4)).
+                                                        proved(initiates(switch_right,right_filling,65/4)),
+                                                        trajectory(right_filling,65/4,water_right(275/4),145/8) :-
+                                                            holdsAt(water_right(50),65/4) :-
+                                                                max_time(100),
+                                                                can_trajectory(left_filling,25/2,water_right(50),65/4),
+                                                                can_initiates(switch_left,left_filling,25/2),
+                                                                happens(switch_left,25/2) :-
+                                                                    duration(1),
+                                                                    holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_left(50),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_left(50),25/2) :-
+                                                                            holdsAt(water_left(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_left(100)),
+                                                                                proved(not_stoppedIn(0,water_left(100),10)).
+                                                                        not_stoppedIn(10,right_filling,25/2) :-
+                                                                            not_interrupted(terminates,right_filling,10,25/2) :-
+                                                                                findall(Var154,findall_can_interrupts(terminates,Var154,right_filling,10,25/2),[switch_left]) :-
+                                                                                    findall_can_interrupts(terminates,switch_left,right_filling,10,Var59 | {Var59 #>= 25/2,Var59 #< 65/4}) :-
+                                                                                        can_interrupts(terminates,switch_left,right_filling,Var60 | {Var60 #> 10,Var60 #< 65/4}) :-
+                                                                                            can_terminates(switch_left,right_filling,Var60 | {Var60 #> 10,Var60 #< 65/4}).
+                                                                                not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                    not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                        proved(is_not_interval(10,10)),
+                                                                                        proved(is_interval(25/2,65/4)),
+                                                                                        not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var155,interrupt_2b_fail(terminates,switch_left,right_filling,Var155,10,25/2),[]),
+                                                                                            all_entirely_outside_of_interval([],10,25/2),
+                                                                                            not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                                                        not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                                                            findall(Var156,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var156,10,25/2),[25/2]) :-
+                                                                                                interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var61 | {Var61 #>= 25/2,Var61 #< 65/4}) :-
+                                                                                                    proved(happens(switch_left,25/2)),
+                                                                                                    proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                                                            all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                                                                proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                                                            proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                                                        proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                                                            proved(not_interrupted(releases,right_filling,10,25/2)).
+                                                                proved(initiates(switch_left,left_filling,25/2)),
+                                                                trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                                                    holdsAt(water_right(125),25/2) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(right_filling,10,water_right(125),25/2),
+                                                                        can_initiates(start(right),right_filling,10),
+                                                                        happens(start(right),10),
+                                                                        proved(initiates(start(right),right_filling,10)),
+                                                                        trajectory(right_filling,10,water_right(125),25/2) :-
+                                                                            holdsAt(water_right(100),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(water_right(100)),
+                                                                                proved(not_stoppedIn(0,water_right(100),10)).
+                                                                        proved(not_stoppedIn(10,right_filling,25/2)).
+                                                                proved(not_stoppedIn(25/2,left_filling,65/4)).
+                                                        proved(not_stoppedIn(65/4,right_filling,145/8)).
+                                                not_stoppedIn(145/8,left_filling,153/8) :-
+                                                    not_interrupted(terminates,left_filling,145/8,153/8) :-
+                                                        findall(Var157,findall_can_interrupts(terminates,Var157,left_filling,145/8,153/8),[switch_right]) :-
+                                                            findall_can_interrupts(terminates,switch_right,left_filling,145/8,153/8) :-
+                                                                can_interrupts(terminates,switch_right,left_filling,Var62 | {Var62 #> 145/8,Var62 #< 153/8}) :-
+                                                                    can_terminates(switch_right,left_filling,Var62 | {Var62 #> 145/8,Var62 #< 153/8}).
+                                                        not_interrupted_N(terminates,left_filling,[switch_right],145/8,153/8) :-
+                                                            not_interrupted_1(terminates,left_filling,[switch_right],145/8,153/8) :-
+                                                                proved(is_not_interval(145/8,145/8)),
+                                                                is_not_interval(153/8,153/8),
+                                                                not_interrupted_1_fail(terminates,left_filling,[switch_right],145/8,153/8) :-
+                                                                    findall(Var158,interrupt_1_fail(terminates,switch_right,left_filling,Var158,145/8,153/8),[]),
+                                                                    all_entirely_outside_of_interval([],145/8,153/8),
+                                                                    not_interrupted_1_fail(terminates,left_filling,[],145/8,153/8).
+                                                    not_interrupted(releases,left_filling,145/8,153/8) :-
+                                                        findall(Var159,findall_can_interrupts(releases,Var159,left_filling,145/8,153/8),[]),
+                                                        not_interrupted_N(releases,left_filling,[],145/8,153/8) :-
+                                                            not_interrupted_1(releases,left_filling,[],145/8,153/8) :-
+                                                                proved(is_not_interval(145/8,145/8)),
+                                                                proved(is_not_interval(153/8,153/8)),
+                                                                not_interrupted_1_fail(releases,left_filling,[],145/8,153/8).
+                                        interrupts(terminates,switch_right,left_filling,153/8) :-
+                                            terminates(switch_right,left_filling,153/8).
+                                all_entirely_outside_of_interval([153/8],145/8,153/8) :-
+                                    proved(all_entirely_outside_of_interval([],145/8,153/8)).
+                                not_interrupted_2b_adjust_eq(terminates,left_filling,[],145/8,153/8).
+                            not_interrupted_2b_adjust_gt(terminates,left_filling,[switch_right],145/8,153/8) :-
+                                findall(Var160,interrupt_2b_adjust_gt(terminates,switch_right,left_filling,Var160,145/8,153/8),[]),
+                                proved(all_entirely_outside_of_interval([],145/8,153/8)),
+                                not_interrupted_2b_adjust_gt(terminates,left_filling,[],145/8,153/8).
+                proved(not_interrupted(releases,left_filling,145/8,153/8)).
+    initiates(switch_right,right_filling,153/8),
+    trajectory(right_filling,153/8,water_left(105/2),19.5) :-
+        holdsAt(water_left(60),153/8) :-
+            max_time(100),
+            can_trajectory(left_filling,145/8,water_left(60),153/8),
+            can_initiates(switch_left,left_filling,145/8),
+            happens(switch_left,145/8) :-
+                duration(1),
+                holdsAt(water_left(50),145/8,right_filling,15/8) :-
+                    max_time(100),
+                    can_trajectory(right_filling,65/4,water_left(50),145/8),
+                    can_initiates(switch_right,right_filling,65/4),
+                    happens(switch_right,65/4) :-
+                        duration(1),
+                        holdsAt(water_right(50),65/4,left_filling,15/4) :-
+                            max_time(100),
+                            can_trajectory(left_filling,25/2,water_right(50),65/4),
+                            can_initiates(switch_left,left_filling,25/2),
+                            happens(switch_left,25/2) :-
+                                duration(1),
+                                holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    not_stoppedIn(10,right_filling,25/2) :-
+                                        not_interrupted(terminates,right_filling,10,25/2) :-
+                                            findall(Var161,findall_can_interrupts(terminates,Var161,right_filling,10,25/2),[switch_left]) :-
+                                                findall_can_interrupts(terminates,switch_left,right_filling,10,Var63 | {Var63 #>= 25/2,Var63 #< 137/8}) :-
+                                                    can_interrupts(terminates,switch_left,right_filling,Var64 | {Var64 #> 10,Var64 #< 137/8}) :-
+                                                        can_terminates(switch_left,right_filling,Var64 | {Var64 #> 10,Var64 #< 137/8}).
+                                            not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                    proved(is_not_interval(10,10)),
+                                                    proved(is_interval(25/2,137/8)),
+                                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var162,interrupt_2b_fail(terminates,switch_left,right_filling,Var162,10,25/2),[]),
+                                                        all_entirely_outside_of_interval([],10,25/2),
+                                                        not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var163,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var163,10,25/2),[25/2]) :-
+                                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var65 | {Var65 #>= 25/2,Var65 #< 137/8}) :-
+                                                                proved(happens(switch_left,25/2)),
+                                                                proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                        all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                            proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                        proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                    proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                        proved(not_interrupted(releases,right_filling,10,25/2)).
+                            proved(initiates(switch_left,left_filling,25/2)),
+                            trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                holdsAt(water_right(125),25/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_right(125),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_right(125),25/2) :-
+                                        holdsAt(water_right(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_right(100)),
+                                            proved(not_stoppedIn(0,water_right(100),10)).
+                                    proved(not_stoppedIn(10,right_filling,25/2)).
+                            not_stoppedIn(25/2,left_filling,65/4) :-
+                                not_interrupted(terminates,left_filling,25/2,65/4) :-
+                                    findall(Var164,findall_can_interrupts(terminates,Var164,left_filling,25/2,65/4),[switch_right]) :-
+                                        findall_can_interrupts(terminates,switch_right,left_filling,25/2,Var66 | {Var66 #>= 65/4,Var66 #< 145/8}) :-
+                                            can_interrupts(terminates,switch_right,left_filling,Var67 | {Var67 #> 25/2,Var67 #< 145/8}) :-
+                                                can_terminates(switch_right,left_filling,Var67 | {Var67 #> 25/2,Var67 #< 145/8}).
+                                    not_interrupted_N(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                        not_interrupted_2b(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                            proved(is_not_interval(25/2,25/2)),
+                                            proved(is_interval(65/4,145/8)),
+                                            not_interrupted_2b_fail(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                findall(Var165,interrupt_2b_fail(terminates,switch_right,left_filling,Var165,25/2,65/4),[]),
+                                                all_entirely_outside_of_interval([],25/2,65/4),
+                                                not_interrupted_2b_fail(terminates,left_filling,[],25/2,65/4).
+                                            not_interrupted_2b_adjust_eq(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                findall(Var166,interrupt_2b_adjust_eq(terminates,switch_right,left_filling,Var166,25/2,65/4),[65/4]) :-
+                                                    interrupt_2b_adjust_eq(terminates,switch_right,left_filling,65/4,25/2,Var68 | {Var68 #>= 65/4,Var68 #< 145/8}) :-
+                                                        proved(happens(switch_right,65/4)),
+                                                        proved(interrupts(terminates,switch_right,left_filling,65/4)).
+                                                all_entirely_outside_of_interval([65/4],25/2,65/4) :-
+                                                    proved(all_entirely_outside_of_interval([],25/2,65/4)).
+                                                proved(not_interrupted_2b_adjust_eq(terminates,left_filling,[],25/2,65/4)).
+                                            proved(not_interrupted_2b_adjust_gt(terminates,left_filling,[switch_right],25/2,65/4)).
+                                proved(not_interrupted(releases,left_filling,25/2,65/4)).
+                    proved(initiates(switch_right,right_filling,65/4)),
+                    trajectory(right_filling,65/4,water_left(50),145/8) :-
+                        holdsAt(water_left(175/2),65/4) :-
+                            max_time(100),
+                            can_trajectory(left_filling,25/2,water_left(175/2),65/4),
+                            can_initiates(switch_left,left_filling,25/2),
+                            happens(switch_left,25/2) :-
+                                duration(1),
+                                holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    not_stoppedIn(10,right_filling,25/2) :-
+                                        not_interrupted(terminates,right_filling,10,25/2) :-
+                                            findall(Var167,findall_can_interrupts(terminates,Var167,right_filling,10,25/2),[switch_left]) :-
+                                                findall_can_interrupts(terminates,switch_left,right_filling,10,Var69 | {Var69 #>= 25/2,Var69 #< 65/4}) :-
+                                                    can_interrupts(terminates,switch_left,right_filling,Var70 | {Var70 #> 10,Var70 #< 65/4}) :-
+                                                        can_terminates(switch_left,right_filling,Var70 | {Var70 #> 10,Var70 #< 65/4}).
+                                            not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                    proved(is_not_interval(10,10)),
+                                                    proved(is_interval(25/2,65/4)),
+                                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var168,interrupt_2b_fail(terminates,switch_left,right_filling,Var168,10,25/2),[]),
+                                                        all_entirely_outside_of_interval([],10,25/2),
+                                                        not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var169,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var169,10,25/2),[25/2]) :-
+                                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var71 | {Var71 #>= 25/2,Var71 #< 65/4}) :-
+                                                                proved(happens(switch_left,25/2)),
+                                                                proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                        all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                            proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                        proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                    proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                        proved(not_interrupted(releases,right_filling,10,25/2)).
+                            proved(initiates(switch_left,left_filling,25/2)),
+                            trajectory(left_filling,25/2,water_left(175/2),65/4) :-
+                                holdsAt(water_left(50),25/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    proved(not_stoppedIn(10,right_filling,25/2)).
+                            proved(not_stoppedIn(25/2,left_filling,65/4)).
+                    not_stoppedIn(65/4,right_filling,145/8) :-
+                        not_interrupted(terminates,right_filling,65/4,145/8) :-
+                            findall(Var170,findall_can_interrupts(terminates,Var170,right_filling,65/4,145/8),[switch_left]) :-
+                                findall_can_interrupts(terminates,switch_left,right_filling,65/4,Var72 | {Var72 #>= 145/8,Var72 #< 153/8}) :-
+                                    can_interrupts(terminates,switch_left,right_filling,Var73 | {Var73 #> 65/4,Var73 #< 153/8}) :-
+                                        can_terminates(switch_left,right_filling,Var73 | {Var73 #> 65/4,Var73 #< 153/8}).
+                            not_interrupted_N(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                not_interrupted_2b(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                    proved(is_not_interval(65/4,65/4)),
+                                    is_interval(145/8,153/8),
+                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                        findall(Var171,interrupt_2b_fail(terminates,switch_left,right_filling,Var171,65/4,145/8),[]),
+                                        all_entirely_outside_of_interval([],65/4,145/8),
+                                        not_interrupted_2b_fail(terminates,right_filling,[],65/4,145/8).
+                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],65/4,145/8) :-
+                                        findall(Var172,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var172,65/4,145/8),[145/8]) :-
+                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,145/8,65/4,Var74 | {Var74 #>= 145/8,Var74 #< 153/8}) :-
+                                                proved(happens(switch_left,145/8)),
+                                                proved(interrupts(terminates,switch_left,right_filling,145/8)).
+                                        all_entirely_outside_of_interval([145/8],65/4,145/8) :-
+                                            proved(all_entirely_outside_of_interval([],65/4,145/8)).
+                                        proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],65/4,145/8)).
+                                    proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],65/4,145/8)).
+                        proved(not_interrupted(releases,right_filling,65/4,145/8)).
+            proved(initiates(switch_left,left_filling,145/8)),
+            trajectory(left_filling,145/8,water_left(60),153/8) :-
+                holdsAt(water_left(50),145/8) :-
+                    max_time(100),
+                    can_trajectory(right_filling,65/4,water_left(50),145/8),
+                    can_initiates(switch_right,right_filling,65/4),
+                    happens(switch_right,65/4) :-
+                        duration(1),
+                        holdsAt(water_right(50),65/4,left_filling,15/4) :-
+                            max_time(100),
+                            can_trajectory(left_filling,25/2,water_right(50),65/4),
+                            can_initiates(switch_left,left_filling,25/2),
+                            happens(switch_left,25/2) :-
+                                duration(1),
+                                holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    not_stoppedIn(10,right_filling,25/2) :-
+                                        not_interrupted(terminates,right_filling,10,25/2) :-
+                                            findall(Var173,findall_can_interrupts(terminates,Var173,right_filling,10,25/2),[switch_left]) :-
+                                                findall_can_interrupts(terminates,switch_left,right_filling,10,Var75 | {Var75 #>= 25/2,Var75 #< 137/8}) :-
+                                                    can_interrupts(terminates,switch_left,right_filling,Var76 | {Var76 #> 10,Var76 #< 137/8}) :-
+                                                        can_terminates(switch_left,right_filling,Var76 | {Var76 #> 10,Var76 #< 137/8}).
+                                            not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                    proved(is_not_interval(10,10)),
+                                                    proved(is_interval(25/2,137/8)),
+                                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var174,interrupt_2b_fail(terminates,switch_left,right_filling,Var174,10,25/2),[]),
+                                                        all_entirely_outside_of_interval([],10,25/2),
+                                                        not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var175,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var175,10,25/2),[25/2]) :-
+                                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var77 | {Var77 #>= 25/2,Var77 #< 137/8}) :-
+                                                                proved(happens(switch_left,25/2)),
+                                                                proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                        all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                            proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                        proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                    proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                        proved(not_interrupted(releases,right_filling,10,25/2)).
+                            proved(initiates(switch_left,left_filling,25/2)),
+                            trajectory(left_filling,25/2,water_right(50),65/4) :-
+                                holdsAt(water_right(125),25/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_right(125),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_right(125),25/2) :-
+                                        holdsAt(water_right(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_right(100)),
+                                            proved(not_stoppedIn(0,water_right(100),10)).
+                                    proved(not_stoppedIn(10,right_filling,25/2)).
+                            not_stoppedIn(25/2,left_filling,65/4) :-
+                                not_interrupted(terminates,left_filling,25/2,65/4) :-
+                                    findall(Var176,findall_can_interrupts(terminates,Var176,left_filling,25/2,65/4),[switch_right]) :-
+                                        findall_can_interrupts(terminates,switch_right,left_filling,25/2,Var78 | {Var78 #>= 65/4,Var78 #< 145/8}) :-
+                                            can_interrupts(terminates,switch_right,left_filling,Var79 | {Var79 #> 25/2,Var79 #< 145/8}) :-
+                                                can_terminates(switch_right,left_filling,Var79 | {Var79 #> 25/2,Var79 #< 145/8}).
+                                    not_interrupted_N(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                        not_interrupted_2b(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                            proved(is_not_interval(25/2,25/2)),
+                                            proved(is_interval(65/4,145/8)),
+                                            not_interrupted_2b_fail(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                findall(Var177,interrupt_2b_fail(terminates,switch_right,left_filling,Var177,25/2,65/4),[]),
+                                                all_entirely_outside_of_interval([],25/2,65/4),
+                                                not_interrupted_2b_fail(terminates,left_filling,[],25/2,65/4).
+                                            not_interrupted_2b_adjust_eq(terminates,left_filling,[switch_right],25/2,65/4) :-
+                                                findall(Var178,interrupt_2b_adjust_eq(terminates,switch_right,left_filling,Var178,25/2,65/4),[65/4]) :-
+                                                    interrupt_2b_adjust_eq(terminates,switch_right,left_filling,65/4,25/2,Var80 | {Var80 #>= 65/4,Var80 #< 145/8}) :-
+                                                        proved(happens(switch_right,65/4)),
+                                                        proved(interrupts(terminates,switch_right,left_filling,65/4)).
+                                                all_entirely_outside_of_interval([65/4],25/2,65/4) :-
+                                                    proved(all_entirely_outside_of_interval([],25/2,65/4)).
+                                                proved(not_interrupted_2b_adjust_eq(terminates,left_filling,[],25/2,65/4)).
+                                            proved(not_interrupted_2b_adjust_gt(terminates,left_filling,[switch_right],25/2,65/4)).
+                                proved(not_interrupted(releases,left_filling,25/2,65/4)).
+                    proved(initiates(switch_right,right_filling,65/4)),
+                    trajectory(right_filling,65/4,water_left(50),145/8) :-
+                        holdsAt(water_left(175/2),65/4) :-
+                            max_time(100),
+                            can_trajectory(left_filling,25/2,water_left(175/2),65/4),
+                            can_initiates(switch_left,left_filling,25/2),
+                            happens(switch_left,25/2) :-
+                                duration(1),
+                                holdsAt(water_left(50),25/2,right_filling,5/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    not_stoppedIn(10,right_filling,25/2) :-
+                                        not_interrupted(terminates,right_filling,10,25/2) :-
+                                            findall(Var179,findall_can_interrupts(terminates,Var179,right_filling,10,25/2),[switch_left]) :-
+                                                findall_can_interrupts(terminates,switch_left,right_filling,10,Var81 | {Var81 #>= 25/2,Var81 #< 65/4}) :-
+                                                    can_interrupts(terminates,switch_left,right_filling,Var82 | {Var82 #> 10,Var82 #< 65/4}) :-
+                                                        can_terminates(switch_left,right_filling,Var82 | {Var82 #> 10,Var82 #< 65/4}).
+                                            not_interrupted_N(terminates,right_filling,[switch_left],10,25/2) :-
+                                                not_interrupted_2b(terminates,right_filling,[switch_left],10,25/2) :-
+                                                    proved(is_not_interval(10,10)),
+                                                    proved(is_interval(25/2,65/4)),
+                                                    not_interrupted_2b_fail(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var180,interrupt_2b_fail(terminates,switch_left,right_filling,Var180,10,25/2),[]),
+                                                        all_entirely_outside_of_interval([],10,25/2),
+                                                        not_interrupted_2b_fail(terminates,right_filling,[],10,25/2).
+                                                    not_interrupted_2b_adjust_eq(terminates,right_filling,[switch_left],10,25/2) :-
+                                                        findall(Var181,interrupt_2b_adjust_eq(terminates,switch_left,right_filling,Var181,10,25/2),[25/2]) :-
+                                                            interrupt_2b_adjust_eq(terminates,switch_left,right_filling,25/2,10,Var83 | {Var83 #>= 25/2,Var83 #< 65/4}) :-
+                                                                proved(happens(switch_left,25/2)),
+                                                                proved(interrupts(terminates,switch_left,right_filling,25/2)).
+                                                        all_entirely_outside_of_interval([25/2],10,25/2) :-
+                                                            proved(all_entirely_outside_of_interval([],10,25/2)).
+                                                        proved(not_interrupted_2b_adjust_eq(terminates,right_filling,[],10,25/2)).
+                                                    proved(not_interrupted_2b_adjust_gt(terminates,right_filling,[switch_left],10,25/2)).
+                                        proved(not_interrupted(releases,right_filling,10,25/2)).
+                            proved(initiates(switch_left,left_filling,25/2)),
+                            trajectory(left_filling,25/2,water_left(175/2),65/4) :-
+                                holdsAt(water_left(50),25/2) :-
+                                    max_time(100),
+                                    can_trajectory(right_filling,10,water_left(50),25/2),
+                                    can_initiates(start(right),right_filling,10),
+                                    happens(start(right),10),
+                                    proved(initiates(start(right),right_filling,10)),
+                                    trajectory(right_filling,10,water_left(50),25/2) :-
+                                        holdsAt(water_left(100),10) :-
+                                            max_time(100),
+                                            initiallyP(water_left(100)),
+                                            proved(not_stoppedIn(0,water_left(100),10)).
+                                    proved(not_stoppedIn(10,right_filling,25/2)).
+                            proved(not_stoppedIn(25/2,left_filling,65/4)).
+                    proved(not_stoppedIn(65/4,right_filling,145/8)).
+            proved(not_stoppedIn(145/8,left_filling,153/8)).
+    not_stoppedIn(153/8,right_filling,19.5) :-
+        not_interrupted(terminates,right_filling,153/8,19.5) :-
+            findall(Var182,findall_can_interrupts(terminates,Var182,right_filling,153/8,19.5),[switch_left]) :-
+                findall_can_interrupts(terminates,switch_left,right_filling,153/8,19.5) :-
+                    can_interrupts(terminates,switch_left,right_filling,Var84 | {Var84 #> 153/8,Var84 #< 39/2}) :-
+                        can_terminates(switch_left,right_filling,Var84 | {Var84 #> 153/8,Var84 #< 39/2}).
+            not_interrupted_N(terminates,right_filling,[switch_left],153/8,19.5) :-
+                not_interrupted_1(terminates,right_filling,[switch_left],153/8,19.5) :-
+                    proved(is_not_interval(153/8,153/8)),
+                    is_not_interval(39/2,39/2),
+                    not_interrupted_1_fail(terminates,right_filling,[switch_left],153/8,19.5) :-
+                        findall(Var183,interrupt_1_fail(terminates,switch_left,right_filling,Var183,153/8,19.5),[]),
+                        all_entirely_outside_of_interval([],153/8,19.5),
+                        not_interrupted_1_fail(terminates,right_filling,[],153/8,19.5).
+        not_interrupted(releases,right_filling,153/8,19.5) :-
+            findall(Var184,findall_can_interrupts(releases,Var184,right_filling,153/8,19.5),[]),
+            not_interrupted_N(releases,right_filling,[],153/8,19.5) :-
+                not_interrupted_1(releases,right_filling,[],153/8,19.5) :-
+                    proved(is_not_interval(153/8,153/8)),
+                    proved(is_not_interval(39/2,39/2)),
+                    not_interrupted_1_fail(releases,right_filling,[],153/8,19.5).
+global_constraint.
+
+MODEL:
+{ holdsAt(water_left(105/2),19.5),  happens(switch_right,153/8),  happens(switch_left,145/8),  happens(switch_right,65/4),  happens(switch_left,25/2),  happens(start(right),10),  initiates(start(right),right_filling,10),  trajectory(right_filling,10,water_left(50),25/2),  holdsAt(water_left(100),10),  initiallyP(water_left(100)),  not_stoppedIn(0,water_left(100),10),  not_stoppedIn(10,right_filling,25/2),  terminates(switch_left,right_filling,25/2),  initiates(switch_left,left_filling,25/2),  trajectory(left_filling,25/2,water_right(50),65/4),  holdsAt(water_right(125),25/2),  trajectory(right_filling,10,water_right(125),25/2),  holdsAt(water_right(100),10),  initiallyP(water_right(100)),  not_stoppedIn(0,water_right(100),10),  not_stoppedIn(25/2,left_filling,65/4),  terminates(switch_right,left_filling,65/4),  initiates(switch_right,right_filling,65/4),  trajectory(right_filling,65/4,water_left(50),145/8),  holdsAt(water_left(175/2),65/4),  trajectory(left_filling,25/2,water_left(175/2),65/4),  holdsAt(water_left(50),25/2),  not_stoppedIn(65/4,right_filling,145/8),  terminates(switch_left,right_filling,145/8),  initiates(switch_left,left_filling,145/8),  trajectory(left_filling,145/8,water_right(195/4),153/8),  holdsAt(water_right(275/4),145/8),  trajectory(right_filling,65/4,water_right(275/4),145/8),  holdsAt(water_right(50),65/4),  not_stoppedIn(145/8,left_filling,153/8),  terminates(switch_right,left_filling,153/8),  initiates(switch_right,right_filling,153/8),  trajectory(right_filling,153/8,water_left(105/2),19.5),  holdsAt(water_left(60),153/8),  trajectory(left_filling,145/8,water_left(60),153/8),  holdsAt(water_left(50),145/8),  not_stoppedIn(153/8,right_filling,19.5) }
+BINDINGS: 
+X = 105/2
+
+
+  real      14:36.25
+  real [s]  876.25
+  user [s]  874.73
+  sys  [s]  0.10
+  mem  [KB] 43352
+  avgm [KB] 0

@@ -12,28 +12,28 @@ holdsAt(water_left(105/2),19.5) :-
     can_initiates(switch_right,right_filling,153/8) :-
         incr_happens(switch_right,153/8).
     happens(switch_right,153/8) :-
-        delay(1),
+        duration(1),
         holdsAt(water_right(195/4),153/8,left_filling,1) :-
             max_time(100),
             can_trajectory(left_filling,145/8,water_right(195/4),153/8),
             can_initiates(switch_left,left_filling,145/8) :-
                 incr_happens(switch_left,145/8).
             happens(switch_left,145/8) :-
-                delay(1),
+                duration(1),
                 holdsAt(water_left(50),145/8,right_filling,15/8) :-
                     max_time(100),
                     can_trajectory(right_filling,65/4,water_left(50),145/8),
                     can_initiates(switch_right,right_filling,65/4) :-
                         incr_happens(switch_right,65/4).
                     happens(switch_right,65/4) :-
-                        delay(1),
+                        duration(1),
                         holdsAt(water_right(50),65/4,left_filling,15/4) :-
                             max_time(100),
                             can_trajectory(left_filling,25/2,water_right(50),65/4),
                             can_initiates(switch_left,left_filling,25/2) :-
                                 incr_happens(switch_left,25/2).
                             happens(switch_left,25/2) :-
-                                delay(1),
+                                duration(1),
                                 holdsAt(water_left(50),25/2,right_filling,5/2) :-
                                     max_time(100),
                                     can_trajectory(right_filling,10,water_left(50),25/2),

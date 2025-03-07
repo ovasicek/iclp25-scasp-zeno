@@ -88,9 +88,9 @@ happens(start(right),           10).
 ?- holdsAt(water_left(X),       625/32).%(19.53125) % non-term., should be 50
 ?- holdsAt(water_right(X),      625/32).%(19.53125) % non-term., should be 54.6875 (875/16)
 
+?- T .=<. 19.5, happens(switch_left,  T).           % non-term., should be % 25/2 (12.5), 145/8 (18.125)
 ?- T .=<. 19.5, happens(switch_right, T).           % non-term., should be 65/4, 305/16
-?- T .=<. 19.5, happens(switch_left,  T).           % non-term., should be 25/2, 145/8
-?- holdsAt(water_left(X),       19.5).              % non-term.
+?- holdsAt(water_left(X),       19.5).              % non-term., should be 405/8 (50.625)
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
 
