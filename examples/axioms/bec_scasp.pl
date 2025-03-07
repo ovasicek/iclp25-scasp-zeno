@@ -158,26 +158,6 @@ not_startedIn(T1, Fluent, T2) :-
     not_interrupted(releases, Fluent, T1, T2).
 
 
-% TODO "becomes"
-initiatedAt(Fluent, T) :- 
-    can_initiates(Event, Fluent, T),
-    happens(Event, T),
-    initiates(Event, Fluent, T).
-terminatedAt(Fluent, T) :- 
-    can_terminates(Event, Fluent, T),
-    happens(Event, T),
-    terminates(Event, Fluent, T).
-
-
-can_interrupts(initiates, E, Fluent, T) :- can_initiates(E, Fluent, T).
-can_interrupts(terminates, E, Fluent, T) :- can_terminates(E, Fluent, T).
-can_interrupts(releases, E, Fluent, T) :- can_releases(E, Fluent, T).
-
-interrupts(initiates, E, F, T) :- initiates(E, F, T).
-interrupts(terminates, E, F, T) :- terminates(E, F, T).
-interrupts(releases, E, F, T) :- releases(E, F, T).
-
-
 % configurable rule that can handle all three types of fluent interruptions (to avoid duplicit code)
 % Type_TermInitRel = initiates / terminates / releases
 not_interrupted(Type_TermInitRel, Fluent, T1, T2) :- 
@@ -200,6 +180,14 @@ interrupted(Type_TermInitRel, E, F, T, T1, T2) :-
     happens(E, T),
     interrupts(Type_TermInitRel, E, F, T).
 
+% other helper predicates
+can_interrupts(initiates, E, Fluent, T) :- can_initiates(E, Fluent, T).
+can_interrupts(terminates, E, Fluent, T) :- can_terminates(E, Fluent, T).
+can_interrupts(releases, E, Fluent, T) :- can_releases(E, Fluent, T).
+
+interrupts(initiates, E, F, T) :- initiates(E, F, T).
+interrupts(terminates, E, F, T) :- terminates(E, F, T).
+interrupts(releases, E, F, T) :- releases(E, F, T).
 
 % check that all intervals/values of T's do not permit any values inside of the (T1, T2) interval (which can both also be intervals...)
 all_entirely_outside_of_interval([H|T], T1, T2) :- sup(H, Hsup), Hsup .=<. T1, all_entirely_outside_of_interval(T, T1, T2).

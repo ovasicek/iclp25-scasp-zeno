@@ -158,40 +158,6 @@ not_startedIn(T1, Fluent, T2) :-
     not_interrupted(releases, Fluent, T1, T2).
 
 
-% TODO "becomes"
-initiatedAt(Fluent, T) :- 
-    can_initiates(Event, Fluent, T),
-    happens(Event, T),
-    initiates(Event, Fluent, T).
-terminatedAt(Fluent, T) :- 
-    can_terminates(Event, Fluent, T),
-    happens(Event, T),
-    terminates(Event, Fluent, T).
-
-
-can_interrupts(initiates, E, Fluent, T) :- can_initiates(E, Fluent, T).
-can_interrupts(terminates, E, Fluent, T) :- can_terminates(E, Fluent, T).
-can_interrupts(releases, E, Fluent, T) :- can_releases(E, Fluent, T).
-
-interrupts(initiates, E, F, T) :- initiates(E, F, T).
-interrupts(terminates, E, F, T) :- terminates(E, F, T).
-interrupts(releases, E, F, T) :- releases(E, F, T).
-
-
-% succeds if the variable is a non-infinite interval (needs to have both bounds) 
-is_interval(Xinf, Xsup) :- Xinf .<>. Xsup.
-
-% succeds if the variable is a single point (not an interval)
-is_not_interval(Xinf, Xsup) :- Xinf .=. Xsup.
-
-% succeds if X and Y have an intersection as intervals (overlap)
-have_intersection(Xinf, Xsup, Yinf, Ysup) :- Xinf .=<. Yinf, Xsup .=<. Yinf.
-have_intersection(Xinf, Xsup, Yinf, Ysup) :- Yinf .=<. Xinf, Ysup .=<. Xinf.
-
-% succeds if X and Y have no intersection as intervals (no overlap)
-no_intersection(Xinf, Xsup, Yinf, Ysup) :- Xsup .<. Yinf.
-no_intersection(Xinf, Xsup, Yinf, Ysup) :- Ysup .<. Xinf.
-
 % configurable rule that can handle all three types of fluent interruptions (to avoid duplicit code)
 % Type_TermInitRel = initiates / terminates / releases
 %
@@ -392,6 +358,29 @@ interrupt_4_adjust(Type_TermInitRel, E, F, T, T1, T2) :-
     happens(E, T),
     interrupts(Type_TermInitRel, E, F, T).
 
+
+% other helper predicates
+can_interrupts(initiates, E, Fluent, T) :- can_initiates(E, Fluent, T).
+can_interrupts(terminates, E, Fluent, T) :- can_terminates(E, Fluent, T).
+can_interrupts(releases, E, Fluent, T) :- can_releases(E, Fluent, T).
+
+interrupts(initiates, E, F, T) :- initiates(E, F, T).
+interrupts(terminates, E, F, T) :- terminates(E, F, T).
+interrupts(releases, E, F, T) :- releases(E, F, T).
+
+% succeds if the variable is a non-infinite interval (needs to have both bounds) 
+is_interval(Xinf, Xsup) :- Xinf .<>. Xsup.
+
+% succeds if the variable is a single point (not an interval)
+is_not_interval(Xinf, Xsup) :- Xinf .=. Xsup.
+
+% succeds if X and Y have an intersection as intervals (overlap)
+have_intersection(Xinf, Xsup, Yinf, Ysup) :- Xinf .=<. Yinf, Xsup .=<. Yinf.
+have_intersection(Xinf, Xsup, Yinf, Ysup) :- Yinf .=<. Xinf, Ysup .=<. Xinf.
+
+% succeds if X and Y have no intersection as intervals (no overlap)
+no_intersection(Xinf, Xsup, Yinf, Ysup) :- Xsup .<. Yinf.
+no_intersection(Xinf, Xsup, Yinf, Ysup) :- Ysup .<. Xinf.
 
 % check that all intervals/values of T's do not permit any values inside of the (T1, T2) interval (which can both also be intervals...)
 all_entirely_outside_of_interval([H|T], T1, T2) :- sup(H, Hsup), Hsup .=<. T1, all_entirely_outside_of_interval(T, T1, T2).

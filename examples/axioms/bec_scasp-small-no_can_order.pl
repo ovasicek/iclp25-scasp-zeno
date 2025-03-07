@@ -1,21 +1,22 @@
 % small version:
 %   no trajectory related axioms and no releases
 %   no new axioms
+% and no can_* rules with terminates/initiates before happens in axioms
+%   can_* rules and order preserved inside of not_stoppedIn/startedIn so that axioms with initiallyP/N work fine (BEC4/5)
+%   this limits the non-termination to other axioms where it is easier to understand/visualize (BEC6/7)
 
 %% BEC1 - StoppedIn(t1,f,t2)
 stoppedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
-    can_terminates(Event, Fluent, T),
-    happens(Event, T),
-    terminates(Event, Fluent, T).
+    terminates(Event, Fluent, T),
+    happens(Event, T).
 
 
 %% BEC2 - StartedIn(t1,f,t2)
 startedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
-    can_initiates(Event, Fluent, T),
-    happens(Event, T),
-    initiates(Event, Fluent, T).
+    initiates(Event, Fluent, T),
+    happens(Event, T).
 
 
 %% BEC4 - holdsAt(f,t)
@@ -30,9 +31,8 @@ holdsAt(Fluent, T) :-
 holdsAt(Fluent, T2) :-
     T1 .>. 0, T1 .<. T2,
     max_time(T3), T2 .=<. T3,
-    can_initiates(Event, Fluent, T1),
-    happens(Event, T1),
     initiates(Event, Fluent, T1),
+    happens(Event, T1),
     not_stoppedIn(T1, Fluent, T2).
 
 
@@ -49,9 +49,8 @@ not_holdsAt(Fluent, T2) :-
     T1 .>. 0,
     T1 .<. T2,
     max_time(T3), T2 .=<. T3,
-    can_terminates(Event, Fluent, T1),
-    happens(Event, T1),
     terminates(Event, Fluent, T1),
+    happens(Event, T1),
     not_startedIn(T1, Fluent, T2).
 
 
