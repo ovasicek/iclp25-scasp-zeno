@@ -1,9 +1,9 @@
-$ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --tree
+$ oscasp -s0 ../axioms/bec_scasp-small.pl ./model.pl --tree
 
 
 % QUERY:?- holdsAt(light_on,T).
 
-	ANSWER:	1 (in 1.644 ms)
+	ANSWER:	1 (in 1.072 ms)
 
 JUSTIFICATION_TREE:
 holdsAt(light_on,T | {T #> 10,T #=< 20}) :-
@@ -12,25 +12,18 @@ holdsAt(light_on,T | {T #> 10,T #=< 20}) :-
     happens(turn_light_on,10),
     initiates(turn_light_on,light_on,10),
     not_stoppedIn(10,light_on,T | {T #> 10,T #=< 20}) :-
-        not_interrupted(terminates,light_on,10,T | {T #> 10,T #=< 20}) :-
-            findall(Var4,findall_can_interrupts(terminates,Var4,light_on,10,T | {T #> 10,T #=< 20}),[turn_light_off]) :-
-                findall_can_interrupts(terminates,turn_light_off,light_on,10,Var1 | {Var1 #> 10,Var1 #=< 100}) :-
-                    can_interrupts(terminates,turn_light_off,light_on,Var2 | {Var2 #> 10,Var2 #< 100}) :-
-                        can_terminates(turn_light_off,light_on,Var2 | {Var2 #> 10,Var2 #< 100}).
-            not_interrupted_(terminates,light_on,[turn_light_off],10,T | {T #> 10,T #=< 20}) :-
-                findall(Var5,interrupted(terminates,turn_light_off,light_on,Var5,10,T | {T #> 10,T #=< 20}),[20]) :-
-                    interrupted(terminates,turn_light_off,light_on,20,10,Var3 | {Var3 #> 20,Var3 #=< 100}) :-
-                        can_interrupts(terminates,turn_light_off,light_on,20) :-
-                            can_terminates(turn_light_off,light_on,20).
-                        happens(turn_light_off,20),
-                        interrupts(terminates,turn_light_off,light_on,20) :-
-                            terminates(turn_light_off,light_on,20).
-                all_entirely_outside_of_interval([20],10,T | {T #> 10,T #=< 20}) :-
-                    all_entirely_outside_of_interval([],10,T | {T #> 10,T #=< 20}).
-                not_interrupted_(terminates,light_on,[],10,T | {T #> 10,T #=< 20}).
-        not_interrupted(releases,light_on,10,T | {T #> 10,T #=< 20}) :-
-            findall(Var6,findall_can_interrupts(releases,Var6,light_on,10,T | {T #> 10,T #=< 20}),[]),
-            not_interrupted_(releases,light_on,[],10,T | {T #> 10,T #=< 20}).
+        findall(Var4,findall_can_terminates(Var4,light_on,10,T | {T #> 10,T #=< 20}),[turn_light_off]) :-
+            findall_can_terminates(turn_light_off,light_on,10,Var1 | {Var1 #> 10,Var1 #=< 100}) :-
+                can_terminates(turn_light_off,light_on,Var2 | {Var2 #> 10,Var2 #< 100}).
+        not_terminated(light_on,[turn_light_off],10,T | {T #> 10,T #=< 20}) :-
+            findall(Var5,terminated(turn_light_off,light_on,Var5,10,T | {T #> 10,T #=< 20}),[20]) :-
+                terminated(turn_light_off,light_on,20,10,Var3 | {Var3 #> 20,Var3 #=< 100}) :-
+                    can_terminates(turn_light_off,light_on,20),
+                    happens(turn_light_off,20),
+                    terminates(turn_light_off,light_on,20).
+            all_entirely_outside_of_interval([20],10,T | {T #> 10,T #=< 20}) :-
+                all_entirely_outside_of_interval([],10,T | {T #> 10,T #=< 20}).
+            not_terminated(light_on,[],10,T | {T #> 10,T #=< 20}).
 global_constraint.
 
 MODEL:
@@ -39,9 +32,9 @@ BINDINGS:
 T #> 10,T #=< 20
 
 
-  real      0:00.30
-  real [s]  0.30
-  user [s]  0.14
-  sys  [s]  0.02
-  mem  [KB] 28564
+  real      0:00.26
+  real [s]  0.26
+  user [s]  0.10
+  sys  [s]  0.04
+  mem  [KB] 26580
   avgm [KB] 0

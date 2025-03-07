@@ -1,0 +1,12 @@
+$ oscasp -s0 ../axioms/bec_scasp-small-no_can_order.pl --tree
+
+
+
+Query not defined
+
+  real      0:00.22
+  real [s]  0.22
+  user [s]  0.12
+  sys  [s]  0.00
+  mem  [KB] 26672
+  avgm [KB] 0
