@@ -34,12 +34,12 @@ initiates(switch_right, left_draining, T) :-
     X .>. 50, holdsAt(water_left(X), T, left_filling).
 
 trajectory(left_filling, T1, water_left(NewW), T2) :-
-    TotalFlow .=. 20 - 10, % in rate 20, out rate 10
+    TotalFlow .=. 30 - 20, % in rate 30, out rate 20
     NewW .=. OldW + ((T2-T1) * TotalFlow),
     holdsAt(water_left(OldW), T1).
 
 trajectory(left_draining, T1, water_left(NewW), T2) :-
-    NewW .=. OldW - ((T2-T1) * 10), % out rate 10
+    NewW .=. OldW - ((T2-T1) * 20), % out rate 20
     holdsAt(water_left(OldW), T1).
 
 happens(switch_left, T) :- !spy,
@@ -48,21 +48,19 @@ happens(switch_left, T) :- !spy,
     
 
 % ----- narrative & queries  -----
+% based on narrative 2
 
 initiallyP(water_left(0)).
 initiallyN(F) :- not initiallyP(F).
 
-?- holdsAt(water_left(X),       5).     % 0
+happens(start(left),        10).
 
-happens(start(left),            10).
-?- holdsAt(water_left(X),       12).    % 20
+happens(switch_right,       13).    % switch while below target
+?- holdsAt(water_left(X),   13).    % 30
 
-happens(switch_right,           13).    % switch while below target
-?- holdsAt(water_left(X),       13).    % 30
-
-?- holdsAt(left_draining,       T).     % no models
-?- happens(switch_left,         T).     % no models
-?- holdsAt(water_left(X),       15).    % 50
+?- holdsAt(left_draining,   T).     % no models
+?- happens(switch_left,     T).     % no models
+?- holdsAt(water_left(X),   15).    % 50
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/

@@ -3,22 +3,22 @@ $ oscasp -s0 ../axioms/bec_scasp-interval_not.pl ./model-fixed-split_holdsAt4.pl
 
 % QUERY:?- holdsAt(water_left(X),15).
 
-	ANSWER:	1 (in 102.932 ms)
+	ANSWER:	1 (in 134.265 ms)
 
 JUSTIFICATION_TREE:
-holdsAt(water_left(30),15) :-
+holdsAt(water_left(20),15) :-
     max_time(100),
-    can_trajectory(left_filling,14,water_left(30),15),
+    can_trajectory(left_filling,14,water_left(20),15),
     can_initiates(switch_left,left_filling,14),
     happens(switch_left,14) :-
         duration(1),
-        holdsAt(water_left(20),14,left_draining,1) :-
+        holdsAt(water_left(10),14,left_draining,1) :-
             max_time(100),
-            can_trajectory(left_draining,13,water_left(20),14),
+            can_trajectory(left_draining,13,water_left(10),14),
             can_initiates(switch_right,left_draining,13),
             happens(switch_right,13),
             initiates(switch_right,left_draining,13),
-            trajectory(left_draining,13,water_left(20),14) :-
+            trajectory(left_draining,13,water_left(10),14) :-
                 holdsAt(water_left(30),13) :-
                     max_time(100),
                     can_trajectory(left_filling,10,water_left(30),13),
@@ -93,14 +93,14 @@ holdsAt(water_left(30),15) :-
                             proved(is_not_interval(14,14)),
                             not_interrupted_1_fail(releases,left_draining,[],13,14).
     initiates(switch_left,left_filling,14),
-    trajectory(left_filling,14,water_left(30),15) :-
-        holdsAt(water_left(20),14) :-
+    trajectory(left_filling,14,water_left(20),15) :-
+        holdsAt(water_left(10),14) :-
             max_time(100),
-            can_trajectory(left_draining,13,water_left(20),14),
+            can_trajectory(left_draining,13,water_left(10),14),
             can_initiates(switch_right,left_draining,13),
             happens(switch_right,13),
             proved(initiates(switch_right,left_draining,13)),
-            trajectory(left_draining,13,water_left(20),14) :-
+            trajectory(left_draining,13,water_left(10),14) :-
                 holdsAt(water_left(30),13) :-
                     max_time(100),
                     can_trajectory(left_filling,10,water_left(30),13),
@@ -138,14 +138,14 @@ holdsAt(water_left(30),15) :-
 global_constraint.
 
 MODEL:
-{ holdsAt(water_left(30),15),  happens(switch_left,14),  happens(switch_right,13),  initiates(switch_right,left_draining,13),  trajectory(left_draining,13,water_left(20),14),  holdsAt(water_left(30),13),  happens(start(left),10),  initiates(start(left),left_filling,10),  trajectory(left_filling,10,water_left(30),13),  holdsAt(water_left(0),10),  initiallyP(water_left(0)),  not_stoppedIn(0,water_left(0),10),  not_stoppedIn(10,left_filling,13),  not_stoppedIn(13,left_draining,14),  initiates(switch_left,left_filling,14),  trajectory(left_filling,14,water_left(30),15),  holdsAt(water_left(20),14),  not_stoppedIn(14,left_filling,15) }
+{ holdsAt(water_left(20),15),  happens(switch_left,14),  happens(switch_right,13),  initiates(switch_right,left_draining,13),  trajectory(left_draining,13,water_left(10),14),  holdsAt(water_left(30),13),  happens(start(left),10),  initiates(start(left),left_filling,10),  trajectory(left_filling,10,water_left(30),13),  holdsAt(water_left(0),10),  initiallyP(water_left(0)),  not_stoppedIn(0,water_left(0),10),  not_stoppedIn(10,left_filling,13),  not_stoppedIn(13,left_draining,14),  initiates(switch_left,left_filling,14),  trajectory(left_filling,14,water_left(20),15),  holdsAt(water_left(10),14),  not_stoppedIn(14,left_filling,15) }
 BINDINGS: 
-X = 30
+X = 20
 
 
-  real      0:00.63
-  real [s]  0.63
-  user [s]  0.37
-  sys  [s]  0.03
-  mem  [KB] 32692
+  real      0:00.81
+  real [s]  0.81
+  user [s]  0.51
+  sys  [s]  0.04
+  mem  [KB] 32724
   avgm [KB] 0

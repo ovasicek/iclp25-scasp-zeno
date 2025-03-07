@@ -32,12 +32,12 @@ terminates(switch_right, left_filling, T).
 initiates(switch_right, left_draining, T).
 
 trajectory(left_filling, T1, water_left(NewW), T2) :-
-    TotalFlow .=. 20 - 10, % in rate 20, out rate 10
+    TotalFlow .=. 30 - 20, % in rate 30, out rate 20
     NewW .=. OldW + ((T2-T1) * TotalFlow),
     holdsAt(water_left(OldW), T1).
 
 trajectory(left_draining, T1, water_left(NewW), T2) :-
-    NewW .=. OldW - ((T2-T1) * 10), % out rate 10
+    NewW .=. OldW - ((T2-T1) * 20), % out rate 20
     holdsAt(water_left(OldW), T1).
 
 happens(switch_left, T) :- !spy,

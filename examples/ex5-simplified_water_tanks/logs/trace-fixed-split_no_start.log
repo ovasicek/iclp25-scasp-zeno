@@ -3,7 +3,7 @@ $ oscasp -s0 ../axioms/bec_scasp-interval_not.pl ./model-fixed-split_no_start.pl
 
 % QUERY:?- holdsAt(water_left(X),15).
 
-	ANSWER:	1 (in 11.768 ms)
+	ANSWER:	1 (in 14.938 ms)
 
 JUSTIFICATION_TREE:
 holdsAt(water_left(50),15) :-
@@ -66,9 +66,9 @@ BINDINGS:
 X = 50
 
 
-  real      0:00.48
-  real [s]  0.48
-  user [s]  0.28
+  real      0:00.63
+  real [s]  0.63
+  user [s]  0.37
   sys  [s]  0.02
-  mem  [KB] 32664
+  mem  [KB] 32720
   avgm [KB] 0
