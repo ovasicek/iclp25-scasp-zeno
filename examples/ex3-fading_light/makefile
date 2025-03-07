@@ -22,9 +22,8 @@ run-fixed-holdsAt3:
 
 
 #-----------------------------------------------------------------------------------------------------------------------
-# makes snapshots of the resolution trace using !spy
-# uses a timeout for the non-terminating cases
-# each run might produce a trace of different length due to the timeout
+# log the resolution tree of the answer for terminating examples
+# and trace the building of the resolution tree via !spy and a timeout for non-terminating examples
 
 trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000" ./logs/trace-non_term.log
