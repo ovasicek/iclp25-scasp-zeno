@@ -4,7 +4,7 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
 % QUERY:?- happens(fade_in_end,T).
 
 --------------------- Calling:  builtin(!spy) -------------
-    happens(fade_in_end,_45963)
+    happens(fade_in_end,_100062)
         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -29,19 +29,24 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
                     not_stoppedIn(0,brightness(0),10)
                         0.=<.10
                         not_interrupted(terminates,brightness(0),0,10)
-                            findall(_49108,findall_can_interrupts(terminates,_49108,brightness(0),0,10),[fade_in_end])
+                            findall(_103207,findall_can_interrupts(terminates,_103207,brightness(0),0,10),[fade_in_end,turn_light_off])
                                 findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
-                                     {_49265~[_49265 > 0, _49265 < 10]} .>.0
-                                     {_49265~[_49265 > 0, _49265 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
-                                interrupted(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} ,0,10)
-                                     {_49738~[_49738 > 0, _49738 < 10]} .>.0
-                                     {_49738~[_49738 > 0, _49738 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                    happens(fade_in_end, {_49738~[_49738 > 0, _49738 < 10]} )
+                                     {_103537~[_103537 > 0, _103537 < 10]} .>.0
+                                     {_103537~[_103537 > 0, _103537 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10)
+                                     {_103364~[_103364 > 0, _103364 < 10]} .>.0
+                                     {_103364~[_103364 > 0, _103364 < 10]} .<.10
+                                    can_interrupts(terminates,turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                                        can_terminates(turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end,turn_light_off],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} ,0,10)
+                                     {_104058~[_104058 > 0, _104058 < 10]} .>.0
+                                     {_104058~[_104058 > 0, _104058 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                    happens(fade_in_end, {_104058~[_104058 > 0, _104058 < 10]} )
                                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -66,27 +71,32 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
                     not_stoppedIn(0,brightness(0),10)
                         0.=<.10
                         not_interrupted(terminates,brightness(0),0,10)
-                            findall(_49108,findall_can_interrupts(terminates,_49108,brightness(0),0,10),[fade_in_end])
+                            findall(_103207,findall_can_interrupts(terminates,_103207,brightness(0),0,10),[fade_in_end,turn_light_off])
                                 findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
-                                     {_49265~[_49265 > 0, _49265 < 10]} .>.0
-                                     {_49265~[_49265 > 0, _49265 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
-                                interrupted(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} ,0,10)
-                                     {_49738~[_49738 > 0, _49738 < 10]} .>.0
-                                     {_49738~[_49738 > 0, _49738 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                    happens(fade_in_end, {_49738~[_49738 > 0, _49738 < 10]} )
+                                     {_103537~[_103537 > 0, _103537 < 10]} .>.0
+                                     {_103537~[_103537 > 0, _103537 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10)
+                                     {_103364~[_103364 > 0, _103364 < 10]} .>.0
+                                     {_103364~[_103364 > 0, _103364 < 10]} .<.10
+                                    can_interrupts(terminates,turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                                        can_terminates(turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end,turn_light_off],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} ,0,10)
+                                     {_104058~[_104058 > 0, _104058 < 10]} .>.0
+                                     {_104058~[_104058 > 0, _104058 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                    happens(fade_in_end, {_104058~[_104058 > 0, _104058 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(brightness(10), {_49738~[_49738 > 0, _49738 < 10]} )
-                                             {_51472~[_51472 > 0, _51472 < 10]} .>.0
-                                             {_51472~[_51472 > 0, _51472 < 10]} .<. {_49738~[_49738 > 0, _49738 < 10]} 
+                                        holdsAt(brightness(10), {_104058~[_104058 > 0, _104058 < 10]} )
+                                             {_105905~[_105905 > 0, _105905 < 10]} .>.0
+                                             {_105905~[_105905 > 0, _105905 < 10]} .<. {_104058~[_104058 > 0, _104058 < 10]} 
                                             max_time(100)
-                                             {_49738~[_49738 > 0, _49738 < 10]} .=<.100
-                                            can_initiates(fade_in_end,brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                            happens(fade_in_end, {_51472~[_51472 > 0, _51472 < 10]} )
+                                             {_104058~[_104058 > 0, _104058 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10), {_105905~[_105905 > 0, _105905 < 10]} )
+                                            happens(fade_in_end, {_105905~[_105905 > 0, _105905 < 10]} )
                                                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -111,35 +121,40 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
                     not_stoppedIn(0,brightness(0),10)
                         0.=<.10
                         not_interrupted(terminates,brightness(0),0,10)
-                            findall(_49108,findall_can_interrupts(terminates,_49108,brightness(0),0,10),[fade_in_end])
+                            findall(_103207,findall_can_interrupts(terminates,_103207,brightness(0),0,10),[fade_in_end,turn_light_off])
                                 findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
-                                     {_49265~[_49265 > 0, _49265 < 10]} .>.0
-                                     {_49265~[_49265 > 0, _49265 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
-                                interrupted(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} ,0,10)
-                                     {_49738~[_49738 > 0, _49738 < 10]} .>.0
-                                     {_49738~[_49738 > 0, _49738 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                    happens(fade_in_end, {_49738~[_49738 > 0, _49738 < 10]} )
+                                     {_103537~[_103537 > 0, _103537 < 10]} .>.0
+                                     {_103537~[_103537 > 0, _103537 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10)
+                                     {_103364~[_103364 > 0, _103364 < 10]} .>.0
+                                     {_103364~[_103364 > 0, _103364 < 10]} .<.10
+                                    can_interrupts(terminates,turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                                        can_terminates(turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end,turn_light_off],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} ,0,10)
+                                     {_104058~[_104058 > 0, _104058 < 10]} .>.0
+                                     {_104058~[_104058 > 0, _104058 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                    happens(fade_in_end, {_104058~[_104058 > 0, _104058 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(brightness(10), {_49738~[_49738 > 0, _49738 < 10]} )
-                                             {_51472~[_51472 > 0, _51472 < 10]} .>.0
-                                             {_51472~[_51472 > 0, _51472 < 10]} .<. {_49738~[_49738 > 0, _49738 < 10]} 
+                                        holdsAt(brightness(10), {_104058~[_104058 > 0, _104058 < 10]} )
+                                             {_105905~[_105905 > 0, _105905 < 10]} .>.0
+                                             {_105905~[_105905 > 0, _105905 < 10]} .<. {_104058~[_104058 > 0, _104058 < 10]} 
                                             max_time(100)
-                                             {_49738~[_49738 > 0, _49738 < 10]} .=<.100
-                                            can_initiates(fade_in_end,brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                            happens(fade_in_end, {_51472~[_51472 > 0, _51472 < 10]} )
+                                             {_104058~[_104058 > 0, _104058 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10), {_105905~[_105905 > 0, _105905 < 10]} )
+                                            happens(fade_in_end, {_105905~[_105905 > 0, _105905 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .>.0
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .<. {_51472~[_51472 > 0, _51472 < 10]} 
+                                                holdsAt(brightness(10), {_105905~[_105905 > 0, _105905 < 10]} )
+                                                     {_108382~[_108382 > 0, _108382 < 10]} .>.0
+                                                     {_108382~[_108382 > 0, _108382 < 10]} .<. {_105905~[_105905 > 0, _105905 < 10]} 
                                                     max_time(100)
-                                                     {_51472~[_51472 > 0, _51472 < 10]} .=<.100
-                                                    can_initiates(fade_in_end,brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                    happens(fade_in_end, {_53836~[_53836 > 0, _53836 < 10]} )
+                                                     {_105905~[_105905 > 0, _105905 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10), {_108382~[_108382 > 0, _108382 < 10]} )
+                                                    happens(fade_in_end, {_108382~[_108382 > 0, _108382 < 10]} )
                                                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -164,43 +179,48 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
                     not_stoppedIn(0,brightness(0),10)
                         0.=<.10
                         not_interrupted(terminates,brightness(0),0,10)
-                            findall(_49108,findall_can_interrupts(terminates,_49108,brightness(0),0,10),[fade_in_end])
+                            findall(_103207,findall_can_interrupts(terminates,_103207,brightness(0),0,10),[fade_in_end,turn_light_off])
                                 findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
-                                     {_49265~[_49265 > 0, _49265 < 10]} .>.0
-                                     {_49265~[_49265 > 0, _49265 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
-                                interrupted(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} ,0,10)
-                                     {_49738~[_49738 > 0, _49738 < 10]} .>.0
-                                     {_49738~[_49738 > 0, _49738 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                    happens(fade_in_end, {_49738~[_49738 > 0, _49738 < 10]} )
+                                     {_103537~[_103537 > 0, _103537 < 10]} .>.0
+                                     {_103537~[_103537 > 0, _103537 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10)
+                                     {_103364~[_103364 > 0, _103364 < 10]} .>.0
+                                     {_103364~[_103364 > 0, _103364 < 10]} .<.10
+                                    can_interrupts(terminates,turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                                        can_terminates(turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end,turn_light_off],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} ,0,10)
+                                     {_104058~[_104058 > 0, _104058 < 10]} .>.0
+                                     {_104058~[_104058 > 0, _104058 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                    happens(fade_in_end, {_104058~[_104058 > 0, _104058 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(brightness(10), {_49738~[_49738 > 0, _49738 < 10]} )
-                                             {_51472~[_51472 > 0, _51472 < 10]} .>.0
-                                             {_51472~[_51472 > 0, _51472 < 10]} .<. {_49738~[_49738 > 0, _49738 < 10]} 
+                                        holdsAt(brightness(10), {_104058~[_104058 > 0, _104058 < 10]} )
+                                             {_105905~[_105905 > 0, _105905 < 10]} .>.0
+                                             {_105905~[_105905 > 0, _105905 < 10]} .<. {_104058~[_104058 > 0, _104058 < 10]} 
                                             max_time(100)
-                                             {_49738~[_49738 > 0, _49738 < 10]} .=<.100
-                                            can_initiates(fade_in_end,brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                            happens(fade_in_end, {_51472~[_51472 > 0, _51472 < 10]} )
+                                             {_104058~[_104058 > 0, _104058 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10), {_105905~[_105905 > 0, _105905 < 10]} )
+                                            happens(fade_in_end, {_105905~[_105905 > 0, _105905 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .>.0
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .<. {_51472~[_51472 > 0, _51472 < 10]} 
+                                                holdsAt(brightness(10), {_105905~[_105905 > 0, _105905 < 10]} )
+                                                     {_108382~[_108382 > 0, _108382 < 10]} .>.0
+                                                     {_108382~[_108382 > 0, _108382 < 10]} .<. {_105905~[_105905 > 0, _105905 < 10]} 
                                                     max_time(100)
-                                                     {_51472~[_51472 > 0, _51472 < 10]} .=<.100
-                                                    can_initiates(fade_in_end,brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                    happens(fade_in_end, {_53836~[_53836 > 0, _53836 < 10]} )
+                                                     {_105905~[_105905 > 0, _105905 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10), {_108382~[_108382 > 0, _108382 < 10]} )
+                                                    happens(fade_in_end, {_108382~[_108382 > 0, _108382 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                             {_56396~[_56396 > 0, _56396 < 10]} .>.0
-                                                             {_56396~[_56396 > 0, _56396 < 10]} .<. {_53836~[_53836 > 0, _53836 < 10]} 
+                                                        holdsAt(brightness(10), {_108382~[_108382 > 0, _108382 < 10]} )
+                                                             {_111055~[_111055 > 0, _111055 < 10]} .>.0
+                                                             {_111055~[_111055 > 0, _111055 < 10]} .<. {_108382~[_108382 > 0, _108382 < 10]} 
                                                             max_time(100)
-                                                             {_53836~[_53836 > 0, _53836 < 10]} .=<.100
-                                                            can_initiates(fade_in_end,brightness(10), {_56396~[_56396 > 0, _56396 < 10]} )
-                                                            happens(fade_in_end, {_56396~[_56396 > 0, _56396 < 10]} )
+                                                             {_108382~[_108382 > 0, _108382 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10), {_111055~[_111055 > 0, _111055 < 10]} )
+                                                            happens(fade_in_end, {_111055~[_111055 > 0, _111055 < 10]} )
                                                                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -225,51 +245,56 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
                     not_stoppedIn(0,brightness(0),10)
                         0.=<.10
                         not_interrupted(terminates,brightness(0),0,10)
-                            findall(_49108,findall_can_interrupts(terminates,_49108,brightness(0),0,10),[fade_in_end])
+                            findall(_103207,findall_can_interrupts(terminates,_103207,brightness(0),0,10),[fade_in_end,turn_light_off])
                                 findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
-                                     {_49265~[_49265 > 0, _49265 < 10]} .>.0
-                                     {_49265~[_49265 > 0, _49265 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
-                                interrupted(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} ,0,10)
-                                     {_49738~[_49738 > 0, _49738 < 10]} .>.0
-                                     {_49738~[_49738 > 0, _49738 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                    happens(fade_in_end, {_49738~[_49738 > 0, _49738 < 10]} )
+                                     {_103537~[_103537 > 0, _103537 < 10]} .>.0
+                                     {_103537~[_103537 > 0, _103537 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10)
+                                     {_103364~[_103364 > 0, _103364 < 10]} .>.0
+                                     {_103364~[_103364 > 0, _103364 < 10]} .<.10
+                                    can_interrupts(terminates,turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                                        can_terminates(turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end,turn_light_off],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} ,0,10)
+                                     {_104058~[_104058 > 0, _104058 < 10]} .>.0
+                                     {_104058~[_104058 > 0, _104058 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_104058~[_104058 > 0, _104058 < 10]} )
+                                    happens(fade_in_end, {_104058~[_104058 > 0, _104058 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(brightness(10), {_49738~[_49738 > 0, _49738 < 10]} )
-                                             {_51472~[_51472 > 0, _51472 < 10]} .>.0
-                                             {_51472~[_51472 > 0, _51472 < 10]} .<. {_49738~[_49738 > 0, _49738 < 10]} 
+                                        holdsAt(brightness(10), {_104058~[_104058 > 0, _104058 < 10]} )
+                                             {_105905~[_105905 > 0, _105905 < 10]} .>.0
+                                             {_105905~[_105905 > 0, _105905 < 10]} .<. {_104058~[_104058 > 0, _104058 < 10]} 
                                             max_time(100)
-                                             {_49738~[_49738 > 0, _49738 < 10]} .=<.100
-                                            can_initiates(fade_in_end,brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                            happens(fade_in_end, {_51472~[_51472 > 0, _51472 < 10]} )
+                                             {_104058~[_104058 > 0, _104058 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10), {_105905~[_105905 > 0, _105905 < 10]} )
+                                            happens(fade_in_end, {_105905~[_105905 > 0, _105905 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .>.0
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .<. {_51472~[_51472 > 0, _51472 < 10]} 
+                                                holdsAt(brightness(10), {_105905~[_105905 > 0, _105905 < 10]} )
+                                                     {_108382~[_108382 > 0, _108382 < 10]} .>.0
+                                                     {_108382~[_108382 > 0, _108382 < 10]} .<. {_105905~[_105905 > 0, _105905 < 10]} 
                                                     max_time(100)
-                                                     {_51472~[_51472 > 0, _51472 < 10]} .=<.100
-                                                    can_initiates(fade_in_end,brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                    happens(fade_in_end, {_53836~[_53836 > 0, _53836 < 10]} )
+                                                     {_105905~[_105905 > 0, _105905 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10), {_108382~[_108382 > 0, _108382 < 10]} )
+                                                    happens(fade_in_end, {_108382~[_108382 > 0, _108382 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                             {_56396~[_56396 > 0, _56396 < 10]} .>.0
-                                                             {_56396~[_56396 > 0, _56396 < 10]} .<. {_53836~[_53836 > 0, _53836 < 10]} 
+                                                        holdsAt(brightness(10), {_108382~[_108382 > 0, _108382 < 10]} )
+                                                             {_111055~[_111055 > 0, _111055 < 10]} .>.0
+                                                             {_111055~[_111055 > 0, _111055 < 10]} .<. {_108382~[_108382 > 0, _108382 < 10]} 
                                                             max_time(100)
-                                                             {_53836~[_53836 > 0, _53836 < 10]} .=<.100
-                                                            can_initiates(fade_in_end,brightness(10), {_56396~[_56396 > 0, _56396 < 10]} )
-                                                            happens(fade_in_end, {_56396~[_56396 > 0, _56396 < 10]} )
+                                                             {_108382~[_108382 > 0, _108382 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10), {_111055~[_111055 > 0, _111055 < 10]} )
+                                                            happens(fade_in_end, {_111055~[_111055 > 0, _111055 < 10]} )
                                                                 builtin(!spy)
-                                                                holdsAt(brightness(10), {_56396~[_56396 > 0, _56396 < 10]} )
-                                                                     {_59139~[_59139 > 0, _59139 < 10]} .>.0
-                                                                     {_59139~[_59139 > 0, _59139 < 10]} .<. {_56396~[_56396 > 0, _56396 < 10]} 
+                                                                holdsAt(brightness(10), {_111055~[_111055 > 0, _111055 < 10]} )
+                                                                     {_113911~[_113911 > 0, _113911 < 10]} .>.0
+                                                                     {_113911~[_113911 > 0, _113911 < 10]} .<. {_111055~[_111055 > 0, _111055 < 10]} 
                                                                     max_time(100)
-                                                                     {_56396~[_56396 > 0, _56396 < 10]} .=<.100
-                                                                    can_initiates(fade_in_end,brightness(10), {_59139~[_59139 > 0, _59139 < 10]} )
-                                                                    happens(fade_in_end, {_59139~[_59139 > 0, _59139 < 10]} )
+                                                                     {_111055~[_111055 > 0, _111055 < 10]} .=<.100
+                                                                    can_initiates(fade_in_end,brightness(10), {_113911~[_113911 > 0, _113911 < 10]} )
+                                                                    happens(fade_in_end, {_113911~[_113911 > 0, _113911 < 10]} )
                                                                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -294,59 +319,64 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
                     not_stoppedIn(0,brightness(0),10)
                         0.=<.10
                         not_interrupted(terminates,brightness(0),0,10)
-                            findall(_49108,findall_can_interrupts(terminates,_49108,brightness(0),0,10),[fade_in_end])
+                            findall(_103207,findall_can_interrupts(terminates,_103207,brightness(0),0,10),[fade_in_end,turn_light_off])
                                 findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
-                                     {_49265~[_49265 > 0, _49265 < 10]} .>.0
-                                     {_49265~[_49265 > 0, _49265 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
-                                interrupted(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} ,0,10)
-                                     {_49738~[_49738 > 0, _49738 < 10]} .>.0
-                                     {_49738~[_49738 > 0, _49738 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                    happens(fade_in_end, {_49738~[_49738 > 0, _49738 < 10]} )
+                                     {_103537~[_103537 > 0, _103537 < 10]} .>.0
+                                     {_103537~[_103537 > 0, _103537 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_103537~[_103537 > 0, _103537 < 10]} )
+                                findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10)
+                                     {_103364~[_103364 > 0, _103364 < 10]} .>.0
+                                     {_103364~[_103364 > 0, _103364 < 10]} .<.10
+                                    can_interrupts(terminates,turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                                        can_terminates(turn_light_off,brightness(0), {_103364~[_103364 > 0, _103364 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end,turn_light_off],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_1639~[_1639 > 0, _1639 < 10]} ,0,10)
+                                     {_1639~[_1639 > 0, _1639 < 10]} .>.0
+                                     {_1639~[_1639 > 0, _1639 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_1639~[_1639 > 0, _1639 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_1639~[_1639 > 0, _1639 < 10]} )
+                                    happens(fade_in_end, {_1639~[_1639 > 0, _1639 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(brightness(10), {_49738~[_49738 > 0, _49738 < 10]} )
-                                             {_51472~[_51472 > 0, _51472 < 10]} .>.0
-                                             {_51472~[_51472 > 0, _51472 < 10]} .<. {_49738~[_49738 > 0, _49738 < 10]} 
+                                        holdsAt(brightness(10), {_1639~[_1639 > 0, _1639 < 10]} )
+                                             {_1836~[_1836 > 0, _1836 < 10]} .>.0
+                                             {_1836~[_1836 > 0, _1836 < 10]} .<. {_1639~[_1639 > 0, _1639 < 10]} 
                                             max_time(100)
-                                             {_49738~[_49738 > 0, _49738 < 10]} .=<.100
-                                            can_initiates(fade_in_end,brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                            happens(fade_in_end, {_51472~[_51472 > 0, _51472 < 10]} )
+                                             {_1639~[_1639 > 0, _1639 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10), {_1836~[_1836 > 0, _1836 < 10]} )
+                                            happens(fade_in_end, {_1836~[_1836 > 0, _1836 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .>.0
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .<. {_51472~[_51472 > 0, _51472 < 10]} 
+                                                holdsAt(brightness(10), {_1836~[_1836 > 0, _1836 < 10]} )
+                                                     {_2128~[_2128 > 0, _2128 < 10]} .>.0
+                                                     {_2128~[_2128 > 0, _2128 < 10]} .<. {_1836~[_1836 > 0, _1836 < 10]} 
                                                     max_time(100)
-                                                     {_51472~[_51472 > 0, _51472 < 10]} .=<.100
-                                                    can_initiates(fade_in_end,brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                    happens(fade_in_end, {_53836~[_53836 > 0, _53836 < 10]} )
+                                                     {_1836~[_1836 > 0, _1836 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10), {_2128~[_2128 > 0, _2128 < 10]} )
+                                                    happens(fade_in_end, {_2128~[_2128 > 0, _2128 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                             {_56396~[_56396 > 0, _56396 < 10]} .>.0
-                                                             {_56396~[_56396 > 0, _56396 < 10]} .<. {_53836~[_53836 > 0, _53836 < 10]} 
+                                                        holdsAt(brightness(10), {_2128~[_2128 > 0, _2128 < 10]} )
+                                                             {_2436~[_2436 > 0, _2436 < 10]} .>.0
+                                                             {_2436~[_2436 > 0, _2436 < 10]} .<. {_2128~[_2128 > 0, _2128 < 10]} 
                                                             max_time(100)
-                                                             {_53836~[_53836 > 0, _53836 < 10]} .=<.100
-                                                            can_initiates(fade_in_end,brightness(10), {_56396~[_56396 > 0, _56396 < 10]} )
-                                                            happens(fade_in_end, {_56396~[_56396 > 0, _56396 < 10]} )
+                                                             {_2128~[_2128 > 0, _2128 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10), {_2436~[_2436 > 0, _2436 < 10]} )
+                                                            happens(fade_in_end, {_2436~[_2436 > 0, _2436 < 10]} )
                                                                 builtin(!spy)
-                                                                holdsAt(brightness(10), {_56396~[_56396 > 0, _56396 < 10]} )
-                                                                     {_59139~[_59139 > 0, _59139 < 10]} .>.0
-                                                                     {_59139~[_59139 > 0, _59139 < 10]} .<. {_56396~[_56396 > 0, _56396 < 10]} 
+                                                                holdsAt(brightness(10), {_2436~[_2436 > 0, _2436 < 10]} )
+                                                                     {_2749~[_2749 > 0, _2749 < 10]} .>.0
+                                                                     {_2749~[_2749 > 0, _2749 < 10]} .<. {_2436~[_2436 > 0, _2436 < 10]} 
                                                                     max_time(100)
-                                                                     {_56396~[_56396 > 0, _56396 < 10]} .=<.100
-                                                                    can_initiates(fade_in_end,brightness(10), {_59139~[_59139 > 0, _59139 < 10]} )
-                                                                    happens(fade_in_end, {_59139~[_59139 > 0, _59139 < 10]} )
+                                                                     {_2436~[_2436 > 0, _2436 < 10]} .=<.100
+                                                                    can_initiates(fade_in_end,brightness(10), {_2749~[_2749 > 0, _2749 < 10]} )
+                                                                    happens(fade_in_end, {_2749~[_2749 > 0, _2749 < 10]} )
                                                                         builtin(!spy)
-                                                                        holdsAt(brightness(10), {_59139~[_59139 > 0, _59139 < 10]} )
-                                                                             {_62065~[_62065 > 0, _62065 < 10]} .>.0
-                                                                             {_62065~[_62065 > 0, _62065 < 10]} .<. {_59139~[_59139 > 0, _59139 < 10]} 
+                                                                        holdsAt(brightness(10), {_2749~[_2749 > 0, _2749 < 10]} )
+                                                                             {_3067~[_3067 > 0, _3067 < 10]} .>.0
+                                                                             {_3067~[_3067 > 0, _3067 < 10]} .<. {_2749~[_2749 > 0, _2749 < 10]} 
                                                                             max_time(100)
-                                                                             {_59139~[_59139 > 0, _59139 < 10]} .=<.100
-                                                                            can_initiates(fade_in_end,brightness(10), {_62065~[_62065 > 0, _62065 < 10]} )
-                                                                            happens(fade_in_end, {_62065~[_62065 > 0, _62065 < 10]} )
+                                                                             {_2749~[_2749 > 0, _2749 < 10]} .=<.100
+                                                                            can_initiates(fade_in_end,brightness(10), {_3067~[_3067 > 0, _3067 < 10]} )
+                                                                            happens(fade_in_end, {_3067~[_3067 > 0, _3067 < 10]} )
                                                                                 builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -371,67 +401,72 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
                     not_stoppedIn(0,brightness(0),10)
                         0.=<.10
                         not_interrupted(terminates,brightness(0),0,10)
-                            findall(_49108,findall_can_interrupts(terminates,_49108,brightness(0),0,10),[fade_in_end])
+                            findall(_1183,findall_can_interrupts(terminates,_1183,brightness(0),0,10),[fade_in_end,turn_light_off])
                                 findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
-                                     {_49265~[_49265 > 0, _49265 < 10]} .>.0
-                                     {_49265~[_49265 > 0, _49265 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
-                                interrupted(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} ,0,10)
-                                     {_49738~[_49738 > 0, _49738 < 10]} .>.0
-                                     {_49738~[_49738 > 0, _49738 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                    happens(fade_in_end, {_49738~[_49738 > 0, _49738 < 10]} )
+                                     {_1399~[_1399 > 0, _1399 < 10]} .>.0
+                                     {_1399~[_1399 > 0, _1399 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_1399~[_1399 > 0, _1399 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_1399~[_1399 > 0, _1399 < 10]} )
+                                findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10)
+                                     {_1260~[_1260 > 0, _1260 < 10]} .>.0
+                                     {_1260~[_1260 > 0, _1260 < 10]} .<.10
+                                    can_interrupts(terminates,turn_light_off,brightness(0), {_1260~[_1260 > 0, _1260 < 10]} )
+                                        can_terminates(turn_light_off,brightness(0), {_1260~[_1260 > 0, _1260 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end,turn_light_off],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_1639~[_1639 > 0, _1639 < 10]} ,0,10)
+                                     {_1639~[_1639 > 0, _1639 < 10]} .>.0
+                                     {_1639~[_1639 > 0, _1639 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_1639~[_1639 > 0, _1639 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_1639~[_1639 > 0, _1639 < 10]} )
+                                    happens(fade_in_end, {_1639~[_1639 > 0, _1639 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(brightness(10), {_49738~[_49738 > 0, _49738 < 10]} )
-                                             {_51472~[_51472 > 0, _51472 < 10]} .>.0
-                                             {_51472~[_51472 > 0, _51472 < 10]} .<. {_49738~[_49738 > 0, _49738 < 10]} 
+                                        holdsAt(brightness(10), {_1639~[_1639 > 0, _1639 < 10]} )
+                                             {_1836~[_1836 > 0, _1836 < 10]} .>.0
+                                             {_1836~[_1836 > 0, _1836 < 10]} .<. {_1639~[_1639 > 0, _1639 < 10]} 
                                             max_time(100)
-                                             {_49738~[_49738 > 0, _49738 < 10]} .=<.100
-                                            can_initiates(fade_in_end,brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                            happens(fade_in_end, {_51472~[_51472 > 0, _51472 < 10]} )
+                                             {_1639~[_1639 > 0, _1639 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10), {_1836~[_1836 > 0, _1836 < 10]} )
+                                            happens(fade_in_end, {_1836~[_1836 > 0, _1836 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .>.0
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .<. {_51472~[_51472 > 0, _51472 < 10]} 
+                                                holdsAt(brightness(10), {_1836~[_1836 > 0, _1836 < 10]} )
+                                                     {_2128~[_2128 > 0, _2128 < 10]} .>.0
+                                                     {_2128~[_2128 > 0, _2128 < 10]} .<. {_1836~[_1836 > 0, _1836 < 10]} 
                                                     max_time(100)
-                                                     {_51472~[_51472 > 0, _51472 < 10]} .=<.100
-                                                    can_initiates(fade_in_end,brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                    happens(fade_in_end, {_53836~[_53836 > 0, _53836 < 10]} )
+                                                     {_1836~[_1836 > 0, _1836 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10), {_2128~[_2128 > 0, _2128 < 10]} )
+                                                    happens(fade_in_end, {_2128~[_2128 > 0, _2128 < 10]} )
                                                         builtin(!spy)
-                                                        holdsAt(brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                             {_56396~[_56396 > 0, _56396 < 10]} .>.0
-                                                             {_56396~[_56396 > 0, _56396 < 10]} .<. {_53836~[_53836 > 0, _53836 < 10]} 
+                                                        holdsAt(brightness(10), {_2128~[_2128 > 0, _2128 < 10]} )
+                                                             {_2436~[_2436 > 0, _2436 < 10]} .>.0
+                                                             {_2436~[_2436 > 0, _2436 < 10]} .<. {_2128~[_2128 > 0, _2128 < 10]} 
                                                             max_time(100)
-                                                             {_53836~[_53836 > 0, _53836 < 10]} .=<.100
-                                                            can_initiates(fade_in_end,brightness(10), {_56396~[_56396 > 0, _56396 < 10]} )
-                                                            happens(fade_in_end, {_56396~[_56396 > 0, _56396 < 10]} )
+                                                             {_2128~[_2128 > 0, _2128 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10), {_2436~[_2436 > 0, _2436 < 10]} )
+                                                            happens(fade_in_end, {_2436~[_2436 > 0, _2436 < 10]} )
                                                                 builtin(!spy)
-                                                                holdsAt(brightness(10), {_56396~[_56396 > 0, _56396 < 10]} )
-                                                                     {_59139~[_59139 > 0, _59139 < 10]} .>.0
-                                                                     {_59139~[_59139 > 0, _59139 < 10]} .<. {_56396~[_56396 > 0, _56396 < 10]} 
+                                                                holdsAt(brightness(10), {_2436~[_2436 > 0, _2436 < 10]} )
+                                                                     {_2749~[_2749 > 0, _2749 < 10]} .>.0
+                                                                     {_2749~[_2749 > 0, _2749 < 10]} .<. {_2436~[_2436 > 0, _2436 < 10]} 
                                                                     max_time(100)
-                                                                     {_56396~[_56396 > 0, _56396 < 10]} .=<.100
-                                                                    can_initiates(fade_in_end,brightness(10), {_59139~[_59139 > 0, _59139 < 10]} )
-                                                                    happens(fade_in_end, {_59139~[_59139 > 0, _59139 < 10]} )
+                                                                     {_2436~[_2436 > 0, _2436 < 10]} .=<.100
+                                                                    can_initiates(fade_in_end,brightness(10), {_2749~[_2749 > 0, _2749 < 10]} )
+                                                                    happens(fade_in_end, {_2749~[_2749 > 0, _2749 < 10]} )
                                                                         builtin(!spy)
-                                                                        holdsAt(brightness(10), {_59139~[_59139 > 0, _59139 < 10]} )
-                                                                             {_62065~[_62065 > 0, _62065 < 10]} .>.0
-                                                                             {_62065~[_62065 > 0, _62065 < 10]} .<. {_59139~[_59139 > 0, _59139 < 10]} 
+                                                                        holdsAt(brightness(10), {_2749~[_2749 > 0, _2749 < 10]} )
+                                                                             {_3067~[_3067 > 0, _3067 < 10]} .>.0
+                                                                             {_3067~[_3067 > 0, _3067 < 10]} .<. {_2749~[_2749 > 0, _2749 < 10]} 
                                                                             max_time(100)
-                                                                             {_59139~[_59139 > 0, _59139 < 10]} .=<.100
-                                                                            can_initiates(fade_in_end,brightness(10), {_62065~[_62065 > 0, _62065 < 10]} )
-                                                                            happens(fade_in_end, {_62065~[_62065 > 0, _62065 < 10]} )
+                                                                             {_2749~[_2749 > 0, _2749 < 10]} .=<.100
+                                                                            can_initiates(fade_in_end,brightness(10), {_3067~[_3067 > 0, _3067 < 10]} )
+                                                                            happens(fade_in_end, {_3067~[_3067 > 0, _3067 < 10]} )
                                                                                 builtin(!spy)
-                                                                                holdsAt(brightness(10), {_62065~[_62065 > 0, _62065 < 10]} )
-                                                                                     {_65174~[_65174 > 0, _65174 < 10]} .>.0
-                                                                                     {_65174~[_65174 > 0, _65174 < 10]} .<. {_62065~[_62065 > 0, _62065 < 10]} 
+                                                                                holdsAt(brightness(10), {_3067~[_3067 > 0, _3067 < 10]} )
+                                                                                     {_4429~[_4429 > 0, _4429 < 10]} .>.0
+                                                                                     {_4429~[_4429 > 0, _4429 < 10]} .<. {_3067~[_3067 > 0, _3067 < 10]} 
                                                                                     max_time(100)
-                                                                                     {_62065~[_62065 > 0, _62065 < 10]} .=<.100
-                                                                                    can_initiates(fade_in_end,brightness(10), {_65174~[_65174 > 0, _65174 < 10]} )
-                                                                                    happens(fade_in_end, {_65174~[_65174 > 0, _65174 < 10]} )
+                                                                                     {_3067~[_3067 > 0, _3067 < 10]} .=<.100
+                                                                                    can_initiates(fade_in_end,brightness(10), {_4429~[_4429 > 0, _4429 < 10]} )
+                                                                                    happens(fade_in_end, {_4429~[_4429 > 0, _4429 < 10]} )
                                                                                         builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -456,41 +491,58 @@ $ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
                     not_stoppedIn(0,brightness(0),10)
                         0.=<.10
                         not_interrupted(terminates,brightness(0),0,10)
-                            findall(_49108,findall_can_interrupts(terminates,_49108,brightness(0),0,10),[fade_in_end])
+                            findall(_1183,findall_can_interrupts(terminates,_1183,brightness(0),0,10),[fade_in_end,turn_light_off])
                                 findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
-                                     {_49265~[_49265 > 0, _49265 < 10]} .>.0
-                                     {_49265~[_49265 > 0, _49265 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49265~[_49265 > 0, _49265 < 10]} )
-                            not_interrupted_(terminates,brightness(0),[fade_in_end],0,10)
-                                interrupted(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} ,0,10)
-                                     {_49738~[_49738 > 0, _49738 < 10]} .>.0
-                                     {_49738~[_49738 > 0, _49738 < 10]} .<.10
-                                    can_interrupts(terminates,fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                        can_terminates(fade_in_end,brightness(0), {_49738~[_49738 > 0, _49738 < 10]} )
-                                    happens(fade_in_end, {_49738~[_49738 > 0, _49738 < 10]} )
+                                     {_1399~[_1399 > 0, _1399 < 10]} .>.0
+                                     {_1399~[_1399 > 0, _1399 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_1399~[_1399 > 0, _1399 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_1399~[_1399 > 0, _1399 < 10]} )
+                                findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10)
+                                     {_1260~[_1260 > 0, _1260 < 10]} .>.0
+                                     {_1260~[_1260 > 0, _1260 < 10]} .<.10
+                                    can_interrupts(terminates,turn_light_off,brightness(0), {_1260~[_1260 > 0, _1260 < 10]} )
+                                        can_terminates(turn_light_off,brightness(0), {_1260~[_1260 > 0, _1260 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end,turn_light_off],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_1639~[_1639 > 0, _1639 < 10]} ,0,10)
+                                     {_1639~[_1639 > 0, _1639 < 10]} .>.0
+                                     {_1639~[_1639 > 0, _1639 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_1639~[_1639 > 0, _1639 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_1639~[_1639 > 0, _1639 < 10]} )
+                                    happens(fade_in_end, {_1639~[_1639 > 0, _1639 < 10]} )
                                         builtin(!spy)
-                                        holdsAt(brightness(10), {_49738~[_49738 > 0, _49738 < 10]} )
-                                             {_51472~[_51472 > 0, _51472 < 10]} .>.0
-                                             {_51472~[_51472 > 0, _51472 < 10]} .<. {_49738~[_49738 > 0, _49738 < 10]} 
+                                        holdsAt(brightness(10), {_1639~[_1639 > 0, _1639 < 10]} )
+                                             {_1836~[_1836 > 0, _1836 < 10]} .>.0
+                                             {_1836~[_1836 > 0, _1836 < 10]} .<. {_1639~[_1639 > 0, _1639 < 10]} 
                                             max_time(100)
-                                             {_49738~[_49738 > 0, _49738 < 10]} .=<.100
-                                            can_initiates(fade_in_end,brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                            happens(fade_in_end, {_51472~[_51472 > 0, _51472 < 10]} )
+                                             {_1639~[_1639 > 0, _1639 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10), {_1836~[_1836 > 0, _1836 < 10]} )
+                                            happens(fade_in_end, {_1836~[_1836 > 0, _1836 < 10]} )
                                                 builtin(!spy)
-                                                holdsAt(brightness(10), {_51472~[_51472 > 0, _51472 < 10]} )
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .>.0
-                                                     {_53836~[_53836 > 0, _53836 < 10]} .<. {_51472~[_51472 > 0, _51472 < 10]} 
+                                                holdsAt(brightness(10), {_1836~[_1836 > 0, _1836 < 10]} )
+                                                     {_2128~[_2128 > 0, _2128 < 10]} .>.0
+                                                     {_2128~[_2128 > 0, _2128 < 10]} .<. {_1836~[_1836 > 0, _1836 < 10]} 
                                                     max_time(100)
-                                                     {_51472~[_51472 > 0, _51472 < 10]} .=<.100
-                                                    can_initiates(fade_in_end,brightness(10), {_53836~[_53836 > 0, _53836 < 10]} )
-                                                    happens(fade_in_end, {
+                                                     {_1836~[_1836 > 0, _1836 < 10]} .=<.100
+                                                    can_initiates(fade_in_end,brightness(10), {_2128~[_2128 > 0, _2128 < 10]} )
+                                                    happens(fade_in_end, {_2128~[_2128 > 0, _2128 < 10]} )
+                                                        builtin(!spy)
+                                                        holdsAt(brightness(10), {_2128~[_2128 > 0, _2128 < 10]} )
+                                                             {_2436~[_2436 > 0, _2436 < 10]} .>.0
+                                                             {_2436~[_2436 > 0, _2436 < 10]} .<. {_2128~[_2128 > 0, _2128 < 10]} 
+                                                            max_time(100)
+                                                             {_2128~[_2128 > 0, _2128 < 10]} .=<.100
+                                                            can_initiates(fade_in_end,brightness(10), {_2436~[_2436 > 0, _2436 < 10]} )
+                                                            happens(fade_in_end, {_2436~[_2436 > 0, _2436 < 10]} )
+                                                                builtin(!spy)
+                                                                holdsAt(brightness(10), {_2436~[_2436 > 0, _2436 < 10]} )
+                                                                     {_2749~[_2749 > 0, _2749 < 10]} .>.0
+                                                                    
 timeout
 
 
-  real      0:01.29
-  real [s]  1.29
-  user [s]  0.46
-  sys  [s]  0.04
-  mem  [KB] 28704
+  real      0:01.27
+  real [s]  1.27
+  user [s]  0.42
+  sys  [s]  0.07
+  mem  [KB] 27068
   avgm [KB] 0

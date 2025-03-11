@@ -16,13 +16,21 @@ max_time(100).                      % it is useful to have an upper bound on tim
 % ----- domain model -----
 
 event(turn_light_on).   % start brightening from zero to max
+event(turn_light_off).
 event(fade_in_end).     % stop brightening at max
 
+fluent(light_on).
 fluent(brightness(X)).  % range 0-10
 fluent(fading_in).
 
+initiates(turn_light_on,  light_on, T).
 initiates(turn_light_on, fading_in, T).
 releases(turn_light_on, brightness(X), T).
+
+terminates(turn_light_off, light_on, T).
+terminates(turn_light_off, fading_in, T) :- holdsAt(fading_in, T).
+initiates(turn_light_off, brightness(0), T).
+terminates(turn_light_off, brightness(X), T) :- X .<>. 0.
 
 terminates(fade_in_end, fading_in, T).
 initiates(fade_in_end, brightness(10), T).
@@ -39,6 +47,7 @@ happens(fade_in_end, T) :- !spy,
 % ----- narrative & queries  -----
 
 initiallyP(brightness(0)).
+%initiallyN(light_on).
 initiallyN(F) :- not initiallyP(F).
 
 happens(turn_light_on,      10).

@@ -13,15 +13,24 @@ max_time(100).                      % it is useful to have an upper bound on tim
 % ----- domain model -----
 
 event(turn_light_on).       % start the fading process
+event(turn_light_off).
 event(fade_in_end).         % stop fading in and start fading out (dimming)
 event(fade_out_end).        % stop fading out (dimming) and starting fading in
 
+fluent(light_on).
 fluent(brightness(X)).      % range 0-10
 fluent(fading_in).
 fluent(fading_out).
 
+initiates(turn_light_on,  light_on, T).
 initiates(turn_light_on, fading_in, T).
 releases(turn_light_on, brightness(X), T).
+
+terminates(turn_light_off, light_on, T).
+terminates(turn_light_off, fading_in, T) :- holdsAt(fading_in, T).
+terminates(turn_light_off, fading_out, T) :- holdsAt(fading_out, T).
+initiates(turn_light_off, brightness(0), T).
+terminates(turn_light_off, brightness(X), T) :- X .<>. 0.
 
 terminates(fade_in_end, fading_in, T).
 initiates(fade_in_end, fading_out, T).
@@ -51,9 +60,11 @@ happens(fade_out_end, T) :- !spy,
 % ----- narrative & queries  -----
 
 initiallyP(brightness(0)).
+%initiallyN(light_on).
 initiallyN(F) :- not initiallyP(F).
 
 happens(turn_light_on,      10).
+happens(turn_light_off,     45).
 
 ?- holdsAt(brightness(X),   10).    % 0
 
@@ -66,8 +77,8 @@ happens(turn_light_on,      10).
 ?- happens(fade_in_end,     40).
 ?- holdsAt(brightness(X),   40).    % 10
 
-?- T .=<. 45, happens(fade_in_end,  T). % 20, 40
-?- T .=<. 45, happens(fade_out_end, T). % 30
+?- happens(fade_in_end,     T).     % 20, 40
+?- happens(fade_out_end,    T).     % 30
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
