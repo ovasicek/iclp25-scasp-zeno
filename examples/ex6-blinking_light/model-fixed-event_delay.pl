@@ -38,8 +38,8 @@ happens(turn_light_on, T2) :- !spy,
 
 % ----- narrative & queries  -----
 
-% initiallyN(light_on). % no initial value means no triggers until the first event
-happens(turn_light_on, 10).
+initiallyN(light_on).              % can be included here (trigger is not based on this fluent)
+happens(turn_light_on,      10).
 
 ?-     holdsAt(light_on,    5).    % no models
 ?- not_holdsAt(light_on,    5).    % no models
