@@ -34,9 +34,11 @@ initiates(switch_left, left_filling, T).
 terminates(switch_left, left_draining, T).
 
 terminates(switch_right, left_filling, T) :-
-    X .>. 50, holdsAt(water_left(X), T, left_filling).
+    X .>. 50, % > target level
+    holdsAt(water_left(X), T, left_filling).
 initiates(switch_right, left_draining, T) :-
-    X .>. 50, holdsAt(water_left(X), T, left_filling).
+    X .>. 50, % > target level
+    holdsAt(water_left(X), T, left_filling).
 
 trajectory(left_filling, T1, water_left(NewW), T2) :-
     TotalFlow .=. 30 - 20, % in rate 30, out rate 20
