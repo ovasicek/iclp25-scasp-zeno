@@ -1,4 +1,4 @@
-$ ../scripts/incremental_circular_trajectories.sh ./model-fixed-incremental.pl ../axioms/bec_scasp.pl --tree
+$ ../scripts/incremental_circular_trajectories.sh ./fix-incremental.pl ../axioms/bec_scasp.pl --tree
 
 
 % QUERY:?- happens(fade_out_end,T).

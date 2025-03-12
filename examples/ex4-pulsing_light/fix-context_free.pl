@@ -1,4 +1,4 @@
-#include './preprocessed_can_rules/model-fixed-context_free-preprocessed.pl'. % include the can_* rules
+#include './preprocessed_can_rules/fix-context_free-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.

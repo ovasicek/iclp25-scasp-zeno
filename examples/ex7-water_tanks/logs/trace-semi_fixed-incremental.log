@@ -1,4 +1,4 @@
-$ ../scripts/incremental_circular_trajectories.sh ./model-semi_fixed-incremental.pl ../axioms/bec_scasp-interval_not.pl --tree
+$ ../scripts/incremental_circular_trajectories.sh ./partfix-incremental.pl ../axioms/bec_scasp-interval_not.pl --tree
 
 
 % QUERY:?- holdsAt(water_left(X),19.5).

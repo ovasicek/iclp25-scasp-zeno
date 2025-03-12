@@ -18,7 +18,7 @@ run-zeno_halt:
 # fixed
 
 run-fixed-holdsAt3:
-	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt3.pl
+	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt3.pl
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ run-fixed-holdsAt3:
 trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000" ./logs/trace-non_term.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt3.pl --tree" ./logs/trace-fixed-holdsAt3.log
+	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree" ./logs/trace-fixed-holdsAt3.log
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -36,4 +36,4 @@ trace:
 
 preprocess:
 	../scripts/preprocess_model.sh ./preprocessed_can_rules/model ./model.pl
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/model-fixed-holdsAt3 ./model-fixed-holdsAt3.pl
+	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-holdsAt3 ./fix-holdsAt3.pl

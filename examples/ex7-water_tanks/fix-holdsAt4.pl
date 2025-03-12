@@ -5,7 +5,7 @@
 %   trajectory end at ineq.   - fixed by adding minimum duration via holdsAt/4 (no need to split due to circularity and traditional zeno)
 %   traditional zeno behavior - fixed by adding minimum duration via holdsAt/4
 
-#include './preprocessed_can_rules/model-fixed-holdsAt4-preprocessed.pl'. % include the can_* rules
+#include './preprocessed_can_rules/fix-holdsAt4-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.

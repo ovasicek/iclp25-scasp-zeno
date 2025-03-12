@@ -1,9 +1,9 @@
 % problems:
-%   repeated trigger          - fixed by minimum duration via holdsAt/4
+%   repeated trigger          - no longer present (trajectory does not start)
 %   self-end trajectory       - fixed via holdsAt/3 (or holdsAt/4)
-%   trajectory end at ineq.   - fixed by minimum duration via holdsAt/4
+%   trajectory end at ineq.   - fixed via remodelling (trajectory does not start)
 
-#include './preprocessed_can_rules/model-fixed-split_holdsAt4-preprocessed.pl'. % include the can_* rules
+#include './preprocessed_can_rules/fix-split_no_start-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.
@@ -33,8 +33,12 @@ releases(start(_), water_left(X), T).
 initiates(switch_left, left_filling, T).
 terminates(switch_left, left_draining, T).
 
-terminates(switch_right, left_filling, T).
-initiates(switch_right, left_draining, T).
+terminates(switch_right, left_filling, T) :-
+    X .>. 50, % > target level
+    holdsAt(water_left(X), T, left_filling).
+initiates(switch_right, left_draining, T) :-
+    X .>. 50, % > target level
+    holdsAt(water_left(X), T, left_filling).
 
 trajectory(left_filling, T1, water_left(NewW), T2) :-
     TotalFlow .=. 30 - 20, % in rate 30, out rate 20
@@ -45,16 +49,10 @@ trajectory(left_draining, T1, water_left(NewW), T2) :-
     NewW .=. OldW - ((T2-T1) * 20), % out rate 20
     holdsAt(water_left(OldW), T1).
 
-happens(switch_left, T) :-
-    CurrW .=. 50,   % target level
+happens(switch_left, T) :- !spy,
+    CurrW .=<. 50,   % target level
     holdsAt(water_left(CurrW), T, left_draining).
     
-duration(1).
-happens(switch_left, T) :- !spy,
-    CurrW .<. 50,   % target level
-    duration(Dur),
-    holdsAt(water_left(CurrW), T, left_draining, Dur).
-
 
 % ----- narrative & queries  -----
 % based on narrative 2
@@ -67,9 +65,9 @@ happens(start(left),        10).
 happens(switch_right,       13).    % switch while below target
 ?- holdsAt(water_left(X),   13).    % 30
 
-?- holdsAt(left_draining,   T).     % T #> 13,T #=< 14
-?- happens(switch_left,     T).     % 14
-?- holdsAt(water_left(X),   15).    % 20
+?- holdsAt(left_draining,   T).     % no models
+?- happens(switch_left,     T).     % no models
+?- holdsAt(water_left(X),   15).    % 50
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/

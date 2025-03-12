@@ -1,11 +1,11 @@
 % problems:
-%   repeated trigger          - fixed by adding minimum duration via holdsAt/4
+%   repeated trigger          - manifests in the "trajectory end at ineq." problem
 %   self-end trajectory       - fixed via holdsAt/3 (or holdsAt/4)
 %   circular trajectories     - fixed via incremental reasoning
-%   trajectory end at ineq.   - fixed by adding minimum duration via holdsAt/4
-%   traditional zeno behavior - fixed by adding minimum duration via holdsAt/4
+%   trajectory end at ineq.   - needs to be fixed
+%   traditional zeno behavior - needs to be fixed
 
-#include './preprocessed_can_rules/model-fixed-incremental_holdsAt4-preprocessed.pl'. % include the can_* rules
+#include './preprocessed_can_rules/partfix-incremental-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.
@@ -62,27 +62,13 @@ trajectory(left_filling, T1, water_right(NewW), T2) :-
     NewW .=. OldW - ((T2-T1) * 20), % out rate 20
     holdsAt(water_right(OldW), T1).
 
-duration(1).
 happens(switch_left, T) :- !spy,
-    duration(MinD), D .>=. MinD,
-    CurrW .=. 50,   % target level
-    holdsAt(water_left(CurrW), T, right_filling, D).
+    CurrW .=<. 50,   % target level
+    holdsAt(water_left(CurrW), T, right_filling).
 
 happens(switch_right, T) :- !spy,
-    duration(MinD), D .>=. MinD,
-    CurrW .=. 50,   % target level
-    holdsAt(water_right(CurrW), T, left_filling, D).
-
-% NOTE: keeping the split is not necessary but leads to faster solving times with incremental reasoning
-happens(switch_left, T) :- !spy,
-    duration(D),
-    CurrW .<. 50,   % target level
-    holdsAt(water_left(CurrW), T, right_filling, D).
-
-happens(switch_right, T) :- !spy,
-    duration(D), 
-    CurrW .<. 50,   % target level
-    holdsAt(water_right(CurrW), T, left_filling, D).
+    CurrW .=<. 50,   % target level
+    holdsAt(water_right(CurrW), T, left_filling).
 
 
 % ----- narrative & queries  -----
@@ -105,19 +91,19 @@ happens(start(right),           10).
 ?- holdsAt(water_left(X),       145/8).%(18.125)    % 50
 ?- holdsAt(water_right(X),      145/8).%(18.125)    % 68.75 (275/4)
 
-?- happens(switch_right,        153/8).%(19.125)    % yes
-?- holdsAt(water_left(X),       153/8).%(19.125)    % 60
-?- holdsAt(water_right(X),      153/8).%(19.125)    % 48.75 <----- less than 50
+?- happens(switch_right,        305/16).%(19.0625)  % yes
+?- holdsAt(water_left(X),       305/16).%(19.0625)  % 59.375 (475/8)
+?- holdsAt(water_right(X),      305/16).%(19.0625)  % 50
 
-?- happens(switch_left,         161/8).%(20.125)    % yes
-?- holdsAt(water_left(X),       161/8).%(20.125)    % 40    
-?- holdsAt(water_right(X),      161/8).%(20.125)    % 58.75 (235/4)
+?- happens(switch_left,         625/32).%(19.53125) % yes
+?- holdsAt(water_left(X),       625/32).%(19.53125) % 50
+?- holdsAt(water_right(X),      625/32).%(19.53125) % 54.6875 (875/16)
 
 incr_query_max_time(19.5).     % need to use this based on time in the query 
 ?- T .=<. 19.5, happens(switch_left,  T).           % 25/2 (12.5), 145/8 (18.125)
-?- T .=<. 19.5, happens(switch_right, T).           % 65/4, 153/8
-?- holdsAt(water_right(X),      19.5).              % 105/2 (52.5)
-?- holdsAt(water_left(X),       19.5).              % 105/2 (52.5)
+?- T .=<. 19.5, happens(switch_right, T).           % 65/4, 305/16
+?- holdsAt(water_right(X),      19.5).              % 435/8 (54.375)
+?- holdsAt(water_left(X),       19.5).              % 405/8 (50.625)
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/

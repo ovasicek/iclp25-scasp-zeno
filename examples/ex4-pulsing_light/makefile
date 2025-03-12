@@ -18,13 +18,13 @@ run-zeno_halt:
 # fixed
 
 run-fixed-context_free:
-	${TIME}  oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-context_free.pl
+	${TIME}  oscasp -s0 ../axioms/bec_scasp.pl ./fix-context_free.pl
 
 run-fixed-holdsAt4:
-	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt4.pl
+	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt4.pl
 
 run-fixed-incremental:
-	${TIME} ../scripts/incremental_circular_trajectories.sh ./model-fixed-incremental.pl ../axioms/bec_scasp.pl
+	${TIME} ../scripts/incremental_circular_trajectories.sh ./fix-incremental.pl ../axioms/bec_scasp.pl
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -34,9 +34,9 @@ run-fixed-incremental:
 trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=3000" ./logs/trace-non_term.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-context_free.pl --tree" ./logs/trace-fixed-context_free.log
-	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log
-	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh ./model-fixed-incremental.pl ../axioms/bec_scasp.pl --tree" ./logs/trace-fixed-incremental.log
+	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-context_free.pl --tree" ./logs/trace-fixed-context_free.log
+	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log
+	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh ./fix-incremental.pl ../axioms/bec_scasp.pl --tree" ./logs/trace-fixed-incremental.log
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -44,6 +44,6 @@ trace:
 
 preprocess:
 	../scripts/preprocess_model.sh ./preprocessed_can_rules/model ./model.pl
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/model-fixed-context_free ./model-fixed-context_free.pl
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/model-fixed-holdsAt4 ./model-fixed-holdsAt4.pl
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/model-fixed-incremental ./model-fixed-incremental.pl
+	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-context_free ./fix-context_free.pl
+	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-holdsAt4 ./fix-holdsAt4.pl
+	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-incremental ./fix-incremental.pl

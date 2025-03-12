@@ -18,10 +18,10 @@ run-zeno_halt:
 # fixed
 
 run-fixed-holdsAt3:
-	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt3.pl
+	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt3.pl
 
 run-fixed-event_delay:
-	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-event_delay.pl
+	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./fix-event_delay.pl
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -31,8 +31,8 @@ run-fixed-event_delay:
 trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000" ./logs/trace-non_term.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-holdsAt3.pl --tree" ./logs/trace-fixed-holdsAt3.log
-	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model-fixed-event_delay.pl --tree" ./logs/trace-fixed-event_delay.log
+	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree" ./logs/trace-fixed-holdsAt3.log
+	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-event_delay.pl --tree" ./logs/trace-fixed-event_delay.log
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -40,5 +40,5 @@ trace:
 
 preprocess:
 	../scripts/preprocess_model.sh ./preprocessed_can_rules/model ./model.pl
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/model-fixed-holdsAt3 ./model-fixed-holdsAt3.pl
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/model-fixed-event_delay ./model-fixed-event_delay.pl
+	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-holdsAt3 ./fix-holdsAt3.pl
+	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-event_delay ./fix-event_delay.pl

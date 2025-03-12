@@ -1,7 +1,7 @@
 % problems
-%   repeated trigger - fixed by introducing a duration using holdsAt/3
+%   repeated trigger - fixed by introducing an epsilon
 
-#include './preprocessed_can_rules/model-fixed-holdsAt3-preprocessed.pl'. % include the can_* rules
+#include './preprocessed_can_rules/fix-epsilon-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.
@@ -35,12 +35,13 @@ initiates(serviceFee, balance(NewB), T) :-
 terminates(serviceFee, balance(OldB), T) :-
     holdsAt(balance(OldB), T).
 
-duration(1).
+epsilon(1/1000000).
 happens(serviceFee, T2) :- !spy,
-    duration(Dur), MinDur .>=. Dur,
+    epsilon(EPS), T2 .=. T1 + EPS,
+    happens(withdraw(_), T1),
+    holdsAt(noServiceFeeYet, T2),
     B .<. 1000,
-    holdsAt(balance(B), T2, Dur),
-    holdsAt(noServiceFeeYet, T2, MinDur).
+    holdsAt(balance(B), T2).
 
 
 % ----- narrative & queries  -----
@@ -49,13 +50,13 @@ initiallyP(balance(10000)).
 initiallyP(noServiceFeeYet).
 initiallyN(F) :- not initiallyP(F).
 
-happens(withdraw(8000),             10).
-happens(withdraw(1500),             20).
+happens(withdraw(8000), 10).
+happens(withdraw(1500), 20).
 
-?- holdsAt(balance(X),              5).   % 10000
-?- holdsAt(balance(X),              15).  % 2000
-?- holdsAt(balance(X),              25).  % 490
-?- T .=<. 25, happens(serviceFee,   T).   % 21
+?- holdsAt(balance(X),  5).   % 10000
+?- holdsAt(balance(X),  15).  % 2000
+?- holdsAt(balance(X),  25).  % 490
+?- happens(serviceFee,  T).   % 20.0
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
