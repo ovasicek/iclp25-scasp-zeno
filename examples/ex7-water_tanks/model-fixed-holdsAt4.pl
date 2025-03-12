@@ -102,6 +102,7 @@ happens(start(right),           10).
 
 ?- T .=<. 19.5, happens(switch_left,  T).           % 25/2 (12.5), 145/8 (18.125)
 ?- T .=<. 19.5, happens(switch_right, T).           % 65/4, 153/8
+?- holdsAt(water_right(X),      19.5).              % 105/2 (52.5)
 ?- holdsAt(water_left(X),       19.5).              % 105/2 (52.5)
 
 
