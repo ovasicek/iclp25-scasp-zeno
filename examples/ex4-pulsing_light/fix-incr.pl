@@ -2,7 +2,7 @@
 %   self-end trajectory - fixed via holdsAt/3 (or holdsAt/4)
 %   circular trajectory - fixed via incremental (forward) reasoning
 
-#include './preprocessed_can_rules/fix-incremental-preprocessed.pl'. % include the can_* rules
+#include './preprocessed_can_rules/fix-incr-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.

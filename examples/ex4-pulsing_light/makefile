@@ -23,8 +23,8 @@ run-fixed-context_free:
 run-fixed-holdsAt4:
 	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt4.pl
 
-run-fixed-incremental:
-	${TIME} ../scripts/incremental_circular_trajectories.sh ./fix-incremental.pl ../axioms/bec_scasp.pl
+run-fixed-incr:
+	${TIME} ../scripts/incremental_circular_trajectories.sh ./fix-incr.pl ../axioms/bec_scasp.pl
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@ trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-context_free.pl --tree" ./logs/trace-fixed-context_free.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log
-	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh ./fix-incremental.pl ../axioms/bec_scasp.pl --tree" ./logs/trace-fixed-incremental.log
+	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh ./fix-incr.pl ../axioms/bec_scasp.pl --tree" ./logs/trace-fixed-incr.log
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -46,4 +46,4 @@ preprocess:
 	../scripts/preprocess_model.sh ./preprocessed_can_rules/model ./model.pl
 	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-context_free ./fix-context_free.pl
 	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-holdsAt4 ./fix-holdsAt4.pl
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-incremental ./fix-incremental.pl
+	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-incr ./fix-incr.pl
