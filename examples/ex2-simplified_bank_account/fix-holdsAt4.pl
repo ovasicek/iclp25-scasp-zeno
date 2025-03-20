@@ -1,7 +1,7 @@
 % problems
-%   repeated trigger - fixed by introducing a duration using holdsAt/3
+%   repeated trigger - fixed by introducing a duration using holdsAt/4
 
-#include './preprocessed_can_rules/fix-holdsAt3-preprocessed.pl'. % include the can_* rules
+#include './preprocessed_can_rules/fix-holdsAt4-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.
@@ -35,11 +35,11 @@ initiates(serviceFee, balance(NewB), T) :-
 terminates(serviceFee, balance(OldB), T) :-
     holdsAt(balance(OldB), T).
 
-duration(1).
+duration(1/1000000).
 happens(serviceFee, T2) :- !spy,
     duration(Dur),
     B .<. 1000,
-    holdsAt(balance(B), T2, Dur),
+    holdsAt(balance(B), T2, Dur, withdraw(_)),
     holdsAt(noServiceFeeYet, T2).
 
 
@@ -55,7 +55,8 @@ happens(withdraw(1500),             20).
 ?- holdsAt(balance(X),              5).   % 10000
 ?- holdsAt(balance(X),              15).  % 2000
 ?- holdsAt(balance(X),              25).  % 490
-?- T .=<. 25, happens(serviceFee,   T).   % 21
+?- T .=<. 25, happens(serviceFee,   T).   % 20.0
+/*
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/

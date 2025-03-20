@@ -18,13 +18,13 @@ run-zeno_halt:
 # fixed
 
 run-fixed-epsilon:
-	${TIME} oscasp -s0 ../axioms/bec_scasp-small.pl ./fix-epsilon.pl
+	${TIME} oscasp -s0 ../axioms/bec_scasp-small.pl ./fix-epsilon.pl -r
 
 run-fixed-remodel:
 	${TIME} oscasp -s0 ../axioms/bec_scasp-small.pl ./fix-remodel.pl
 
-run-fixed-holdsAt3:
-	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt3.pl
+run-fixed-holdsAt4:
+	${TIME} oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt4.pl -r
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@ trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-small.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-small.pl ./fix-epsilon.pl --tree -r" ./logs/trace-fixed-epsilon.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-small.pl ./fix-remodel.pl --tree" ./logs/trace-fixed-remodel.log
-	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree" ./logs/trace-fixed-holdsAt3.log
+	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r" ./logs/trace-fixed-holdsAt4.log
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -46,4 +46,4 @@ preprocess:
 	../scripts/preprocess_model.sh ./preprocessed_can_rules/model ./model.pl
 	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-epsilon ./fix-epsilon.pl
 	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-remodel ./fix-remodel.pl
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-holdsAt3 ./fix-holdsAt3.pl
+	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-holdsAt4 ./fix-holdsAt4.pl

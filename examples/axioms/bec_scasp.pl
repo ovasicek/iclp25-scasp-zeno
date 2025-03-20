@@ -94,9 +94,6 @@ holdsAt(Fluent, T2, Duration) :-
     initiates(Event, Fluent, T1),
     not_stoppedIn(T1, Fluent, T2).
 
-
-% new axiom approach -- not_holdsAt/3 (different /3)
-% - third parameter is exact duration (set Duration as >= something to get minimum duration)
 not_holdsAt(Fluent, T, Duration) :-
     Duration .>. 0,
     T .=. Duration,
@@ -105,6 +102,30 @@ not_holdsAt(Fluent, T, Duration) :-
     initiallyN(Fluent),
     not_startedIn(0, Fluent, T).
 not_holdsAt(Fluent, T2, Duration) :-
+    Duration .>. 0,
+    T1 .>. 0, T1 .<. T2,
+    max_time(T3), T2 .=<. T3,
+    T2 .=. T1 + Duration,
+    can_terminates(Event, Fluent, T1),
+    happens(Event, T1),
+    terminates(Event, Fluent, T1),
+    not_startedIn(T1, Fluent, T2).
+
+
+% new axiom approach -- holdsAt/4 (different /4)
+% - adds a fourth parameter to the holdsAt/3 right above
+% - fourth parameter says which event should be considered as the initiator of the fluent
+holdsAt(Fluent, T2, Duration, Event) :-
+    Duration .>. 0,
+    T1 .>. 0, T1 .<. T2,
+    max_time(T3), T2 .=<. T3,
+    T2 .=. T1 + Duration,
+    can_initiates(Event, Fluent, T1),
+    happens(Event, T1),
+    initiates(Event, Fluent, T1),
+    not_stoppedIn(T1, Fluent, T2).
+
+not_holdsAt(Fluent, T2, Duration, Event) :-
     Duration .>. 0,
     T1 .>. 0, T1 .<. T2,
     max_time(T3), T2 .=<. T3,
