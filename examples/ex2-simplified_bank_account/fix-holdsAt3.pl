@@ -37,10 +37,10 @@ terminates(serviceFee, balance(OldB), T) :-
 
 duration(1).
 happens(serviceFee, T2) :- !spy,
-    duration(Dur), MinDur .>=. Dur,
+    duration(Dur),
     B .<. 1000,
     holdsAt(balance(B), T2, Dur),
-    holdsAt(noServiceFeeYet, T2, MinDur).
+    holdsAt(noServiceFeeYet, T2).
 
 
 % ----- narrative & queries  -----
