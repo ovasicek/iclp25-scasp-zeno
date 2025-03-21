@@ -36,7 +36,7 @@ trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-context_free.pl --tree" ./logs/trace-fixed-context_free.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log
-	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh ./fix-incr.pl ../axioms/bec_scasp.pl --tree" ./logs/trace-fixed-incr.log
+	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh -c ./fix-incr.pl ../axioms/bec_scasp.pl --tree" ./logs/trace-fixed-incr_facts.log ; mv ./tmp-fix-incr.pl-model-increments.pl ./logs/trace-fixed-incr_facts.log
 
 
 #-----------------------------------------------------------------------------------------------------------------------
