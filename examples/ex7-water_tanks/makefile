@@ -17,7 +17,7 @@ run-zeno_halt:
 #-----------------------------------------------------------------------------------------------------------------------
 # fixed
 
-run-semi_fixed-incr:
+run-partfix-incr:
 	${TIME} ../scripts/incremental_circular_trajectories.sh ./partfix-incr.pl ../axioms/bec_scasp-interval_not.pl
 
 run-fixed-incr_holdsAt4:
@@ -33,7 +33,7 @@ run-fixed-holdsAt4:
 trace:
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1000" ./logs/trace-non_term.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-interval_not.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh ./partfix-incr.pl ../axioms/bec_scasp-interval_not.pl --tree" ./logs/trace-semi_fixed-incr.log
+	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh ./partfix-incr.pl ../axioms/bec_scasp-interval_not.pl --tree" ./logs/trace-partfix-incr.log
 	../scripts/maketrace.sh "../scripts/incremental_circular_trajectories.sh ./fix-incr_holdsAt4.pl ../axioms/bec_scasp-interval_not.pl --tree" ./logs/trace-fixed-incr_holdsAt4.log
 	../scripts/maketrace.sh "oscasp -s0 ../axioms/bec_scasp-interval_not.pl ./fix-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log
 
