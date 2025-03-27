@@ -4,38 +4,38 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1
 % QUERY:?- holdsAt(water_left(X),19.5).
 
 --------------------- Calling:  builtin(!spy) -------------
-    holdsAt(water_left(_216230),19.5)
-         {_216667~[_216667 > 0, _216667 < 39/2]} .>.0
-         {_216667~[_216667 > 0, _216667 < 39/2]} .<.19.5
+    holdsAt(water_left(_167474),19.5)
+         {_167911~[_167911 > 0, _167911 < 39/2]} .>.0
+         {_167911~[_167911 > 0, _167911 < 39/2]} .<.19.5
         max_time(100)
         19.5.=<.100
-        can_trajectory(left_filling, {_216667~[_216667 > 0, _216667 < 39/2]} ,water_left(_216230),19.5)
-        can_initiates(switch_left,left_filling, {_216667~[_216667 > 0, _216667 < 39/2]} )
-        happens(switch_left, {_216667~[_216667 > 0, _216667 < 39/2]} )
+        can_trajectory(left_filling, {_167911~[_167911 > 0, _167911 < 39/2]} ,water_left(_167474),19.5)
+        can_initiates(switch_left,left_filling, {_167911~[_167911 > 0, _167911 < 39/2]} )
+        happens(switch_left, {_167911~[_167911 > 0, _167911 < 39/2]} )
             builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    holdsAt(water_left(_216230),19.5)
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .>.0
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .<.19.5
+    holdsAt(water_left(_167474),19.5)
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .>.0
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .<.19.5
         max_time(100)
         19.5.=<.100
-        can_trajectory(left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,water_left(_216230),19.5)
-        can_initiates(switch_left,left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-        happens(switch_left, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
+        can_trajectory(left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,water_left(_167474),19.5)
+        can_initiates(switch_left,left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+        happens(switch_left, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
             builtin(!spy)
-             {_218021~[_218021 > -90, _218021 =< 50]} .=<.50
-            holdsAt(water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,right_filling)
+             {_169265~[_169265 > -90, _169265 =< 50]} .=<.50
+            holdsAt(water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,right_filling)
                 10.>.0
-                10.<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
+                10.<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
                 max_time(100)
-                 {_216667~[_216667 < 39/2, _216667 >= 25/2]} .=<.100
-                can_trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
+                 {_167911~[_167911 < 39/2, _167911 >= 25/2]} .=<.100
+                can_trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
                 can_initiates(start(right),right_filling,10)
                 happens(start(right),10)
                 initiates(start(right),right_filling,10)
-                trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                     {_218021~[_218021 > -90, _218021 =< 50]} .=.100-( {_216667~[_216667 < 39/2, _216667 >= 25/2]} -10)*20
+                trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                     {_169265~[_169265 > -90, _169265 =< 50]} .=.100-( {_167911~[_167911 < 39/2, _167911 >= 25/2]} -10)*20
                     holdsAt(water_left(100),10)
                         10.>=.0
                         max_time(100)
@@ -44,7 +44,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1
                         not_stoppedIn(0,water_left(100),10)
                             0.=<.10
                             not_interrupted(terminates,water_left(100),0,10)
-                                findall(_220833,findall_can_interrupts(terminates,_220833,water_left(100),0,10),[])
+                                findall(_172077,findall_can_interrupts(terminates,_172077,water_left(100),0,10),[])
                                 not_interrupted_N(terminates,water_left(100),[],0,10)
                                     not_interrupted_1(terminates,water_left(100),[],0,10)
                                         inf(0,0)
@@ -57,72 +57,72 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1
                                             10.=.10
                                         not_interrupted_1_fail(terminates,water_left(100),[],0,10)
                             not_interrupted(releases,water_left(100),0,10)
-                                findall(_222293,findall_can_interrupts(releases,_222293,water_left(100),0,10),[start(_222365)])
-                                    findall_can_interrupts(releases,start(_222365),water_left(100),0,10)
-                                         {_222464~[_222464 > 0, _222464 < 10]} .>.0
-                                         {_222464~[_222464 > 0, _222464 < 10]} .<.10
-                                        can_interrupts(releases,start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                            can_releases(start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                not_interrupted_N(releases,water_left(100),[start(_222365)],0,10)
-                                    not_interrupted_1(releases,water_left(100),[start(_222365)],0,10)
+                                findall(_173537,findall_can_interrupts(releases,_173537,water_left(100),0,10),[start(_173609)])
+                                    findall_can_interrupts(releases,start(_173609),water_left(100),0,10)
+                                         {_173708~[_173708 > 0, _173708 < 10]} .>.0
+                                         {_173708~[_173708 > 0, _173708 < 10]} .<.10
+                                        can_interrupts(releases,start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                            can_releases(start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                not_interrupted_N(releases,water_left(100),[start(_173609)],0,10)
+                                    not_interrupted_1(releases,water_left(100),[start(_173609)],0,10)
                                         inf(0,0)
                                         sup(0,0)
                                         proved(is_not_interval(0,0))
                                         inf(10,10)
                                         sup(10,10)
                                         proved(is_not_interval(10,10))
-                                        not_interrupted_1_fail(releases,water_left(100),[start(_222365)],0,10)
-                                            findall(_223324,interrupt_1_fail(releases,start(_222365),water_left(100),_223324,0,10),[])
+                                        not_interrupted_1_fail(releases,water_left(100),[start(_173609)],0,10)
+                                            findall(_174568,interrupt_1_fail(releases,start(_173609),water_left(100),_174568,0,10),[])
                                             all_entirely_outside_of_interval([],0,10)
                                             not_interrupted_1_fail(releases,water_left(100),[],0,10)
-                not_stoppedIn(10,right_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                    10.=<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
-                    not_interrupted(terminates,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                        findall(_224315,findall_can_interrupts(terminates,_224315,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ),[switch_left])
-                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_224460~[_224460 >= 25/2, _224460 < 39/2]} )
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .>.10
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .<. {_224460~[_224460 >= 25/2, _224460 < 39/2]} 
-                                can_interrupts(terminates,switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                                    can_terminates(switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                        not_interrupted_N(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                            not_interrupted_2b(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
+                not_stoppedIn(10,right_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                    10.=<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
+                    not_interrupted(terminates,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                        findall(_175559,findall_can_interrupts(terminates,_175559,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ),[switch_left])
+                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_175704~[_175704 >= 25/2, _175704 < 39/2]} )
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .>.10
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .<. {_175704~[_175704 >= 25/2, _175704 < 39/2]} 
+                                can_interrupts(terminates,switch_left,right_filling, {_175976~[_175976 > 10, _175976 < 39/2]} )
+                                    can_terminates(switch_left,right_filling, {_175976~[_175976 > 10, _175976 < 39/2]} )
+                        not_interrupted_N(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                            not_interrupted_2b(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
                                 inf(10,10)
                                 sup(10,10)
                                 proved(is_not_interval(10,10))
-                                inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                sup( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,39/2)
+                                inf( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,25/2)
+                                sup( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,39/2)
                                 is_interval(25/2,39/2)
                                     25/2.<>.39/2
-                                not_interrupted_2b_fail(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                    interrupt_2b_fail(terminates,switch_left,right_filling, {_226570~[_226570 < 25/2, _226570 > 10]} ,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                         {_226570~[_226570 < 25/2, _226570 > 10]} .>.10
-                                        inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                         {_226570~[_226570 < 25/2, _226570 > 10]} .<.25/2
-                                        happens(switch_left, {_226570~[_226570 < 25/2, _226570 > 10]} )
+                                not_interrupted_2b_fail(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                    interrupt_2b_fail(terminates,switch_left,right_filling, {_177814~[_177814 < 25/2, _177814 > 10]} ,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                         {_177814~[_177814 < 25/2, _177814 > 10]} .>.10
+                                        inf( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,25/2)
+                                         {_177814~[_177814 < 25/2, _177814 > 10]} .<.25/2
+                                        happens(switch_left, {_177814~[_177814 < 25/2, _177814 > 10]} )
                                             builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    holdsAt(water_left(_216230),19.5)
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .>.0
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .<.19.5
+    holdsAt(water_left(_167474),19.5)
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .>.0
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .<.19.5
         max_time(100)
         19.5.=<.100
-        can_trajectory(left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,water_left(_216230),19.5)
-        can_initiates(switch_left,left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-        happens(switch_left, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
+        can_trajectory(left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,water_left(_167474),19.5)
+        can_initiates(switch_left,left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+        happens(switch_left, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
             builtin(!spy)
-             {_218021~[_218021 > -90, _218021 =< 50]} .=<.50
-            holdsAt(water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,right_filling)
+             {_169265~[_169265 > -90, _169265 =< 50]} .=<.50
+            holdsAt(water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,right_filling)
                 10.>.0
-                10.<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
+                10.<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
                 max_time(100)
-                 {_216667~[_216667 < 39/2, _216667 >= 25/2]} .=<.100
-                can_trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
+                 {_167911~[_167911 < 39/2, _167911 >= 25/2]} .=<.100
+                can_trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
                 can_initiates(start(right),right_filling,10)
                 happens(start(right),10)
                 initiates(start(right),right_filling,10)
-                trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                     {_218021~[_218021 > -90, _218021 =< 50]} .=.100-( {_216667~[_216667 < 39/2, _216667 >= 25/2]} -10)*20
+                trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                     {_169265~[_169265 > -90, _169265 =< 50]} .=.100-( {_167911~[_167911 < 39/2, _167911 >= 25/2]} -10)*20
                     holdsAt(water_left(100),10)
                         10.>=.0
                         max_time(100)
@@ -131,7 +131,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1
                         not_stoppedIn(0,water_left(100),10)
                             0.=<.10
                             not_interrupted(terminates,water_left(100),0,10)
-                                findall(_220833,findall_can_interrupts(terminates,_220833,water_left(100),0,10),[])
+                                findall(_172077,findall_can_interrupts(terminates,_172077,water_left(100),0,10),[])
                                 not_interrupted_N(terminates,water_left(100),[],0,10)
                                     not_interrupted_1(terminates,water_left(100),[],0,10)
                                         inf(0,0)
@@ -144,93 +144,93 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1
                                             10.=.10
                                         not_interrupted_1_fail(terminates,water_left(100),[],0,10)
                             not_interrupted(releases,water_left(100),0,10)
-                                findall(_222293,findall_can_interrupts(releases,_222293,water_left(100),0,10),[start(_222365)])
-                                    findall_can_interrupts(releases,start(_222365),water_left(100),0,10)
-                                         {_222464~[_222464 > 0, _222464 < 10]} .>.0
-                                         {_222464~[_222464 > 0, _222464 < 10]} .<.10
-                                        can_interrupts(releases,start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                            can_releases(start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                not_interrupted_N(releases,water_left(100),[start(_222365)],0,10)
-                                    not_interrupted_1(releases,water_left(100),[start(_222365)],0,10)
+                                findall(_173537,findall_can_interrupts(releases,_173537,water_left(100),0,10),[start(_173609)])
+                                    findall_can_interrupts(releases,start(_173609),water_left(100),0,10)
+                                         {_173708~[_173708 > 0, _173708 < 10]} .>.0
+                                         {_173708~[_173708 > 0, _173708 < 10]} .<.10
+                                        can_interrupts(releases,start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                            can_releases(start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                not_interrupted_N(releases,water_left(100),[start(_173609)],0,10)
+                                    not_interrupted_1(releases,water_left(100),[start(_173609)],0,10)
                                         inf(0,0)
                                         sup(0,0)
                                         proved(is_not_interval(0,0))
                                         inf(10,10)
                                         sup(10,10)
                                         proved(is_not_interval(10,10))
-                                        not_interrupted_1_fail(releases,water_left(100),[start(_222365)],0,10)
-                                            findall(_223324,interrupt_1_fail(releases,start(_222365),water_left(100),_223324,0,10),[])
+                                        not_interrupted_1_fail(releases,water_left(100),[start(_173609)],0,10)
+                                            findall(_174568,interrupt_1_fail(releases,start(_173609),water_left(100),_174568,0,10),[])
                                             all_entirely_outside_of_interval([],0,10)
                                             not_interrupted_1_fail(releases,water_left(100),[],0,10)
-                not_stoppedIn(10,right_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                    10.=<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
-                    not_interrupted(terminates,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                        findall(_224315,findall_can_interrupts(terminates,_224315,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ),[switch_left])
-                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_224460~[_224460 >= 25/2, _224460 < 39/2]} )
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .>.10
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .<. {_224460~[_224460 >= 25/2, _224460 < 39/2]} 
-                                can_interrupts(terminates,switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                                    can_terminates(switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                        not_interrupted_N(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                            not_interrupted_2b(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
+                not_stoppedIn(10,right_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                    10.=<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
+                    not_interrupted(terminates,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                        findall(_175559,findall_can_interrupts(terminates,_175559,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ),[switch_left])
+                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_175704~[_175704 >= 25/2, _175704 < 39/2]} )
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .>.10
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .<. {_175704~[_175704 >= 25/2, _175704 < 39/2]} 
+                                can_interrupts(terminates,switch_left,right_filling, {_175976~[_175976 > 10, _175976 < 39/2]} )
+                                    can_terminates(switch_left,right_filling, {_175976~[_175976 > 10, _175976 < 39/2]} )
+                        not_interrupted_N(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                            not_interrupted_2b(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
                                 inf(10,10)
                                 sup(10,10)
                                 proved(is_not_interval(10,10))
-                                inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                sup( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,39/2)
+                                inf( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,25/2)
+                                sup( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,39/2)
                                 is_interval(25/2,39/2)
                                     25/2.<>.39/2
-                                not_interrupted_2b_fail(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                    interrupt_2b_fail(terminates,switch_left,right_filling, {_226570~[_226570 > 10, _226570 < 25/2]} ,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                         {_226570~[_226570 > 10, _226570 < 25/2]} .>.10
-                                        inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                         {_226570~[_226570 > 10, _226570 < 25/2]} .<.25/2
-                                        happens(switch_left, {_226570~[_226570 > 10, _226570 < 25/2]} )
+                                not_interrupted_2b_fail(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                    interrupt_2b_fail(terminates,switch_left,right_filling, {_177814~[_177814 > 10, _177814 < 25/2]} ,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                         {_177814~[_177814 > 10, _177814 < 25/2]} .>.10
+                                        inf( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,25/2)
+                                         {_177814~[_177814 > 10, _177814 < 25/2]} .<.25/2
+                                        happens(switch_left, {_177814~[_177814 > 10, _177814 < 25/2]} )
                                             builtin(!spy)
-                                             {_229614~[_229614 =< 50]} .=<.50
-                                            holdsAt(water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} ,right_filling)
+                                             {_180858~[_180858 =< 50]} .=<.50
+                                            holdsAt(water_left( {_180858~[_180858 =< 50]} ), {_177814~[_177814 > 10, _177814 < 25/2]} ,right_filling)
                                                 10.>.0
-                                                10.<. {_226570~[_226570 > 10, _226570 < 25/2]} 
+                                                10.<. {_177814~[_177814 > 10, _177814 < 25/2]} 
                                                 max_time(100)
-                                                 {_226570~[_226570 > 10, _226570 < 25/2]} .=<.100
-                                                can_trajectory(right_filling,10,water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} )
+                                                 {_177814~[_177814 > 10, _177814 < 25/2]} .=<.100
+                                                can_trajectory(right_filling,10,water_left( {_180858~[_180858 =< 50]} ), {_177814~[_177814 > 10, _177814 < 25/2]} )
                                                 can_initiates(start(right),right_filling,10)
                                                 happens(start(right),10)
                                                 proved(initiates(start(right),right_filling,10))
-                                                trajectory(right_filling,10,water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                                     {_229614~[_229614 =< 50]} .=. {_231194~[_231194 < 100]} -( {_226570~[_226570 > 10, _226570 < 25/2]} -10)*20
-                                                    holdsAt(water_left( {_231194~[_231194 < 100]} ),10)
-                                                         {_231644~[_231644 > 0, _231644 < 10]} .>.0
-                                                         {_231644~[_231644 > 0, _231644 < 10]} .<.10
+                                                trajectory(right_filling,10,water_left( {_180858~[_180858 =< 50]} ), {_177814~[_177814 > 10, _177814 < 25/2]} )
+                                                     {_180858~[_180858 =< 50]} .=. {_182438~[_182438 < 100]} -( {_177814~[_177814 > 10, _177814 < 25/2]} -10)*20
+                                                    holdsAt(water_left( {_182438~[_182438 < 100]} ),10)
+                                                         {_182888~[_182888 > 0, _182888 < 10]} .>.0
+                                                         {_182888~[_182888 > 0, _182888 < 10]} .<.10
                                                         max_time(100)
                                                         10.=<.100
-                                                        can_trajectory(left_filling, {_231644~[_231644 > 0, _231644 < 10]} ,water_left( {_231194~[_231194 < 100]} ),10)
-                                                        can_initiates(switch_left,left_filling, {_231644~[_231644 > 0, _231644 < 10]} )
-                                                        happens(switch_left, {_231644~[_231644 > 0, _231644 < 10]} )
+                                                        can_trajectory(left_filling, {_182888~[_182888 > 0, _182888 < 10]} ,water_left( {_182438~[_182438 < 100]} ),10)
+                                                        can_initiates(switch_left,left_filling, {_182888~[_182888 > 0, _182888 < 10]} )
+                                                        happens(switch_left, {_182888~[_182888 > 0, _182888 < 10]} )
                                                             builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
-    holdsAt(water_left(_216230),19.5)
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .>.0
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .<.19.5
+    holdsAt(water_left(_167474),19.5)
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .>.0
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .<.19.5
         max_time(100)
         19.5.=<.100
-        can_trajectory(left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,water_left(_216230),19.5)
-        can_initiates(switch_left,left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-        happens(switch_left, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
+        can_trajectory(left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,water_left(_167474),19.5)
+        can_initiates(switch_left,left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+        happens(switch_left, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
             builtin(!spy)
-             {_218021~[_218021 > -90, _218021 =< 50]} .=<.50
-            holdsAt(water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,right_filling)
+             {_169265~[_169265 > -90, _169265 =< 50]} .=<.50
+            holdsAt(water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,right_filling)
                 10.>.0
-                10.<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
+                10.<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
                 max_time(100)
-                 {_216667~[_216667 < 39/2, _216667 >= 25/2]} .=<.100
-                can_trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
+                 {_167911~[_167911 < 39/2, _167911 >= 25/2]} .=<.100
+                can_trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
                 can_initiates(start(right),right_filling,10)
                 happens(start(right),10)
                 initiates(start(right),right_filling,10)
-                trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                     {_218021~[_218021 > -90, _218021 =< 50]} .=.100-( {_216667~[_216667 < 39/2, _216667 >= 25/2]} -10)*20
+                trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                     {_169265~[_169265 > -90, _169265 =< 50]} .=.100-( {_167911~[_167911 < 39/2, _167911 >= 25/2]} -10)*20
                     holdsAt(water_left(100),10)
                         10.>=.0
                         max_time(100)
@@ -239,7 +239,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1
                         not_stoppedIn(0,water_left(100),10)
                             0.=<.10
                             not_interrupted(terminates,water_left(100),0,10)
-                                findall(_220833,findall_can_interrupts(terminates,_220833,water_left(100),0,10),[])
+                                findall(_172077,findall_can_interrupts(terminates,_172077,water_left(100),0,10),[])
                                 not_interrupted_N(terminates,water_left(100),[],0,10)
                                     not_interrupted_1(terminates,water_left(100),[],0,10)
                                         inf(0,0)
@@ -252,318 +252,37 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1
                                             10.=.10
                                         not_interrupted_1_fail(terminates,water_left(100),[],0,10)
                             not_interrupted(releases,water_left(100),0,10)
-                                findall(_222293,findall_can_interrupts(releases,_222293,water_left(100),0,10),[start(_222365)])
-                                    findall_can_interrupts(releases,start(_222365),water_left(100),0,10)
-                                         {_222464~[_222464 > 0, _222464 < 10]} .>.0
-                                         {_222464~[_222464 > 0, _222464 < 10]} .<.10
-                                        can_interrupts(releases,start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                            can_releases(start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                not_interrupted_N(releases,water_left(100),[start(_222365)],0,10)
-                                    not_interrupted_1(releases,water_left(100),[start(_222365)],0,10)
+                                findall(_173537,findall_can_interrupts(releases,_173537,water_left(100),0,10),[start(_173609)])
+                                    findall_can_interrupts(releases,start(_173609),water_left(100),0,10)
+                                         {_173708~[_173708 > 0, _173708 < 10]} .>.0
+                                         {_173708~[_173708 > 0, _173708 < 10]} .<.10
+                                        can_interrupts(releases,start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                            can_releases(start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                not_interrupted_N(releases,water_left(100),[start(_173609)],0,10)
+                                    not_interrupted_1(releases,water_left(100),[start(_173609)],0,10)
                                         inf(0,0)
                                         sup(0,0)
                                         proved(is_not_interval(0,0))
                                         inf(10,10)
                                         sup(10,10)
                                         proved(is_not_interval(10,10))
-                                        not_interrupted_1_fail(releases,water_left(100),[start(_222365)],0,10)
-                                            findall(_223324,interrupt_1_fail(releases,start(_222365),water_left(100),_223324,0,10),[])
+                                        not_interrupted_1_fail(releases,water_left(100),[start(_173609)],0,10)
+                                            findall(_174568,interrupt_1_fail(releases,start(_173609),water_left(100),_174568,0,10),[])
                                             all_entirely_outside_of_interval([],0,10)
                                             not_interrupted_1_fail(releases,water_left(100),[],0,10)
-                not_stoppedIn(10,right_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                    10.=<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
-                    not_interrupted(terminates,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                        findall(_224315,findall_can_interrupts(terminates,_224315,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ),[switch_left])
-                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_224460~[_224460 >= 25/2, _224460 < 39/2]} )
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .>.10
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .<. {_224460~[_224460 >= 25/2, _224460 < 39/2]} 
-                                can_interrupts(terminates,switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                                    can_terminates(switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                        not_interrupted_N(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                            not_interrupted_2b(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                inf(10,10)
-                                sup(10,10)
-                                proved(is_not_interval(10,10))
-                                inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                sup( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,39/2)
-                                is_interval(25/2,39/2)
-                                    25/2.<>.39/2
-                                not_interrupted_2b_fail(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                    interrupt_2b_fail(terminates,switch_left,right_filling, {_226570~[_226570 > 10, _226570 < 25/2]} ,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                         {_226570~[_226570 > 10, _226570 < 25/2]} .>.10
-                                        inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                         {_226570~[_226570 > 10, _226570 < 25/2]} .<.25/2
-                                        happens(switch_left, {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                            builtin(!spy)
-                                             {_229614~[_229614 =< 50]} .=<.50
-                                            holdsAt(water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} ,right_filling)
-                                                10.>.0
-                                                10.<. {_226570~[_226570 > 10, _226570 < 25/2]} 
-                                                max_time(100)
-                                                 {_226570~[_226570 > 10, _226570 < 25/2]} .=<.100
-                                                can_trajectory(right_filling,10,water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                                can_initiates(start(right),right_filling,10)
-                                                happens(start(right),10)
-                                                proved(initiates(start(right),right_filling,10))
-                                                trajectory(right_filling,10,water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                                     {_229614~[_229614 =< 50]} .=. {_231194~[_231194 < 100]} -( {_226570~[_226570 > 10, _226570 < 25/2]} -10)*20
-                                                    holdsAt(water_left( {_231194~[_231194 < 100]} ),10)
-                                                         {_231644~[_231644 > 0, _231644 < 10]} .>.0
-                                                         {_231644~[_231644 > 0, _231644 < 10]} .<.10
-                                                        max_time(100)
-                                                        10.=<.100
-                                                        can_trajectory(left_filling, {_231644~[_231644 > 0, _231644 < 10]} ,water_left( {_231194~[_231194 < 100]} ),10)
-                                                        can_initiates(switch_left,left_filling, {_231644~[_231644 > 0, _231644 < 10]} )
-                                                        happens(switch_left, {_231644~[_231644 > 0, _231644 < 10]} )
-                                                            builtin(!spy)
-                                                             {_234946~[_234946 =< 50]} .=<.50
-                                                            holdsAt(water_left( {_234946~[_234946 =< 50]} ), {_231644~[_231644 > 0, _231644 < 10]} ,right_filling)
-                                                                 {_235273~[_235273 > 0, _235273 < 10]} .>.0
-                                                                 {_235273~[_235273 > 0, _235273 < 10]} .<. {_231644~[_231644 > 0, _231644 < 10]} 
-                                                                max_time(100)
-                                                                 {_231644~[_231644 > 0, _231644 < 10]} .=<.100
-                                                                can_trajectory(right_filling, {_235273~[_235273 > 0, _235273 < 10]} ,water_left( {_234946~[_234946 =< 50]} ), {_231644~[_231644 > 0, _231644 < 10]} )
-                                                                can_initiates(switch_right,right_filling, {_235273~[_235273 > 0, _235273 < 10]} )
-                                                                happens(switch_right, {_235273~[_235273 > 0, _235273 < 10]} )
-                                                                    builtin(!spy)
-
---------------------- Calling:  builtin(!spy) -------------
-    holdsAt(water_left(_216230),19.5)
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .>.0
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .<.19.5
-        max_time(100)
-        19.5.=<.100
-        can_trajectory(left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,water_left(_216230),19.5)
-        can_initiates(switch_left,left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-        happens(switch_left, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-            builtin(!spy)
-             {_218021~[_218021 > -90, _218021 =< 50]} .=<.50
-            holdsAt(water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,right_filling)
-                10.>.0
-                10.<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
-                max_time(100)
-                 {_216667~[_216667 < 39/2, _216667 >= 25/2]} .=<.100
-                can_trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                can_initiates(start(right),right_filling,10)
-                happens(start(right),10)
-                initiates(start(right),right_filling,10)
-                trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                     {_218021~[_218021 > -90, _218021 =< 50]} .=.100-( {_216667~[_216667 < 39/2, _216667 >= 25/2]} -10)*20
-                    holdsAt(water_left(100),10)
-                        10.>=.0
-                        max_time(100)
-                        10.=<.100
-                        initiallyP(water_left(100))
-                        not_stoppedIn(0,water_left(100),10)
-                            0.=<.10
-                            not_interrupted(terminates,water_left(100),0,10)
-                                findall(_220833,findall_can_interrupts(terminates,_220833,water_left(100),0,10),[])
-                                not_interrupted_N(terminates,water_left(100),[],0,10)
-                                    not_interrupted_1(terminates,water_left(100),[],0,10)
-                                        inf(0,0)
-                                        sup(0,0)
-                                        is_not_interval(0,0)
-                                            0.=.0
-                                        inf(10,10)
-                                        sup(10,10)
-                                        is_not_interval(10,10)
-                                            10.=.10
-                                        not_interrupted_1_fail(terminates,water_left(100),[],0,10)
-                            not_interrupted(releases,water_left(100),0,10)
-                                findall(_222293,findall_can_interrupts(releases,_222293,water_left(100),0,10),[start(_222365)])
-                                    findall_can_interrupts(releases,start(_222365),water_left(100),0,10)
-                                         {_222464~[_222464 > 0, _222464 < 10]} .>.0
-                                         {_222464~[_222464 > 0, _222464 < 10]} .<.10
-                                        can_interrupts(releases,start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                            can_releases(start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                not_interrupted_N(releases,water_left(100),[start(_222365)],0,10)
-                                    not_interrupted_1(releases,water_left(100),[start(_222365)],0,10)
-                                        inf(0,0)
-                                        sup(0,0)
-                                        proved(is_not_interval(0,0))
-                                        inf(10,10)
-                                        sup(10,10)
-                                        proved(is_not_interval(10,10))
-                                        not_interrupted_1_fail(releases,water_left(100),[start(_222365)],0,10)
-                                            findall(_223324,interrupt_1_fail(releases,start(_222365),water_left(100),_223324,0,10),[])
-                                            all_entirely_outside_of_interval([],0,10)
-                                            not_interrupted_1_fail(releases,water_left(100),[],0,10)
-                not_stoppedIn(10,right_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                    10.=<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
-                    not_interrupted(terminates,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                        findall(_224315,findall_can_interrupts(terminates,_224315,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ),[switch_left])
-                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_224460~[_224460 >= 25/2, _224460 < 39/2]} )
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .>.10
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .<. {_224460~[_224460 >= 25/2, _224460 < 39/2]} 
-                                can_interrupts(terminates,switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                                    can_terminates(switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                        not_interrupted_N(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                            not_interrupted_2b(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                inf(10,10)
-                                sup(10,10)
-                                proved(is_not_interval(10,10))
-                                inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                sup( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,39/2)
-                                is_interval(25/2,39/2)
-                                    25/2.<>.39/2
-                                not_interrupted_2b_fail(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                    interrupt_2b_fail(terminates,switch_left,right_filling, {_226570~[_226570 > 10, _226570 < 25/2]} ,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                         {_226570~[_226570 > 10, _226570 < 25/2]} .>.10
-                                        inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                         {_226570~[_226570 > 10, _226570 < 25/2]} .<.25/2
-                                        happens(switch_left, {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                            builtin(!spy)
-                                             {_229614~[_229614 =< 50]} .=<.50
-                                            holdsAt(water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} ,right_filling)
-                                                10.>.0
-                                                10.<. {_226570~[_226570 > 10, _226570 < 25/2]} 
-                                                max_time(100)
-                                                 {_226570~[_226570 > 10, _226570 < 25/2]} .=<.100
-                                                can_trajectory(right_filling,10,water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                                can_initiates(start(right),right_filling,10)
-                                                happens(start(right),10)
-                                                proved(initiates(start(right),right_filling,10))
-                                                trajectory(right_filling,10,water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                                     {_229614~[_229614 =< 50]} .=. {_231194~[_231194 < 100]} -( {_226570~[_226570 > 10, _226570 < 25/2]} -10)*20
-                                                    holdsAt(water_left( {_231194~[_231194 < 100]} ),10)
-                                                         {_231644~[_231644 > 0, _231644 < 10]} .>.0
-                                                         {_231644~[_231644 > 0, _231644 < 10]} .<.10
-                                                        max_time(100)
-                                                        10.=<.100
-                                                        can_trajectory(left_filling, {_231644~[_231644 > 0, _231644 < 10]} ,water_left( {_231194~[_231194 < 100]} ),10)
-                                                        can_initiates(switch_left,left_filling, {_231644~[_231644 > 0, _231644 < 10]} )
-                                                        happens(switch_left, {_231644~[_231644 > 0, _231644 < 10]} )
-                                                            builtin(!spy)
-                                                             {_234946~[_234946 =< 50]} .=<.50
-                                                            holdsAt(water_left( {_234946~[_234946 =< 50]} ), {_231644~[_231644 > 0, _231644 < 10]} ,right_filling)
-                                                                 {_235273~[_235273 > 0, _235273 < 10]} .>.0
-                                                                 {_235273~[_235273 > 0, _235273 < 10]} .<. {_231644~[_231644 > 0, _231644 < 10]} 
-                                                                max_time(100)
-                                                                 {_231644~[_231644 > 0, _231644 < 10]} .=<.100
-                                                                can_trajectory(right_filling, {_235273~[_235273 > 0, _235273 < 10]} ,water_left( {_234946~[_234946 =< 50]} ), {_231644~[_231644 > 0, _231644 < 10]} )
-                                                                can_initiates(switch_right,right_filling, {_235273~[_235273 > 0, _235273 < 10]} )
-                                                                happens(switch_right, {_235273~[_235273 > 0, _235273 < 10]} )
-                                                                    builtin(!spy)
-                                                                     {_239160~[_239160 =< 50]} .=<.50
-                                                                    holdsAt(water_right( {_239160~[_239160 =< 50]} ), {_235273~[_235273 > 0, _235273 < 10]} ,left_filling)
-                                                                         {_239487~[_239487 > 0, _239487 < 10]} .>.0
-                                                                         {_239487~[_239487 > 0, _239487 < 10]} .<. {_235273~[_235273 > 0, _235273 < 10]} 
-                                                                        max_time(100)
-                                                                         {_235273~[_235273 > 0, _235273 < 10]} .=<.100
-                                                                        can_trajectory(left_filling, {_239487~[_239487 > 0, _239487 < 10]} ,water_right( {_239160~[_239160 =< 50]} ), {_235273~[_235273 > 0, _235273 < 10]} )
-                                                                        can_initiates(switch_left,left_filling, {_239487~[_239487 > 0, _239487 < 10]} )
-                                                                        happens(switch_left, {_239487~[_239487 > 0, _239487 < 10]} )
-                                                                            builtin(!spy)
-
---------------------- Calling:  builtin(!spy) -------------
-    holdsAt(water_left(_216230),19.5)
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .>.0
-         {_216667~[_216667 < 39/2, _216667 >= 25/2]} .<.19.5
-        max_time(100)
-        19.5.=<.100
-        can_trajectory(left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,water_left(_216230),19.5)
-        can_initiates(switch_left,left_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-        happens(switch_left, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-            builtin(!spy)
-             {_218021~[_218021 > -90, _218021 =< 50]} .=<.50
-            holdsAt(water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,right_filling)
-                10.>.0
-                10.<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
-                max_time(100)
-                 {_216667~[_216667 < 39/2, _216667 >= 25/2]} .=<.100
-                can_trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                can_initiates(start(right),right_filling,10)
-                happens(start(right),10)
-                initiates(start(right),right_filling,10)
-                trajectory(right_filling,10,water_left( {_218021~[_218021 > -90, _218021 =< 50]} ), {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                     {_218021~[_218021 > -90, _218021 =< 50]} .=.100-( {_216667~[_216667 < 39/2, _216667 >= 25/2]} -10)*20
-                    holdsAt(water_left(100),10)
-                        10.>=.0
-                        max_time(100)
-                        10.=<.100
-                        initiallyP(water_left(100))
-                        not_stoppedIn(0,water_left(100),10)
-                            0.=<.10
-                            not_interrupted(terminates,water_left(100),0,10)
-                                findall(_220833,findall_can_interrupts(terminates,_220833,water_left(100),0,10),[])
-                                not_interrupted_N(terminates,water_left(100),[],0,10)
-                                    not_interrupted_1(terminates,water_left(100),[],0,10)
-                                        inf(0,0)
-                                        sup(0,0)
-                                        is_not_interval(0,0)
-                                            0.=.0
-                                        inf(10,10)
-                                        sup(10,10)
-                                        is_not_interval(10,10)
-                                            10.=.10
-                                        not_interrupted_1_fail(terminates,water_left(100),[],0,10)
-                            not_interrupted(releases,water_left(100),0,10)
-                                findall(_222293,findall_can_interrupts(releases,_222293,water_left(100),0,10),[start(_222365)])
-                                    findall_can_interrupts(releases,start(_222365),water_left(100),0,10)
-                                         {_222464~[_222464 > 0, _222464 < 10]} .>.0
-                                         {_222464~[_222464 > 0, _222464 < 10]} .<.10
-                                        can_interrupts(releases,start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                            can_releases(start(_222365),water_left(100), {_222464~[_222464 > 0, _222464 < 10]} )
-                                not_interrupted_N(releases,water_left(100),[start(_222365)],0,10)
-                                    not_interrupted_1(releases,water_left(100),[start(_222365)],0,10)
-                                        inf(0,0)
-                                        sup(0,0)
-                                        proved(is_not_interval(0,0))
-                                        inf(10,10)
-                                        sup(10,10)
-                                        proved(is_not_interval(10,10))
-                                        not_interrupted_1_fail(releases,water_left(100),[start(_222365)],0,10)
-                                            findall(_223324,interrupt_1_fail(releases,start(_222365),water_left(100),_223324,0,10),[])
-                                            all_entirely_outside_of_interval([],0,10)
-                                            not_interrupted_1_fail(releases,water_left(100),[],0,10)
-                not_stoppedIn(10,right_filling, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                    10.=<. {_216667~[_216667 < 39/2, _216667 >= 25/2]} 
-                    not_interrupted(terminates,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                        findall(_224315,findall_can_interrupts(terminates,_224315,right_filling,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} ),[switch_left])
-                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_224460~[_224460 >= 25/2, _224460 < 39/2]} )
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .>.10
-                                 {_224732~[_224732 > 10, _224732 < 39/2]} .<. {_224460~[_224460 >= 25/2, _224460 < 39/2]} 
-                                can_interrupts(terminates,switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                                    can_terminates(switch_left,right_filling, {_224732~[_224732 > 10, _224732 < 39/2]} )
-                        not_interrupted_N(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                            not_interrupted_2b(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                inf(10,10)
-                                sup(10,10)
-                                proved(is_not_interval(10,10))
-                                inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                sup( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,39/2)
-                                is_interval(25/2,39/2)
-                                    25/2.<>.39/2
-                                not_interrupted_2b_fail(terminates,right_filling,[switch_left],10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                    interrupt_2b_fail(terminates,switch_left,right_filling, {_226570~[_226570 > 10, _226570 < 25/2]} ,10, {_216667~[_216667 < 39/2, _216667 >= 25/2]} )
-                                         {_226570~[_226570 > 10, _226570 < 25/2]} .>.10
-                                        inf( {_216667~[_216667 < 39/2, _216667 >= 25/2]} ,25/2)
-                                         {_226570~[_226570 > 10, _226570 < 25/2]} .<.25/2
-                                        happens(switch_left, {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                            builtin(!spy)
-                                             {_229614~[_229614 =< 50]} .=<.50
-                                            holdsAt(water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} ,right_filling)
-                                                10.>.0
-                                                10.<. {_226570~[_226570 > 10, _226570 < 25/2]} 
-                                                max_time(100)
-                                                 {_226570~[_226570 > 10, _226570 < 25/2]} .=<.100
-                                                can_trajectory(right_filling,10,water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                                can_initiates(start(right),right_filling,10)
-                                                happens(start(right),10)
-                                                proved(initiates(start(right),right_filling,10))
-                                                trajectory(right_filling,10,water_left( {_229614~[_229614 =< 50]} ), {_226570~[_226570 > 10, _226570 < 25/2]} )
-                                                     {_229614~[_229614 =< 50]} .=. {_231194~[_231194 < 100]} -( {_226570~[_226570 > 10, _226570 < 25/2]} -10)*20
-                                                    holdsAt(water_left( {_231194~[_231194 < 100]} ),10)
-                                                         {_231644~[_231644 > 0, _231644 < 10]} .>.0
-                                                         {_231644~[_231644 > 0, _231644 < 10]} .<.10
-                                                        max_time(100)
-                                                        10.=<.
+                not_stoppedIn(10,right_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                    10.=<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
+                    not_interrupted(terminates,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                        findall(_175559,findall_can_interrupts(terminates,_175559,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ),[switch_left])
+                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_175704~[_175704 >= 25/2, _175704 < 39/2]} )
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .>.10
+                                 {_175976~[_175976 > 10
 timeout
 
 
-  real      0:01.55
-  real [s]  1.55
-  user [s]  0.34
-  sys  [s]  0.07
-  mem  [KB] 32792
+  real      0:01.77
+  real [s]  1.77
+  user [s]  0.55
+  sys  [s]  0.10
+  mem  [KB] 33292
   avgm [KB] 0

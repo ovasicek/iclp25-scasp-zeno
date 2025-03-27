@@ -3,7 +3,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-epsilon.pl --tree -r
 
 % QUERY:?- happens(serviceFee,T).
 
-	ANSWER:	1 (in 27.309 ms)
+	ANSWER:	1 (in 30.501 ms)
 
 JUSTIFICATION_TREE:
 happens(serviceFee,20.0) :-
@@ -80,9 +80,9 @@ BINDINGS:
 T = 20.0
 
 
-  real      0:00.71
-  real [s]  0.71
-  user [s]  0.26
-  sys  [s]  0.08
-  mem  [KB] 27380
+  real      0:00.77
+  real [s]  0.77
+  user [s]  0.30
+  sys  [s]  0.06
+  mem  [KB] 27428
   avgm [KB] 0

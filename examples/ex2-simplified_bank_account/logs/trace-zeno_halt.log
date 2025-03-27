@@ -4,73 +4,73 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl --zeno_halt --tree
 % QUERY:?- happens(serviceFee,T).
 
 WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
-	happens(serviceFee, {_92868~[_92868 > 0, _92868 < 100]} )
-	happens(serviceFee, {_95748~[_95748 > 0, _95748 < 100]} )
+	happens(serviceFee, {_44016~[_44016 > 0, _44016 < 100]} )
+	happens(serviceFee, {_46896~[_46896 > 0, _46896 < 100]} )
 
 
---------------------- Calling:  happens(serviceFee,_99017) -------------
-    happens(serviceFee, {_91371~[_91371 > 0, _91371 =< 100]} )
+--------------------- Calling:  happens(serviceFee,_50165) -------------
+    happens(serviceFee, {_42519~[_42519 > 0, _42519 =< 100]} )
         builtin(!spy)
-        holdsAt(noServiceFeeYet, {_91371~[_91371 > 0, _91371 =< 100]} )
-             {_91371~[_91371 > 0, _91371 =< 100]} .>=.0
+        holdsAt(noServiceFeeYet, {_42519~[_42519 > 0, _42519 =< 100]} )
+             {_42519~[_42519 > 0, _42519 =< 100]} .>=.0
             max_time(100)
-             {_91371~[_91371 > 0, _91371 =< 100]} .=<.100
+             {_42519~[_42519 > 0, _42519 =< 100]} .=<.100
             initiallyP(noServiceFeeYet)
-            not_stoppedIn(0,noServiceFeeYet, {_91371~[_91371 > 0, _91371 =< 100]} )
-                0.=<. {_91371~[_91371 > 0, _91371 =< 100]} 
-                findall(_91864,findall_can_terminates(_91864,noServiceFeeYet,0, {_91371~[_91371 > 0, _91371 =< 100]} ),[serviceFee])
-                    findall_can_terminates(serviceFee,noServiceFeeYet,0, {_92328~[_92328 > 0, _92328 =< 100]} )
-                         {_92486~[_92486 > 0, _92486 < 100]} .>.0
-                         {_92486~[_92486 > 0, _92486 < 100]} .<. {_92328~[_92328 > 0, _92328 =< 100]} 
-                        can_terminates(serviceFee,noServiceFeeYet, {_92486~[_92486 > 0, _92486 < 100]} )
-                not_terminated(noServiceFeeYet,[serviceFee],0, {_91371~[_91371 > 0, _91371 =< 100]} )
-                    terminated(serviceFee,noServiceFeeYet, {_92868~[_92868 > 0, _92868 < 100]} ,0, {_91371~[_91371 > 0, _91371 =< 100]} )
-                         {_92868~[_92868 > 0, _92868 < 100]} .>.0
-                         {_92868~[_92868 > 0, _92868 < 100]} .<. {_91371~[_91371 > 0, _91371 =< 100]} 
-                        can_terminates(serviceFee,noServiceFeeYet, {_92868~[_92868 > 0, _92868 < 100]} )
-                        happens(serviceFee, {_92868~[_92868 > 0, _92868 < 100]} )
+            not_stoppedIn(0,noServiceFeeYet, {_42519~[_42519 > 0, _42519 =< 100]} )
+                0.=<. {_42519~[_42519 > 0, _42519 =< 100]} 
+                findall(_43012,findall_can_terminates(_43012,noServiceFeeYet,0, {_42519~[_42519 > 0, _42519 =< 100]} ),[serviceFee])
+                    findall_can_terminates(serviceFee,noServiceFeeYet,0, {_43476~[_43476 > 0, _43476 =< 100]} )
+                         {_43634~[_43634 > 0, _43634 < 100]} .>.0
+                         {_43634~[_43634 > 0, _43634 < 100]} .<. {_43476~[_43476 > 0, _43476 =< 100]} 
+                        can_terminates(serviceFee,noServiceFeeYet, {_43634~[_43634 > 0, _43634 < 100]} )
+                not_terminated(noServiceFeeYet,[serviceFee],0, {_42519~[_42519 > 0, _42519 =< 100]} )
+                    terminated(serviceFee,noServiceFeeYet, {_44016~[_44016 > 0, _44016 < 100]} ,0, {_42519~[_42519 > 0, _42519 =< 100]} )
+                         {_44016~[_44016 > 0, _44016 < 100]} .>.0
+                         {_44016~[_44016 > 0, _44016 < 100]} .<. {_42519~[_42519 > 0, _42519 =< 100]} 
+                        can_terminates(serviceFee,noServiceFeeYet, {_44016~[_44016 > 0, _44016 < 100]} )
+                        happens(serviceFee, {_44016~[_44016 > 0, _44016 < 100]} )
                             builtin(!spy)
-                            holdsAt(noServiceFeeYet, {_92868~[_92868 > 0, _92868 < 100]} )
-                                 {_92868~[_92868 > 0, _92868 < 100]} .>=.0
+                            holdsAt(noServiceFeeYet, {_44016~[_44016 > 0, _44016 < 100]} )
+                                 {_44016~[_44016 > 0, _44016 < 100]} .>=.0
                                 max_time(100)
-                                 {_92868~[_92868 > 0, _92868 < 100]} .=<.100
+                                 {_44016~[_44016 > 0, _44016 < 100]} .=<.100
                                 proved(initiallyP(noServiceFeeYet))
-                                not_stoppedIn(0,noServiceFeeYet, {_92868~[_92868 > 0, _92868 < 100]} )
-                                    0.=<. {_92868~[_92868 > 0, _92868 < 100]} 
-                                    findall(_94463,findall_can_terminates(_94463,noServiceFeeYet,0, {_92868~[_92868 > 0, _92868 < 100]} ),[serviceFee])
-                                        findall_can_terminates(serviceFee,noServiceFeeYet,0, {_95036~[_95036 > 0, _95036 < 100]} )
-                                             {_95366~[_95366 > 0, _95366 < 100]} .>.0
-                                             {_95366~[_95366 > 0, _95366 < 100]} .<. {_95036~[_95036 > 0, _95036 < 100]} 
-                                            can_terminates(serviceFee,noServiceFeeYet, {_95366~[_95366 > 0, _95366 < 100]} )
-                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_92868~[_92868 > 0, _92868 < 100]} )
-                                        terminated(serviceFee,noServiceFeeYet, {_95748~[_95748 > 0, _95748 < 100]} ,0, {_92868~[_92868 > 0, _92868 < 100]} )
-                                             {_95748~[_95748 > 0, _95748 < 100]} .>.0
-                                             {_95748~[_95748 > 0, _95748 < 100]} .<. {_92868~[_92868 > 0, _92868 < 100]} 
-                                            can_terminates(serviceFee,noServiceFeeYet, {_95748~[_95748 > 0, _95748 < 100]} )
-                                            happens(serviceFee, {_95748~[_95748 > 0, _95748 < 100]} )
+                                not_stoppedIn(0,noServiceFeeYet, {_44016~[_44016 > 0, _44016 < 100]} )
+                                    0.=<. {_44016~[_44016 > 0, _44016 < 100]} 
+                                    findall(_45611,findall_can_terminates(_45611,noServiceFeeYet,0, {_44016~[_44016 > 0, _44016 < 100]} ),[serviceFee])
+                                        findall_can_terminates(serviceFee,noServiceFeeYet,0, {_46184~[_46184 > 0, _46184 < 100]} )
+                                             {_46514~[_46514 > 0, _46514 < 100]} .>.0
+                                             {_46514~[_46514 > 0, _46514 < 100]} .<. {_46184~[_46184 > 0, _46184 < 100]} 
+                                            can_terminates(serviceFee,noServiceFeeYet, {_46514~[_46514 > 0, _46514 < 100]} )
+                                    not_terminated(noServiceFeeYet,[serviceFee],0, {_44016~[_44016 > 0, _44016 < 100]} )
+                                        terminated(serviceFee,noServiceFeeYet, {_46896~[_46896 > 0, _46896 < 100]} ,0, {_44016~[_44016 > 0, _44016 < 100]} )
+                                             {_46896~[_46896 > 0, _46896 < 100]} .>.0
+                                             {_46896~[_46896 > 0, _46896 < 100]} .<. {_44016~[_44016 > 0, _44016 < 100]} 
+                                            can_terminates(serviceFee,noServiceFeeYet, {_46896~[_46896 > 0, _46896 < 100]} )
+                                            happens(serviceFee, {_46896~[_46896 > 0, _46896 < 100]} )
                                                 builtin(!spy)
-                                                holdsAt(noServiceFeeYet, {_95748~[_95748 > 0, _95748 < 100]} )
-                                                     {_95748~[_95748 > 0, _95748 < 100]} .>=.0
+                                                holdsAt(noServiceFeeYet, {_46896~[_46896 > 0, _46896 < 100]} )
+                                                     {_46896~[_46896 > 0, _46896 < 100]} .>=.0
                                                     max_time(100)
-                                                     {_95748~[_95748 > 0, _95748 < 100]} .=<.100
+                                                     {_46896~[_46896 > 0, _46896 < 100]} .=<.100
                                                     proved(initiallyP(noServiceFeeYet))
-                                                    not_stoppedIn(0,noServiceFeeYet, {_95748~[_95748 > 0, _95748 < 100]} )
-                                                        0.=<. {_95748~[_95748 > 0, _95748 < 100]} 
-                                                        findall(_97492,findall_can_terminates(_97492,noServiceFeeYet,0, {_95748~[_95748 > 0, _95748 < 100]} ),[serviceFee])
-                                                            findall_can_terminates(serviceFee,noServiceFeeYet,0, {_98108~[_98108 > 0, _98108 < 100]} )
-                                                                 {_98635~[_98635 > 0, _98635 < 100]} .>.0
-                                                                 {_98635~[_98635 > 0, _98635 < 100]} .<. {_98108~[_98108 > 0, _98108 < 100]} 
-                                                                can_terminates(serviceFee,noServiceFeeYet, {_98635~[_98635 > 0, _98635 < 100]} )
-                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_95748~[_95748 > 0, _95748 < 100]} )
-                                                            terminated(serviceFee,noServiceFeeYet, {_99017~[_99017 > 0, _99017 < 100]} ,0, {_95748~[_95748 > 0, _95748 < 100]} )
-                                                                 {_99017~[_99017 > 0, _99017 < 100]} .>.0
-                                                                 {_99017~[_99017 > 0, _99017 < 100]} .<. {_95748~[_95748 > 0, _95748 < 100]} 
-                                                                can_terminates(serviceFee,noServiceFeeYet, {_99017~[_99017 > 0, _99017 < 100]} )
-                                                                happens(serviceFee, {_99017~[_99017 > 0, _99017 < 100]} )
+                                                    not_stoppedIn(0,noServiceFeeYet, {_46896~[_46896 > 0, _46896 < 100]} )
+                                                        0.=<. {_46896~[_46896 > 0, _46896 < 100]} 
+                                                        findall(_48640,findall_can_terminates(_48640,noServiceFeeYet,0, {_46896~[_46896 > 0, _46896 < 100]} ),[serviceFee])
+                                                            findall_can_terminates(serviceFee,noServiceFeeYet,0, {_49256~[_49256 > 0, _49256 < 100]} )
+                                                                 {_49783~[_49783 > 0, _49783 < 100]} .>.0
+                                                                 {_49783~[_49783 > 0, _49783 < 100]} .<. {_49256~[_49256 > 0, _49256 < 100]} 
+                                                                can_terminates(serviceFee,noServiceFeeYet, {_49783~[_49783 > 0, _49783 < 100]} )
+                                                        not_terminated(noServiceFeeYet,[serviceFee],0, {_46896~[_46896 > 0, _46896 < 100]} )
+                                                            terminated(serviceFee,noServiceFeeYet, {_50165~[_50165 > 0, _50165 < 100]} ,0, {_46896~[_46896 > 0, _46896 < 100]} )
+                                                                 {_50165~[_50165 > 0, _50165 < 100]} .>.0
+                                                                 {_50165~[_50165 > 0, _50165 < 100]} .<. {_46896~[_46896 > 0, _46896 < 100]} 
+                                                                can_terminates(serviceFee,noServiceFeeYet, {_50165~[_50165 > 0, _50165 < 100]} )
+                                                                happens(serviceFee, {_50165~[_50165 > 0, _50165 < 100]} )
 
-  real      0:00.42
-  real [s]  0.42
-  user [s]  0.16
+  real      0:00.96
+  real [s]  0.96
+  user [s]  0.40
   sys  [s]  0.03
-  mem  [KB] 26704
+  mem  [KB] 27212
   avgm [KB] 0

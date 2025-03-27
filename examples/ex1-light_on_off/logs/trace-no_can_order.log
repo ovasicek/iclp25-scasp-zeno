@@ -3,7 +3,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-small-no_can_order.pl ./model.pl --tree
 
 % QUERY:?- holdsAt(light_on,T).
 
-	ANSWER:	1 (in 2.122 ms)
+	ANSWER:	1 (in 2.132 ms)
 
 JUSTIFICATION_TREE:
 holdsAt(light_on,T | {T #> 10,T #=< 20}) :-
@@ -31,9 +31,9 @@ BINDINGS:
 T #> 10,T #=< 20
 
 
-  real      0:01.19
-  real [s]  1.19
-  user [s]  0.33
-  sys  [s]  0.11
-  mem  [KB] 27184
+  real      0:00.57
+  real [s]  0.57
+  user [s]  0.21
+  sys  [s]  0.06
+  mem  [KB] 26968
   avgm [KB] 0

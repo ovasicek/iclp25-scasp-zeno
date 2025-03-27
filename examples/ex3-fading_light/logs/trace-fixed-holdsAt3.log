@@ -3,7 +3,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree
 
 % QUERY:?- happens(fade_in_end,T).
 
-	ANSWER:	1 (in 5.547 ms)
+	ANSWER:	1 (in 12.817 ms)
 
 JUSTIFICATION_TREE:
 happens(fade_in_end,20) :-
@@ -69,9 +69,9 @@ BINDINGS:
 T = 20
 
 
-  real      0:00.34
-  real [s]  0.34
-  user [s]  0.17
+  real      0:00.76
+  real [s]  0.76
+  user [s]  0.38
   sys  [s]  0.01
-  mem  [KB] 26792
+  mem  [KB] 28972
   avgm [KB] 0

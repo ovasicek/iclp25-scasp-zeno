@@ -3,7 +3,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r
 
 % QUERY:?- T #=< 25,happens(serviceFee,T).
 
-	ANSWER:	1 (in 30.597 ms)
+	ANSWER:	1 (in 34.712 ms)
 
 JUSTIFICATION_TREE:
 happens(serviceFee,20.0) :-
@@ -102,9 +102,9 @@ BINDINGS:
 T = 20.0
 
 
-  real      0:00.82
-  real [s]  0.82
+  real      0:00.91
+  real [s]  0.91
   user [s]  0.36
-  sys  [s]  0.03
-  mem  [KB] 29240
+  sys  [s]  0.08
+  mem  [KB] 29212
   avgm [KB] 0

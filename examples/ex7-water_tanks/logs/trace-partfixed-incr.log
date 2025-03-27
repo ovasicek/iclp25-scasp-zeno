@@ -3,7 +3,7 @@ $ ../scripts/incremental_circular_trajectories.sh ./partfix-incr.pl ../axioms/be
 
 % QUERY:?- holdsAt(water_left(X),19.5).
 
-	ANSWER:	1 (in 7182.799 ms)
+	ANSWER:	1 (in 17911.371 ms)
 
 JUSTIFICATION_TREE:
 holdsAt(water_left(405/8),19.5) :-
@@ -305,9 +305,9 @@ X = 405/8
 
 
 
-  real      0:19.43
-  real [s]  19.43
-  user [s]  18.33
-  sys  [s]  0.18
-  mem  [KB] 32832
+  real      0:45.64
+  real [s]  45.64
+  user [s]  43.42
+  sys  [s]  0.41
+  mem  [KB] 33204
   avgm [KB] 0

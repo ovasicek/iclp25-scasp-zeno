@@ -2,4 +2,4 @@ get oscasp at:
     git@pajda.fit.vutbr.cz:ivasicek/scasp-fork.git
 
 currenlty expected version of oscasp:
-    commit a6ce52504e2dbad60e9bd14eccdcd98749220b41
+    commit 9f90457af8bd46c2be2197de762ce7418e3a905d

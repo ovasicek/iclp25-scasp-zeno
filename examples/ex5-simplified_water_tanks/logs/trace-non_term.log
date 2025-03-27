@@ -35,7 +35,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                         not_stoppedIn(0,water_left(0),10)
                             0.=<.10
                             not_interrupted(terminates,water_left(0),0,10)
-                                findall(_456628,findall_can_interrupts(terminates,_456628,water_left(0),0,10),[])
+                                findall(_481741,findall_can_interrupts(terminates,_481741,water_left(0),0,10),[])
                                 not_interrupted_N(terminates,water_left(0),[],0,10)
                                     not_interrupted_1(terminates,water_left(0),[],0,10)
                                         inf(0,0)
@@ -48,33 +48,33 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                                             10.=.10
                                         not_interrupted_1_fail(terminates,water_left(0),[],0,10)
                             not_interrupted(releases,water_left(0),0,10)
-                                findall(_458088,findall_can_interrupts(releases,_458088,water_left(0),0,10),[start(_458160)])
-                                    findall_can_interrupts(releases,start(_458160),water_left(0),0,10)
-                                         {_458259~[_458259 > 0, _458259 < 10]} .>.0
-                                         {_458259~[_458259 > 0, _458259 < 10]} .<.10
-                                        can_interrupts(releases,start(_458160),water_left(0), {_458259~[_458259 > 0, _458259 < 10]} )
-                                            can_releases(start(_458160),water_left(0), {_458259~[_458259 > 0, _458259 < 10]} )
-                                not_interrupted_N(releases,water_left(0),[start(_458160)],0,10)
-                                    not_interrupted_1(releases,water_left(0),[start(_458160)],0,10)
+                                findall(_483201,findall_can_interrupts(releases,_483201,water_left(0),0,10),[start(_483273)])
+                                    findall_can_interrupts(releases,start(_483273),water_left(0),0,10)
+                                         {_483372~[_483372 > 0, _483372 < 10]} .>.0
+                                         {_483372~[_483372 > 0, _483372 < 10]} .<.10
+                                        can_interrupts(releases,start(_483273),water_left(0), {_483372~[_483372 > 0, _483372 < 10]} )
+                                            can_releases(start(_483273),water_left(0), {_483372~[_483372 > 0, _483372 < 10]} )
+                                not_interrupted_N(releases,water_left(0),[start(_483273)],0,10)
+                                    not_interrupted_1(releases,water_left(0),[start(_483273)],0,10)
                                         inf(0,0)
                                         sup(0,0)
                                         proved(is_not_interval(0,0))
                                         inf(10,10)
                                         sup(10,10)
                                         proved(is_not_interval(10,10))
-                                        not_interrupted_1_fail(releases,water_left(0),[start(_458160)],0,10)
-                                            findall(_459119,interrupt_1_fail(releases,start(_458160),water_left(0),_459119,0,10),[])
+                                        not_interrupted_1_fail(releases,water_left(0),[start(_483273)],0,10)
+                                            findall(_484232,interrupt_1_fail(releases,start(_483273),water_left(0),_484232,0,10),[])
                                             all_entirely_outside_of_interval([],0,10)
                                             not_interrupted_1_fail(releases,water_left(0),[],0,10)
                 not_stoppedIn(10,left_filling,13)
                     10.=<.13
                     not_interrupted(terminates,left_filling,10,13)
-                        findall(_460079,findall_can_interrupts(terminates,_460079,left_filling,10,13),[switch_right])
+                        findall(_485192,findall_can_interrupts(terminates,_485192,left_filling,10,13),[switch_right])
                             findall_can_interrupts(terminates,switch_right,left_filling,10,13)
-                                 {_460224~[_460224 < 13, _460224 > 10]} .>.10
-                                 {_460224~[_460224 < 13, _460224 > 10]} .<.13
-                                can_interrupts(terminates,switch_right,left_filling, {_460224~[_460224 < 13, _460224 > 10]} )
-                                    can_terminates(switch_right,left_filling, {_460224~[_460224 < 13, _460224 > 10]} )
+                                 {_485337~[_485337 < 13, _485337 > 10]} .>.10
+                                 {_485337~[_485337 < 13, _485337 > 10]} .<.13
+                                can_interrupts(terminates,switch_right,left_filling, {_485337~[_485337 < 13, _485337 > 10]} )
+                                    can_terminates(switch_right,left_filling, {_485337~[_485337 < 13, _485337 > 10]} )
                         not_interrupted_N(terminates,left_filling,[switch_right],10,13)
                             not_interrupted_1(terminates,left_filling,[switch_right],10,13)
                                 inf(10,10)
@@ -85,11 +85,11 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                                 is_not_interval(13,13)
                                     13.=.13
                                 not_interrupted_1_fail(terminates,left_filling,[switch_right],10,13)
-                                    findall(_461308,interrupt_1_fail(terminates,switch_right,left_filling,_461308,10,13),[])
+                                    findall(_486421,interrupt_1_fail(terminates,switch_right,left_filling,_486421,10,13),[])
                                     all_entirely_outside_of_interval([],10,13)
                                     not_interrupted_1_fail(terminates,left_filling,[],10,13)
                     not_interrupted(releases,left_filling,10,13)
-                        findall(_461883,findall_can_interrupts(releases,_461883,left_filling,10,13),[])
+                        findall(_486996,findall_can_interrupts(releases,_486996,left_filling,10,13),[])
                         not_interrupted_N(releases,left_filling,[],10,13)
                             not_interrupted_1(releases,left_filling,[],10,13)
                                 inf(10,10)
@@ -102,12 +102,12 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
         not_stoppedIn(13,left_draining,15)
             13.=<.15
             not_interrupted(terminates,left_draining,13,15)
-                findall(_463494,findall_can_interrupts(terminates,_463494,left_draining,13,15),[switch_left])
+                findall(_488607,findall_can_interrupts(terminates,_488607,left_draining,13,15),[switch_left])
                     findall_can_interrupts(terminates,switch_left,left_draining,13,15)
-                         {_463639~[_463639 < 15, _463639 > 13]} .>.13
-                         {_463639~[_463639 < 15, _463639 > 13]} .<.15
-                        can_interrupts(terminates,switch_left,left_draining, {_463639~[_463639 < 15, _463639 > 13]} )
-                            can_terminates(switch_left,left_draining, {_463639~[_463639 < 15, _463639 > 13]} )
+                         {_488752~[_488752 < 15, _488752 > 13]} .>.13
+                         {_488752~[_488752 < 15, _488752 > 13]} .<.15
+                        can_interrupts(terminates,switch_left,left_draining, {_488752~[_488752 < 15, _488752 > 13]} )
+                            can_terminates(switch_left,left_draining, {_488752~[_488752 < 15, _488752 > 13]} )
                 not_interrupted_N(terminates,left_draining,[switch_left],13,15)
                     not_interrupted_1(terminates,left_draining,[switch_left],13,15)
                         inf(13,13)
@@ -118,10 +118,10 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                         is_not_interval(15,15)
                             15.=.15
                         not_interrupted_1_fail(terminates,left_draining,[switch_left],13,15)
-                            interrupt_1_fail(terminates,switch_left,left_draining, {_464979~[_464979 < 15, _464979 > 13]} ,13,15)
-                                 {_464979~[_464979 < 15, _464979 > 13]} .>.13
-                                 {_464979~[_464979 < 15, _464979 > 13]} .<.15
-                                happens(switch_left, {_464979~[_464979 < 15, _464979 > 13]} )
+                            interrupt_1_fail(terminates,switch_left,left_draining, {_490092~[_490092 < 15, _490092 > 13]} ,13,15)
+                                 {_490092~[_490092 < 15, _490092 > 13]} .>.13
+                                 {_490092~[_490092 < 15, _490092 > 13]} .<.15
+                                happens(switch_left, {_490092~[_490092 < 15, _490092 > 13]} )
                                     builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -156,7 +156,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                         not_stoppedIn(0,water_left(0),10)
                             0.=<.10
                             not_interrupted(terminates,water_left(0),0,10)
-                                findall(_456628,findall_can_interrupts(terminates,_456628,water_left(0),0,10),[])
+                                findall(_481741,findall_can_interrupts(terminates,_481741,water_left(0),0,10),[])
                                 not_interrupted_N(terminates,water_left(0),[],0,10)
                                     not_interrupted_1(terminates,water_left(0),[],0,10)
                                         inf(0,0)
@@ -169,33 +169,33 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                                             10.=.10
                                         not_interrupted_1_fail(terminates,water_left(0),[],0,10)
                             not_interrupted(releases,water_left(0),0,10)
-                                findall(_458088,findall_can_interrupts(releases,_458088,water_left(0),0,10),[start(_458160)])
-                                    findall_can_interrupts(releases,start(_458160),water_left(0),0,10)
-                                         {_458259~[_458259 > 0, _458259 < 10]} .>.0
-                                         {_458259~[_458259 > 0, _458259 < 10]} .<.10
-                                        can_interrupts(releases,start(_458160),water_left(0), {_458259~[_458259 > 0, _458259 < 10]} )
-                                            can_releases(start(_458160),water_left(0), {_458259~[_458259 > 0, _458259 < 10]} )
-                                not_interrupted_N(releases,water_left(0),[start(_458160)],0,10)
-                                    not_interrupted_1(releases,water_left(0),[start(_458160)],0,10)
+                                findall(_483201,findall_can_interrupts(releases,_483201,water_left(0),0,10),[start(_483273)])
+                                    findall_can_interrupts(releases,start(_483273),water_left(0),0,10)
+                                         {_483372~[_483372 > 0, _483372 < 10]} .>.0
+                                         {_483372~[_483372 > 0, _483372 < 10]} .<.10
+                                        can_interrupts(releases,start(_483273),water_left(0), {_483372~[_483372 > 0, _483372 < 10]} )
+                                            can_releases(start(_483273),water_left(0), {_483372~[_483372 > 0, _483372 < 10]} )
+                                not_interrupted_N(releases,water_left(0),[start(_483273)],0,10)
+                                    not_interrupted_1(releases,water_left(0),[start(_483273)],0,10)
                                         inf(0,0)
                                         sup(0,0)
                                         proved(is_not_interval(0,0))
                                         inf(10,10)
                                         sup(10,10)
                                         proved(is_not_interval(10,10))
-                                        not_interrupted_1_fail(releases,water_left(0),[start(_458160)],0,10)
-                                            findall(_459119,interrupt_1_fail(releases,start(_458160),water_left(0),_459119,0,10),[])
+                                        not_interrupted_1_fail(releases,water_left(0),[start(_483273)],0,10)
+                                            findall(_484232,interrupt_1_fail(releases,start(_483273),water_left(0),_484232,0,10),[])
                                             all_entirely_outside_of_interval([],0,10)
                                             not_interrupted_1_fail(releases,water_left(0),[],0,10)
                 not_stoppedIn(10,left_filling,13)
                     10.=<.13
                     not_interrupted(terminates,left_filling,10,13)
-                        findall(_460079,findall_can_interrupts(terminates,_460079,left_filling,10,13),[switch_right])
+                        findall(_485192,findall_can_interrupts(terminates,_485192,left_filling,10,13),[switch_right])
                             findall_can_interrupts(terminates,switch_right,left_filling,10,13)
-                                 {_460224~[_460224 < 13, _460224 > 10]} .>.10
-                                 {_460224~[_460224 < 13, _460224 > 10]} .<.13
-                                can_interrupts(terminates,switch_right,left_filling, {_460224~[_460224 < 13, _460224 > 10]} )
-                                    can_terminates(switch_right,left_filling, {_460224~[_460224 < 13, _460224 > 10]} )
+                                 {_485337~[_485337 < 13, _485337 > 10]} .>.10
+                                 {_485337~[_485337 < 13, _485337 > 10]} .<.13
+                                can_interrupts(terminates,switch_right,left_filling, {_485337~[_485337 < 13, _485337 > 10]} )
+                                    can_terminates(switch_right,left_filling, {_485337~[_485337 < 13, _485337 > 10]} )
                         not_interrupted_N(terminates,left_filling,[switch_right],10,13)
                             not_interrupted_1(terminates,left_filling,[switch_right],10,13)
                                 inf(10,10)
@@ -206,11 +206,11 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                                 is_not_interval(13,13)
                                     13.=.13
                                 not_interrupted_1_fail(terminates,left_filling,[switch_right],10,13)
-                                    findall(_461308,interrupt_1_fail(terminates,switch_right,left_filling,_461308,10,13),[])
+                                    findall(_486421,interrupt_1_fail(terminates,switch_right,left_filling,_486421,10,13),[])
                                     all_entirely_outside_of_interval([],10,13)
                                     not_interrupted_1_fail(terminates,left_filling,[],10,13)
                     not_interrupted(releases,left_filling,10,13)
-                        findall(_461883,findall_can_interrupts(releases,_461883,left_filling,10,13),[])
+                        findall(_486996,findall_can_interrupts(releases,_486996,left_filling,10,13),[])
                         not_interrupted_N(releases,left_filling,[],10,13)
                             not_interrupted_1(releases,left_filling,[],10,13)
                                 inf(10,10)
@@ -223,12 +223,12 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
         not_stoppedIn(13,left_draining,15)
             13.=<.15
             not_interrupted(terminates,left_draining,13,15)
-                findall(_463494,findall_can_interrupts(terminates,_463494,left_draining,13,15),[switch_left])
+                findall(_488607,findall_can_interrupts(terminates,_488607,left_draining,13,15),[switch_left])
                     findall_can_interrupts(terminates,switch_left,left_draining,13,15)
-                         {_463639~[_463639 < 15, _463639 > 13]} .>.13
-                         {_463639~[_463639 < 15, _463639 > 13]} .<.15
-                        can_interrupts(terminates,switch_left,left_draining, {_463639~[_463639 < 15, _463639 > 13]} )
-                            can_terminates(switch_left,left_draining, {_463639~[_463639 < 15, _463639 > 13]} )
+                         {_488752~[_488752 < 15, _488752 > 13]} .>.13
+                         {_488752~[_488752 < 15, _488752 > 13]} .<.15
+                        can_interrupts(terminates,switch_left,left_draining, {_488752~[_488752 < 15, _488752 > 13]} )
+                            can_terminates(switch_left,left_draining, {_488752~[_488752 < 15, _488752 > 13]} )
                 not_interrupted_N(terminates,left_draining,[switch_left],13,15)
                     not_interrupted_1(terminates,left_draining,[switch_left],13,15)
                         inf(13,13)
@@ -239,23 +239,23 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                         is_not_interval(15,15)
                             15.=.15
                         not_interrupted_1_fail(terminates,left_draining,[switch_left],13,15)
-                            interrupt_1_fail(terminates,switch_left,left_draining, {_464979~[_464979 > 13, _464979 < 15]} ,13,15)
-                                 {_464979~[_464979 > 13, _464979 < 15]} .>.13
-                                 {_464979~[_464979 > 13, _464979 < 15]} .<.15
-                                happens(switch_left, {_464979~[_464979 > 13, _464979 < 15]} )
+                            interrupt_1_fail(terminates,switch_left,left_draining, {_490092~[_490092 > 13, _490092 < 15]} ,13,15)
+                                 {_490092~[_490092 > 13, _490092 < 15]} .>.13
+                                 {_490092~[_490092 > 13, _490092 < 15]} .<.15
+                                happens(switch_left, {_490092~[_490092 > 13, _490092 < 15]} )
                                     builtin(!spy)
-                                     {_468341~[_468341 < 30, _468341 > -10]} .=<.50
-                                    holdsAt(water_left( {_468341~[_468341 < 30, _468341 > -10]} ), {_464979~[_464979 > 13, _464979 < 15]} ,left_draining)
+                                     {_493454~[_493454 < 30, _493454 > -10]} .=<.50
+                                    holdsAt(water_left( {_493454~[_493454 < 30, _493454 > -10]} ), {_490092~[_490092 > 13, _490092 < 15]} ,left_draining)
                                         13.>.0
-                                        13.<. {_464979~[_464979 > 13, _464979 < 15]} 
+                                        13.<. {_490092~[_490092 > 13, _490092 < 15]} 
                                         max_time(100)
-                                         {_464979~[_464979 > 13, _464979 < 15]} .=<.100
-                                        can_trajectory(left_draining,13,water_left( {_468341~[_468341 < 30, _468341 > -10]} ), {_464979~[_464979 > 13, _464979 < 15]} )
+                                         {_490092~[_490092 > 13, _490092 < 15]} .=<.100
+                                        can_trajectory(left_draining,13,water_left( {_493454~[_493454 < 30, _493454 > -10]} ), {_490092~[_490092 > 13, _490092 < 15]} )
                                         can_initiates(switch_right,left_draining,13)
                                         happens(switch_right,13)
                                         proved(initiates(switch_right,left_draining,13))
-                                        trajectory(left_draining,13,water_left( {_468341~[_468341 < 30, _468341 > -10]} ), {_464979~[_464979 > 13, _464979 < 15]} )
-                                             {_468341~[_468341 < 30, _468341 > -10]} .=.30-( {_464979~[_464979 > 13, _464979 < 15]} -13)*20
+                                        trajectory(left_draining,13,water_left( {_493454~[_493454 < 30, _493454 > -10]} ), {_490092~[_490092 > 13, _490092 < 15]} )
+                                             {_493454~[_493454 < 30, _493454 > -10]} .=.30-( {_490092~[_490092 > 13, _490092 < 15]} -13)*20
                                             holdsAt(water_left(30),13)
                                                 10.>.0
                                                 10.<.13
@@ -275,40 +275,40 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                                                         initiallyP(water_left(0))
                                                         proved(not_stoppedIn(0,water_left(0),10))
                                                 proved(not_stoppedIn(10,left_filling,13))
-                                        not_stoppedIn(13,left_draining, {_464979~[_464979 > 13, _464979 < 15]} )
-                                            13.=<. {_464979~[_464979 > 13, _464979 < 15]} 
-                                            not_interrupted(terminates,left_draining,13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                findall(_472981,findall_can_interrupts(terminates,_472981,left_draining,13, {_464979~[_464979 > 13, _464979 < 15]} ),[switch_left])
-                                                    findall_can_interrupts(terminates,switch_left,left_draining,13, {_473126~[_473126 > 13, _473126 < 15]} )
-                                                         {_473382~[_473382 > 13, _473382 < 15]} .>.13
-                                                         {_473382~[_473382 > 13, _473382 < 15]} .<. {_473126~[_473126 > 13, _473126 < 15]} 
-                                                        can_interrupts(terminates,switch_left,left_draining, {_473382~[_473382 > 13, _473382 < 15]} )
-                                                            can_terminates(switch_left,left_draining, {_473382~[_473382 > 13, _473382 < 15]} )
-                                                not_interrupted_N(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                    not_interrupted_2b(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
+                                        not_stoppedIn(13,left_draining, {_490092~[_490092 > 13, _490092 < 15]} )
+                                            13.=<. {_490092~[_490092 > 13, _490092 < 15]} 
+                                            not_interrupted(terminates,left_draining,13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                findall(_498094,findall_can_interrupts(terminates,_498094,left_draining,13, {_490092~[_490092 > 13, _490092 < 15]} ),[switch_left])
+                                                    findall_can_interrupts(terminates,switch_left,left_draining,13, {_498239~[_498239 > 13, _498239 < 15]} )
+                                                         {_498495~[_498495 > 13, _498495 < 15]} .>.13
+                                                         {_498495~[_498495 > 13, _498495 < 15]} .<. {_498239~[_498239 > 13, _498239 < 15]} 
+                                                        can_interrupts(terminates,switch_left,left_draining, {_498495~[_498495 > 13, _498495 < 15]} )
+                                                            can_terminates(switch_left,left_draining, {_498495~[_498495 > 13, _498495 < 15]} )
+                                                not_interrupted_N(terminates,left_draining,[switch_left],13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                    not_interrupted_2b(terminates,left_draining,[switch_left],13, {_490092~[_490092 > 13, _490092 < 15]} )
                                                         inf(13,13)
                                                         sup(13,13)
                                                         proved(is_not_interval(13,13))
-                                                        inf( {_464979~[_464979 > 13, _464979 < 15]} ,13)
-                                                        sup( {_464979~[_464979 > 13, _464979 < 15]} ,15)
+                                                        inf( {_490092~[_490092 > 13, _490092 < 15]} ,13)
+                                                        sup( {_490092~[_490092 > 13, _490092 < 15]} ,15)
                                                         is_interval(13,15)
                                                             13.<>.15
-                                                        not_interrupted_2b_fail(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            findall(_474886,interrupt_2b_fail(terminates,switch_left,left_draining,_474886,13, {_464979~[_464979 > 13, _464979 < 15]} ),[])
-                                                            all_entirely_outside_of_interval([],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            not_interrupted_2b_fail(terminates,left_draining,[],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                        not_interrupted_2b_adjust_eq(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            findall(_475239,interrupt_2b_adjust_eq(terminates,switch_left,left_draining,_475239,13, {_464979~[_464979 > 13, _464979 < 15]} ),[])
-                                                            all_entirely_outside_of_interval([],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            not_interrupted_2b_adjust_eq(terminates,left_draining,[],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                        not_interrupted_2b_adjust_gt(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            interrupt_2b_adjust_gt(terminates,switch_left,left_draining, {_475863~[_475863 < 15, _475863 > 13]} ,13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                                 {_475863~[_475863 < 15, _475863 > 13]} .>.13
-                                                                inf( {_464979~[_464979 > 13, _464979 < 15]} ,13)
-                                                                 {_475863~[_475863 < 15, _475863 > 13]} .>.13
-                                                                sup( {_464979~[_464979 > 13, _464979 < 15]} ,15)
-                                                                 {_475863~[_475863 < 15, _475863 > 13]} .<.15
-                                                                happens(switch_left, {_475863~[_475863 < 15, _475863 > 13]} )
+                                                        not_interrupted_2b_fail(terminates,left_draining,[switch_left],13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                            findall(_499999,interrupt_2b_fail(terminates,switch_left,left_draining,_499999,13, {_490092~[_490092 > 13, _490092 < 15]} ),[])
+                                                            all_entirely_outside_of_interval([],13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                            not_interrupted_2b_fail(terminates,left_draining,[],13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                        not_interrupted_2b_adjust_eq(terminates,left_draining,[switch_left],13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                            findall(_500352,interrupt_2b_adjust_eq(terminates,switch_left,left_draining,_500352,13, {_490092~[_490092 > 13, _490092 < 15]} ),[])
+                                                            all_entirely_outside_of_interval([],13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                            not_interrupted_2b_adjust_eq(terminates,left_draining,[],13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                        not_interrupted_2b_adjust_gt(terminates,left_draining,[switch_left],13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                            interrupt_2b_adjust_gt(terminates,switch_left,left_draining, {_500976~[_500976 < 15, _500976 > 13]} ,13, {_490092~[_490092 > 13, _490092 < 15]} )
+                                                                 {_500976~[_500976 < 15, _500976 > 13]} .>.13
+                                                                inf( {_490092~[_490092 > 13, _490092 < 15]} ,13)
+                                                                 {_500976~[_500976 < 15, _500976 > 13]} .>.13
+                                                                sup( {_490092~[_490092 > 13, _490092 < 15]} ,15)
+                                                                 {_500976~[_500976 < 15, _500976 > 13]} .<.15
+                                                                happens(switch_left, {_500976~[_500976 < 15, _500976 > 13]} )
                                                                     builtin(!spy)
 
 --------------------- Calling:  builtin(!spy) -------------
@@ -343,7 +343,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                         not_stoppedIn(0,water_left(0),10)
                             0.=<.10
                             not_interrupted(terminates,water_left(0),0,10)
-                                findall(_456628,findall_can_interrupts(terminates,_456628,water_left(0),0,10),[])
+                                findall(_481741,findall_can_interrupts(terminates,_481741,water_left(0),0,10),[])
                                 not_interrupted_N(terminates,water_left(0),[],0,10)
                                     not_interrupted_1(terminates,water_left(0),[],0,10)
                                         inf(0,0)
@@ -356,33 +356,33 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                                             10.=.10
                                         not_interrupted_1_fail(terminates,water_left(0),[],0,10)
                             not_interrupted(releases,water_left(0),0,10)
-                                findall(_458088,findall_can_interrupts(releases,_458088,water_left(0),0,10),[start(_458160)])
-                                    findall_can_interrupts(releases,start(_458160),water_left(0),0,10)
-                                         {_458259~[_458259 > 0, _458259 < 10]} .>.0
-                                         {_458259~[_458259 > 0, _458259 < 10]} .<.10
-                                        can_interrupts(releases,start(_458160),water_left(0), {_458259~[_458259 > 0, _458259 < 10]} )
-                                            can_releases(start(_458160),water_left(0), {_458259~[_458259 > 0, _458259 < 10]} )
-                                not_interrupted_N(releases,water_left(0),[start(_458160)],0,10)
-                                    not_interrupted_1(releases,water_left(0),[start(_458160)],0,10)
+                                findall(_483201,findall_can_interrupts(releases,_483201,water_left(0),0,10),[start(_483273)])
+                                    findall_can_interrupts(releases,start(_483273),water_left(0),0,10)
+                                         {_483372~[_483372 > 0, _483372 < 10]} .>.0
+                                         {_483372~[_483372 > 0, _483372 < 10]} .<.10
+                                        can_interrupts(releases,start(_483273),water_left(0), {_483372~[_483372 > 0, _483372 < 10]} )
+                                            can_releases(start(_483273),water_left(0), {_483372~[_483372 > 0, _483372 < 10]} )
+                                not_interrupted_N(releases,water_left(0),[start(_483273)],0,10)
+                                    not_interrupted_1(releases,water_left(0),[start(_483273)],0,10)
                                         inf(0,0)
                                         sup(0,0)
                                         proved(is_not_interval(0,0))
                                         inf(10,10)
                                         sup(10,10)
                                         proved(is_not_interval(10,10))
-                                        not_interrupted_1_fail(releases,water_left(0),[start(_458160)],0,10)
-                                            findall(_459119,interrupt_1_fail(releases,start(_458160),water_left(0),_459119,0,10),[])
+                                        not_interrupted_1_fail(releases,water_left(0),[start(_483273)],0,10)
+                                            findall(_484232,interrupt_1_fail(releases,start(_483273),water_left(0),_484232,0,10),[])
                                             all_entirely_outside_of_interval([],0,10)
                                             not_interrupted_1_fail(releases,water_left(0),[],0,10)
                 not_stoppedIn(10,left_filling,13)
                     10.=<.13
                     not_interrupted(terminates,left_filling,10,13)
-                        findall(_460079,findall_can_interrupts(terminates,_460079,left_filling,10,13),[switch_right])
+                        findall(_485192,findall_can_interrupts(terminates,_485192,left_filling,10,13),[switch_right])
                             findall_can_interrupts(terminates,switch_right,left_filling,10,13)
-                                 {_460224~[_460224 < 13, _460224 > 10]} .>.10
-                                 {_460224~[_460224 < 13, _460224 > 10]} .<.13
-                                can_interrupts(terminates,switch_right,left_filling, {_460224~[_460224 < 13, _460224 > 10]} )
-                                    can_terminates(switch_right,left_filling, {_460224~[_460224 < 13, _460224 > 10]} )
+                                 {_485337~[_485337 < 13, _485337 > 10]} .>.10
+                                 {_485337~[_485337 < 13, _485337 > 10]} .<.13
+                                can_interrupts(terminates,switch_right,left_filling, {_485337~[_485337 < 13, _485337 > 10]} )
+                                    can_terminates(switch_right,left_filling, {_485337~[_485337 < 13, _485337 > 10]} )
                         not_interrupted_N(terminates,left_filling,[switch_right],10,13)
                             not_interrupted_1(terminates,left_filling,[switch_right],10,13)
                                 inf(10,10)
@@ -393,11 +393,11 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                                 is_not_interval(13,13)
                                     13.=.13
                                 not_interrupted_1_fail(terminates,left_filling,[switch_right],10,13)
-                                    findall(_461308,interrupt_1_fail(terminates,switch_right,left_filling,_461308,10,13),[])
+                                    findall(_486421,interrupt_1_fail(terminates,switch_right,left_filling,_486421,10,13),[])
                                     all_entirely_outside_of_interval([],10,13)
                                     not_interrupted_1_fail(terminates,left_filling,[],10,13)
                     not_interrupted(releases,left_filling,10,13)
-                        findall(_461883,findall_can_interrupts(releases,_461883,left_filling,10,13),[])
+                        findall(_486996,findall_can_interrupts(releases,_486996,left_filling,10,13),[])
                         not_interrupted_N(releases,left_filling,[],10,13)
                             not_interrupted_1(releases,left_filling,[],10,13)
                                 inf(10,10)
@@ -410,12 +410,12 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
         not_stoppedIn(13,left_draining,15)
             13.=<.15
             not_interrupted(terminates,left_draining,13,15)
-                findall(_463494,findall_can_interrupts(terminates,_463494,left_draining,13,15),[switch_left])
+                findall(_488607,findall_can_interrupts(terminates,_488607,left_draining,13,15),[switch_left])
                     findall_can_interrupts(terminates,switch_left,left_draining,13,15)
-                         {_463639~[_463639 < 15, _463639 > 13]} .>.13
-                         {_463639~[_463639 < 15, _463639 > 13]} .<.15
-                        can_interrupts(terminates,switch_left,left_draining, {_463639~[_463639 < 15, _463639 > 13]} )
-                            can_terminates(switch_left,left_draining, {_463639~[_463639 < 15, _463639 > 13]} )
+                         {_488752~[_488752 < 15, _488752 > 13]} .>.13
+                         {_488752~[_488752 < 15, _488752 > 13]} .<.15
+                        can_interrupts(terminates,switch_left,left_draining, {_488752~[_488752 < 15, _488752 > 13]} )
+                            can_terminates(switch_left,left_draining, {_488752~[_488752 < 15, _488752 > 13]} )
                 not_interrupted_N(terminates,left_draining,[switch_left],13,15)
                     not_interrupted_1(terminates,left_draining,[switch_left],13,15)
                         inf(13,13)
@@ -426,242 +426,21 @@ $ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl
                         is_not_interval(15,15)
                             15.=.15
                         not_interrupted_1_fail(terminates,left_draining,[switch_left],13,15)
-                            interrupt_1_fail(terminates,switch_left,left_draining, {_464979~[_464979 > 13, _464979 < 15]} ,13,15)
-                                 {_464979~[_464979 > 13, _464979 < 15]} .>.13
-                                 {_464979~[_464979 > 13, _464979 < 15]} .<.15
-                                happens(switch_left, {_464979~[_464979 > 13, _464979 < 15]} )
+                            interrupt_1_fail(terminates,switch_left,left_draining, {_490092~[_490092 > 13, _490092 < 15]} ,13,15)
+                                 {_490092~[_490092 > 13, _490092 < 15]} .>.13
+                                 {_490092~[_490092 > 13, _490092 < 15]} .<.15
+                                happens(switch_left, {_490092~[_490092 > 13, _490092 < 15]} )
                                     builtin(!spy)
-                                     {_468341~[_468341 < 30, _468341 > -10]} .=<.50
-                                    holdsAt(water_left( {_468341~[_468341 < 30, _468341 > -10]} ), {_464979~[_464979 > 13, _464979 < 15]} ,left_draining)
+                                     {_493454~[_493454 < 30, _493454 > -10]} .=<.50
+                                    holdsAt(water_left( {_493454~[_493454 < 30, _493454 > -10]} ), {_490092~[_490092 > 13, _490092 < 15]} ,left_draining)
                                         13.>.0
-                                        13.<. {_464979~[_464979 > 13, _464979 < 15]} 
-                                        max_time(100)
-                                         {_464979~[_464979 > 13, _464979 < 15]} .=<.100
-                                        can_trajectory(left_draining,13,water_left( {_468341~[_468341 < 30, _468341 > -10]} ), {_464979~[_464979 > 13, _464979 < 15]} )
-                                        can_initiates(switch_right,left_draining,13)
-                                        happens(switch_right,13)
-                                        proved(initiates(switch_right,left_draining,13))
-                                        trajectory(left_draining,13,water_left( {_468341~[_468341 < 30, _468341 > -10]} ), {_464979~[_464979 > 13, _464979 < 15]} )
-                                             {_468341~[_468341 < 30, _468341 > -10]} .=.30-( {_464979~[_464979 > 13, _464979 < 15]} -13)*20
-                                            holdsAt(water_left(30),13)
-                                                10.>.0
-                                                10.<.13
-                                                max_time(100)
-                                                13.=<.100
-                                                can_trajectory(left_filling,10,water_left(30),13)
-                                                can_initiates(start(left),left_filling,10)
-                                                happens(start(left),10)
-                                                proved(initiates(start(left),left_filling,10))
-                                                trajectory(left_filling,10,water_left(30),13)
-                                                    10.=.30-20
-                                                    30.=.0+(13-10)*10
-                                                    holdsAt(water_left(0),10)
-                                                        10.>=.0
-                                                        max_time(100)
-                                                        10.=<.100
-                                                        initiallyP(water_left(0))
-                                                        proved(not_stoppedIn(0,water_left(0),10))
-                                                proved(not_stoppedIn(10,left_filling,13))
-                                        not_stoppedIn(13,left_draining, {_464979~[_464979 > 13, _464979 < 15]} )
-                                            13.=<. {_464979~[_464979 > 13, _464979 < 15]} 
-                                            not_interrupted(terminates,left_draining,13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                findall(_472981,findall_can_interrupts(terminates,_472981,left_draining,13, {_464979~[_464979 > 13, _464979 < 15]} ),[switch_left])
-                                                    findall_can_interrupts(terminates,switch_left,left_draining,13, {_473126~[_473126 > 13, _473126 < 15]} )
-                                                         {_473382~[_473382 > 13, _473382 < 15]} .>.13
-                                                         {_473382~[_473382 > 13, _473382 < 15]} .<. {_473126~[_473126 > 13, _473126 < 15]} 
-                                                        can_interrupts(terminates,switch_left,left_draining, {_473382~[_473382 > 13, _473382 < 15]} )
-                                                            can_terminates(switch_left,left_draining, {_473382~[_473382 > 13, _473382 < 15]} )
-                                                not_interrupted_N(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                    not_interrupted_2b(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                        inf(13,13)
-                                                        sup(13,13)
-                                                        proved(is_not_interval(13,13))
-                                                        inf( {_464979~[_464979 > 13, _464979 < 15]} ,13)
-                                                        sup( {_464979~[_464979 > 13, _464979 < 15]} ,15)
-                                                        is_interval(13,15)
-                                                            13.<>.15
-                                                        not_interrupted_2b_fail(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            findall(_474886,interrupt_2b_fail(terminates,switch_left,left_draining,_474886,13, {_464979~[_464979 > 13, _464979 < 15]} ),[])
-                                                            all_entirely_outside_of_interval([],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            not_interrupted_2b_fail(terminates,left_draining,[],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                        not_interrupted_2b_adjust_eq(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            findall(_475239,interrupt_2b_adjust_eq(terminates,switch_left,left_draining,_475239,13, {_464979~[_464979 > 13, _464979 < 15]} ),[])
-                                                            all_entirely_outside_of_interval([],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            not_interrupted_2b_adjust_eq(terminates,left_draining,[],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                        not_interrupted_2b_adjust_gt(terminates,left_draining,[switch_left],13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                            interrupt_2b_adjust_gt(terminates,switch_left,left_draining, {_475863~[_475863 > 13, _475863 < 15]} ,13, {_464979~[_464979 > 13, _464979 < 15]} )
-                                                                 {_475863~[_475863 > 13, _475863 < 15]} .>.13
-                                                                inf( {_464979~[_464979 > 13, _464979 < 15]} ,13)
-                                                                 {_475863~[_475863 > 13, _475863 < 15]} .>.13
-                                                                sup( {_464979~[_464979 > 13, _464979 < 15]} ,15)
-                                                                 {_475863~[_475863 > 13, _475863 < 15]} .<.15
-                                                                happens(switch_left, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                    builtin(!spy)
-                                                                     {_481529~[_481529 < 30, _481529 > -10]} .=<.50
-                                                                    holdsAt(water_left( {_481529~[_481529 < 30, _481529 > -10]} ), {_475863~[_475863 > 13, _475863 < 15]} ,left_draining)
-                                                                        13.>.0
-                                                                        13.<. {_475863~[_475863 > 13, _475863 < 15]} 
-                                                                        max_time(100)
-                                                                         {_475863~[_475863 > 13, _475863 < 15]} .=<.100
-                                                                        can_trajectory(left_draining,13,water_left( {_481529~[_481529 < 30, _481529 > -10]} ), {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                        can_initiates(switch_right,left_draining,13)
-                                                                        happens(switch_right,13)
-                                                                        proved(initiates(switch_right,left_draining,13))
-                                                                        trajectory(left_draining,13,water_left( {_481529~[_481529 < 30, _481529 > -10]} ), {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                             {_481529~[_481529 < 30, _481529 > -10]} .=.30-( {_475863~[_475863 > 13, _475863 < 15]} -13)*20
-                                                                            holdsAt(water_left(30),13)
-                                                                                10.>.0
-                                                                                10.<.13
-                                                                                max_time(100)
-                                                                                13.=<.100
-                                                                                can_trajectory(left_filling,10,water_left(30),13)
-                                                                                can_initiates(start(left),left_filling,10)
-                                                                                happens(start(left),10)
-                                                                                proved(initiates(start(left),left_filling,10))
-                                                                                trajectory(left_filling,10,water_left(30),13)
-                                                                                    10.=.30-20
-                                                                                    30.=.0+(13-10)*10
-                                                                                    holdsAt(water_left(0),10)
-                                                                                        10.>=.0
-                                                                                        max_time(100)
-                                                                                        10.=<.100
-                                                                                        initiallyP(water_left(0))
-                                                                                        proved(not_stoppedIn(0,water_left(0),10))
-                                                                                proved(not_stoppedIn(10,left_filling,13))
-                                                                        not_stoppedIn(13,left_draining, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                            13.=<. {_475863~[_475863 > 13, _475863 < 15]} 
-                                                                            not_interrupted(terminates,left_draining,13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                findall(_486202,findall_can_interrupts(terminates,_486202,left_draining,13, {_475863~[_475863 > 13, _475863 < 15]} ),[switch_left])
-                                                                                    findall_can_interrupts(terminates,switch_left,left_draining,13, {_486347~[_486347 > 13, _486347 < 15]} )
-                                                                                         {_486627~[_486627 > 13, _486627 < 15]} .>.13
-                                                                                         {_486627~[_486627 > 13, _486627 < 15]} .<. {_486347~[_486347 > 13, _486347 < 15]} 
-                                                                                        can_interrupts(terminates,switch_left,left_draining, {_486627~[_486627 > 13, _486627 < 15]} )
-                                                                                            can_terminates(switch_left,left_draining, {_486627~[_486627 > 13, _486627 < 15]} )
-                                                                                not_interrupted_N(terminates,left_draining,[switch_left],13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                    not_interrupted_2b(terminates,left_draining,[switch_left],13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                        inf(13,13)
-                                                                                        sup(13,13)
-                                                                                        proved(is_not_interval(13,13))
-                                                                                        inf( {_475863~[_475863 > 13, _475863 < 15]} ,13)
-                                                                                        sup( {_475863~[_475863 > 13, _475863 < 15]} ,15)
-                                                                                        proved(is_interval(13,15))
-                                                                                        not_interrupted_2b_fail(terminates,left_draining,[switch_left],13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                            findall(_488011,interrupt_2b_fail(terminates,switch_left,left_draining,_488011,13, {_475863~[_475863 > 13, _475863 < 15]} ),[])
-                                                                                            all_entirely_outside_of_interval([],13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                            not_interrupted_2b_fail(terminates,left_draining,[],13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                        not_interrupted_2b_adjust_eq(terminates,left_draining,[switch_left],13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                            findall(_488364,interrupt_2b_adjust_eq(terminates,switch_left,left_draining,_488364,13, {_475863~[_475863 > 13, _475863 < 15]} ),[])
-                                                                                            all_entirely_outside_of_interval([],13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                            not_interrupted_2b_adjust_eq(terminates,left_draining,[],13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                        not_interrupted_2b_adjust_gt(terminates,left_draining,[switch_left],13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                            interrupt_2b_adjust_gt(terminates,switch_left,left_draining, {_488988~[_488988 < 15, _488988 > 13]} ,13, {_475863~[_475863 > 13, _475863 < 15]} )
-                                                                                                 {_488988~[_488988 < 15, _488988 > 13]} .>.13
-                                                                                                inf( {_475863~[_475863 > 13, _475863 < 15]} ,13)
-                                                                                                 {_488988~[_488988 < 15, _488988 > 13]} .>.13
-                                                                                                sup( {_475863~[_475863 > 13, _475863 < 15]} ,15)
-                                                                                                 {_488988~[_488988 < 15, _488988 > 13]} .<.15
-                                                                                                happens(switch_left, {_488988~[_488988 < 15, _488988 > 13]} )
-                                                                                                    builtin(!spy)
-
---------------------- Calling:  builtin(!spy) -------------
-    holdsAt(water_left(-10),15)
-        13.>.0
-        13.<.15
-        max_time(100)
-        15.=<.100
-        can_trajectory(left_draining,13,water_left(-10),15)
-        can_initiates(switch_right,left_draining,13)
-        happens(switch_right,13)
-        initiates(switch_right,left_draining,13)
-        trajectory(left_draining,13,water_left(-10),15)
-            -10.=.30-(15-13)*20
-            holdsAt(water_left(30),13)
-                10.>.0
-                10.<.13
-                max_time(100)
-                13.=<.100
-                can_trajectory(left_filling,10,water_left(30),13)
-                can_initiates(start(left),left_filling,10)
-                happens(start(left),10)
-                initiates(start(left),left_filling,10)
-                trajectory(left_filling,10,water_left(30),13)
-                    10.=.30-20
-                    30.=.0+(13-10)*10
-                    holdsAt(water_left(0),10)
-                        10.>=.0
-                        max_time(100)
-                        10.=<.100
-                        initiallyP(water_left(0))
-                        not_stoppedIn(0,water_left(0),10)
-                            0.=<.10
-                            not_interrupted(terminates,water_left(0),0,10)
-                                findall(_456628,findall_can_interrupts(terminates,_456628,water_left(0),0,10),[])
-                                not_interrupted_N(terminates,water_left(0),[],0,10)
-                                    not_interrupted_1(terminates,water_left(0),[],0,10)
-                                        inf(0,0)
-                                        sup(0,0)
-                                        is_not_interval(0,0)
-                                            0.=.0
-                                        inf(10,10)
-                                        sup(10,10)
-                                        is_not_interval(10,10)
-                                            10.=.10
-                                        not_interrupted_1_fail(terminates,water_left(0),[],0,10)
-                            not_interrupted(releases,water_left(0),0,10)
-                                findall(_458088,findall_can_interrupts(releases,_458088,water_left(0),0,10),[start(_458160)])
-                                    findall_can_interrupts(releases,start(_458160),water_left(0),0,10)
-                                         {_458259~[_458259 > 0, _458259 < 10]} .>.0
-                                         {_458259~[_458259 > 0, _458259 < 10]} .<.10
-                                        can_interrupts(releases,start(_458160),water_left(0), {_458259~[_458259 > 0, _458259 < 10]} )
-                                            can_releases(start(_458160),water_left(0), {_458259~[_458259 > 0, _458259 < 10]} )
-                                not_interrupted_N(releases,water_left(0),[start(_458160)],0,10)
-                                    not_interrupted_1(releases,water_left(0),[start(_458160)],0,10)
-                                        inf(0,0)
-                                        sup(0,0)
-                                        proved(is_not_interval(0,0))
-                                        inf(10,10)
-                                        sup(10,10)
-                                        proved(is_not_interval(10,10))
-                                        not_interrupted_1_fail(releases,water_left(0),[start(_458160)],0,10)
-                                            findall(_459119,interrupt_1_fail(releases,start(_458160),water_left(0),_459119,0,10),[])
-                                            all_entirely_outside_of_interval([],0,10)
-                                            not_interrupted_1_fail(releases,water_left(0),[],0,10)
-                not_stoppedIn(10,left_filling,13)
-                    10.=<.13
-                    not_interrupted(terminates,left_filling,10,13)
-                        findall(_460079,findall_can_interrupts(terminates,_460079,left_filling,10,13),[switch_right])
-                            findall_can_interrupts(terminates,switch_right,left_filling,10,13)
-                                 {_460224~[_460224 < 13, _460224 > 10]} .>.10
-                                 {_460224~[_460224 < 13, _460224 > 10]} .<.13
-                                can_interrupts(terminates,switch_right,left_filling, {_460224~[_460224 < 13, _460224 > 10]} )
-                                    can_terminates(switch_right,left_filling, {_460224~[_460224 < 13, _460224 > 10]} )
-                        not_interrupted_N(terminates,left_filling,[switch_right],10,13)
-                            not_interrupted_1(terminates,left_filling,[switch_right],10,13)
-                                inf(10,10)
-                                sup(10,10)
-                                proved(is_not_interval(10,10))
-                                inf(13,13)
-                                sup(13,13)
-                                is_not_interval(13,13)
-                                    13.=.13
-                                not_interrupted_1_fail(terminates,left_filling,[switch_right],10,13)
-                                    findall(_461308,interrupt_1_fail(terminates,switch_right,left_filling,_461308,10,13),[])
-                                    all_entirely_outside_of_interval([],10,13)
-                                    not_interrupted_1_fail(terminates,left_filling,[],10,13)
-                    not_interrupted(releases,left_filling,10,13)
-                        findall(_461883,findall_can_interrupts(releases,_461883,left_filling,10,13),[])
-                        not_interrupted_N(releases,left_filling,[],10,13)
-                            not_interrupted_1(releases,left_filling,[],10,13)
-                                inf(10,10)
-                                sup(10,10)
-                                proved(is_not_interval(10,10))
-                                inf(13,13
+                                        13.<. {_490092~[_490092 > 13, _490092 < 
 timeout
 
 
-  real      0:01.46
-  real [s]  1.46
-  user [s]  0.42
+  real      0:01.76
+  real [s]  1.76
+  user [s]  0.61
   sys  [s]  0.07
-  mem  [KB] 32764
+  mem  [KB] 33156
   avgm [KB] 0

@@ -3,7 +3,7 @@ $ ../scripts/incremental_circular_trajectories.sh ./fix-incr_holdsAt4.pl ../axio
 
 % QUERY:?- holdsAt(water_left(X),19.5).
 
-	ANSWER:	1 (in 1627.213 ms)
+	ANSWER:	1 (in 3986.362 ms)
 
 JUSTIFICATION_TREE:
 holdsAt(water_left(105/2),19.5) :-
@@ -305,9 +305,9 @@ X = 105/2
 
 
 
-  real      0:06.04
-  real [s]  6.04
-  user [s]  4.97
-  sys  [s]  0.22
-  mem  [KB] 32828
+  real      0:13.88
+  real [s]  13.88
+  user [s]  11.74
+  sys  [s]  0.34
+  mem  [KB] 33228
   avgm [KB] 0

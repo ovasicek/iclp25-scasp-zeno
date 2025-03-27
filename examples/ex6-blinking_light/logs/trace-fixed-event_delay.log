@@ -3,7 +3,7 @@ $ oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-event_delay.pl --tree
 
 % QUERY:?- T #=< 20,happens(turn_light_on,T).
 
-	ANSWER:	1 (in 6.39 ms)
+	ANSWER:	1 (in 12.577 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,20) :-
@@ -45,7 +45,7 @@ BINDINGS:
 T = 20
 
 
-	ANSWER:	2 (in 0.244 ms)
+	ANSWER:	2 (in 0.242 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,18) :-
@@ -81,7 +81,7 @@ BINDINGS:
 T = 18
 
 
-	ANSWER:	3 (in 0.212 ms)
+	ANSWER:	3 (in 0.202 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,16) :-
@@ -111,7 +111,7 @@ BINDINGS:
 T = 16
 
 
-	ANSWER:	4 (in 0.214 ms)
+	ANSWER:	4 (in 0.197 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,14) :-
@@ -135,7 +135,7 @@ BINDINGS:
 T = 14
 
 
-	ANSWER:	5 (in 0.158 ms)
+	ANSWER:	5 (in 0.121 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,12) :-
@@ -153,7 +153,7 @@ BINDINGS:
 T = 12
 
 
-	ANSWER:	6 (in 0.125 ms)
+	ANSWER:	6 (in 0.072 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,10),
@@ -165,9 +165,9 @@ BINDINGS:
 T = 10
 
 
-  real      0:00.40
-  real [s]  0.40
-  user [s]  0.20
-  sys  [s]  0.01
-  mem  [KB] 28620
+  real      0:00.72
+  real [s]  0.72
+  user [s]  0.31
+  sys  [s]  0.06
+  mem  [KB] 28980
   avgm [KB] 0
