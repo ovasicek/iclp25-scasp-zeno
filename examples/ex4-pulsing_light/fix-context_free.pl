@@ -1,4 +1,3 @@
-#include './preprocessed_can_rules/fix-context_free-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.
@@ -22,6 +21,12 @@ fluent(brightness(X)).      % range 0-10
 fluent(fading_in).
 fluent(fading_out).
 
+terminates(fade_in_end, fading_in, T).
+initiates(fade_in_end, fading_out, T).
+
+terminates(fade_out_end, fading_out, T).
+initiates(fade_out_end, fading_in, T).
+
 initiates(turn_light_on,  light_on, T).
 initiates(turn_light_on, fading_in, T).
 releases(turn_light_on, brightness(X), T).
@@ -31,12 +36,6 @@ terminates(turn_light_off, fading_in, T) :- holdsAt(fading_in, T).
 terminates(turn_light_off, fading_out, T) :- holdsAt(fading_out, T).
 initiates(turn_light_off, brightness(0), T).
 terminates(turn_light_off, brightness(X), T) :- X .<>. 0.
-
-terminates(fade_in_end, fading_in, T).
-initiates(fade_in_end, fading_out, T).
-
-terminates(fade_out_end, fading_out, T).
-initiates(fade_out_end, fading_in, T).
 
 can_trajectory(fading_in, T1, brightness(NewB), T2) :-
     NewB .=. 0 + ((T2-T1) * 1).

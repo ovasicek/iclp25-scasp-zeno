@@ -2,7 +2,6 @@
 %   repeated trigger           - manifests in the "zero delay circular events" problem
 %   zero delay circular events - needs to be fixed
 
-#include './preprocessed_can_rules/model-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.

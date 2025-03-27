@@ -60,7 +60,7 @@ modelName=$(echo "$model" | sed "s|^.*/\([^/]*\)$|\1|")
 
 # if the CONTINUE argument is set and we have the *-model-increments.pl file, then just rerun the final query and exit
 if $CONTINUE && test -f ./tmp-$modelName-model-increments.pl; then
-    outputFinal=$({ /usr/bin/time -f "\n  real      %E\n  real [s]  %e\n  user [s]  %U\n  sys  [s]  %S\n  mem  [KB] %M\n  avgm [KB] %K" oscasp -s0 --dcc $argsLastRun $axioms $model ./tmp-$modelName-model-increments.pl ; } 2>&1)
+    outputFinal=$({ /usr/bin/time -f "\n  real      %E\n  real [s]  %e\n  user [s]  %U\n  sys  [s]  %S\n  mem  [KB] %M\n  avgm [KB] %K" oscasp -s0 --ec --dcc $argsLastRun $axioms $model ./tmp-$modelName-model-increments.pl ; } 2>&1)
     echo "$outputFinal" | head -n -6
     exit
 fi
@@ -101,7 +101,7 @@ while true; do
     echo "% QUERY $N.1:
         ?- EventTime .>. $LAST_INCREMENT_TIME,$incremental_query_max_time incr_event(Event), happens(Event, EventTime)." > ./tmp-$modelName-query-$N.1.pl
 
-    output1=$({ /usr/bin/time -f "\n  real      %E\n  real [s]  %e\n  user [s]  %U\n  sys  [s]  %S\n  mem  [KB] %M\n  avgm [KB] %K" oscasp -s0 --dcc $axioms $model ./tmp-$modelName-model-increments.pl ./tmp-$modelName-query-$N.1.pl ; } 2>&1)
+    output1=$({ /usr/bin/time -f "\n  real      %E\n  real [s]  %e\n  user [s]  %U\n  sys  [s]  %S\n  mem  [KB] %M\n  avgm [KB] %K" oscasp -s0 --ec --dcc $axioms $model ./tmp-$modelName-model-increments.pl ./tmp-$modelName-query-$N.1.pl ; } 2>&1)
     if $DEBUG; then echo "$output1" > ./tmp-$modelName-query-$N.1.out; else rm -rf ./tmp-$modelName-query-$N.1.pl; fi
     if [ $(echo "$output1" | grep -c "no models") -eq 0 ]; then
         EventTimes=$(echo "$output1" | grep "^EventTime #\?>\?= " | sed "s|EventTime #\?>\?= ||" | sed "s|,EventTime.*||" | sed "s| *||g")
@@ -138,7 +138,7 @@ done
 
 # run the actual query of interest from the narrative
 FinalQueryN=$(($N+1))
-outputFinal=$({ /usr/bin/time -f "\n  real      %E\n  real [s]  %e\n  user [s]  %U\n  sys  [s]  %S\n  mem  [KB] %M\n  avgm [KB] %K" oscasp -s0 --dcc $argsLastRun $axioms $model ./tmp-$modelName-model-increments.pl ; } 2>&1)
+outputFinal=$({ /usr/bin/time -f "\n  real      %E\n  real [s]  %e\n  user [s]  %U\n  sys  [s]  %S\n  mem  [KB] %M\n  avgm [KB] %K" oscasp -s0 --ec --dcc $argsLastRun $axioms $model ./tmp-$modelName-model-increments.pl ; } 2>&1)
 if $DEBUG; then echo "$outputFinal" > ./tmp-$modelName-query-$FinalQueryN.out; fi
 echo "$outputFinal" | head -n -6
 

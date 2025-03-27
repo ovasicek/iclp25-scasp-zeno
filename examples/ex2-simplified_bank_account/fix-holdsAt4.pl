@@ -1,7 +1,6 @@
 % problems
 %   repeated trigger - fixed by introducing a duration using holdsAt/4
 
-#include './preprocessed_can_rules/fix-holdsAt4-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.

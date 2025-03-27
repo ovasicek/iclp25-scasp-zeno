@@ -1,4 +1,4 @@
-$ oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree
+$ oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree
 
 
 % QUERY:?- T #=< 20,happens(turn_light_on,T).

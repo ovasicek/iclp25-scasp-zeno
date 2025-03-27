@@ -1,4 +1,4 @@
-$ oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree
+$ oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree
 
 
 % QUERY:?- happens(fade_out_end,T).

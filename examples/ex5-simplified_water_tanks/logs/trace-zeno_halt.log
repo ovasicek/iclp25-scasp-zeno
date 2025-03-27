@@ -1,4 +1,4 @@
-$ oscasp -s0 ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl --zeno_halt --tree
+$ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar2.pl --zeno_halt --tree
 
 
 % QUERY:?- holdsAt(water_left(X),15).

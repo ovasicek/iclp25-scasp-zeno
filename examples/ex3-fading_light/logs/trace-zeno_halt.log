@@ -1,4 +1,4 @@
-$ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
+$ oscasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
 
 
 % QUERY:?- happens(fade_in_end,T).

@@ -1,4 +1,4 @@
-$ oscasp -s0 ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1000
+$ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1000
 
 
 % QUERY:?- holdsAt(water_left(X),19.5).

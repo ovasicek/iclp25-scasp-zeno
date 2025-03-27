@@ -1,4 +1,4 @@
-$ oscasp -s0 ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=3000
+$ oscasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=3000
 
 
 % QUERY:?- happens(fade_out_end,T).

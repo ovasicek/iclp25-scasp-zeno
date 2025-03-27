@@ -3,7 +3,6 @@
 %   self-end trajectory       - fixed via holdsAt/3 (or holdsAt/4)
 %   trajectory end at ineq.   - fixed by minimum duration via holdsAt/4
 
-#include './preprocessed_can_rules/fix-split_holdsAt4-preprocessed.pl'. % include the can_* rules
 #show happens/2, not_happens/2.
 #show holdsAt/2, not_holdsAt/2.
 #show initiallyP/1, initiallyN/1.
@@ -36,13 +35,13 @@ terminates(switch_left, left_draining, T).
 terminates(switch_right, left_filling, T).
 initiates(switch_right, left_draining, T).
 
+trajectory(left_draining, T1, water_left(NewW), T2) :-
+    NewW .=. OldW - ((T2-T1) * 20), % out rate 20
+    holdsAt(water_left(OldW), T1).
+
 trajectory(left_filling, T1, water_left(NewW), T2) :-
     TotalFlow .=. 30 - 20, % in rate 30, out rate 20
     NewW .=. OldW + ((T2-T1) * TotalFlow),
-    holdsAt(water_left(OldW), T1).
-
-trajectory(left_draining, T1, water_left(NewW), T2) :-
-    NewW .=. OldW - ((T2-T1) * 20), % out rate 20
     holdsAt(water_left(OldW), T1).
 
 happens(switch_left, T) :-

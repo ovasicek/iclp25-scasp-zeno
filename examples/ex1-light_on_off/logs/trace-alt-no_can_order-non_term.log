@@ -1,4 +1,4 @@
-$ oscasp -s0 ../axioms/bec_scasp-small-no_can_order.pl ./model-alt.pl -v6 --timeout=1000
+$ oscasp -s0 --ec ../axioms/bec_scasp-small-no_can_order.pl ./model-alt.pl -v6 --timeout=1000
 
 
 % QUERY:?- holdsAt(light_on,T).

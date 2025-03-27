@@ -1,9 +1,9 @@
-$ oscasp -s0 ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r
+$ oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r
 
 
 % QUERY:?- T #=< 25,happens(serviceFee,T).
 
-	ANSWER:	1 (in 15.523 ms)
+	ANSWER:	1 (in 30.597 ms)
 
 JUSTIFICATION_TREE:
 happens(serviceFee,20.0) :-
@@ -23,18 +23,18 @@ happens(serviceFee,20.0) :-
                         initiallyP(balance(10000)),
                         not_stoppedIn(0,balance(10000),10) :-
                             not_interrupted(terminates,balance(10000),0,10) :-
-                                findall(Var11,findall_can_interrupts(terminates,Var11,balance(10000),0,10),[serviceFee,withdraw(Var2)]) :-
+                                findall(Var11,findall_can_interrupts(terminates,Var11,balance(10000),0,10),[withdraw(Var1),serviceFee]) :-
+                                    findall_can_interrupts(terminates,withdraw(Var1),balance(10000),0,10) :-
+                                        can_interrupts(terminates,withdraw(Var1),balance(10000),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                            can_terminates(withdraw(Var1),balance(10000),Var2 | {Var2 #> 0,Var2 #< 10}).
                                     findall_can_interrupts(terminates,serviceFee,balance(10000),0,10) :-
-                                        can_interrupts(terminates,serviceFee,balance(10000),Var1 | {Var1 #> 0,Var1 #< 10}) :-
-                                            can_terminates(serviceFee,balance(10000),Var1 | {Var1 #> 0,Var1 #< 10}).
-                                    findall_can_interrupts(terminates,withdraw(Var2),balance(10000),0,10) :-
-                                        can_interrupts(terminates,withdraw(Var2),balance(10000),Var3 | {Var3 #> 0,Var3 #< 10}) :-
-                                            can_terminates(withdraw(Var2),balance(10000),Var3 | {Var3 #> 0,Var3 #< 10}).
-                                not_interrupted_(terminates,balance(10000),[serviceFee,withdraw(Var2)],0,10) :-
-                                    findall(Var12,interrupted(terminates,serviceFee,balance(10000),Var12,0,10),[]),
+                                        can_interrupts(terminates,serviceFee,balance(10000),Var3 | {Var3 #> 0,Var3 #< 10}) :-
+                                            can_terminates(serviceFee,balance(10000),Var3 | {Var3 #> 0,Var3 #< 10}).
+                                not_interrupted_(terminates,balance(10000),[withdraw(Var1),serviceFee],0,10) :-
+                                    findall(Var12,interrupted(terminates,withdraw(Var1),balance(10000),Var12,0,10),[]),
                                     all_entirely_outside_of_interval([],0,10),
-                                    not_interrupted_(terminates,balance(10000),[withdraw(Var2)],0,10) :-
-                                        findall(Var13,interrupted(terminates,withdraw(Var2),balance(10000),Var13,0,10),[]),
+                                    not_interrupted_(terminates,balance(10000),[serviceFee],0,10) :-
+                                        findall(Var13,interrupted(terminates,serviceFee,balance(10000),Var13,0,10),[]),
                                         proved(all_entirely_outside_of_interval([],0,10)),
                                         not_interrupted_(terminates,balance(10000),[],0,10).
                             not_interrupted(releases,balance(10000),0,10) :-
@@ -42,18 +42,18 @@ happens(serviceFee,20.0) :-
                                 not_interrupted_(releases,balance(10000),[],0,10).
                 not_stoppedIn(10,balance(2000),20) :-
                     not_interrupted(terminates,balance(2000),10,20) :-
-                        findall(Var15,findall_can_interrupts(terminates,Var15,balance(2000),10,20),[serviceFee,withdraw(Var5)]) :-
+                        findall(Var15,findall_can_interrupts(terminates,Var15,balance(2000),10,20),[withdraw(Var4),serviceFee]) :-
+                            findall_can_interrupts(terminates,withdraw(Var4),balance(2000),10,20) :-
+                                can_interrupts(terminates,withdraw(Var4),balance(2000),Var5 | {Var5 #> 10,Var5 #< 20}) :-
+                                    can_terminates(withdraw(Var4),balance(2000),Var5 | {Var5 #> 10,Var5 #< 20}).
                             findall_can_interrupts(terminates,serviceFee,balance(2000),10,20) :-
-                                can_interrupts(terminates,serviceFee,balance(2000),Var4 | {Var4 #> 10,Var4 #< 20}) :-
-                                    can_terminates(serviceFee,balance(2000),Var4 | {Var4 #> 10,Var4 #< 20}).
-                            findall_can_interrupts(terminates,withdraw(Var5),balance(2000),10,20) :-
-                                can_interrupts(terminates,withdraw(Var5),balance(2000),Var6 | {Var6 #> 10,Var6 #< 20}) :-
-                                    can_terminates(withdraw(Var5),balance(2000),Var6 | {Var6 #> 10,Var6 #< 20}).
-                        not_interrupted_(terminates,balance(2000),[serviceFee,withdraw(Var5)],10,20) :-
-                            findall(Var16,interrupted(terminates,serviceFee,balance(2000),Var16,10,20),[]),
+                                can_interrupts(terminates,serviceFee,balance(2000),Var6 | {Var6 #> 10,Var6 #< 20}) :-
+                                    can_terminates(serviceFee,balance(2000),Var6 | {Var6 #> 10,Var6 #< 20}).
+                        not_interrupted_(terminates,balance(2000),[withdraw(Var4),serviceFee],10,20) :-
+                            findall(Var16,interrupted(terminates,withdraw(Var4),balance(2000),Var16,10,20),[]),
                             all_entirely_outside_of_interval([],10,20),
-                            not_interrupted_(terminates,balance(2000),[withdraw(Var5)],10,20) :-
-                                findall(Var17,interrupted(terminates,withdraw(Var5),balance(2000),Var17,10,20),[]),
+                            not_interrupted_(terminates,balance(2000),[serviceFee],10,20) :-
+                                findall(Var17,interrupted(terminates,serviceFee,balance(2000),Var17,10,20),[]),
                                 proved(all_entirely_outside_of_interval([],10,20)),
                                 not_interrupted_(terminates,balance(2000),[],10,20).
                     not_interrupted(releases,balance(2000),10,20) :-
@@ -61,18 +61,18 @@ happens(serviceFee,20.0) :-
                         not_interrupted_(releases,balance(2000),[],10,20).
         not_stoppedIn(20,balance(500),20.0) :-
             not_interrupted(terminates,balance(500),20,20.0) :-
-                findall(Var19,findall_can_interrupts(terminates,Var19,balance(500),20,20.0),[serviceFee,withdraw(Var8)]) :-
+                findall(Var19,findall_can_interrupts(terminates,Var19,balance(500),20,20.0),[withdraw(Var7),serviceFee]) :-
+                    findall_can_interrupts(terminates,withdraw(Var7),balance(500),20,20.0) :-
+                        can_interrupts(terminates,withdraw(Var7),balance(500),Var8 | {Var8 #> 20,Var8 #< 20.0}) :-
+                            can_terminates(withdraw(Var7),balance(500),Var8 | {Var8 #> 20,Var8 #< 20.0}).
                     findall_can_interrupts(terminates,serviceFee,balance(500),20,20.0) :-
-                        can_interrupts(terminates,serviceFee,balance(500),Var7 | {Var7 #> 20,Var7 #< 20.0}) :-
-                            can_terminates(serviceFee,balance(500),Var7 | {Var7 #> 20,Var7 #< 20.0}).
-                    findall_can_interrupts(terminates,withdraw(Var8),balance(500),20,20.0) :-
-                        can_interrupts(terminates,withdraw(Var8),balance(500),Var9 | {Var9 #> 20,Var9 #< 20.0}) :-
-                            can_terminates(withdraw(Var8),balance(500),Var9 | {Var9 #> 20,Var9 #< 20.0}).
-                not_interrupted_(terminates,balance(500),[serviceFee,withdraw(Var8)],20,20.0) :-
-                    findall(Var20,interrupted(terminates,serviceFee,balance(500),Var20,20,20.0),[]),
+                        can_interrupts(terminates,serviceFee,balance(500),Var9 | {Var9 #> 20,Var9 #< 20.0}) :-
+                            can_terminates(serviceFee,balance(500),Var9 | {Var9 #> 20,Var9 #< 20.0}).
+                not_interrupted_(terminates,balance(500),[withdraw(Var7),serviceFee],20,20.0) :-
+                    findall(Var20,interrupted(terminates,withdraw(Var7),balance(500),Var20,20,20.0),[]),
                     all_entirely_outside_of_interval([],20,20.0),
-                    not_interrupted_(terminates,balance(500),[withdraw(Var8)],20,20.0) :-
-                        findall(Var21,interrupted(terminates,withdraw(Var8),balance(500),Var21,20,20.0),[]),
+                    not_interrupted_(terminates,balance(500),[serviceFee],20,20.0) :-
+                        findall(Var21,interrupted(terminates,serviceFee,balance(500),Var21,20,20.0),[]),
                         proved(all_entirely_outside_of_interval([],20,20.0)),
                         not_interrupted_(terminates,balance(500),[],20,20.0).
             not_interrupted(releases,balance(500),20,20.0) :-
@@ -102,9 +102,9 @@ BINDINGS:
 T = 20.0
 
 
-  real      0:00.39
-  real [s]  0.39
-  user [s]  0.19
-  sys  [s]  0.00
-  mem  [KB] 28804
+  real      0:00.82
+  real [s]  0.82
+  user [s]  0.36
+  sys  [s]  0.03
+  mem  [KB] 29240
   avgm [KB] 0

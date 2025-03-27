@@ -1,12 +1,39 @@
-$ oscasp -s0 ../axioms/bec_scasp-small-no_can_order.pl --tree
+$ oscasp -s0 --ec ../axioms/bec_scasp-small-no_can_order.pl ./model.pl --tree
 
 
+% QUERY:?- holdsAt(light_on,T).
 
-Query not defined
+	ANSWER:	1 (in 2.122 ms)
 
-  real      0:00.22
-  real [s]  0.22
-  user [s]  0.12
-  sys  [s]  0.00
-  mem  [KB] 26672
+JUSTIFICATION_TREE:
+holdsAt(light_on,T | {T #> 10,T #=< 20}) :-
+    max_time(100),
+    initiates(turn_light_on,light_on,10),
+    happens(turn_light_on,10),
+    not_stoppedIn(10,light_on,T | {T #> 10,T #=< 20}) :-
+        findall(Var4,findall_can_terminates(Var4,light_on,10,T | {T #> 10,T #=< 20}),[turn_light_off]) :-
+            findall_can_terminates(turn_light_off,light_on,10,Var1 | {Var1 #> 10,Var1 #=< 100}) :-
+                can_terminates(turn_light_off,light_on,Var2 | {Var2 #> 10,Var2 #< 100}).
+        not_terminated(light_on,[turn_light_off],10,T | {T #> 10,T #=< 20}) :-
+            findall(Var5,terminated(turn_light_off,light_on,Var5,10,T | {T #> 10,T #=< 20}),[20]) :-
+                terminated(turn_light_off,light_on,20,10,Var3 | {Var3 #> 20,Var3 #=< 100}) :-
+                    can_terminates(turn_light_off,light_on,20),
+                    happens(turn_light_off,20),
+                    terminates(turn_light_off,light_on,20).
+            all_entirely_outside_of_interval([20],10,T | {T #> 10,T #=< 20}) :-
+                all_entirely_outside_of_interval([],10,T | {T #> 10,T #=< 20}).
+            not_terminated(light_on,[],10,T | {T #> 10,T #=< 20}).
+global_constraint.
+
+MODEL:
+{ holdsAt(light_on,T | {T #> 10,T #=< 20}),  initiates(turn_light_on,light_on,10),  happens(turn_light_on,10),  not_stoppedIn(10,light_on,T | {T #> 10,T #=< 20}),  happens(turn_light_off,20),  terminates(turn_light_off,light_on,20) }
+BINDINGS: 
+T #> 10,T #=< 20
+
+
+  real      0:01.19
+  real [s]  1.19
+  user [s]  0.33
+  sys  [s]  0.11
+  mem  [KB] 27184
   avgm [KB] 0

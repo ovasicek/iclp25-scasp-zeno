@@ -1,9 +1,9 @@
-$ oscasp -s0 ../axioms/bec_scasp-small.pl ./fix-epsilon.pl --tree -r
+$ oscasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-epsilon.pl --tree -r
 
 
 % QUERY:?- happens(serviceFee,T).
 
-	ANSWER:	1 (in 19.528 ms)
+	ANSWER:	1 (in 27.309 ms)
 
 JUSTIFICATION_TREE:
 happens(serviceFee,20.0) :-
@@ -34,42 +34,42 @@ happens(serviceFee,20.0) :-
                         max_time(100),
                         initiallyP(balance(10000)),
                         not_stoppedIn(0,balance(10000),10) :-
-                            findall(Var13,findall_can_terminates(Var13,balance(10000),0,10),[serviceFee,withdraw(Var3)]) :-
+                            findall(Var13,findall_can_terminates(Var13,balance(10000),0,10),[withdraw(Var2),serviceFee]) :-
+                                findall_can_terminates(withdraw(Var2),balance(10000),0,10) :-
+                                    can_terminates(withdraw(Var2),balance(10000),Var3 | {Var3 #> 0,Var3 #< 10}).
                                 findall_can_terminates(serviceFee,balance(10000),0,10) :-
-                                    can_terminates(serviceFee,balance(10000),Var2 | {Var2 #> 0,Var2 #< 10}).
-                                findall_can_terminates(withdraw(Var3),balance(10000),0,10) :-
-                                    can_terminates(withdraw(Var3),balance(10000),Var4 | {Var4 #> 0,Var4 #< 10}).
-                            not_terminated(balance(10000),[serviceFee,withdraw(Var3)],0,10) :-
-                                findall(Var14,terminated(serviceFee,balance(10000),Var14,0,10),[]),
+                                    can_terminates(serviceFee,balance(10000),Var4 | {Var4 #> 0,Var4 #< 10}).
+                            not_terminated(balance(10000),[withdraw(Var2),serviceFee],0,10) :-
+                                findall(Var14,terminated(withdraw(Var2),balance(10000),Var14,0,10),[]),
                                 all_entirely_outside_of_interval([],0,10),
-                                not_terminated(balance(10000),[withdraw(Var3)],0,10) :-
-                                    findall(Var15,terminated(withdraw(Var3),balance(10000),Var15,0,10),[]),
+                                not_terminated(balance(10000),[serviceFee],0,10) :-
+                                    findall(Var15,terminated(serviceFee,balance(10000),Var15,0,10),[]),
                                     proved(all_entirely_outside_of_interval([],0,10)),
                                     not_terminated(balance(10000),[],0,10).
                 not_stoppedIn(10,balance(2000),20) :-
-                    findall(Var16,findall_can_terminates(Var16,balance(2000),10,20),[serviceFee,withdraw(Var6)]) :-
+                    findall(Var16,findall_can_terminates(Var16,balance(2000),10,20),[withdraw(Var5),serviceFee]) :-
+                        findall_can_terminates(withdraw(Var5),balance(2000),10,20) :-
+                            can_terminates(withdraw(Var5),balance(2000),Var6 | {Var6 #> 10,Var6 #< 20}).
                         findall_can_terminates(serviceFee,balance(2000),10,20) :-
-                            can_terminates(serviceFee,balance(2000),Var5 | {Var5 #> 10,Var5 #< 20}).
-                        findall_can_terminates(withdraw(Var6),balance(2000),10,20) :-
-                            can_terminates(withdraw(Var6),balance(2000),Var7 | {Var7 #> 10,Var7 #< 20}).
-                    not_terminated(balance(2000),[serviceFee,withdraw(Var6)],10,20) :-
-                        findall(Var17,terminated(serviceFee,balance(2000),Var17,10,20),[]),
+                            can_terminates(serviceFee,balance(2000),Var7 | {Var7 #> 10,Var7 #< 20}).
+                    not_terminated(balance(2000),[withdraw(Var5),serviceFee],10,20) :-
+                        findall(Var17,terminated(withdraw(Var5),balance(2000),Var17,10,20),[]),
                         all_entirely_outside_of_interval([],10,20),
-                        not_terminated(balance(2000),[withdraw(Var6)],10,20) :-
-                            findall(Var18,terminated(withdraw(Var6),balance(2000),Var18,10,20),[]),
+                        not_terminated(balance(2000),[serviceFee],10,20) :-
+                            findall(Var18,terminated(serviceFee,balance(2000),Var18,10,20),[]),
                             proved(all_entirely_outside_of_interval([],10,20)),
                             not_terminated(balance(2000),[],10,20).
         not_stoppedIn(20,balance(500),20.0) :-
-            findall(Var19,findall_can_terminates(Var19,balance(500),20,20.0),[serviceFee,withdraw(Var9)]) :-
+            findall(Var19,findall_can_terminates(Var19,balance(500),20,20.0),[withdraw(Var8),serviceFee]) :-
+                findall_can_terminates(withdraw(Var8),balance(500),20,20.0) :-
+                    can_terminates(withdraw(Var8),balance(500),Var9 | {Var9 #> 20,Var9 #< 20.0}).
                 findall_can_terminates(serviceFee,balance(500),20,20.0) :-
-                    can_terminates(serviceFee,balance(500),Var8 | {Var8 #> 20,Var8 #< 20.0}).
-                findall_can_terminates(withdraw(Var9),balance(500),20,20.0) :-
-                    can_terminates(withdraw(Var9),balance(500),Var10 | {Var10 #> 20,Var10 #< 20.0}).
-            not_terminated(balance(500),[serviceFee,withdraw(Var9)],20,20.0) :-
-                findall(Var20,terminated(serviceFee,balance(500),Var20,20,20.0),[]),
+                    can_terminates(serviceFee,balance(500),Var10 | {Var10 #> 20,Var10 #< 20.0}).
+            not_terminated(balance(500),[withdraw(Var8),serviceFee],20,20.0) :-
+                findall(Var20,terminated(withdraw(Var8),balance(500),Var20,20,20.0),[]),
                 all_entirely_outside_of_interval([],20,20.0),
-                not_terminated(balance(500),[withdraw(Var9)],20,20.0) :-
-                    findall(Var21,terminated(withdraw(Var9),balance(500),Var21,20,20.0),[]),
+                not_terminated(balance(500),[serviceFee],20,20.0) :-
+                    findall(Var21,terminated(serviceFee,balance(500),Var21,20,20.0),[]),
                     proved(all_entirely_outside_of_interval([],20,20.0)),
                     not_terminated(balance(500),[],20,20.0).
 global_constraint.
@@ -80,9 +80,9 @@ BINDINGS:
 T = 20.0
 
 
-  real      0:00.39
-  real [s]  0.39
-  user [s]  0.14
-  sys  [s]  0.05
-  mem  [KB] 26868
+  real      0:00.71
+  real [s]  0.71
+  user [s]  0.26
+  sys  [s]  0.08
+  mem  [KB] 27380
   avgm [KB] 0

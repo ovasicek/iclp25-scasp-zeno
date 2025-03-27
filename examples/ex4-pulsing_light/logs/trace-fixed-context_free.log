@@ -1,4 +1,4 @@
-$ oscasp -s0 ../axioms/bec_scasp.pl ./fix-context_free.pl --tree
+$ oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-context_free.pl --tree
 
 
 % QUERY:?- happens(fade_out_end,T).
