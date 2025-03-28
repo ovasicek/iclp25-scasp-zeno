@@ -1,60 +1,44 @@
-$ oscasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
+$ scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
 
 
 % QUERY:?- T #=< 20,happens(turn_light_on,T).
 
 WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
-	happens(turn_light_off, {_253~[_253 > 0, _253 < 20]} )
-	happens(turn_light_off, {_830~[_830 > 0, _830 < 20]} )
+	happens(turn_light_off, {_247~[_247 > 0, _247 < 20]} )
+	happens(turn_light_off, {_730~[_730 > 0, _730 < 20]} )
 
 
---------------------- Calling:  happens(turn_light_off,_1449) -------------
+--------------------- Calling:  happens(turn_light_off,_730) -------------
      {_128~[_128 > 0, _128 =< 20]} .=<.20
     happens(turn_light_on, {_128~[_128 > 0, _128 =< 20]} )
         builtin(!spy)
         not_holdsAt(light_on, {_128~[_128 > 0, _128 =< 20]} )
-             {_253~[_253 > 0, _253 < 20]} .>.0
-             {_253~[_253 > 0, _253 < 20]} .<. {_128~[_128 > 0, _128 =< 20]} 
+             {_247~[_247 > 0, _247 < 20]} .>.0
+             {_247~[_247 > 0, _247 < 20]} .<. {_128~[_128 > 0, _128 =< 20]} 
             max_time(100)
              {_128~[_128 > 0, _128 =< 20]} .=<.100
-            can_terminates(turn_light_off,light_on, {_253~[_253 > 0, _253 < 20]} )
-            happens(turn_light_off, {_253~[_253 > 0, _253 < 20]} )
+            can_terminates(turn_light_off,light_on, {_247~[_247 > 0, _247 < 20]} )
+            happens(turn_light_off, {_247~[_247 > 0, _247 < 20]} )
                 builtin(!spy)
-                holdsAt(light_on, {_253~[_253 > 0, _253 < 20]} )
-                     {_528~[_528 > 0, _528 < 20]} .>.0
-                     {_528~[_528 > 0, _528 < 20]} .<. {_253~[_253 > 0, _253 < 20]} 
+                holdsAt(light_on, {_247~[_247 > 0, _247 < 20]} )
+                     {_475~[_475 > 0, _475 < 20]} .>.0
+                     {_475~[_475 > 0, _475 < 20]} .<. {_247~[_247 > 0, _247 < 20]} 
                     max_time(100)
-                     {_253~[_253 > 0, _253 < 20]} .=<.100
-                    can_initiates(turn_light_on,light_on, {_528~[_528 > 0, _528 < 20]} )
-                    happens(turn_light_on, {_528~[_528 > 0, _528 < 20]} )
+                     {_247~[_247 > 0, _247 < 20]} .=<.100
+                    can_initiates(turn_light_on,light_on, {_475~[_475 > 0, _475 < 20]} )
+                    happens(turn_light_on, {_475~[_475 > 0, _475 < 20]} )
                         builtin(!spy)
-                        not_holdsAt(light_on, {_528~[_528 > 0, _528 < 20]} )
-                             {_830~[_830 > 0, _830 < 20]} .>.0
-                             {_830~[_830 > 0, _830 < 20]} .<. {_528~[_528 > 0, _528 < 20]} 
+                        not_holdsAt(light_on, {_475~[_475 > 0, _475 < 20]} )
+                             {_730~[_730 > 0, _730 < 20]} .>.0
+                             {_730~[_730 > 0, _730 < 20]} .<. {_475~[_475 > 0, _475 < 20]} 
                             max_time(100)
-                             {_528~[_528 > 0, _528 < 20]} .=<.100
-                            can_terminates(turn_light_off,light_on, {_830~[_830 > 0, _830 < 20]} )
-                            happens(turn_light_off, {_830~[_830 > 0, _830 < 20]} )
-                                builtin(!spy)
-                                holdsAt(light_on, {_830~[_830 > 0, _830 < 20]} )
-                                     {_1137~[_1137 > 0, _1137 < 20]} .>.0
-                                     {_1137~[_1137 > 0, _1137 < 20]} .<. {_830~[_830 > 0, _830 < 20]} 
-                                    max_time(100)
-                                     {_830~[_830 > 0, _830 < 20]} .=<.100
-                                    can_initiates(turn_light_on,light_on, {_1137~[_1137 > 0, _1137 < 20]} )
-                                    happens(turn_light_on, {_1137~[_1137 > 0, _1137 < 20]} )
-                                        builtin(!spy)
-                                        not_holdsAt(light_on, {_1137~[_1137 > 0, _1137 < 20]} )
-                                             {_1449~[_1449 > 0, _1449 < 20]} .>.0
-                                             {_1449~[_1449 > 0, _1449 < 20]} .<. {_1137~[_1137 > 0, _1137 < 20]} 
-                                            max_time(100)
-                                             {_1137~[_1137 > 0, _1137 < 20]} .=<.100
-                                            can_terminates(turn_light_off,light_on, {_1449~[_1449 > 0, _1449 < 20]} )
-                                            happens(turn_light_off, {_1449~[_1449 > 0, _1449 < 20]} )
+                             {_475~[_475 > 0, _475 < 20]} .=<.100
+                            can_terminates(turn_light_off,light_on, {_730~[_730 > 0, _730 < 20]} )
+                            happens(turn_light_off, {_730~[_730 > 0, _730 < 20]} )
 
-  real      0:00.88
-  real [s]  0.88
-  user [s]  0.43
-  sys  [s]  0.02
-  mem  [KB] 28872
+  real      0:00.81
+  real [s]  0.81
+  user [s]  0.39
+  sys  [s]  0.04
+  mem  [KB] 28728
   avgm [KB] 0

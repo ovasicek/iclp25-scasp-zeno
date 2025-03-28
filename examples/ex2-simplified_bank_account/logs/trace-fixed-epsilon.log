@@ -1,4 +1,4 @@
-$ oscasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-epsilon.pl --tree -r
+$ scasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-epsilon.pl --tree -r
 
 
 % QUERY:?- happens(serviceFee,T).

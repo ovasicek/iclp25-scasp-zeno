@@ -1,4 +1,4 @@
-$ oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r
+$ scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r
 
 
 % QUERY:?- T #=< 25,happens(serviceFee,T).

@@ -1,4 +1,4 @@
-$ oscasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-remodel.pl --tree
+$ scasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-remodel.pl --tree
 
 
 % QUERY:?- happens(serviceFee,T).

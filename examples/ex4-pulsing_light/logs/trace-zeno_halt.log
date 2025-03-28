@@ -1,64 +1,46 @@
-$ oscasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
+$ scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
 
 
 % QUERY:?- happens(fade_out_end,T).
 
 WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
-	happens(fade_in_end, {_190~[_190 > 0, _190 < 100]} )
-	happens(fade_in_end, {_916~[_916 > 0, _916 < 100]} )
+	happens(fade_in_end, {_184~[_184 > 0, _184 < 100]} )
+	happens(fade_in_end, {_843~[_843 > 0, _843 < 100]} )
 
 
---------------------- Calling:  happens(fade_in_end,_1864) -------------
-    happens(fade_out_end, {_255~[_255 > 0, _255 =< 100]} )
+--------------------- Calling:  happens(fade_in_end,_843) -------------
+    happens(fade_out_end, {_235~[_235 > 0, _235 =< 100]} )
         builtin(!spy)
-        holdsAt(brightness(0), {_255~[_255 > 0, _255 =< 100]} ,fading_out)
-             {_190~[_190 > 0, _190 < 100]} .>.0
-             {_190~[_190 > 0, _190 < 100]} .<. {_255~[_255 > 0, _255 =< 100]} 
+        holdsAt(brightness(0), {_235~[_235 > 0, _235 =< 100]} ,fading_out)
+             {_184~[_184 > 0, _184 < 100]} .>.0
+             {_184~[_184 > 0, _184 < 100]} .<. {_235~[_235 > 0, _235 =< 100]} 
             max_time(100)
-             {_255~[_255 > 0, _255 =< 100]} .=<.100
-            can_trajectory(fading_out, {_190~[_190 > 0, _190 < 100]} ,brightness(0), {_255~[_255 > 0, _255 =< 100]} )
-            can_initiates(fade_in_end,fading_out, {_190~[_190 > 0, _190 < 100]} )
-            happens(fade_in_end, {_190~[_190 > 0, _190 < 100]} )
+             {_235~[_235 > 0, _235 =< 100]} .=<.100
+            can_trajectory(fading_out, {_184~[_184 > 0, _184 < 100]} ,brightness(0), {_235~[_235 > 0, _235 =< 100]} )
+            can_initiates(fade_in_end,fading_out, {_184~[_184 > 0, _184 < 100]} )
+            happens(fade_in_end, {_184~[_184 > 0, _184 < 100]} )
                 builtin(!spy)
-                holdsAt(brightness(10), {_190~[_190 > 0, _190 < 100]} ,fading_in)
-                     {_469~[_469 > 0, _469 < 100]} .>.0
-                     {_469~[_469 > 0, _469 < 100]} .<. {_190~[_190 > 0, _190 < 100]} 
+                holdsAt(brightness(10), {_184~[_184 > 0, _184 < 100]} ,fading_in)
+                     {_443~[_443 > 0, _443 < 100]} .>.0
+                     {_443~[_443 > 0, _443 < 100]} .<. {_184~[_184 > 0, _184 < 100]} 
                     max_time(100)
-                     {_190~[_190 > 0, _190 < 100]} .=<.100
-                    can_trajectory(fading_in, {_469~[_469 > 0, _469 < 100]} ,brightness(10), {_190~[_190 > 0, _190 < 100]} )
-                    can_initiates(fade_out_end,fading_in, {_469~[_469 > 0, _469 < 100]} )
-                    happens(fade_out_end, {_469~[_469 > 0, _469 < 100]} )
+                     {_184~[_184 > 0, _184 < 100]} .=<.100
+                    can_trajectory(fading_in, {_443~[_443 > 0, _443 < 100]} ,brightness(10), {_184~[_184 > 0, _184 < 100]} )
+                    can_initiates(fade_out_end,fading_in, {_443~[_443 > 0, _443 < 100]} )
+                    happens(fade_out_end, {_443~[_443 > 0, _443 < 100]} )
                         builtin(!spy)
-                        holdsAt(brightness(0), {_469~[_469 > 0, _469 < 100]} ,fading_out)
-                             {_916~[_916 > 0, _916 < 100]} .>.0
-                             {_916~[_916 > 0, _916 < 100]} .<. {_469~[_469 > 0, _469 < 100]} 
+                        holdsAt(brightness(0), {_443~[_443 > 0, _443 < 100]} ,fading_out)
+                             {_843~[_843 > 0, _843 < 100]} .>.0
+                             {_843~[_843 > 0, _843 < 100]} .<. {_443~[_443 > 0, _443 < 100]} 
                             max_time(100)
-                             {_469~[_469 > 0, _469 < 100]} .=<.100
-                            can_trajectory(fading_out, {_916~[_916 > 0, _916 < 100]} ,brightness(0), {_469~[_469 > 0, _469 < 100]} )
-                            can_initiates(fade_in_end,fading_out, {_916~[_916 > 0, _916 < 100]} )
-                            happens(fade_in_end, {_916~[_916 > 0, _916 < 100]} )
-                                builtin(!spy)
-                                holdsAt(brightness(10), {_916~[_916 > 0, _916 < 100]} ,fading_in)
-                                     {_1376~[_1376 > 0, _1376 < 100]} .>.0
-                                     {_1376~[_1376 > 0, _1376 < 100]} .<. {_916~[_916 > 0, _916 < 100]} 
-                                    max_time(100)
-                                     {_916~[_916 > 0, _916 < 100]} .=<.100
-                                    can_trajectory(fading_in, {_1376~[_1376 > 0, _1376 < 100]} ,brightness(10), {_916~[_916 > 0, _916 < 100]} )
-                                    can_initiates(fade_out_end,fading_in, {_1376~[_1376 > 0, _1376 < 100]} )
-                                    happens(fade_out_end, {_1376~[_1376 > 0, _1376 < 100]} )
-                                        builtin(!spy)
-                                        holdsAt(brightness(0), {_1376~[_1376 > 0, _1376 < 100]} ,fading_out)
-                                             {_1864~[_1864 > 0, _1864 < 100]} .>.0
-                                             {_1864~[_1864 > 0, _1864 < 100]} .<. {_1376~[_1376 > 0, _1376 < 100]} 
-                                            max_time(100)
-                                             {_1376~[_1376 > 0, _1376 < 100]} .=<.100
-                                            can_trajectory(fading_out, {_1864~[_1864 > 0, _1864 < 100]} ,brightness(0), {_1376~[_1376 > 0, _1376 < 100]} )
-                                            can_initiates(fade_in_end,fading_out, {_1864~[_1864 > 0, _1864 < 100]} )
-                                            happens(fade_in_end, {_1864~[_1864 > 0, _1864 < 100]} )
+                             {_443~[_443 > 0, _443 < 100]} .=<.100
+                            can_trajectory(fading_out, {_843~[_843 > 0, _843 < 100]} ,brightness(0), {_443~[_443 > 0, _443 < 100]} )
+                            can_initiates(fade_in_end,fading_out, {_843~[_843 > 0, _843 < 100]} )
+                            happens(fade_in_end, {_843~[_843 > 0, _843 < 100]} )
 
-  real      0:01.03
-  real [s]  1.03
-  user [s]  0.50
-  sys  [s]  0.02
-  mem  [KB] 28984
+  real      0:00.87
+  real [s]  0.87
+  user [s]  0.37
+  sys  [s]  0.08
+  mem  [KB] 28760
   avgm [KB] 0

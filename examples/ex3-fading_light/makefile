@@ -4,21 +4,21 @@ TIME=/usr/bin/time -f "\n  real      %E\n  real [s]  %e\n  user [s]  %U\n  sys  
 # non-terminating
 
 run-non_term:
-	${TIME} oscasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl
+	${TIME} scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl
 
 
 #-----------------------------------------------------------------------------------------------------------------------
 # auto detect and halt
 
 run-zeno_halt:
-	${TIME} oscasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt
+	${TIME} scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt
 
 
 #-----------------------------------------------------------------------------------------------------------------------
 # fixed
 
 run-fixed-holdsAt3:
-	${TIME} oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt3.pl
+	${TIME} scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt3.pl
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -26,14 +26,6 @@ run-fixed-holdsAt3:
 # and trace the building of the resolution tree via !spy and a timeout for non-terminating examples
 
 trace:
-	../scripts/maketrace.sh "oscasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000" ./logs/trace-non_term.log
-	../scripts/maketrace.sh "oscasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "oscasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree" ./logs/trace-fixed-holdsAt3.log
-
-
-#-----------------------------------------------------------------------------------------------------------------------
-# automatically makes can_* rules
-
-preprocess:
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/model ./model.pl
-	../scripts/preprocess_model.sh ./preprocessed_can_rules/fix-holdsAt3 ./fix-holdsAt3.pl
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000" ./logs/trace-non_term.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree" ./logs/trace-fixed-holdsAt3.log

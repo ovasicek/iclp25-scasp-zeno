@@ -1,4 +1,4 @@
-$ oscasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./fix-split_holdsAt4.pl --tree
+$ scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./fix-split_holdsAt4.pl --tree
 
 
 % QUERY:?- holdsAt(water_left(X),15).
