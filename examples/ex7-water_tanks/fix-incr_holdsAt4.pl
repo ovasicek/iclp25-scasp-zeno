@@ -112,11 +112,10 @@ happens(start(right),           10).
 ?- holdsAt(water_left(X),       161/8).%(20.125)    % 40    
 ?- holdsAt(water_right(X),      161/8).%(20.125)    % 58.75 (235/4)
 
-incr_query_max_time(19.5).     % need to use this based on time in the query 
-?- T .=<. 19.5, happens(switch_left,  T).           % 25/2 (12.5), 145/8 (18.125)
-?- T .=<. 19.5, happens(switch_right, T).           % 65/4, 153/8
-?- holdsAt(water_right(X),      19.5).              % 105/2 (52.5)
-?- holdsAt(water_left(X),       19.5).              % 105/2 (52.5)
+?- !max_incr_time(19.5), happens(switch_left,       T).     % 25/2 (12.5), 145/8 (18.125), 161/8 (20.125)
+?- !max_incr_time(19.5), happens(switch_right,      T).     % 65/4 (16.25), 153/8 (19.125)
+?- !max_incr_time(19.5), holdsAt(water_right(X),    19.5).  % 105/2 (52.5)
+?- !max_incr_time(19.5), holdsAt(water_left(X),     19.5).  % 105/2 (52.5)
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/

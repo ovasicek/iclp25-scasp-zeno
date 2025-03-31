@@ -83,8 +83,10 @@ happens(turn_light_off,     45).
 ?- happens(fade_in_end,     T).     % 20, 40
 ?- happens(fade_out_end,    T).     % 30
 
-% incr_query_max_time(45).          % can use this based on time in the query
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
+
+?- !max_incr_time(30), happens(fade_in_end, T).  % can add a time limit to the start of the query
+
 
 /* ------------------------------ end of file ------------------------------ */

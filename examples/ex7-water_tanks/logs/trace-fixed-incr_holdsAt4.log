@@ -1,9 +1,25 @@
-$ ../scripts/incremental_circular_trajectories.sh ./fix-incr_holdsAt4.pl ../axioms/bec_scasp-interval_not.pl --tree
+$ oscasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./fix-incr_holdsAt4.pl --tree
 
+
+
+WARNING: Running increment n. 1
+WARNING:   New incremental fact: incr_happens(switch_left,25/2)
+
+WARNING: Running increment n. 2
+WARNING:   New incremental fact: incr_happens(switch_right,65/4)
+
+WARNING: Running increment n. 3
+WARNING:   New incremental fact: incr_happens(switch_left,145/8)
+
+WARNING: Running increment n. 4
+WARNING:   New incremental fact: incr_happens(switch_right,153/8)
+
+WARNING: Running increment n. 5
+WARNING:   No new incremental facts. Ending incremental resoning.
 
 % QUERY:?- holdsAt(water_left(X),19.5).
 
-	ANSWER:	1 (in 3986.362 ms)
+	ANSWER:	1 (in 3642.416 ms)
 
 JUSTIFICATION_TREE:
 holdsAt(water_left(105/2),19.5) :-
@@ -304,10 +320,9 @@ BINDINGS:
 X = 105/2
 
 
-
-  real      0:13.88
-  real [s]  13.88
-  user [s]  11.74
-  sys  [s]  0.34
-  mem  [KB] 33228
+  real      0:08.96
+  real [s]  8.96
+  user [s]  7.86
+  sys  [s]  0.12
+  mem  [KB] 33216
   avgm [KB] 0
