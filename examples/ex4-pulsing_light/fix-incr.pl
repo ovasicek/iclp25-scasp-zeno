@@ -86,7 +86,7 @@ happens(turn_light_off,     45).
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
 
-?- !max_incr_time(30), happens(fade_in_end, T).  % can add a time limit to the start of the query
+?- !incr_max_time(30), happens(fade_in_end, T).  % can add a time limit to the start of the query
 
 
 /* ------------------------------ end of file ------------------------------ */

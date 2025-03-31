@@ -98,10 +98,10 @@ happens(start(right),           10).
 ?- holdsAt(water_left(X),       625/32).%(19.53125) % 50
 ?- holdsAt(water_right(X),      625/32).%(19.53125) % 54.6875 (875/16)
 
-?- !max_incr_time(19.5), happens(switch_left,       T).     % 25/2 (12.5), 145/8 (18.125), 625/32 (19.53125)
-?- !max_incr_time(19.5), happens(switch_right,      T).     % 65/4 (16.25), 305/16 (19.0625)
-?- !max_incr_time(19.5), holdsAt(water_right(X),    19.5).  % 435/8 (54.375)
-?- !max_incr_time(19.5), holdsAt(water_left(X),     19.5).  % 405/8 (50.625)
+?- !incr_max_time(19.5), happens(switch_left,       T).     % 25/2 (12.5), 145/8 (18.125), 625/32 (19.53125)
+?- !incr_max_time(19.5), happens(switch_right,      T).     % 65/4 (16.25), 305/16 (19.0625)
+?- !incr_max_time(19.5), holdsAt(water_right(X),    19.5).  % 435/8 (54.375)
+?- !incr_max_time(19.5), holdsAt(water_left(X),     19.5).  % 405/8 (50.625)
 
 
 /* ----------------- MOVE THIS UP AND DOWN TO CHANGE QUERY ----------------- -/
