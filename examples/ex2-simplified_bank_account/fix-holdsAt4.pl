@@ -34,11 +34,11 @@ initiates(serviceFee, balance(NewB), T) :-
 terminates(serviceFee, balance(OldB), T) :-
     holdsAt(balance(OldB), T).
 
-duration(1/1000000).
+epsilon(1/1000000).
 happens(serviceFee, T2) :- !spy,
-    duration(Dur),
+    epsilon(EPS),
     B .<. 1000,
-    holdsAt(balance(B), T2, Dur, withdraw(_)),
+    holdsAt(balance(B), T2, EPS, withdraw(_)),
     holdsAt(noServiceFeeYet, T2).
 
 

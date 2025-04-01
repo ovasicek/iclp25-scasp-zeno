@@ -17,9 +17,6 @@ run-zeno_halt:
 #-----------------------------------------------------------------------------------------------------------------------
 # fixed
 
-run-fixed-epsilon:
-	${TIME} scasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-epsilon.pl -r
-
 run-fixed-remodel:
 	${TIME} scasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-remodel.pl
 
@@ -34,6 +31,5 @@ run-fixed-holdsAt4:
 trace:
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl -v6 --timeout=3000" ./logs/trace-non_term.log
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-epsilon.pl --tree -r" ./logs/trace-fixed-epsilon.log
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-remodel.pl --tree" ./logs/trace-fixed-remodel.log
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r" ./logs/trace-fixed-holdsAt4.log
