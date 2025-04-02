@@ -3,11 +3,11 @@ $ scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r
 
 % QUERY:?- T #=< 25,happens(serviceFee,T).
 
-	ANSWER:	1 (in 34.712 ms)
+	ANSWER:	1 (in 29.868 ms)
 
 JUSTIFICATION_TREE:
 happens(serviceFee,20.0) :-
-    duration(0.0),
+    epsilon(0.0),
     holdsAt(balance(500),20.0,0.0,withdraw(1500)) :-
         max_time(100),
         can_initiates(withdraw(1500),balance(500),20),
@@ -102,9 +102,9 @@ BINDINGS:
 T = 20.0
 
 
-  real      0:00.91
-  real [s]  0.91
-  user [s]  0.36
-  sys  [s]  0.08
-  mem  [KB] 29212
+  real      0:00.62
+  real [s]  0.62
+  user [s]  0.37
+  sys  [s]  0.03
+  mem  [KB] 29268
   avgm [KB] 0

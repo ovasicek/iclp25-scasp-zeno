@@ -3,7 +3,7 @@ $ scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl ./model-nar1.pl 
 
 % QUERY:?- holdsAt(water_left(X),19.5).
 
-	ANSWER:	1 (in 25648.386 ms)
+	ANSWER:	1 (in 23913.838 ms)
 
 JUSTIFICATION_TREE:
 holdsAt(water_left(405/8),19.5) :-
@@ -382,9 +382,9 @@ BINDINGS:
 X = 405/8
 
 
-  real      0:35.74
-  real [s]  35.74
-  user [s]  34.40
-  sys  [s]  0.13
-  mem  [KB] 33140
+  real      0:32.71
+  real [s]  32.71
+  user [s]  31.76
+  sys  [s]  0.08
+  mem  [KB] 33192
   avgm [KB] 0

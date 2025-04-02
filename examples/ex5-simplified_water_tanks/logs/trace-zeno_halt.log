@@ -194,9 +194,9 @@ WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
                                                                  {_497425~[_497425 > 13, _497425 < 15]} .<.15
                                                                 happens(switch_left, {_497425~[_497425 > 13, _497425 < 15]} )
 
-  real      0:01.40
-  real [s]  1.40
-  user [s]  0.64
-  sys  [s]  0.04
-  mem  [KB] 32852
+  real      0:01.16
+  real [s]  1.16
+  user [s]  0.60
+  sys  [s]  0.07
+  mem  [KB] 33156
   avgm [KB] 0

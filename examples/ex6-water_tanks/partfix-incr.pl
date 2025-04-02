@@ -35,12 +35,12 @@ initiates(start(right), right_filling, T).
 releases(start(_), water_left(X), T).
 releases(start(_), water_right(X), T).
 
-initiates(switch_left, left_filling, T).    %//NO_PREPROCESS
+initiates(switch_left, left_filling, T).
 can_initiates(switch_left, left_filling, T) :- incr_happens(switch_left, T).
 terminates(switch_left, right_filling, T).
 
 terminates(switch_right, left_filling, T).  
-initiates(switch_right, right_filling, T).  %//NO_PREPROCESS
+initiates(switch_right, right_filling, T).
 can_initiates(switch_right, right_filling, T) :- incr_happens(switch_right, T).
 
 trajectory(left_filling, T1, water_left(NewW), T2) :-

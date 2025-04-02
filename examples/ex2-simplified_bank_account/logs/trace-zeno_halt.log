@@ -49,9 +49,9 @@ WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
                                             can_terminates(serviceFee,noServiceFeeYet, {_46837~[_46837 > 0, _46837 < 100]} )
                                             happens(serviceFee, {_46837~[_46837 > 0, _46837 < 100]} )
 
-  real      0:00.86
-  real [s]  0.86
-  user [s]  0.32
-  sys  [s]  0.05
-  mem  [KB] 26888
+  real      0:00.60
+  real [s]  0.60
+  user [s]  0.31
+  sys  [s]  0.07
+  mem  [KB] 27072
   avgm [KB] 0

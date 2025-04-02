@@ -39,13 +39,13 @@ terminates(turn_light_off, brightness(X), T) :- X .<>. 0.
 
 can_trajectory(fading_in, T1, brightness(NewB), T2) :-
     NewB .=. 0 + ((T2-T1) * 1).
-trajectory(fading_in, T1, brightness(NewB), T2) :-  %//NO_PREPROCESS
+trajectory(fading_in, T1, brightness(NewB), T2) :-
     NewB .=. OldB + ((T2-T1) * 1),
     holdsAt(brightness(OldB), T1).
 
 can_trajectory(fading_out, T1, brightness(NewB), T2) :-
     NewB .=. 10 - ((T2-T1) * 1).
-trajectory(fading_out, T1, brightness(NewB), T2) :- %//NO_PREPROCESS
+trajectory(fading_out, T1, brightness(NewB), T2) :-
     NewB .=. OldB - ((T2-T1) * 1),
     holdsAt(brightness(OldB), T1).
 

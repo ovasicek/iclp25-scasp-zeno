@@ -3,7 +3,7 @@ $ scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-context_free.pl --tree
 
 % QUERY:?- happens(fade_out_end,T).
 
-	ANSWER:	1 (in 428.809 ms)
+	ANSWER:	1 (in 401.445 ms)
 
 JUSTIFICATION_TREE:
 happens(fade_out_end,30) :-
@@ -97,9 +97,9 @@ BINDINGS:
 T = 30
 
 
-  real      0:01.21
-  real [s]  1.21
-  user [s]  0.78
-  sys  [s]  0.03
-  mem  [KB] 28972
+  real      0:01.00
+  real [s]  1.00
+  user [s]  0.77
+  sys  [s]  0.01
+  mem  [KB] 29076
   avgm [KB] 0

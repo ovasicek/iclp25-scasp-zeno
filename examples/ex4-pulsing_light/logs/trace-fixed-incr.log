@@ -1,6 +1,7 @@
 $ oscasp -s0 --ec --incremental -w ../axioms/bec_scasp.pl ./fix-incr.pl --tree
 
 
+Running increments
 
 WARNING: Running increment n. 1
 WARNING:   New incremental fact: incr_happens(fade_in_end,20)
@@ -14,9 +15,13 @@ WARNING:   New incremental fact: incr_happens(fade_in_end,40)
 WARNING: Running increment n. 4
 WARNING:   No new incremental facts. Ending incremental resoning.
 
+Number of increments executed: 4 (in 614.613 ms)
+Incremental Facts:
+[incr_happens(fade_in_end,20),incr_happens(fade_out_end,30),incr_happens(fade_in_end,40)]
+
 % QUERY:?- happens(fade_out_end,T).
 
-	ANSWER:	1 (in 27.933 ms)
+	ANSWER:	1 (in 28.529 ms)
 
 JUSTIFICATION_TREE:
 happens(fade_out_end,30) :-
@@ -115,9 +120,9 @@ BINDINGS:
 T = 30
 
 
-  real      0:01.86
-  real [s]  1.86
-  user [s]  1.35
-  sys  [s]  0.06
-  mem  [KB] 29004
+  real      0:01.85
+  real [s]  1.85
+  user [s]  1.39
+  sys  [s]  0.03
+  mem  [KB] 29044
   avgm [KB] 0

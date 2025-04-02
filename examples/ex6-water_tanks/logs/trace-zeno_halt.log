@@ -135,9 +135,9 @@ WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
                                                                         can_initiates(switch_left,left_filling, {_182296~[_182296 > 0, _182296 < 10]} )
                                                                         happens(switch_left, {_182296~[_182296 > 0, _182296 < 10]} )
 
-  real      0:01.43
-  real [s]  1.43
-  user [s]  0.59
-  sys  [s]  0.10
-  mem  [KB] 32996
+  real      0:01.15
+  real [s]  1.15
+  user [s]  0.60
+  sys  [s]  0.04
+  mem  [KB] 33144
   avgm [KB] 0

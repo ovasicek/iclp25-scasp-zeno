@@ -1,6 +1,7 @@
 $ oscasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./partfix-incr.pl --tree
 
 
+Running increments
 
 WARNING: Running increment n. 1
 WARNING:   New incremental fact: incr_happens(switch_left,25/2)
@@ -17,9 +18,13 @@ WARNING:   New incremental fact: incr_happens(switch_right,305/16)
 WARNING: Running increment n. 5
 WARNING:   No new incremental facts. Ending incremental resoning.
 
+Number of increments executed: 5 (in 15031.918 ms)
+Incremental Facts:
+[incr_happens(switch_left,25/2),incr_happens(switch_right,65/4),incr_happens(switch_left,145/8),incr_happens(switch_right,305/16)]
+
 % QUERY:?- holdsAt(water_left(X),19.5).
 
-	ANSWER:	1 (in 17469.179 ms)
+	ANSWER:	1 (in 16866.326 ms)
 
 JUSTIFICATION_TREE:
 holdsAt(water_left(405/8),19.5) :-
@@ -320,9 +325,9 @@ BINDINGS:
 X = 405/8
 
 
-  real      0:42.30
-  real [s]  42.30
-  user [s]  40.78
-  sys  [s]  0.10
-  mem  [KB] 33304
+  real      0:40.15
+  real [s]  40.15
+  user [s]  39.23
+  sys  [s]  0.03
+  mem  [KB] 36540
   avgm [KB] 0

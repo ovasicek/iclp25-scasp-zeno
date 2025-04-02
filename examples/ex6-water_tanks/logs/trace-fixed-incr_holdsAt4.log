@@ -1,6 +1,7 @@
 $ oscasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./fix-incr_holdsAt4.pl --tree
 
 
+Running increments
 
 WARNING: Running increment n. 1
 WARNING:   New incremental fact: incr_happens(switch_left,25/2)
@@ -17,9 +18,13 @@ WARNING:   New incremental fact: incr_happens(switch_right,153/8)
 WARNING: Running increment n. 5
 WARNING:   No new incremental facts. Ending incremental resoning.
 
+Number of increments executed: 5 (in 2204.644 ms)
+Incremental Facts:
+[incr_happens(switch_left,25/2),incr_happens(switch_right,65/4),incr_happens(switch_left,145/8),incr_happens(switch_right,153/8)]
+
 % QUERY:?- holdsAt(water_left(X),19.5).
 
-	ANSWER:	1 (in 3642.416 ms)
+	ANSWER:	1 (in 3696.96 ms)
 
 JUSTIFICATION_TREE:
 holdsAt(water_left(105/2),19.5) :-
@@ -320,9 +325,9 @@ BINDINGS:
 X = 105/2
 
 
-  real      0:08.96
-  real [s]  8.96
-  user [s]  7.86
-  sys  [s]  0.12
-  mem  [KB] 33216
+  real      0:08.99
+  real [s]  8.99
+  user [s]  7.91
+  sys  [s]  0.14
+  mem  [KB] 33180
   avgm [KB] 0

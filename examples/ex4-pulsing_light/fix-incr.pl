@@ -28,11 +28,11 @@ fluent(fading_in).
 fluent(fading_out).
 
 terminates(fade_in_end, fading_in, T).
-initiates(fade_in_end, fading_out, T).    %//NO_PREPROCESS
+initiates(fade_in_end, fading_out, T).
 can_initiates(fade_in_end, fading_out, T) :- incr_happens(fade_in_end, T).
 
 terminates(fade_out_end, fading_out, T).
-initiates(fade_out_end, fading_in, T).      %//NO_PREPROCESS
+initiates(fade_out_end, fading_in, T).
 can_initiates(fade_out_end, fading_in, T) :- incr_happens(fade_out_end, T).
 
 initiates(turn_light_on,  light_on, T).

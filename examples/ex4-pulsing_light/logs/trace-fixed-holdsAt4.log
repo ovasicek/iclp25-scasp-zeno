@@ -3,7 +3,7 @@ $ scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree
 
 % QUERY:?- happens(fade_out_end,T).
 
-	ANSWER:	1 (in 753.895 ms)
+	ANSWER:	1 (in 720.787 ms)
 
 JUSTIFICATION_TREE:
 happens(fade_out_end,30) :-
@@ -99,9 +99,9 @@ BINDINGS:
 T = 30
 
 
-  real      0:01.56
-  real [s]  1.56
-  user [s]  1.08
-  sys  [s]  0.07
-  mem  [KB] 29076
+  real      0:01.30
+  real [s]  1.30
+  user [s]  1.06
+  sys  [s]  0.03
+  mem  [KB] 29128
   avgm [KB] 0

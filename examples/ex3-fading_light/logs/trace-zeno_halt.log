@@ -57,9 +57,9 @@ WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
                                             can_initiates(fade_in_end,brightness(10), {_133178~[_133178 > 0, _133178 < 10]} )
                                             happens(fade_in_end, {_133178~[_133178 > 0, _133178 < 10]} )
 
-  real      0:00.78
-  real [s]  0.78
-  user [s]  0.31
-  sys  [s]  0.06
-  mem  [KB] 28636
+  real      0:00.54
+  real [s]  0.54
+  user [s]  0.35
+  sys  [s]  0.02
+  mem  [KB] 29008
   avgm [KB] 0

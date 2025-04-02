@@ -3,7 +3,7 @@ $ scasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-remodel.pl --tree
 
 % QUERY:?- happens(serviceFee,T).
 
-	ANSWER:	1 (in 16.653 ms)
+	ANSWER:	1 (in 14.762 ms)
 
 JUSTIFICATION_TREE:
 happens(serviceFee,20) :-
@@ -55,9 +55,9 @@ BINDINGS:
 T = 20
 
 
-  real      0:00.75
-  real [s]  0.75
-  user [s]  0.29
-  sys  [s]  0.07
-  mem  [KB] 27220
+  real      0:00.45
+  real [s]  0.45
+  user [s]  0.27
+  sys  [s]  0.04
+  mem  [KB] 27284
   avgm [KB] 0
