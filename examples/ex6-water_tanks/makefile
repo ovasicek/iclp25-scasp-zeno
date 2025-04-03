@@ -18,10 +18,10 @@ run-zeno_halt:
 # fixed
 
 run-partfix-incr:
-	${TIME} oscasp -s0 --ec --incremental ../axioms/bec_scasp-interval_not.pl ./partfix-incr.pl
+	${TIME} scasp -s0 --ec --incremental ../axioms/bec_scasp-interval_not.pl ./partfix-incr.pl
 
 run-fixed-incr_holdsAt4:
-	${TIME} oscasp -s0 --ec --incremental ../axioms/bec_scasp-interval_not.pl ./fix-incr_holdsAt4.pl
+	${TIME} scasp -s0 --ec --incremental ../axioms/bec_scasp-interval_not.pl ./fix-incr_holdsAt4.pl
 
 run-fixed-holdsAt4:
 	${TIME} scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./fix-holdsAt4.pl
@@ -33,6 +33,6 @@ run-fixed-holdsAt4:
 trace:
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1000" ./logs/trace-non_term.log
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "oscasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./partfix-incr.pl --tree" ./logs/trace-partfixed-incr.log
-	../scripts/maketrace.sh "oscasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./fix-incr_holdsAt4.pl --tree" ./logs/trace-fixed-incr_holdsAt4.log
+	../scripts/maketrace.sh "scasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./partfix-incr.pl --tree" ./logs/trace-partfixed-incr.log
+	../scripts/maketrace.sh "scasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./fix-incr_holdsAt4.pl --tree" ./logs/trace-fixed-incr_holdsAt4.log
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./fix-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log

@@ -18,13 +18,13 @@ run-zeno_halt:
 # fixed
 
 run-fixed-context_free:
-	${TIME}  scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-context_free.pl
+	${TIME} scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-context_free.pl
 
 run-fixed-holdsAt4:
 	${TIME} scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl
 
 run-fixed-incr:
-	${TIME} oscasp -s0 --ec --incremental ../axioms/bec_scasp.pl ./fix-incr.pl
+	${TIME} scasp -s0 --ec --incremental ../axioms/bec_scasp.pl ./fix-incr.pl
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -36,4 +36,4 @@ trace:
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-context_free.pl --tree" ./logs/trace-fixed-context_free.log
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log
-	../scripts/maketrace.sh "oscasp -s0 --ec --incremental -w ../axioms/bec_scasp.pl ./fix-incr.pl --tree" ./logs/trace-fixed-incr.log ; grep "WARNING" ./logs/trace-fixed-incr.log > ./logs/trace-fixed-incr_facts.log
+	../scripts/maketrace.sh "scasp -s0 --ec --incremental -w ../axioms/bec_scasp.pl ./fix-incr.pl --tree" ./logs/trace-fixed-incr.log ; grep "WARNING" ./logs/trace-fixed-incr.log > ./logs/trace-fixed-incr_facts.log

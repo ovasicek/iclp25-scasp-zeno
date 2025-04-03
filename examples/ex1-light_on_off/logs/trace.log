@@ -1,4 +1,4 @@
-$ oscasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl --tree
+$ scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl --tree
 
 
 % QUERY:?- holdsAt(light_on,T).
