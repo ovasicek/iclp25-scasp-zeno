@@ -26,6 +26,7 @@ initiates(withdraw(X), balance(NewB), T) :-
     NewB .=. OldB - X,
     holdsAt(balance(OldB), T).
 terminates(withdraw(_), balance(OldB), T) :-
+    not_happens(serviceFee, T),
     holdsAt(balance(OldB), T).
 
 terminates(serviceFee, noServiceFeeYet, T).
@@ -34,7 +35,8 @@ initiates(serviceFee, balance(NewB), T) :-
     happens(withdraw(X), T),
     NewB .=. (OldB - X) - 10,
     holdsAt(balance(OldB), T).
-%// terminates(serviceFee, balance(OldB), T)
+terminates(serviceFee, balance(OldB), T) :-
+    holdsAt(balance(OldB), T).
 
 happens(serviceFee, T) :- !spy,
     happens(withdraw(X), T),
