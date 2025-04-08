@@ -17,7 +17,7 @@ run-zeno_halt:
 #-----------------------------------------------------------------------------------------------------------------------
 # fixed
 
-run-partfix-incr:
+run-partial_fix-incr:
 	${TIME} scasp -s0 --ec --incremental ../axioms/bec_scasp-interval_not.pl ./partfix-incr.pl
 
 run-fixed-incr_holdsAt4:
@@ -31,8 +31,8 @@ run-fixed-holdsAt4:
 # and trace the building of the resolution tree via !spy and a timeout for non-terminating examples
 
 trace:
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1000" ./logs/trace-non_term.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "scasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./partfix-incr.pl --tree" ./logs/trace-partfixed-incr.log
-	../scripts/maketrace.sh "scasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./fix-incr_holdsAt4.pl --tree" ./logs/trace-fixed-incr_holdsAt4.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./fix-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1000" ./logs/non_term.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl --zeno_halt --tree" ./logs/zeno_halt.log
+	../scripts/maketrace.sh "scasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./partfix-incr.pl --tree" ./logs/partfix-incr.log
+	../scripts/maketrace.sh "scasp -s0 --ec --incremental -w ../axioms/bec_scasp-interval_not.pl ./fix-incr_holdsAt4.pl --tree" ./logs/fix-incr_holdsAt4.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./fix-holdsAt4.pl --tree" ./logs/fix-holdsAt4.log

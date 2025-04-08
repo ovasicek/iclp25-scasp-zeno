@@ -32,8 +32,8 @@ run-fixed-incr:
 # and trace the building of the resolution tree via !spy and a timeout for non-terminating examples
 
 trace:
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=3000" ./logs/trace-non_term.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-context_free.pl --tree" ./logs/trace-fixed-context_free.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree" ./logs/trace-fixed-holdsAt4.log
-	../scripts/maketrace.sh "scasp -s0 --ec --incremental -w ../axioms/bec_scasp.pl ./fix-incr.pl --tree" ./logs/trace-fixed-incr.log ; grep "WARNING" ./logs/trace-fixed-incr.log > ./logs/trace-fixed-incr_facts.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=3000" ./logs/non_term.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/zeno_halt.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-context_free.pl --tree" ./logs/fix-context_free.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree" ./logs/fix-holdsAt4.log
+	../scripts/maketrace.sh "scasp -s0 --ec --incremental -w ../axioms/bec_scasp.pl ./fix-incr.pl --tree" ./logs/fix-incr.log ; grep "WARNING" ./logs/fix-incr.log > ./logs/fix-incr_facts.log

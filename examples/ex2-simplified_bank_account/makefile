@@ -29,7 +29,7 @@ run-fixed-holdsAt4:
 # and trace the building of the resolution tree via !spy and a timeout for non-terminating examples
 
 trace:
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl -v6 --timeout=3000" ./logs/trace-non_term.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl --zeno_halt --tree" ./logs/trace-zeno_halt.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-remodel.pl --tree" ./logs/trace-fixed-remodel.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r" ./logs/trace-fixed-holdsAt4.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl -v6 --timeout=3000" ./logs/non_term.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl --zeno_halt --tree" ./logs/zeno_halt.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./fix-remodel.pl --tree" ./logs/fix-remodel.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r" ./logs/fix-holdsAt4.log

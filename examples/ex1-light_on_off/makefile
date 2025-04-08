@@ -25,7 +25,7 @@ run-alt-no_can-non_term:
 # and trace the building of the resolution tree via !spy and a timeout for non-terminating examples
 
 trace:
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl --tree" ./logs/trace.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small-no_can_order.pl ./model.pl --tree" ./logs/trace-no_can_order.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model-alt.pl --tree" ./logs/trace-alt.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small-no_can_order.pl ./model-alt.pl -v6 --timeout=1000" ./logs/trace-alt-no_can_order-non_term.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model.pl --tree" ./logs/ok.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small-no_can_order.pl ./model.pl --tree" ./logs/ok-no_can.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model-alt.pl --tree" ./logs/alt.log
+	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp-small-no_can_order.pl ./model-alt.pl -v6 --timeout=1000" ./logs/alt-no_can-non_term.log
