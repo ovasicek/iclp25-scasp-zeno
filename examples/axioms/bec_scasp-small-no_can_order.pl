@@ -1,6 +1,8 @@
 % small version:
 %   no trajectory related axioms and no releases
-%   no new axioms
+%   no custom axioms
+%   duplicit code for not_stoppedIn/startedIn (but easier to read/understand)
+%
 % and no can_* rules with terminates/initiates before happens in axioms
 %   can_* rules and order preserved inside of not_stoppedIn/startedIn so that axioms with initiallyP/N work fine (BEC4/5)
 %   this limits the non-termination to other axioms where it is easier to understand/visualize (BEC6/7)

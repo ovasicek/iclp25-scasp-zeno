@@ -1,3 +1,7 @@
+% Version with a more complex implementation of the not_interrupted (not_stoppedIn/startedIn) predicate.
+% Considers interval reasoning aspects to give custom treatment to combinations of T1 and T2 as points/intervals with(out) intersections.
+% In particular, needed to avoid pointless non-termination when ending trajectories at the lower bound of .=<. / .>=. 
+
 %% BEC1 - StoppedIn(t1,f,t2)
 stoppedIn(T1, Fluent, T2) :-
     T1 .<. T, T .<. T2,
@@ -184,7 +188,7 @@ not_startedIn(T1, Fluent, T2) :-
 %
 % also tries to better deal with different types of calls in regards to T1 and T2
 %   1) if both T1 and T2 are points (not intervals), then everything is easy
-%   2) if one is an interval and the other a point, then there cannot be any changes to he inner bound -- event more inner than the bound means failure (not moving of the bound!) other events mean adjusting the outer bound
+%   2) if one is an interval and the other a point, then there cannot be any changes to the inner bound -- event more inner than the bound means failure (not moving of the bound!) other events mean adjusting the outer bound
 %   3) if both are intervals without an intersection, then its similar to the previous one (events in between the intervals mean fail and should not adjust the inner bounds, other events adjust the outer bounds)
 %   4) if both are intervals with an intersection, then everything gets complicated and no tricks are possible 
 not_interrupted(Type_TermInitRel, Fluent, T1, T2) :- 
