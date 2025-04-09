@@ -1,0 +1,77 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree
+
+
+% QUERY:?- happens(hitGround(apple),T).
+
+	ANSWER:	1 (in 11.778 ms)
+
+JUSTIFICATION_TREE:
+happens(hitGround(apple),25) :-
+    holdsAt(height(apple,0),25,falling(apple)) :-
+        max_time(100),
+        can_trajectory(falling(apple),5,height(apple,0),25),
+        can_initiates(drop(nathan,apple),falling(apple),5),
+        happens(drop(nathan,apple),5),
+        initiates(drop(nathan,apple),falling(apple),5) :-
+            agent(nathan),
+            object(apple).
+        trajectory(falling(apple),5,height(apple,0),25) :-
+            fGravity(1),
+            proved(object(apple)),
+            holdsAt(height(apple,20),5) :-
+                max_time(100),
+                initiallyP(height(apple,20)) :-
+                    initHeight(20).
+                not_stoppedIn(0,height(apple,20),5) :-
+                    not_interrupted(terminates,height(apple,20),0,5) :-
+                        findall(Var5,findall_can_interrupts(terminates,Var5,height(apple,20),0,5),[hitGround(apple)]) :-
+                            findall_can_interrupts(terminates,hitGround(apple),height(apple,20),0,5) :-
+                                can_interrupts(terminates,hitGround(apple),height(apple,20),Var1 | {Var1 #> 0,Var1 #< 5}) :-
+                                    can_terminates(hitGround(apple),height(apple,20),Var1 | {Var1 #> 0,Var1 #< 5}).
+                        not_interrupted_(terminates,height(apple,20),[hitGround(apple)],0,5) :-
+                            findall(Var6,interrupted(terminates,hitGround(apple),height(apple,20),Var6,0,5),[]),
+                            all_entirely_outside_of_interval([],0,5),
+                            not_interrupted_(terminates,height(apple,20),[],0,5).
+                    not_interrupted(releases,height(apple,20),0,5) :-
+                        findall(Var7,findall_can_interrupts(releases,Var7,height(apple,20),0,5),[drop(Var2,apple)]) :-
+                            findall_can_interrupts(releases,drop(Var2,apple),height(apple,20),0,5) :-
+                                can_interrupts(releases,drop(Var2,apple),height(apple,20),Var3 | {Var3 #> 0,Var3 #< 5}) :-
+                                    can_releases(drop(Var2,apple),height(apple,20),Var3 | {Var3 #> 0,Var3 #< 5}).
+                        not_interrupted_(releases,height(apple,20),[drop(Var2,apple)],0,5) :-
+                            findall(Var8,interrupted(releases,drop(Var2,apple),height(apple,20),Var8,0,5),[]),
+                            proved(all_entirely_outside_of_interval([],0,5)),
+                            not_interrupted_(releases,height(apple,20),[],0,5).
+        not_stoppedIn(5,falling(apple),25) :-
+            not_interrupted(terminates,falling(apple),5,25) :-
+                findall(Var9,findall_can_interrupts(terminates,Var9,falling(apple),5,25),[hitGround(apple)]) :-
+                    findall_can_interrupts(terminates,hitGround(apple),falling(apple),5,25) :-
+                        can_interrupts(terminates,hitGround(apple),falling(apple),Var4 | {Var4 #> 5,Var4 #< 25}) :-
+                            can_terminates(hitGround(apple),falling(apple),Var4 | {Var4 #> 5,Var4 #< 25}).
+                not_interrupted_(terminates,falling(apple),[hitGround(apple)],5,25) :-
+                    findall(Var10,interrupted(terminates,hitGround(apple),falling(apple),Var10,5,25),[]),
+                    all_entirely_outside_of_interval([],5,25),
+                    not_interrupted_(terminates,falling(apple),[],5,25).
+            not_interrupted(releases,falling(apple),5,25) :-
+                findall(Var11,findall_can_interrupts(releases,Var11,falling(apple),5,25),[]),
+                not_interrupted_(releases,falling(apple),[],5,25).
+    holdsAt(falling(apple),25) :-
+        max_time(100),
+        can_initiates(drop(nathan,apple),falling(apple),5),
+        happens(drop(nathan,apple),5),
+        proved(initiates(drop(nathan,apple),falling(apple),5)),
+        proved(not_stoppedIn(5,falling(apple),25)).
+    proved(object(apple)).
+global_constraint.
+
+MODEL:
+{ happens(hitGround(apple),25),  happens(drop(nathan,apple),5),  initiates(drop(nathan,apple),falling(apple),5),  trajectory(falling(apple),5,height(apple,0),25),  holdsAt(height(apple,20),5),  initiallyP(height(apple,20)),  not_stoppedIn(0,height(apple,20),5),  not_stoppedIn(5,falling(apple),25),  holdsAt(falling(apple),25) }
+BINDINGS: 
+T = 25
+
+
+  real      0:00.50
+  real [s]  0.50
+  user [s]  0.32
+  sys  [s]  0.03
+  mem  [KB] 29300
+  avgm [KB] 0
