@@ -1,0 +1,376 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
+
+
+% QUERY:?- holdsAt(leaked(X),25).
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(leaked(0),25)
+        25.>=.0
+        max_time(100)
+        25.=<.100
+        initiallyP(leaked(0))
+        not_stoppedIn(0,leaked(0),25)
+            0.=<.25
+            not_interrupted(terminates,leaked(0),0,25)
+                findall(_241801,findall_can_interrupts(terminates,_241801,leaked(0),0,25),[tapOff])
+                    findall_can_interrupts(terminates,tapOff,leaked(0),0,25)
+                         {_241958~[_241958 > 0, _241958 < 25]} .>.0
+                         {_241958~[_241958 > 0, _241958 < 25]} .<.25
+                        can_interrupts(terminates,tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                            can_terminates(tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                not_interrupted_(terminates,leaked(0),[tapOff],0,25)
+                    interrupted(terminates,tapOff,leaked(0),20,0,25)
+                        20.>.0
+                        20.<.25
+                        can_interrupts(terminates,tapOff,leaked(0),20)
+                            can_terminates(tapOff,leaked(0),20)
+                        happens(tapOff,20)
+                        interrupts(terminates,tapOff,leaked(0),20)
+                            terminates(tapOff,leaked(0),20)
+                                holdsAt(spilling,20)
+                                    5.>.0
+                                    5.<.20
+                                    max_time(100)
+                                    20.=<.100
+                                    can_initiates(tapOn,spilling,5)
+                                    happens(tapOn,5)
+                                    initiates(tapOn,spilling,5)
+                                        max_level(10)
+                                        10.=.10
+                                        holdsAt(level(10),5)
+                                             {_244554~[_244554 > 0, _244554 < 5]} .>.0
+                                             {_244554~[_244554 > 0, _244554 < 5]} .<.5
+                                            max_time(100)
+                                            5.=<.100
+                                            can_initiates(overflow,level(10), {_244554~[_244554 > 0, _244554 < 5]} )
+                                            happens(overflow, {_244554~[_244554 > 0, _244554 < 5]} )
+                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(leaked(0),25)
+        25.>=.0
+        max_time(100)
+        25.=<.100
+        initiallyP(leaked(0))
+        not_stoppedIn(0,leaked(0),25)
+            0.=<.25
+            not_interrupted(terminates,leaked(0),0,25)
+                findall(_241801,findall_can_interrupts(terminates,_241801,leaked(0),0,25),[tapOff])
+                    findall_can_interrupts(terminates,tapOff,leaked(0),0,25)
+                         {_241958~[_241958 > 0, _241958 < 25]} .>.0
+                         {_241958~[_241958 > 0, _241958 < 25]} .<.25
+                        can_interrupts(terminates,tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                            can_terminates(tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                not_interrupted_(terminates,leaked(0),[tapOff],0,25)
+                    interrupted(terminates,tapOff,leaked(0),20,0,25)
+                        20.>.0
+                        20.<.25
+                        can_interrupts(terminates,tapOff,leaked(0),20)
+                            can_terminates(tapOff,leaked(0),20)
+                        happens(tapOff,20)
+                        interrupts(terminates,tapOff,leaked(0),20)
+                            terminates(tapOff,leaked(0),20)
+                                holdsAt(spilling,20)
+                                    5.>.0
+                                    5.<.20
+                                    max_time(100)
+                                    20.=<.100
+                                    can_initiates(tapOn,spilling,5)
+                                    happens(tapOn,5)
+                                    initiates(tapOn,spilling,5)
+                                        max_level(10)
+                                        10.=.10
+                                        holdsAt(level(10),5)
+                                             {_244554~[_244554 > 0, _244554 < 5]} .>.0
+                                             {_244554~[_244554 > 0, _244554 < 5]} .<.5
+                                            max_time(100)
+                                            5.=<.100
+                                            can_initiates(overflow,level(10), {_244554~[_244554 > 0, _244554 < 5]} )
+                                            happens(overflow, {_244554~[_244554 > 0, _244554 < 5]} )
+                                                builtin(!spy)
+                                                max_level(10)
+                                                holdsAt(level(10), {_244554~[_244554 > 0, _244554 < 5]} )
+                                                     {_246526~[_246526 > 0, _246526 < 5]} .>.0
+                                                     {_246526~[_246526 > 0, _246526 < 5]} .<. {_244554~[_244554 > 0, _244554 < 5]} 
+                                                    max_time(100)
+                                                     {_244554~[_244554 > 0, _244554 < 5]} .=<.100
+                                                    can_initiates(overflow,level(10), {_246526~[_246526 > 0, _246526 < 5]} )
+                                                    happens(overflow, {_246526~[_246526 > 0, _246526 < 5]} )
+                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(leaked(0),25)
+        25.>=.0
+        max_time(100)
+        25.=<.100
+        initiallyP(leaked(0))
+        not_stoppedIn(0,leaked(0),25)
+            0.=<.25
+            not_interrupted(terminates,leaked(0),0,25)
+                findall(_241801,findall_can_interrupts(terminates,_241801,leaked(0),0,25),[tapOff])
+                    findall_can_interrupts(terminates,tapOff,leaked(0),0,25)
+                         {_241958~[_241958 > 0, _241958 < 25]} .>.0
+                         {_241958~[_241958 > 0, _241958 < 25]} .<.25
+                        can_interrupts(terminates,tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                            can_terminates(tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                not_interrupted_(terminates,leaked(0),[tapOff],0,25)
+                    interrupted(terminates,tapOff,leaked(0),20,0,25)
+                        20.>.0
+                        20.<.25
+                        can_interrupts(terminates,tapOff,leaked(0),20)
+                            can_terminates(tapOff,leaked(0),20)
+                        happens(tapOff,20)
+                        interrupts(terminates,tapOff,leaked(0),20)
+                            terminates(tapOff,leaked(0),20)
+                                holdsAt(spilling,20)
+                                    5.>.0
+                                    5.<.20
+                                    max_time(100)
+                                    20.=<.100
+                                    can_initiates(tapOn,spilling,5)
+                                    happens(tapOn,5)
+                                    initiates(tapOn,spilling,5)
+                                        max_level(10)
+                                        10.=.10
+                                        holdsAt(level(10),5)
+                                             {_244554~[_244554 > 0, _244554 < 5]} .>.0
+                                             {_244554~[_244554 > 0, _244554 < 5]} .<.5
+                                            max_time(100)
+                                            5.=<.100
+                                            can_initiates(overflow,level(10), {_244554~[_244554 > 0, _244554 < 5]} )
+                                            happens(overflow, {_244554~[_244554 > 0, _244554 < 5]} )
+                                                builtin(!spy)
+                                                max_level(10)
+                                                holdsAt(level(10), {_244554~[_244554 > 0, _244554 < 5]} )
+                                                     {_246526~[_246526 > 0, _246526 < 5]} .>.0
+                                                     {_246526~[_246526 > 0, _246526 < 5]} .<. {_244554~[_244554 > 0, _244554 < 5]} 
+                                                    max_time(100)
+                                                     {_244554~[_244554 > 0, _244554 < 5]} .=<.100
+                                                    can_initiates(overflow,level(10), {_246526~[_246526 > 0, _246526 < 5]} )
+                                                    happens(overflow, {_246526~[_246526 > 0, _246526 < 5]} )
+                                                        builtin(!spy)
+                                                        max_level(10)
+                                                        holdsAt(level(10), {_246526~[_246526 > 0, _246526 < 5]} )
+                                                             {_249058~[_249058 > 0, _249058 < 5]} .>.0
+                                                             {_249058~[_249058 > 0, _249058 < 5]} .<. {_246526~[_246526 > 0, _246526 < 5]} 
+                                                            max_time(100)
+                                                             {_246526~[_246526 > 0, _246526 < 5]} .=<.100
+                                                            can_initiates(overflow,level(10), {_249058~[_249058 > 0, _249058 < 5]} )
+                                                            happens(overflow, {_249058~[_249058 > 0, _249058 < 5]} )
+                                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(leaked(0),25)
+        25.>=.0
+        max_time(100)
+        25.=<.100
+        initiallyP(leaked(0))
+        not_stoppedIn(0,leaked(0),25)
+            0.=<.25
+            not_interrupted(terminates,leaked(0),0,25)
+                findall(_241801,findall_can_interrupts(terminates,_241801,leaked(0),0,25),[tapOff])
+                    findall_can_interrupts(terminates,tapOff,leaked(0),0,25)
+                         {_241958~[_241958 > 0, _241958 < 25]} .>.0
+                         {_241958~[_241958 > 0, _241958 < 25]} .<.25
+                        can_interrupts(terminates,tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                            can_terminates(tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                not_interrupted_(terminates,leaked(0),[tapOff],0,25)
+                    interrupted(terminates,tapOff,leaked(0),20,0,25)
+                        20.>.0
+                        20.<.25
+                        can_interrupts(terminates,tapOff,leaked(0),20)
+                            can_terminates(tapOff,leaked(0),20)
+                        happens(tapOff,20)
+                        interrupts(terminates,tapOff,leaked(0),20)
+                            terminates(tapOff,leaked(0),20)
+                                holdsAt(spilling,20)
+                                    5.>.0
+                                    5.<.20
+                                    max_time(100)
+                                    20.=<.100
+                                    can_initiates(tapOn,spilling,5)
+                                    happens(tapOn,5)
+                                    initiates(tapOn,spilling,5)
+                                        max_level(10)
+                                        10.=.10
+                                        holdsAt(level(10),5)
+                                             {_244554~[_244554 > 0, _244554 < 5]} .>.0
+                                             {_244554~[_244554 > 0, _244554 < 5]} .<.5
+                                            max_time(100)
+                                            5.=<.100
+                                            can_initiates(overflow,level(10), {_244554~[_244554 > 0, _244554 < 5]} )
+                                            happens(overflow, {_244554~[_244554 > 0, _244554 < 5]} )
+                                                builtin(!spy)
+                                                max_level(10)
+                                                holdsAt(level(10), {_244554~[_244554 > 0, _244554 < 5]} )
+                                                     {_246526~[_246526 > 0, _246526 < 5]} .>.0
+                                                     {_246526~[_246526 > 0, _246526 < 5]} .<. {_244554~[_244554 > 0, _244554 < 5]} 
+                                                    max_time(100)
+                                                     {_244554~[_244554 > 0, _244554 < 5]} .=<.100
+                                                    can_initiates(overflow,level(10), {_246526~[_246526 > 0, _246526 < 5]} )
+                                                    happens(overflow, {_246526~[_246526 > 0, _246526 < 5]} )
+                                                        builtin(!spy)
+                                                        max_level(10)
+                                                        holdsAt(level(10), {_246526~[_246526 > 0, _246526 < 5]} )
+                                                             {_249058~[_249058 > 0, _249058 < 5]} .>.0
+                                                             {_249058~[_249058 > 0, _249058 < 5]} .<. {_246526~[_246526 > 0, _246526 < 5]} 
+                                                            max_time(100)
+                                                             {_246526~[_246526 > 0, _246526 < 5]} .=<.100
+                                                            can_initiates(overflow,level(10), {_249058~[_249058 > 0, _249058 < 5]} )
+                                                            happens(overflow, {_249058~[_249058 > 0, _249058 < 5]} )
+                                                                builtin(!spy)
+                                                                max_level(10)
+                                                                holdsAt(level(10), {_249058~[_249058 > 0, _249058 < 5]} )
+                                                                     {_251802~[_251802 > 0, _251802 < 5]} .>.0
+                                                                     {_251802~[_251802 > 0, _251802 < 5]} .<. {_249058~[_249058 > 0, _249058 < 5]} 
+                                                                    max_time(100)
+                                                                     {_249058~[_249058 > 0, _249058 < 5]} .=<.100
+                                                                    can_initiates(overflow,level(10), {_251802~[_251802 > 0, _251802 < 5]} )
+                                                                    happens(overflow, {_251802~[_251802 > 0, _251802 < 5]} )
+                                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(leaked(0),25)
+        25.>=.0
+        max_time(100)
+        25.=<.100
+        initiallyP(leaked(0))
+        not_stoppedIn(0,leaked(0),25)
+            0.=<.25
+            not_interrupted(terminates,leaked(0),0,25)
+                findall(_241801,findall_can_interrupts(terminates,_241801,leaked(0),0,25),[tapOff])
+                    findall_can_interrupts(terminates,tapOff,leaked(0),0,25)
+                         {_241958~[_241958 > 0, _241958 < 25]} .>.0
+                         {_241958~[_241958 > 0, _241958 < 25]} .<.25
+                        can_interrupts(terminates,tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                            can_terminates(tapOff,leaked(0), {_241958~[_241958 > 0, _241958 < 25]} )
+                not_interrupted_(terminates,leaked(0),[tapOff],0,25)
+                    interrupted(terminates,tapOff,leaked(0),20,0,25)
+                        20.>.0
+                        20.<.25
+                        can_interrupts(terminates,tapOff,leaked(0),20)
+                            can_terminates(tapOff,leaked(0),20)
+                        happens(tapOff,20)
+                        interrupts(terminates,tapOff,leaked(0),20)
+                            terminates(tapOff,leaked(0),20)
+                                holdsAt(spilling,20)
+                                    5.>.0
+                                    5.<.20
+                                    max_time(100)
+                                    20.=<.100
+                                    can_initiates(tapOn,spilling,5)
+                                    happens(tapOn,5)
+                                    initiates(tapOn,spilling,5)
+                                        max_level(10)
+                                        10.=.10
+                                        holdsAt(level(10),5)
+                                             {_1511~[_1511 > 0, _1511 < 5]} .>.0
+                                             {_1511~[_1511 > 0, _1511 < 5]} .<.5
+                                            max_time(100)
+                                            5.=<.100
+                                            can_initiates(overflow,level(10), {_1511~[_1511 > 0, _1511 < 5]} )
+                                            happens(overflow, {_1511~[_1511 > 0, _1511 < 5]} )
+                                                builtin(!spy)
+                                                max_level(10)
+                                                holdsAt(level(10), {_1511~[_1511 > 0, _1511 < 5]} )
+                                                     {_1691~[_1691 > 0, _1691 < 5]} .>.0
+                                                     {_1691~[_1691 > 0, _1691 < 5]} .<. {_1511~[_1511 > 0, _1511 < 5]} 
+                                                    max_time(100)
+                                                     {_1511~[_1511 > 0, _1511 < 5]} .=<.100
+                                                    can_initiates(overflow,level(10), {_1691~[_1691 > 0, _1691 < 5]} )
+                                                    happens(overflow, {_1691~[_1691 > 0, _1691 < 5]} )
+                                                        builtin(!spy)
+                                                        max_level(10)
+                                                        holdsAt(level(10), {_1691~[_1691 > 0, _1691 < 5]} )
+                                                             {_1942~[_1942 > 0, _1942 < 5]} .>.0
+                                                             {_1942~[_1942 > 0, _1942 < 5]} .<. {_1691~[_1691 > 0, _1691 < 5]} 
+                                                            max_time(100)
+                                                             {_1691~[_1691 > 0, _1691 < 5]} .=<.100
+                                                            can_initiates(overflow,level(10), {_1942~[_1942 > 0, _1942 < 5]} )
+                                                            happens(overflow, {_1942~[_1942 > 0, _1942 < 5]} )
+                                                                builtin(!spy)
+                                                                max_level(10)
+                                                                holdsAt(level(10), {_1942~[_1942 > 0, _1942 < 5]} )
+                                                                     {_2209~[_2209 > 0, _2209 < 5]} .>.0
+                                                                     {_2209~[_2209 > 0, _2209 < 5]} .<. {_1942~[_1942 > 0, _1942 < 5]} 
+                                                                    max_time(100)
+                                                                     {_1942~[_1942 > 0, _1942 < 5]} .=<.100
+                                                                    can_initiates(overflow,level(10), {_2209~[_2209 > 0, _2209 < 5]} )
+                                                                    happens(overflow, {_2209~[_2209 > 0, _2209 < 5]} )
+                                                                        builtin(!spy)
+                                                                        max_level(10)
+                                                                        holdsAt(level(10), {_2209~[_2209 > 0, _2209 < 5]} )
+                                                                             {_2481~[_2481 > 0, _2481 < 5]} .>.0
+                                                                             {_2481~[_2481 > 0, _2481 < 5]} .<. {_2209~[_2209 > 0, _2209 < 5]} 
+                                                                            max_time(100)
+                                                                             {_2209~[_2209 > 0, _2209 < 5]} .=<.100
+                                                                            can_initiates(overflow,level(10), {_2481~[_2481 > 0, _2481 < 5]} )
+                                                                            happens(overflow, {_2481~[_2481 > 0, _2481 < 5]} )
+                                                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(leaked(0),25)
+        25.>=.0
+        max_time(100)
+        25.=<.100
+        initiallyP(leaked(0))
+        not_stoppedIn(0,leaked(0),25)
+            0.=<.25
+            not_interrupted(terminates,leaked(0),0,25)
+                findall(_775,findall_can_interrupts(terminates,_775,leaked(0),0,25),[tapOff])
+                    findall_can_interrupts(terminates,tapOff,leaked(0),0,25)
+                         {_850~[_850 > 0, _850 < 25]} .>.0
+                         {_850~[_850 > 0, _850 < 25]} .<.25
+                        can_interrupts(terminates,tapOff,leaked(0), {_850~[_850 > 0, _850 < 25]} )
+                            can_terminates(tapOff,leaked(0), {_850~[_850 > 0, _850 < 25]} )
+                not_interrupted_(terminates,leaked(0),[tapOff],0,25)
+                    interrupted(terminates,tapOff,leaked(0),20,0,25)
+                        20.>.0
+                        20.<.25
+                        can_interrupts(terminates,tapOff,leaked(0),20)
+                            can_terminates(tapOff,leaked(0),20)
+                        happens(tapOff,20)
+                        interrupts(terminates,tapOff,leaked(0),20)
+                            terminates(tapOff,leaked(0),20)
+                                holdsAt(spilling,20)
+                                    5.>.0
+                                    5.<.20
+                                    max_time(100)
+                                    20.=<.100
+                                    can_initiates(tapOn,spilling,5)
+                                    happens(tapOn,5)
+                                    initiates(tapOn,spilling,5)
+                                        max_level(10)
+                                        10.=.10
+                                        holdsAt(level(10),5)
+                                             {_1511~[_1511 > 0, _1511 < 5]} .>.0
+                                             {_1511~[_1511 > 0, _1511 < 5]} .<.5
+                                            max_time(100)
+                                            5.=<.100
+                                            can_initiates(overflow,level(10), {_1511~[_1511 > 0, _1511 < 5]} )
+                                            happens(overflow, {_1511~[_1511 > 0, _1511 < 5]} )
+                                                builtin(!spy)
+                                                max_level(10)
+                                                holdsAt(level(10), {_1511~[_1511 > 0, _1511 < 5]} )
+                                                     {_1691~[_1691 > 0, _1691 < 5]} .>.0
+                                                     {_1691~[_1691 > 0, _1691 < 5]} .<. {_1511~[_1511 > 0, _1511 < 5]} 
+                                                    max_time(100)
+                                                     {_1511~[_1511 > 0, _1511 < 5]} .=<.100
+                                                    can_initiates(overflow,level(10), {_1691~[_1691 > 0, _1691 < 5]} )
+                                                    happens(overflow, {_1691~[_1691 > 0, _1691 < 5]} )
+                                                        builtin(!spy)
+                                                        max_level(10)
+                                                        holdsAt(level(10), {_1691~[_1691 > 0, _1691 < 5]} )
+                                                             {_1942~[_1942 > 0, _1942 < 5]} .>.0
+                                                             {_1942~[_1942 > 0, _1942 < 5]} .<. {_1691~[_1691 > 0, _1691 < 5]} 
+                                                            max_time(100)
+                                                            
+timeout
+
+
+  real      0:01.39
+  real [s]  1.39
+  user [s]  0.52
+  sys  [s]  0.07
+  mem  [KB] 29376
+  avgm [KB] 0

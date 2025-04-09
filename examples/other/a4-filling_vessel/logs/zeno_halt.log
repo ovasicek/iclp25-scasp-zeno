@@ -1,0 +1,67 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
+
+
+% QUERY:?- holdsAt(leaked(X),25).
+
+WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
+	happens(overflow, {_243880~[_243880 > 0, _243880 < 5]} )
+	happens(overflow, {_244785~[_244785 > 0, _244785 < 5]} )
+
+
+--------------------- Calling:  happens(overflow,_244785) -------------
+    holdsAt(leaked(0),25)
+        25.>=.0
+        max_time(100)
+        25.=<.100
+        initiallyP(leaked(0))
+        not_stoppedIn(0,leaked(0),25)
+            0.=<.25
+            not_interrupted(terminates,leaked(0),0,25)
+                findall(_241127,findall_can_interrupts(terminates,_241127,leaked(0),0,25),[tapOff])
+                    findall_can_interrupts(terminates,tapOff,leaked(0),0,25)
+                         {_241284~[_241284 > 0, _241284 < 25]} .>.0
+                         {_241284~[_241284 > 0, _241284 < 25]} .<.25
+                        can_interrupts(terminates,tapOff,leaked(0), {_241284~[_241284 > 0, _241284 < 25]} )
+                            can_terminates(tapOff,leaked(0), {_241284~[_241284 > 0, _241284 < 25]} )
+                not_interrupted_(terminates,leaked(0),[tapOff],0,25)
+                    interrupted(terminates,tapOff,leaked(0),20,0,25)
+                        20.>.0
+                        20.<.25
+                        can_interrupts(terminates,tapOff,leaked(0),20)
+                            can_terminates(tapOff,leaked(0),20)
+                        happens(tapOff,20)
+                        interrupts(terminates,tapOff,leaked(0),20)
+                            terminates(tapOff,leaked(0),20)
+                                holdsAt(spilling,20)
+                                    5.>.0
+                                    5.<.20
+                                    max_time(100)
+                                    20.=<.100
+                                    can_initiates(tapOn,spilling,5)
+                                    happens(tapOn,5)
+                                    initiates(tapOn,spilling,5)
+                                        max_level(10)
+                                        10.=.10
+                                        holdsAt(level(10),5)
+                                             {_243880~[_243880 > 0, _243880 < 5]} .>.0
+                                             {_243880~[_243880 > 0, _243880 < 5]} .<.5
+                                            max_time(100)
+                                            5.=<.100
+                                            can_initiates(overflow,level(10), {_243880~[_243880 > 0, _243880 < 5]} )
+                                            happens(overflow, {_243880~[_243880 > 0, _243880 < 5]} )
+                                                builtin(!spy)
+                                                max_level(10)
+                                                holdsAt(level(10), {_243880~[_243880 > 0, _243880 < 5]} )
+                                                     {_244785~[_244785 > 0, _244785 < 5]} .>.0
+                                                     {_244785~[_244785 > 0, _244785 < 5]} .<. {_243880~[_243880 > 0, _243880 < 5]} 
+                                                    max_time(100)
+                                                     {_243880~[_243880 > 0, _243880 < 5]} .=<.100
+                                                    can_initiates(overflow,level(10), {_244785~[_244785 > 0, _244785 < 5]} )
+                                                    happens(overflow, {_244785~[_244785 > 0, _244785 < 5]} )
+
+  real      0:00.54
+  real [s]  0.54
+  user [s]  0.33
+  sys  [s]  0.07
+  mem  [KB] 29212
+  avgm [KB] 0
