@@ -1,0 +1,413 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
+
+
+% QUERY:?- happens(E,T).
+
+	ANSWER:	1 (in 4.569 ms)
+
+MODEL:
+{ happens(signal_train_entered,11),  holdsAt(train_position(10),11),  happens(start,1),  initiates(start,train_moving,1),  trajectory(train_moving,1,train_position(10),11),  holdsAt(train_position(0),1),  initiallyP(train_position(0)),  not_stoppedIn(0,train_position(0),1),  not_stoppedIn(1,train_moving,11) }
+BINDINGS: 
+E = signal_train_entered 
+T = 11
+
+
+	ANSWER:	2 (in 5.557 ms)
+
+MODEL:
+{ happens(signal_train_exited,21),  holdsAt(train_position(20),21),  happens(start,1),  initiates(start,train_moving,1),  trajectory(train_moving,1,train_position(20),21),  holdsAt(train_position(0),1),  initiallyP(train_position(0)),  not_stoppedIn(0,train_position(0),1),  not_stoppedIn(1,train_moving,21) }
+BINDINGS: 
+E = signal_train_exited 
+T = 21
+
+
+	ANSWER:	3 (in 5.509 ms)
+
+MODEL:
+{ happens(signal_gate_start_lowering,6),  holdsAt(train_position(5),6),  happens(start,1),  initiates(start,train_moving,1),  trajectory(train_moving,1,train_position(5),6),  holdsAt(train_position(0),1),  initiallyP(train_position(0)),  not_stoppedIn(0,train_position(0),1),  not_stoppedIn(1,train_moving,6) }
+BINDINGS: 
+E = signal_gate_start_lowering 
+T = 6
+
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(signal_gate_closed,_237859)
+        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(signal_gate_closed,9)
+        builtin(!spy)
+        holdsAt(gate_angle(90),9)
+            6.>.0
+            6.<.9
+            max_time(100)
+            9.=<.100
+            can_trajectory(gate_is_lowering,6,gate_angle(90),9)
+            can_initiates(signal_gate_start_lowering,gate_is_lowering,6)
+            happens(signal_gate_start_lowering,6)
+                holdsAt(train_position(5),6)
+                    1.>.0
+                    1.<.6
+                    max_time(100)
+                    6.=<.100
+                    can_trajectory(train_moving,1,train_position(5),6)
+                    can_initiates(start,train_moving,1)
+                    happens(start,1)
+                    initiates(start,train_moving,1)
+                    trajectory(train_moving,1,train_position(5),6)
+                        train_speed(1)
+                        5.=.0+(6-1)*1
+                        holdsAt(train_position(0),1)
+                            1.>=.0
+                            max_time(100)
+                            1.=<.100
+                            initiallyP(train_position(0))
+                            not_stoppedIn(0,train_position(0),1)
+                                0.=<.1
+                                not_interrupted(terminates,train_position(0),0,1)
+                                    findall(_242887,findall_can_interrupts(terminates,_242887,train_position(0),0,1),[])
+                                    not_interrupted_(terminates,train_position(0),[],0,1)
+                                not_interrupted(releases,train_position(0),0,1)
+                                    findall(_243181,findall_can_interrupts(releases,_243181,train_position(0),0,1),[start])
+                                        findall_can_interrupts(releases,start,train_position(0),0,1)
+                                             {_243338~[_243338 > 0, _243338 < 1]} .>.0
+                                             {_243338~[_243338 > 0, _243338 < 1]} .<.1
+                                            can_interrupts(releases,start,train_position(0), {_243338~[_243338 > 0, _243338 < 1]} )
+                                                can_releases(start,train_position(0), {_243338~[_243338 > 0, _243338 < 1]} )
+                                    not_interrupted_(releases,train_position(0),[start],0,1)
+                                        findall(_243548,interrupted(releases,start,train_position(0),_243548,0,1),[])
+                                        all_entirely_outside_of_interval([],0,1)
+                                        not_interrupted_(releases,train_position(0),[],0,1)
+                    not_stoppedIn(1,train_moving,6)
+                        1.=<.6
+                        not_interrupted(terminates,train_moving,1,6)
+                            findall(_244396,findall_can_interrupts(terminates,_244396,train_moving,1,6),[])
+                            not_interrupted_(terminates,train_moving,[],1,6)
+                        not_interrupted(releases,train_moving,1,6)
+                            findall(_244690,findall_can_interrupts(releases,_244690,train_moving,1,6),[])
+                            not_interrupted_(releases,train_moving,[],1,6)
+            initiates(signal_gate_start_lowering,gate_is_lowering,6)
+            trajectory(gate_is_lowering,6,gate_angle(90),9)
+                90.>=.0
+                90.=<.90
+                angle_lower_rate(30)
+                90.=.0+(9-6)*30
+                holdsAt(gate_angle(0),6)
+                    6.>=.0
+                    max_time(100)
+                    6.=<.100
+                    initiallyP(gate_angle(0))
+                    not_stoppedIn(0,gate_angle(0),6)
+                        0.=<.6
+                        not_interrupted(terminates,gate_angle(0),0,6)
+                            findall(_246742,findall_can_interrupts(terminates,_246742,gate_angle(0),0,6),[signal_gate_closed,signal_gate_open])
+                                findall_can_interrupts(terminates,signal_gate_closed,gate_angle(0),0,6)
+                                     {_247072~[_247072 > 0, _247072 < 6]} .>.0
+                                     {_247072~[_247072 > 0, _247072 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_closed,gate_angle(0), {_247072~[_247072 > 0, _247072 < 6]} )
+                                        can_terminates(signal_gate_closed,gate_angle(0), {_247072~[_247072 > 0, _247072 < 6]} )
+                                findall_can_interrupts(terminates,signal_gate_open,gate_angle(0),0,6)
+                                     {_246899~[_246899 > 0, _246899 < 6]} .>.0
+                                     {_246899~[_246899 > 0, _246899 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_open,gate_angle(0), {_246899~[_246899 > 0, _246899 < 6]} )
+                                        can_terminates(signal_gate_open,gate_angle(0), {_246899~[_246899 > 0, _246899 < 6]} )
+                            not_interrupted_(terminates,gate_angle(0),[signal_gate_closed,signal_gate_open],0,6)
+                                interrupted(terminates,signal_gate_closed,gate_angle(0), {_247593~[_247593 > 0, _247593 < 6]} ,0,6)
+                                     {_247593~[_247593 > 0, _247593 < 6]} .>.0
+                                     {_247593~[_247593 > 0, _247593 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_closed,gate_angle(0), {_247593~[_247593 > 0, _247593 < 6]} )
+                                        can_terminates(signal_gate_closed,gate_angle(0), {_247593~[_247593 > 0, _247593 < 6]} )
+                                    happens(signal_gate_closed, {_247593~[_247593 > 0, _247593 < 6]} )
+                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(signal_gate_closed,9)
+        builtin(!spy)
+        holdsAt(gate_angle(90),9)
+            6.>.0
+            6.<.9
+            max_time(100)
+            9.=<.100
+            can_trajectory(gate_is_lowering,6,gate_angle(90),9)
+            can_initiates(signal_gate_start_lowering,gate_is_lowering,6)
+            happens(signal_gate_start_lowering,6)
+                holdsAt(train_position(5),6)
+                    1.>.0
+                    1.<.6
+                    max_time(100)
+                    6.=<.100
+                    can_trajectory(train_moving,1,train_position(5),6)
+                    can_initiates(start,train_moving,1)
+                    happens(start,1)
+                    initiates(start,train_moving,1)
+                    trajectory(train_moving,1,train_position(5),6)
+                        train_speed(1)
+                        5.=.0+(6-1)*1
+                        holdsAt(train_position(0),1)
+                            1.>=.0
+                            max_time(100)
+                            1.=<.100
+                            initiallyP(train_position(0))
+                            not_stoppedIn(0,train_position(0),1)
+                                0.=<.1
+                                not_interrupted(terminates,train_position(0),0,1)
+                                    findall(_242887,findall_can_interrupts(terminates,_242887,train_position(0),0,1),[])
+                                    not_interrupted_(terminates,train_position(0),[],0,1)
+                                not_interrupted(releases,train_position(0),0,1)
+                                    findall(_243181,findall_can_interrupts(releases,_243181,train_position(0),0,1),[start])
+                                        findall_can_interrupts(releases,start,train_position(0),0,1)
+                                             {_243338~[_243338 > 0, _243338 < 1]} .>.0
+                                             {_243338~[_243338 > 0, _243338 < 1]} .<.1
+                                            can_interrupts(releases,start,train_position(0), {_243338~[_243338 > 0, _243338 < 1]} )
+                                                can_releases(start,train_position(0), {_243338~[_243338 > 0, _243338 < 1]} )
+                                    not_interrupted_(releases,train_position(0),[start],0,1)
+                                        findall(_243548,interrupted(releases,start,train_position(0),_243548,0,1),[])
+                                        all_entirely_outside_of_interval([],0,1)
+                                        not_interrupted_(releases,train_position(0),[],0,1)
+                    not_stoppedIn(1,train_moving,6)
+                        1.=<.6
+                        not_interrupted(terminates,train_moving,1,6)
+                            findall(_244396,findall_can_interrupts(terminates,_244396,train_moving,1,6),[])
+                            not_interrupted_(terminates,train_moving,[],1,6)
+                        not_interrupted(releases,train_moving,1,6)
+                            findall(_244690,findall_can_interrupts(releases,_244690,train_moving,1,6),[])
+                            not_interrupted_(releases,train_moving,[],1,6)
+            initiates(signal_gate_start_lowering,gate_is_lowering,6)
+            trajectory(gate_is_lowering,6,gate_angle(90),9)
+                90.>=.0
+                90.=<.90
+                angle_lower_rate(30)
+                90.=.0+(9-6)*30
+                holdsAt(gate_angle(0),6)
+                    6.>=.0
+                    max_time(100)
+                    6.=<.100
+                    initiallyP(gate_angle(0))
+                    not_stoppedIn(0,gate_angle(0),6)
+                        0.=<.6
+                        not_interrupted(terminates,gate_angle(0),0,6)
+                            findall(_246742,findall_can_interrupts(terminates,_246742,gate_angle(0),0,6),[signal_gate_closed,signal_gate_open])
+                                findall_can_interrupts(terminates,signal_gate_closed,gate_angle(0),0,6)
+                                     {_247072~[_247072 > 0, _247072 < 6]} .>.0
+                                     {_247072~[_247072 > 0, _247072 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_closed,gate_angle(0), {_247072~[_247072 > 0, _247072 < 6]} )
+                                        can_terminates(signal_gate_closed,gate_angle(0), {_247072~[_247072 > 0, _247072 < 6]} )
+                                findall_can_interrupts(terminates,signal_gate_open,gate_angle(0),0,6)
+                                     {_246899~[_246899 > 0, _246899 < 6]} .>.0
+                                     {_246899~[_246899 > 0, _246899 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_open,gate_angle(0), {_246899~[_246899 > 0, _246899 < 6]} )
+                                        can_terminates(signal_gate_open,gate_angle(0), {_246899~[_246899 > 0, _246899 < 6]} )
+                            not_interrupted_(terminates,gate_angle(0),[signal_gate_closed,signal_gate_open],0,6)
+                                interrupted(terminates,signal_gate_closed,gate_angle(0), {_247593~[_247593 > 0, _247593 < 6]} ,0,6)
+                                     {_247593~[_247593 > 0, _247593 < 6]} .>.0
+                                     {_247593~[_247593 > 0, _247593 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_closed,gate_angle(0), {_247593~[_247593 > 0, _247593 < 6]} )
+                                        can_terminates(signal_gate_closed,gate_angle(0), {_247593~[_247593 > 0, _247593 < 6]} )
+                                    happens(signal_gate_closed, {_247593~[_247593 > 0, _247593 < 6]} )
+                                        builtin(!spy)
+                                        holdsAt(gate_angle(90), {_247593~[_247593 > 0, _247593 < 6]} )
+                                             {_250412~[_250412 > 0, _250412 < 6]} .>.0
+                                             {_250412~[_250412 > 0, _250412 < 6]} .<. {_247593~[_247593 > 0, _247593 < 6]} 
+                                            max_time(100)
+                                             {_247593~[_247593 > 0, _247593 < 6]} .=<.100
+                                            can_initiates(signal_gate_closed,gate_angle(90), {_250412~[_250412 > 0, _250412 < 6]} )
+                                            happens(signal_gate_closed, {_250412~[_250412 > 0, _250412 < 6]} )
+                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(signal_gate_closed,9)
+        builtin(!spy)
+        holdsAt(gate_angle(90),9)
+            6.>.0
+            6.<.9
+            max_time(100)
+            9.=<.100
+            can_trajectory(gate_is_lowering,6,gate_angle(90),9)
+            can_initiates(signal_gate_start_lowering,gate_is_lowering,6)
+            happens(signal_gate_start_lowering,6)
+                holdsAt(train_position(5),6)
+                    1.>.0
+                    1.<.6
+                    max_time(100)
+                    6.=<.100
+                    can_trajectory(train_moving,1,train_position(5),6)
+                    can_initiates(start,train_moving,1)
+                    happens(start,1)
+                    initiates(start,train_moving,1)
+                    trajectory(train_moving,1,train_position(5),6)
+                        train_speed(1)
+                        5.=.0+(6-1)*1
+                        holdsAt(train_position(0),1)
+                            1.>=.0
+                            max_time(100)
+                            1.=<.100
+                            initiallyP(train_position(0))
+                            not_stoppedIn(0,train_position(0),1)
+                                0.=<.1
+                                not_interrupted(terminates,train_position(0),0,1)
+                                    findall(_242887,findall_can_interrupts(terminates,_242887,train_position(0),0,1),[])
+                                    not_interrupted_(terminates,train_position(0),[],0,1)
+                                not_interrupted(releases,train_position(0),0,1)
+                                    findall(_243181,findall_can_interrupts(releases,_243181,train_position(0),0,1),[start])
+                                        findall_can_interrupts(releases,start,train_position(0),0,1)
+                                             {_243338~[_243338 > 0, _243338 < 1]} .>.0
+                                             {_243338~[_243338 > 0, _243338 < 1]} .<.1
+                                            can_interrupts(releases,start,train_position(0), {_243338~[_243338 > 0, _243338 < 1]} )
+                                                can_releases(start,train_position(0), {_243338~[_243338 > 0, _243338 < 1]} )
+                                    not_interrupted_(releases,train_position(0),[start],0,1)
+                                        findall(_243548,interrupted(releases,start,train_position(0),_243548,0,1),[])
+                                        all_entirely_outside_of_interval([],0,1)
+                                        not_interrupted_(releases,train_position(0),[],0,1)
+                    not_stoppedIn(1,train_moving,6)
+                        1.=<.6
+                        not_interrupted(terminates,train_moving,1,6)
+                            findall(_244396,findall_can_interrupts(terminates,_244396,train_moving,1,6),[])
+                            not_interrupted_(terminates,train_moving,[],1,6)
+                        not_interrupted(releases,train_moving,1,6)
+                            findall(_244690,findall_can_interrupts(releases,_244690,train_moving,1,6),[])
+                            not_interrupted_(releases,train_moving,[],1,6)
+            initiates(signal_gate_start_lowering,gate_is_lowering,6)
+            trajectory(gate_is_lowering,6,gate_angle(90),9)
+                90.>=.0
+                90.=<.90
+                angle_lower_rate(30)
+                90.=.0+(9-6)*30
+                holdsAt(gate_angle(0),6)
+                    6.>=.0
+                    max_time(100)
+                    6.=<.100
+                    initiallyP(gate_angle(0))
+                    not_stoppedIn(0,gate_angle(0),6)
+                        0.=<.6
+                        not_interrupted(terminates,gate_angle(0),0,6)
+                            findall(_246742,findall_can_interrupts(terminates,_246742,gate_angle(0),0,6),[signal_gate_closed,signal_gate_open])
+                                findall_can_interrupts(terminates,signal_gate_closed,gate_angle(0),0,6)
+                                     {_247072~[_247072 > 0, _247072 < 6]} .>.0
+                                     {_247072~[_247072 > 0, _247072 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_closed,gate_angle(0), {_247072~[_247072 > 0, _247072 < 6]} )
+                                        can_terminates(signal_gate_closed,gate_angle(0), {_247072~[_247072 > 0, _247072 < 6]} )
+                                findall_can_interrupts(terminates,signal_gate_open,gate_angle(0),0,6)
+                                     {_246899~[_246899 > 0, _246899 < 6]} .>.0
+                                     {_246899~[_246899 > 0, _246899 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_open,gate_angle(0), {_246899~[_246899 > 0, _246899 < 6]} )
+                                        can_terminates(signal_gate_open,gate_angle(0), {_246899~[_246899 > 0, _246899 < 6]} )
+                            not_interrupted_(terminates,gate_angle(0),[signal_gate_closed,signal_gate_open],0,6)
+                                interrupted(terminates,signal_gate_closed,gate_angle(0), {_247593~[_247593 > 0, _247593 < 6]} ,0,6)
+                                     {_247593~[_247593 > 0, _247593 < 6]} .>.0
+                                     {_247593~[_247593 > 0, _247593 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_closed,gate_angle(0), {_247593~[_247593 > 0, _247593 < 6]} )
+                                        can_terminates(signal_gate_closed,gate_angle(0), {_247593~[_247593 > 0, _247593 < 6]} )
+                                    happens(signal_gate_closed, {_247593~[_247593 > 0, _247593 < 6]} )
+                                        builtin(!spy)
+                                        holdsAt(gate_angle(90), {_247593~[_247593 > 0, _247593 < 6]} )
+                                             {_250412~[_250412 > 0, _250412 < 6]} .>.0
+                                             {_250412~[_250412 > 0, _250412 < 6]} .<. {_247593~[_247593 > 0, _247593 < 6]} 
+                                            max_time(100)
+                                             {_247593~[_247593 > 0, _247593 < 6]} .=<.100
+                                            can_initiates(signal_gate_closed,gate_angle(90), {_250412~[_250412 > 0, _250412 < 6]} )
+                                            happens(signal_gate_closed, {_250412~[_250412 > 0, _250412 < 6]} )
+                                                builtin(!spy)
+                                                holdsAt(gate_angle(90), {_250412~[_250412 > 0, _250412 < 6]} )
+                                                     {_253861~[_253861 > 0, _253861 < 6]} .>.0
+                                                     {_253861~[_253861 > 0, _253861 < 6]} .<. {_250412~[_250412 > 0, _250412 < 6]} 
+                                                    max_time(100)
+                                                     {_250412~[_250412 > 0, _250412 < 6]} .=<.100
+                                                    can_initiates(signal_gate_closed,gate_angle(90), {_253861~[_253861 > 0, _253861 < 6]} )
+                                                    happens(signal_gate_closed, {_253861~[_253861 > 0, _253861 < 6]} )
+                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(signal_gate_closed,9)
+        builtin(!spy)
+        holdsAt(gate_angle(90),9)
+            6.>.0
+            6.<.9
+            max_time(100)
+            9.=<.100
+            can_trajectory(gate_is_lowering,6,gate_angle(90),9)
+            can_initiates(signal_gate_start_lowering,gate_is_lowering,6)
+            happens(signal_gate_start_lowering,6)
+                holdsAt(train_position(5),6)
+                    1.>.0
+                    1.<.6
+                    max_time(100)
+                    6.=<.100
+                    can_trajectory(train_moving,1,train_position(5),6)
+                    can_initiates(start,train_moving,1)
+                    happens(start,1)
+                    initiates(start,train_moving,1)
+                    trajectory(train_moving,1,train_position(5),6)
+                        train_speed(1)
+                        5.=.0+(6-1)*1
+                        holdsAt(train_position(0),1)
+                            1.>=.0
+                            max_time(100)
+                            1.=<.100
+                            initiallyP(train_position(0))
+                            not_stoppedIn(0,train_position(0),1)
+                                0.=<.1
+                                not_interrupted(terminates,train_position(0),0,1)
+                                    findall(_1625,findall_can_interrupts(terminates,_1625,train_position(0),0,1),[])
+                                    not_interrupted_(terminates,train_position(0),[],0,1)
+                                not_interrupted(releases,train_position(0),0,1)
+                                    findall(_1675,findall_can_interrupts(releases,_1675,train_position(0),0,1),[start])
+                                        findall_can_interrupts(releases,start,train_position(0),0,1)
+                                             {_1750~[_1750 > 0, _1750 < 1]} .>.0
+                                             {_1750~[_1750 > 0, _1750 < 1]} .<.1
+                                            can_interrupts(releases,start,train_position(0), {_1750~[_1750 > 0, _1750 < 1]} )
+                                                can_releases(start,train_position(0), {_1750~[_1750 > 0, _1750 < 1]} )
+                                    not_interrupted_(releases,train_position(0),[start],0,1)
+                                        findall(_1870,interrupted(releases,start,train_position(0),_1870,0,1),[])
+                                        all_entirely_outside_of_interval([],0,1)
+                                        not_interrupted_(releases,train_position(0),[],0,1)
+                    not_stoppedIn(1,train_moving,6)
+                        1.=<.6
+                        not_interrupted(terminates,train_moving,1,6)
+                            findall(_2019,findall_can_interrupts(terminates,_2019,train_moving,1,6),[])
+                            not_interrupted_(terminates,train_moving,[],1,6)
+                        not_interrupted(releases,train_moving,1,6)
+                            findall(_2069,findall_can_interrupts(releases,_2069,train_moving,1,6),[])
+                            not_interrupted_(releases,train_moving,[],1,6)
+            initiates(signal_gate_start_lowering,gate_is_lowering,6)
+            trajectory(gate_is_lowering,6,gate_angle(90),9)
+                90.>=.0
+                90.=<.90
+                angle_lower_rate(30)
+                90.=.0+(9-6)*30
+                holdsAt(gate_angle(0),6)
+                    6.>=.0
+                    max_time(100)
+                    6.=<.100
+                    initiallyP(gate_angle(0))
+                    not_stoppedIn(0,gate_angle(0),6)
+                        0.=<.6
+                        not_interrupted(terminates,gate_angle(0),0,6)
+                            findall(_2378,findall_can_interrupts(terminates,_2378,gate_angle(0),0,6),[signal_gate_closed,signal_gate_open])
+                                findall_can_interrupts(terminates,signal_gate_closed,gate_angle(0),0,6)
+                                     {_2592~[_2592 > 0, _2592 < 6]} .>.0
+                                     {_2592~[_2592 > 0, _2592 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_closed,gate_angle(0), {_2592~[_2592 > 0, _2592 < 6]} )
+                                        can_terminates(signal_gate_closed,gate_angle(0), {_2592~[_2592 > 0, _2592 < 6]} )
+                                findall_can_interrupts(terminates,signal_gate_open,gate_angle(0),0,6)
+                                     {_2453~[_2453 > 0, _2453 < 6]} .>.0
+                                     {_2453~[_2453 > 0, _2453 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_open,gate_angle(0), {_2453~[_2453 > 0, _2453 < 6]} )
+                                        can_terminates(signal_gate_open,gate_angle(0), {_2453~[_2453 > 0, _2453 < 6]} )
+                            not_interrupted_(terminates,gate_angle(0),[signal_gate_closed,signal_gate_open],0,6)
+                                interrupted(terminates,signal_gate_closed,gate_angle(0), {_2828~[_2828 > 0, _2828 < 6]} ,0,6)
+                                     {_2828~[_2828 > 0, _2828 < 6]} .>.0
+                                     {_2828~[_2828 > 0, _2828 < 6]} .<.6
+                                    can_interrupts(terminates,signal_gate_closed,gate_angle(0), {_2828~[_2828 > 0, _2828 < 6]} )
+                                        can_terminates(signal_gate_closed,gate_angle(0), {_2828~[_2828 > 0, _2828 < 6]} )
+                                    happens(signal_gate_closed, {_2828~[_2828 > 0, _2828 < 6]} )
+                                        builtin(!spy)
+                                        holdsAt(gate_angle
+timeout
+
+
+  real      0:01.49
+  real [s]  1.49
+  user [s]  0.51
+  sys  [s]  0.05
+  mem  [KB] 29360
+  avgm [KB] 0
