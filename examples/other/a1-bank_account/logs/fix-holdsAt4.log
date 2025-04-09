@@ -1,0 +1,438 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree -r
+
+
+% QUERY:?- holdsAt(balance(account1,X),8).
+
+	ANSWER:	1 (in 7160.633 ms)
+
+JUSTIFICATION_TREE:
+holdsAt(balance(account1,2),8) :-
+    max_time(100),
+    can_initiates(chargeServiceFee(account1),balance(account1,2),6.0),
+    happens(chargeServiceFee(account1),6.0) :-
+        epsilon(0.0),
+        not_holdsAt(serviceFeeCharged(account1),6.0,0.0,monthlyReset(account1)) :-
+            max_time(100),
+            can_terminates(monthlyReset(account1),serviceFeeCharged(account1),6),
+            happens(monthlyReset(account1),6) :-
+                endOfMonth(6).
+            terminates(monthlyReset(account1),serviceFeeCharged(account1),6),
+            not_startedIn(6,serviceFeeCharged(account1),6.0) :-
+                not_interrupted(initiates,serviceFeeCharged(account1),6,6.0) :-
+                    findall(Var52,findall_can_interrupts(initiates,Var52,serviceFeeCharged(account1),6,6.0),[chargeServiceFee(account1)]) :-
+                        findall_can_interrupts(initiates,chargeServiceFee(account1),serviceFeeCharged(account1),6,6.0) :-
+                            can_interrupts(initiates,chargeServiceFee(account1),serviceFeeCharged(account1),Var1 | {Var1 #> 6,Var1 #< 6.0}) :-
+                                can_initiates(chargeServiceFee(account1),serviceFeeCharged(account1),Var1 | {Var1 #> 6,Var1 #< 6.0}).
+                    not_interrupted_(initiates,serviceFeeCharged(account1),[chargeServiceFee(account1)],6,6.0) :-
+                        findall(Var53,interrupted(initiates,chargeServiceFee(account1),serviceFeeCharged(account1),Var53,6,6.0),[]),
+                        all_entirely_outside_of_interval([],6,6.0),
+                        not_interrupted_(initiates,serviceFeeCharged(account1),[],6,6.0).
+                not_interrupted(releases,serviceFeeCharged(account1),6,6.0) :-
+                    findall(Var54,findall_can_interrupts(releases,Var54,serviceFeeCharged(account1),6,6.0),[]),
+                    not_interrupted_(releases,serviceFeeCharged(account1),[],6,6.0).
+        holdsAt(minimumBalance(account1,5),6.0) :-
+            max_time(100),
+            initiallyP(minimumBalance(account1,5)),
+            not_stoppedIn(0,minimumBalance(account1,5),6.0) :-
+                not_interrupted(terminates,minimumBalance(account1,5),0,6.0) :-
+                    findall(Var55,findall_can_interrupts(terminates,Var55,minimumBalance(account1,5),0,6.0),[]),
+                    not_interrupted_(terminates,minimumBalance(account1,5),[],0,6.0).
+                not_interrupted(releases,minimumBalance(account1,5),0,6.0) :-
+                    findall(Var56,findall_can_interrupts(releases,Var56,minimumBalance(account1,5),0,6.0),[]),
+                    not_interrupted_(releases,minimumBalance(account1,5),[],0,6.0).
+        holdsAt(balance(account1,3),6.0,4) :-
+            max_time(100),
+            can_initiates(chargeServiceFee(account1),balance(account1,3),2.0),
+            happens(chargeServiceFee(account1),2.0) :-
+                epsilon(0.0),
+                holdsAt(minimumBalance(account1,5),2.0) :-
+                    max_time(100),
+                    initiallyP(minimumBalance(account1,5)),
+                    not_stoppedIn(0,minimumBalance(account1,5),2.0) :-
+                        not_interrupted(terminates,minimumBalance(account1,5),0,2.0) :-
+                            findall(Var57,findall_can_interrupts(terminates,Var57,minimumBalance(account1,5),0,2.0),[]),
+                            not_interrupted_(terminates,minimumBalance(account1,5),[],0,2.0).
+                        not_interrupted(releases,minimumBalance(account1,5),0,2.0) :-
+                            findall(Var58,findall_can_interrupts(releases,Var58,minimumBalance(account1,5),0,2.0),[]),
+                            not_interrupted_(releases,minimumBalance(account1,5),[],0,2.0).
+                holdsAt(balance(account1,4),2.0,0.0,transfer(account1,account2,4)) :-
+                    max_time(100),
+                    can_initiates(transfer(account1,account2,4),balance(account1,4),2),
+                    happens(transfer(account1,account2,4),2),
+                    initiates(transfer(account1,account2,4),balance(account1,4),2) :-
+                        holdsAt(balance(account2,12),2) :-
+                            max_time(100),
+                            can_initiates(transfer(account1,account2,2),balance(account2,12),1),
+                            happens(transfer(account1,account2,2),1),
+                            initiates(transfer(account1,account2,2),balance(account2,12),1) :-
+                                holdsAt(balance(account2,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account2,10)),
+                                    not_stoppedIn(0,balance(account2,10),1) :-
+                                        not_interrupted(terminates,balance(account2,10),0,1) :-
+                                            findall(Var59,findall_can_interrupts(terminates,Var59,balance(account2,10),0,1),[transfer(Var2,account2,Var3),transfer(account2,Var5,Var6),chargeServiceFee(account2)]) :-
+                                                findall_can_interrupts(terminates,transfer(Var2,account2,Var3),balance(account2,10),0,1) :-
+                                                    can_interrupts(terminates,transfer(Var2,account2,Var3),balance(account2,10),Var4 | {Var4 #> 0,Var4 #< 1}) :-
+                                                        can_terminates(transfer(Var2,account2,Var3),balance(account2,10),Var4 | {Var4 #> 0,Var4 #< 1}).
+                                                findall_can_interrupts(terminates,transfer(account2,Var5,Var6),balance(account2,10),0,1) :-
+                                                    can_interrupts(terminates,transfer(account2,Var5,Var6),balance(account2,10),Var7 | {Var7 #> 0,Var7 #< 1}) :-
+                                                        can_terminates(transfer(account2,Var5,Var6),balance(account2,10),Var7 | {Var7 #> 0,Var7 #< 1}).
+                                                findall_can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10),0,1) :-
+                                                    can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10),Var8 | {Var8 #> 0,Var8 #< 1}) :-
+                                                        can_terminates(chargeServiceFee(account2),balance(account2,10),Var8 | {Var8 #> 0,Var8 #< 1}).
+                                            not_interrupted_(terminates,balance(account2,10),[transfer(Var2,account2,Var3),transfer(account2,Var5,Var6),chargeServiceFee(account2)],0,1) :-
+                                                findall(Var60,interrupted(terminates,transfer(Var2,account2,Var3),balance(account2,10),Var60,0,1),[]),
+                                                all_entirely_outside_of_interval([],0,1),
+                                                not_interrupted_(terminates,balance(account2,10),[transfer(account2,Var5,Var6),chargeServiceFee(account2)],0,1) :-
+                                                    findall(Var61,interrupted(terminates,transfer(account2,Var5,Var6),balance(account2,10),Var61,0,1),[]),
+                                                    proved(all_entirely_outside_of_interval([],0,1)),
+                                                    not_interrupted_(terminates,balance(account2,10),[chargeServiceFee(account2)],0,1) :-
+                                                        findall(Var62,interrupted(terminates,chargeServiceFee(account2),balance(account2,10),Var62,0,1),[]),
+                                                        proved(all_entirely_outside_of_interval([],0,1)),
+                                                        not_interrupted_(terminates,balance(account2,10),[],0,1).
+                                        not_interrupted(releases,balance(account2,10),0,1) :-
+                                            findall(Var63,findall_can_interrupts(releases,Var63,balance(account2,10),0,1),[]),
+                                            not_interrupted_(releases,balance(account2,10),[],0,1).
+                                holdsAt(balance(account1,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account1,10)),
+                                    not_stoppedIn(0,balance(account1,10),1) :-
+                                        not_interrupted(terminates,balance(account1,10),0,1) :-
+                                            findall(Var64,findall_can_interrupts(terminates,Var64,balance(account1,10),0,1),[transfer(Var9,account1,Var10),transfer(account1,Var12,Var13),chargeServiceFee(account1)]) :-
+                                                findall_can_interrupts(terminates,transfer(Var9,account1,Var10),balance(account1,10),0,1) :-
+                                                    can_interrupts(terminates,transfer(Var9,account1,Var10),balance(account1,10),Var11 | {Var11 #> 0,Var11 #< 1}) :-
+                                                        can_terminates(transfer(Var9,account1,Var10),balance(account1,10),Var11 | {Var11 #> 0,Var11 #< 1}).
+                                                findall_can_interrupts(terminates,transfer(account1,Var12,Var13),balance(account1,10),0,1) :-
+                                                    can_interrupts(terminates,transfer(account1,Var12,Var13),balance(account1,10),Var14 | {Var14 #> 0,Var14 #< 1}) :-
+                                                        can_terminates(transfer(account1,Var12,Var13),balance(account1,10),Var14 | {Var14 #> 0,Var14 #< 1}).
+                                                findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10),0,1) :-
+                                                    can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10),Var15 | {Var15 #> 0,Var15 #< 1}) :-
+                                                        can_terminates(chargeServiceFee(account1),balance(account1,10),Var15 | {Var15 #> 0,Var15 #< 1}).
+                                            not_interrupted_(terminates,balance(account1,10),[transfer(Var9,account1,Var10),transfer(account1,Var12,Var13),chargeServiceFee(account1)],0,1) :-
+                                                findall(Var65,interrupted(terminates,transfer(Var9,account1,Var10),balance(account1,10),Var65,0,1),[]),
+                                                proved(all_entirely_outside_of_interval([],0,1)),
+                                                not_interrupted_(terminates,balance(account1,10),[transfer(account1,Var12,Var13),chargeServiceFee(account1)],0,1) :-
+                                                    findall(Var66,interrupted(terminates,transfer(account1,Var12,Var13),balance(account1,10),Var66,0,1),[]),
+                                                    proved(all_entirely_outside_of_interval([],0,1)),
+                                                    not_interrupted_(terminates,balance(account1,10),[chargeServiceFee(account1)],0,1) :-
+                                                        findall(Var67,interrupted(terminates,chargeServiceFee(account1),balance(account1,10),Var67,0,1),[]),
+                                                        proved(all_entirely_outside_of_interval([],0,1)),
+                                                        not_interrupted_(terminates,balance(account1,10),[],0,1).
+                                        not_interrupted(releases,balance(account1,10),0,1) :-
+                                            findall(Var68,findall_can_interrupts(releases,Var68,balance(account1,10),0,1),[]),
+                                            not_interrupted_(releases,balance(account1,10),[],0,1).
+                            not_stoppedIn(1,balance(account2,12),2) :-
+                                not_interrupted(terminates,balance(account2,12),1,2) :-
+                                    findall(Var69,findall_can_interrupts(terminates,Var69,balance(account2,12),1,2),[transfer(Var16,account2,Var17),transfer(account2,Var19,Var20),chargeServiceFee(account2)]) :-
+                                        findall_can_interrupts(terminates,transfer(Var16,account2,Var17),balance(account2,12),1,2) :-
+                                            can_interrupts(terminates,transfer(Var16,account2,Var17),balance(account2,12),Var18 | {Var18 #> 1,Var18 #< 2}) :-
+                                                can_terminates(transfer(Var16,account2,Var17),balance(account2,12),Var18 | {Var18 #> 1,Var18 #< 2}).
+                                        findall_can_interrupts(terminates,transfer(account2,Var19,Var20),balance(account2,12),1,2) :-
+                                            can_interrupts(terminates,transfer(account2,Var19,Var20),balance(account2,12),Var21 | {Var21 #> 1,Var21 #< 2}) :-
+                                                can_terminates(transfer(account2,Var19,Var20),balance(account2,12),Var21 | {Var21 #> 1,Var21 #< 2}).
+                                        findall_can_interrupts(terminates,chargeServiceFee(account2),balance(account2,12),1,2) :-
+                                            can_interrupts(terminates,chargeServiceFee(account2),balance(account2,12),Var22 | {Var22 #> 1,Var22 #< 2}) :-
+                                                can_terminates(chargeServiceFee(account2),balance(account2,12),Var22 | {Var22 #> 1,Var22 #< 2}).
+                                    not_interrupted_(terminates,balance(account2,12),[transfer(Var16,account2,Var17),transfer(account2,Var19,Var20),chargeServiceFee(account2)],1,2) :-
+                                        findall(Var70,interrupted(terminates,transfer(Var16,account2,Var17),balance(account2,12),Var70,1,2),[]),
+                                        all_entirely_outside_of_interval([],1,2),
+                                        not_interrupted_(terminates,balance(account2,12),[transfer(account2,Var19,Var20),chargeServiceFee(account2)],1,2) :-
+                                            findall(Var71,interrupted(terminates,transfer(account2,Var19,Var20),balance(account2,12),Var71,1,2),[]),
+                                            proved(all_entirely_outside_of_interval([],1,2)),
+                                            not_interrupted_(terminates,balance(account2,12),[chargeServiceFee(account2)],1,2) :-
+                                                findall(Var72,interrupted(terminates,chargeServiceFee(account2),balance(account2,12),Var72,1,2),[]),
+                                                proved(all_entirely_outside_of_interval([],1,2)),
+                                                not_interrupted_(terminates,balance(account2,12),[],1,2).
+                                not_interrupted(releases,balance(account2,12),1,2) :-
+                                    findall(Var73,findall_can_interrupts(releases,Var73,balance(account2,12),1,2),[]),
+                                    not_interrupted_(releases,balance(account2,12),[],1,2).
+                        holdsAt(balance(account1,8),2) :-
+                            max_time(100),
+                            can_initiates(transfer(account1,account2,2),balance(account1,8),1),
+                            happens(transfer(account1,account2,2),1),
+                            initiates(transfer(account1,account2,2),balance(account1,8),1) :-
+                                holdsAt(balance(account2,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account2,10)),
+                                    proved(not_stoppedIn(0,balance(account2,10),1)).
+                                holdsAt(balance(account1,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account1,10)),
+                                    proved(not_stoppedIn(0,balance(account1,10),1)).
+                            not_stoppedIn(1,balance(account1,8),2) :-
+                                not_interrupted(terminates,balance(account1,8),1,2) :-
+                                    findall(Var74,findall_can_interrupts(terminates,Var74,balance(account1,8),1,2),[transfer(Var23,account1,Var24),transfer(account1,Var26,Var27),chargeServiceFee(account1)]) :-
+                                        findall_can_interrupts(terminates,transfer(Var23,account1,Var24),balance(account1,8),1,2) :-
+                                            can_interrupts(terminates,transfer(Var23,account1,Var24),balance(account1,8),Var25 | {Var25 #> 1,Var25 #< 2}) :-
+                                                can_terminates(transfer(Var23,account1,Var24),balance(account1,8),Var25 | {Var25 #> 1,Var25 #< 2}).
+                                        findall_can_interrupts(terminates,transfer(account1,Var26,Var27),balance(account1,8),1,2) :-
+                                            can_interrupts(terminates,transfer(account1,Var26,Var27),balance(account1,8),Var28 | {Var28 #> 1,Var28 #< 2}) :-
+                                                can_terminates(transfer(account1,Var26,Var27),balance(account1,8),Var28 | {Var28 #> 1,Var28 #< 2}).
+                                        findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,8),1,2) :-
+                                            can_interrupts(terminates,chargeServiceFee(account1),balance(account1,8),Var29 | {Var29 #> 1,Var29 #< 2}) :-
+                                                can_terminates(chargeServiceFee(account1),balance(account1,8),Var29 | {Var29 #> 1,Var29 #< 2}).
+                                    not_interrupted_(terminates,balance(account1,8),[transfer(Var23,account1,Var24),transfer(account1,Var26,Var27),chargeServiceFee(account1)],1,2) :-
+                                        findall(Var75,interrupted(terminates,transfer(Var23,account1,Var24),balance(account1,8),Var75,1,2),[]),
+                                        proved(all_entirely_outside_of_interval([],1,2)),
+                                        not_interrupted_(terminates,balance(account1,8),[transfer(account1,Var26,Var27),chargeServiceFee(account1)],1,2) :-
+                                            findall(Var76,interrupted(terminates,transfer(account1,Var26,Var27),balance(account1,8),Var76,1,2),[]),
+                                            proved(all_entirely_outside_of_interval([],1,2)),
+                                            not_interrupted_(terminates,balance(account1,8),[chargeServiceFee(account1)],1,2) :-
+                                                findall(Var77,interrupted(terminates,chargeServiceFee(account1),balance(account1,8),Var77,1,2),[]),
+                                                proved(all_entirely_outside_of_interval([],1,2)),
+                                                not_interrupted_(terminates,balance(account1,8),[],1,2).
+                                not_interrupted(releases,balance(account1,8),1,2) :-
+                                    findall(Var78,findall_can_interrupts(releases,Var78,balance(account1,8),1,2),[]),
+                                    not_interrupted_(releases,balance(account1,8),[],1,2).
+                    not_stoppedIn(2,balance(account1,4),2.0) :-
+                        not_interrupted(terminates,balance(account1,4),2,2.0) :-
+                            findall(Var79,findall_can_interrupts(terminates,Var79,balance(account1,4),2,2.0),[transfer(Var30,account1,Var31),transfer(account1,Var33,Var34),chargeServiceFee(account1)]) :-
+                                findall_can_interrupts(terminates,transfer(Var30,account1,Var31),balance(account1,4),2,2.0) :-
+                                    can_interrupts(terminates,transfer(Var30,account1,Var31),balance(account1,4),Var32 | {Var32 #> 2,Var32 #< 2.0}) :-
+                                        can_terminates(transfer(Var30,account1,Var31),balance(account1,4),Var32 | {Var32 #> 2,Var32 #< 2.0}).
+                                findall_can_interrupts(terminates,transfer(account1,Var33,Var34),balance(account1,4),2,2.0) :-
+                                    can_interrupts(terminates,transfer(account1,Var33,Var34),balance(account1,4),Var35 | {Var35 #> 2,Var35 #< 2.0}) :-
+                                        can_terminates(transfer(account1,Var33,Var34),balance(account1,4),Var35 | {Var35 #> 2,Var35 #< 2.0}).
+                                findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,4),2,2.0) :-
+                                    can_interrupts(terminates,chargeServiceFee(account1),balance(account1,4),Var36 | {Var36 #> 2,Var36 #< 2.0}) :-
+                                        can_terminates(chargeServiceFee(account1),balance(account1,4),Var36 | {Var36 #> 2,Var36 #< 2.0}).
+                            not_interrupted_(terminates,balance(account1,4),[transfer(Var30,account1,Var31),transfer(account1,Var33,Var34),chargeServiceFee(account1)],2,2.0) :-
+                                findall(Var80,interrupted(terminates,transfer(Var30,account1,Var31),balance(account1,4),Var80,2,2.0),[]),
+                                all_entirely_outside_of_interval([],2,2.0),
+                                not_interrupted_(terminates,balance(account1,4),[transfer(account1,Var33,Var34),chargeServiceFee(account1)],2,2.0) :-
+                                    findall(Var81,interrupted(terminates,transfer(account1,Var33,Var34),balance(account1,4),Var81,2,2.0),[]),
+                                    proved(all_entirely_outside_of_interval([],2,2.0)),
+                                    not_interrupted_(terminates,balance(account1,4),[chargeServiceFee(account1)],2,2.0) :-
+                                        findall(Var82,interrupted(terminates,chargeServiceFee(account1),balance(account1,4),Var82,2,2.0),[]),
+                                        proved(all_entirely_outside_of_interval([],2,2.0)),
+                                        not_interrupted_(terminates,balance(account1,4),[],2,2.0).
+                        not_interrupted(releases,balance(account1,4),2,2.0) :-
+                            findall(Var83,findall_can_interrupts(releases,Var83,balance(account1,4),2,2.0),[]),
+                            not_interrupted_(releases,balance(account1,4),[],2,2.0).
+                not_holdsAt(serviceFeeCharged(account1),2.0) :-
+                    max_time(100),
+                    initiallyN(serviceFeeCharged(account1)) :-
+                        not initiallyP(serviceFeeCharged(account1)).
+                    not_startedIn(0,serviceFeeCharged(account1),2.0) :-
+                        not_interrupted(initiates,serviceFeeCharged(account1),0,2.0) :-
+                            findall(Var84,findall_can_interrupts(initiates,Var84,serviceFeeCharged(account1),0,2.0),[chargeServiceFee(account1)]) :-
+                                findall_can_interrupts(initiates,chargeServiceFee(account1),serviceFeeCharged(account1),0,2.0) :-
+                                    can_interrupts(initiates,chargeServiceFee(account1),serviceFeeCharged(account1),Var37 | {Var37 #> 0,Var37 #< 2.0}) :-
+                                        can_initiates(chargeServiceFee(account1),serviceFeeCharged(account1),Var37 | {Var37 #> 0,Var37 #< 2.0}).
+                            not_interrupted_(initiates,serviceFeeCharged(account1),[chargeServiceFee(account1)],0,2.0) :-
+                                findall(Var85,interrupted(initiates,chargeServiceFee(account1),serviceFeeCharged(account1),Var85,0,2.0),[]),
+                                all_entirely_outside_of_interval([],0,2.0),
+                                not_interrupted_(initiates,serviceFeeCharged(account1),[],0,2.0).
+                        not_interrupted(releases,serviceFeeCharged(account1),0,2.0) :-
+                            findall(Var86,findall_can_interrupts(releases,Var86,serviceFeeCharged(account1),0,2.0),[]),
+                            not_interrupted_(releases,serviceFeeCharged(account1),[],0,2.0).
+            initiates(chargeServiceFee(account1),balance(account1,3),2.0) :-
+                holdsAt(serviceFee(account1,1),2.0) :-
+                    max_time(100),
+                    initiallyP(serviceFee(account1,1)),
+                    not_stoppedIn(0,serviceFee(account1,1),2.0) :-
+                        not_interrupted(terminates,serviceFee(account1,1),0,2.0) :-
+                            findall(Var87,findall_can_interrupts(terminates,Var87,serviceFee(account1,1),0,2.0),[]),
+                            not_interrupted_(terminates,serviceFee(account1,1),[],0,2.0).
+                        not_interrupted(releases,serviceFee(account1,1),0,2.0) :-
+                            findall(Var88,findall_can_interrupts(releases,Var88,serviceFee(account1,1),0,2.0),[]),
+                            not_interrupted_(releases,serviceFee(account1,1),[],0,2.0).
+                holdsAt(balance(account1,4),2.0) :-
+                    max_time(100),
+                    can_initiates(transfer(account1,account2,4),balance(account1,4),2),
+                    happens(transfer(account1,account2,4),2),
+                    initiates(transfer(account1,account2,4),balance(account1,4),2) :-
+                        holdsAt(balance(account2,12),2) :-
+                            max_time(100),
+                            can_initiates(transfer(account1,account2,2),balance(account2,12),1),
+                            happens(transfer(account1,account2,2),1),
+                            initiates(transfer(account1,account2,2),balance(account2,12),1) :-
+                                holdsAt(balance(account2,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account2,10)),
+                                    proved(not_stoppedIn(0,balance(account2,10),1)).
+                                holdsAt(balance(account1,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account1,10)),
+                                    proved(not_stoppedIn(0,balance(account1,10),1)).
+                            proved(not_stoppedIn(1,balance(account2,12),2)).
+                        holdsAt(balance(account1,8),2) :-
+                            max_time(100),
+                            can_initiates(transfer(account1,account2,2),balance(account1,8),1),
+                            happens(transfer(account1,account2,2),1),
+                            initiates(transfer(account1,account2,2),balance(account1,8),1) :-
+                                holdsAt(balance(account2,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account2,10)),
+                                    proved(not_stoppedIn(0,balance(account2,10),1)).
+                                holdsAt(balance(account1,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account1,10)),
+                                    proved(not_stoppedIn(0,balance(account1,10),1)).
+                            proved(not_stoppedIn(1,balance(account1,8),2)).
+                    proved(not_stoppedIn(2,balance(account1,4),2.0)).
+            not_stoppedIn(2.0,balance(account1,3),6.0) :-
+                not_interrupted(terminates,balance(account1,3),2.0,6.0) :-
+                    findall(Var89,findall_can_interrupts(terminates,Var89,balance(account1,3),2.0,6.0),[transfer(Var38,account1,Var39),transfer(account1,Var41,Var42),chargeServiceFee(account1)]) :-
+                        findall_can_interrupts(terminates,transfer(Var38,account1,Var39),balance(account1,3),2.0,6.0) :-
+                            can_interrupts(terminates,transfer(Var38,account1,Var39),balance(account1,3),Var40 | {Var40 #> 2.0,Var40 #< 6.0}) :-
+                                can_terminates(transfer(Var38,account1,Var39),balance(account1,3),Var40 | {Var40 #> 2.0,Var40 #< 6.0}).
+                        findall_can_interrupts(terminates,transfer(account1,Var41,Var42),balance(account1,3),2.0,6.0) :-
+                            can_interrupts(terminates,transfer(account1,Var41,Var42),balance(account1,3),Var43 | {Var43 #> 2.0,Var43 #< 6.0}) :-
+                                can_terminates(transfer(account1,Var41,Var42),balance(account1,3),Var43 | {Var43 #> 2.0,Var43 #< 6.0}).
+                        findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,3),2.0,6.0) :-
+                            can_interrupts(terminates,chargeServiceFee(account1),balance(account1,3),Var44 | {Var44 #> 2.0,Var44 #< 6.0}) :-
+                                can_terminates(chargeServiceFee(account1),balance(account1,3),Var44 | {Var44 #> 2.0,Var44 #< 6.0}).
+                    not_interrupted_(terminates,balance(account1,3),[transfer(Var38,account1,Var39),transfer(account1,Var41,Var42),chargeServiceFee(account1)],2.0,6.0) :-
+                        findall(Var90,interrupted(terminates,transfer(Var38,account1,Var39),balance(account1,3),Var90,2.0,6.0),[]),
+                        all_entirely_outside_of_interval([],2.0,6.0),
+                        not_interrupted_(terminates,balance(account1,3),[transfer(account1,Var41,Var42),chargeServiceFee(account1)],2.0,6.0) :-
+                            findall(Var91,interrupted(terminates,transfer(account1,Var41,Var42),balance(account1,3),Var91,2.0,6.0),[]),
+                            proved(all_entirely_outside_of_interval([],2.0,6.0)),
+                            not_interrupted_(terminates,balance(account1,3),[chargeServiceFee(account1)],2.0,6.0) :-
+                                findall(Var92,interrupted(terminates,chargeServiceFee(account1),balance(account1,3),Var92,2.0,6.0),[]),
+                                proved(all_entirely_outside_of_interval([],2.0,6.0)),
+                                not_interrupted_(terminates,balance(account1,3),[],2.0,6.0).
+                not_interrupted(releases,balance(account1,3),2.0,6.0) :-
+                    findall(Var93,findall_can_interrupts(releases,Var93,balance(account1,3),2.0,6.0),[]),
+                    not_interrupted_(releases,balance(account1,3),[],2.0,6.0).
+    initiates(chargeServiceFee(account1),balance(account1,2),6.0) :-
+        holdsAt(serviceFee(account1,1),6.0) :-
+            max_time(100),
+            initiallyP(serviceFee(account1,1)),
+            not_stoppedIn(0,serviceFee(account1,1),6.0) :-
+                not_interrupted(terminates,serviceFee(account1,1),0,6.0) :-
+                    findall(Var94,findall_can_interrupts(terminates,Var94,serviceFee(account1,1),0,6.0),[]),
+                    not_interrupted_(terminates,serviceFee(account1,1),[],0,6.0).
+                not_interrupted(releases,serviceFee(account1,1),0,6.0) :-
+                    findall(Var95,findall_can_interrupts(releases,Var95,serviceFee(account1,1),0,6.0),[]),
+                    not_interrupted_(releases,serviceFee(account1,1),[],0,6.0).
+        holdsAt(balance(account1,3),6.0) :-
+            max_time(100),
+            can_initiates(chargeServiceFee(account1),balance(account1,3),2.0),
+            happens(chargeServiceFee(account1),2.0) :-
+                epsilon(0.0),
+                holdsAt(minimumBalance(account1,5),2.0) :-
+                    max_time(100),
+                    initiallyP(minimumBalance(account1,5)),
+                    not_stoppedIn(0,minimumBalance(account1,5),2.0) :-
+                        not_interrupted(terminates,minimumBalance(account1,5),0,2.0) :-
+                            findall(Var96,findall_can_interrupts(terminates,Var96,minimumBalance(account1,5),0,2.0),[]),
+                            not_interrupted_(terminates,minimumBalance(account1,5),[],0,2.0).
+                        not_interrupted(releases,minimumBalance(account1,5),0,2.0) :-
+                            findall(Var97,findall_can_interrupts(releases,Var97,minimumBalance(account1,5),0,2.0),[]),
+                            not_interrupted_(releases,minimumBalance(account1,5),[],0,2.0).
+                holdsAt(balance(account1,4),2.0,0.0,transfer(account1,account2,4)) :-
+                    max_time(100),
+                    can_initiates(transfer(account1,account2,4),balance(account1,4),2),
+                    happens(transfer(account1,account2,4),2),
+                    initiates(transfer(account1,account2,4),balance(account1,4),2) :-
+                        holdsAt(balance(account2,12),2) :-
+                            max_time(100),
+                            can_initiates(transfer(account1,account2,2),balance(account2,12),1),
+                            happens(transfer(account1,account2,2),1),
+                            initiates(transfer(account1,account2,2),balance(account2,12),1) :-
+                                holdsAt(balance(account2,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account2,10)),
+                                    proved(not_stoppedIn(0,balance(account2,10),1)).
+                                holdsAt(balance(account1,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account1,10)),
+                                    proved(not_stoppedIn(0,balance(account1,10),1)).
+                            proved(not_stoppedIn(1,balance(account2,12),2)).
+                        holdsAt(balance(account1,8),2) :-
+                            max_time(100),
+                            can_initiates(transfer(account1,account2,2),balance(account1,8),1),
+                            happens(transfer(account1,account2,2),1),
+                            initiates(transfer(account1,account2,2),balance(account1,8),1) :-
+                                holdsAt(balance(account2,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account2,10)),
+                                    proved(not_stoppedIn(0,balance(account2,10),1)).
+                                holdsAt(balance(account1,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account1,10)),
+                                    proved(not_stoppedIn(0,balance(account1,10),1)).
+                            proved(not_stoppedIn(1,balance(account1,8),2)).
+                    proved(not_stoppedIn(2,balance(account1,4),2.0)).
+                proved(not_holdsAt(serviceFeeCharged(account1),2.0)).
+            initiates(chargeServiceFee(account1),balance(account1,3),2.0) :-
+                holdsAt(serviceFee(account1,1),2.0) :-
+                    max_time(100),
+                    initiallyP(serviceFee(account1,1)),
+                    proved(not_stoppedIn(0,serviceFee(account1,1),2.0)).
+                holdsAt(balance(account1,4),2.0) :-
+                    max_time(100),
+                    can_initiates(transfer(account1,account2,4),balance(account1,4),2),
+                    happens(transfer(account1,account2,4),2),
+                    initiates(transfer(account1,account2,4),balance(account1,4),2) :-
+                        holdsAt(balance(account2,12),2) :-
+                            max_time(100),
+                            can_initiates(transfer(account1,account2,2),balance(account2,12),1),
+                            happens(transfer(account1,account2,2),1),
+                            initiates(transfer(account1,account2,2),balance(account2,12),1) :-
+                                holdsAt(balance(account2,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account2,10)),
+                                    proved(not_stoppedIn(0,balance(account2,10),1)).
+                                holdsAt(balance(account1,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account1,10)),
+                                    proved(not_stoppedIn(0,balance(account1,10),1)).
+                            proved(not_stoppedIn(1,balance(account2,12),2)).
+                        holdsAt(balance(account1,8),2) :-
+                            max_time(100),
+                            can_initiates(transfer(account1,account2,2),balance(account1,8),1),
+                            happens(transfer(account1,account2,2),1),
+                            initiates(transfer(account1,account2,2),balance(account1,8),1) :-
+                                holdsAt(balance(account2,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account2,10)),
+                                    proved(not_stoppedIn(0,balance(account2,10),1)).
+                                holdsAt(balance(account1,10),1) :-
+                                    max_time(100),
+                                    initiallyP(balance(account1,10)),
+                                    proved(not_stoppedIn(0,balance(account1,10),1)).
+                            proved(not_stoppedIn(1,balance(account1,8),2)).
+                    proved(not_stoppedIn(2,balance(account1,4),2.0)).
+            proved(not_stoppedIn(2.0,balance(account1,3),6.0)).
+    not_stoppedIn(6.0,balance(account1,2),8) :-
+        not_interrupted(terminates,balance(account1,2),6.0,8) :-
+            findall(Var98,findall_can_interrupts(terminates,Var98,balance(account1,2),6.0,8),[transfer(Var45,account1,Var46),transfer(account1,Var48,Var49),chargeServiceFee(account1)]) :-
+                findall_can_interrupts(terminates,transfer(Var45,account1,Var46),balance(account1,2),6.0,8) :-
+                    can_interrupts(terminates,transfer(Var45,account1,Var46),balance(account1,2),Var47 | {Var47 #> 6.0,Var47 #< 8}) :-
+                        can_terminates(transfer(Var45,account1,Var46),balance(account1,2),Var47 | {Var47 #> 6.0,Var47 #< 8}).
+                findall_can_interrupts(terminates,transfer(account1,Var48,Var49),balance(account1,2),6.0,8) :-
+                    can_interrupts(terminates,transfer(account1,Var48,Var49),balance(account1,2),Var50 | {Var50 #> 6.0,Var50 #< 8}) :-
+                        can_terminates(transfer(account1,Var48,Var49),balance(account1,2),Var50 | {Var50 #> 6.0,Var50 #< 8}).
+                findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,2),6.0,8) :-
+                    can_interrupts(terminates,chargeServiceFee(account1),balance(account1,2),Var51 | {Var51 #> 6.0,Var51 #< 8}) :-
+                        can_terminates(chargeServiceFee(account1),balance(account1,2),Var51 | {Var51 #> 6.0,Var51 #< 8}).
+            not_interrupted_(terminates,balance(account1,2),[transfer(Var45,account1,Var46),transfer(account1,Var48,Var49),chargeServiceFee(account1)],6.0,8) :-
+                findall(Var99,interrupted(terminates,transfer(Var45,account1,Var46),balance(account1,2),Var99,6.0,8),[]),
+                all_entirely_outside_of_interval([],6.0,8),
+                not_interrupted_(terminates,balance(account1,2),[transfer(account1,Var48,Var49),chargeServiceFee(account1)],6.0,8) :-
+                    findall(Var100,interrupted(terminates,transfer(account1,Var48,Var49),balance(account1,2),Var100,6.0,8),[]),
+                    proved(all_entirely_outside_of_interval([],6.0,8)),
+                    not_interrupted_(terminates,balance(account1,2),[chargeServiceFee(account1)],6.0,8) :-
+                        findall(Var101,interrupted(terminates,chargeServiceFee(account1),balance(account1,2),Var101,6.0,8),[]),
+                        proved(all_entirely_outside_of_interval([],6.0,8)),
+                        not_interrupted_(terminates,balance(account1,2),[],6.0,8).
+        not_interrupted(releases,balance(account1,2),6.0,8) :-
+            findall(Var102,findall_can_interrupts(releases,Var102,balance(account1,2),6.0,8),[]),
+            not_interrupted_(releases,balance(account1,2),[],6.0,8).
+global_constraint.
+
+MODEL:
+{ holdsAt(balance(account1,2),8),  happens(chargeServiceFee(account1),6.0),  happens(monthlyReset(account1),6),  terminates(monthlyReset(account1),serviceFeeCharged(account1),6),  not_startedIn(6,serviceFeeCharged(account1),6.0),  holdsAt(minimumBalance(account1,5),6.0),  initiallyP(minimumBalance(account1,5)),  not_stoppedIn(0,minimumBalance(account1,5),6.0),  happens(chargeServiceFee(account1),2.0),  holdsAt(minimumBalance(account1,5),2.0),  not_stoppedIn(0,minimumBalance(account1,5),2.0),  happens(transfer(account1,account2,4),2),  initiates(transfer(account1,account2,4),balance(account1,4),2),  holdsAt(balance(account2,12),2),  happens(transfer(account1,account2,2),1),  initiates(transfer(account1,account2,2),balance(account2,12),1),  holdsAt(balance(account2,10),1),  initiallyP(balance(account2,10)),  not_stoppedIn(0,balance(account2,10),1),  holdsAt(balance(account1,10),1),  initiallyP(balance(account1,10)),  not_stoppedIn(0,balance(account1,10),1),  not_stoppedIn(1,balance(account2,12),2),  holdsAt(balance(account1,8),2),  initiates(transfer(account1,account2,2),balance(account1,8),1),  not_stoppedIn(1,balance(account1,8),2),  not_stoppedIn(2,balance(account1,4),2.0),  not_holdsAt(serviceFeeCharged(account1),2.0),  initiallyN(serviceFeeCharged(account1)),  not_startedIn(0,serviceFeeCharged(account1),2.0),  initiates(chargeServiceFee(account1),balance(account1,3),2.0),  holdsAt(serviceFee(account1,1),2.0),  initiallyP(serviceFee(account1,1)),  not_stoppedIn(0,serviceFee(account1,1),2.0),  holdsAt(balance(account1,4),2.0),  not_stoppedIn(2.0,balance(account1,3),6.0),  initiates(chargeServiceFee(account1),balance(account1,2),6.0),  holdsAt(serviceFee(account1,1),6.0),  not_stoppedIn(0,serviceFee(account1,1),6.0),  holdsAt(balance(account1,3),6.0),  not_stoppedIn(6.0,balance(account1,2),8) }
+BINDINGS: 
+X = 2
+
+
+  real      0:12.96
+  real [s]  12.96
+  user [s]  11.74
+  sys  [s]  0.08
+  mem  [KB] 31376
+  avgm [KB] 0
