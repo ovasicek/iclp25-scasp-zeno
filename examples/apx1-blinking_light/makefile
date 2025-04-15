@@ -20,9 +20,6 @@ run-zeno_halt:
 run-fixed-holdsAt3:
 	${TIME} scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt3.pl
 
-run-fixed-event_delay:
-	${TIME} scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-event_delay.pl
-
 
 #-----------------------------------------------------------------------------------------------------------------------
 # log the resolution tree of the answer for terminating examples
@@ -32,4 +29,3 @@ trace:
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000" ./logs/non_term.log
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree" ./logs/zeno_halt.log
 	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree" ./logs/fix-holdsAt3.log
-	../scripts/maketrace.sh "scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-event_delay.pl --tree" ./logs/fix-event_delay.log

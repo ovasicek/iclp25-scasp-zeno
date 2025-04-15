@@ -36,9 +36,9 @@ WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
                             can_terminates(turn_light_off,light_on, {_730~[_730 > 0, _730 < 20]} )
                             happens(turn_light_off, {_730~[_730 > 0, _730 < 20]} )
 
-  real      0:00.81
-  real [s]  0.81
+  real      0:00.56
+  real [s]  0.56
   user [s]  0.39
-  sys  [s]  0.04
-  mem  [KB] 28728
+  sys  [s]  0.02
+  mem  [KB] 29216
   avgm [KB] 0

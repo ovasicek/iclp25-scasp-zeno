@@ -3,7 +3,7 @@ $ scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree
 
 % QUERY:?- T #=< 20,happens(turn_light_on,T).
 
-	ANSWER:	1 (in 499.024 ms)
+	ANSWER:	1 (in 461.007 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,20) :-
@@ -205,7 +205,7 @@ BINDINGS:
 T = 20
 
 
-	ANSWER:	2 (in 309.373 ms)
+	ANSWER:	2 (in 292.002 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,18) :-
@@ -369,7 +369,7 @@ BINDINGS:
 T = 18
 
 
-	ANSWER:	3 (in 199.074 ms)
+	ANSWER:	3 (in 200.746 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,16) :-
@@ -495,7 +495,7 @@ BINDINGS:
 T = 16
 
 
-	ANSWER:	4 (in 100.502 ms)
+	ANSWER:	4 (in 99.565 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,14) :-
@@ -583,7 +583,7 @@ BINDINGS:
 T = 14
 
 
-	ANSWER:	5 (in 38.488 ms)
+	ANSWER:	5 (in 37.394 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,12) :-
@@ -633,7 +633,7 @@ BINDINGS:
 T = 12
 
 
-	ANSWER:	6 (in 0.139 ms)
+	ANSWER:	6 (in 0.174 ms)
 
 JUSTIFICATION_TREE:
 happens(turn_light_on,10),
@@ -645,9 +645,9 @@ BINDINGS:
 T = 10
 
 
-  real      0:02.87
-  real [s]  2.87
+  real      0:02.88
+  real [s]  2.88
   user [s]  1.56
-  sys  [s]  0.06
-  mem  [KB] 28980
+  sys  [s]  0.07
+  mem  [KB] 29244
   avgm [KB] 0
