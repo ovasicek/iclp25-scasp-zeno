@@ -1,0 +1,309 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree
+
+
+% QUERY:?- T #=< 30,happens(switch_right,T).
+
+	ANSWER:	1 (in 26.887 ms)
+
+JUSTIFICATION_TREE:
+happens(switch_right,20) :-
+    duration(5),
+    holdsAt(water_right(50),20,left_filling,5) :-
+        max_time(100),
+        can_trajectory(left_filling,15,water_right(50),20),
+        can_initiates(switch_left,left_filling,15),
+        happens(switch_left,15) :-
+            duration(5),
+            holdsAt(water_left(50),15,right_filling,5) :-
+                max_time(100),
+                can_trajectory(right_filling,10,water_left(50),15),
+                can_initiates(start(right),right_filling,10),
+                happens(start(right),10),
+                initiates(start(right),right_filling,10),
+                trajectory(right_filling,10,water_left(50),15) :-
+                    holdsAt(water_left(100),10) :-
+                        max_time(100),
+                        initiallyP(water_left(100)),
+                        not_stoppedIn(0,water_left(100),10) :-
+                            not_interrupted(terminates,water_left(100),0,10) :-
+                                findall(Var7,findall_can_interrupts(terminates,Var7,water_left(100),0,10),[]),
+                                not_interrupted_(terminates,water_left(100),[],0,10).
+                            not_interrupted(releases,water_left(100),0,10) :-
+                                findall(Var8,findall_can_interrupts(releases,Var8,water_left(100),0,10),[start(Var1)]) :-
+                                    findall_can_interrupts(releases,start(Var1),water_left(100),0,10) :-
+                                        can_interrupts(releases,start(Var1),water_left(100),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                            can_releases(start(Var1),water_left(100),Var2 | {Var2 #> 0,Var2 #< 10}).
+                                not_interrupted_(releases,water_left(100),[start(Var1)],0,10) :-
+                                    findall(Var9,interrupted(releases,start(Var1),water_left(100),Var9,0,10),[]),
+                                    all_entirely_outside_of_interval([],0,10),
+                                    not_interrupted_(releases,water_left(100),[],0,10).
+                not_stoppedIn(10,right_filling,15) :-
+                    not_interrupted(terminates,right_filling,10,15) :-
+                        findall(Var10,findall_can_interrupts(terminates,Var10,right_filling,10,15),[switch_left]) :-
+                            findall_can_interrupts(terminates,switch_left,right_filling,10,15) :-
+                                can_interrupts(terminates,switch_left,right_filling,Var3 | {Var3 #> 10,Var3 #< 15}) :-
+                                    can_terminates(switch_left,right_filling,Var3 | {Var3 #> 10,Var3 #< 15}).
+                        not_interrupted_(terminates,right_filling,[switch_left],10,15) :-
+                            findall(Var11,interrupted(terminates,switch_left,right_filling,Var11,10,15),[]),
+                            all_entirely_outside_of_interval([],10,15),
+                            not_interrupted_(terminates,right_filling,[],10,15).
+                    not_interrupted(releases,right_filling,10,15) :-
+                        findall(Var12,findall_can_interrupts(releases,Var12,right_filling,10,15),[]),
+                        not_interrupted_(releases,right_filling,[],10,15).
+        initiates(switch_left,left_filling,15),
+        trajectory(left_filling,15,water_right(50),20) :-
+            holdsAt(water_right(100),15) :-
+                max_time(100),
+                can_trajectory(right_filling,10,water_right(100),15),
+                can_initiates(start(right),right_filling,10),
+                happens(start(right),10),
+                proved(initiates(start(right),right_filling,10)),
+                trajectory(right_filling,10,water_right(100),15) :-
+                    holdsAt(water_right(50),10) :-
+                        max_time(100),
+                        initiallyP(water_right(50)),
+                        not_stoppedIn(0,water_right(50),10) :-
+                            not_interrupted(terminates,water_right(50),0,10) :-
+                                findall(Var13,findall_can_interrupts(terminates,Var13,water_right(50),0,10),[]),
+                                not_interrupted_(terminates,water_right(50),[],0,10).
+                            not_interrupted(releases,water_right(50),0,10) :-
+                                findall(Var14,findall_can_interrupts(releases,Var14,water_right(50),0,10),[start(Var4)]) :-
+                                    findall_can_interrupts(releases,start(Var4),water_right(50),0,10) :-
+                                        can_interrupts(releases,start(Var4),water_right(50),Var5 | {Var5 #> 0,Var5 #< 10}) :-
+                                            can_releases(start(Var4),water_right(50),Var5 | {Var5 #> 0,Var5 #< 10}).
+                                not_interrupted_(releases,water_right(50),[start(Var4)],0,10) :-
+                                    findall(Var15,interrupted(releases,start(Var4),water_right(50),Var15,0,10),[]),
+                                    proved(all_entirely_outside_of_interval([],0,10)),
+                                    not_interrupted_(releases,water_right(50),[],0,10).
+                proved(not_stoppedIn(10,right_filling,15)).
+        not_stoppedIn(15,left_filling,20) :-
+            not_interrupted(terminates,left_filling,15,20) :-
+                findall(Var16,findall_can_interrupts(terminates,Var16,left_filling,15,20),[switch_right]) :-
+                    findall_can_interrupts(terminates,switch_right,left_filling,15,20) :-
+                        can_interrupts(terminates,switch_right,left_filling,Var6 | {Var6 #> 15,Var6 #< 20}) :-
+                            can_terminates(switch_right,left_filling,Var6 | {Var6 #> 15,Var6 #< 20}).
+                not_interrupted_(terminates,left_filling,[switch_right],15,20) :-
+                    findall(Var17,interrupted(terminates,switch_right,left_filling,Var17,15,20),[]),
+                    all_entirely_outside_of_interval([],15,20),
+                    not_interrupted_(terminates,left_filling,[],15,20).
+            not_interrupted(releases,left_filling,15,20) :-
+                findall(Var18,findall_can_interrupts(releases,Var18,left_filling,15,20),[]),
+                not_interrupted_(releases,left_filling,[],15,20).
+global_constraint.
+
+MODEL:
+{ happens(switch_right,20),  happens(switch_left,15),  happens(start(right),10),  initiates(start(right),right_filling,10),  trajectory(right_filling,10,water_left(50),15),  holdsAt(water_left(100),10),  initiallyP(water_left(100)),  not_stoppedIn(0,water_left(100),10),  not_stoppedIn(10,right_filling,15),  initiates(switch_left,left_filling,15),  trajectory(left_filling,15,water_right(50),20),  holdsAt(water_right(100),15),  trajectory(right_filling,10,water_right(100),15),  holdsAt(water_right(50),10),  initiallyP(water_right(50)),  not_stoppedIn(0,water_right(50),10),  not_stoppedIn(15,left_filling,20) }
+BINDINGS: 
+T = 20
+
+
+	ANSWER:	2 (in 174.311 ms)
+
+JUSTIFICATION_TREE:
+happens(switch_right,30) :-
+    duration(5),
+    holdsAt(water_right(50),30,left_filling,5) :-
+        max_time(100),
+        can_trajectory(left_filling,25,water_right(50),30),
+        can_initiates(switch_left,left_filling,25),
+        happens(switch_left,25) :-
+            duration(5),
+            holdsAt(water_left(50),25,right_filling,5) :-
+                max_time(100),
+                can_trajectory(right_filling,20,water_left(50),25),
+                can_initiates(switch_right,right_filling,20),
+                happens(switch_right,20) :-
+                    duration(5),
+                    holdsAt(water_right(50),20,left_filling,5) :-
+                        max_time(100),
+                        can_trajectory(left_filling,15,water_right(50),20),
+                        can_initiates(switch_left,left_filling,15),
+                        happens(switch_left,15) :-
+                            duration(5),
+                            holdsAt(water_left(50),15,right_filling,5) :-
+                                max_time(100),
+                                can_trajectory(right_filling,10,water_left(50),15),
+                                can_initiates(start(right),right_filling,10),
+                                happens(start(right),10),
+                                initiates(start(right),right_filling,10),
+                                trajectory(right_filling,10,water_left(50),15) :-
+                                    holdsAt(water_left(100),10) :-
+                                        max_time(100),
+                                        initiallyP(water_left(100)),
+                                        not_stoppedIn(0,water_left(100),10) :-
+                                            not_interrupted(terminates,water_left(100),0,10) :-
+                                                findall(Var9,findall_can_interrupts(terminates,Var9,water_left(100),0,10),[]),
+                                                not_interrupted_(terminates,water_left(100),[],0,10).
+                                            not_interrupted(releases,water_left(100),0,10) :-
+                                                findall(Var10,findall_can_interrupts(releases,Var10,water_left(100),0,10),[start(Var1)]) :-
+                                                    findall_can_interrupts(releases,start(Var1),water_left(100),0,10) :-
+                                                        can_interrupts(releases,start(Var1),water_left(100),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                                            can_releases(start(Var1),water_left(100),Var2 | {Var2 #> 0,Var2 #< 10}).
+                                                not_interrupted_(releases,water_left(100),[start(Var1)],0,10) :-
+                                                    findall(Var11,interrupted(releases,start(Var1),water_left(100),Var11,0,10),[]),
+                                                    all_entirely_outside_of_interval([],0,10),
+                                                    not_interrupted_(releases,water_left(100),[],0,10).
+                                not_stoppedIn(10,right_filling,15) :-
+                                    not_interrupted(terminates,right_filling,10,15) :-
+                                        findall(Var12,findall_can_interrupts(terminates,Var12,right_filling,10,15),[switch_left]) :-
+                                            findall_can_interrupts(terminates,switch_left,right_filling,10,15) :-
+                                                can_interrupts(terminates,switch_left,right_filling,Var3 | {Var3 #> 10,Var3 #< 15}) :-
+                                                    can_terminates(switch_left,right_filling,Var3 | {Var3 #> 10,Var3 #< 15}).
+                                        not_interrupted_(terminates,right_filling,[switch_left],10,15) :-
+                                            findall(Var13,interrupted(terminates,switch_left,right_filling,Var13,10,15),[]),
+                                            all_entirely_outside_of_interval([],10,15),
+                                            not_interrupted_(terminates,right_filling,[],10,15).
+                                    not_interrupted(releases,right_filling,10,15) :-
+                                        findall(Var14,findall_can_interrupts(releases,Var14,right_filling,10,15),[]),
+                                        not_interrupted_(releases,right_filling,[],10,15).
+                        initiates(switch_left,left_filling,15),
+                        trajectory(left_filling,15,water_right(50),20) :-
+                            holdsAt(water_right(100),15) :-
+                                max_time(100),
+                                can_trajectory(right_filling,10,water_right(100),15),
+                                can_initiates(start(right),right_filling,10),
+                                happens(start(right),10),
+                                proved(initiates(start(right),right_filling,10)),
+                                trajectory(right_filling,10,water_right(100),15) :-
+                                    holdsAt(water_right(50),10) :-
+                                        max_time(100),
+                                        initiallyP(water_right(50)),
+                                        not_stoppedIn(0,water_right(50),10) :-
+                                            not_interrupted(terminates,water_right(50),0,10) :-
+                                                findall(Var15,findall_can_interrupts(terminates,Var15,water_right(50),0,10),[]),
+                                                not_interrupted_(terminates,water_right(50),[],0,10).
+                                            not_interrupted(releases,water_right(50),0,10) :-
+                                                findall(Var16,findall_can_interrupts(releases,Var16,water_right(50),0,10),[start(Var4)]) :-
+                                                    findall_can_interrupts(releases,start(Var4),water_right(50),0,10) :-
+                                                        can_interrupts(releases,start(Var4),water_right(50),Var5 | {Var5 #> 0,Var5 #< 10}) :-
+                                                            can_releases(start(Var4),water_right(50),Var5 | {Var5 #> 0,Var5 #< 10}).
+                                                not_interrupted_(releases,water_right(50),[start(Var4)],0,10) :-
+                                                    findall(Var17,interrupted(releases,start(Var4),water_right(50),Var17,0,10),[]),
+                                                    proved(all_entirely_outside_of_interval([],0,10)),
+                                                    not_interrupted_(releases,water_right(50),[],0,10).
+                                proved(not_stoppedIn(10,right_filling,15)).
+                        not_stoppedIn(15,left_filling,20) :-
+                            not_interrupted(terminates,left_filling,15,20) :-
+                                findall(Var18,findall_can_interrupts(terminates,Var18,left_filling,15,20),[switch_right]) :-
+                                    findall_can_interrupts(terminates,switch_right,left_filling,15,20) :-
+                                        can_interrupts(terminates,switch_right,left_filling,Var6 | {Var6 #> 15,Var6 #< 20}) :-
+                                            can_terminates(switch_right,left_filling,Var6 | {Var6 #> 15,Var6 #< 20}).
+                                not_interrupted_(terminates,left_filling,[switch_right],15,20) :-
+                                    findall(Var19,interrupted(terminates,switch_right,left_filling,Var19,15,20),[]),
+                                    all_entirely_outside_of_interval([],15,20),
+                                    not_interrupted_(terminates,left_filling,[],15,20).
+                            not_interrupted(releases,left_filling,15,20) :-
+                                findall(Var20,findall_can_interrupts(releases,Var20,left_filling,15,20),[]),
+                                not_interrupted_(releases,left_filling,[],15,20).
+                initiates(switch_right,right_filling,20),
+                trajectory(right_filling,20,water_left(50),25) :-
+                    holdsAt(water_left(100),20) :-
+                        max_time(100),
+                        can_trajectory(left_filling,15,water_left(100),20),
+                        can_initiates(switch_left,left_filling,15),
+                        happens(switch_left,15) :-
+                            duration(5),
+                            holdsAt(water_left(50),15,right_filling,5) :-
+                                max_time(100),
+                                can_trajectory(right_filling,10,water_left(50),15),
+                                can_initiates(start(right),right_filling,10),
+                                happens(start(right),10),
+                                proved(initiates(start(right),right_filling,10)),
+                                proved(trajectory(right_filling,10,water_left(50),15)),
+                                proved(not_stoppedIn(10,right_filling,15)).
+                        proved(initiates(switch_left,left_filling,15)),
+                        trajectory(left_filling,15,water_left(100),20) :-
+                            holdsAt(water_left(50),15) :-
+                                max_time(100),
+                                can_trajectory(right_filling,10,water_left(50),15),
+                                can_initiates(start(right),right_filling,10),
+                                happens(start(right),10),
+                                proved(initiates(start(right),right_filling,10)),
+                                proved(trajectory(right_filling,10,water_left(50),15)),
+                                proved(not_stoppedIn(10,right_filling,15)).
+                        proved(not_stoppedIn(15,left_filling,20)).
+                not_stoppedIn(20,right_filling,25) :-
+                    not_interrupted(terminates,right_filling,20,25) :-
+                        findall(Var21,findall_can_interrupts(terminates,Var21,right_filling,20,25),[switch_left]) :-
+                            findall_can_interrupts(terminates,switch_left,right_filling,20,25) :-
+                                can_interrupts(terminates,switch_left,right_filling,Var7 | {Var7 #> 20,Var7 #< 25}) :-
+                                    can_terminates(switch_left,right_filling,Var7 | {Var7 #> 20,Var7 #< 25}).
+                        not_interrupted_(terminates,right_filling,[switch_left],20,25) :-
+                            findall(Var22,interrupted(terminates,switch_left,right_filling,Var22,20,25),[]),
+                            all_entirely_outside_of_interval([],20,25),
+                            not_interrupted_(terminates,right_filling,[],20,25).
+                    not_interrupted(releases,right_filling,20,25) :-
+                        findall(Var23,findall_can_interrupts(releases,Var23,right_filling,20,25),[]),
+                        not_interrupted_(releases,right_filling,[],20,25).
+        initiates(switch_left,left_filling,25),
+        trajectory(left_filling,25,water_right(50),30) :-
+            holdsAt(water_right(100),25) :-
+                max_time(100),
+                can_trajectory(right_filling,20,water_right(100),25),
+                can_initiates(switch_right,right_filling,20),
+                happens(switch_right,20) :-
+                    duration(5),
+                    holdsAt(water_right(50),20,left_filling,5) :-
+                        max_time(100),
+                        can_trajectory(left_filling,15,water_right(50),20),
+                        can_initiates(switch_left,left_filling,15),
+                        happens(switch_left,15) :-
+                            duration(5),
+                            holdsAt(water_left(50),15,right_filling,5) :-
+                                max_time(100),
+                                can_trajectory(right_filling,10,water_left(50),15),
+                                can_initiates(start(right),right_filling,10),
+                                happens(start(right),10),
+                                proved(initiates(start(right),right_filling,10)),
+                                proved(trajectory(right_filling,10,water_left(50),15)),
+                                proved(not_stoppedIn(10,right_filling,15)).
+                        proved(initiates(switch_left,left_filling,15)),
+                        proved(trajectory(left_filling,15,water_right(50),20)),
+                        proved(not_stoppedIn(15,left_filling,20)).
+                proved(initiates(switch_right,right_filling,20)),
+                trajectory(right_filling,20,water_right(100),25) :-
+                    holdsAt(water_right(50),20) :-
+                        max_time(100),
+                        can_trajectory(left_filling,15,water_right(50),20),
+                        can_initiates(switch_left,left_filling,15),
+                        happens(switch_left,15) :-
+                            duration(5),
+                            holdsAt(water_left(50),15,right_filling,5) :-
+                                max_time(100),
+                                can_trajectory(right_filling,10,water_left(50),15),
+                                can_initiates(start(right),right_filling,10),
+                                happens(start(right),10),
+                                proved(initiates(start(right),right_filling,10)),
+                                proved(trajectory(right_filling,10,water_left(50),15)),
+                                proved(not_stoppedIn(10,right_filling,15)).
+                        proved(initiates(switch_left,left_filling,15)),
+                        proved(trajectory(left_filling,15,water_right(50),20)),
+                        proved(not_stoppedIn(15,left_filling,20)).
+                proved(not_stoppedIn(20,right_filling,25)).
+        not_stoppedIn(25,left_filling,30) :-
+            not_interrupted(terminates,left_filling,25,30) :-
+                findall(Var24,findall_can_interrupts(terminates,Var24,left_filling,25,30),[switch_right]) :-
+                    findall_can_interrupts(terminates,switch_right,left_filling,25,30) :-
+                        can_interrupts(terminates,switch_right,left_filling,Var8 | {Var8 #> 25,Var8 #< 30}) :-
+                            can_terminates(switch_right,left_filling,Var8 | {Var8 #> 25,Var8 #< 30}).
+                not_interrupted_(terminates,left_filling,[switch_right],25,30) :-
+                    findall(Var25,interrupted(terminates,switch_right,left_filling,Var25,25,30),[]),
+                    all_entirely_outside_of_interval([],25,30),
+                    not_interrupted_(terminates,left_filling,[],25,30).
+            not_interrupted(releases,left_filling,25,30) :-
+                findall(Var26,findall_can_interrupts(releases,Var26,left_filling,25,30),[]),
+                not_interrupted_(releases,left_filling,[],25,30).
+global_constraint.
+
+MODEL:
+{ happens(switch_right,30),  happens(switch_left,25),  happens(switch_right,20),  happens(switch_left,15),  happens(start(right),10),  initiates(start(right),right_filling,10),  trajectory(right_filling,10,water_left(50),15),  holdsAt(water_left(100),10),  initiallyP(water_left(100)),  not_stoppedIn(0,water_left(100),10),  not_stoppedIn(10,right_filling,15),  initiates(switch_left,left_filling,15),  trajectory(left_filling,15,water_right(50),20),  holdsAt(water_right(100),15),  trajectory(right_filling,10,water_right(100),15),  holdsAt(water_right(50),10),  initiallyP(water_right(50)),  not_stoppedIn(0,water_right(50),10),  not_stoppedIn(15,left_filling,20),  initiates(switch_right,right_filling,20),  trajectory(right_filling,20,water_left(50),25),  holdsAt(water_left(100),20),  trajectory(left_filling,15,water_left(100),20),  holdsAt(water_left(50),15),  not_stoppedIn(20,right_filling,25),  initiates(switch_left,left_filling,25),  trajectory(left_filling,25,water_right(50),30),  holdsAt(water_right(100),25),  trajectory(right_filling,20,water_right(100),25),  holdsAt(water_right(50),20),  not_stoppedIn(25,left_filling,30) }
+BINDINGS: 
+T = 30
+
+
+  real      0:01.30
+  real [s]  1.30
+  user [s]  0.69
+  sys  [s]  0.05
+  mem  [KB] 29224
+  avgm [KB] 0

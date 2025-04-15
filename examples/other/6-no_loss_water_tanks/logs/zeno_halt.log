@@ -1,0 +1,121 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
+
+
+% QUERY:?- T #=< 30,happens(switch_right,T).
+
+WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
+	happens(switch_left, {_25528~[_25528 > 0, _25528 < 10]} )
+	happens(switch_left, {_28147~[_28147 > 0, _28147 < 10]} )
+
+
+--------------------- Calling:  happens(switch_left,_28147) -------------
+     {_15994~[_15994 > 15, _15994 =< 30]} .=<.30
+    happens(switch_right, {_15994~[_15994 > 15, _15994 =< 30]} )
+        builtin(!spy)
+        50.=.50
+        holdsAt(water_right(50), {_15994~[_15994 > 15, _15994 =< 30]} ,left_filling)
+            15.>.0
+            15.<. {_15994~[_15994 > 15, _15994 =< 30]} 
+            max_time(100)
+             {_15994~[_15994 > 15, _15994 =< 30]} .=<.100
+            can_trajectory(left_filling,15,water_right(50), {_15994~[_15994 > 15, _15994 =< 30]} )
+            can_initiates(switch_left,left_filling,15)
+            happens(switch_left,15)
+                builtin(!spy)
+                50.=.50
+                holdsAt(water_left(50),15,right_filling)
+                    10.>.0
+                    10.<.15
+                    max_time(100)
+                    15.=<.100
+                    can_trajectory(right_filling,10,water_left(50),15)
+                    can_initiates(start(right),right_filling,10)
+                    happens(start(right),10)
+                    initiates(start(right),right_filling,10)
+                    trajectory(right_filling,10,water_left(50),15)
+                        50.=.100-(15-10)*10
+                        holdsAt(water_left(100),10)
+                            10.>=.0
+                            max_time(100)
+                            10.=<.100
+                            initiallyP(water_left(100))
+                            not_stoppedIn(0,water_left(100),10)
+                                0.=<.10
+                                not_interrupted(terminates,water_left(100),0,10)
+                                    findall(_20701,findall_can_interrupts(terminates,_20701,water_left(100),0,10),[])
+                                    not_interrupted_(terminates,water_left(100),[],0,10)
+                                not_interrupted(releases,water_left(100),0,10)
+                                    findall(_20995,findall_can_interrupts(releases,_20995,water_left(100),0,10),[start(_21067)])
+                                        findall_can_interrupts(releases,start(_21067),water_left(100),0,10)
+                                             {_21166~[_21166 > 0, _21166 < 10]} .>.0
+                                             {_21166~[_21166 > 0, _21166 < 10]} .<.10
+                                            can_interrupts(releases,start(_21067),water_left(100), {_21166~[_21166 > 0, _21166 < 10]} )
+                                                can_releases(start(_21067),water_left(100), {_21166~[_21166 > 0, _21166 < 10]} )
+                                    not_interrupted_(releases,water_left(100),[start(_21067)],0,10)
+                                        findall(_21356,interrupted(releases,start(_21067),water_left(100),_21356,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_(releases,water_left(100),[],0,10)
+                    not_stoppedIn(10,right_filling,15)
+                        10.=<.15
+                        not_interrupted(terminates,right_filling,10,15)
+                            findall(_22186,findall_can_interrupts(terminates,_22186,right_filling,10,15),[switch_left])
+                                findall_can_interrupts(terminates,switch_left,right_filling,10,15)
+                                     {_22331~[_22331 < 15, _22331 > 10]} .>.10
+                                     {_22331~[_22331 < 15, _22331 > 10]} .<.15
+                                    can_interrupts(terminates,switch_left,right_filling, {_22331~[_22331 < 15, _22331 > 10]} )
+                                        can_terminates(switch_left,right_filling, {_22331~[_22331 < 15, _22331 > 10]} )
+                            not_interrupted_(terminates,right_filling,[switch_left],10,15)
+                                interrupted(terminates,switch_left,right_filling, {_22804~[_22804 > 10, _22804 < 15]} ,10,15)
+                                     {_22804~[_22804 > 10, _22804 < 15]} .>.10
+                                     {_22804~[_22804 > 10, _22804 < 15]} .<.15
+                                    can_interrupts(terminates,switch_left,right_filling, {_22804~[_22804 > 10, _22804 < 15]} )
+                                        can_terminates(switch_left,right_filling, {_22804~[_22804 > 10, _22804 < 15]} )
+                                    happens(switch_left, {_22804~[_22804 > 10, _22804 < 15]} )
+                                        builtin(!spy)
+                                        50.=.50
+                                        holdsAt(water_left(50), {_22804~[_22804 > 10, _22804 < 15]} ,right_filling)
+                                            10.>.0
+                                            10.<. {_22804~[_22804 > 10, _22804 < 15]} 
+                                            max_time(100)
+                                             {_22804~[_22804 > 10, _22804 < 15]} .=<.100
+                                            can_trajectory(right_filling,10,water_left(50), {_22804~[_22804 > 10, _22804 < 15]} )
+                                            can_initiates(start(right),right_filling,10)
+                                            happens(start(right),10)
+                                            proved(initiates(start(right),right_filling,10))
+                                            trajectory(right_filling,10,water_left(50), {_22804~[_22804 > 10, _22804 < 15]} )
+                                                50.=. {_25103~[_25103 > 50, _25103 < 100]} -( {_22804~[_22804 > 10, _22804 < 15]} -10)*10
+                                                holdsAt(water_left( {_25103~[_25103 > 50, _25103 < 100]} ),10)
+                                                     {_25528~[_25528 > 0, _25528 < 10]} .>.0
+                                                     {_25528~[_25528 > 0, _25528 < 10]} .<.10
+                                                    max_time(100)
+                                                    10.=<.100
+                                                    can_trajectory(left_filling, {_25528~[_25528 > 0, _25528 < 10]} ,water_left( {_25103~[_25103 > 50, _25103 < 100]} ),10)
+                                                    can_initiates(switch_left,left_filling, {_25528~[_25528 > 0, _25528 < 10]} )
+                                                    happens(switch_left, {_25528~[_25528 > 0, _25528 < 10]} )
+                                                        builtin(!spy)
+                                                        50.=.50
+                                                        holdsAt(water_left(50), {_25528~[_25528 > 0, _25528 < 10]} ,right_filling)
+                                                             {_26641~[_26641 > 0, _26641 < 10]} .>.0
+                                                             {_26641~[_26641 > 0, _26641 < 10]} .<. {_25528~[_25528 > 0, _25528 < 10]} 
+                                                            max_time(100)
+                                                             {_25528~[_25528 > 0, _25528 < 10]} .=<.100
+                                                            can_trajectory(right_filling, {_26641~[_26641 > 0, _26641 < 10]} ,water_left(50), {_25528~[_25528 > 0, _25528 < 10]} )
+                                                            can_initiates(switch_right,right_filling, {_26641~[_26641 > 0, _26641 < 10]} )
+                                                            happens(switch_right, {_26641~[_26641 > 0, _26641 < 10]} )
+                                                                builtin(!spy)
+                                                                50.=.50
+                                                                holdsAt(water_right(50), {_26641~[_26641 > 0, _26641 < 10]} ,left_filling)
+                                                                     {_28147~[_28147 > 0, _28147 < 10]} .>.0
+                                                                     {_28147~[_28147 > 0, _28147 < 10]} .<. {_26641~[_26641 > 0, _26641 < 10]} 
+                                                                    max_time(100)
+                                                                     {_26641~[_26641 > 0, _26641 < 10]} .=<.100
+                                                                    can_trajectory(left_filling, {_28147~[_28147 > 0, _28147 < 10]} ,water_right(50), {_26641~[_26641 > 0, _26641 < 10]} )
+                                                                    can_initiates(switch_left,left_filling, {_28147~[_28147 > 0, _28147 < 10]} )
+                                                                    happens(switch_left, {_28147~[_28147 > 0, _28147 < 10]} )
+
+  real      0:00.80
+  real [s]  0.80
+  user [s]  0.36
+  sys  [s]  0.07
+  mem  [KB] 29304
+  avgm [KB] 0
