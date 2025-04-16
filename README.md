@@ -5,7 +5,7 @@ by Vasicek O., Arias J., Fiedor J., Gupta G., Hall B., Krena B., Larson B., and 
 
 ## Directory structure
 - `examples/exN-*/`         -- Directories for examples presented in the paper.
-- `examples/exN-*/logs/`    -- Each example includes execution logs.
+  - `examples/exN-*/logs/`    -- Each example includes execution logs.
 - `examples/axioms/`        -- Implementations of Event Calculus BEC axioms.
 - `examples/apxN-*/`        -- Directories for examples presented in the appendix of the paper.
 - `examples/other/n-*/`     -- Directories for extra examples which were not presented in the paper.
