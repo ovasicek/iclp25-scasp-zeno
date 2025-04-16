@@ -1,0 +1,74 @@
+$ scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./fix-split_no_start.pl --tree
+
+
+% QUERY:?- holdsAt(water_left(X),15).
+
+	ANSWER:	1 (in 27.671 ms)
+
+JUSTIFICATION_TREE:
+holdsAt(water_left(50),15) :-
+    max_time(100),
+    can_trajectory(left_filling,10,water_left(50),15),
+    can_initiates(start(left),left_filling,10),
+    happens(start(left),10),
+    initiates(start(left),left_filling,10),
+    trajectory(left_filling,10,water_left(50),15) :-
+        holdsAt(water_left(0),10) :-
+            max_time(100),
+            initiallyP(water_left(0)),
+            not_stoppedIn(0,water_left(0),10) :-
+                not_interrupted(terminates,water_left(0),0,10) :-
+                    findall(Var4,findall_can_interrupts(terminates,Var4,water_left(0),0,10),[]),
+                    not_interrupted_N(terminates,water_left(0),[],0,10) :-
+                        not_interrupted_1(terminates,water_left(0),[],0,10) :-
+                            is_not_interval(0,0),
+                            is_not_interval(10,10),
+                            not_interrupted_1_fail(terminates,water_left(0),[],0,10).
+                not_interrupted(releases,water_left(0),0,10) :-
+                    findall(Var5,findall_can_interrupts(releases,Var5,water_left(0),0,10),[start(Var1)]) :-
+                        findall_can_interrupts(releases,start(Var1),water_left(0),0,10) :-
+                            can_interrupts(releases,start(Var1),water_left(0),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                can_releases(start(Var1),water_left(0),Var2 | {Var2 #> 0,Var2 #< 10}).
+                    not_interrupted_N(releases,water_left(0),[start(Var1)],0,10) :-
+                        not_interrupted_1(releases,water_left(0),[start(Var1)],0,10) :-
+                            proved(is_not_interval(0,0)),
+                            proved(is_not_interval(10,10)),
+                            not_interrupted_1_fail(releases,water_left(0),[start(Var1)],0,10) :-
+                                findall(Var6,interrupt_1_fail(releases,start(Var1),water_left(0),Var6,0,10),[]),
+                                all_entirely_outside_of_interval([],0,10),
+                                not_interrupted_1_fail(releases,water_left(0),[],0,10).
+    not_stoppedIn(10,left_filling,15) :-
+        not_interrupted(terminates,left_filling,10,15) :-
+            findall(Var7,findall_can_interrupts(terminates,Var7,left_filling,10,15),[switch_right]) :-
+                findall_can_interrupts(terminates,switch_right,left_filling,10,15) :-
+                    can_interrupts(terminates,switch_right,left_filling,Var3 | {Var3 #> 10,Var3 #< 15}) :-
+                        can_terminates(switch_right,left_filling,Var3 | {Var3 #> 10,Var3 #< 15}).
+            not_interrupted_N(terminates,left_filling,[switch_right],10,15) :-
+                not_interrupted_1(terminates,left_filling,[switch_right],10,15) :-
+                    proved(is_not_interval(10,10)),
+                    is_not_interval(15,15),
+                    not_interrupted_1_fail(terminates,left_filling,[switch_right],10,15) :-
+                        findall(Var8,interrupt_1_fail(terminates,switch_right,left_filling,Var8,10,15),[]),
+                        all_entirely_outside_of_interval([],10,15),
+                        not_interrupted_1_fail(terminates,left_filling,[],10,15).
+        not_interrupted(releases,left_filling,10,15) :-
+            findall(Var9,findall_can_interrupts(releases,Var9,left_filling,10,15),[]),
+            not_interrupted_N(releases,left_filling,[],10,15) :-
+                not_interrupted_1(releases,left_filling,[],10,15) :-
+                    proved(is_not_interval(10,10)),
+                    proved(is_not_interval(15,15)),
+                    not_interrupted_1_fail(releases,left_filling,[],10,15).
+global_constraint.
+
+MODEL:
+{ holdsAt(water_left(50),15),  happens(start(left),10),  initiates(start(left),left_filling,10),  trajectory(left_filling,10,water_left(50),15),  holdsAt(water_left(0),10),  initiallyP(water_left(0)),  not_stoppedIn(0,water_left(0),10),  not_stoppedIn(10,left_filling,15) }
+BINDINGS: 
+X = 50
+
+
+  real      0:00.70
+  real [s]  0.70
+  user [s]  0.53
+  sys  [s]  0.04
+  mem  [KB] 33136
+  avgm [KB] 0

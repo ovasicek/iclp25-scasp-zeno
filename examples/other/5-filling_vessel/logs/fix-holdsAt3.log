@@ -1,0 +1,179 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./fix-holdsAt3.pl --tree
+
+
+% QUERY:?- holdsAt(leaked(X),25).
+
+	ANSWER:	1 (in 291.322 ms)
+
+JUSTIFICATION_TREE:
+holdsAt(leaked(5),25) :-
+    max_time(100),
+    can_initiates(tapOff,leaked(5),20),
+    happens(tapOff,20),
+    initiates(tapOff,leaked(5),20) :-
+        holdsAt(spilling,20) :-
+            max_time(100),
+            can_initiates(overflow,spilling,15),
+            happens(overflow,15) :-
+                max_level(10),
+                holdsAt(level(10),15,filling) :-
+                    max_time(100),
+                    can_trajectory(filling,5,level(10),15),
+                    can_initiates(tapOn,filling,5),
+                    happens(tapOn,5),
+                    initiates(tapOn,filling,5) :-
+                        max_level(10),
+                        holdsAt(level(0),5) :-
+                            max_time(100),
+                            initiallyP(level(0)),
+                            not_stoppedIn(0,level(0),5) :-
+                                not_interrupted(terminates,level(0),0,5) :-
+                                    findall(Var13,findall_can_interrupts(terminates,Var13,level(0),0,5),[tapOff,overflow]) :-
+                                        findall_can_interrupts(terminates,tapOff,level(0),0,5) :-
+                                            can_interrupts(terminates,tapOff,level(0),Var1 | {Var1 #> 0,Var1 #< 5}) :-
+                                                can_terminates(tapOff,level(0),Var1 | {Var1 #> 0,Var1 #< 5}).
+                                        findall_can_interrupts(terminates,overflow,level(0),0,5) :-
+                                            can_interrupts(terminates,overflow,level(0),Var2 | {Var2 #> 0,Var2 #< 5}) :-
+                                                can_terminates(overflow,level(0),Var2 | {Var2 #> 0,Var2 #< 5}).
+                                    not_interrupted_(terminates,level(0),[tapOff,overflow],0,5) :-
+                                        findall(Var14,interrupted(terminates,tapOff,level(0),Var14,0,5),[]),
+                                        all_entirely_outside_of_interval([],0,5),
+                                        not_interrupted_(terminates,level(0),[overflow],0,5) :-
+                                            findall(Var15,interrupted(terminates,overflow,level(0),Var15,0,5),[]),
+                                            proved(all_entirely_outside_of_interval([],0,5)),
+                                            not_interrupted_(terminates,level(0),[],0,5).
+                                not_interrupted(releases,level(0),0,5) :-
+                                    findall(Var16,findall_can_interrupts(releases,Var16,level(0),0,5),[tapOn]) :-
+                                        findall_can_interrupts(releases,tapOn,level(0),0,5) :-
+                                            can_interrupts(releases,tapOn,level(0),Var3 | {Var3 #> 0,Var3 #< 5}) :-
+                                                can_releases(tapOn,level(0),Var3 | {Var3 #> 0,Var3 #< 5}).
+                                    not_interrupted_(releases,level(0),[tapOn],0,5) :-
+                                        findall(Var17,interrupted(releases,tapOn,level(0),Var17,0,5),[]),
+                                        proved(all_entirely_outside_of_interval([],0,5)),
+                                        not_interrupted_(releases,level(0),[],0,5).
+                    trajectory(filling,5,level(10),15) :-
+                        holdsAt(level(0),5) :-
+                            max_time(100),
+                            initiallyP(level(0)),
+                            proved(not_stoppedIn(0,level(0),5)).
+                    not_stoppedIn(5,filling,15) :-
+                        not_interrupted(terminates,filling,5,15) :-
+                            findall(Var18,findall_can_interrupts(terminates,Var18,filling,5,15),[tapOff,overflow]) :-
+                                findall_can_interrupts(terminates,tapOff,filling,5,15) :-
+                                    can_interrupts(terminates,tapOff,filling,Var4 | {Var4 #> 5,Var4 #< 15}) :-
+                                        can_terminates(tapOff,filling,Var4 | {Var4 #> 5,Var4 #< 15}).
+                                findall_can_interrupts(terminates,overflow,filling,5,15) :-
+                                    can_interrupts(terminates,overflow,filling,Var5 | {Var5 #> 5,Var5 #< 15}) :-
+                                        can_terminates(overflow,filling,Var5 | {Var5 #> 5,Var5 #< 15}).
+                            not_interrupted_(terminates,filling,[tapOff,overflow],5,15) :-
+                                findall(Var19,interrupted(terminates,tapOff,filling,Var19,5,15),[]),
+                                all_entirely_outside_of_interval([],5,15),
+                                not_interrupted_(terminates,filling,[overflow],5,15) :-
+                                    findall(Var20,interrupted(terminates,overflow,filling,Var20,5,15),[]),
+                                    proved(all_entirely_outside_of_interval([],5,15)),
+                                    not_interrupted_(terminates,filling,[],5,15).
+                        not_interrupted(releases,filling,5,15) :-
+                            findall(Var21,findall_can_interrupts(releases,Var21,filling,5,15),[]),
+                            not_interrupted_(releases,filling,[],5,15).
+            initiates(overflow,spilling,15),
+            not_stoppedIn(15,spilling,20) :-
+                not_interrupted(terminates,spilling,15,20) :-
+                    findall(Var22,findall_can_interrupts(terminates,Var22,spilling,15,20),[tapOff]) :-
+                        findall_can_interrupts(terminates,tapOff,spilling,15,20) :-
+                            can_interrupts(terminates,tapOff,spilling,Var6 | {Var6 #> 15,Var6 #< 20}) :-
+                                can_terminates(tapOff,spilling,Var6 | {Var6 #> 15,Var6 #< 20}).
+                    not_interrupted_(terminates,spilling,[tapOff],15,20) :-
+                        findall(Var23,interrupted(terminates,tapOff,spilling,Var23,15,20),[]),
+                        all_entirely_outside_of_interval([],15,20),
+                        not_interrupted_(terminates,spilling,[],15,20).
+                not_interrupted(releases,spilling,15,20) :-
+                    findall(Var24,findall_can_interrupts(releases,Var24,spilling,15,20),[]),
+                    not_interrupted_(releases,spilling,[],15,20).
+        holdsAt(leaked(5),20) :-
+            max_time(100),
+            can_trajectory(spilling,15,leaked(5),20),
+            can_initiates(overflow,spilling,15),
+            happens(overflow,15) :-
+                max_level(10),
+                holdsAt(level(10),15,filling) :-
+                    max_time(100),
+                    can_trajectory(filling,5,level(10),15),
+                    can_initiates(tapOn,filling,5),
+                    happens(tapOn,5),
+                    proved(initiates(tapOn,filling,5)),
+                    trajectory(filling,5,level(10),15) :-
+                        holdsAt(level(0),5) :-
+                            max_time(100),
+                            initiallyP(level(0)),
+                            proved(not_stoppedIn(0,level(0),5)).
+                    proved(not_stoppedIn(5,filling,15)).
+            proved(initiates(overflow,spilling,15)),
+            trajectory(spilling,15,leaked(5),20) :-
+                holdsAt(leaked(0),15) :-
+                    max_time(100),
+                    initiallyP(leaked(0)),
+                    not_stoppedIn(0,leaked(0),15) :-
+                        not_interrupted(terminates,leaked(0),0,15) :-
+                            findall(Var25,findall_can_interrupts(terminates,Var25,leaked(0),0,15),[tapOff]) :-
+                                findall_can_interrupts(terminates,tapOff,leaked(0),0,15) :-
+                                    can_interrupts(terminates,tapOff,leaked(0),Var7 | {Var7 #> 0,Var7 #< 15}) :-
+                                        can_terminates(tapOff,leaked(0),Var7 | {Var7 #> 0,Var7 #< 15}).
+                            not_interrupted_(terminates,leaked(0),[tapOff],0,15) :-
+                                findall(Var26,interrupted(terminates,tapOff,leaked(0),Var26,0,15),[]),
+                                all_entirely_outside_of_interval([],0,15),
+                                not_interrupted_(terminates,leaked(0),[],0,15).
+                        not_interrupted(releases,leaked(0),0,15) :-
+                            findall(Var27,findall_can_interrupts(releases,Var27,leaked(0),0,15),[tapOn,overflow]) :-
+                                findall_can_interrupts(releases,tapOn,leaked(0),0,15) :-
+                                    can_interrupts(releases,tapOn,leaked(0),Var8 | {Var8 #> 0,Var8 #< 15}) :-
+                                        can_releases(tapOn,leaked(0),Var8 | {Var8 #> 0,Var8 #< 15}).
+                                findall_can_interrupts(releases,overflow,leaked(0),0,15) :-
+                                    can_interrupts(releases,overflow,leaked(0),Var9 | {Var9 #> 0,Var9 #< 15}) :-
+                                        can_releases(overflow,leaked(0),Var9 | {Var9 #> 0,Var9 #< 15}).
+                            not_interrupted_(releases,leaked(0),[tapOn,overflow],0,15) :-
+                                findall(Var28,interrupted(releases,tapOn,leaked(0),Var28,0,15),[]),
+                                proved(all_entirely_outside_of_interval([],0,15)),
+                                not_interrupted_(releases,leaked(0),[overflow],0,15) :-
+                                    findall(Var29,interrupted(releases,overflow,leaked(0),Var29,0,15),[]),
+                                    proved(all_entirely_outside_of_interval([],0,15)),
+                                    not_interrupted_(releases,leaked(0),[],0,15).
+            proved(not_stoppedIn(15,spilling,20)).
+    not_stoppedIn(20,leaked(5),25) :-
+        not_interrupted(terminates,leaked(5),20,25) :-
+            findall(Var30,findall_can_interrupts(terminates,Var30,leaked(5),20,25),[tapOff]) :-
+                findall_can_interrupts(terminates,tapOff,leaked(5),20,25) :-
+                    can_interrupts(terminates,tapOff,leaked(5),Var10 | {Var10 #> 20,Var10 #< 25}) :-
+                        can_terminates(tapOff,leaked(5),Var10 | {Var10 #> 20,Var10 #< 25}).
+            not_interrupted_(terminates,leaked(5),[tapOff],20,25) :-
+                findall(Var31,interrupted(terminates,tapOff,leaked(5),Var31,20,25),[]),
+                all_entirely_outside_of_interval([],20,25),
+                not_interrupted_(terminates,leaked(5),[],20,25).
+        not_interrupted(releases,leaked(5),20,25) :-
+            findall(Var32,findall_can_interrupts(releases,Var32,leaked(5),20,25),[tapOn,overflow]) :-
+                findall_can_interrupts(releases,tapOn,leaked(5),20,25) :-
+                    can_interrupts(releases,tapOn,leaked(5),Var11 | {Var11 #> 20,Var11 #< 25}) :-
+                        can_releases(tapOn,leaked(5),Var11 | {Var11 #> 20,Var11 #< 25}).
+                findall_can_interrupts(releases,overflow,leaked(5),20,25) :-
+                    can_interrupts(releases,overflow,leaked(5),Var12 | {Var12 #> 20,Var12 #< 25}) :-
+                        can_releases(overflow,leaked(5),Var12 | {Var12 #> 20,Var12 #< 25}).
+            not_interrupted_(releases,leaked(5),[tapOn,overflow],20,25) :-
+                findall(Var33,interrupted(releases,tapOn,leaked(5),Var33,20,25),[]),
+                proved(all_entirely_outside_of_interval([],20,25)),
+                not_interrupted_(releases,leaked(5),[overflow],20,25) :-
+                    findall(Var34,interrupted(releases,overflow,leaked(5),Var34,20,25),[]),
+                    proved(all_entirely_outside_of_interval([],20,25)),
+                    not_interrupted_(releases,leaked(5),[],20,25).
+global_constraint.
+
+MODEL:
+{ holdsAt(leaked(5),25),  happens(tapOff,20),  initiates(tapOff,leaked(5),20),  holdsAt(spilling,20),  happens(overflow,15),  happens(tapOn,5),  initiates(tapOn,filling,5),  holdsAt(level(0),5),  initiallyP(level(0)),  not_stoppedIn(0,level(0),5),  trajectory(filling,5,level(10),15),  not_stoppedIn(5,filling,15),  initiates(overflow,spilling,15),  not_stoppedIn(15,spilling,20),  holdsAt(leaked(5),20),  trajectory(spilling,15,leaked(5),20),  holdsAt(leaked(0),15),  initiallyP(leaked(0)),  not_stoppedIn(0,leaked(0),15),  not_stoppedIn(20,leaked(5),25) }
+BINDINGS: 
+X = 5
+
+
+  real      0:01.05
+  real [s]  1.05
+  user [s]  0.67
+  sys  [s]  0.05
+  mem  [KB] 29240
+  avgm [KB] 0

@@ -1,0 +1,305 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./model.pl -v6 --timeout=1000
+
+
+% QUERY:?- happens(hitGround(apple),T).
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hitGround(apple),_201637)
+        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hitGround(apple),25)
+        builtin(!spy)
+        holdsAt(height(apple,0),25)
+            5.>.0
+            5.<.25
+            max_time(100)
+            25.=<.100
+            can_trajectory(falling(apple),5,height(apple,0),25)
+            can_initiates(drop(nathan,apple),falling(apple),5)
+            happens(drop(nathan,apple),5)
+            initiates(drop(nathan,apple),falling(apple),5)
+                agent(nathan)
+                object(apple)
+            trajectory(falling(apple),5,height(apple,0),25)
+                fGravity(1)
+                proved(object(apple))
+                0.=.20-1*(25-5)
+                holdsAt(height(apple,20),5)
+                    5.>=.0
+                    max_time(100)
+                    5.=<.100
+                    initiallyP(height(apple,20))
+                        initHeight(20)
+                    not_stoppedIn(0,height(apple,20),5)
+                        0.=<.5
+                        not_interrupted(terminates,height(apple,20),0,5)
+                            findall(_205205,findall_can_interrupts(terminates,_205205,height(apple,20),0,5),[hitGround(apple)])
+                                findall_can_interrupts(terminates,hitGround(apple),height(apple,20),0,5)
+                                     {_205382~[_205382 > 0, _205382 < 5]} .>.0
+                                     {_205382~[_205382 > 0, _205382 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                            not_interrupted_(terminates,height(apple,20),[hitGround(apple)],0,5)
+                                interrupted(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} ,0,5)
+                                     {_205855~[_205855 > 0, _205855 < 5]} .>.0
+                                     {_205855~[_205855 > 0, _205855 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                    happens(hitGround(apple), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hitGround(apple),25)
+        builtin(!spy)
+        holdsAt(height(apple,0),25)
+            5.>.0
+            5.<.25
+            max_time(100)
+            25.=<.100
+            can_trajectory(falling(apple),5,height(apple,0),25)
+            can_initiates(drop(nathan,apple),falling(apple),5)
+            happens(drop(nathan,apple),5)
+            initiates(drop(nathan,apple),falling(apple),5)
+                agent(nathan)
+                object(apple)
+            trajectory(falling(apple),5,height(apple,0),25)
+                fGravity(1)
+                proved(object(apple))
+                0.=.20-1*(25-5)
+                holdsAt(height(apple,20),5)
+                    5.>=.0
+                    max_time(100)
+                    5.=<.100
+                    initiallyP(height(apple,20))
+                        initHeight(20)
+                    not_stoppedIn(0,height(apple,20),5)
+                        0.=<.5
+                        not_interrupted(terminates,height(apple,20),0,5)
+                            findall(_205205,findall_can_interrupts(terminates,_205205,height(apple,20),0,5),[hitGround(apple)])
+                                findall_can_interrupts(terminates,hitGround(apple),height(apple,20),0,5)
+                                     {_205382~[_205382 > 0, _205382 < 5]} .>.0
+                                     {_205382~[_205382 > 0, _205382 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                            not_interrupted_(terminates,height(apple,20),[hitGround(apple)],0,5)
+                                interrupted(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} ,0,5)
+                                     {_205855~[_205855 > 0, _205855 < 5]} .>.0
+                                     {_205855~[_205855 > 0, _205855 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                    happens(hitGround(apple), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        builtin(!spy)
+                                        holdsAt(height(apple,0), {_205855~[_205855 > 0, _205855 < 5]} )
+                                             {_207771~[_207771 > 0, _207771 < 5]} .>.0
+                                             {_207771~[_207771 > 0, _207771 < 5]} .<. {_205855~[_205855 > 0, _205855 < 5]} 
+                                            max_time(100)
+                                             {_205855~[_205855 > 0, _205855 < 5]} .=<.100
+                                            can_initiates(hitGround(apple),height(apple,0), {_207771~[_207771 > 0, _207771 < 5]} )
+                                            happens(hitGround(apple), {_207771~[_207771 > 0, _207771 < 5]} )
+                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hitGround(apple),25)
+        builtin(!spy)
+        holdsAt(height(apple,0),25)
+            5.>.0
+            5.<.25
+            max_time(100)
+            25.=<.100
+            can_trajectory(falling(apple),5,height(apple,0),25)
+            can_initiates(drop(nathan,apple),falling(apple),5)
+            happens(drop(nathan,apple),5)
+            initiates(drop(nathan,apple),falling(apple),5)
+                agent(nathan)
+                object(apple)
+            trajectory(falling(apple),5,height(apple,0),25)
+                fGravity(1)
+                proved(object(apple))
+                0.=.20-1*(25-5)
+                holdsAt(height(apple,20),5)
+                    5.>=.0
+                    max_time(100)
+                    5.=<.100
+                    initiallyP(height(apple,20))
+                        initHeight(20)
+                    not_stoppedIn(0,height(apple,20),5)
+                        0.=<.5
+                        not_interrupted(terminates,height(apple,20),0,5)
+                            findall(_205205,findall_can_interrupts(terminates,_205205,height(apple,20),0,5),[hitGround(apple)])
+                                findall_can_interrupts(terminates,hitGround(apple),height(apple,20),0,5)
+                                     {_205382~[_205382 > 0, _205382 < 5]} .>.0
+                                     {_205382~[_205382 > 0, _205382 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                            not_interrupted_(terminates,height(apple,20),[hitGround(apple)],0,5)
+                                interrupted(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} ,0,5)
+                                     {_205855~[_205855 > 0, _205855 < 5]} .>.0
+                                     {_205855~[_205855 > 0, _205855 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                    happens(hitGround(apple), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        builtin(!spy)
+                                        holdsAt(height(apple,0), {_205855~[_205855 > 0, _205855 < 5]} )
+                                             {_207771~[_207771 > 0, _207771 < 5]} .>.0
+                                             {_207771~[_207771 > 0, _207771 < 5]} .<. {_205855~[_205855 > 0, _205855 < 5]} 
+                                            max_time(100)
+                                             {_205855~[_205855 > 0, _205855 < 5]} .=<.100
+                                            can_initiates(hitGround(apple),height(apple,0), {_207771~[_207771 > 0, _207771 < 5]} )
+                                            happens(hitGround(apple), {_207771~[_207771 > 0, _207771 < 5]} )
+                                                builtin(!spy)
+                                                holdsAt(height(apple,0), {_207771~[_207771 > 0, _207771 < 5]} )
+                                                     {_210329~[_210329 > 0, _210329 < 5]} .>.0
+                                                     {_210329~[_210329 > 0, _210329 < 5]} .<. {_207771~[_207771 > 0, _207771 < 5]} 
+                                                    max_time(100)
+                                                     {_207771~[_207771 > 0, _207771 < 5]} .=<.100
+                                                    can_initiates(hitGround(apple),height(apple,0), {_210329~[_210329 > 0, _210329 < 5]} )
+                                                    happens(hitGround(apple), {_210329~[_210329 > 0, _210329 < 5]} )
+                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hitGround(apple),25)
+        builtin(!spy)
+        holdsAt(height(apple,0),25)
+            5.>.0
+            5.<.25
+            max_time(100)
+            25.=<.100
+            can_trajectory(falling(apple),5,height(apple,0),25)
+            can_initiates(drop(nathan,apple),falling(apple),5)
+            happens(drop(nathan,apple),5)
+            initiates(drop(nathan,apple),falling(apple),5)
+                agent(nathan)
+                object(apple)
+            trajectory(falling(apple),5,height(apple,0),25)
+                fGravity(1)
+                proved(object(apple))
+                0.=.20-1*(25-5)
+                holdsAt(height(apple,20),5)
+                    5.>=.0
+                    max_time(100)
+                    5.=<.100
+                    initiallyP(height(apple,20))
+                        initHeight(20)
+                    not_stoppedIn(0,height(apple,20),5)
+                        0.=<.5
+                        not_interrupted(terminates,height(apple,20),0,5)
+                            findall(_205205,findall_can_interrupts(terminates,_205205,height(apple,20),0,5),[hitGround(apple)])
+                                findall_can_interrupts(terminates,hitGround(apple),height(apple,20),0,5)
+                                     {_205382~[_205382 > 0, _205382 < 5]} .>.0
+                                     {_205382~[_205382 > 0, _205382 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                            not_interrupted_(terminates,height(apple,20),[hitGround(apple)],0,5)
+                                interrupted(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} ,0,5)
+                                     {_205855~[_205855 > 0, _205855 < 5]} .>.0
+                                     {_205855~[_205855 > 0, _205855 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                    happens(hitGround(apple), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        builtin(!spy)
+                                        holdsAt(height(apple,0), {_205855~[_205855 > 0, _205855 < 5]} )
+                                             {_207771~[_207771 > 0, _207771 < 5]} .>.0
+                                             {_207771~[_207771 > 0, _207771 < 5]} .<. {_205855~[_205855 > 0, _205855 < 5]} 
+                                            max_time(100)
+                                             {_205855~[_205855 > 0, _205855 < 5]} .=<.100
+                                            can_initiates(hitGround(apple),height(apple,0), {_207771~[_207771 > 0, _207771 < 5]} )
+                                            happens(hitGround(apple), {_207771~[_207771 > 0, _207771 < 5]} )
+                                                builtin(!spy)
+                                                holdsAt(height(apple,0), {_207771~[_207771 > 0, _207771 < 5]} )
+                                                     {_210329~[_210329 > 0, _210329 < 5]} .>.0
+                                                     {_210329~[_210329 > 0, _210329 < 5]} .<. {_207771~[_207771 > 0, _207771 < 5]} 
+                                                    max_time(100)
+                                                     {_207771~[_207771 > 0, _207771 < 5]} .=<.100
+                                                    can_initiates(hitGround(apple),height(apple,0), {_210329~[_210329 > 0, _210329 < 5]} )
+                                                    happens(hitGround(apple), {_210329~[_210329 > 0, _210329 < 5]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(apple,0), {_210329~[_210329 > 0, _210329 < 5]} )
+                                                             {_213093~[_213093 > 0, _213093 < 5]} .>.0
+                                                             {_213093~[_213093 > 0, _213093 < 5]} .<. {_210329~[_210329 > 0, _210329 < 5]} 
+                                                            max_time(100)
+                                                             {_210329~[_210329 > 0, _210329 < 5]} .=<.100
+                                                            can_initiates(hitGround(apple),height(apple,0), {_213093~[_213093 > 0, _213093 < 5]} )
+                                                            happens(hitGround(apple), {_213093~[_213093 > 0, _213093 < 5]} )
+                                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hitGround(apple),25)
+        builtin(!spy)
+        holdsAt(height(apple,0),25)
+            5.>.0
+            5.<.25
+            max_time(100)
+            25.=<.100
+            can_trajectory(falling(apple),5,height(apple,0),25)
+            can_initiates(drop(nathan,apple),falling(apple),5)
+            happens(drop(nathan,apple),5)
+            initiates(drop(nathan,apple),falling(apple),5)
+                agent(nathan)
+                object(apple)
+            trajectory(falling(apple),5,height(apple,0),25)
+                fGravity(1)
+                proved(object(apple))
+                0.=.20-1*(25-5)
+                holdsAt(height(apple,20),5)
+                    5.>=.0
+                    max_time(100)
+                    5.=<.100
+                    initiallyP(height(apple,20))
+                        initHeight(20)
+                    not_stoppedIn(0,height(apple,20),5)
+                        0.=<.5
+                        not_interrupted(terminates,height(apple,20),0,5)
+                            findall(_205205,findall_can_interrupts(terminates,_205205,height(apple,20),0,5),[hitGround(apple)])
+                                findall_can_interrupts(terminates,hitGround(apple),height(apple,20),0,5)
+                                     {_205382~[_205382 > 0, _205382 < 5]} .>.0
+                                     {_205382~[_205382 > 0, _205382 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205382~[_205382 > 0, _205382 < 5]} )
+                            not_interrupted_(terminates,height(apple,20),[hitGround(apple)],0,5)
+                                interrupted(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} ,0,5)
+                                     {_205855~[_205855 > 0, _205855 < 5]} .>.0
+                                     {_205855~[_205855 > 0, _205855 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_205855~[_205855 > 0, _205855 < 5]} )
+                                    happens(hitGround(apple), {_205855~[_205855 > 0, _205855 < 5]} )
+                                        builtin(!spy)
+                                        holdsAt(height(apple,0), {_205855~[_205855 > 0, _205855 < 5]} )
+                                             {_207771~[_207771 > 0, _207771 < 5]} .>.0
+                                             {_207771~[_207771 > 0, _207771 < 5]} .<. {_205855~[_205855 > 0, _205855 < 5]} 
+                                            max_time(100)
+                                             {_205855~[_205855 > 0, _205855 < 5]} .=<.100
+                                            can_initiates(hitGround(apple),height(apple,0), {_207771~[_207771 > 0, _207771 < 5]} )
+                                            happens(hitGround(apple), {_207771~[_207771 > 0, _207771 < 5]} )
+                                                builtin(!spy)
+                                                holdsAt(height(apple,0), {_207771~[_207771 > 0, _207771 < 5]} )
+                                                     {_210329~[_210329 > 0, _210329 < 5]} .>.0
+                                                     {_210329~[_210329 > 0, _210329 < 5]} .<. {_207771~[_207771 > 0, _207771 < 5]} 
+                                                    max_time(100)
+                                                     {_207771~[_207771 > 0, _207771 < 5]} .=<.100
+                                                    can_initiates(hitGround(apple),height(apple,0), {_210329~[_210329 > 0, _210329 < 5]} )
+                                                    happens(hitGround(apple), {_210329~[_210329 > 0, _210329 < 5]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(apple,0), {_210329~[_210329 > 0, _210329 < 5]} )
+                                                             {_213093~[_213093 > 0, _213093 < 5]} .>.0
+                                                             {_213093~[_213093 > 0, _213093 < 5]} .<. {_210329~[_210329 > 0, _210329 < 5]} 
+                                                            max_time(100)
+                                                             {_210329~[_210329 > 0, _210329 < 5]} .=<.100
+                                                            can_initiates(hitGround(apple),height(apple,0), {_213093~[_213093 > 0, _213093 < 5]} )
+                                                            happens(hitGround(apple), {_213093~[_213093 > 0, _213093 < 5]} )
+                                                                builtin(!spy)
+                                                                holdsAt(height(apple,0), {_213093~[_213093 > 0, _213093 < 5]} )
+                                                                     {_216050~[_216050 > 0, _216050 < 5]} .>.0
+                                                                     {_216050~[_216050 > 0, _216050 < 5]} .<. {_213093~[_213093 > 0, _213093 < 5]} 
+                                                                    max_time(100)
+                                                                     {_213093~[_213093 > 0, _213093 < 5]} .=<.100
+                                                                    can_initiates(hitGround(apple),height(apple,0), {_216050~[_216050 > 0, _216050 < 5
+timeout
+
+
+  real      0:01.44
+  real [s]  1.44
+  user [s]  0.46
+  sys  [s]  0.09
+  mem  [KB] 29376
+  avgm [KB] 0

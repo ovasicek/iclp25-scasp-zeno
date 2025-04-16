@@ -1,0 +1,288 @@
+$ scasp -s0 --ec ../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=1000
+
+
+% QUERY:?- holdsAt(water_left(X),19.5).
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(water_left(_167474),19.5)
+         {_167911~[_167911 > 0, _167911 < 39/2]} .>.0
+         {_167911~[_167911 > 0, _167911 < 39/2]} .<.19.5
+        max_time(100)
+        19.5.=<.100
+        can_trajectory(left_filling, {_167911~[_167911 > 0, _167911 < 39/2]} ,water_left(_167474),19.5)
+        can_initiates(switch_left,left_filling, {_167911~[_167911 > 0, _167911 < 39/2]} )
+        happens(switch_left, {_167911~[_167911 > 0, _167911 < 39/2]} )
+            builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(water_left(_167474),19.5)
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .>.0
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .<.19.5
+        max_time(100)
+        19.5.=<.100
+        can_trajectory(left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,water_left(_167474),19.5)
+        can_initiates(switch_left,left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+        happens(switch_left, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+            builtin(!spy)
+             {_169265~[_169265 > -90, _169265 =< 50]} .=<.50
+            holdsAt(water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,right_filling)
+                10.>.0
+                10.<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
+                max_time(100)
+                 {_167911~[_167911 < 39/2, _167911 >= 25/2]} .=<.100
+                can_trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                can_initiates(start(right),right_filling,10)
+                happens(start(right),10)
+                initiates(start(right),right_filling,10)
+                trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                     {_169265~[_169265 > -90, _169265 =< 50]} .=.100-( {_167911~[_167911 < 39/2, _167911 >= 25/2]} -10)*20
+                    holdsAt(water_left(100),10)
+                        10.>=.0
+                        max_time(100)
+                        10.=<.100
+                        initiallyP(water_left(100))
+                        not_stoppedIn(0,water_left(100),10)
+                            0.=<.10
+                            not_interrupted(terminates,water_left(100),0,10)
+                                findall(_172077,findall_can_interrupts(terminates,_172077,water_left(100),0,10),[])
+                                not_interrupted_N(terminates,water_left(100),[],0,10)
+                                    not_interrupted_1(terminates,water_left(100),[],0,10)
+                                        inf(0,0)
+                                        sup(0,0)
+                                        is_not_interval(0,0)
+                                            0.=.0
+                                        inf(10,10)
+                                        sup(10,10)
+                                        is_not_interval(10,10)
+                                            10.=.10
+                                        not_interrupted_1_fail(terminates,water_left(100),[],0,10)
+                            not_interrupted(releases,water_left(100),0,10)
+                                findall(_173537,findall_can_interrupts(releases,_173537,water_left(100),0,10),[start(_173609)])
+                                    findall_can_interrupts(releases,start(_173609),water_left(100),0,10)
+                                         {_173708~[_173708 > 0, _173708 < 10]} .>.0
+                                         {_173708~[_173708 > 0, _173708 < 10]} .<.10
+                                        can_interrupts(releases,start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                            can_releases(start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                not_interrupted_N(releases,water_left(100),[start(_173609)],0,10)
+                                    not_interrupted_1(releases,water_left(100),[start(_173609)],0,10)
+                                        inf(0,0)
+                                        sup(0,0)
+                                        proved(is_not_interval(0,0))
+                                        inf(10,10)
+                                        sup(10,10)
+                                        proved(is_not_interval(10,10))
+                                        not_interrupted_1_fail(releases,water_left(100),[start(_173609)],0,10)
+                                            findall(_174568,interrupt_1_fail(releases,start(_173609),water_left(100),_174568,0,10),[])
+                                            all_entirely_outside_of_interval([],0,10)
+                                            not_interrupted_1_fail(releases,water_left(100),[],0,10)
+                not_stoppedIn(10,right_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                    10.=<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
+                    not_interrupted(terminates,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                        findall(_175559,findall_can_interrupts(terminates,_175559,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ),[switch_left])
+                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_175704~[_175704 >= 25/2, _175704 < 39/2]} )
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .>.10
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .<. {_175704~[_175704 >= 25/2, _175704 < 39/2]} 
+                                can_interrupts(terminates,switch_left,right_filling, {_175976~[_175976 > 10, _175976 < 39/2]} )
+                                    can_terminates(switch_left,right_filling, {_175976~[_175976 > 10, _175976 < 39/2]} )
+                        not_interrupted_N(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                            not_interrupted_2b(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                inf(10,10)
+                                sup(10,10)
+                                proved(is_not_interval(10,10))
+                                inf( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,25/2)
+                                sup( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,39/2)
+                                is_interval(25/2,39/2)
+                                    25/2.<>.39/2
+                                not_interrupted_2b_fail(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                    interrupt_2b_fail(terminates,switch_left,right_filling, {_177814~[_177814 < 25/2, _177814 > 10]} ,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                         {_177814~[_177814 < 25/2, _177814 > 10]} .>.10
+                                        inf( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,25/2)
+                                         {_177814~[_177814 < 25/2, _177814 > 10]} .<.25/2
+                                        happens(switch_left, {_177814~[_177814 < 25/2, _177814 > 10]} )
+                                            builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(water_left(_167474),19.5)
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .>.0
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .<.19.5
+        max_time(100)
+        19.5.=<.100
+        can_trajectory(left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,water_left(_167474),19.5)
+        can_initiates(switch_left,left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+        happens(switch_left, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+            builtin(!spy)
+             {_169265~[_169265 > -90, _169265 =< 50]} .=<.50
+            holdsAt(water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,right_filling)
+                10.>.0
+                10.<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
+                max_time(100)
+                 {_167911~[_167911 < 39/2, _167911 >= 25/2]} .=<.100
+                can_trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                can_initiates(start(right),right_filling,10)
+                happens(start(right),10)
+                initiates(start(right),right_filling,10)
+                trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                     {_169265~[_169265 > -90, _169265 =< 50]} .=.100-( {_167911~[_167911 < 39/2, _167911 >= 25/2]} -10)*20
+                    holdsAt(water_left(100),10)
+                        10.>=.0
+                        max_time(100)
+                        10.=<.100
+                        initiallyP(water_left(100))
+                        not_stoppedIn(0,water_left(100),10)
+                            0.=<.10
+                            not_interrupted(terminates,water_left(100),0,10)
+                                findall(_172077,findall_can_interrupts(terminates,_172077,water_left(100),0,10),[])
+                                not_interrupted_N(terminates,water_left(100),[],0,10)
+                                    not_interrupted_1(terminates,water_left(100),[],0,10)
+                                        inf(0,0)
+                                        sup(0,0)
+                                        is_not_interval(0,0)
+                                            0.=.0
+                                        inf(10,10)
+                                        sup(10,10)
+                                        is_not_interval(10,10)
+                                            10.=.10
+                                        not_interrupted_1_fail(terminates,water_left(100),[],0,10)
+                            not_interrupted(releases,water_left(100),0,10)
+                                findall(_173537,findall_can_interrupts(releases,_173537,water_left(100),0,10),[start(_173609)])
+                                    findall_can_interrupts(releases,start(_173609),water_left(100),0,10)
+                                         {_173708~[_173708 > 0, _173708 < 10]} .>.0
+                                         {_173708~[_173708 > 0, _173708 < 10]} .<.10
+                                        can_interrupts(releases,start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                            can_releases(start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                not_interrupted_N(releases,water_left(100),[start(_173609)],0,10)
+                                    not_interrupted_1(releases,water_left(100),[start(_173609)],0,10)
+                                        inf(0,0)
+                                        sup(0,0)
+                                        proved(is_not_interval(0,0))
+                                        inf(10,10)
+                                        sup(10,10)
+                                        proved(is_not_interval(10,10))
+                                        not_interrupted_1_fail(releases,water_left(100),[start(_173609)],0,10)
+                                            findall(_174568,interrupt_1_fail(releases,start(_173609),water_left(100),_174568,0,10),[])
+                                            all_entirely_outside_of_interval([],0,10)
+                                            not_interrupted_1_fail(releases,water_left(100),[],0,10)
+                not_stoppedIn(10,right_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                    10.=<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
+                    not_interrupted(terminates,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                        findall(_175559,findall_can_interrupts(terminates,_175559,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ),[switch_left])
+                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_175704~[_175704 >= 25/2, _175704 < 39/2]} )
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .>.10
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .<. {_175704~[_175704 >= 25/2, _175704 < 39/2]} 
+                                can_interrupts(terminates,switch_left,right_filling, {_175976~[_175976 > 10, _175976 < 39/2]} )
+                                    can_terminates(switch_left,right_filling, {_175976~[_175976 > 10, _175976 < 39/2]} )
+                        not_interrupted_N(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                            not_interrupted_2b(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                inf(10,10)
+                                sup(10,10)
+                                proved(is_not_interval(10,10))
+                                inf( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,25/2)
+                                sup( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,39/2)
+                                is_interval(25/2,39/2)
+                                    25/2.<>.39/2
+                                not_interrupted_2b_fail(terminates,right_filling,[switch_left],10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                    interrupt_2b_fail(terminates,switch_left,right_filling, {_177814~[_177814 > 10, _177814 < 25/2]} ,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                                         {_177814~[_177814 > 10, _177814 < 25/2]} .>.10
+                                        inf( {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,25/2)
+                                         {_177814~[_177814 > 10, _177814 < 25/2]} .<.25/2
+                                        happens(switch_left, {_177814~[_177814 > 10, _177814 < 25/2]} )
+                                            builtin(!spy)
+                                             {_180858~[_180858 =< 50]} .=<.50
+                                            holdsAt(water_left( {_180858~[_180858 =< 50]} ), {_177814~[_177814 > 10, _177814 < 25/2]} ,right_filling)
+                                                10.>.0
+                                                10.<. {_177814~[_177814 > 10, _177814 < 25/2]} 
+                                                max_time(100)
+                                                 {_177814~[_177814 > 10, _177814 < 25/2]} .=<.100
+                                                can_trajectory(right_filling,10,water_left( {_180858~[_180858 =< 50]} ), {_177814~[_177814 > 10, _177814 < 25/2]} )
+                                                can_initiates(start(right),right_filling,10)
+                                                happens(start(right),10)
+                                                proved(initiates(start(right),right_filling,10))
+                                                trajectory(right_filling,10,water_left( {_180858~[_180858 =< 50]} ), {_177814~[_177814 > 10, _177814 < 25/2]} )
+                                                     {_180858~[_180858 =< 50]} .=. {_182438~[_182438 < 100]} -( {_177814~[_177814 > 10, _177814 < 25/2]} -10)*20
+                                                    holdsAt(water_left( {_182438~[_182438 < 100]} ),10)
+                                                         {_182888~[_182888 > 0, _182888 < 10]} .>.0
+                                                         {_182888~[_182888 > 0, _182888 < 10]} .<.10
+                                                        max_time(100)
+                                                        10.=<.100
+                                                        can_trajectory(left_filling, {_182888~[_182888 > 0, _182888 < 10]} ,water_left( {_182438~[_182438 < 100]} ),10)
+                                                        can_initiates(switch_left,left_filling, {_182888~[_182888 > 0, _182888 < 10]} )
+                                                        happens(switch_left, {_182888~[_182888 > 0, _182888 < 10]} )
+                                                            builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(water_left(_167474),19.5)
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .>.0
+         {_167911~[_167911 < 39/2, _167911 >= 25/2]} .<.19.5
+        max_time(100)
+        19.5.=<.100
+        can_trajectory(left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,water_left(_167474),19.5)
+        can_initiates(switch_left,left_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+        happens(switch_left, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+            builtin(!spy)
+             {_169265~[_169265 > -90, _169265 =< 50]} .=<.50
+            holdsAt(water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} ,right_filling)
+                10.>.0
+                10.<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
+                max_time(100)
+                 {_167911~[_167911 < 39/2, _167911 >= 25/2]} .=<.100
+                can_trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                can_initiates(start(right),right_filling,10)
+                happens(start(right),10)
+                initiates(start(right),right_filling,10)
+                trajectory(right_filling,10,water_left( {_169265~[_169265 > -90, _169265 =< 50]} ), {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                     {_169265~[_169265 > -90, _169265 =< 50]} .=.100-( {_167911~[_167911 < 39/2, _167911 >= 25/2]} -10)*20
+                    holdsAt(water_left(100),10)
+                        10.>=.0
+                        max_time(100)
+                        10.=<.100
+                        initiallyP(water_left(100))
+                        not_stoppedIn(0,water_left(100),10)
+                            0.=<.10
+                            not_interrupted(terminates,water_left(100),0,10)
+                                findall(_172077,findall_can_interrupts(terminates,_172077,water_left(100),0,10),[])
+                                not_interrupted_N(terminates,water_left(100),[],0,10)
+                                    not_interrupted_1(terminates,water_left(100),[],0,10)
+                                        inf(0,0)
+                                        sup(0,0)
+                                        is_not_interval(0,0)
+                                            0.=.0
+                                        inf(10,10)
+                                        sup(10,10)
+                                        is_not_interval(10,10)
+                                            10.=.10
+                                        not_interrupted_1_fail(terminates,water_left(100),[],0,10)
+                            not_interrupted(releases,water_left(100),0,10)
+                                findall(_173537,findall_can_interrupts(releases,_173537,water_left(100),0,10),[start(_173609)])
+                                    findall_can_interrupts(releases,start(_173609),water_left(100),0,10)
+                                         {_173708~[_173708 > 0, _173708 < 10]} .>.0
+                                         {_173708~[_173708 > 0, _173708 < 10]} .<.10
+                                        can_interrupts(releases,start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                            can_releases(start(_173609),water_left(100), {_173708~[_173708 > 0, _173708 < 10]} )
+                                not_interrupted_N(releases,water_left(100),[start(_173609)],0,10)
+                                    not_interrupted_1(releases,water_left(100),[start(_173609)],0,10)
+                                        inf(0,0)
+                                        sup(0,0)
+                                        proved(is_not_interval(0,0))
+                                        inf(10,10)
+                                        sup(10,10)
+                                        proved(is_not_interval(10,10))
+                                        not_interrupted_1_fail(releases,water_left(100),[start(_173609)],0,10)
+                                            findall(_174568,interrupt_1_fail(releases,start(_173609),water_left(100),_174568,0,10),[])
+                                            all_entirely_outside_of_interval([],0,10)
+                                            not_interrupted_1_fail(releases,water_left(100),[],0,10)
+                not_stoppedIn(10,right_filling, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                    10.=<. {_167911~[_167911 < 39/2, _167911 >= 25/2]} 
+                    not_interrupted(terminates,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} )
+                        findall(_175559,findall_can_interrupts(terminates,_175559,right_filling,10, {_167911~[_167911 < 39/2, _167911 >= 25/2]} ),[switch_left])
+                            findall_can_interrupts(terminates,switch_left,right_filling,10, {_175704~[_175704 >= 25/2, _175704 < 39/2]} )
+                                 {_175976~[_175976 > 10, _175976 < 39/2]} .>.10
+                                 {_175976~[_175976 > 10
+timeout
+
+
+  real      0:01.77
+  real [s]  1.77
+  user [s]  0.55
+  sys  [s]  0.10
+  mem  [KB] 33292
+  avgm [KB] 0

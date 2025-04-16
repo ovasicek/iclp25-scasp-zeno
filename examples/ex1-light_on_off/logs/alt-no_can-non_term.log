@@ -1,0 +1,326 @@
+$ scasp -s0 --ec ../axioms/bec_scasp-small-no_can_order.pl ./model-alt.pl -v6 --timeout=1000
+
+
+% QUERY:?- holdsAt(light_on,T).
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(light_on, {_12433~[_12433 > 0, _12433 =< 100]} )
+         {_12216~[_12216 > 0, _12216 < 100]} .>.0
+         {_12216~[_12216 > 0, _12216 < 100]} .<. {_12433~[_12433 > 0, _12433 =< 100]} 
+        max_time(100)
+         {_12433~[_12433 > 0, _12433 =< 100]} .=<.100
+        initiates(turn_light_on,light_on, {_12216~[_12216 > 0, _12216 < 100]} )
+            builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+        10.>.0
+        10.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+        max_time(100)
+         {_12433~[_12433 > 20, _12433 =< 100]} .=<.100
+        initiates(turn_light_on,light_on,10)
+            builtin(!spy)
+            not_holdsAt(light_on,10)
+                10.>=.0
+                max_time(100)
+                10.=<.100
+                initiallyN(light_on)
+                not_startedIn(0,light_on,10)
+                    0.=<.10
+                    findall(_14669,findall_can_initiates(_14669,light_on,0,10),[turn_light_on])
+                        findall_can_initiates(turn_light_on,light_on,0, {_15294~[_15294 > 0, _15294 < 100]} )
+                             {_15576~[_15576 > 0, _15576 < 100]} .>.0
+                             {_15576~[_15576 > 0, _15576 < 100]} .<. {_15294~[_15294 > 0, _15294 < 100]} 
+                            can_initiates(turn_light_on,light_on, {_15576~[_15576 > 0, _15576 < 100]} )
+                    not_initiated(light_on,[turn_light_on],0,10)
+                        findall(_15701,initiated(turn_light_on,light_on,_15701,0,10),[])
+                        all_entirely_outside_of_interval([],0,10)
+                        not_initiated(light_on,[],0,10)
+        happens(turn_light_on,10)
+        not_stoppedIn(10,light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+            10.=<. {_12433~[_12433 > 20, _12433 =< 100]} 
+            findall(_16508,findall_can_terminates(_16508,light_on,10, {_12433~[_12433 > 20, _12433 =< 100]} ),[turn_light_off])
+                findall_can_terminates(turn_light_off,light_on,10, {_16972~[_16972 > 10, _16972 =< 100]} )
+                     {_17140~[_17140 > 10, _17140 < 100]} .>.10
+                     {_17140~[_17140 > 10, _17140 < 100]} .<. {_16972~[_16972 > 10, _16972 =< 100]} 
+                    can_terminates(turn_light_off,light_on, {_17140~[_17140 > 10, _17140 < 100]} )
+            not_terminated(light_on,[turn_light_off],10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                terminated(turn_light_off,light_on,20,10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                    20.>.10
+                    20.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+                    can_terminates(turn_light_off,light_on,20)
+                    happens(turn_light_off,20)
+                    terminates(turn_light_off,light_on,20)
+                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+        10.>.0
+        10.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+        max_time(100)
+         {_12433~[_12433 > 20, _12433 =< 100]} .=<.100
+        initiates(turn_light_on,light_on,10)
+            builtin(!spy)
+            not_holdsAt(light_on,10)
+                10.>=.0
+                max_time(100)
+                10.=<.100
+                initiallyN(light_on)
+                not_startedIn(0,light_on,10)
+                    0.=<.10
+                    findall(_14669,findall_can_initiates(_14669,light_on,0,10),[turn_light_on])
+                        findall_can_initiates(turn_light_on,light_on,0, {_15294~[_15294 > 0, _15294 < 100]} )
+                             {_15576~[_15576 > 0, _15576 < 100]} .>.0
+                             {_15576~[_15576 > 0, _15576 < 100]} .<. {_15294~[_15294 > 0, _15294 < 100]} 
+                            can_initiates(turn_light_on,light_on, {_15576~[_15576 > 0, _15576 < 100]} )
+                    not_initiated(light_on,[turn_light_on],0,10)
+                        findall(_15701,initiated(turn_light_on,light_on,_15701,0,10),[])
+                        all_entirely_outside_of_interval([],0,10)
+                        not_initiated(light_on,[],0,10)
+        happens(turn_light_on,10)
+        not_stoppedIn(10,light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+            10.=<. {_12433~[_12433 > 20, _12433 =< 100]} 
+            findall(_16508,findall_can_terminates(_16508,light_on,10, {_12433~[_12433 > 20, _12433 =< 100]} ),[turn_light_off])
+                findall_can_terminates(turn_light_off,light_on,10, {_16972~[_16972 > 10, _16972 =< 100]} )
+                     {_17140~[_17140 > 10, _17140 < 100]} .>.10
+                     {_17140~[_17140 > 10, _17140 < 100]} .<. {_16972~[_16972 > 10, _16972 =< 100]} 
+                    can_terminates(turn_light_off,light_on, {_17140~[_17140 > 10, _17140 < 100]} )
+            not_terminated(light_on,[turn_light_off],10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                terminated(turn_light_off,light_on,20,10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                    20.>.10
+                    20.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+                    can_terminates(turn_light_off,light_on,20)
+                    happens(turn_light_off,20)
+                    terminates(turn_light_off,light_on,20)
+                        builtin(!spy)
+                        holdsAt(light_on,20)
+                             {_19433~[_19433 > 0, _19433 < 20]} .>.0
+                             {_19433~[_19433 > 0, _19433 < 20]} .<.20
+                            max_time(100)
+                            20.=<.100
+                            initiates(turn_light_on,light_on, {_19433~[_19433 > 0, _19433 < 20]} )
+                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+        10.>.0
+        10.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+        max_time(100)
+         {_12433~[_12433 > 20, _12433 =< 100]} .=<.100
+        initiates(turn_light_on,light_on,10)
+            builtin(!spy)
+            not_holdsAt(light_on,10)
+                10.>=.0
+                max_time(100)
+                10.=<.100
+                initiallyN(light_on)
+                not_startedIn(0,light_on,10)
+                    0.=<.10
+                    findall(_14669,findall_can_initiates(_14669,light_on,0,10),[turn_light_on])
+                        findall_can_initiates(turn_light_on,light_on,0, {_15294~[_15294 > 0, _15294 < 100]} )
+                             {_15576~[_15576 > 0, _15576 < 100]} .>.0
+                             {_15576~[_15576 > 0, _15576 < 100]} .<. {_15294~[_15294 > 0, _15294 < 100]} 
+                            can_initiates(turn_light_on,light_on, {_15576~[_15576 > 0, _15576 < 100]} )
+                    not_initiated(light_on,[turn_light_on],0,10)
+                        findall(_15701,initiated(turn_light_on,light_on,_15701,0,10),[])
+                        all_entirely_outside_of_interval([],0,10)
+                        not_initiated(light_on,[],0,10)
+        happens(turn_light_on,10)
+        not_stoppedIn(10,light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+            10.=<. {_12433~[_12433 > 20, _12433 =< 100]} 
+            findall(_16508,findall_can_terminates(_16508,light_on,10, {_12433~[_12433 > 20, _12433 =< 100]} ),[turn_light_off])
+                findall_can_terminates(turn_light_off,light_on,10, {_16972~[_16972 > 10, _16972 =< 100]} )
+                     {_17140~[_17140 > 10, _17140 < 100]} .>.10
+                     {_17140~[_17140 > 10, _17140 < 100]} .<. {_16972~[_16972 > 10, _16972 =< 100]} 
+                    can_terminates(turn_light_off,light_on, {_17140~[_17140 > 10, _17140 < 100]} )
+            not_terminated(light_on,[turn_light_off],10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                terminated(turn_light_off,light_on,20,10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                    20.>.10
+                    20.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+                    can_terminates(turn_light_off,light_on,20)
+                    happens(turn_light_off,20)
+                    terminates(turn_light_off,light_on,20)
+                        builtin(!spy)
+                        holdsAt(light_on,20)
+                             {_19433~[_19433 > 0, _19433 < 20]} .>.0
+                             {_19433~[_19433 > 0, _19433 < 20]} .<.20
+                            max_time(100)
+                            20.=<.100
+                            initiates(turn_light_on,light_on, {_19433~[_19433 > 0, _19433 < 20]} )
+                                builtin(!spy)
+                                not_holdsAt(light_on, {_19433~[_19433 > 0, _19433 < 20]} )
+                                     {_21318~[_21318 > 0, _21318 < 20]} .>.0
+                                     {_21318~[_21318 > 0, _21318 < 20]} .<. {_19433~[_19433 > 0, _19433 < 20]} 
+                                    max_time(100)
+                                     {_19433~[_19433 > 0, _19433 < 20]} .=<.100
+                                    terminates(turn_light_off,light_on, {_21318~[_21318 > 0, _21318 < 20]} )
+                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+        10.>.0
+        10.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+        max_time(100)
+         {_12433~[_12433 > 20, _12433 =< 100]} .=<.100
+        initiates(turn_light_on,light_on,10)
+            builtin(!spy)
+            not_holdsAt(light_on,10)
+                10.>=.0
+                max_time(100)
+                10.=<.100
+                initiallyN(light_on)
+                not_startedIn(0,light_on,10)
+                    0.=<.10
+                    findall(_14669,findall_can_initiates(_14669,light_on,0,10),[turn_light_on])
+                        findall_can_initiates(turn_light_on,light_on,0, {_15294~[_15294 > 0, _15294 < 100]} )
+                             {_15576~[_15576 > 0, _15576 < 100]} .>.0
+                             {_15576~[_15576 > 0, _15576 < 100]} .<. {_15294~[_15294 > 0, _15294 < 100]} 
+                            can_initiates(turn_light_on,light_on, {_15576~[_15576 > 0, _15576 < 100]} )
+                    not_initiated(light_on,[turn_light_on],0,10)
+                        findall(_15701,initiated(turn_light_on,light_on,_15701,0,10),[])
+                        all_entirely_outside_of_interval([],0,10)
+                        not_initiated(light_on,[],0,10)
+        happens(turn_light_on,10)
+        not_stoppedIn(10,light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+            10.=<. {_12433~[_12433 > 20, _12433 =< 100]} 
+            findall(_16508,findall_can_terminates(_16508,light_on,10, {_12433~[_12433 > 20, _12433 =< 100]} ),[turn_light_off])
+                findall_can_terminates(turn_light_off,light_on,10, {_16972~[_16972 > 10, _16972 =< 100]} )
+                     {_17140~[_17140 > 10, _17140 < 100]} .>.10
+                     {_17140~[_17140 > 10, _17140 < 100]} .<. {_16972~[_16972 > 10, _16972 =< 100]} 
+                    can_terminates(turn_light_off,light_on, {_17140~[_17140 > 10, _17140 < 100]} )
+            not_terminated(light_on,[turn_light_off],10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                terminated(turn_light_off,light_on,20,10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                    20.>.10
+                    20.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+                    can_terminates(turn_light_off,light_on,20)
+                    happens(turn_light_off,20)
+                    terminates(turn_light_off,light_on,20)
+                        builtin(!spy)
+                        holdsAt(light_on,20)
+                             {_19433~[_19433 > 0, _19433 < 20]} .>.0
+                             {_19433~[_19433 > 0, _19433 < 20]} .<.20
+                            max_time(100)
+                            20.=<.100
+                            initiates(turn_light_on,light_on, {_19433~[_19433 > 0, _19433 < 20]} )
+                                builtin(!spy)
+                                not_holdsAt(light_on, {_19433~[_19433 > 0, _19433 < 20]} )
+                                     {_21318~[_21318 > 0, _21318 < 20]} .>.0
+                                     {_21318~[_21318 > 0, _21318 < 20]} .<. {_19433~[_19433 > 0, _19433 < 20]} 
+                                    max_time(100)
+                                     {_19433~[_19433 > 0, _19433 < 20]} .=<.100
+                                    terminates(turn_light_off,light_on, {_21318~[_21318 > 0, _21318 < 20]} )
+                                        builtin(!spy)
+                                        holdsAt(light_on, {_21318~[_21318 > 0, _21318 < 20]} )
+                                             {_23722~[_23722 > 0, _23722 < 20]} .>.0
+                                             {_23722~[_23722 > 0, _23722 < 20]} .<. {_21318~[_21318 > 0, _21318 < 20]} 
+                                            max_time(100)
+                                             {_21318~[_21318 > 0, _21318 < 20]} .=<.100
+                                            initiates(turn_light_on,light_on, {_23722~[_23722 > 0, _23722 < 20]} )
+                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+        10.>.0
+        10.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+        max_time(100)
+         {_12433~[_12433 > 20, _12433 =< 100]} .=<.100
+        initiates(turn_light_on,light_on,10)
+            builtin(!spy)
+            not_holdsAt(light_on,10)
+                10.>=.0
+                max_time(100)
+                10.=<.100
+                initiallyN(light_on)
+                not_startedIn(0,light_on,10)
+                    0.=<.10
+                    findall(_14669,findall_can_initiates(_14669,light_on,0,10),[turn_light_on])
+                        findall_can_initiates(turn_light_on,light_on,0, {_15294~[_15294 > 0, _15294 < 100]} )
+                             {_15576~[_15576 > 0, _15576 < 100]} .>.0
+                             {_15576~[_15576 > 0, _15576 < 100]} .<. {_15294~[_15294 > 0, _15294 < 100]} 
+                            can_initiates(turn_light_on,light_on, {_15576~[_15576 > 0, _15576 < 100]} )
+                    not_initiated(light_on,[turn_light_on],0,10)
+                        findall(_15701,initiated(turn_light_on,light_on,_15701,0,10),[])
+                        all_entirely_outside_of_interval([],0,10)
+                        not_initiated(light_on,[],0,10)
+        happens(turn_light_on,10)
+        not_stoppedIn(10,light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+            10.=<. {_12433~[_12433 > 20, _12433 =< 100]} 
+            findall(_16508,findall_can_terminates(_16508,light_on,10, {_12433~[_12433 > 20, _12433 =< 100]} ),[turn_light_off])
+                findall_can_terminates(turn_light_off,light_on,10, {_16972~[_16972 > 10, _16972 =< 100]} )
+                     {_17140~[_17140 > 10, _17140 < 100]} .>.10
+                     {_17140~[_17140 > 10, _17140 < 100]} .<. {_16972~[_16972 > 10, _16972 =< 100]} 
+                    can_terminates(turn_light_off,light_on, {_17140~[_17140 > 10, _17140 < 100]} )
+            not_terminated(light_on,[turn_light_off],10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                terminated(turn_light_off,light_on,20,10, {_12433~[_12433 > 20, _12433 =< 100]} )
+                    20.>.10
+                    20.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+                    can_terminates(turn_light_off,light_on,20)
+                    happens(turn_light_off,20)
+                    terminates(turn_light_off,light_on,20)
+                        builtin(!spy)
+                        holdsAt(light_on,20)
+                             {_19433~[_19433 > 0, _19433 < 20]} .>.0
+                             {_19433~[_19433 > 0, _19433 < 20]} .<.20
+                            max_time(100)
+                            20.=<.100
+                            initiates(turn_light_on,light_on, {_19433~[_19433 > 0, _19433 < 20]} )
+                                builtin(!spy)
+                                not_holdsAt(light_on, {_19433~[_19433 > 0, _19433 < 20]} )
+                                     {_21318~[_21318 > 0, _21318 < 20]} .>.0
+                                     {_21318~[_21318 > 0, _21318 < 20]} .<. {_19433~[_19433 > 0, _19433 < 20]} 
+                                    max_time(100)
+                                     {_19433~[_19433 > 0, _19433 < 20]} .=<.100
+                                    terminates(turn_light_off,light_on, {_21318~[_21318 > 0, _21318 < 20]} )
+                                        builtin(!spy)
+                                        holdsAt(light_on, {_21318~[_21318 > 0, _21318 < 20]} )
+                                             {_23722~[_23722 > 0, _23722 < 20]} .>.0
+                                             {_23722~[_23722 > 0, _23722 < 20]} .<. {_21318~[_21318 > 0, _21318 < 20]} 
+                                            max_time(100)
+                                             {_21318~[_21318 > 0, _21318 < 20]} .=<.100
+                                            initiates(turn_light_on,light_on, {_23722~[_23722 > 0, _23722 < 20]} )
+                                                builtin(!spy)
+                                                not_holdsAt(light_on, {_23722~[_23722 > 0, _23722 < 20]} )
+                                                     {_26297~[_26297 > 0, _26297 < 20]} .>.0
+                                                     {_26297~[_26297 > 0, _26297 < 20]} .<. {_23722~[_23722 > 0, _23722 < 20]} 
+                                                    max_time(100)
+                                                     {_23722~[_23722 > 0, _23722 < 20]} .=<.100
+                                                    terminates(turn_light_off,light_on, {_26297~[_26297 > 0, _26297 < 20]} )
+                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+        10.>.0
+        10.<. {_12433~[_12433 > 20, _12433 =< 100]} 
+        max_time(100)
+         {_12433~[_12433 > 20, _12433 =< 100]} .=<.100
+        initiates(turn_light_on,light_on,10)
+            builtin(!spy)
+            not_holdsAt(light_on,10)
+                10.>=.0
+                max_time(100)
+                10.=<.100
+                initiallyN(light_on)
+                not_startedIn(0,light_on,10)
+                    0.=<.10
+                    findall(_14669,findall_can_initiates(_14669,light_on,0,10),[turn_light_on])
+                        findall_can_initiates(turn_light_on,light_on,0, {_15294~[_15294 > 0, _15294 < 100]} )
+                             {_15576~[_15576 > 0, _15576 < 100]} .>.0
+                             {_15576~[_15576 > 0, _15576 < 100]} .<. {_15294~[_15294 > 0, _15294 < 100]} 
+                            can_initiates(turn_light_on,light_on, {_15576~[_15576 > 0, _15576 < 100]} )
+                    not_initiated(light_on,[turn_light_on],0,10)
+                        findall(_15701,initiated(turn_light_on,light_on,_15701,0,10),[])
+                        all_entirely_outside_of_interval([],0,10)
+                        not_initiated(light_on,[],0,10)
+        happens(turn_light_on,10)
+        not_stoppedIn(10,light_on, {_12433~[_12433 > 20, _12433 =< 100]} )
+            10.=<. {_12433~[_12433 > 20, _12433 =< 100]} 
+            findall(_16508,findall_can_terminates(_16508,light_on,10,
+timeout
+
+
+  real      0:01.50
+  real [s]  1.50
+  user [s]  0.32
+  sys  [s]  0.10
+  mem  [KB] 27272
+  avgm [KB] 0

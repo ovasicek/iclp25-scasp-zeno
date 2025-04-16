@@ -1,0 +1,8 @@
+WARNING: Running increment n. 1
+WARNING:   New incremental fact: incr_happens(fade_in_end,20)
+WARNING: Running increment n. 2
+WARNING:   New incremental fact: incr_happens(fade_out_end,30)
+WARNING: Running increment n. 3
+WARNING:   New incremental fact: incr_happens(fade_in_end,40)
+WARNING: Running increment n. 4
+WARNING:   No new incremental facts. Ending incremental resoning.

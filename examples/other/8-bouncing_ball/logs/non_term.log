@@ -1,0 +1,697 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp-interval_not.pl ./model.pl -v6 --timeout=3000
+
+
+% QUERY:?- happens(hit_ground,T).
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hit_ground,_410916)
+        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hit_ground,20)
+        builtin(!spy)
+        holdsAt(height(0),20,falling)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(falling,10,height(0),20)
+            can_initiates(fall_down,falling,10)
+            happens(fall_down,10)
+                happens(drop,10)
+            initiates(fall_down,falling,10)
+            trajectory(falling,10,height(0),20)
+                initiallyP(constant_fall_rate(1))
+                0.=.10-(20-10)*1
+                holdsAt(height(10),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(height(10))
+                    not_stoppedIn(0,height(10),10)
+                        0.=<.10
+                        not_interrupted(terminates,height(10),0,10)
+                            findall(_414220,findall_can_interrupts(terminates,_414220,height(10),0,10),[catch,stop_bouncing])
+                                findall_can_interrupts(terminates,catch,height(10),0,10)
+                                     {_414550~[_414550 > 0, _414550 < 10]} .>.0
+                                     {_414550~[_414550 > 0, _414550 < 10]} .<.10
+                                    can_interrupts(terminates,catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                        can_terminates(catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                findall_can_interrupts(terminates,stop_bouncing,height(10),0,10)
+                                     {_414377~[_414377 > 0, _414377 < 10]} .>.0
+                                     {_414377~[_414377 > 0, _414377 < 10]} .<.10
+                                    can_interrupts(terminates,stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                                        can_terminates(stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                            not_interrupted_N(terminates,height(10),[catch,stop_bouncing],0,10)
+                                not_interrupted_1(terminates,height(10),[catch,stop_bouncing],0,10)
+                                    inf(0,0)
+                                    sup(0,0)
+                                    is_not_interval(0,0)
+                                        0.=.0
+                                    inf(10,10)
+                                    sup(10,10)
+                                    is_not_interval(10,10)
+                                        10.=.10
+                                    not_interrupted_1_fail(terminates,height(10),[catch,stop_bouncing],0,10)
+                                        findall(_415846,interrupt_1_fail(terminates,catch,height(10),_415846,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_1_fail(terminates,height(10),[stop_bouncing],0,10)
+                                            interrupt_1_fail(terminates,stop_bouncing,height(10), {_416357~[_416357 > 0, _416357 < 10]} ,0,10)
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .>.0
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .<.10
+                                                happens(stop_bouncing, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                    happens(hit_ground, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hit_ground,20)
+        builtin(!spy)
+        holdsAt(height(0),20,falling)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(falling,10,height(0),20)
+            can_initiates(fall_down,falling,10)
+            happens(fall_down,10)
+                happens(drop,10)
+            initiates(fall_down,falling,10)
+            trajectory(falling,10,height(0),20)
+                initiallyP(constant_fall_rate(1))
+                0.=.10-(20-10)*1
+                holdsAt(height(10),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(height(10))
+                    not_stoppedIn(0,height(10),10)
+                        0.=<.10
+                        not_interrupted(terminates,height(10),0,10)
+                            findall(_414220,findall_can_interrupts(terminates,_414220,height(10),0,10),[catch,stop_bouncing])
+                                findall_can_interrupts(terminates,catch,height(10),0,10)
+                                     {_414550~[_414550 > 0, _414550 < 10]} .>.0
+                                     {_414550~[_414550 > 0, _414550 < 10]} .<.10
+                                    can_interrupts(terminates,catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                        can_terminates(catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                findall_can_interrupts(terminates,stop_bouncing,height(10),0,10)
+                                     {_414377~[_414377 > 0, _414377 < 10]} .>.0
+                                     {_414377~[_414377 > 0, _414377 < 10]} .<.10
+                                    can_interrupts(terminates,stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                                        can_terminates(stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                            not_interrupted_N(terminates,height(10),[catch,stop_bouncing],0,10)
+                                not_interrupted_1(terminates,height(10),[catch,stop_bouncing],0,10)
+                                    inf(0,0)
+                                    sup(0,0)
+                                    is_not_interval(0,0)
+                                        0.=.0
+                                    inf(10,10)
+                                    sup(10,10)
+                                    is_not_interval(10,10)
+                                        10.=.10
+                                    not_interrupted_1_fail(terminates,height(10),[catch,stop_bouncing],0,10)
+                                        findall(_415846,interrupt_1_fail(terminates,catch,height(10),_415846,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_1_fail(terminates,height(10),[stop_bouncing],0,10)
+                                            interrupt_1_fail(terminates,stop_bouncing,height(10), {_416357~[_416357 > 0, _416357 < 10]} ,0,10)
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .>.0
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .<.10
+                                                happens(stop_bouncing, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                    happens(hit_ground, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(0), {_416357~[_416357 > 0, _416357 < 10]} ,falling)
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .>.0
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .<. {_416357~[_416357 > 0, _416357 < 10]} 
+                                                            max_time(100)
+                                                             {_416357~[_416357 > 0, _416357 < 10]} .=<.100
+                                                            can_trajectory(falling, {_418394~[_418394 > 0, _418394 < 10]} ,height(0), {_416357~[_416357 > 0, _416357 < 10]} )
+                                                            can_initiates(fall_down,falling, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                            happens(fall_down, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                happens(reach_apex, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                    builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hit_ground,20)
+        builtin(!spy)
+        holdsAt(height(0),20,falling)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(falling,10,height(0),20)
+            can_initiates(fall_down,falling,10)
+            happens(fall_down,10)
+                happens(drop,10)
+            initiates(fall_down,falling,10)
+            trajectory(falling,10,height(0),20)
+                initiallyP(constant_fall_rate(1))
+                0.=.10-(20-10)*1
+                holdsAt(height(10),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(height(10))
+                    not_stoppedIn(0,height(10),10)
+                        0.=<.10
+                        not_interrupted(terminates,height(10),0,10)
+                            findall(_414220,findall_can_interrupts(terminates,_414220,height(10),0,10),[catch,stop_bouncing])
+                                findall_can_interrupts(terminates,catch,height(10),0,10)
+                                     {_414550~[_414550 > 0, _414550 < 10]} .>.0
+                                     {_414550~[_414550 > 0, _414550 < 10]} .<.10
+                                    can_interrupts(terminates,catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                        can_terminates(catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                findall_can_interrupts(terminates,stop_bouncing,height(10),0,10)
+                                     {_414377~[_414377 > 0, _414377 < 10]} .>.0
+                                     {_414377~[_414377 > 0, _414377 < 10]} .<.10
+                                    can_interrupts(terminates,stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                                        can_terminates(stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                            not_interrupted_N(terminates,height(10),[catch,stop_bouncing],0,10)
+                                not_interrupted_1(terminates,height(10),[catch,stop_bouncing],0,10)
+                                    inf(0,0)
+                                    sup(0,0)
+                                    is_not_interval(0,0)
+                                        0.=.0
+                                    inf(10,10)
+                                    sup(10,10)
+                                    is_not_interval(10,10)
+                                        10.=.10
+                                    not_interrupted_1_fail(terminates,height(10),[catch,stop_bouncing],0,10)
+                                        findall(_415846,interrupt_1_fail(terminates,catch,height(10),_415846,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_1_fail(terminates,height(10),[stop_bouncing],0,10)
+                                            interrupt_1_fail(terminates,stop_bouncing,height(10), {_416357~[_416357 > 0, _416357 < 10]} ,0,10)
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .>.0
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .<.10
+                                                happens(stop_bouncing, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                    happens(hit_ground, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(0), {_416357~[_416357 > 0, _416357 < 10]} ,falling)
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .>.0
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .<. {_416357~[_416357 > 0, _416357 < 10]} 
+                                                            max_time(100)
+                                                             {_416357~[_416357 > 0, _416357 < 10]} .=<.100
+                                                            can_trajectory(falling, {_418394~[_418394 > 0, _418394 < 10]} ,height(0), {_416357~[_416357 > 0, _416357 < 10]} )
+                                                            can_initiates(fall_down,falling, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                            happens(fall_down, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                happens(reach_apex, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(velocity(0), {_418394~[_418394 > 0, _418394 < 10]} ,rising)
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .>.0
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .<. {_418394~[_418394 > 0, _418394 < 10]} 
+                                                                        max_time(100)
+                                                                         {_418394~[_418394 > 0, _418394 < 10]} .=<.100
+                                                                        can_trajectory(rising, {_421318~[_421318 > 0, _421318 < 10]} ,velocity(0), {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                        can_initiates(bounce_up,rising, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                        happens(bounce_up, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                            happens(hit_ground, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hit_ground,20)
+        builtin(!spy)
+        holdsAt(height(0),20,falling)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(falling,10,height(0),20)
+            can_initiates(fall_down,falling,10)
+            happens(fall_down,10)
+                happens(drop,10)
+            initiates(fall_down,falling,10)
+            trajectory(falling,10,height(0),20)
+                initiallyP(constant_fall_rate(1))
+                0.=.10-(20-10)*1
+                holdsAt(height(10),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(height(10))
+                    not_stoppedIn(0,height(10),10)
+                        0.=<.10
+                        not_interrupted(terminates,height(10),0,10)
+                            findall(_414220,findall_can_interrupts(terminates,_414220,height(10),0,10),[catch,stop_bouncing])
+                                findall_can_interrupts(terminates,catch,height(10),0,10)
+                                     {_414550~[_414550 > 0, _414550 < 10]} .>.0
+                                     {_414550~[_414550 > 0, _414550 < 10]} .<.10
+                                    can_interrupts(terminates,catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                        can_terminates(catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                findall_can_interrupts(terminates,stop_bouncing,height(10),0,10)
+                                     {_414377~[_414377 > 0, _414377 < 10]} .>.0
+                                     {_414377~[_414377 > 0, _414377 < 10]} .<.10
+                                    can_interrupts(terminates,stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                                        can_terminates(stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                            not_interrupted_N(terminates,height(10),[catch,stop_bouncing],0,10)
+                                not_interrupted_1(terminates,height(10),[catch,stop_bouncing],0,10)
+                                    inf(0,0)
+                                    sup(0,0)
+                                    is_not_interval(0,0)
+                                        0.=.0
+                                    inf(10,10)
+                                    sup(10,10)
+                                    is_not_interval(10,10)
+                                        10.=.10
+                                    not_interrupted_1_fail(terminates,height(10),[catch,stop_bouncing],0,10)
+                                        findall(_415846,interrupt_1_fail(terminates,catch,height(10),_415846,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_1_fail(terminates,height(10),[stop_bouncing],0,10)
+                                            interrupt_1_fail(terminates,stop_bouncing,height(10), {_416357~[_416357 > 0, _416357 < 10]} ,0,10)
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .>.0
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .<.10
+                                                happens(stop_bouncing, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                    happens(hit_ground, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(0), {_416357~[_416357 > 0, _416357 < 10]} ,falling)
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .>.0
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .<. {_416357~[_416357 > 0, _416357 < 10]} 
+                                                            max_time(100)
+                                                             {_416357~[_416357 > 0, _416357 < 10]} .=<.100
+                                                            can_trajectory(falling, {_418394~[_418394 > 0, _418394 < 10]} ,height(0), {_416357~[_416357 > 0, _416357 < 10]} )
+                                                            can_initiates(fall_down,falling, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                            happens(fall_down, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                happens(reach_apex, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(velocity(0), {_418394~[_418394 > 0, _418394 < 10]} ,rising)
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .>.0
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .<. {_418394~[_418394 > 0, _418394 < 10]} 
+                                                                        max_time(100)
+                                                                         {_418394~[_418394 > 0, _418394 < 10]} .=<.100
+                                                                        can_trajectory(rising, {_421318~[_421318 > 0, _421318 < 10]} ,velocity(0), {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                        can_initiates(bounce_up,rising, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                        happens(bounce_up, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                            happens(hit_ground, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                builtin(!spy)
+                                                                                holdsAt(height(0), {_421318~[_421318 > 0, _421318 < 10]} ,falling)
+                                                                                     {_424486~[_424486 > 0, _424486 < 10]} .>.0
+                                                                                     {_424486~[_424486 > 0, _424486 < 10]} .<. {_421318~[_421318 > 0, _421318 < 10]} 
+                                                                                    max_time(100)
+                                                                                     {_421318~[_421318 > 0, _421318 < 10]} .=<.100
+                                                                                    can_trajectory(falling, {_424486~[_424486 > 0, _424486 < 10]} ,height(0), {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                    can_initiates(fall_down,falling, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                    happens(fall_down, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                        happens(reach_apex, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                            builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hit_ground,20)
+        builtin(!spy)
+        holdsAt(height(0),20,falling)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(falling,10,height(0),20)
+            can_initiates(fall_down,falling,10)
+            happens(fall_down,10)
+                happens(drop,10)
+            initiates(fall_down,falling,10)
+            trajectory(falling,10,height(0),20)
+                initiallyP(constant_fall_rate(1))
+                0.=.10-(20-10)*1
+                holdsAt(height(10),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(height(10))
+                    not_stoppedIn(0,height(10),10)
+                        0.=<.10
+                        not_interrupted(terminates,height(10),0,10)
+                            findall(_414220,findall_can_interrupts(terminates,_414220,height(10),0,10),[catch,stop_bouncing])
+                                findall_can_interrupts(terminates,catch,height(10),0,10)
+                                     {_414550~[_414550 > 0, _414550 < 10]} .>.0
+                                     {_414550~[_414550 > 0, _414550 < 10]} .<.10
+                                    can_interrupts(terminates,catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                        can_terminates(catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                findall_can_interrupts(terminates,stop_bouncing,height(10),0,10)
+                                     {_414377~[_414377 > 0, _414377 < 10]} .>.0
+                                     {_414377~[_414377 > 0, _414377 < 10]} .<.10
+                                    can_interrupts(terminates,stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                                        can_terminates(stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                            not_interrupted_N(terminates,height(10),[catch,stop_bouncing],0,10)
+                                not_interrupted_1(terminates,height(10),[catch,stop_bouncing],0,10)
+                                    inf(0,0)
+                                    sup(0,0)
+                                    is_not_interval(0,0)
+                                        0.=.0
+                                    inf(10,10)
+                                    sup(10,10)
+                                    is_not_interval(10,10)
+                                        10.=.10
+                                    not_interrupted_1_fail(terminates,height(10),[catch,stop_bouncing],0,10)
+                                        findall(_415846,interrupt_1_fail(terminates,catch,height(10),_415846,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_1_fail(terminates,height(10),[stop_bouncing],0,10)
+                                            interrupt_1_fail(terminates,stop_bouncing,height(10), {_416357~[_416357 > 0, _416357 < 10]} ,0,10)
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .>.0
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .<.10
+                                                happens(stop_bouncing, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                    happens(hit_ground, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(0), {_416357~[_416357 > 0, _416357 < 10]} ,falling)
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .>.0
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .<. {_416357~[_416357 > 0, _416357 < 10]} 
+                                                            max_time(100)
+                                                             {_416357~[_416357 > 0, _416357 < 10]} .=<.100
+                                                            can_trajectory(falling, {_418394~[_418394 > 0, _418394 < 10]} ,height(0), {_416357~[_416357 > 0, _416357 < 10]} )
+                                                            can_initiates(fall_down,falling, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                            happens(fall_down, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                happens(reach_apex, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(velocity(0), {_418394~[_418394 > 0, _418394 < 10]} ,rising)
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .>.0
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .<. {_418394~[_418394 > 0, _418394 < 10]} 
+                                                                        max_time(100)
+                                                                         {_418394~[_418394 > 0, _418394 < 10]} .=<.100
+                                                                        can_trajectory(rising, {_421318~[_421318 > 0, _421318 < 10]} ,velocity(0), {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                        can_initiates(bounce_up,rising, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                        happens(bounce_up, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                            happens(hit_ground, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                builtin(!spy)
+                                                                                holdsAt(height(0), {_421318~[_421318 > 0, _421318 < 10]} ,falling)
+                                                                                     {_424486~[_424486 > 0, _424486 < 10]} .>.0
+                                                                                     {_424486~[_424486 > 0, _424486 < 10]} .<. {_421318~[_421318 > 0, _421318 < 10]} 
+                                                                                    max_time(100)
+                                                                                     {_421318~[_421318 > 0, _421318 < 10]} .=<.100
+                                                                                    can_trajectory(falling, {_424486~[_424486 > 0, _424486 < 10]} ,height(0), {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                    can_initiates(fall_down,falling, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                    happens(fall_down, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                        happens(reach_apex, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                            builtin(!spy)
+                                                                                            holdsAt(velocity(0), {_424486~[_424486 > 0, _424486 < 10]} ,rising)
+                                                                                                 {_427859~[_427859 > 0, _427859 < 10]} .>.0
+                                                                                                 {_427859~[_427859 > 0, _427859 < 10]} .<. {_424486~[_424486 > 0, _424486 < 10]} 
+                                                                                                max_time(100)
+                                                                                                 {_424486~[_424486 > 0, _424486 < 10]} .=<.100
+                                                                                                can_trajectory(rising, {_427859~[_427859 > 0, _427859 < 10]} ,velocity(0), {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                                can_initiates(bounce_up,rising, {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                happens(bounce_up, {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                    happens(hit_ground, {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hit_ground,20)
+        builtin(!spy)
+        holdsAt(height(0),20,falling)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(falling,10,height(0),20)
+            can_initiates(fall_down,falling,10)
+            happens(fall_down,10)
+                happens(drop,10)
+            initiates(fall_down,falling,10)
+            trajectory(falling,10,height(0),20)
+                initiallyP(constant_fall_rate(1))
+                0.=.10-(20-10)*1
+                holdsAt(height(10),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(height(10))
+                    not_stoppedIn(0,height(10),10)
+                        0.=<.10
+                        not_interrupted(terminates,height(10),0,10)
+                            findall(_414220,findall_can_interrupts(terminates,_414220,height(10),0,10),[catch,stop_bouncing])
+                                findall_can_interrupts(terminates,catch,height(10),0,10)
+                                     {_414550~[_414550 > 0, _414550 < 10]} .>.0
+                                     {_414550~[_414550 > 0, _414550 < 10]} .<.10
+                                    can_interrupts(terminates,catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                        can_terminates(catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                findall_can_interrupts(terminates,stop_bouncing,height(10),0,10)
+                                     {_414377~[_414377 > 0, _414377 < 10]} .>.0
+                                     {_414377~[_414377 > 0, _414377 < 10]} .<.10
+                                    can_interrupts(terminates,stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                                        can_terminates(stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                            not_interrupted_N(terminates,height(10),[catch,stop_bouncing],0,10)
+                                not_interrupted_1(terminates,height(10),[catch,stop_bouncing],0,10)
+                                    inf(0,0)
+                                    sup(0,0)
+                                    is_not_interval(0,0)
+                                        0.=.0
+                                    inf(10,10)
+                                    sup(10,10)
+                                    is_not_interval(10,10)
+                                        10.=.10
+                                    not_interrupted_1_fail(terminates,height(10),[catch,stop_bouncing],0,10)
+                                        findall(_415846,interrupt_1_fail(terminates,catch,height(10),_415846,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_1_fail(terminates,height(10),[stop_bouncing],0,10)
+                                            interrupt_1_fail(terminates,stop_bouncing,height(10), {_416357~[_416357 > 0, _416357 < 10]} ,0,10)
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .>.0
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .<.10
+                                                happens(stop_bouncing, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                    happens(hit_ground, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(0), {_416357~[_416357 > 0, _416357 < 10]} ,falling)
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .>.0
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .<. {_416357~[_416357 > 0, _416357 < 10]} 
+                                                            max_time(100)
+                                                             {_416357~[_416357 > 0, _416357 < 10]} .=<.100
+                                                            can_trajectory(falling, {_418394~[_418394 > 0, _418394 < 10]} ,height(0), {_416357~[_416357 > 0, _416357 < 10]} )
+                                                            can_initiates(fall_down,falling, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                            happens(fall_down, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                happens(reach_apex, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(velocity(0), {_418394~[_418394 > 0, _418394 < 10]} ,rising)
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .>.0
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .<. {_418394~[_418394 > 0, _418394 < 10]} 
+                                                                        max_time(100)
+                                                                         {_418394~[_418394 > 0, _418394 < 10]} .=<.100
+                                                                        can_trajectory(rising, {_421318~[_421318 > 0, _421318 < 10]} ,velocity(0), {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                        can_initiates(bounce_up,rising, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                        happens(bounce_up, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                            happens(hit_ground, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                builtin(!spy)
+                                                                                holdsAt(height(0), {_421318~[_421318 > 0, _421318 < 10]} ,falling)
+                                                                                     {_424486~[_424486 > 0, _424486 < 10]} .>.0
+                                                                                     {_424486~[_424486 > 0, _424486 < 10]} .<. {_421318~[_421318 > 0, _421318 < 10]} 
+                                                                                    max_time(100)
+                                                                                     {_421318~[_421318 > 0, _421318 < 10]} .=<.100
+                                                                                    can_trajectory(falling, {_424486~[_424486 > 0, _424486 < 10]} ,height(0), {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                    can_initiates(fall_down,falling, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                    happens(fall_down, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                        happens(reach_apex, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                            builtin(!spy)
+                                                                                            holdsAt(velocity(0), {_424486~[_424486 > 0, _424486 < 10]} ,rising)
+                                                                                                 {_427859~[_427859 > 0, _427859 < 10]} .>.0
+                                                                                                 {_427859~[_427859 > 0, _427859 < 10]} .<. {_424486~[_424486 > 0, _424486 < 10]} 
+                                                                                                max_time(100)
+                                                                                                 {_424486~[_424486 > 0, _424486 < 10]} .=<.100
+                                                                                                can_trajectory(rising, {_427859~[_427859 > 0, _427859 < 10]} ,velocity(0), {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                                can_initiates(bounce_up,rising, {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                happens(bounce_up, {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                    happens(hit_ground, {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                        builtin(!spy)
+                                                                                                        holdsAt(height(0), {_427859~[_427859 > 0, _427859 < 10]} ,falling)
+                                                                                                             {_431463~[_431463 > 0, _431463 < 10]} .>.0
+                                                                                                             {_431463~[_431463 > 0, _431463 < 10]} .<. {_427859~[_427859 > 0, _427859 < 10]} 
+                                                                                                            max_time(100)
+                                                                                                             {_427859~[_427859 > 0, _427859 < 10]} .=<.100
+                                                                                                            can_trajectory(falling, {_431463~[_431463 > 0, _431463 < 10]} ,height(0), {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                            can_initiates(fall_down,falling, {_431463~[_431463 > 0, _431463 < 10]} )
+                                                                                                            happens(fall_down, {_431463~[_431463 > 0, _431463 < 10]} )
+                                                                                                                happens(reach_apex, {_431463~[_431463 > 0, _431463 < 10]} )
+                                                                                                                    builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hit_ground,20)
+        builtin(!spy)
+        holdsAt(height(0),20,falling)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(falling,10,height(0),20)
+            can_initiates(fall_down,falling,10)
+            happens(fall_down,10)
+                happens(drop,10)
+            initiates(fall_down,falling,10)
+            trajectory(falling,10,height(0),20)
+                initiallyP(constant_fall_rate(1))
+                0.=.10-(20-10)*1
+                holdsAt(height(10),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(height(10))
+                    not_stoppedIn(0,height(10),10)
+                        0.=<.10
+                        not_interrupted(terminates,height(10),0,10)
+                            findall(_414220,findall_can_interrupts(terminates,_414220,height(10),0,10),[catch,stop_bouncing])
+                                findall_can_interrupts(terminates,catch,height(10),0,10)
+                                     {_414550~[_414550 > 0, _414550 < 10]} .>.0
+                                     {_414550~[_414550 > 0, _414550 < 10]} .<.10
+                                    can_interrupts(terminates,catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                        can_terminates(catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                findall_can_interrupts(terminates,stop_bouncing,height(10),0,10)
+                                     {_414377~[_414377 > 0, _414377 < 10]} .>.0
+                                     {_414377~[_414377 > 0, _414377 < 10]} .<.10
+                                    can_interrupts(terminates,stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                                        can_terminates(stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                            not_interrupted_N(terminates,height(10),[catch,stop_bouncing],0,10)
+                                not_interrupted_1(terminates,height(10),[catch,stop_bouncing],0,10)
+                                    inf(0,0)
+                                    sup(0,0)
+                                    is_not_interval(0,0)
+                                        0.=.0
+                                    inf(10,10)
+                                    sup(10,10)
+                                    is_not_interval(10,10)
+                                        10.=.10
+                                    not_interrupted_1_fail(terminates,height(10),[catch,stop_bouncing],0,10)
+                                        findall(_415846,interrupt_1_fail(terminates,catch,height(10),_415846,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_1_fail(terminates,height(10),[stop_bouncing],0,10)
+                                            interrupt_1_fail(terminates,stop_bouncing,height(10), {_416357~[_416357 > 0, _416357 < 10]} ,0,10)
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .>.0
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .<.10
+                                                happens(stop_bouncing, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                    happens(hit_ground, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(0), {_416357~[_416357 > 0, _416357 < 10]} ,falling)
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .>.0
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .<. {_416357~[_416357 > 0, _416357 < 10]} 
+                                                            max_time(100)
+                                                             {_416357~[_416357 > 0, _416357 < 10]} .=<.100
+                                                            can_trajectory(falling, {_418394~[_418394 > 0, _418394 < 10]} ,height(0), {_416357~[_416357 > 0, _416357 < 10]} )
+                                                            can_initiates(fall_down,falling, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                            happens(fall_down, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                happens(reach_apex, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(velocity(0), {_418394~[_418394 > 0, _418394 < 10]} ,rising)
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .>.0
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .<. {_418394~[_418394 > 0, _418394 < 10]} 
+                                                                        max_time(100)
+                                                                         {_418394~[_418394 > 0, _418394 < 10]} .=<.100
+                                                                        can_trajectory(rising, {_421318~[_421318 > 0, _421318 < 10]} ,velocity(0), {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                        can_initiates(bounce_up,rising, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                        happens(bounce_up, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                            happens(hit_ground, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                builtin(!spy)
+                                                                                holdsAt(height(0), {_421318~[_421318 > 0, _421318 < 10]} ,falling)
+                                                                                     {_424486~[_424486 > 0, _424486 < 10]} .>.0
+                                                                                     {_424486~[_424486 > 0, _424486 < 10]} .<. {_421318~[_421318 > 0, _421318 < 10]} 
+                                                                                    max_time(100)
+                                                                                     {_421318~[_421318 > 0, _421318 < 10]} .=<.100
+                                                                                    can_trajectory(falling, {_424486~[_424486 > 0, _424486 < 10]} ,height(0), {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                    can_initiates(fall_down,falling, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                    happens(fall_down, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                        happens(reach_apex, {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                            builtin(!spy)
+                                                                                            holdsAt(velocity(0), {_424486~[_424486 > 0, _424486 < 10]} ,rising)
+                                                                                                 {_427859~[_427859 > 0, _427859 < 10]} .>.0
+                                                                                                 {_427859~[_427859 > 0, _427859 < 10]} .<. {_424486~[_424486 > 0, _424486 < 10]} 
+                                                                                                max_time(100)
+                                                                                                 {_424486~[_424486 > 0, _424486 < 10]} .=<.100
+                                                                                                can_trajectory(rising, {_427859~[_427859 > 0, _427859 < 10]} ,velocity(0), {_424486~[_424486 > 0, _424486 < 10]} )
+                                                                                                can_initiates(bounce_up,rising, {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                happens(bounce_up, {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                    happens(hit_ground, {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                        builtin(!spy)
+                                                                                                        holdsAt(height(0), {_427859~[_427859 > 0, _427859 < 10]} ,falling)
+                                                                                                             {_431463~[_431463 > 0, _431463 < 10]} .>.0
+                                                                                                             {_431463~[_431463 > 0, _431463 < 10]} .<. {_427859~[_427859 > 0, _427859 < 10]} 
+                                                                                                            max_time(100)
+                                                                                                             {_427859~[_427859 > 0, _427859 < 10]} .=<.100
+                                                                                                            can_trajectory(falling, {_431463~[_431463 > 0, _431463 < 10]} ,height(0), {_427859~[_427859 > 0, _427859 < 10]} )
+                                                                                                            can_initiates(fall_down,falling, {_431463~[_431463 > 0, _431463 < 10]} )
+                                                                                                            happens(fall_down, {_431463~[_431463 > 0, _431463 < 10]} )
+                                                                                                                happens(reach_apex, {_431463~[_431463 > 0, _431463 < 10]} )
+                                                                                                                    builtin(!spy)
+                                                                                                                    holdsAt(velocity(0), {_431463~[_431463 > 0, _431463 < 10]} ,rising)
+                                                                                                                         {_435272~[_435272 > 0, _435272 < 10]} .>.0
+                                                                                                                         {_435272~[_435272 > 0, _435272 < 10]} .<. {_431463~[_431463 > 0, _431463 < 10]} 
+                                                                                                                        max_time(100)
+                                                                                                                         {_431463~[_431463 > 0, _431463 < 10]} .=<.100
+                                                                                                                        can_trajectory(rising, {_435272~[_435272 > 0, _435272 < 10]} ,velocity(0), {_431463~[_431463 > 0, _431463 < 10]} )
+                                                                                                                        can_initiates(bounce_up,rising, {_435272~[_435272 > 0, _435272 < 10]} )
+                                                                                                                        happens(bounce_up, {_435272~[_435272 > 0, _435272 < 10]} )
+                                                                                                                            happens(hit_ground, {_435272~[_435272 > 0, _435272 < 10]} )
+                                                                                                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(hit_ground,20)
+        builtin(!spy)
+        holdsAt(height(0),20,falling)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(falling,10,height(0),20)
+            can_initiates(fall_down,falling,10)
+            happens(fall_down,10)
+                happens(drop,10)
+            initiates(fall_down,falling,10)
+            trajectory(falling,10,height(0),20)
+                initiallyP(constant_fall_rate(1))
+                0.=.10-(20-10)*1
+                holdsAt(height(10),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(height(10))
+                    not_stoppedIn(0,height(10),10)
+                        0.=<.10
+                        not_interrupted(terminates,height(10),0,10)
+                            findall(_414220,findall_can_interrupts(terminates,_414220,height(10),0,10),[catch,stop_bouncing])
+                                findall_can_interrupts(terminates,catch,height(10),0,10)
+                                     {_414550~[_414550 > 0, _414550 < 10]} .>.0
+                                     {_414550~[_414550 > 0, _414550 < 10]} .<.10
+                                    can_interrupts(terminates,catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                        can_terminates(catch,height(10), {_414550~[_414550 > 0, _414550 < 10]} )
+                                findall_can_interrupts(terminates,stop_bouncing,height(10),0,10)
+                                     {_414377~[_414377 > 0, _414377 < 10]} .>.0
+                                     {_414377~[_414377 > 0, _414377 < 10]} .<.10
+                                    can_interrupts(terminates,stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                                        can_terminates(stop_bouncing,height(10), {_414377~[_414377 > 0, _414377 < 10]} )
+                            not_interrupted_N(terminates,height(10),[catch,stop_bouncing],0,10)
+                                not_interrupted_1(terminates,height(10),[catch,stop_bouncing],0,10)
+                                    inf(0,0)
+                                    sup(0,0)
+                                    is_not_interval(0,0)
+                                        0.=.0
+                                    inf(10,10)
+                                    sup(10,10)
+                                    is_not_interval(10,10)
+                                        10.=.10
+                                    not_interrupted_1_fail(terminates,height(10),[catch,stop_bouncing],0,10)
+                                        findall(_415846,interrupt_1_fail(terminates,catch,height(10),_415846,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_1_fail(terminates,height(10),[stop_bouncing],0,10)
+                                            interrupt_1_fail(terminates,stop_bouncing,height(10), {_416357~[_416357 > 0, _416357 < 10]} ,0,10)
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .>.0
+                                                 {_416357~[_416357 > 0, _416357 < 10]} .<.10
+                                                happens(stop_bouncing, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                    happens(hit_ground, {_416357~[_416357 > 0, _416357 < 10]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(0), {_416357~[_416357 > 0, _416357 < 10]} ,falling)
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .>.0
+                                                             {_418394~[_418394 > 0, _418394 < 10]} .<. {_416357~[_416357 > 0, _416357 < 10]} 
+                                                            max_time(100)
+                                                             {_416357~[_416357 > 0, _416357 < 10]} .=<.100
+                                                            can_trajectory(falling, {_418394~[_418394 > 0, _418394 < 10]} ,height(0), {_416357~[_416357 > 0, _416357 < 10]} )
+                                                            can_initiates(fall_down,falling, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                            happens(fall_down, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                happens(reach_apex, {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(velocity(0), {_418394~[_418394 > 0, _418394 < 10]} ,rising)
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .>.0
+                                                                         {_421318~[_421318 > 0, _421318 < 10]} .<. {_418394~[_418394 > 0, _418394 < 10]} 
+                                                                        max_time(100)
+                                                                         {_418394~[_418394 > 0, _418394 < 10]} .=<.100
+                                                                        can_trajectory(rising, {_421318~[_421318 > 0, _421318 < 10]} ,velocity(0), {_418394~[_418394 > 0, _418394 < 10]} )
+                                                                        can_initiates(bounce_up,rising, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                        happens(bounce_up, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                            happens(hit_ground, {_421318~[_421318 > 0, _421318 < 10]} )
+                                                                                builtin(!spy)
+                                                                                holdsAt(height(0), {_421318~[_421318 > 0, _421318 < 10]} ,falling)
+                                                                                    
+timeout
+
+
+  real      0:03.57
+  real [s]  3.57
+  user [s]  1.29
+  sys  [s]  0.12
+  mem  [KB] 33412
+  avgm [KB] 0
