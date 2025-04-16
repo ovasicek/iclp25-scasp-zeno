@@ -1,0 +1,65 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
+
+
+% QUERY:?- happens(hitGround(apple),T).
+
+WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
+	happens(hitGround(apple), {_204890~[_204890 > 0, _204890 < 5]} )
+	happens(hitGround(apple), {_205655~[_205655 > 0, _205655 < 5]} )
+
+
+--------------------- Calling:  happens(hitGround(apple),_205655) -------------
+    happens(hitGround(apple),25)
+        builtin(!spy)
+        holdsAt(height(apple,0),25)
+            5.>.0
+            5.<.25
+            max_time(100)
+            25.=<.100
+            can_trajectory(falling(apple),5,height(apple,0),25)
+            can_initiates(drop(nathan,apple),falling(apple),5)
+            happens(drop(nathan,apple),5)
+            initiates(drop(nathan,apple),falling(apple),5)
+                agent(nathan)
+                object(apple)
+            trajectory(falling(apple),5,height(apple,0),25)
+                fGravity(1)
+                proved(object(apple))
+                0.=.20-1*(25-5)
+                holdsAt(height(apple,20),5)
+                    5.>=.0
+                    max_time(100)
+                    5.=<.100
+                    initiallyP(height(apple,20))
+                        initHeight(20)
+                    not_stoppedIn(0,height(apple,20),5)
+                        0.=<.5
+                        not_interrupted(terminates,height(apple,20),0,5)
+                            findall(_204240,findall_can_interrupts(terminates,_204240,height(apple,20),0,5),[hitGround(apple)])
+                                findall_can_interrupts(terminates,hitGround(apple),height(apple,20),0,5)
+                                     {_204417~[_204417 > 0, _204417 < 5]} .>.0
+                                     {_204417~[_204417 > 0, _204417 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_204417~[_204417 > 0, _204417 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_204417~[_204417 > 0, _204417 < 5]} )
+                            not_interrupted_(terminates,height(apple,20),[hitGround(apple)],0,5)
+                                interrupted(terminates,hitGround(apple),height(apple,20), {_204890~[_204890 > 0, _204890 < 5]} ,0,5)
+                                     {_204890~[_204890 > 0, _204890 < 5]} .>.0
+                                     {_204890~[_204890 > 0, _204890 < 5]} .<.5
+                                    can_interrupts(terminates,hitGround(apple),height(apple,20), {_204890~[_204890 > 0, _204890 < 5]} )
+                                        can_terminates(hitGround(apple),height(apple,20), {_204890~[_204890 > 0, _204890 < 5]} )
+                                    happens(hitGround(apple), {_204890~[_204890 > 0, _204890 < 5]} )
+                                        builtin(!spy)
+                                        holdsAt(height(apple,0), {_204890~[_204890 > 0, _204890 < 5]} )
+                                             {_205655~[_205655 > 0, _205655 < 5]} .>.0
+                                             {_205655~[_205655 > 0, _205655 < 5]} .<. {_204890~[_204890 > 0, _204890 < 5]} 
+                                            max_time(100)
+                                             {_204890~[_204890 > 0, _204890 < 5]} .=<.100
+                                            can_initiates(hitGround(apple),height(apple,0), {_205655~[_205655 > 0, _205655 < 5]} )
+                                            happens(hitGround(apple), {_205655~[_205655 > 0, _205655 < 5]} )
+
+  real      0:00.52
+  real [s]  0.52
+  user [s]  0.29
+  sys  [s]  0.07
+  mem  [KB] 29204
+  avgm [KB] 0

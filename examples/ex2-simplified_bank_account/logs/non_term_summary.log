@@ -1,0 +1,79 @@
+Below is the simplified and the full version of the 3rd output of !spy produced by this non-terminating example.
+The simplified version omits most predicates to highlight the chain of events.
+
+========================================================================================================================
+Simplified !spy output: (removed most predicates to highlight the chain of events)
+========================================================================================================================
+
+--------------------- Calling:  builtin(!spy) -------------
+happens(serviceFee, {T1~[T1 > 0, T1 =< 100]})                       % T1
+  holdsAt(noServiceFeeYet, {T1~[T1 > 0, T1 =< 100]})
+    {T1~[T1 > 0, T1 =< 100]} .>=.0
+    max_time(100)
+    {T1~[T1 > 0, T1 =< 100]} .=<.100
+    initiallyP(noServiceFeeYet)
+    not_stoppedIn(0,noServiceFeeYet, {T1~[T1 > 0, T1 =< 100]})
+      {T2~[T2 > 0, T2 < 100]} .>.0
+      {T2~[T2 > 0, T2 < 100]} .<. {T1~[T1 > 0, T1 =< 100]}          % T2 < T1
+      happens(serviceFee, {T2~[T2 > 0, T2 < 100]})                  % T2
+        holdsAt(noServiceFeeYet, {T2~[T2 > 0, T2 < 100]})
+          {T2~[T2 > 0, T2 < 100]} .>=.0
+          {T2~[T2 > 0, T2 < 100]} .=<.100
+          initiallyP(noServiceFeeYet)
+          not_stoppedIn(0,noServiceFeeYet, {T2~[T2 > 0, T2 < 100]})
+              {T3~[T3 > 0, T3 < 100]} .>.0
+              {T3~[T3 > 0, T3 < 100]} .<. {T2~[T2 > 0, T2 < 100]}   % T3 < T2
+              happens(serviceFee, {T3~[T3 > 0, T3 < 100]})          % T3
+
+
+========================================================================================================================
+Full !spy output:
+========================================================================================================================
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(serviceFee, {_101073~[_101073 > 0, _101073 =< 100]} )
+        builtin(!spy)
+        holdsAt(noServiceFeeYet, {_101073~[_101073 > 0, _101073 =< 100]} )
+             {_101073~[_101073 > 0, _101073 =< 100]} .>=.0
+            max_time(100)
+             {_101073~[_101073 > 0, _101073 =< 100]} .=<.100
+            initiallyP(noServiceFeeYet)
+            not_stoppedIn(0,noServiceFeeYet, {_101073~[_101073 > 0, _101073 =< 100]} )
+                0.=<. {_101073~[_101073 > 0, _101073 =< 100]} 
+                not_interrupted(terminates,noServiceFeeYet,0, {_101073~[_101073 > 0, _101073 =< 100]} )
+                    findall(_101975,findall_can_interrupts(terminates,_101975,noServiceFeeYet,0, {_101073~[_101073 > 0, _101073 =< 100]} ),[serviceFee])
+                        findall_can_interrupts(terminates,serviceFee,noServiceFeeYet,0, {_102120~[_102120 > 0, _102120 =< 100]} )
+                             {_102278~[_102278 > 0, _102278 < 100]} .>.0
+                             {_102278~[_102278 > 0, _102278 < 100]} .<. {_102120~[_102120 > 0, _102120 =< 100]} 
+                            can_interrupts(terminates,serviceFee,noServiceFeeYet, {_102278~[_102278 > 0, _102278 < 100]} )
+                                can_terminates(serviceFee,noServiceFeeYet, {_102278~[_102278 > 0, _102278 < 100]} )
+                    not_interrupted_(terminates,noServiceFeeYet,[serviceFee],0, {_101073~[_101073 > 0, _101073 =< 100]} )
+                        interrupted(terminates,serviceFee,noServiceFeeYet, {_102672~[_102672 > 0, _102672 < 100]} ,0, {_101073~[_101073 > 0, _101073 =< 100]} )
+                             {_102672~[_102672 > 0, _102672 < 100]} .>.0
+                             {_102672~[_102672 > 0, _102672 < 100]} .<. {_101073~[_101073 > 0, _101073 =< 100]} 
+                            can_interrupts(terminates,serviceFee,noServiceFeeYet, {_102672~[_102672 > 0, _102672 < 100]} )
+                                can_terminates(serviceFee,noServiceFeeYet, {_102672~[_102672 > 0, _102672 < 100]} )
+                            happens(serviceFee, {_102672~[_102672 > 0, _102672 < 100]} )
+                                builtin(!spy)
+                                holdsAt(noServiceFeeYet, {_102672~[_102672 > 0, _102672 < 100]} )
+                                     {_102672~[_102672 > 0, _102672 < 100]} .>=.0
+                                    max_time(100)
+                                     {_102672~[_102672 > 0, _102672 < 100]} .=<.100
+                                    proved(initiallyP(noServiceFeeYet))
+                                    not_stoppedIn(0,noServiceFeeYet, {_102672~[_102672 > 0, _102672 < 100]} )
+                                        0.=<. {_102672~[_102672 > 0, _102672 < 100]} 
+                                        not_interrupted(terminates,noServiceFeeYet,0, {_102672~[_102672 > 0, _102672 < 100]} )
+                                            findall(_105571,findall_can_interrupts(terminates,_105571,noServiceFeeYet,0, {_102672~[_102672 > 0, _102672 < 100]} ),[serviceFee])
+                                                findall_can_interrupts(terminates,serviceFee,noServiceFeeYet,0, {_105716~[_105716 > 0, _105716 < 100]} )
+                                                     {_106046~[_106046 > 0, _106046 < 100]} .>.0
+                                                     {_106046~[_106046 > 0, _106046 < 100]} .<. {_105716~[_105716 > 0, _105716 < 100]} 
+                                                    can_interrupts(terminates,serviceFee,noServiceFeeYet, {_106046~[_106046 > 0, _106046 < 100]} )
+                                                        can_terminates(serviceFee,noServiceFeeYet, {_106046~[_106046 > 0, _106046 < 100]} )
+                                            not_interrupted_(terminates,noServiceFeeYet,[serviceFee],0, {_102672~[_102672 > 0, _102672 < 100]} )
+                                                interrupted(terminates,serviceFee,noServiceFeeYet, {_106440~[_106440 > 0, _106440 < 100]} ,0, {_102672~[_102672 > 0, _102672 < 100]} )
+                                                     {_106440~[_106440 > 0, _106440 < 100]} .>.0
+                                                     {_106440~[_106440 > 0, _106440 < 100]} .<. {_102672~[_102672 > 0, _102672 < 100]} 
+                                                    can_interrupts(terminates,serviceFee,noServiceFeeYet, {_106440~[_106440 > 0, _106440 < 100]} )
+                                                        can_terminates(serviceFee,noServiceFeeYet, {_106440~[_106440 > 0, _106440 < 100]} )
+                                                    happens(serviceFee, {_106440~[_106440 > 0, _106440 < 100]} )
+                                                        builtin(!spy)

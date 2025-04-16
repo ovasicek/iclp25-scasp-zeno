@@ -1,0 +1,917 @@
+$ scasp -s0 --ec --incremental -w ../../axioms/bec_scasp.pl ./fix-incr.pl --tree
+
+
+Running increments
+
+WARNING: Running increment n. 1
+WARNING:   New incremental fact: incr_happens(hit_ground,20)
+
+WARNING: Running increment n. 2
+WARNING:   New incremental fact: incr_happens(reach_apex,30)
+
+WARNING: Running increment n. 3
+WARNING:   New incremental fact: incr_happens(hit_ground,40)
+
+WARNING: Running increment n. 4
+WARNING:   New incremental fact: incr_happens(reach_apex,50)
+
+WARNING: Running increment n. 5
+WARNING:   New incremental fact: incr_happens(hit_ground,60)
+
+WARNING: Running increment n. 6
+WARNING:   New incremental fact: incr_happens(reach_apex,70)
+
+WARNING: Running increment n. 7
+WARNING:   New incremental fact: incr_happens(hit_ground,80)
+
+WARNING: Running increment n. 8
+WARNING:   New incremental fact: incr_happens(reach_apex,90)
+
+WARNING: Running increment n. 9
+WARNING:   New incremental fact: incr_happens(hit_ground,100)
+
+WARNING: Running increment n. 10
+WARNING:   No new incremental facts. Ending incremental resoning.
+
+Number of increments executed: 10 (in 21106.631 ms)
+Incremental Facts:
+[incr_happens(hit_ground,20),incr_happens(reach_apex,30),incr_happens(hit_ground,40),incr_happens(reach_apex,50),incr_happens(hit_ground,60),incr_happens(reach_apex,70),incr_happens(hit_ground,80),incr_happens(reach_apex,90),incr_happens(hit_ground,100)]
+
+% QUERY:?- happens(hit_ground,T).
+
+	ANSWER:	1 (in 11.143 ms)
+
+JUSTIFICATION_TREE:
+happens(hit_ground,20) :-
+    holdsAt(height(0),20,falling) :-
+        max_time(100),
+        can_trajectory(falling,10,height(0),20),
+        can_initiates(fall_down,falling,10),
+        happens(fall_down,10) :-
+            happens(drop,10).
+        initiates(fall_down,falling,10),
+        trajectory(falling,10,height(0),20) :-
+            initiallyP(constant_fall_rate(1)),
+            holdsAt(height(10),10) :-
+                max_time(100),
+                initiallyP(height(10)),
+                not_stoppedIn(0,height(10),10) :-
+                    not_interrupted(terminates,height(10),0,10) :-
+                        findall(Var5,findall_can_interrupts(terminates,Var5,height(10),0,10),[catch]) :-
+                            findall_can_interrupts(terminates,catch,height(10),0,10) :-
+                                can_interrupts(terminates,catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}) :-
+                                    can_terminates(catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}).
+                        not_interrupted_(terminates,height(10),[catch],0,10) :-
+                            findall(Var6,interrupted(terminates,catch,height(10),Var6,0,10),[]),
+                            all_entirely_outside_of_interval([],0,10),
+                            not_interrupted_(terminates,height(10),[],0,10).
+                    not_interrupted(releases,height(10),0,10) :-
+                        findall(Var7,findall_can_interrupts(releases,Var7,height(10),0,10),[drop]) :-
+                            findall_can_interrupts(releases,drop,height(10),0,10) :-
+                                can_interrupts(releases,drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                    can_releases(drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}).
+                        not_interrupted_(releases,height(10),[drop],0,10) :-
+                            findall(Var8,interrupted(releases,drop,height(10),Var8,0,10),[]),
+                            proved(all_entirely_outside_of_interval([],0,10)),
+                            not_interrupted_(releases,height(10),[],0,10).
+        not_stoppedIn(10,falling,20) :-
+            not_interrupted(terminates,falling,10,20) :-
+                findall(Var9,findall_can_interrupts(terminates,Var9,falling,10,20),[hit_ground,catch]) :-
+                    findall_can_interrupts(terminates,hit_ground,falling,10,20) :-
+                        can_interrupts(terminates,hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}) :-
+                            can_terminates(hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}).
+                    findall_can_interrupts(terminates,catch,falling,10,20) :-
+                        can_interrupts(terminates,catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}) :-
+                            can_terminates(catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}).
+                not_interrupted_(terminates,falling,[hit_ground,catch],10,20) :-
+                    findall(Var10,interrupted(terminates,hit_ground,falling,Var10,10,20),[]),
+                    all_entirely_outside_of_interval([],10,20),
+                    not_interrupted_(terminates,falling,[catch],10,20) :-
+                        findall(Var11,interrupted(terminates,catch,falling,Var11,10,20),[]),
+                        proved(all_entirely_outside_of_interval([],10,20)),
+                        not_interrupted_(terminates,falling,[],10,20).
+            not_interrupted(releases,falling,10,20) :-
+                findall(Var12,findall_can_interrupts(releases,Var12,falling,10,20),[]),
+                not_interrupted_(releases,falling,[],10,20).
+global_constraint.
+
+MODEL:
+{ happens(hit_ground,20),  happens(fall_down,10),  happens(drop,10),  initiates(fall_down,falling,10),  trajectory(falling,10,height(0),20),  initiallyP(constant_fall_rate(1)),  holdsAt(height(10),10),  initiallyP(height(10)),  not_stoppedIn(0,height(10),10),  not_stoppedIn(10,falling,20) }
+BINDINGS: 
+T = 20
+
+
+	ANSWER:	2 (in 67.655 ms)
+
+JUSTIFICATION_TREE:
+happens(hit_ground,40) :-
+    holdsAt(height(0),40,falling) :-
+        max_time(100),
+        can_trajectory(falling,30,height(0),40),
+        can_initiates(fall_down,falling,30),
+        happens(fall_down,30) :-
+            incr_happens(reach_apex,30).
+        initiates(fall_down,falling,30),
+        trajectory(falling,30,height(0),40) :-
+            initiallyP(constant_fall_rate(1)),
+            holdsAt(height(10),30) :-
+                max_time(100),
+                can_trajectory(rising,20,height(10),30),
+                can_initiates(bounce_up,rising,20),
+                happens(bounce_up,20) :-
+                    incr_happens(hit_ground,20).
+                initiates(bounce_up,rising,20),
+                trajectory(rising,20,height(10),30) :-
+                    initiallyP(constant_fall_rate(1)),
+                    holdsAt(height(0),20) :-
+                        max_time(100),
+                        can_trajectory(falling,10,height(0),20),
+                        can_initiates(fall_down,falling,10),
+                        happens(fall_down,10) :-
+                            happens(drop,10).
+                        initiates(fall_down,falling,10),
+                        trajectory(falling,10,height(0),20) :-
+                            initiallyP(constant_fall_rate(1)),
+                            holdsAt(height(10),10) :-
+                                max_time(100),
+                                initiallyP(height(10)),
+                                not_stoppedIn(0,height(10),10) :-
+                                    not_interrupted(terminates,height(10),0,10) :-
+                                        findall(Var9,findall_can_interrupts(terminates,Var9,height(10),0,10),[catch]) :-
+                                            findall_can_interrupts(terminates,catch,height(10),0,10) :-
+                                                can_interrupts(terminates,catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}) :-
+                                                    can_terminates(catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}).
+                                        not_interrupted_(terminates,height(10),[catch],0,10) :-
+                                            findall(Var10,interrupted(terminates,catch,height(10),Var10,0,10),[]),
+                                            all_entirely_outside_of_interval([],0,10),
+                                            not_interrupted_(terminates,height(10),[],0,10).
+                                    not_interrupted(releases,height(10),0,10) :-
+                                        findall(Var11,findall_can_interrupts(releases,Var11,height(10),0,10),[drop]) :-
+                                            findall_can_interrupts(releases,drop,height(10),0,10) :-
+                                                can_interrupts(releases,drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                                    can_releases(drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}).
+                                        not_interrupted_(releases,height(10),[drop],0,10) :-
+                                            findall(Var12,interrupted(releases,drop,height(10),Var12,0,10),[]),
+                                            proved(all_entirely_outside_of_interval([],0,10)),
+                                            not_interrupted_(releases,height(10),[],0,10).
+                        not_stoppedIn(10,falling,20) :-
+                            not_interrupted(terminates,falling,10,20) :-
+                                findall(Var13,findall_can_interrupts(terminates,Var13,falling,10,20),[hit_ground,catch]) :-
+                                    findall_can_interrupts(terminates,hit_ground,falling,10,20) :-
+                                        can_interrupts(terminates,hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}) :-
+                                            can_terminates(hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}).
+                                    findall_can_interrupts(terminates,catch,falling,10,20) :-
+                                        can_interrupts(terminates,catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}) :-
+                                            can_terminates(catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}).
+                                not_interrupted_(terminates,falling,[hit_ground,catch],10,20) :-
+                                    findall(Var14,interrupted(terminates,hit_ground,falling,Var14,10,20),[]),
+                                    all_entirely_outside_of_interval([],10,20),
+                                    not_interrupted_(terminates,falling,[catch],10,20) :-
+                                        findall(Var15,interrupted(terminates,catch,falling,Var15,10,20),[]),
+                                        proved(all_entirely_outside_of_interval([],10,20)),
+                                        not_interrupted_(terminates,falling,[],10,20).
+                            not_interrupted(releases,falling,10,20) :-
+                                findall(Var16,findall_can_interrupts(releases,Var16,falling,10,20),[]),
+                                not_interrupted_(releases,falling,[],10,20).
+                not_stoppedIn(20,rising,30) :-
+                    not_interrupted(terminates,rising,20,30) :-
+                        findall(Var17,findall_can_interrupts(terminates,Var17,rising,20,30),[reach_apex,catch]) :-
+                            findall_can_interrupts(terminates,reach_apex,rising,20,30) :-
+                                can_interrupts(terminates,reach_apex,rising,Var5 | {Var5 #> 20,Var5 #< 30}) :-
+                                    can_terminates(reach_apex,rising,Var5 | {Var5 #> 20,Var5 #< 30}).
+                            findall_can_interrupts(terminates,catch,rising,20,30) :-
+                                can_interrupts(terminates,catch,rising,Var6 | {Var6 #> 20,Var6 #< 30}) :-
+                                    can_terminates(catch,rising,Var6 | {Var6 #> 20,Var6 #< 30}).
+                        not_interrupted_(terminates,rising,[reach_apex,catch],20,30) :-
+                            findall(Var18,interrupted(terminates,reach_apex,rising,Var18,20,30),[]),
+                            all_entirely_outside_of_interval([],20,30),
+                            not_interrupted_(terminates,rising,[catch],20,30) :-
+                                findall(Var19,interrupted(terminates,catch,rising,Var19,20,30),[]),
+                                proved(all_entirely_outside_of_interval([],20,30)),
+                                not_interrupted_(terminates,rising,[],20,30).
+                    not_interrupted(releases,rising,20,30) :-
+                        findall(Var20,findall_can_interrupts(releases,Var20,rising,20,30),[]),
+                        not_interrupted_(releases,rising,[],20,30).
+        not_stoppedIn(30,falling,40) :-
+            not_interrupted(terminates,falling,30,40) :-
+                findall(Var21,findall_can_interrupts(terminates,Var21,falling,30,40),[hit_ground,catch]) :-
+                    findall_can_interrupts(terminates,hit_ground,falling,30,40) :-
+                        can_interrupts(terminates,hit_ground,falling,Var7 | {Var7 #> 30,Var7 #< 40}) :-
+                            can_terminates(hit_ground,falling,Var7 | {Var7 #> 30,Var7 #< 40}).
+                    findall_can_interrupts(terminates,catch,falling,30,40) :-
+                        can_interrupts(terminates,catch,falling,Var8 | {Var8 #> 30,Var8 #< 40}) :-
+                            can_terminates(catch,falling,Var8 | {Var8 #> 30,Var8 #< 40}).
+                not_interrupted_(terminates,falling,[hit_ground,catch],30,40) :-
+                    findall(Var22,interrupted(terminates,hit_ground,falling,Var22,30,40),[]),
+                    all_entirely_outside_of_interval([],30,40),
+                    not_interrupted_(terminates,falling,[catch],30,40) :-
+                        findall(Var23,interrupted(terminates,catch,falling,Var23,30,40),[]),
+                        proved(all_entirely_outside_of_interval([],30,40)),
+                        not_interrupted_(terminates,falling,[],30,40).
+            not_interrupted(releases,falling,30,40) :-
+                findall(Var24,findall_can_interrupts(releases,Var24,falling,30,40),[]),
+                not_interrupted_(releases,falling,[],30,40).
+global_constraint.
+
+MODEL:
+{ happens(hit_ground,40),  happens(fall_down,30),  initiates(fall_down,falling,30),  trajectory(falling,30,height(0),40),  initiallyP(constant_fall_rate(1)),  holdsAt(height(10),30),  happens(bounce_up,20),  initiates(bounce_up,rising,20),  trajectory(rising,20,height(10),30),  holdsAt(height(0),20),  happens(fall_down,10),  happens(drop,10),  initiates(fall_down,falling,10),  trajectory(falling,10,height(0),20),  holdsAt(height(10),10),  initiallyP(height(10)),  not_stoppedIn(0,height(10),10),  not_stoppedIn(10,falling,20),  not_stoppedIn(20,rising,30),  not_stoppedIn(30,falling,40) }
+BINDINGS: 
+T = 40
+
+
+	ANSWER:	3 (in 386.382 ms)
+
+JUSTIFICATION_TREE:
+happens(hit_ground,60) :-
+    holdsAt(height(0),60,falling) :-
+        max_time(100),
+        can_trajectory(falling,50,height(0),60),
+        can_initiates(fall_down,falling,50),
+        happens(fall_down,50) :-
+            incr_happens(reach_apex,50).
+        initiates(fall_down,falling,50),
+        trajectory(falling,50,height(0),60) :-
+            initiallyP(constant_fall_rate(1)),
+            holdsAt(height(10),50) :-
+                max_time(100),
+                can_trajectory(rising,40,height(10),50),
+                can_initiates(bounce_up,rising,40),
+                happens(bounce_up,40) :-
+                    incr_happens(hit_ground,40).
+                initiates(bounce_up,rising,40),
+                trajectory(rising,40,height(10),50) :-
+                    initiallyP(constant_fall_rate(1)),
+                    holdsAt(height(0),40) :-
+                        max_time(100),
+                        can_trajectory(falling,30,height(0),40),
+                        can_initiates(fall_down,falling,30),
+                        happens(fall_down,30) :-
+                            incr_happens(reach_apex,30).
+                        initiates(fall_down,falling,30),
+                        trajectory(falling,30,height(0),40) :-
+                            initiallyP(constant_fall_rate(1)),
+                            holdsAt(height(10),30) :-
+                                max_time(100),
+                                can_trajectory(rising,20,height(10),30),
+                                can_initiates(bounce_up,rising,20),
+                                happens(bounce_up,20) :-
+                                    incr_happens(hit_ground,20).
+                                initiates(bounce_up,rising,20),
+                                trajectory(rising,20,height(10),30) :-
+                                    initiallyP(constant_fall_rate(1)),
+                                    holdsAt(height(0),20) :-
+                                        max_time(100),
+                                        can_trajectory(falling,10,height(0),20),
+                                        can_initiates(fall_down,falling,10),
+                                        happens(fall_down,10) :-
+                                            happens(drop,10).
+                                        initiates(fall_down,falling,10),
+                                        trajectory(falling,10,height(0),20) :-
+                                            initiallyP(constant_fall_rate(1)),
+                                            holdsAt(height(10),10) :-
+                                                max_time(100),
+                                                initiallyP(height(10)),
+                                                not_stoppedIn(0,height(10),10) :-
+                                                    not_interrupted(terminates,height(10),0,10) :-
+                                                        findall(Var13,findall_can_interrupts(terminates,Var13,height(10),0,10),[catch]) :-
+                                                            findall_can_interrupts(terminates,catch,height(10),0,10) :-
+                                                                can_interrupts(terminates,catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}) :-
+                                                                    can_terminates(catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}).
+                                                        not_interrupted_(terminates,height(10),[catch],0,10) :-
+                                                            findall(Var14,interrupted(terminates,catch,height(10),Var14,0,10),[]),
+                                                            all_entirely_outside_of_interval([],0,10),
+                                                            not_interrupted_(terminates,height(10),[],0,10).
+                                                    not_interrupted(releases,height(10),0,10) :-
+                                                        findall(Var15,findall_can_interrupts(releases,Var15,height(10),0,10),[drop]) :-
+                                                            findall_can_interrupts(releases,drop,height(10),0,10) :-
+                                                                can_interrupts(releases,drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                                                    can_releases(drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}).
+                                                        not_interrupted_(releases,height(10),[drop],0,10) :-
+                                                            findall(Var16,interrupted(releases,drop,height(10),Var16,0,10),[]),
+                                                            proved(all_entirely_outside_of_interval([],0,10)),
+                                                            not_interrupted_(releases,height(10),[],0,10).
+                                        not_stoppedIn(10,falling,20) :-
+                                            not_interrupted(terminates,falling,10,20) :-
+                                                findall(Var17,findall_can_interrupts(terminates,Var17,falling,10,20),[hit_ground,catch]) :-
+                                                    findall_can_interrupts(terminates,hit_ground,falling,10,20) :-
+                                                        can_interrupts(terminates,hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}) :-
+                                                            can_terminates(hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}).
+                                                    findall_can_interrupts(terminates,catch,falling,10,20) :-
+                                                        can_interrupts(terminates,catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}) :-
+                                                            can_terminates(catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}).
+                                                not_interrupted_(terminates,falling,[hit_ground,catch],10,20) :-
+                                                    findall(Var18,interrupted(terminates,hit_ground,falling,Var18,10,20),[]),
+                                                    all_entirely_outside_of_interval([],10,20),
+                                                    not_interrupted_(terminates,falling,[catch],10,20) :-
+                                                        findall(Var19,interrupted(terminates,catch,falling,Var19,10,20),[]),
+                                                        proved(all_entirely_outside_of_interval([],10,20)),
+                                                        not_interrupted_(terminates,falling,[],10,20).
+                                            not_interrupted(releases,falling,10,20) :-
+                                                findall(Var20,findall_can_interrupts(releases,Var20,falling,10,20),[]),
+                                                not_interrupted_(releases,falling,[],10,20).
+                                not_stoppedIn(20,rising,30) :-
+                                    not_interrupted(terminates,rising,20,30) :-
+                                        findall(Var21,findall_can_interrupts(terminates,Var21,rising,20,30),[reach_apex,catch]) :-
+                                            findall_can_interrupts(terminates,reach_apex,rising,20,30) :-
+                                                can_interrupts(terminates,reach_apex,rising,Var5 | {Var5 #> 20,Var5 #< 30}) :-
+                                                    can_terminates(reach_apex,rising,Var5 | {Var5 #> 20,Var5 #< 30}).
+                                            findall_can_interrupts(terminates,catch,rising,20,30) :-
+                                                can_interrupts(terminates,catch,rising,Var6 | {Var6 #> 20,Var6 #< 30}) :-
+                                                    can_terminates(catch,rising,Var6 | {Var6 #> 20,Var6 #< 30}).
+                                        not_interrupted_(terminates,rising,[reach_apex,catch],20,30) :-
+                                            findall(Var22,interrupted(terminates,reach_apex,rising,Var22,20,30),[]),
+                                            all_entirely_outside_of_interval([],20,30),
+                                            not_interrupted_(terminates,rising,[catch],20,30) :-
+                                                findall(Var23,interrupted(terminates,catch,rising,Var23,20,30),[]),
+                                                proved(all_entirely_outside_of_interval([],20,30)),
+                                                not_interrupted_(terminates,rising,[],20,30).
+                                    not_interrupted(releases,rising,20,30) :-
+                                        findall(Var24,findall_can_interrupts(releases,Var24,rising,20,30),[]),
+                                        not_interrupted_(releases,rising,[],20,30).
+                        not_stoppedIn(30,falling,40) :-
+                            not_interrupted(terminates,falling,30,40) :-
+                                findall(Var25,findall_can_interrupts(terminates,Var25,falling,30,40),[hit_ground,catch]) :-
+                                    findall_can_interrupts(terminates,hit_ground,falling,30,40) :-
+                                        can_interrupts(terminates,hit_ground,falling,Var7 | {Var7 #> 30,Var7 #< 40}) :-
+                                            can_terminates(hit_ground,falling,Var7 | {Var7 #> 30,Var7 #< 40}).
+                                    findall_can_interrupts(terminates,catch,falling,30,40) :-
+                                        can_interrupts(terminates,catch,falling,Var8 | {Var8 #> 30,Var8 #< 40}) :-
+                                            can_terminates(catch,falling,Var8 | {Var8 #> 30,Var8 #< 40}).
+                                not_interrupted_(terminates,falling,[hit_ground,catch],30,40) :-
+                                    findall(Var26,interrupted(terminates,hit_ground,falling,Var26,30,40),[]),
+                                    all_entirely_outside_of_interval([],30,40),
+                                    not_interrupted_(terminates,falling,[catch],30,40) :-
+                                        findall(Var27,interrupted(terminates,catch,falling,Var27,30,40),[]),
+                                        proved(all_entirely_outside_of_interval([],30,40)),
+                                        not_interrupted_(terminates,falling,[],30,40).
+                            not_interrupted(releases,falling,30,40) :-
+                                findall(Var28,findall_can_interrupts(releases,Var28,falling,30,40),[]),
+                                not_interrupted_(releases,falling,[],30,40).
+                not_stoppedIn(40,rising,50) :-
+                    not_interrupted(terminates,rising,40,50) :-
+                        findall(Var29,findall_can_interrupts(terminates,Var29,rising,40,50),[reach_apex,catch]) :-
+                            findall_can_interrupts(terminates,reach_apex,rising,40,50) :-
+                                can_interrupts(terminates,reach_apex,rising,Var9 | {Var9 #> 40,Var9 #< 50}) :-
+                                    can_terminates(reach_apex,rising,Var9 | {Var9 #> 40,Var9 #< 50}).
+                            findall_can_interrupts(terminates,catch,rising,40,50) :-
+                                can_interrupts(terminates,catch,rising,Var10 | {Var10 #> 40,Var10 #< 50}) :-
+                                    can_terminates(catch,rising,Var10 | {Var10 #> 40,Var10 #< 50}).
+                        not_interrupted_(terminates,rising,[reach_apex,catch],40,50) :-
+                            findall(Var30,interrupted(terminates,reach_apex,rising,Var30,40,50),[]),
+                            all_entirely_outside_of_interval([],40,50),
+                            not_interrupted_(terminates,rising,[catch],40,50) :-
+                                findall(Var31,interrupted(terminates,catch,rising,Var31,40,50),[]),
+                                proved(all_entirely_outside_of_interval([],40,50)),
+                                not_interrupted_(terminates,rising,[],40,50).
+                    not_interrupted(releases,rising,40,50) :-
+                        findall(Var32,findall_can_interrupts(releases,Var32,rising,40,50),[]),
+                        not_interrupted_(releases,rising,[],40,50).
+        not_stoppedIn(50,falling,60) :-
+            not_interrupted(terminates,falling,50,60) :-
+                findall(Var33,findall_can_interrupts(terminates,Var33,falling,50,60),[hit_ground,catch]) :-
+                    findall_can_interrupts(terminates,hit_ground,falling,50,60) :-
+                        can_interrupts(terminates,hit_ground,falling,Var11 | {Var11 #> 50,Var11 #< 60}) :-
+                            can_terminates(hit_ground,falling,Var11 | {Var11 #> 50,Var11 #< 60}).
+                    findall_can_interrupts(terminates,catch,falling,50,60) :-
+                        can_interrupts(terminates,catch,falling,Var12 | {Var12 #> 50,Var12 #< 60}) :-
+                            can_terminates(catch,falling,Var12 | {Var12 #> 50,Var12 #< 60}).
+                not_interrupted_(terminates,falling,[hit_ground,catch],50,60) :-
+                    findall(Var34,interrupted(terminates,hit_ground,falling,Var34,50,60),[]),
+                    all_entirely_outside_of_interval([],50,60),
+                    not_interrupted_(terminates,falling,[catch],50,60) :-
+                        findall(Var35,interrupted(terminates,catch,falling,Var35,50,60),[]),
+                        proved(all_entirely_outside_of_interval([],50,60)),
+                        not_interrupted_(terminates,falling,[],50,60).
+            not_interrupted(releases,falling,50,60) :-
+                findall(Var36,findall_can_interrupts(releases,Var36,falling,50,60),[]),
+                not_interrupted_(releases,falling,[],50,60).
+global_constraint.
+
+MODEL:
+{ happens(hit_ground,60),  happens(fall_down,50),  initiates(fall_down,falling,50),  trajectory(falling,50,height(0),60),  initiallyP(constant_fall_rate(1)),  holdsAt(height(10),50),  happens(bounce_up,40),  initiates(bounce_up,rising,40),  trajectory(rising,40,height(10),50),  holdsAt(height(0),40),  happens(fall_down,30),  initiates(fall_down,falling,30),  trajectory(falling,30,height(0),40),  holdsAt(height(10),30),  happens(bounce_up,20),  initiates(bounce_up,rising,20),  trajectory(rising,20,height(10),30),  holdsAt(height(0),20),  happens(fall_down,10),  happens(drop,10),  initiates(fall_down,falling,10),  trajectory(falling,10,height(0),20),  holdsAt(height(10),10),  initiallyP(height(10)),  not_stoppedIn(0,height(10),10),  not_stoppedIn(10,falling,20),  not_stoppedIn(20,rising,30),  not_stoppedIn(30,falling,40),  not_stoppedIn(40,rising,50),  not_stoppedIn(50,falling,60) }
+BINDINGS: 
+T = 60
+
+
+	ANSWER:	4 (in 2137.58 ms)
+
+JUSTIFICATION_TREE:
+happens(hit_ground,80) :-
+    holdsAt(height(0),80,falling) :-
+        max_time(100),
+        can_trajectory(falling,70,height(0),80),
+        can_initiates(fall_down,falling,70),
+        happens(fall_down,70) :-
+            incr_happens(reach_apex,70).
+        initiates(fall_down,falling,70),
+        trajectory(falling,70,height(0),80) :-
+            initiallyP(constant_fall_rate(1)),
+            holdsAt(height(10),70) :-
+                max_time(100),
+                can_trajectory(rising,60,height(10),70),
+                can_initiates(bounce_up,rising,60),
+                happens(bounce_up,60) :-
+                    incr_happens(hit_ground,60).
+                initiates(bounce_up,rising,60),
+                trajectory(rising,60,height(10),70) :-
+                    initiallyP(constant_fall_rate(1)),
+                    holdsAt(height(0),60) :-
+                        max_time(100),
+                        can_trajectory(falling,50,height(0),60),
+                        can_initiates(fall_down,falling,50),
+                        happens(fall_down,50) :-
+                            incr_happens(reach_apex,50).
+                        initiates(fall_down,falling,50),
+                        trajectory(falling,50,height(0),60) :-
+                            initiallyP(constant_fall_rate(1)),
+                            holdsAt(height(10),50) :-
+                                max_time(100),
+                                can_trajectory(rising,40,height(10),50),
+                                can_initiates(bounce_up,rising,40),
+                                happens(bounce_up,40) :-
+                                    incr_happens(hit_ground,40).
+                                initiates(bounce_up,rising,40),
+                                trajectory(rising,40,height(10),50) :-
+                                    initiallyP(constant_fall_rate(1)),
+                                    holdsAt(height(0),40) :-
+                                        max_time(100),
+                                        can_trajectory(falling,30,height(0),40),
+                                        can_initiates(fall_down,falling,30),
+                                        happens(fall_down,30) :-
+                                            incr_happens(reach_apex,30).
+                                        initiates(fall_down,falling,30),
+                                        trajectory(falling,30,height(0),40) :-
+                                            initiallyP(constant_fall_rate(1)),
+                                            holdsAt(height(10),30) :-
+                                                max_time(100),
+                                                can_trajectory(rising,20,height(10),30),
+                                                can_initiates(bounce_up,rising,20),
+                                                happens(bounce_up,20) :-
+                                                    incr_happens(hit_ground,20).
+                                                initiates(bounce_up,rising,20),
+                                                trajectory(rising,20,height(10),30) :-
+                                                    initiallyP(constant_fall_rate(1)),
+                                                    holdsAt(height(0),20) :-
+                                                        max_time(100),
+                                                        can_trajectory(falling,10,height(0),20),
+                                                        can_initiates(fall_down,falling,10),
+                                                        happens(fall_down,10) :-
+                                                            happens(drop,10).
+                                                        initiates(fall_down,falling,10),
+                                                        trajectory(falling,10,height(0),20) :-
+                                                            initiallyP(constant_fall_rate(1)),
+                                                            holdsAt(height(10),10) :-
+                                                                max_time(100),
+                                                                initiallyP(height(10)),
+                                                                not_stoppedIn(0,height(10),10) :-
+                                                                    not_interrupted(terminates,height(10),0,10) :-
+                                                                        findall(Var17,findall_can_interrupts(terminates,Var17,height(10),0,10),[catch]) :-
+                                                                            findall_can_interrupts(terminates,catch,height(10),0,10) :-
+                                                                                can_interrupts(terminates,catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}) :-
+                                                                                    can_terminates(catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}).
+                                                                        not_interrupted_(terminates,height(10),[catch],0,10) :-
+                                                                            findall(Var18,interrupted(terminates,catch,height(10),Var18,0,10),[]),
+                                                                            all_entirely_outside_of_interval([],0,10),
+                                                                            not_interrupted_(terminates,height(10),[],0,10).
+                                                                    not_interrupted(releases,height(10),0,10) :-
+                                                                        findall(Var19,findall_can_interrupts(releases,Var19,height(10),0,10),[drop]) :-
+                                                                            findall_can_interrupts(releases,drop,height(10),0,10) :-
+                                                                                can_interrupts(releases,drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                                                                    can_releases(drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}).
+                                                                        not_interrupted_(releases,height(10),[drop],0,10) :-
+                                                                            findall(Var20,interrupted(releases,drop,height(10),Var20,0,10),[]),
+                                                                            proved(all_entirely_outside_of_interval([],0,10)),
+                                                                            not_interrupted_(releases,height(10),[],0,10).
+                                                        not_stoppedIn(10,falling,20) :-
+                                                            not_interrupted(terminates,falling,10,20) :-
+                                                                findall(Var21,findall_can_interrupts(terminates,Var21,falling,10,20),[hit_ground,catch]) :-
+                                                                    findall_can_interrupts(terminates,hit_ground,falling,10,20) :-
+                                                                        can_interrupts(terminates,hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}) :-
+                                                                            can_terminates(hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}).
+                                                                    findall_can_interrupts(terminates,catch,falling,10,20) :-
+                                                                        can_interrupts(terminates,catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}) :-
+                                                                            can_terminates(catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}).
+                                                                not_interrupted_(terminates,falling,[hit_ground,catch],10,20) :-
+                                                                    findall(Var22,interrupted(terminates,hit_ground,falling,Var22,10,20),[]),
+                                                                    all_entirely_outside_of_interval([],10,20),
+                                                                    not_interrupted_(terminates,falling,[catch],10,20) :-
+                                                                        findall(Var23,interrupted(terminates,catch,falling,Var23,10,20),[]),
+                                                                        proved(all_entirely_outside_of_interval([],10,20)),
+                                                                        not_interrupted_(terminates,falling,[],10,20).
+                                                            not_interrupted(releases,falling,10,20) :-
+                                                                findall(Var24,findall_can_interrupts(releases,Var24,falling,10,20),[]),
+                                                                not_interrupted_(releases,falling,[],10,20).
+                                                not_stoppedIn(20,rising,30) :-
+                                                    not_interrupted(terminates,rising,20,30) :-
+                                                        findall(Var25,findall_can_interrupts(terminates,Var25,rising,20,30),[reach_apex,catch]) :-
+                                                            findall_can_interrupts(terminates,reach_apex,rising,20,30) :-
+                                                                can_interrupts(terminates,reach_apex,rising,Var5 | {Var5 #> 20,Var5 #< 30}) :-
+                                                                    can_terminates(reach_apex,rising,Var5 | {Var5 #> 20,Var5 #< 30}).
+                                                            findall_can_interrupts(terminates,catch,rising,20,30) :-
+                                                                can_interrupts(terminates,catch,rising,Var6 | {Var6 #> 20,Var6 #< 30}) :-
+                                                                    can_terminates(catch,rising,Var6 | {Var6 #> 20,Var6 #< 30}).
+                                                        not_interrupted_(terminates,rising,[reach_apex,catch],20,30) :-
+                                                            findall(Var26,interrupted(terminates,reach_apex,rising,Var26,20,30),[]),
+                                                            all_entirely_outside_of_interval([],20,30),
+                                                            not_interrupted_(terminates,rising,[catch],20,30) :-
+                                                                findall(Var27,interrupted(terminates,catch,rising,Var27,20,30),[]),
+                                                                proved(all_entirely_outside_of_interval([],20,30)),
+                                                                not_interrupted_(terminates,rising,[],20,30).
+                                                    not_interrupted(releases,rising,20,30) :-
+                                                        findall(Var28,findall_can_interrupts(releases,Var28,rising,20,30),[]),
+                                                        not_interrupted_(releases,rising,[],20,30).
+                                        not_stoppedIn(30,falling,40) :-
+                                            not_interrupted(terminates,falling,30,40) :-
+                                                findall(Var29,findall_can_interrupts(terminates,Var29,falling,30,40),[hit_ground,catch]) :-
+                                                    findall_can_interrupts(terminates,hit_ground,falling,30,40) :-
+                                                        can_interrupts(terminates,hit_ground,falling,Var7 | {Var7 #> 30,Var7 #< 40}) :-
+                                                            can_terminates(hit_ground,falling,Var7 | {Var7 #> 30,Var7 #< 40}).
+                                                    findall_can_interrupts(terminates,catch,falling,30,40) :-
+                                                        can_interrupts(terminates,catch,falling,Var8 | {Var8 #> 30,Var8 #< 40}) :-
+                                                            can_terminates(catch,falling,Var8 | {Var8 #> 30,Var8 #< 40}).
+                                                not_interrupted_(terminates,falling,[hit_ground,catch],30,40) :-
+                                                    findall(Var30,interrupted(terminates,hit_ground,falling,Var30,30,40),[]),
+                                                    all_entirely_outside_of_interval([],30,40),
+                                                    not_interrupted_(terminates,falling,[catch],30,40) :-
+                                                        findall(Var31,interrupted(terminates,catch,falling,Var31,30,40),[]),
+                                                        proved(all_entirely_outside_of_interval([],30,40)),
+                                                        not_interrupted_(terminates,falling,[],30,40).
+                                            not_interrupted(releases,falling,30,40) :-
+                                                findall(Var32,findall_can_interrupts(releases,Var32,falling,30,40),[]),
+                                                not_interrupted_(releases,falling,[],30,40).
+                                not_stoppedIn(40,rising,50) :-
+                                    not_interrupted(terminates,rising,40,50) :-
+                                        findall(Var33,findall_can_interrupts(terminates,Var33,rising,40,50),[reach_apex,catch]) :-
+                                            findall_can_interrupts(terminates,reach_apex,rising,40,50) :-
+                                                can_interrupts(terminates,reach_apex,rising,Var9 | {Var9 #> 40,Var9 #< 50}) :-
+                                                    can_terminates(reach_apex,rising,Var9 | {Var9 #> 40,Var9 #< 50}).
+                                            findall_can_interrupts(terminates,catch,rising,40,50) :-
+                                                can_interrupts(terminates,catch,rising,Var10 | {Var10 #> 40,Var10 #< 50}) :-
+                                                    can_terminates(catch,rising,Var10 | {Var10 #> 40,Var10 #< 50}).
+                                        not_interrupted_(terminates,rising,[reach_apex,catch],40,50) :-
+                                            findall(Var34,interrupted(terminates,reach_apex,rising,Var34,40,50),[]),
+                                            all_entirely_outside_of_interval([],40,50),
+                                            not_interrupted_(terminates,rising,[catch],40,50) :-
+                                                findall(Var35,interrupted(terminates,catch,rising,Var35,40,50),[]),
+                                                proved(all_entirely_outside_of_interval([],40,50)),
+                                                not_interrupted_(terminates,rising,[],40,50).
+                                    not_interrupted(releases,rising,40,50) :-
+                                        findall(Var36,findall_can_interrupts(releases,Var36,rising,40,50),[]),
+                                        not_interrupted_(releases,rising,[],40,50).
+                        not_stoppedIn(50,falling,60) :-
+                            not_interrupted(terminates,falling,50,60) :-
+                                findall(Var37,findall_can_interrupts(terminates,Var37,falling,50,60),[hit_ground,catch]) :-
+                                    findall_can_interrupts(terminates,hit_ground,falling,50,60) :-
+                                        can_interrupts(terminates,hit_ground,falling,Var11 | {Var11 #> 50,Var11 #< 60}) :-
+                                            can_terminates(hit_ground,falling,Var11 | {Var11 #> 50,Var11 #< 60}).
+                                    findall_can_interrupts(terminates,catch,falling,50,60) :-
+                                        can_interrupts(terminates,catch,falling,Var12 | {Var12 #> 50,Var12 #< 60}) :-
+                                            can_terminates(catch,falling,Var12 | {Var12 #> 50,Var12 #< 60}).
+                                not_interrupted_(terminates,falling,[hit_ground,catch],50,60) :-
+                                    findall(Var38,interrupted(terminates,hit_ground,falling,Var38,50,60),[]),
+                                    all_entirely_outside_of_interval([],50,60),
+                                    not_interrupted_(terminates,falling,[catch],50,60) :-
+                                        findall(Var39,interrupted(terminates,catch,falling,Var39,50,60),[]),
+                                        proved(all_entirely_outside_of_interval([],50,60)),
+                                        not_interrupted_(terminates,falling,[],50,60).
+                            not_interrupted(releases,falling,50,60) :-
+                                findall(Var40,findall_can_interrupts(releases,Var40,falling,50,60),[]),
+                                not_interrupted_(releases,falling,[],50,60).
+                not_stoppedIn(60,rising,70) :-
+                    not_interrupted(terminates,rising,60,70) :-
+                        findall(Var41,findall_can_interrupts(terminates,Var41,rising,60,70),[reach_apex,catch]) :-
+                            findall_can_interrupts(terminates,reach_apex,rising,60,70) :-
+                                can_interrupts(terminates,reach_apex,rising,Var13 | {Var13 #> 60,Var13 #< 70}) :-
+                                    can_terminates(reach_apex,rising,Var13 | {Var13 #> 60,Var13 #< 70}).
+                            findall_can_interrupts(terminates,catch,rising,60,70) :-
+                                can_interrupts(terminates,catch,rising,Var14 | {Var14 #> 60,Var14 #< 70}) :-
+                                    can_terminates(catch,rising,Var14 | {Var14 #> 60,Var14 #< 70}).
+                        not_interrupted_(terminates,rising,[reach_apex,catch],60,70) :-
+                            findall(Var42,interrupted(terminates,reach_apex,rising,Var42,60,70),[]),
+                            all_entirely_outside_of_interval([],60,70),
+                            not_interrupted_(terminates,rising,[catch],60,70) :-
+                                findall(Var43,interrupted(terminates,catch,rising,Var43,60,70),[]),
+                                proved(all_entirely_outside_of_interval([],60,70)),
+                                not_interrupted_(terminates,rising,[],60,70).
+                    not_interrupted(releases,rising,60,70) :-
+                        findall(Var44,findall_can_interrupts(releases,Var44,rising,60,70),[]),
+                        not_interrupted_(releases,rising,[],60,70).
+        not_stoppedIn(70,falling,80) :-
+            not_interrupted(terminates,falling,70,80) :-
+                findall(Var45,findall_can_interrupts(terminates,Var45,falling,70,80),[hit_ground,catch]) :-
+                    findall_can_interrupts(terminates,hit_ground,falling,70,80) :-
+                        can_interrupts(terminates,hit_ground,falling,Var15 | {Var15 #> 70,Var15 #< 80}) :-
+                            can_terminates(hit_ground,falling,Var15 | {Var15 #> 70,Var15 #< 80}).
+                    findall_can_interrupts(terminates,catch,falling,70,80) :-
+                        can_interrupts(terminates,catch,falling,Var16 | {Var16 #> 70,Var16 #< 80}) :-
+                            can_terminates(catch,falling,Var16 | {Var16 #> 70,Var16 #< 80}).
+                not_interrupted_(terminates,falling,[hit_ground,catch],70,80) :-
+                    findall(Var46,interrupted(terminates,hit_ground,falling,Var46,70,80),[]),
+                    all_entirely_outside_of_interval([],70,80),
+                    not_interrupted_(terminates,falling,[catch],70,80) :-
+                        findall(Var47,interrupted(terminates,catch,falling,Var47,70,80),[]),
+                        proved(all_entirely_outside_of_interval([],70,80)),
+                        not_interrupted_(terminates,falling,[],70,80).
+            not_interrupted(releases,falling,70,80) :-
+                findall(Var48,findall_can_interrupts(releases,Var48,falling,70,80),[]),
+                not_interrupted_(releases,falling,[],70,80).
+global_constraint.
+
+MODEL:
+{ happens(hit_ground,80),  happens(fall_down,70),  initiates(fall_down,falling,70),  trajectory(falling,70,height(0),80),  initiallyP(constant_fall_rate(1)),  holdsAt(height(10),70),  happens(bounce_up,60),  initiates(bounce_up,rising,60),  trajectory(rising,60,height(10),70),  holdsAt(height(0),60),  happens(fall_down,50),  initiates(fall_down,falling,50),  trajectory(falling,50,height(0),60),  holdsAt(height(10),50),  happens(bounce_up,40),  initiates(bounce_up,rising,40),  trajectory(rising,40,height(10),50),  holdsAt(height(0),40),  happens(fall_down,30),  initiates(fall_down,falling,30),  trajectory(falling,30,height(0),40),  holdsAt(height(10),30),  happens(bounce_up,20),  initiates(bounce_up,rising,20),  trajectory(rising,20,height(10),30),  holdsAt(height(0),20),  happens(fall_down,10),  happens(drop,10),  initiates(fall_down,falling,10),  trajectory(falling,10,height(0),20),  holdsAt(height(10),10),  initiallyP(height(10)),  not_stoppedIn(0,height(10),10),  not_stoppedIn(10,falling,20),  not_stoppedIn(20,rising,30),  not_stoppedIn(30,falling,40),  not_stoppedIn(40,rising,50),  not_stoppedIn(50,falling,60),  not_stoppedIn(60,rising,70),  not_stoppedIn(70,falling,80) }
+BINDINGS: 
+T = 80
+
+
+	ANSWER:	5 (in 8379.593 ms)
+
+JUSTIFICATION_TREE:
+happens(hit_ground,100) :-
+    holdsAt(height(0),100,falling) :-
+        max_time(100),
+        can_trajectory(falling,90,height(0),100),
+        can_initiates(fall_down,falling,90),
+        happens(fall_down,90) :-
+            incr_happens(reach_apex,90).
+        initiates(fall_down,falling,90),
+        trajectory(falling,90,height(0),100) :-
+            initiallyP(constant_fall_rate(1)),
+            holdsAt(height(10),90) :-
+                max_time(100),
+                can_trajectory(rising,80,height(10),90),
+                can_initiates(bounce_up,rising,80),
+                happens(bounce_up,80) :-
+                    incr_happens(hit_ground,80).
+                initiates(bounce_up,rising,80),
+                trajectory(rising,80,height(10),90) :-
+                    initiallyP(constant_fall_rate(1)),
+                    holdsAt(height(0),80) :-
+                        max_time(100),
+                        can_trajectory(falling,70,height(0),80),
+                        can_initiates(fall_down,falling,70),
+                        happens(fall_down,70) :-
+                            incr_happens(reach_apex,70).
+                        initiates(fall_down,falling,70),
+                        trajectory(falling,70,height(0),80) :-
+                            initiallyP(constant_fall_rate(1)),
+                            holdsAt(height(10),70) :-
+                                max_time(100),
+                                can_trajectory(rising,60,height(10),70),
+                                can_initiates(bounce_up,rising,60),
+                                happens(bounce_up,60) :-
+                                    incr_happens(hit_ground,60).
+                                initiates(bounce_up,rising,60),
+                                trajectory(rising,60,height(10),70) :-
+                                    initiallyP(constant_fall_rate(1)),
+                                    holdsAt(height(0),60) :-
+                                        max_time(100),
+                                        can_trajectory(falling,50,height(0),60),
+                                        can_initiates(fall_down,falling,50),
+                                        happens(fall_down,50) :-
+                                            incr_happens(reach_apex,50).
+                                        initiates(fall_down,falling,50),
+                                        trajectory(falling,50,height(0),60) :-
+                                            initiallyP(constant_fall_rate(1)),
+                                            holdsAt(height(10),50) :-
+                                                max_time(100),
+                                                can_trajectory(rising,40,height(10),50),
+                                                can_initiates(bounce_up,rising,40),
+                                                happens(bounce_up,40) :-
+                                                    incr_happens(hit_ground,40).
+                                                initiates(bounce_up,rising,40),
+                                                trajectory(rising,40,height(10),50) :-
+                                                    initiallyP(constant_fall_rate(1)),
+                                                    holdsAt(height(0),40) :-
+                                                        max_time(100),
+                                                        can_trajectory(falling,30,height(0),40),
+                                                        can_initiates(fall_down,falling,30),
+                                                        happens(fall_down,30) :-
+                                                            incr_happens(reach_apex,30).
+                                                        initiates(fall_down,falling,30),
+                                                        trajectory(falling,30,height(0),40) :-
+                                                            initiallyP(constant_fall_rate(1)),
+                                                            holdsAt(height(10),30) :-
+                                                                max_time(100),
+                                                                can_trajectory(rising,20,height(10),30),
+                                                                can_initiates(bounce_up,rising,20),
+                                                                happens(bounce_up,20) :-
+                                                                    incr_happens(hit_ground,20).
+                                                                initiates(bounce_up,rising,20),
+                                                                trajectory(rising,20,height(10),30) :-
+                                                                    initiallyP(constant_fall_rate(1)),
+                                                                    holdsAt(height(0),20) :-
+                                                                        max_time(100),
+                                                                        can_trajectory(falling,10,height(0),20),
+                                                                        can_initiates(fall_down,falling,10),
+                                                                        happens(fall_down,10) :-
+                                                                            happens(drop,10).
+                                                                        initiates(fall_down,falling,10),
+                                                                        trajectory(falling,10,height(0),20) :-
+                                                                            initiallyP(constant_fall_rate(1)),
+                                                                            holdsAt(height(10),10) :-
+                                                                                max_time(100),
+                                                                                initiallyP(height(10)),
+                                                                                not_stoppedIn(0,height(10),10) :-
+                                                                                    not_interrupted(terminates,height(10),0,10) :-
+                                                                                        findall(Var21,findall_can_interrupts(terminates,Var21,height(10),0,10),[catch]) :-
+                                                                                            findall_can_interrupts(terminates,catch,height(10),0,10) :-
+                                                                                                can_interrupts(terminates,catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}) :-
+                                                                                                    can_terminates(catch,height(10),Var1 | {Var1 #> 0,Var1 #< 10}).
+                                                                                        not_interrupted_(terminates,height(10),[catch],0,10) :-
+                                                                                            findall(Var22,interrupted(terminates,catch,height(10),Var22,0,10),[]),
+                                                                                            all_entirely_outside_of_interval([],0,10),
+                                                                                            not_interrupted_(terminates,height(10),[],0,10).
+                                                                                    not_interrupted(releases,height(10),0,10) :-
+                                                                                        findall(Var23,findall_can_interrupts(releases,Var23,height(10),0,10),[drop]) :-
+                                                                                            findall_can_interrupts(releases,drop,height(10),0,10) :-
+                                                                                                can_interrupts(releases,drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                                                                                    can_releases(drop,height(10),Var2 | {Var2 #> 0,Var2 #< 10}).
+                                                                                        not_interrupted_(releases,height(10),[drop],0,10) :-
+                                                                                            findall(Var24,interrupted(releases,drop,height(10),Var24,0,10),[]),
+                                                                                            proved(all_entirely_outside_of_interval([],0,10)),
+                                                                                            not_interrupted_(releases,height(10),[],0,10).
+                                                                        not_stoppedIn(10,falling,20) :-
+                                                                            not_interrupted(terminates,falling,10,20) :-
+                                                                                findall(Var25,findall_can_interrupts(terminates,Var25,falling,10,20),[hit_ground,catch]) :-
+                                                                                    findall_can_interrupts(terminates,hit_ground,falling,10,20) :-
+                                                                                        can_interrupts(terminates,hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}) :-
+                                                                                            can_terminates(hit_ground,falling,Var3 | {Var3 #> 10,Var3 #< 20}).
+                                                                                    findall_can_interrupts(terminates,catch,falling,10,20) :-
+                                                                                        can_interrupts(terminates,catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}) :-
+                                                                                            can_terminates(catch,falling,Var4 | {Var4 #> 10,Var4 #< 20}).
+                                                                                not_interrupted_(terminates,falling,[hit_ground,catch],10,20) :-
+                                                                                    findall(Var26,interrupted(terminates,hit_ground,falling,Var26,10,20),[]),
+                                                                                    all_entirely_outside_of_interval([],10,20),
+                                                                                    not_interrupted_(terminates,falling,[catch],10,20) :-
+                                                                                        findall(Var27,interrupted(terminates,catch,falling,Var27,10,20),[]),
+                                                                                        proved(all_entirely_outside_of_interval([],10,20)),
+                                                                                        not_interrupted_(terminates,falling,[],10,20).
+                                                                            not_interrupted(releases,falling,10,20) :-
+                                                                                findall(Var28,findall_can_interrupts(releases,Var28,falling,10,20),[]),
+                                                                                not_interrupted_(releases,falling,[],10,20).
+                                                                not_stoppedIn(20,rising,30) :-
+                                                                    not_interrupted(terminates,rising,20,30) :-
+                                                                        findall(Var29,findall_can_interrupts(terminates,Var29,rising,20,30),[reach_apex,catch]) :-
+                                                                            findall_can_interrupts(terminates,reach_apex,rising,20,30) :-
+                                                                                can_interrupts(terminates,reach_apex,rising,Var5 | {Var5 #> 20,Var5 #< 30}) :-
+                                                                                    can_terminates(reach_apex,rising,Var5 | {Var5 #> 20,Var5 #< 30}).
+                                                                            findall_can_interrupts(terminates,catch,rising,20,30) :-
+                                                                                can_interrupts(terminates,catch,rising,Var6 | {Var6 #> 20,Var6 #< 30}) :-
+                                                                                    can_terminates(catch,rising,Var6 | {Var6 #> 20,Var6 #< 30}).
+                                                                        not_interrupted_(terminates,rising,[reach_apex,catch],20,30) :-
+                                                                            findall(Var30,interrupted(terminates,reach_apex,rising,Var30,20,30),[]),
+                                                                            all_entirely_outside_of_interval([],20,30),
+                                                                            not_interrupted_(terminates,rising,[catch],20,30) :-
+                                                                                findall(Var31,interrupted(terminates,catch,rising,Var31,20,30),[]),
+                                                                                proved(all_entirely_outside_of_interval([],20,30)),
+                                                                                not_interrupted_(terminates,rising,[],20,30).
+                                                                    not_interrupted(releases,rising,20,30) :-
+                                                                        findall(Var32,findall_can_interrupts(releases,Var32,rising,20,30),[]),
+                                                                        not_interrupted_(releases,rising,[],20,30).
+                                                        not_stoppedIn(30,falling,40) :-
+                                                            not_interrupted(terminates,falling,30,40) :-
+                                                                findall(Var33,findall_can_interrupts(terminates,Var33,falling,30,40),[hit_ground,catch]) :-
+                                                                    findall_can_interrupts(terminates,hit_ground,falling,30,40) :-
+                                                                        can_interrupts(terminates,hit_ground,falling,Var7 | {Var7 #> 30,Var7 #< 40}) :-
+                                                                            can_terminates(hit_ground,falling,Var7 | {Var7 #> 30,Var7 #< 40}).
+                                                                    findall_can_interrupts(terminates,catch,falling,30,40) :-
+                                                                        can_interrupts(terminates,catch,falling,Var8 | {Var8 #> 30,Var8 #< 40}) :-
+                                                                            can_terminates(catch,falling,Var8 | {Var8 #> 30,Var8 #< 40}).
+                                                                not_interrupted_(terminates,falling,[hit_ground,catch],30,40) :-
+                                                                    findall(Var34,interrupted(terminates,hit_ground,falling,Var34,30,40),[]),
+                                                                    all_entirely_outside_of_interval([],30,40),
+                                                                    not_interrupted_(terminates,falling,[catch],30,40) :-
+                                                                        findall(Var35,interrupted(terminates,catch,falling,Var35,30,40),[]),
+                                                                        proved(all_entirely_outside_of_interval([],30,40)),
+                                                                        not_interrupted_(terminates,falling,[],30,40).
+                                                            not_interrupted(releases,falling,30,40) :-
+                                                                findall(Var36,findall_can_interrupts(releases,Var36,falling,30,40),[]),
+                                                                not_interrupted_(releases,falling,[],30,40).
+                                                not_stoppedIn(40,rising,50) :-
+                                                    not_interrupted(terminates,rising,40,50) :-
+                                                        findall(Var37,findall_can_interrupts(terminates,Var37,rising,40,50),[reach_apex,catch]) :-
+                                                            findall_can_interrupts(terminates,reach_apex,rising,40,50) :-
+                                                                can_interrupts(terminates,reach_apex,rising,Var9 | {Var9 #> 40,Var9 #< 50}) :-
+                                                                    can_terminates(reach_apex,rising,Var9 | {Var9 #> 40,Var9 #< 50}).
+                                                            findall_can_interrupts(terminates,catch,rising,40,50) :-
+                                                                can_interrupts(terminates,catch,rising,Var10 | {Var10 #> 40,Var10 #< 50}) :-
+                                                                    can_terminates(catch,rising,Var10 | {Var10 #> 40,Var10 #< 50}).
+                                                        not_interrupted_(terminates,rising,[reach_apex,catch],40,50) :-
+                                                            findall(Var38,interrupted(terminates,reach_apex,rising,Var38,40,50),[]),
+                                                            all_entirely_outside_of_interval([],40,50),
+                                                            not_interrupted_(terminates,rising,[catch],40,50) :-
+                                                                findall(Var39,interrupted(terminates,catch,rising,Var39,40,50),[]),
+                                                                proved(all_entirely_outside_of_interval([],40,50)),
+                                                                not_interrupted_(terminates,rising,[],40,50).
+                                                    not_interrupted(releases,rising,40,50) :-
+                                                        findall(Var40,findall_can_interrupts(releases,Var40,rising,40,50),[]),
+                                                        not_interrupted_(releases,rising,[],40,50).
+                                        not_stoppedIn(50,falling,60) :-
+                                            not_interrupted(terminates,falling,50,60) :-
+                                                findall(Var41,findall_can_interrupts(terminates,Var41,falling,50,60),[hit_ground,catch]) :-
+                                                    findall_can_interrupts(terminates,hit_ground,falling,50,60) :-
+                                                        can_interrupts(terminates,hit_ground,falling,Var11 | {Var11 #> 50,Var11 #< 60}) :-
+                                                            can_terminates(hit_ground,falling,Var11 | {Var11 #> 50,Var11 #< 60}).
+                                                    findall_can_interrupts(terminates,catch,falling,50,60) :-
+                                                        can_interrupts(terminates,catch,falling,Var12 | {Var12 #> 50,Var12 #< 60}) :-
+                                                            can_terminates(catch,falling,Var12 | {Var12 #> 50,Var12 #< 60}).
+                                                not_interrupted_(terminates,falling,[hit_ground,catch],50,60) :-
+                                                    findall(Var42,interrupted(terminates,hit_ground,falling,Var42,50,60),[]),
+                                                    all_entirely_outside_of_interval([],50,60),
+                                                    not_interrupted_(terminates,falling,[catch],50,60) :-
+                                                        findall(Var43,interrupted(terminates,catch,falling,Var43,50,60),[]),
+                                                        proved(all_entirely_outside_of_interval([],50,60)),
+                                                        not_interrupted_(terminates,falling,[],50,60).
+                                            not_interrupted(releases,falling,50,60) :-
+                                                findall(Var44,findall_can_interrupts(releases,Var44,falling,50,60),[]),
+                                                not_interrupted_(releases,falling,[],50,60).
+                                not_stoppedIn(60,rising,70) :-
+                                    not_interrupted(terminates,rising,60,70) :-
+                                        findall(Var45,findall_can_interrupts(terminates,Var45,rising,60,70),[reach_apex,catch]) :-
+                                            findall_can_interrupts(terminates,reach_apex,rising,60,70) :-
+                                                can_interrupts(terminates,reach_apex,rising,Var13 | {Var13 #> 60,Var13 #< 70}) :-
+                                                    can_terminates(reach_apex,rising,Var13 | {Var13 #> 60,Var13 #< 70}).
+                                            findall_can_interrupts(terminates,catch,rising,60,70) :-
+                                                can_interrupts(terminates,catch,rising,Var14 | {Var14 #> 60,Var14 #< 70}) :-
+                                                    can_terminates(catch,rising,Var14 | {Var14 #> 60,Var14 #< 70}).
+                                        not_interrupted_(terminates,rising,[reach_apex,catch],60,70) :-
+                                            findall(Var46,interrupted(terminates,reach_apex,rising,Var46,60,70),[]),
+                                            all_entirely_outside_of_interval([],60,70),
+                                            not_interrupted_(terminates,rising,[catch],60,70) :-
+                                                findall(Var47,interrupted(terminates,catch,rising,Var47,60,70),[]),
+                                                proved(all_entirely_outside_of_interval([],60,70)),
+                                                not_interrupted_(terminates,rising,[],60,70).
+                                    not_interrupted(releases,rising,60,70) :-
+                                        findall(Var48,findall_can_interrupts(releases,Var48,rising,60,70),[]),
+                                        not_interrupted_(releases,rising,[],60,70).
+                        not_stoppedIn(70,falling,80) :-
+                            not_interrupted(terminates,falling,70,80) :-
+                                findall(Var49,findall_can_interrupts(terminates,Var49,falling,70,80),[hit_ground,catch]) :-
+                                    findall_can_interrupts(terminates,hit_ground,falling,70,80) :-
+                                        can_interrupts(terminates,hit_ground,falling,Var15 | {Var15 #> 70,Var15 #< 80}) :-
+                                            can_terminates(hit_ground,falling,Var15 | {Var15 #> 70,Var15 #< 80}).
+                                    findall_can_interrupts(terminates,catch,falling,70,80) :-
+                                        can_interrupts(terminates,catch,falling,Var16 | {Var16 #> 70,Var16 #< 80}) :-
+                                            can_terminates(catch,falling,Var16 | {Var16 #> 70,Var16 #< 80}).
+                                not_interrupted_(terminates,falling,[hit_ground,catch],70,80) :-
+                                    findall(Var50,interrupted(terminates,hit_ground,falling,Var50,70,80),[]),
+                                    all_entirely_outside_of_interval([],70,80),
+                                    not_interrupted_(terminates,falling,[catch],70,80) :-
+                                        findall(Var51,interrupted(terminates,catch,falling,Var51,70,80),[]),
+                                        proved(all_entirely_outside_of_interval([],70,80)),
+                                        not_interrupted_(terminates,falling,[],70,80).
+                            not_interrupted(releases,falling,70,80) :-
+                                findall(Var52,findall_can_interrupts(releases,Var52,falling,70,80),[]),
+                                not_interrupted_(releases,falling,[],70,80).
+                not_stoppedIn(80,rising,90) :-
+                    not_interrupted(terminates,rising,80,90) :-
+                        findall(Var53,findall_can_interrupts(terminates,Var53,rising,80,90),[reach_apex,catch]) :-
+                            findall_can_interrupts(terminates,reach_apex,rising,80,90) :-
+                                can_interrupts(terminates,reach_apex,rising,Var17 | {Var17 #> 80,Var17 #< 90}) :-
+                                    can_terminates(reach_apex,rising,Var17 | {Var17 #> 80,Var17 #< 90}).
+                            findall_can_interrupts(terminates,catch,rising,80,90) :-
+                                can_interrupts(terminates,catch,rising,Var18 | {Var18 #> 80,Var18 #< 90}) :-
+                                    can_terminates(catch,rising,Var18 | {Var18 #> 80,Var18 #< 90}).
+                        not_interrupted_(terminates,rising,[reach_apex,catch],80,90) :-
+                            findall(Var54,interrupted(terminates,reach_apex,rising,Var54,80,90),[]),
+                            all_entirely_outside_of_interval([],80,90),
+                            not_interrupted_(terminates,rising,[catch],80,90) :-
+                                findall(Var55,interrupted(terminates,catch,rising,Var55,80,90),[]),
+                                proved(all_entirely_outside_of_interval([],80,90)),
+                                not_interrupted_(terminates,rising,[],80,90).
+                    not_interrupted(releases,rising,80,90) :-
+                        findall(Var56,findall_can_interrupts(releases,Var56,rising,80,90),[]),
+                        not_interrupted_(releases,rising,[],80,90).
+        not_stoppedIn(90,falling,100) :-
+            not_interrupted(terminates,falling,90,100) :-
+                findall(Var57,findall_can_interrupts(terminates,Var57,falling,90,100),[hit_ground,catch]) :-
+                    findall_can_interrupts(terminates,hit_ground,falling,90,100) :-
+                        can_interrupts(terminates,hit_ground,falling,Var19 | {Var19 #> 90,Var19 #< 100}) :-
+                            can_terminates(hit_ground,falling,Var19 | {Var19 #> 90,Var19 #< 100}).
+                    findall_can_interrupts(terminates,catch,falling,90,100) :-
+                        can_interrupts(terminates,catch,falling,Var20 | {Var20 #> 90,Var20 #< 100}) :-
+                            can_terminates(catch,falling,Var20 | {Var20 #> 90,Var20 #< 100}).
+                not_interrupted_(terminates,falling,[hit_ground,catch],90,100) :-
+                    findall(Var58,interrupted(terminates,hit_ground,falling,Var58,90,100),[]),
+                    all_entirely_outside_of_interval([],90,100),
+                    not_interrupted_(terminates,falling,[catch],90,100) :-
+                        findall(Var59,interrupted(terminates,catch,falling,Var59,90,100),[]),
+                        proved(all_entirely_outside_of_interval([],90,100)),
+                        not_interrupted_(terminates,falling,[],90,100).
+            not_interrupted(releases,falling,90,100) :-
+                findall(Var60,findall_can_interrupts(releases,Var60,falling,90,100),[]),
+                not_interrupted_(releases,falling,[],90,100).
+global_constraint.
+
+MODEL:
+{ happens(hit_ground,100),  happens(fall_down,90),  initiates(fall_down,falling,90),  trajectory(falling,90,height(0),100),  initiallyP(constant_fall_rate(1)),  holdsAt(height(10),90),  happens(bounce_up,80),  initiates(bounce_up,rising,80),  trajectory(rising,80,height(10),90),  holdsAt(height(0),80),  happens(fall_down,70),  initiates(fall_down,falling,70),  trajectory(falling,70,height(0),80),  holdsAt(height(10),70),  happens(bounce_up,60),  initiates(bounce_up,rising,60),  trajectory(rising,60,height(10),70),  holdsAt(height(0),60),  happens(fall_down,50),  initiates(fall_down,falling,50),  trajectory(falling,50,height(0),60),  holdsAt(height(10),50),  happens(bounce_up,40),  initiates(bounce_up,rising,40),  trajectory(rising,40,height(10),50),  holdsAt(height(0),40),  happens(fall_down,30),  initiates(fall_down,falling,30),  trajectory(falling,30,height(0),40),  holdsAt(height(10),30),  happens(bounce_up,20),  initiates(bounce_up,rising,20),  trajectory(rising,20,height(10),30),  holdsAt(height(0),20),  happens(fall_down,10),  happens(drop,10),  initiates(fall_down,falling,10),  trajectory(falling,10,height(0),20),  holdsAt(height(10),10),  initiallyP(height(10)),  not_stoppedIn(0,height(10),10),  not_stoppedIn(10,falling,20),  not_stoppedIn(20,rising,30),  not_stoppedIn(30,falling,40),  not_stoppedIn(40,rising,50),  not_stoppedIn(50,falling,60),  not_stoppedIn(60,rising,70),  not_stoppedIn(70,falling,80),  not_stoppedIn(80,rising,90),  not_stoppedIn(90,falling,100) }
+BINDINGS: 
+T = 100
+
+
+  real      0:34.99
+  real [s]  34.99
+  user [s]  33.26
+  sys  [s]  0.09
+  mem  [KB] 29512
+  avgm [KB] 0

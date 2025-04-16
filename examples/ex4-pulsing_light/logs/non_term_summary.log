@@ -1,0 +1,80 @@
+Below is the simplified and the full version of the 5th output of !spy produced by this non-terminating example.
+The simplified version omits most predicates to highlight the chain of events.
+
+========================================================================================================================
+Simplified !spy output: (removed most predicates to highlight the chain of events)
+========================================================================================================================
+
+--------------------- Calling:  builtin(!spy) -------------
+  happens(fade_out_end, {T1~[T1 > 0, T1 =< 100]} )                                                            % T1
+    holdsAt(brightness(0), {T1~[T1 > 0, T1 =< 100]} ,fading_out)
+      {T2~[T2 > 0, T2 < 100]} .>.0
+      {T2~[T2 > 0, T2 < 100]} .<. {T1~[T1 > 0, T1 =< 100]}                                                    % T2 < T1
+      max_time(100)
+      {T1~[T1 > 0, T1 =< 100]} .=<.100
+      can_trajectory(fading_out, {T2~[T2 > 0, T2 < 100]} ,brightness(0), {T1~[T1 > 0, T1 =< 100]} )
+      can_initiates(fade_in_end,fading_out, {T2~[T2 > 0, T2 < 100]} )
+      happens(fade_in_end, {T2~[T2 > 0, T2 < 100]} )                                                          % T2
+        holdsAt(brightness(10), {T2~[T2 > 0, T2 < 100]} ,fading_in)
+          {T3~[T3 > 0, T3 < 100]} .>.0
+          {T3~[T3 > 0, T3 < 100]} .<. {T2~[T2 > 0, T2 < 100]}                                                 % T3 < T2
+          can_trajectory(fading_in, {T3~[T3 > 0, T3 < 100]} ,brightness(10), {T2~[T2 > 0, T2 < 100]} )
+          can_initiates(fade_out_end,fading_in, {T3~[T3 > 0, T3 < 100]} )
+          happens(fade_out_end, {T3~[T3 > 0, T3 < 100]} )                                                     % T3
+            holdsAt(brightness(0), {T3~[T3 > 0, T3 < 100]} ,fading_out)
+              {T4~[T4 > 0, T4 < 100]} .>.0
+              {T4~[T4 > 0, T4 < 100]} .<. {T3~[T3 > 0, T3 < 100]}                                             % T4 < T3
+              can_trajectory(fading_out, {T4~[T4 > 0, T4 < 100]} ,brightness(0), {T3~[T3 > 0, T3 < 100]} )
+              can_initiates(fade_in_end,fading_out, {T4~[T4 > 0, T4 < 100]} )
+              happens(fade_in_end, {T4~[T4 > 0, T4 < 100]} )                                                  % T4
+                holdsAt(brightness(10), {T4~[T4 > 0, T4 < 100]} ,fading_in)
+                  {T5~[T5 > 0, T5 < 100]} .>.0
+                  {T5~[T5 > 0, T5 < 100]} .<. {T4~[T4 > 0, T4 < 100]}                                         % T5 < T4
+                  can_trajectory(fading_in, {T5~[T5 > 0, T5 < 100]} ,brightness(10), {T4~[T4 > 0, T4 < 100]} )
+                  can_initiates(fade_out_end,fading_in, {T5~[T5 > 0, T5 < 100]} )
+                  happens(fade_out_end, {T5~[T5 > 0, T5 < 100]} )                                             % T5
+
+
+========================================================================================================================
+Full !spy output:
+========================================================================================================================
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(fade_out_end, {_18151~[_18151 > 0, _18151 =< 100]} )
+        builtin(!spy)
+        holdsAt(brightness(0), {_18151~[_18151 > 0, _18151 =< 100]} ,fading_out)
+             {_17934~[_17934 > 0, _17934 < 100]} .>.0
+             {_17934~[_17934 > 0, _17934 < 100]} .<. {_18151~[_18151 > 0, _18151 =< 100]} 
+            max_time(100)
+             {_18151~[_18151 > 0, _18151 =< 100]} .=<.100
+            can_trajectory(fading_out, {_17934~[_17934 > 0, _17934 < 100]} ,brightness(0), {_18151~[_18151 > 0, _18151 =< 100]} )
+            can_initiates(fade_in_end,fading_out, {_17934~[_17934 > 0, _17934 < 100]} )
+            happens(fade_in_end, {_17934~[_17934 > 0, _17934 < 100]} )
+                builtin(!spy)
+                holdsAt(brightness(10), {_17934~[_17934 > 0, _17934 < 100]} ,fading_in)
+                     {_19417~[_19417 > 0, _19417 < 100]} .>.0
+                     {_19417~[_19417 > 0, _19417 < 100]} .<. {_17934~[_17934 > 0, _17934 < 100]} 
+                    max_time(100)
+                     {_17934~[_17934 > 0, _17934 < 100]} .=<.100
+                    can_trajectory(fading_in, {_19417~[_19417 > 0, _19417 < 100]} ,brightness(10), {_17934~[_17934 > 0, _17934 < 100]} )
+                    can_initiates(fade_out_end,fading_in, {_19417~[_19417 > 0, _19417 < 100]} )
+                    happens(fade_out_end, {_19417~[_19417 > 0, _19417 < 100]} )
+                        builtin(!spy)
+                        holdsAt(brightness(0), {_19417~[_19417 > 0, _19417 < 100]} ,fading_out)
+                             {_22039~[_22039 > 0, _22039 < 100]} .>.0
+                             {_22039~[_22039 > 0, _22039 < 100]} .<. {_19417~[_19417 > 0, _19417 < 100]} 
+                            max_time(100)
+                             {_19417~[_19417 > 0, _19417 < 100]} .=<.100
+                            can_trajectory(fading_out, {_22039~[_22039 > 0, _22039 < 100]} ,brightness(0), {_19417~[_19417 > 0, _19417 < 100]} )
+                            can_initiates(fade_in_end,fading_out, {_22039~[_22039 > 0, _22039 < 100]} )
+                            happens(fade_in_end, {_22039~[_22039 > 0, _22039 < 100]} )
+                                builtin(!spy)
+                                holdsAt(brightness(10), {_22039~[_22039 > 0, _22039 < 100]} ,fading_in)
+                                     {_24879~[_24879 > 0, _24879 < 100]} .>.0
+                                     {_24879~[_24879 > 0, _24879 < 100]} .<. {_22039~[_22039 > 0, _22039 < 100]} 
+                                    max_time(100)
+                                     {_22039~[_22039 > 0, _22039 < 100]} .=<.100
+                                    can_trajectory(fading_in, {_24879~[_24879 > 0, _24879 < 100]} ,brightness(10), {_22039~[_22039 > 0, _22039 < 100]} )
+                                    can_initiates(fade_out_end,fading_in, {_24879~[_24879 > 0, _24879 < 100]} )
+                                    happens(fade_out_end, {_24879~[_24879 > 0, _24879 < 100]} )
+                                        builtin(!spy)

@@ -1,0 +1,64 @@
+$ scasp -s0 --ec ../axioms/bec_scasp-small.pl ./model-alt.pl --tree
+
+
+% QUERY:?- holdsAt(light_on,T).
+
+	ANSWER:	1 (in 6.0 ms)
+
+JUSTIFICATION_TREE:
+holdsAt(light_on,T | {T #> 10,T #=< 20}) :-
+    max_time(100),
+    can_initiates(turn_light_on,light_on,10),
+    happens(turn_light_on,10),
+    initiates(turn_light_on,light_on,10) :-
+        not_holdsAt(light_on,10) :-
+            max_time(100),
+            initiallyN(light_on),
+            not_startedIn(0,light_on,10) :-
+                findall(Var6,findall_can_initiates(Var6,light_on,0,10),[turn_light_on]) :-
+                    findall_can_initiates(turn_light_on,light_on,0,10) :-
+                        can_initiates(turn_light_on,light_on,Var1 | {Var1 #> 0,Var1 #< 10}).
+                not_initiated(light_on,[turn_light_on],0,10) :-
+                    findall(Var7,initiated(turn_light_on,light_on,Var7,0,10),[]),
+                    all_entirely_outside_of_interval([],0,10),
+                    not_initiated(light_on,[],0,10).
+    not_stoppedIn(10,light_on,T | {T #> 10,T #=< 20}) :-
+        findall(Var8,findall_can_terminates(Var8,light_on,10,T | {T #> 10,T #=< 20}),[turn_light_off]) :-
+            findall_can_terminates(turn_light_off,light_on,10,Var2 | {Var2 #> 10,Var2 #=< 100}) :-
+                can_terminates(turn_light_off,light_on,Var3 | {Var3 #> 10,Var3 #< 100}).
+        not_terminated(light_on,[turn_light_off],10,T | {T #> 10,T #=< 20}) :-
+            findall(Var9,terminated(turn_light_off,light_on,Var9,10,T | {T #> 10,T #=< 20}),[20]) :-
+                terminated(turn_light_off,light_on,20,10,Var4 | {Var4 #> 20,Var4 #=< 100}) :-
+                    can_terminates(turn_light_off,light_on,20),
+                    happens(turn_light_off,20),
+                    terminates(turn_light_off,light_on,20) :-
+                        holdsAt(light_on,20) :-
+                            max_time(100),
+                            can_initiates(turn_light_on,light_on,10),
+                            happens(turn_light_on,10),
+                            proved(initiates(turn_light_on,light_on,10)),
+                            not_stoppedIn(10,light_on,20) :-
+                                findall(Var10,findall_can_terminates(Var10,light_on,10,20),[turn_light_off]) :-
+                                    findall_can_terminates(turn_light_off,light_on,10,20) :-
+                                        can_terminates(turn_light_off,light_on,Var5 | {Var5 #> 10,Var5 #< 20}).
+                                not_terminated(light_on,[turn_light_off],10,20) :-
+                                    findall(Var11,terminated(turn_light_off,light_on,Var11,10,20),[]),
+                                    all_entirely_outside_of_interval([],10,20),
+                                    not_terminated(light_on,[],10,20).
+            all_entirely_outside_of_interval([20],10,T | {T #> 10,T #=< 20}) :-
+                all_entirely_outside_of_interval([],10,T | {T #> 10,T #=< 20}).
+            not_terminated(light_on,[],10,T | {T #> 10,T #=< 20}).
+global_constraint.
+
+MODEL:
+{ holdsAt(light_on,T | {T #> 10,T #=< 20}),  happens(turn_light_on,10),  initiates(turn_light_on,light_on,10),  not_holdsAt(light_on,10),  initiallyN(light_on),  not_startedIn(0,light_on,10),  not_stoppedIn(10,light_on,T | {T #> 10,T #=< 20}),  happens(turn_light_off,20),  terminates(turn_light_off,light_on,20),  holdsAt(light_on,20),  not_stoppedIn(10,light_on,20) }
+BINDINGS: 
+T #> 10,T #=< 20
+
+
+  real      0:00.61
+  real [s]  0.61
+  user [s]  0.21
+  sys  [s]  0.07
+  mem  [KB] 27120
+  avgm [KB] 0

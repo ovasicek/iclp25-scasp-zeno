@@ -1,0 +1,91 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp-interval_not.pl ./model.pl --zeno_halt --tree
+
+
+% QUERY:?- happens(hit_ground,T).
+
+WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
+	happens(hit_ground, {_415396~[_415396 > 0, _415396 < 10]} )
+	happens(hit_ground, {_417439~[_417439 > 0, _417439 < 10]} )
+
+
+--------------------- Calling:  happens(hit_ground,_417439) -------------
+    happens(hit_ground,20)
+        builtin(!spy)
+        holdsAt(height(0),20,falling)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(falling,10,height(0),20)
+            can_initiates(fall_down,falling,10)
+            happens(fall_down,10)
+                happens(drop,10)
+            initiates(fall_down,falling,10)
+            trajectory(falling,10,height(0),20)
+                initiallyP(constant_fall_rate(1))
+                0.=.10-(20-10)*1
+                holdsAt(height(10),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(height(10))
+                    not_stoppedIn(0,height(10),10)
+                        0.=<.10
+                        not_interrupted(terminates,height(10),0,10)
+                            findall(_413259,findall_can_interrupts(terminates,_413259,height(10),0,10),[catch,stop_bouncing])
+                                findall_can_interrupts(terminates,catch,height(10),0,10)
+                                     {_413589~[_413589 > 0, _413589 < 10]} .>.0
+                                     {_413589~[_413589 > 0, _413589 < 10]} .<.10
+                                    can_interrupts(terminates,catch,height(10), {_413589~[_413589 > 0, _413589 < 10]} )
+                                        can_terminates(catch,height(10), {_413589~[_413589 > 0, _413589 < 10]} )
+                                findall_can_interrupts(terminates,stop_bouncing,height(10),0,10)
+                                     {_413416~[_413416 > 0, _413416 < 10]} .>.0
+                                     {_413416~[_413416 > 0, _413416 < 10]} .<.10
+                                    can_interrupts(terminates,stop_bouncing,height(10), {_413416~[_413416 > 0, _413416 < 10]} )
+                                        can_terminates(stop_bouncing,height(10), {_413416~[_413416 > 0, _413416 < 10]} )
+                            not_interrupted_N(terminates,height(10),[catch,stop_bouncing],0,10)
+                                not_interrupted_1(terminates,height(10),[catch,stop_bouncing],0,10)
+                                    inf(0,0)
+                                    sup(0,0)
+                                    is_not_interval(0,0)
+                                        0.=.0
+                                    inf(10,10)
+                                    sup(10,10)
+                                    is_not_interval(10,10)
+                                        10.=.10
+                                    not_interrupted_1_fail(terminates,height(10),[catch,stop_bouncing],0,10)
+                                        findall(_414885,interrupt_1_fail(terminates,catch,height(10),_414885,0,10),[])
+                                        all_entirely_outside_of_interval([],0,10)
+                                        not_interrupted_1_fail(terminates,height(10),[stop_bouncing],0,10)
+                                            interrupt_1_fail(terminates,stop_bouncing,height(10), {_415396~[_415396 > 0, _415396 < 10]} ,0,10)
+                                                 {_415396~[_415396 > 0, _415396 < 10]} .>.0
+                                                 {_415396~[_415396 > 0, _415396 < 10]} .<.10
+                                                happens(stop_bouncing, {_415396~[_415396 > 0, _415396 < 10]} )
+                                                    happens(hit_ground, {_415396~[_415396 > 0, _415396 < 10]} )
+                                                        builtin(!spy)
+                                                        holdsAt(height(0), {_415396~[_415396 > 0, _415396 < 10]} ,falling)
+                                                             {_416067~[_416067 > 0, _416067 < 10]} .>.0
+                                                             {_416067~[_416067 > 0, _416067 < 10]} .<. {_415396~[_415396 > 0, _415396 < 10]} 
+                                                            max_time(100)
+                                                             {_415396~[_415396 > 0, _415396 < 10]} .=<.100
+                                                            can_trajectory(falling, {_416067~[_416067 > 0, _416067 < 10]} ,height(0), {_415396~[_415396 > 0, _415396 < 10]} )
+                                                            can_initiates(fall_down,falling, {_416067~[_416067 > 0, _416067 < 10]} )
+                                                            happens(fall_down, {_416067~[_416067 > 0, _416067 < 10]} )
+                                                                happens(reach_apex, {_416067~[_416067 > 0, _416067 < 10]} )
+                                                                    builtin(!spy)
+                                                                    holdsAt(velocity(0), {_416067~[_416067 > 0, _416067 < 10]} ,rising)
+                                                                         {_417439~[_417439 > 0, _417439 < 10]} .>.0
+                                                                         {_417439~[_417439 > 0, _417439 < 10]} .<. {_416067~[_416067 > 0, _416067 < 10]} 
+                                                                        max_time(100)
+                                                                         {_416067~[_416067 > 0, _416067 < 10]} .=<.100
+                                                                        can_trajectory(rising, {_417439~[_417439 > 0, _417439 < 10]} ,velocity(0), {_416067~[_416067 > 0, _416067 < 10]} )
+                                                                        can_initiates(bounce_up,rising, {_417439~[_417439 > 0, _417439 < 10]} )
+                                                                        happens(bounce_up, {_417439~[_417439 > 0, _417439 < 10]} )
+                                                                            happens(hit_ground, {_417439~[_417439 > 0, _417439 < 10]} )
+
+  real      0:00.90
+  real [s]  0.90
+  user [s]  0.57
+  sys  [s]  0.05
+  mem  [KB] 33456
+  avgm [KB] 0

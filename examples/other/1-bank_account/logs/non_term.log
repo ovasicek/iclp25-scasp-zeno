@@ -1,0 +1,640 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./model.pl -v6 --timeout=3000
+
+
+% QUERY:?- holdsAt(balance(account1,X),8).
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(balance(account1,10),8)
+        8.>=.0
+        max_time(100)
+        8.=<.100
+        initiallyP(balance(account1,10))
+        not_stoppedIn(0,balance(account1,10),8)
+            0.=<.8
+            not_interrupted(terminates,balance(account1,10),0,8)
+                findall(_23269,findall_can_interrupts(terminates,_23269,balance(account1,10),0,8),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)])
+                    findall_can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10),0,8)
+                         {_23862~[_23862 > 0, _23862 < 8]} .>.0
+                         {_23862~[_23862 > 0, _23862 < 8]} .<.8
+                        can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                            can_terminates(transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                    findall_can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),0,8)
+                         {_23653~[_23653 > 0, _23653 < 8]} .>.0
+                         {_23653~[_23653 > 0, _23653 < 8]} .<.8
+                        can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                            can_terminates(transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                    findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10),0,8)
+                         {_23446~[_23446 > 0, _23446 < 8]} .>.0
+                         {_23446~[_23446 > 0, _23446 < 8]} .<.8
+                        can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                            can_terminates(chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                not_interrupted_(terminates,balance(account1,10),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                    findall(_24166,interrupted(terminates,transfer(_23743,account1,_23745),balance(account1,10),_24166,0,8),[])
+                    all_entirely_outside_of_interval([],0,8)
+                    not_interrupted_(terminates,balance(account1,10),[transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                        interrupted(terminates,transfer(account1,account2,2),balance(account1,10),1,0,8)
+                            1.>.0
+                            1.<.8
+                            can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                can_terminates(transfer(account1,account2,2),balance(account1,10),1)
+                            happens(transfer(account1,account2,2),1)
+                            interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                terminates(transfer(account1,account2,2),balance(account1,10),1)
+                                    2.>.0
+                                    10.>=.2
+                                    holdsAt(balance(account2,10),1)
+                                        1.>=.0
+                                        max_time(100)
+                                        1.=<.100
+                                        initiallyP(balance(account2,10))
+                                        not_stoppedIn(0,balance(account2,10),1)
+                                            0.=<.1
+                                            not_interrupted(terminates,balance(account2,10),0,1)
+                                                findall(_26360,findall_can_interrupts(terminates,_26360,balance(account2,10),0,1),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)])
+                                                    findall_can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10),0,1)
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .>.0
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                            can_terminates(transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                    findall_can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10),0,1)
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .>.0
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                            can_terminates(transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                    findall_can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10),0,1)
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .>.0
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .<.1
+                                                        can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                            can_terminates(chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                not_interrupted_(terminates,balance(account2,10),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                    findall(_27257,interrupted(terminates,transfer(_26834,account2,_26836),balance(account2,10),_27257,0,1),[])
+                                                    all_entirely_outside_of_interval([],0,1)
+                                                    not_interrupted_(terminates,balance(account2,10),[transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                        findall(_27492,interrupted(terminates,transfer(account2,_26626,_26627),balance(account2,10),_27492,0,1),[])
+                                                        proved(all_entirely_outside_of_interval([],0,1))
+                                                        not_interrupted_(terminates,balance(account2,10),[chargeServiceFee(account2)],0,1)
+                                                            interrupted(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} ,0,1)
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .>.0
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .<.1
+                                                                can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    can_terminates(chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                happens(chargeServiceFee(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(balance(account1,10),8)
+        8.>=.0
+        max_time(100)
+        8.=<.100
+        initiallyP(balance(account1,10))
+        not_stoppedIn(0,balance(account1,10),8)
+            0.=<.8
+            not_interrupted(terminates,balance(account1,10),0,8)
+                findall(_23269,findall_can_interrupts(terminates,_23269,balance(account1,10),0,8),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)])
+                    findall_can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10),0,8)
+                         {_23862~[_23862 > 0, _23862 < 8]} .>.0
+                         {_23862~[_23862 > 0, _23862 < 8]} .<.8
+                        can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                            can_terminates(transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                    findall_can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),0,8)
+                         {_23653~[_23653 > 0, _23653 < 8]} .>.0
+                         {_23653~[_23653 > 0, _23653 < 8]} .<.8
+                        can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                            can_terminates(transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                    findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10),0,8)
+                         {_23446~[_23446 > 0, _23446 < 8]} .>.0
+                         {_23446~[_23446 > 0, _23446 < 8]} .<.8
+                        can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                            can_terminates(chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                not_interrupted_(terminates,balance(account1,10),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                    findall(_24166,interrupted(terminates,transfer(_23743,account1,_23745),balance(account1,10),_24166,0,8),[])
+                    all_entirely_outside_of_interval([],0,8)
+                    not_interrupted_(terminates,balance(account1,10),[transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                        interrupted(terminates,transfer(account1,account2,2),balance(account1,10),1,0,8)
+                            1.>.0
+                            1.<.8
+                            can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                can_terminates(transfer(account1,account2,2),balance(account1,10),1)
+                            happens(transfer(account1,account2,2),1)
+                            interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                terminates(transfer(account1,account2,2),balance(account1,10),1)
+                                    2.>.0
+                                    10.>=.2
+                                    holdsAt(balance(account2,10),1)
+                                        1.>=.0
+                                        max_time(100)
+                                        1.=<.100
+                                        initiallyP(balance(account2,10))
+                                        not_stoppedIn(0,balance(account2,10),1)
+                                            0.=<.1
+                                            not_interrupted(terminates,balance(account2,10),0,1)
+                                                findall(_26360,findall_can_interrupts(terminates,_26360,balance(account2,10),0,1),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)])
+                                                    findall_can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10),0,1)
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .>.0
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                            can_terminates(transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                    findall_can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10),0,1)
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .>.0
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                            can_terminates(transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                    findall_can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10),0,1)
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .>.0
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .<.1
+                                                        can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                            can_terminates(chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                not_interrupted_(terminates,balance(account2,10),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                    findall(_27257,interrupted(terminates,transfer(_26834,account2,_26836),balance(account2,10),_27257,0,1),[])
+                                                    all_entirely_outside_of_interval([],0,1)
+                                                    not_interrupted_(terminates,balance(account2,10),[transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                        findall(_27492,interrupted(terminates,transfer(account2,_26626,_26627),balance(account2,10),_27492,0,1),[])
+                                                        proved(all_entirely_outside_of_interval([],0,1))
+                                                        not_interrupted_(terminates,balance(account2,10),[chargeServiceFee(account2)],0,1)
+                                                            interrupted(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} ,0,1)
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .>.0
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .<.1
+                                                                can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    can_terminates(chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                happens(chargeServiceFee(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    builtin(!spy)
+                                                                    not_holdsAt(serviceFeeCharged(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                         {_27970~[_27970 > 0, _27970 < 1]} .>=.0
+                                                                        max_time(100)
+                                                                         {_27970~[_27970 > 0, _27970 < 1]} .=<.100
+                                                                        initiallyN(serviceFeeCharged(account2))
+                                                                            not initiallyP(serviceFeeCharged(account2))
+                                                                                not o_initiallyP_1(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= balance(account1,10)
+                                                                                not o_initiallyP_2(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= balance(account2,10)
+                                                                                not o_initiallyP_3(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= minimumBalance(account1,5)
+                                                                                not o_initiallyP_4(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= minimumBalance(account2,5)
+                                                                                not o_initiallyP_5(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= serviceFee(account1,1)
+                                                                                not o_initiallyP_6(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= serviceFee(account2,1)
+                                                                        not_startedIn(0,serviceFeeCharged(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                            0.=<. {_27970~[_27970 > 0, _27970 < 1]} 
+                                                                            not_interrupted(initiates,serviceFeeCharged(account2),0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                findall(_32707,findall_can_interrupts(initiates,_32707,serviceFeeCharged(account2),0, {_27970~[_27970 > 0, _27970 < 1]} ),[chargeServiceFee(account2)])
+                                                                                    findall_can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2),0, {_32878~[_32878 > 0, _32878 < 1]} )
+                                                                                         {_33084~[_33084 > 0, _33084 < 1]} .>.0
+                                                                                         {_33084~[_33084 > 0, _33084 < 1]} .<. {_32878~[_32878 > 0, _32878 < 1]} 
+                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33084~[_33084 > 0, _33084 < 1]} )
+                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_33084~[_33084 > 0, _33084 < 1]} )
+                                                                                not_interrupted_(initiates,serviceFeeCharged(account2),[chargeServiceFee(account2)],0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                    interrupted(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} ,0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                         {_33478~[_33478 > 0, _33478 < 1]} .>.0
+                                                                                         {_33478~[_33478 > 0, _33478 < 1]} .<. {_27970~[_27970 > 0, _27970 < 1]} 
+                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                        happens(chargeServiceFee(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                            builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(balance(account1,10),8)
+        8.>=.0
+        max_time(100)
+        8.=<.100
+        initiallyP(balance(account1,10))
+        not_stoppedIn(0,balance(account1,10),8)
+            0.=<.8
+            not_interrupted(terminates,balance(account1,10),0,8)
+                findall(_23269,findall_can_interrupts(terminates,_23269,balance(account1,10),0,8),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)])
+                    findall_can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10),0,8)
+                         {_23862~[_23862 > 0, _23862 < 8]} .>.0
+                         {_23862~[_23862 > 0, _23862 < 8]} .<.8
+                        can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                            can_terminates(transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                    findall_can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),0,8)
+                         {_23653~[_23653 > 0, _23653 < 8]} .>.0
+                         {_23653~[_23653 > 0, _23653 < 8]} .<.8
+                        can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                            can_terminates(transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                    findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10),0,8)
+                         {_23446~[_23446 > 0, _23446 < 8]} .>.0
+                         {_23446~[_23446 > 0, _23446 < 8]} .<.8
+                        can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                            can_terminates(chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                not_interrupted_(terminates,balance(account1,10),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                    findall(_24166,interrupted(terminates,transfer(_23743,account1,_23745),balance(account1,10),_24166,0,8),[])
+                    all_entirely_outside_of_interval([],0,8)
+                    not_interrupted_(terminates,balance(account1,10),[transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                        interrupted(terminates,transfer(account1,account2,2),balance(account1,10),1,0,8)
+                            1.>.0
+                            1.<.8
+                            can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                can_terminates(transfer(account1,account2,2),balance(account1,10),1)
+                            happens(transfer(account1,account2,2),1)
+                            interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                terminates(transfer(account1,account2,2),balance(account1,10),1)
+                                    2.>.0
+                                    10.>=.2
+                                    holdsAt(balance(account2,10),1)
+                                        1.>=.0
+                                        max_time(100)
+                                        1.=<.100
+                                        initiallyP(balance(account2,10))
+                                        not_stoppedIn(0,balance(account2,10),1)
+                                            0.=<.1
+                                            not_interrupted(terminates,balance(account2,10),0,1)
+                                                findall(_26360,findall_can_interrupts(terminates,_26360,balance(account2,10),0,1),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)])
+                                                    findall_can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10),0,1)
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .>.0
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                            can_terminates(transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                    findall_can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10),0,1)
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .>.0
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                            can_terminates(transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                    findall_can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10),0,1)
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .>.0
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .<.1
+                                                        can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                            can_terminates(chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                not_interrupted_(terminates,balance(account2,10),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                    findall(_27257,interrupted(terminates,transfer(_26834,account2,_26836),balance(account2,10),_27257,0,1),[])
+                                                    all_entirely_outside_of_interval([],0,1)
+                                                    not_interrupted_(terminates,balance(account2,10),[transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                        findall(_27492,interrupted(terminates,transfer(account2,_26626,_26627),balance(account2,10),_27492,0,1),[])
+                                                        proved(all_entirely_outside_of_interval([],0,1))
+                                                        not_interrupted_(terminates,balance(account2,10),[chargeServiceFee(account2)],0,1)
+                                                            interrupted(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} ,0,1)
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .>.0
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .<.1
+                                                                can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    can_terminates(chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                happens(chargeServiceFee(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    builtin(!spy)
+                                                                    not_holdsAt(serviceFeeCharged(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                         {_27970~[_27970 > 0, _27970 < 1]} .>=.0
+                                                                        max_time(100)
+                                                                         {_27970~[_27970 > 0, _27970 < 1]} .=<.100
+                                                                        initiallyN(serviceFeeCharged(account2))
+                                                                            not initiallyP(serviceFeeCharged(account2))
+                                                                                not o_initiallyP_1(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= balance(account1,10)
+                                                                                not o_initiallyP_2(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= balance(account2,10)
+                                                                                not o_initiallyP_3(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= minimumBalance(account1,5)
+                                                                                not o_initiallyP_4(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= minimumBalance(account2,5)
+                                                                                not o_initiallyP_5(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= serviceFee(account1,1)
+                                                                                not o_initiallyP_6(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= serviceFee(account2,1)
+                                                                        not_startedIn(0,serviceFeeCharged(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                            0.=<. {_27970~[_27970 > 0, _27970 < 1]} 
+                                                                            not_interrupted(initiates,serviceFeeCharged(account2),0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                findall(_32707,findall_can_interrupts(initiates,_32707,serviceFeeCharged(account2),0, {_27970~[_27970 > 0, _27970 < 1]} ),[chargeServiceFee(account2)])
+                                                                                    findall_can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2),0, {_32878~[_32878 > 0, _32878 < 1]} )
+                                                                                         {_33084~[_33084 > 0, _33084 < 1]} .>.0
+                                                                                         {_33084~[_33084 > 0, _33084 < 1]} .<. {_32878~[_32878 > 0, _32878 < 1]} 
+                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33084~[_33084 > 0, _33084 < 1]} )
+                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_33084~[_33084 > 0, _33084 < 1]} )
+                                                                                not_interrupted_(initiates,serviceFeeCharged(account2),[chargeServiceFee(account2)],0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                    interrupted(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} ,0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                         {_33478~[_33478 > 0, _33478 < 1]} .>.0
+                                                                                         {_33478~[_33478 > 0, _33478 < 1]} .<. {_27970~[_27970 > 0, _27970 < 1]} 
+                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                        happens(chargeServiceFee(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                            builtin(!spy)
+                                                                                            not_holdsAt(serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                 {_33478~[_33478 > 0, _33478 < 1]} .>=.0
+                                                                                                max_time(100)
+                                                                                                 {_33478~[_33478 > 0, _33478 < 1]} .=<.100
+                                                                                                proved(initiallyN(serviceFeeCharged(account2)))
+                                                                                                not_startedIn(0,serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                    0.=<. {_33478~[_33478 > 0, _33478 < 1]} 
+                                                                                                    not_interrupted(initiates,serviceFeeCharged(account2),0, {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                        findall(_38145,findall_can_interrupts(initiates,_38145,serviceFeeCharged(account2),0, {_33478~[_33478 > 0, _33478 < 1]} ),[chargeServiceFee(account2)])
+                                                                                                            findall_can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2),0, {_38316~[_38316 > 0, _38316 < 1]} )
+                                                                                                                 {_38694~[_38694 > 0, _38694 < 1]} .>.0
+                                                                                                                 {_38694~[_38694 > 0, _38694 < 1]} .<. {_38316~[_38316 > 0, _38316 < 1]} 
+                                                                                                                can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_38694~[_38694 > 0, _38694 < 1]} )
+                                                                                                                    can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_38694~[_38694 > 0, _38694 < 1]} )
+                                                                                                        not_interrupted_(initiates,serviceFeeCharged(account2),[chargeServiceFee(account2)],0, {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                            interrupted(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} ,0, {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                                 {_39088~[_39088 > 0, _39088 < 1]} .>.0
+                                                                                                                 {_39088~[_39088 > 0, _39088 < 1]} .<. {_33478~[_33478 > 0, _33478 < 1]} 
+                                                                                                                can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                    can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                happens(chargeServiceFee(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                    builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(balance(account1,10),8)
+        8.>=.0
+        max_time(100)
+        8.=<.100
+        initiallyP(balance(account1,10))
+        not_stoppedIn(0,balance(account1,10),8)
+            0.=<.8
+            not_interrupted(terminates,balance(account1,10),0,8)
+                findall(_23269,findall_can_interrupts(terminates,_23269,balance(account1,10),0,8),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)])
+                    findall_can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10),0,8)
+                         {_23862~[_23862 > 0, _23862 < 8]} .>.0
+                         {_23862~[_23862 > 0, _23862 < 8]} .<.8
+                        can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                            can_terminates(transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                    findall_can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),0,8)
+                         {_23653~[_23653 > 0, _23653 < 8]} .>.0
+                         {_23653~[_23653 > 0, _23653 < 8]} .<.8
+                        can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                            can_terminates(transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                    findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10),0,8)
+                         {_23446~[_23446 > 0, _23446 < 8]} .>.0
+                         {_23446~[_23446 > 0, _23446 < 8]} .<.8
+                        can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                            can_terminates(chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                not_interrupted_(terminates,balance(account1,10),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                    findall(_24166,interrupted(terminates,transfer(_23743,account1,_23745),balance(account1,10),_24166,0,8),[])
+                    all_entirely_outside_of_interval([],0,8)
+                    not_interrupted_(terminates,balance(account1,10),[transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                        interrupted(terminates,transfer(account1,account2,2),balance(account1,10),1,0,8)
+                            1.>.0
+                            1.<.8
+                            can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                can_terminates(transfer(account1,account2,2),balance(account1,10),1)
+                            happens(transfer(account1,account2,2),1)
+                            interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                terminates(transfer(account1,account2,2),balance(account1,10),1)
+                                    2.>.0
+                                    10.>=.2
+                                    holdsAt(balance(account2,10),1)
+                                        1.>=.0
+                                        max_time(100)
+                                        1.=<.100
+                                        initiallyP(balance(account2,10))
+                                        not_stoppedIn(0,balance(account2,10),1)
+                                            0.=<.1
+                                            not_interrupted(terminates,balance(account2,10),0,1)
+                                                findall(_26360,findall_can_interrupts(terminates,_26360,balance(account2,10),0,1),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)])
+                                                    findall_can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10),0,1)
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .>.0
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                            can_terminates(transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                    findall_can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10),0,1)
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .>.0
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                            can_terminates(transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                    findall_can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10),0,1)
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .>.0
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .<.1
+                                                        can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                            can_terminates(chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                not_interrupted_(terminates,balance(account2,10),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                    findall(_27257,interrupted(terminates,transfer(_26834,account2,_26836),balance(account2,10),_27257,0,1),[])
+                                                    all_entirely_outside_of_interval([],0,1)
+                                                    not_interrupted_(terminates,balance(account2,10),[transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                        findall(_27492,interrupted(terminates,transfer(account2,_26626,_26627),balance(account2,10),_27492,0,1),[])
+                                                        proved(all_entirely_outside_of_interval([],0,1))
+                                                        not_interrupted_(terminates,balance(account2,10),[chargeServiceFee(account2)],0,1)
+                                                            interrupted(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} ,0,1)
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .>.0
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .<.1
+                                                                can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    can_terminates(chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                happens(chargeServiceFee(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    builtin(!spy)
+                                                                    not_holdsAt(serviceFeeCharged(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                         {_27970~[_27970 > 0, _27970 < 1]} .>=.0
+                                                                        max_time(100)
+                                                                         {_27970~[_27970 > 0, _27970 < 1]} .=<.100
+                                                                        initiallyN(serviceFeeCharged(account2))
+                                                                            not initiallyP(serviceFeeCharged(account2))
+                                                                                not o_initiallyP_1(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= balance(account1,10)
+                                                                                not o_initiallyP_2(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= balance(account2,10)
+                                                                                not o_initiallyP_3(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= minimumBalance(account1,5)
+                                                                                not o_initiallyP_4(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= minimumBalance(account2,5)
+                                                                                not o_initiallyP_5(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= serviceFee(account1,1)
+                                                                                not o_initiallyP_6(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= serviceFee(account2,1)
+                                                                        not_startedIn(0,serviceFeeCharged(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                            0.=<. {_27970~[_27970 > 0, _27970 < 1]} 
+                                                                            not_interrupted(initiates,serviceFeeCharged(account2),0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                findall(_32707,findall_can_interrupts(initiates,_32707,serviceFeeCharged(account2),0, {_27970~[_27970 > 0, _27970 < 1]} ),[chargeServiceFee(account2)])
+                                                                                    findall_can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2),0, {_32878~[_32878 > 0, _32878 < 1]} )
+                                                                                         {_33084~[_33084 > 0, _33084 < 1]} .>.0
+                                                                                         {_33084~[_33084 > 0, _33084 < 1]} .<. {_32878~[_32878 > 0, _32878 < 1]} 
+                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33084~[_33084 > 0, _33084 < 1]} )
+                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_33084~[_33084 > 0, _33084 < 1]} )
+                                                                                not_interrupted_(initiates,serviceFeeCharged(account2),[chargeServiceFee(account2)],0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                    interrupted(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} ,0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                         {_33478~[_33478 > 0, _33478 < 1]} .>.0
+                                                                                         {_33478~[_33478 > 0, _33478 < 1]} .<. {_27970~[_27970 > 0, _27970 < 1]} 
+                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                        happens(chargeServiceFee(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                            builtin(!spy)
+                                                                                            not_holdsAt(serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                 {_33478~[_33478 > 0, _33478 < 1]} .>=.0
+                                                                                                max_time(100)
+                                                                                                 {_33478~[_33478 > 0, _33478 < 1]} .=<.100
+                                                                                                proved(initiallyN(serviceFeeCharged(account2)))
+                                                                                                not_startedIn(0,serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                    0.=<. {_33478~[_33478 > 0, _33478 < 1]} 
+                                                                                                    not_interrupted(initiates,serviceFeeCharged(account2),0, {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                        findall(_38145,findall_can_interrupts(initiates,_38145,serviceFeeCharged(account2),0, {_33478~[_33478 > 0, _33478 < 1]} ),[chargeServiceFee(account2)])
+                                                                                                            findall_can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2),0, {_38316~[_38316 > 0, _38316 < 1]} )
+                                                                                                                 {_38694~[_38694 > 0, _38694 < 1]} .>.0
+                                                                                                                 {_38694~[_38694 > 0, _38694 < 1]} .<. {_38316~[_38316 > 0, _38316 < 1]} 
+                                                                                                                can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_38694~[_38694 > 0, _38694 < 1]} )
+                                                                                                                    can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_38694~[_38694 > 0, _38694 < 1]} )
+                                                                                                        not_interrupted_(initiates,serviceFeeCharged(account2),[chargeServiceFee(account2)],0, {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                            interrupted(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} ,0, {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                                 {_39088~[_39088 > 0, _39088 < 1]} .>.0
+                                                                                                                 {_39088~[_39088 > 0, _39088 < 1]} .<. {_33478~[_33478 > 0, _33478 < 1]} 
+                                                                                                                can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                    can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                happens(chargeServiceFee(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                    builtin(!spy)
+                                                                                                                    not_holdsAt(serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                         {_39088~[_39088 > 0, _39088 < 1]} .>=.0
+                                                                                                                        max_time(100)
+                                                                                                                         {_39088~[_39088 > 0, _39088 < 1]} .=<.100
+                                                                                                                        proved(initiallyN(serviceFeeCharged(account2)))
+                                                                                                                        not_startedIn(0,serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                            0.=<. {_39088~[_39088 > 0, _39088 < 1]} 
+                                                                                                                            not_interrupted(initiates,serviceFeeCharged(account2),0, {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                                findall(_44336,findall_can_interrupts(initiates,_44336,serviceFeeCharged(account2),0, {_39088~[_39088 > 0, _39088 < 1]} ),[chargeServiceFee(account2)])
+                                                                                                                                    findall_can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2),0, {_44507~[_44507 > 0, _44507 < 1]} )
+                                                                                                                                         {_45082~[_45082 > 0, _45082 < 1]} .>.0
+                                                                                                                                         {_45082~[_45082 > 0, _45082 < 1]} .<. {_44507~[_44507 > 0, _44507 < 1]} 
+                                                                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_45082~[_45082 > 0, _45082 < 1]} )
+                                                                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_45082~[_45082 > 0, _45082 < 1]} )
+                                                                                                                                not_interrupted_(initiates,serviceFeeCharged(account2),[chargeServiceFee(account2)],0, {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                                    interrupted(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_45476~[_45476 > 0, _45476 < 1]} ,0, {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                                         {_45476~[_45476 > 0, _45476 < 1]} .>.0
+                                                                                                                                         {_45476~[_45476 > 0, _45476 < 1]} .<. {_39088~[_39088 > 0, _39088 < 1]} 
+                                                                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_45476~[_45476 > 0, _45476 < 1]} )
+                                                                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_45476~[_45476 > 0, _45476 < 1]} )
+                                                                                                                                        happens(chargeServiceFee(account2), {_45476~[_45476 > 0, _45476 < 1]} )
+                                                                                                                                            builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    holdsAt(balance(account1,10),8)
+        8.>=.0
+        max_time(100)
+        8.=<.100
+        initiallyP(balance(account1,10))
+        not_stoppedIn(0,balance(account1,10),8)
+            0.=<.8
+            not_interrupted(terminates,balance(account1,10),0,8)
+                findall(_23269,findall_can_interrupts(terminates,_23269,balance(account1,10),0,8),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)])
+                    findall_can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10),0,8)
+                         {_23862~[_23862 > 0, _23862 < 8]} .>.0
+                         {_23862~[_23862 > 0, _23862 < 8]} .<.8
+                        can_interrupts(terminates,transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                            can_terminates(transfer(_23743,account1,_23745),balance(account1,10), {_23862~[_23862 > 0, _23862 < 8]} )
+                    findall_can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),0,8)
+                         {_23653~[_23653 > 0, _23653 < 8]} .>.0
+                         {_23653~[_23653 > 0, _23653 < 8]} .<.8
+                        can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                            can_terminates(transfer(account1,account2,2),balance(account1,10), {_23653~[_23653 > 0, _23653 < 8]} )
+                    findall_can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10),0,8)
+                         {_23446~[_23446 > 0, _23446 < 8]} .>.0
+                         {_23446~[_23446 > 0, _23446 < 8]} .<.8
+                        can_interrupts(terminates,chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                            can_terminates(chargeServiceFee(account1),balance(account1,10), {_23446~[_23446 > 0, _23446 < 8]} )
+                not_interrupted_(terminates,balance(account1,10),[transfer(_23743,account1,_23745),transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                    findall(_24166,interrupted(terminates,transfer(_23743,account1,_23745),balance(account1,10),_24166,0,8),[])
+                    all_entirely_outside_of_interval([],0,8)
+                    not_interrupted_(terminates,balance(account1,10),[transfer(account1,account2,2),chargeServiceFee(account1)],0,8)
+                        interrupted(terminates,transfer(account1,account2,2),balance(account1,10),1,0,8)
+                            1.>.0
+                            1.<.8
+                            can_interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                can_terminates(transfer(account1,account2,2),balance(account1,10),1)
+                            happens(transfer(account1,account2,2),1)
+                            interrupts(terminates,transfer(account1,account2,2),balance(account1,10),1)
+                                terminates(transfer(account1,account2,2),balance(account1,10),1)
+                                    2.>.0
+                                    10.>=.2
+                                    holdsAt(balance(account2,10),1)
+                                        1.>=.0
+                                        max_time(100)
+                                        1.=<.100
+                                        initiallyP(balance(account2,10))
+                                        not_stoppedIn(0,balance(account2,10),1)
+                                            0.=<.1
+                                            not_interrupted(terminates,balance(account2,10),0,1)
+                                                findall(_26360,findall_can_interrupts(terminates,_26360,balance(account2,10),0,1),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)])
+                                                    findall_can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10),0,1)
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .>.0
+                                                         {_26953~[_26953 > 0, _26953 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                            can_terminates(transfer(_26834,account2,_26836),balance(account2,10), {_26953~[_26953 > 0, _26953 < 1]} )
+                                                    findall_can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10),0,1)
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .>.0
+                                                         {_26744~[_26744 > 0, _26744 < 1]} .<.1
+                                                        can_interrupts(terminates,transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                            can_terminates(transfer(account2,_26626,_26627),balance(account2,10), {_26744~[_26744 > 0, _26744 < 1]} )
+                                                    findall_can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10),0,1)
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .>.0
+                                                         {_26537~[_26537 > 0, _26537 < 1]} .<.1
+                                                        can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                            can_terminates(chargeServiceFee(account2),balance(account2,10), {_26537~[_26537 > 0, _26537 < 1]} )
+                                                not_interrupted_(terminates,balance(account2,10),[transfer(_26834,account2,_26836),transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                    findall(_27257,interrupted(terminates,transfer(_26834,account2,_26836),balance(account2,10),_27257,0,1),[])
+                                                    all_entirely_outside_of_interval([],0,1)
+                                                    not_interrupted_(terminates,balance(account2,10),[transfer(account2,_26626,_26627),chargeServiceFee(account2)],0,1)
+                                                        findall(_27492,interrupted(terminates,transfer(account2,_26626,_26627),balance(account2,10),_27492,0,1),[])
+                                                        proved(all_entirely_outside_of_interval([],0,1))
+                                                        not_interrupted_(terminates,balance(account2,10),[chargeServiceFee(account2)],0,1)
+                                                            interrupted(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} ,0,1)
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .>.0
+                                                                 {_27970~[_27970 > 0, _27970 < 1]} .<.1
+                                                                can_interrupts(terminates,chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    can_terminates(chargeServiceFee(account2),balance(account2,10), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                happens(chargeServiceFee(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                    builtin(!spy)
+                                                                    not_holdsAt(serviceFeeCharged(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                         {_27970~[_27970 > 0, _27970 < 1]} .>=.0
+                                                                        max_time(100)
+                                                                         {_27970~[_27970 > 0, _27970 < 1]} .=<.100
+                                                                        initiallyN(serviceFeeCharged(account2))
+                                                                            not initiallyP(serviceFeeCharged(account2))
+                                                                                not o_initiallyP_1(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= balance(account1,10)
+                                                                                not o_initiallyP_2(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= balance(account2,10)
+                                                                                not o_initiallyP_3(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= minimumBalance(account1,5)
+                                                                                not o_initiallyP_4(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= minimumBalance(account2,5)
+                                                                                not o_initiallyP_5(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= serviceFee(account1,1)
+                                                                                not o_initiallyP_6(serviceFeeCharged(account2))
+                                                                                    serviceFeeCharged(account2) \= serviceFee(account2,1)
+                                                                        not_startedIn(0,serviceFeeCharged(account2), {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                            0.=<. {_27970~[_27970 > 0, _27970 < 1]} 
+                                                                            not_interrupted(initiates,serviceFeeCharged(account2),0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                findall(_32707,findall_can_interrupts(initiates,_32707,serviceFeeCharged(account2),0, {_27970~[_27970 > 0, _27970 < 1]} ),[chargeServiceFee(account2)])
+                                                                                    findall_can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2),0, {_32878~[_32878 > 0, _32878 < 1]} )
+                                                                                         {_33084~[_33084 > 0, _33084 < 1]} .>.0
+                                                                                         {_33084~[_33084 > 0, _33084 < 1]} .<. {_32878~[_32878 > 0, _32878 < 1]} 
+                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33084~[_33084 > 0, _33084 < 1]} )
+                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_33084~[_33084 > 0, _33084 < 1]} )
+                                                                                not_interrupted_(initiates,serviceFeeCharged(account2),[chargeServiceFee(account2)],0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                    interrupted(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} ,0, {_27970~[_27970 > 0, _27970 < 1]} )
+                                                                                         {_33478~[_33478 > 0, _33478 < 1]} .>.0
+                                                                                         {_33478~[_33478 > 0, _33478 < 1]} .<. {_27970~[_27970 > 0, _27970 < 1]} 
+                                                                                        can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                            can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                        happens(chargeServiceFee(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                            builtin(!spy)
+                                                                                            not_holdsAt(serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                 {_33478~[_33478 > 0, _33478 < 1]} .>=.0
+                                                                                                max_time(100)
+                                                                                                 {_33478~[_33478 > 0, _33478 < 1]} .=<.100
+                                                                                                proved(initiallyN(serviceFeeCharged(account2)))
+                                                                                                not_startedIn(0,serviceFeeCharged(account2), {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                    0.=<. {_33478~[_33478 > 0, _33478 < 1]} 
+                                                                                                    not_interrupted(initiates,serviceFeeCharged(account2),0, {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                        findall(_38145,findall_can_interrupts(initiates,_38145,serviceFeeCharged(account2),0, {_33478~[_33478 > 0, _33478 < 1]} ),[chargeServiceFee(account2)])
+                                                                                                            findall_can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2),0, {_38316~[_38316 > 0, _38316 < 1]} )
+                                                                                                                 {_38694~[_38694 > 0, _38694 < 1]} .>.0
+                                                                                                                 {_38694~[_38694 > 0, _38694 < 1]} .<. {_38316~[_38316 > 0, _38316 < 1]} 
+                                                                                                                can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_38694~[_38694 > 0, _38694 < 1]} )
+                                                                                                                    can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_38694~[_38694 > 0, _38694 < 1]} )
+                                                                                                        not_interrupted_(initiates,serviceFeeCharged(account2),[chargeServiceFee(account2)],0, {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                            interrupted(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} ,0, {_33478~[_33478 > 0, _33478 < 1]} )
+                                                                                                                 {_39088~[_39088 > 0, _39088 < 1]} .>.0
+                                                                                                                 {_39088~[_39088 > 0, _39088 < 1]} .<. {_33478~[_33478 > 0, _33478 < 1]} 
+                                                                                                                can_interrupts(initiates,chargeServiceFee(account2),serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                    can_initiates(chargeServiceFee(account2),serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                happens(chargeServiceFee(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                    builtin(!spy)
+                                                                                                                    not_holdsAt(serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                         {_39088~[_39088 > 0, _39088 < 1]} .>=.0
+                                                                                                                        max_time(100)
+                                                                                                                         {_39088~[_39088 > 0, _39088 < 1]} .=<.100
+                                                                                                                        proved(initiallyN(serviceFeeCharged(account2)))
+                                                                                                                        not_startedIn(0,serviceFeeCharged(account2), {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                            0.=<. {_39088~[_39088 > 0, _39088 < 1]} 
+                                                                                                                            not_interrupted(initiates,serviceFeeCharged(account2),0, {_39088~[_39088 > 0, _39088 < 1]} )
+                                                                                                                                findall(_44336,findall_can_interrupts(initiates,_44336,serviceFeeCharged(account2
+timeout
+
+
+  real      0:03.47
+  real [s]  3.47
+  user [s]  0.98
+  sys  [s]  0.06
+  mem  [KB] 29384
+  avgm [KB] 0

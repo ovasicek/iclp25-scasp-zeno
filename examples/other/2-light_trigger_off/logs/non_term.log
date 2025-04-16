@@ -1,0 +1,272 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./model.pl -v6 --timeout=3000
+
+
+% QUERY:?- happens(turn_light_off,T).
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(turn_light_off,_215290)
+        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(turn_light_off, {_216271~[_216271 > 10, _216271 =< 100]} )
+        builtin(!spy)
+        holdsAt(light_on, {_216271~[_216271 > 10, _216271 =< 100]} )
+            10.>.0
+            10.<. {_216271~[_216271 > 10, _216271 =< 100]} 
+            max_time(100)
+             {_216271~[_216271 > 10, _216271 =< 100]} .=<.100
+            can_initiates(turn_light_on,light_on,10)
+            happens(turn_light_on,10)
+            initiates(turn_light_on,light_on,10)
+            not_stoppedIn(10,light_on, {_216271~[_216271 > 10, _216271 =< 100]} )
+                10.=<. {_216271~[_216271 > 10, _216271 =< 100]} 
+                not_interrupted(terminates,light_on,10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                    findall(_217494,findall_can_interrupts(terminates,_217494,light_on,10, {_216271~[_216271 > 10, _216271 =< 100]} ),[turn_light_off])
+                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_217639~[_217639 > 10, _217639 =< 100]} )
+                             {_217797~[_217797 > 10, _217797 < 100]} .>.10
+                             {_217797~[_217797 > 10, _217797 < 100]} .<. {_217639~[_217639 > 10, _217639 =< 100]} 
+                            can_interrupts(terminates,turn_light_off,light_on, {_217797~[_217797 > 10, _217797 < 100]} )
+                                can_terminates(turn_light_off,light_on, {_217797~[_217797 > 10, _217797 < 100]} )
+                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                        interrupted(terminates,turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} ,10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                             {_218191~[_218191 > 10, _218191 < 100]} .>.10
+                             {_218191~[_218191 > 10, _218191 < 100]} .<. {_216271~[_216271 > 10, _216271 =< 100]} 
+                            can_interrupts(terminates,turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                can_terminates(turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                            happens(turn_light_off, {_218191~[_218191 > 10, _218191 < 100]} )
+                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(turn_light_off, {_216271~[_216271 > 10, _216271 =< 100]} )
+        builtin(!spy)
+        holdsAt(light_on, {_216271~[_216271 > 10, _216271 =< 100]} )
+            10.>.0
+            10.<. {_216271~[_216271 > 10, _216271 =< 100]} 
+            max_time(100)
+             {_216271~[_216271 > 10, _216271 =< 100]} .=<.100
+            can_initiates(turn_light_on,light_on,10)
+            happens(turn_light_on,10)
+            initiates(turn_light_on,light_on,10)
+            not_stoppedIn(10,light_on, {_216271~[_216271 > 10, _216271 =< 100]} )
+                10.=<. {_216271~[_216271 > 10, _216271 =< 100]} 
+                not_interrupted(terminates,light_on,10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                    findall(_217494,findall_can_interrupts(terminates,_217494,light_on,10, {_216271~[_216271 > 10, _216271 =< 100]} ),[turn_light_off])
+                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_217639~[_217639 > 10, _217639 =< 100]} )
+                             {_217797~[_217797 > 10, _217797 < 100]} .>.10
+                             {_217797~[_217797 > 10, _217797 < 100]} .<. {_217639~[_217639 > 10, _217639 =< 100]} 
+                            can_interrupts(terminates,turn_light_off,light_on, {_217797~[_217797 > 10, _217797 < 100]} )
+                                can_terminates(turn_light_off,light_on, {_217797~[_217797 > 10, _217797 < 100]} )
+                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                        interrupted(terminates,turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} ,10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                             {_218191~[_218191 > 10, _218191 < 100]} .>.10
+                             {_218191~[_218191 > 10, _218191 < 100]} .<. {_216271~[_216271 > 10, _216271 =< 100]} 
+                            can_interrupts(terminates,turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                can_terminates(turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                            happens(turn_light_off, {_218191~[_218191 > 10, _218191 < 100]} )
+                                builtin(!spy)
+                                holdsAt(light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                    10.>.0
+                                    10.<. {_218191~[_218191 > 10, _218191 < 100]} 
+                                    max_time(100)
+                                     {_218191~[_218191 > 10, _218191 < 100]} .=<.100
+                                    can_initiates(turn_light_on,light_on,10)
+                                    happens(turn_light_on,10)
+                                    proved(initiates(turn_light_on,light_on,10))
+                                    not_stoppedIn(10,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                        10.=<. {_218191~[_218191 > 10, _218191 < 100]} 
+                                        not_interrupted(terminates,light_on,10, {_218191~[_218191 > 10, _218191 < 100]} )
+                                            findall(_221102,findall_can_interrupts(terminates,_221102,light_on,10, {_218191~[_218191 > 10, _218191 < 100]} ),[turn_light_off])
+                                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_221247~[_221247 > 10, _221247 < 100]} )
+                                                     {_221552~[_221552 > 10, _221552 < 100]} .>.10
+                                                     {_221552~[_221552 > 10, _221552 < 100]} .<. {_221247~[_221247 > 10, _221247 < 100]} 
+                                                    can_interrupts(terminates,turn_light_off,light_on, {_221552~[_221552 > 10, _221552 < 100]} )
+                                                        can_terminates(turn_light_off,light_on, {_221552~[_221552 > 10, _221552 < 100]} )
+                                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_218191~[_218191 > 10, _218191 < 100]} )
+                                                interrupted(terminates,turn_light_off,light_on, {_221946~[_221946 > 10, _221946 < 100]} ,10, {_218191~[_218191 > 10, _218191 < 100]} )
+                                                     {_221946~[_221946 > 10, _221946 < 100]} .>.10
+                                                     {_221946~[_221946 > 10, _221946 < 100]} .<. {_218191~[_218191 > 10, _218191 < 100]} 
+                                                    can_interrupts(terminates,turn_light_off,light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                        can_terminates(turn_light_off,light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                    happens(turn_light_off, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                        builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(turn_light_off, {_216271~[_216271 > 10, _216271 =< 100]} )
+        builtin(!spy)
+        holdsAt(light_on, {_216271~[_216271 > 10, _216271 =< 100]} )
+            10.>.0
+            10.<. {_216271~[_216271 > 10, _216271 =< 100]} 
+            max_time(100)
+             {_216271~[_216271 > 10, _216271 =< 100]} .=<.100
+            can_initiates(turn_light_on,light_on,10)
+            happens(turn_light_on,10)
+            initiates(turn_light_on,light_on,10)
+            not_stoppedIn(10,light_on, {_216271~[_216271 > 10, _216271 =< 100]} )
+                10.=<. {_216271~[_216271 > 10, _216271 =< 100]} 
+                not_interrupted(terminates,light_on,10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                    findall(_217494,findall_can_interrupts(terminates,_217494,light_on,10, {_216271~[_216271 > 10, _216271 =< 100]} ),[turn_light_off])
+                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_217639~[_217639 > 10, _217639 =< 100]} )
+                             {_217797~[_217797 > 10, _217797 < 100]} .>.10
+                             {_217797~[_217797 > 10, _217797 < 100]} .<. {_217639~[_217639 > 10, _217639 =< 100]} 
+                            can_interrupts(terminates,turn_light_off,light_on, {_217797~[_217797 > 10, _217797 < 100]} )
+                                can_terminates(turn_light_off,light_on, {_217797~[_217797 > 10, _217797 < 100]} )
+                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                        interrupted(terminates,turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} ,10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                             {_218191~[_218191 > 10, _218191 < 100]} .>.10
+                             {_218191~[_218191 > 10, _218191 < 100]} .<. {_216271~[_216271 > 10, _216271 =< 100]} 
+                            can_interrupts(terminates,turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                can_terminates(turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                            happens(turn_light_off, {_218191~[_218191 > 10, _218191 < 100]} )
+                                builtin(!spy)
+                                holdsAt(light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                    10.>.0
+                                    10.<. {_218191~[_218191 > 10, _218191 < 100]} 
+                                    max_time(100)
+                                     {_218191~[_218191 > 10, _218191 < 100]} .=<.100
+                                    can_initiates(turn_light_on,light_on,10)
+                                    happens(turn_light_on,10)
+                                    proved(initiates(turn_light_on,light_on,10))
+                                    not_stoppedIn(10,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                        10.=<. {_218191~[_218191 > 10, _218191 < 100]} 
+                                        not_interrupted(terminates,light_on,10, {_218191~[_218191 > 10, _218191 < 100]} )
+                                            findall(_221102,findall_can_interrupts(terminates,_221102,light_on,10, {_218191~[_218191 > 10, _218191 < 100]} ),[turn_light_off])
+                                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_221247~[_221247 > 10, _221247 < 100]} )
+                                                     {_221552~[_221552 > 10, _221552 < 100]} .>.10
+                                                     {_221552~[_221552 > 10, _221552 < 100]} .<. {_221247~[_221247 > 10, _221247 < 100]} 
+                                                    can_interrupts(terminates,turn_light_off,light_on, {_221552~[_221552 > 10, _221552 < 100]} )
+                                                        can_terminates(turn_light_off,light_on, {_221552~[_221552 > 10, _221552 < 100]} )
+                                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_218191~[_218191 > 10, _218191 < 100]} )
+                                                interrupted(terminates,turn_light_off,light_on, {_221946~[_221946 > 10, _221946 < 100]} ,10, {_218191~[_218191 > 10, _218191 < 100]} )
+                                                     {_221946~[_221946 > 10, _221946 < 100]} .>.10
+                                                     {_221946~[_221946 > 10, _221946 < 100]} .<. {_218191~[_218191 > 10, _218191 < 100]} 
+                                                    can_interrupts(terminates,turn_light_off,light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                        can_terminates(turn_light_off,light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                    happens(turn_light_off, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                        builtin(!spy)
+                                                        holdsAt(light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                            10.>.0
+                                                            10.<. {_221946~[_221946 > 10, _221946 < 100]} 
+                                                            max_time(100)
+                                                             {_221946~[_221946 > 10, _221946 < 100]} .=<.100
+                                                            can_initiates(turn_light_on,light_on,10)
+                                                            happens(turn_light_on,10)
+                                                            proved(initiates(turn_light_on,light_on,10))
+                                                            not_stoppedIn(10,light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                                10.=<. {_221946~[_221946 > 10, _221946 < 100]} 
+                                                                not_interrupted(terminates,light_on,10, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                                    findall(_226449,findall_can_interrupts(terminates,_226449,light_on,10, {_221946~[_221946 > 10, _221946 < 100]} ),[turn_light_off])
+                                                                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_226594~[_226594 > 10, _226594 < 100]} )
+                                                                             {_227071~[_227071 > 10, _227071 < 100]} .>.10
+                                                                             {_227071~[_227071 > 10, _227071 < 100]} .<. {_226594~[_226594 > 10, _226594 < 100]} 
+                                                                            can_interrupts(terminates,turn_light_off,light_on, {_227071~[_227071 > 10, _227071 < 100]} )
+                                                                                can_terminates(turn_light_off,light_on, {_227071~[_227071 > 10, _227071 < 100]} )
+                                                                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                                        interrupted(terminates,turn_light_off,light_on, {_227465~[_227465 > 10, _227465 < 100]} ,10, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                                             {_227465~[_227465 > 10, _227465 < 100]} .>.10
+                                                                             {_227465~[_227465 > 10, _227465 < 100]} .<. {_221946~[_221946 > 10, _221946 < 100]} 
+                                                                            can_interrupts(terminates,turn_light_off,light_on, {_227465~[_227465 > 10, _227465 < 100]} )
+                                                                                can_terminates(turn_light_off,light_on, {_227465~[_227465 > 10, _227465 < 100]} )
+                                                                            happens(turn_light_off, {_227465~[_227465 > 10, _227465 < 100]} )
+                                                                                builtin(!spy)
+
+--------------------- Calling:  builtin(!spy) -------------
+    happens(turn_light_off, {_216271~[_216271 > 10, _216271 =< 100]} )
+        builtin(!spy)
+        holdsAt(light_on, {_216271~[_216271 > 10, _216271 =< 100]} )
+            10.>.0
+            10.<. {_216271~[_216271 > 10, _216271 =< 100]} 
+            max_time(100)
+             {_216271~[_216271 > 10, _216271 =< 100]} .=<.100
+            can_initiates(turn_light_on,light_on,10)
+            happens(turn_light_on,10)
+            initiates(turn_light_on,light_on,10)
+            not_stoppedIn(10,light_on, {_216271~[_216271 > 10, _216271 =< 100]} )
+                10.=<. {_216271~[_216271 > 10, _216271 =< 100]} 
+                not_interrupted(terminates,light_on,10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                    findall(_217494,findall_can_interrupts(terminates,_217494,light_on,10, {_216271~[_216271 > 10, _216271 =< 100]} ),[turn_light_off])
+                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_217639~[_217639 > 10, _217639 =< 100]} )
+                             {_217797~[_217797 > 10, _217797 < 100]} .>.10
+                             {_217797~[_217797 > 10, _217797 < 100]} .<. {_217639~[_217639 > 10, _217639 =< 100]} 
+                            can_interrupts(terminates,turn_light_off,light_on, {_217797~[_217797 > 10, _217797 < 100]} )
+                                can_terminates(turn_light_off,light_on, {_217797~[_217797 > 10, _217797 < 100]} )
+                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                        interrupted(terminates,turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} ,10, {_216271~[_216271 > 10, _216271 =< 100]} )
+                             {_218191~[_218191 > 10, _218191 < 100]} .>.10
+                             {_218191~[_218191 > 10, _218191 < 100]} .<. {_216271~[_216271 > 10, _216271 =< 100]} 
+                            can_interrupts(terminates,turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                can_terminates(turn_light_off,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                            happens(turn_light_off, {_218191~[_218191 > 10, _218191 < 100]} )
+                                builtin(!spy)
+                                holdsAt(light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                    10.>.0
+                                    10.<. {_218191~[_218191 > 10, _218191 < 100]} 
+                                    max_time(100)
+                                     {_218191~[_218191 > 10, _218191 < 100]} .=<.100
+                                    can_initiates(turn_light_on,light_on,10)
+                                    happens(turn_light_on,10)
+                                    proved(initiates(turn_light_on,light_on,10))
+                                    not_stoppedIn(10,light_on, {_218191~[_218191 > 10, _218191 < 100]} )
+                                        10.=<. {_218191~[_218191 > 10, _218191 < 100]} 
+                                        not_interrupted(terminates,light_on,10, {_218191~[_218191 > 10, _218191 < 100]} )
+                                            findall(_221102,findall_can_interrupts(terminates,_221102,light_on,10, {_218191~[_218191 > 10, _218191 < 100]} ),[turn_light_off])
+                                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_221247~[_221247 > 10, _221247 < 100]} )
+                                                     {_221552~[_221552 > 10, _221552 < 100]} .>.10
+                                                     {_221552~[_221552 > 10, _221552 < 100]} .<. {_221247~[_221247 > 10, _221247 < 100]} 
+                                                    can_interrupts(terminates,turn_light_off,light_on, {_221552~[_221552 > 10, _221552 < 100]} )
+                                                        can_terminates(turn_light_off,light_on, {_221552~[_221552 > 10, _221552 < 100]} )
+                                            not_interrupted_(terminates,light_on,[turn_light_off],10, {_218191~[_218191 > 10, _218191 < 100]} )
+                                                interrupted(terminates,turn_light_off,light_on, {_221946~[_221946 > 10, _221946 < 100]} ,10, {_218191~[_218191 > 10, _218191 < 100]} )
+                                                     {_221946~[_221946 > 10, _221946 < 100]} .>.10
+                                                     {_221946~[_221946 > 10, _221946 < 100]} .<. {_218191~[_218191 > 10, _218191 < 100]} 
+                                                    can_interrupts(terminates,turn_light_off,light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                        can_terminates(turn_light_off,light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                    happens(turn_light_off, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                        builtin(!spy)
+                                                        holdsAt(light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                            10.>.0
+                                                            10.<. {_221946~[_221946 > 10, _221946 < 100]} 
+                                                            max_time(100)
+                                                             {_221946~[_221946 > 10, _221946 < 100]} .=<.100
+                                                            can_initiates(turn_light_on,light_on,10)
+                                                            happens(turn_light_on,10)
+                                                            proved(initiates(turn_light_on,light_on,10))
+                                                            not_stoppedIn(10,light_on, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                                10.=<. {_221946~[_221946 > 10, _221946 < 100]} 
+                                                                not_interrupted(terminates,light_on,10, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                                    findall(_226449,findall_can_interrupts(terminates,_226449,light_on,10, {_221946~[_221946 > 10, _221946 < 100]} ),[turn_light_off])
+                                                                        findall_can_interrupts(terminates,turn_light_off,light_on,10, {_226594~[_226594 > 10, _226594 < 100]} )
+                                                                             {_227071~[_227071 > 10, _227071 < 100]} .>.10
+                                                                             {_227071~[_227071 > 10, _227071 < 100]} .<. {_226594~[_226594 > 10, _226594 < 100]} 
+                                                                            can_interrupts(terminates,turn_light_off,light_on, {_227071~[_227071 > 10, _227071 < 100]} )
+                                                                                can_terminates(turn_light_off,light_on, {_227071~[_227071 > 10, _227071 < 100]} )
+                                                                    not_interrupted_(terminates,light_on,[turn_light_off],10, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                                        interrupted(terminates,turn_light_off,light_on, {_227465~[_227465 > 10, _227465 < 100]} ,10, {_221946~[_221946 > 10, _221946 < 100]} )
+                                                                             {_227465~[_227465 > 10, _227465 < 100]} .>.10
+                                                                             {_227465~[_227465 > 10, _227465 < 100]} .<. {_221946~[_221946 > 10, _221946 < 100]} 
+                                                                            can_interrupts(terminates,turn_light_off,light_on, {_227465~[_227465 > 10, _227465 < 100]} )
+                                                                                can_terminates(turn_light_off,light_on, {_227465~[_227465 > 10, _227465 < 100]} )
+                                                                            happens(turn_light_off, {_227465~[_227465 > 10, _227465 < 100]} )
+                                                                                builtin(!spy)
+                                                                                holdsAt(light_on, {_227465~[_227465 > 10, _227465 < 100]} )
+                                                                                    10.>.0
+                                                                                    10.<. {_227465~[_227465 > 10, _227465 < 100]} 
+                                                                                    max_time(100)
+                                                                                     {_227465~[_227465 > 10, _227465 < 100]} .=<.100
+                                                                                    can_initiates(turn_light_on,light_on,10)
+                                                                                    happens(turn_light_on,10)
+                                                                                    proved(initiates(turn_light_on,light_on,10))
+                                                                                    not_stoppedIn(10,light_on, {_227465~[_227465 > 10, _227465 < 100]} )
+                                                                                        10.=<. {_227465~[_227465 > 10, _227465 < 100]} 
+                                                                                        not_interrupted(terminates,light_on,10, {_227465~[_227465 > 10, _227465 < 100]} )
+                                                                                            findall(_233066,findall_can_interrupts(terminates,_233066,light_on,10, {_227465~[_227465 > 10, _227465 < 100]} ),[turn_light_off])
+                                                                                                findall_can_interrupts(terminates,turn_light_off,light_on,10, {_233211~[_233211 > 10, _233211 < 100]} )
+                                                                                                     {_233885~[_233885 
+timeout
+
+
+  real      0:03.40
+  real [s]  3.40
+  user [s]  0.87
+  sys  [s]  0.13
+  mem  [KB] 29240
+  avgm [KB] 0

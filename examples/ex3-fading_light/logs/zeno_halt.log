@@ -1,0 +1,65 @@
+$ scasp -s0 --ec ../axioms/bec_scasp.pl ./model.pl --zeno_halt --tree
+
+
+% QUERY:?- happens(fade_in_end,T).
+
+WARNING: Detected a zeno descending chain on happens/2. Terminating execution.
+	happens(fade_in_end, {_132425~[_132425 > 0, _132425 < 10]} )
+	happens(fade_in_end, {_133178~[_133178 > 0, _133178 < 10]} )
+
+
+--------------------- Calling:  happens(fade_in_end,_133178) -------------
+    happens(fade_in_end,20)
+        builtin(!spy)
+        holdsAt(brightness(10),20)
+            10.>.0
+            10.<.20
+            max_time(100)
+            20.=<.100
+            can_trajectory(fading_in,10,brightness(10),20)
+            can_initiates(turn_light_on,fading_in,10)
+            happens(turn_light_on,10)
+            initiates(turn_light_on,fading_in,10)
+            trajectory(fading_in,10,brightness(10),20)
+                10.=.0+(20-10)*1
+                holdsAt(brightness(0),10)
+                    10.>=.0
+                    max_time(100)
+                    10.=<.100
+                    initiallyP(brightness(0))
+                    not_stoppedIn(0,brightness(0),10)
+                        0.=<.10
+                        not_interrupted(terminates,brightness(0),0,10)
+                            findall(_131574,findall_can_interrupts(terminates,_131574,brightness(0),0,10),[fade_in_end,turn_light_off])
+                                findall_can_interrupts(terminates,fade_in_end,brightness(0),0,10)
+                                     {_131904~[_131904 > 0, _131904 < 10]} .>.0
+                                     {_131904~[_131904 > 0, _131904 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_131904~[_131904 > 0, _131904 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_131904~[_131904 > 0, _131904 < 10]} )
+                                findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10)
+                                     {_131731~[_131731 > 0, _131731 < 10]} .>.0
+                                     {_131731~[_131731 > 0, _131731 < 10]} .<.10
+                                    can_interrupts(terminates,turn_light_off,brightness(0), {_131731~[_131731 > 0, _131731 < 10]} )
+                                        can_terminates(turn_light_off,brightness(0), {_131731~[_131731 > 0, _131731 < 10]} )
+                            not_interrupted_(terminates,brightness(0),[fade_in_end,turn_light_off],0,10)
+                                interrupted(terminates,fade_in_end,brightness(0), {_132425~[_132425 > 0, _132425 < 10]} ,0,10)
+                                     {_132425~[_132425 > 0, _132425 < 10]} .>.0
+                                     {_132425~[_132425 > 0, _132425 < 10]} .<.10
+                                    can_interrupts(terminates,fade_in_end,brightness(0), {_132425~[_132425 > 0, _132425 < 10]} )
+                                        can_terminates(fade_in_end,brightness(0), {_132425~[_132425 > 0, _132425 < 10]} )
+                                    happens(fade_in_end, {_132425~[_132425 > 0, _132425 < 10]} )
+                                        builtin(!spy)
+                                        holdsAt(brightness(10), {_132425~[_132425 > 0, _132425 < 10]} )
+                                             {_133178~[_133178 > 0, _133178 < 10]} .>.0
+                                             {_133178~[_133178 > 0, _133178 < 10]} .<. {_132425~[_132425 > 0, _132425 < 10]} 
+                                            max_time(100)
+                                             {_132425~[_132425 > 0, _132425 < 10]} .=<.100
+                                            can_initiates(fade_in_end,brightness(10), {_133178~[_133178 > 0, _133178 < 10]} )
+                                            happens(fade_in_end, {_133178~[_133178 > 0, _133178 < 10]} )
+
+  real      0:00.54
+  real [s]  0.54
+  user [s]  0.35
+  sys  [s]  0.02
+  mem  [KB] 29008
+  avgm [KB] 0

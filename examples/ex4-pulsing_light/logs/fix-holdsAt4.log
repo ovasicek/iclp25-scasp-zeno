@@ -1,0 +1,107 @@
+$ scasp -s0 --ec ../axioms/bec_scasp.pl ./fix-holdsAt4.pl --tree
+
+
+% QUERY:?- happens(fade_out_end,T).
+
+	ANSWER:	1 (in 720.787 ms)
+
+JUSTIFICATION_TREE:
+happens(fade_out_end,30) :-
+    duration(10),
+    holdsAt(brightness(0),30,fading_out,10) :-
+        max_time(100),
+        can_trajectory(fading_out,20,brightness(0),30),
+        can_initiates(fade_in_end,fading_out,20),
+        happens(fade_in_end,20) :-
+            duration(10),
+            holdsAt(brightness(10),20,fading_in,10) :-
+                max_time(100),
+                can_trajectory(fading_in,10,brightness(10),20),
+                can_initiates(turn_light_on,fading_in,10),
+                happens(turn_light_on,10),
+                initiates(turn_light_on,fading_in,10),
+                trajectory(fading_in,10,brightness(10),20) :-
+                    holdsAt(brightness(0),10) :-
+                        max_time(100),
+                        initiallyP(brightness(0)),
+                        not_stoppedIn(0,brightness(0),10) :-
+                            not_interrupted(terminates,brightness(0),0,10) :-
+                                findall(Var7,findall_can_interrupts(terminates,Var7,brightness(0),0,10),[turn_light_off]) :-
+                                    findall_can_interrupts(terminates,turn_light_off,brightness(0),0,10) :-
+                                        can_interrupts(terminates,turn_light_off,brightness(0),Var1 | {Var1 #> 0,Var1 #< 10}) :-
+                                            can_terminates(turn_light_off,brightness(0),Var1 | {Var1 #> 0,Var1 #< 10}).
+                                not_interrupted_(terminates,brightness(0),[turn_light_off],0,10) :-
+                                    findall(Var8,interrupted(terminates,turn_light_off,brightness(0),Var8,0,10),[]),
+                                    all_entirely_outside_of_interval([],0,10),
+                                    not_interrupted_(terminates,brightness(0),[],0,10).
+                            not_interrupted(releases,brightness(0),0,10) :-
+                                findall(Var9,findall_can_interrupts(releases,Var9,brightness(0),0,10),[turn_light_on]) :-
+                                    findall_can_interrupts(releases,turn_light_on,brightness(0),0,10) :-
+                                        can_interrupts(releases,turn_light_on,brightness(0),Var2 | {Var2 #> 0,Var2 #< 10}) :-
+                                            can_releases(turn_light_on,brightness(0),Var2 | {Var2 #> 0,Var2 #< 10}).
+                                not_interrupted_(releases,brightness(0),[turn_light_on],0,10) :-
+                                    findall(Var10,interrupted(releases,turn_light_on,brightness(0),Var10,0,10),[]),
+                                    proved(all_entirely_outside_of_interval([],0,10)),
+                                    not_interrupted_(releases,brightness(0),[],0,10).
+                not_stoppedIn(10,fading_in,20) :-
+                    not_interrupted(terminates,fading_in,10,20) :-
+                        findall(Var11,findall_can_interrupts(terminates,Var11,fading_in,10,20),[fade_in_end,turn_light_off]) :-
+                            findall_can_interrupts(terminates,fade_in_end,fading_in,10,20) :-
+                                can_interrupts(terminates,fade_in_end,fading_in,Var3 | {Var3 #> 10,Var3 #< 20}) :-
+                                    can_terminates(fade_in_end,fading_in,Var3 | {Var3 #> 10,Var3 #< 20}).
+                            findall_can_interrupts(terminates,turn_light_off,fading_in,10,20) :-
+                                can_interrupts(terminates,turn_light_off,fading_in,Var4 | {Var4 #> 10,Var4 #< 20}) :-
+                                    can_terminates(turn_light_off,fading_in,Var4 | {Var4 #> 10,Var4 #< 20}).
+                        not_interrupted_(terminates,fading_in,[fade_in_end,turn_light_off],10,20) :-
+                            findall(Var12,interrupted(terminates,fade_in_end,fading_in,Var12,10,20),[]),
+                            all_entirely_outside_of_interval([],10,20),
+                            not_interrupted_(terminates,fading_in,[turn_light_off],10,20) :-
+                                findall(Var13,interrupted(terminates,turn_light_off,fading_in,Var13,10,20),[]),
+                                proved(all_entirely_outside_of_interval([],10,20)),
+                                not_interrupted_(terminates,fading_in,[],10,20).
+                    not_interrupted(releases,fading_in,10,20) :-
+                        findall(Var14,findall_can_interrupts(releases,Var14,fading_in,10,20),[]),
+                        not_interrupted_(releases,fading_in,[],10,20).
+        initiates(fade_in_end,fading_out,20),
+        trajectory(fading_out,20,brightness(0),30) :-
+            holdsAt(brightness(10),20) :-
+                max_time(100),
+                can_trajectory(fading_in,10,brightness(10),20),
+                can_initiates(turn_light_on,fading_in,10),
+                happens(turn_light_on,10),
+                proved(initiates(turn_light_on,fading_in,10)),
+                proved(trajectory(fading_in,10,brightness(10),20)),
+                proved(not_stoppedIn(10,fading_in,20)).
+        not_stoppedIn(20,fading_out,30) :-
+            not_interrupted(terminates,fading_out,20,30) :-
+                findall(Var15,findall_can_interrupts(terminates,Var15,fading_out,20,30),[fade_out_end,turn_light_off]) :-
+                    findall_can_interrupts(terminates,fade_out_end,fading_out,20,30) :-
+                        can_interrupts(terminates,fade_out_end,fading_out,Var5 | {Var5 #> 20,Var5 #< 30}) :-
+                            can_terminates(fade_out_end,fading_out,Var5 | {Var5 #> 20,Var5 #< 30}).
+                    findall_can_interrupts(terminates,turn_light_off,fading_out,20,30) :-
+                        can_interrupts(terminates,turn_light_off,fading_out,Var6 | {Var6 #> 20,Var6 #< 30}) :-
+                            can_terminates(turn_light_off,fading_out,Var6 | {Var6 #> 20,Var6 #< 30}).
+                not_interrupted_(terminates,fading_out,[fade_out_end,turn_light_off],20,30) :-
+                    findall(Var16,interrupted(terminates,fade_out_end,fading_out,Var16,20,30),[]),
+                    all_entirely_outside_of_interval([],20,30),
+                    not_interrupted_(terminates,fading_out,[turn_light_off],20,30) :-
+                        findall(Var17,interrupted(terminates,turn_light_off,fading_out,Var17,20,30),[]),
+                        proved(all_entirely_outside_of_interval([],20,30)),
+                        not_interrupted_(terminates,fading_out,[],20,30).
+            not_interrupted(releases,fading_out,20,30) :-
+                findall(Var18,findall_can_interrupts(releases,Var18,fading_out,20,30),[]),
+                not_interrupted_(releases,fading_out,[],20,30).
+global_constraint.
+
+MODEL:
+{ happens(fade_out_end,30),  happens(fade_in_end,20),  happens(turn_light_on,10),  initiates(turn_light_on,fading_in,10),  trajectory(fading_in,10,brightness(10),20),  holdsAt(brightness(0),10),  initiallyP(brightness(0)),  not_stoppedIn(0,brightness(0),10),  not_stoppedIn(10,fading_in,20),  initiates(fade_in_end,fading_out,20),  trajectory(fading_out,20,brightness(0),30),  holdsAt(brightness(10),20),  not_stoppedIn(20,fading_out,30) }
+BINDINGS: 
+T = 30
+
+
+  real      0:01.30
+  real [s]  1.30
+  user [s]  1.06
+  sys  [s]  0.03
+  mem  [KB] 29128
+  avgm [KB] 0

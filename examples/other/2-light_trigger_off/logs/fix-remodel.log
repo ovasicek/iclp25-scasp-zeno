@@ -1,0 +1,24 @@
+$ scasp -s0 --ec ../../axioms/bec_scasp.pl ./fix-remodel.pl --tree
+
+
+% QUERY:?- happens(turn_light_off,T).
+
+	ANSWER:	1 (in 0.189 ms)
+
+JUSTIFICATION_TREE:
+happens(turn_light_off,10) :-
+    happens(turn_light_on,10).
+global_constraint.
+
+MODEL:
+{ happens(turn_light_off,10),  happens(turn_light_on,10) }
+BINDINGS: 
+T = 10
+
+
+  real      0:00.47
+  real [s]  0.47
+  user [s]  0.35
+  sys  [s]  0.03
+  mem  [KB] 29228
+  avgm [KB] 0
