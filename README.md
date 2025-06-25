@@ -13,7 +13,7 @@ by Vasicek O., Arias J., Fiedor J., Gupta G., Hall B., Krena B., Larson B., and 
 
 ## Installing s(CASP)
 - See [https://gitlab.software.imdea.org/ciao-lang/sCASP#installation-of-scasp](https://gitlab.software.imdea.org/ciao-lang/sCASP#installation-of-scasp)
-- Version of s(CASP) used: 0.24.10.10
+- Version of s(CASP) used: 0.25.06.25
 
 ## Executing reasoning
 - Each example has a `makefile` that can be used to execute it (or to see how to do it manually)
