@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1008332763.svg)](https://doi.org/10.5281/zenodo.15737913)
+
 # iclp25-scasp-zeno
 This is a repository with source codes and experiments for the ICLP'25 paper
 "On Zeno-like Behaviors in the Event Calculus with Goal-directed Answer Set Programming"
